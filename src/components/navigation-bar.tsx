@@ -19,7 +19,7 @@ type Navigation = {
 const iconMap: Record<string, React.ReactNode> = {
   '/': <PersonIcon className="size-5" />,
   '/projects': <GearIcon className="size-5" />,
-  '/posts': <ChatBubbleIcon className="size-5" />,
+  '/blog': <ChatBubbleIcon className="size-5" />,
 };
 
 export function NavigationBar() {
