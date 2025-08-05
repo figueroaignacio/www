@@ -8,6 +8,14 @@
         "href": "/posts/un-poco-sobre-mi"
       }
     },
+    "projects": {
+      "title": "Proyectos",
+      "description": "En esta sección encontrarás mis proyectos personales, desarrollados con las tecnologías que utilizo habitualmente."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Acá comparto lo que voy aprendiendo sobre desarrollo web, programación y otras cosas que me copan del mundo tech."
+    },
     "experience": {
       "title": "Experiencia"
     },

@@ -8,6 +8,16 @@
         "href": "/posts/a-little-bit-about-me"
       }
     },
+    "projects": {
+      "title": "Projects",
+      "description": "In this section, you'll find my personal projects, built using the technologies I commonly work with."
+    },
+
+    "blog": {
+      "title": "Blog",
+      "description": "Here I share things I’m learning about web development, programming, and other cool stuff I enjoy in the tech world."
+    },
+
     "experience": {
       "title": "Experience"
     },

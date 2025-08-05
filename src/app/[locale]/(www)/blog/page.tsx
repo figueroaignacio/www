@@ -1,22 +1,29 @@
-import { getPosts } from '@/api/get-posts';
-import { Link } from '@/i18n/navigation';
+import { use } from 'react';
 
-export default async function PostsPage() {
-  const allPosts = await getPosts();
+// Hooks
+import { Locale, useTranslations } from 'next-intl';
+
+// Components
+import { AllPosts } from '@/sections/all-posts';
+import { Hero } from '@/sections/hero';
+
+// next-intl
+import { setRequestLocale } from 'next-intl/server';
+
+type BlogPageProps = {
+  params: Promise<{ locale: Locale }>;
+};
+
+export default function PostsPage({ params }: BlogPageProps) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
+
+  const t = useTranslations('sections');
 
   return (
-    <section>
-      <h2>Blog</h2>
-      <ul>
-        {allPosts.map((post) => (
-          <li key={post.id}>
-            <h3>
-              <Link href={`/post/${post.slug}`}>{post.title}</Link>
-            </h3>
-            <p>{post.description}</p>
-          </li>
-        ))}
-      </ul>
+    <section className="space-y-8">
+      <Hero title={t('blog.title')} description={t('blog.description')} />
+      <AllPosts />
     </section>
   );
 }
