@@ -30,19 +30,19 @@ export const EducationCard: React.FC<EducationCardProps> = ({
   return (
     <div className="bg-card border border-border rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow border-t-primary border-t-4">
       <div className="flex flex-col gap-1">
-        <h3 className="text-lg font-semibold">{title}</h3>
-        <p className="text-sm text-[var(--muted-foreground)]">{institution}</p>
-        {location && <p className="text-sm text-[var(--muted-foreground)]">{location}</p>}
+        <h3 className="font-semibold">{title}</h3>
+        <p className="text-sm">{institution}</p>
+        {location && <p className="text-sm text-muted-foreground">{location}</p>}
       </div>
 
-      <div className="text-sm mt-2 text-[var(--muted-foreground)]">
+      <div className="text-sm mt-2 text-muted-foreground">
         <span>
           {formatDate(startDate)} – {isCurrent ? 'Present' : endDate ? formatDate(endDate) : 'N/A'}
         </span>
       </div>
 
       {description && (
-        <p className="mt-3 text-sm leading-relaxed text-[var(--muted-foreground)]">{description}</p>
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
       )}
 
       {certificateUrl && (
@@ -50,7 +50,7 @@ export const EducationCard: React.FC<EducationCardProps> = ({
           href={certificateUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block mt-4 text-sm font-medium text-[var(--primary)] hover:underline"
+          className="inline-block mt-4 text-sm font-medium text-primary hover:underline"
         >
           Ver certificado →
         </a>
