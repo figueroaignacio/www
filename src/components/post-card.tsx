@@ -1,3 +1,4 @@
+// Components
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card/card';
 import { Link } from '@/i18n/navigation';
 import { Button } from './ui/button/button';
