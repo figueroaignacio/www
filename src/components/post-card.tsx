@@ -16,7 +16,7 @@ export function PostCard({ description, slug, title }: PostCardProps) {
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
-      <CardContent children>
+      <CardContent>
       </CardContent>
       <CardFooter>
         <Button>
