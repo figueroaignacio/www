@@ -5,6 +5,7 @@ import { setRequestLocale } from 'next-intl/server';
 
 // Components
 import { ThemeProvider } from 'next-themes';
+import NextTopLoader from 'nextjs-toploader';
 
 // Utils
 import { geistSans } from '@/lib/fonts';
@@ -39,6 +40,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${geistSans.className} antialiased`}>
+        <NextTopLoader color='#3b82f6' showSpinner />
         <ThemeProvider attribute="class" defaultTheme="dark">
           <main className="container">
             <NextIntlClientProvider>{children}</NextIntlClientProvider>
