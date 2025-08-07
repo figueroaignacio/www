@@ -1,5 +1,5 @@
 // Components
-import { Link } from '@/i18n/navigation';
+import { PostCard } from '@/components/post-card';
 
 // Utils
 import { getPosts } from '@/api/get-posts';
@@ -8,13 +8,10 @@ export async function AllPosts() {
   const allPosts = await getPosts();
 
   return (
-    <ul>
+    <ul >
       {allPosts.map((post) => (
-        <li key={post.id}>
-          <h3>
-            <Link href={`/post/${post.slug}`}>{post.title}</Link>
-          </h3>
-          <p>{post.description}</p>
+        <li key={post.id} >
+          <PostCard description={post.description} slug={post.slug} title={post.title} />
         </li>
       ))}
     </ul>

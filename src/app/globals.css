@@ -25,6 +25,10 @@
   --ring: #3b82f6;
   --radius: 0.5rem;
   --grid-color: rgba(0, 0, 0, 0.08);
+  --success: #10b981;
+  --success-foreground: #f0fdf4;
+  --warning: #f59e0b;
+  --warning-foreground: #fffbeb;
 }
 
 .dark {
@@ -48,6 +52,10 @@
   --input: #131519;
   --ring: #2563eb;
   --grid-color: rgba(255, 255, 255, 0.02);
+  --success: #059669;
+  --success-foreground: #064e3b;
+  --warning: #d97706;
+  --warning-foreground: #92400e;
 }
 
 @theme inline {
