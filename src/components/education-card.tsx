@@ -9,6 +9,7 @@ type EducationCardProps = {
   endDate?: string;
   isCurrent?: boolean;
   certificateUrl?: string;
+  isLast?: boolean;
 };
 
 export const EducationCard: React.FC<EducationCardProps> = ({
@@ -20,41 +21,54 @@ export const EducationCard: React.FC<EducationCardProps> = ({
   endDate,
   isCurrent,
   certificateUrl,
+  isLast = false,
 }) => {
   const formatDate = (date: string) =>
     new Date(date).toLocaleDateString(undefined, {
       year: 'numeric',
-      month: 'short',
+      month: 'long',
     });
 
   return (
-    <div className="bg-card border border-border rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow border-t-primary border-t-4">
-      <div className="flex flex-col gap-1">
-        <h3 className="font-semibold">{title}</h3>
-        <p className="text-sm">{institution}</p>
-        {location && <p className="text-sm text-muted-foreground">{location}</p>}
+    <div className="relative pl-8">
+      <div className="absolute left-0 top-1 size-4 bg-primary rounded-full z-10"></div>
+      <div className="space-y-3">
+        <div className="text-muted-foreground text-sm font-medium">
+          {formatDate(startDate)} - {isCurrent ? 'Present' : endDate ? formatDate(endDate) : 'N/A'}
+        </div>
+        <div className="space-y-1">
+          <h3 className="text-foreground text-xl font-semibold">
+            {title}
+          </h3>
+          <div className="text-foreground text-base font-medium">
+            <span className="underline decoration-2 underline-offset-2 decoration-primary">
+              {institution}
+            </span>
+          </div>
+          {location && (
+            <div className="text-muted-foreground text-sm">
+              {location}
+            </div>
+          )}
+        </div>
+        {description && (
+          <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl">
+            {description}
+          </p>
+        )}
+        {certificateUrl && (
+          <div className="pt-2">
+            <a
+              href={certificateUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline transition-colors"
+            >
+              Ver certificado →
+            </a>
+          </div>
+        )}
       </div>
-
-      <div className="text-sm mt-2 text-muted-foreground">
-        <span>
-          {formatDate(startDate)} – {isCurrent ? 'Present' : endDate ? formatDate(endDate) : 'N/A'}
-        </span>
-      </div>
-
-      {description && (
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
-      )}
-
-      {certificateUrl && (
-        <a
-          href={certificateUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block mt-4 text-sm font-medium text-primary hover:underline"
-        >
-          Ver certificado →
-        </a>
-      )}
     </div>
   );
 };
