@@ -101,7 +101,7 @@ interface CardDescriptionProps {
 }
 
 interface CardContentProps {
-  children: React.ReactNode
+  children?: React.ReactNode
   className?: string
   spacing?: 'none' | 'sm' | 'md' | 'lg'
 }
