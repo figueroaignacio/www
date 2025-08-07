@@ -67,8 +67,7 @@
   --color-card: var(--card);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-border: var(--border);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-manrope);
 }
 
 body {
