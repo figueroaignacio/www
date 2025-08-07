@@ -27,7 +27,7 @@ export function ExperienceCard({
           {startDate && formatDate(startDate)} - {endDate ? formatDate(endDate) : 'Present'}
         </div>
         <div className="space-y-1">
-          <h3 className="text-foreground text-xl font-semibold">
+          <h3 className="text-foreground text-lg font-semibold">
             {title} at{' '}
             <span className="underline decoration-2 underline-offset-2 decoration-primary">
               {company}

@@ -37,7 +37,7 @@ export const EducationCard: React.FC<EducationCardProps> = ({
           {formatDate(startDate)} - {isCurrent ? 'Present' : endDate ? formatDate(endDate) : 'N/A'}
         </div>
         <div className="space-y-1">
-          <h3 className="text-foreground text-xl font-semibold">
+          <h3 className="text-foreground text-lg font-semibold">
             {title}
           </h3>
           <div className="text-foreground text-base font-medium">
