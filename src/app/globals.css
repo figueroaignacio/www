@@ -77,10 +77,6 @@ body {
   margin-bottom: 6rem;
 }
 
-a {
-  @apply hover:underline hover:text-primary;
-}
-
 @layer {
   .container {
     @apply max-w-xl min-h-lvh mx-auto;

@@ -18,7 +18,7 @@
 
 .default {
   background-color: var(--primary);
-  color: var(--primary-foreground);
+  color: #cfff;
 
   &:hover {
     opacity: 0.9;
