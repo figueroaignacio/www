@@ -37,7 +37,7 @@ export function ExperienceCard({
             {contractType}
           </div>
         </div>
-        <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl">
+        <p className="text-sm text-muted-foreground sm:text-base">
           {description}
         </p>
         {technologies && technologies.length > 0 && (

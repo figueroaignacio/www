@@ -52,7 +52,7 @@ export const EducationCard: React.FC<EducationCardProps> = ({
           )}
         </div>
         {description && (
-          <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl">
+          <p className="text-sm text-muted-foreground sm:text-base">
             {description}
           </p>
         )}
