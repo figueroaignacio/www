@@ -7,6 +7,5 @@ export function BackButton() {
     <Button variant="outline">
       <ArrowLeftIcon />
     </Button>
-
   )
 }
