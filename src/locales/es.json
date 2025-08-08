@@ -41,10 +41,10 @@
   },
   "components": {
     "cvcta": {
-      "title": "View My Resume",
-      "description": "Explore my experience and skills in software development. See how I can add value to your team.",
+      "title": "Mirá mi Curriculum",
+      "description": "Explora mi experiencia y habilidades en desarrollo de software. Conoce cómo puedo aportar valor a tu equipo.",
       "url": "",
-      "action": "See Resume"
+      "action": "Mirar Curriculum"
     }
   }
 }
