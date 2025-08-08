@@ -1,4 +1,5 @@
 // Components
+import { BackButton } from '@/components/back-button';
 import { PostBodyRenderer } from '@/components/post-body-renderer';
 
 // Utils
@@ -18,7 +19,8 @@ export default async function PostPage({ params }: PostPageProps) {
   if (!post) return notFound();
 
   return (
-    <article>
+    <article className='space-y-4'>
+      <BackButton />
       <div className='space-y-4'>
         <h1 className='text-2xl font-semibold'>{post.title}</h1>
         <p className='text-lg text-muted-foreground'>{post.description}</p>
