@@ -23,6 +23,14 @@
     },
     "education": {
       "title": "Education"
+    },
+    "techStack": {
+      "categories": {
+        "frontend": "Frontend",
+        "backend": "Backend & Infraestructure",
+        "cms": "CSM & Content",
+        "others": "Tools and others"
+      }
     }
   },
   "ui": {

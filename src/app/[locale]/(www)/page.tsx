@@ -8,9 +8,10 @@ import { setRequestLocale } from 'next-intl/server';
 import CVCallToAction from '@/components/cv-call-to-action';
 import { Education } from '@/sections/education';
 import { Experiences } from '@/sections/experiences';
+import { Hero } from '@/sections/hero';
+import { TechStack } from '@/sections/tech-stack';
 
 // Components
-import { Hero } from '@/sections/hero';
 
 type HomePageProps = {
   params: Promise<{ locale: Locale }>;
@@ -28,6 +29,7 @@ export default function HomePage({ params }: HomePageProps) {
       <Experiences />
       <CVCallToAction />
       <Education />
+      <TechStack />
     </div>
   );
 }
