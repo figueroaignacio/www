@@ -19,9 +19,14 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <article>
-      <h1>{post.title}</h1>
-      <p>{post.description}</p>
-      <PostBodyRenderer body={post.body} />
+      <div className='space-y-4'>
+        <h1 className='text-2xl font-semibold'>{post.title}</h1>
+        <p className='text-lg text-muted-foreground'>{post.description}</p>
+        <div className='w-full h-[1px] bg-border'></div>
+      </div>
+      <div className='my-4'>
+        <PostBodyRenderer body={post.body} />
+      </div>
     </article>
   );
 }
