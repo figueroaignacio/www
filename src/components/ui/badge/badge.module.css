@@ -1,0 +1,47 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+  height: 1.5rem;
+  padding: 0 0.625rem; 
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  font-size: 0.75rem;  
+  line-height: 1rem;
+  font-weight: 500;
+
+  transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.badge:focus {
+  outline: none;
+}
+
+.badge:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--ring) 30%, transparent);
+}
+
+.default {
+  color: var(--primary-foreground);
+  background-color: var(--primary);
+  border-color: color-mix(in oklab, var(--primary) 80%, var(--border));
+}
+
+.secondary {
+  color: var(--secondary-foreground);
+  background-color: var(--secondary);
+  border-color: color-mix(in oklab, var(--secondary) 20%, var(--border));
+}
+
+.destructive {
+  color: var(--destructive-foreground);
+  background-color: var(--destructive);
+  border-color: color-mix(in oklab, var(--destructive) 80%, var(--border));
+}
+
+.outline {
+  color: var(--foreground);
+  background-color: transparent;
+  border-color: var(--border);
+}

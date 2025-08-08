@@ -40,5 +40,13 @@
         "href": "/blog"
       }
     ]
+  },
+  "components": {
+    "cvcta": {
+      "title": "Mirá mi Curriculum",
+      "description": "Explora mi experiencia y habilidades en desarrollo de software. Conoce cómo puedo aportar valor a tu equipo.",
+      "url": "",
+      "action": "Mirar Curriculum"
+    }
   }
 }

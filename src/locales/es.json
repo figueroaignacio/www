@@ -38,5 +38,13 @@
         "href": "/blog"
       }
     ]
+  },
+  "components": {
+    "cvcta": {
+      "title": "View My Resume",
+      "description": "Explore my experience and skills in software development. See how I can add value to your team.",
+      "url": "",
+      "action": "See Resume"
+    }
   }
 }

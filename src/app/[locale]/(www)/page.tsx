@@ -5,6 +5,7 @@ import { Locale, useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 
 // Sections
+import CVCallToAction from '@/components/cv-call-to-action';
 import { Education } from '@/sections/education';
 import { Experiences } from '@/sections/experiences';
 
@@ -25,6 +26,7 @@ export default function HomePage({ params }: HomePageProps) {
     <div className="space-y-8">
       <Hero title={t('hero.title')} description={t('hero.description')} />
       <Experiences />
+      <CVCallToAction />
       <Education />
     </div>
   );
