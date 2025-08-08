@@ -1,12 +1,19 @@
-// Components
-import { Experience } from '@/lib/definitions';
-import { Fragment } from 'react';
+import { formatRange } from "@/lib/utils";
+import { TimelineItem } from "./timeline";
+import Badge from "./ui/badge/badge";
 
-// Utils
-import { formatDate } from '@/lib/utils';
+type Technology = { id: string | number; name: string }
 
-interface ExperienceCardProps extends Partial<Experience> {
-  isLast?: boolean;
+export type ExperienceCardProps = {
+  title?: string
+  company?: string
+  description?: string
+  contractType?: string
+  technologies?: Technology[]
+  startDate?: string
+  endDate?: string
+  isCurrent?: boolean
+  isLast?: boolean
 }
 
 export function ExperienceCard({
@@ -14,44 +21,44 @@ export function ExperienceCard({
   company,
   description,
   contractType,
-  technologies,
+  technologies = [],
   startDate,
   endDate,
+  isCurrent,
   isLast = false,
 }: ExperienceCardProps) {
   return (
-    <div className="relative pl-8">
-      <div className="absolute left-0 top-1 size-4 bg-primary rounded-full z-10"></div>
-      <div className="space-y-3">
-        <div className="text-muted-foreground text-sm font-medium">
-          {startDate && formatDate(startDate)} - {endDate ? formatDate(endDate) : 'Present'}
-        </div>
-        <div className="space-y-1">
-          <h3 className="text-foreground text-lg font-semibold">
-            {title} at{' '}
-            <span className="underline decoration-2 underline-offset-2 decoration-primary">
-              {company}
-            </span>
-          </h3>
-          <div className="text-muted-foreground text-sm">
-            {contractType}
-          </div>
-        </div>
-        <p className="text-sm text-muted-foreground sm:text-base">
-          {description}
-        </p>
-        {technologies && technologies.length > 0 && (
-          <div className="flex gap-2 flex-wrap pt-2">
-            {technologies.map((technology) => (
-              <Fragment key={technology.id}>
-                <span className="text-xs bg-muted text-muted-foreground px-3 py-1 rounded-full border border-border">
-                  {technology.name}
-                </span>
-              </Fragment>
-            ))}
-          </div>
-        )}
+    <TimelineItem isLast={isLast}>
+      <div className="text-muted-foreground text-sm font-medium">
+        {formatRange(startDate, endDate, isCurrent)}
       </div>
-    </div>
-  );
+      <div className="space-y-1">
+        <h3 className="text-foreground text-lg font-semibold">
+          {title} {"at"}{" "}
+          <span className="underline decoration-2 underline-offset-2 decoration-primary">
+            {company}
+          </span>
+        </h3>
+        {contractType ? (
+          <div className="text-muted-foreground text-sm">{contractType}</div>
+        ) : null}
+      </div>
+      {description ? (
+        <p className="text-sm text-muted-foreground sm:text-base">{description}</p>
+      ) : null}
+      {technologies.length > 0 ? (
+        <div className="flex gap-2 flex-wrap pt-2">
+          {technologies.map((technology) => (
+            <Badge
+              key={technology.id}
+              variant="outline"
+              className="text-xs px-3 py-1 rounded-full border border-border"
+            >
+              {technology.name}
+            </Badge>
+          ))}
+        </div>
+      ) : null}
+    </TimelineItem>
+  )
 }

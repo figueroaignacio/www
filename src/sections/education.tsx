@@ -1,7 +1,8 @@
 // Components
 import { EducationCard } from '@/components/education-card';
-// Utils
+import { Timeline } from '@/components/timeline';
 
+// Utils
 import { getEducation } from '@/api/get-education';
 import { getLocale, getTranslations } from 'next-intl/server';
 
@@ -26,18 +27,20 @@ export async function Education() {
       <div className="relative">
         <div className="absolute left-2 top-0 bottom-0 w-px bg-border"></div>
         <div className="space-y-12">
-          {educations.map((item, index) => (
-            <EducationCard
-              key={item.id}
-              title={item.title}
-              institution={item.institution}
-              startDate={item.startDate}
-              description={item.description}
-              isCurrent={item.isCurrent}
-              endDate={item.endDate || ''}
-              isLast={index === educations.length - 1}
-            />
-          ))}
+          <Timeline>
+            {educations.map((item, index) => (
+              <EducationCard
+                key={item.id}
+                title={item.title}
+                institution={item.institution}
+                startDate={item.startDate}
+                description={item.description}
+                isCurrent={item.isCurrent}
+                endDate={item.endDate || ''}
+                isLast={index === educations.length - 1}
+              />
+            ))}
+          </Timeline>
         </div>
       </div>
     </div>

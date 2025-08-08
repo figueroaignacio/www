@@ -1,5 +1,6 @@
 // Components
 import { ExperienceCard } from '@/components/experience-card';
+import { Timeline } from '@/components/timeline';
 
 // Utils
 import { getExperiences } from '@/api/get-experience';
@@ -24,19 +25,21 @@ export async function Experiences() {
       <div className="relative">
         <div className="absolute left-2 top-0 bottom-0 w-px bg-border"></div>
         <div className="space-y-12">
-          {experiences.map((item, index) => (
-            <ExperienceCard
-              key={item.id}
-              title={item.title}
-              contractType={item.contractType}
-              description={item.description}
-              company={item.company}
-              startDate={item.startDate}
-              endDate={item.endDate}
-              technologies={item.technologies}
-              isLast={index === experiences.length - 1}
-            />
-          ))}
+          <Timeline>
+            {experiences.map((item, index) => (
+              <ExperienceCard
+                key={item.id}
+                title={item.title}
+                contractType={item.contractType}
+                description={item.description}
+                company={item.company}
+                startDate={item.startDate}
+                endDate={item.endDate}
+                technologies={item.technologies}
+                isLast={index === experiences.length - 1}
+              />
+            ))}
+          </Timeline>
         </div>
       </div>
     </div>
