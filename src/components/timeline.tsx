@@ -1,65 +1,32 @@
 import clsx from "clsx"
 import * as React from "react"
 
-type AllowedTags = "ol" | "ul" | "div"
-
-type TimelineProps<T extends AllowedTags = "ol"> = {
+type TimelineProps = {
   className?: string
-  as?: T
-  "aria-label"?: string
   children: React.ReactNode
-} & Omit<React.ComponentPropsWithoutRef<T>, "as" | "children" | "className">
+  "aria-label"?: string
+}
 
-export function Timeline<T extends AllowedTags = "ol">({
-  children,
-  className,
-  as,
-  ...props
-}: TimelineProps<T>) {
-  const Comp = as || "ol"
-
+export function Timeline({ children, className, ...props }: TimelineProps) {
   return (
-    <Comp
+    <ol
       className={clsx("relative space-y-8", className)}
-      role={Comp === "div" ? "list" : undefined}
-      {...(props as any)}
+      {...props}
     >
       {children}
-    </Comp>
+    </ol>
   )
 }
 
-export function TimelineAlternative<T extends AllowedTags = "ol">({
-  children,
-  className,
-  as,
-  ...props
-}: TimelineProps<T>) {
-  const Comp = as || "ol"
-
-  const {
-    id,
-    style,
-    "aria-label": ariaLabel,
-    "aria-labelledby": ariaLabelledBy,
-    "aria-describedby": ariaDescribedBy,
-    ...restProps
-  } = props as any
-
-  const commonProps = {
-    id,
-    style,
-    "aria-label": ariaLabel,
-    "aria-labelledby": ariaLabelledBy,
-    "aria-describedby": ariaDescribedBy,
-    className: clsx("relative space-y-8", className),
-    role: Comp === "div" ? "list" as const : undefined,
-  }
-
+export function TimelineDiv({ children, className, ...props }: TimelineProps) {
   return (
-    <Comp {...commonProps}>
+    <div
+      className={clsx("relative space-y-8", className)}
+      role="list"
+      {...props}
+    >
       {children}
-    </Comp>
+    </div>
   )
 }
 
