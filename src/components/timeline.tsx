@@ -1,25 +1,63 @@
 import clsx from "clsx"
 import * as React from "react"
 
-type TimelineProps = React.PropsWithChildren<{
-  className?: string
-  as?: "ol" | "ul" | "div"
-  "aria-label"?: string
-}>
+type AllowedTags = "ol" | "ul" | "div"
 
-export function Timeline({
+type TimelineProps<T extends AllowedTags = "ol"> = {
+  className?: string
+  as?: T
+  "aria-label"?: string
+  children: React.ReactNode
+} & Omit<React.ComponentPropsWithoutRef<T>, "as" | "children" | "className">
+
+export function Timeline<T extends AllowedTags = "ol">({
   children,
   className,
-  as = "ol",
+  as,
   ...props
-}: TimelineProps) {
-  const Comp = as as any
+}: TimelineProps<T>) {
+  const Comp = as || "ol"
+
   return (
     <Comp
       className={clsx("relative space-y-8", className)}
-      role={as === "div" ? "list" : undefined}
-      {...props}
+      role={Comp === "div" ? "list" : undefined}
+      {...(props as any)}
     >
+      {children}
+    </Comp>
+  )
+}
+
+export function TimelineAlternative<T extends AllowedTags = "ol">({
+  children,
+  className,
+  as,
+  ...props
+}: TimelineProps<T>) {
+  const Comp = as || "ol"
+
+  const {
+    id,
+    style,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    "aria-describedby": ariaDescribedBy,
+    ...restProps
+  } = props as any
+
+  const commonProps = {
+    id,
+    style,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    "aria-describedby": ariaDescribedBy,
+    className: clsx("relative space-y-8", className),
+    role: Comp === "div" ? "list" as const : undefined,
+  }
+
+  return (
+    <Comp {...commonProps}>
       {children}
     </Comp>
   )
@@ -34,12 +72,6 @@ type TimelineItemProps = React.PropsWithChildren<{
   "aria-label"?: string
 }>
 
-/**
- * TimelineItem encapsula:
- * - Dot (punto) primario
- * - Línea conectora (opcional si no es el último)
- * - Padding izquierdo para el contenido
- */
 export function TimelineItem({
   children,
   isLast = false,
@@ -51,7 +83,6 @@ export function TimelineItem({
 }: TimelineItemProps) {
   return (
     <li className={clsx("relative pl-8", className)} {...props}>
-      {/* Dot */}
       <span
         className={clsx(
           "absolute left-0 top-1 size-4 rounded-full bg-primary z-10",
@@ -59,7 +90,6 @@ export function TimelineItem({
         )}
         aria-hidden="true"
       />
-      {/* Connector line */}
       {!isLast && (
         <span
           className={clsx(
