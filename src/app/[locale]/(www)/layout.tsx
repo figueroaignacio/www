@@ -4,13 +4,13 @@ import { hasLocale, Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 
 // Components
+import { BackgroundPattern } from '@/components/background-pattern';
 
 // Utils
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 // Styles
-import { BackgroundPattern } from '@/components/background-pattern';
 import '../../globals.css';
 
 type LocaleLayoutProps = {
