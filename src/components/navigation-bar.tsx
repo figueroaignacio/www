@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 
 // Components
 import { Link, usePathname } from '@/i18n/navigation';
-import { ChatBubbleIcon, GearIcon, PersonIcon } from '@radix-ui/react-icons';
+import { ChatBubbleIcon, GearIcon, HomeIcon } from '@radix-ui/react-icons';
 
 // Utils
 import clsx from 'clsx';
@@ -16,7 +16,7 @@ type Navigation = {
 };
 
 const iconMap: Record<string, React.ReactNode> = {
-  '/': <PersonIcon className="size-5" />,
+  '/': <HomeIcon className="size-5" />,
   '/projects': <GearIcon className="size-5" />,
   '/blog': <ChatBubbleIcon className="size-5" />,
 };
