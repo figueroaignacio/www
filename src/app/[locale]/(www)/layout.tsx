@@ -10,6 +10,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 // Styles
+import { BackgroundPattern } from '@/components/background-pattern';
 import '../../globals.css';
 
 type LocaleLayoutProps = {
@@ -36,8 +37,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   return (
     <div className="space-y-8">
-      {/* <Header /> */}
-      {/* <NavigationBar /> */}
+      <BackgroundPattern />
       {children}
     </div>
   );
