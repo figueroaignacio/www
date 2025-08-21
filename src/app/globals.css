@@ -71,7 +71,11 @@
 }
 
 body {
-  @apply bg-background text-foreground p-4 mb-24
+  @apply bg-background text-foreground mb-24 p-4 lg:p-0 ;
+}
+
+p {
+  @apply text-sm/6 ;
 }
 
 @layer {

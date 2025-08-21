@@ -13,6 +13,8 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 // Styles
+import { Header } from '@/components/header';
+import { NavigationBar } from '@/components/navigation-bar';
 import '../globals.css';
 
 type LocaleLayoutProps = {
@@ -42,9 +44,15 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
       <body className={`${geistSans.className} antialiased`}>
         <NextTopLoader color='#3b82f6' showSpinner />
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <main className="container">
-            <NextIntlClientProvider>{children}</NextIntlClientProvider>
-          </main>
+          <NextIntlClientProvider>
+            <div className='space-y-4'>
+              <Header />
+              <NavigationBar />
+              <main className="container">
+                {children}
+              </main>
+            </div>
+          </NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>
