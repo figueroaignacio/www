@@ -55,6 +55,12 @@
       "description": "Explore my experience and skills in software development. See how I can add value to your team.",
       "url": "",
       "action": "See Resume"
+    },
+     "experienceCard": {
+      "actions": {
+        "viewMoreDetails": "View more details",
+        "viewLessDetails": "View less"
+      }
     }
   }
 }

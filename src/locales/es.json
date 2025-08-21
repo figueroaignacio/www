@@ -53,6 +53,12 @@
       "description": "Explora mi experiencia y habilidades en desarrollo de software. Conoce cómo puedo aportar valor a tu equipo.",
       "url": "",
       "action": "Mirar Curriculum"
+    },
+    "experienceCard": {
+      "actions": {
+        "viewMoreDetails": "Ver más detalles",
+        "viewLessDetails": "Ver menos"
+      }
     }
   }
 }
