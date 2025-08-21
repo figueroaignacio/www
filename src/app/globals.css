@@ -71,14 +71,11 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  padding: 1rem;
-  margin-bottom: 6rem;
+  @apply bg-background text-foreground p-4 mb-24
 }
 
 @layer {
   .container {
-    @apply max-w-xl min-h-lvh mx-auto;
+    @apply max-w-2xl min-h-lvh mx-auto p-2;
   }
 }

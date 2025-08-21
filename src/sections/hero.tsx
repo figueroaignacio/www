@@ -11,7 +11,7 @@ export function Hero({ description, title }: HeroProps) {
   return (
     <section className="space-y-4">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl">{title}</h1>
+        <h1 className="text-2xl font-bold">{title}</h1>
         <div className="flex items-center px-1">
           <LocaleSwitcher />
         </div>
