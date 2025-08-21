@@ -72,7 +72,7 @@
 }
 
 body {
-  @apply bg-background text-foreground mb-28 lg:mb-0 p-4 lg:p-0 ;
+  @apply bg-background text-foreground mb-28 lg:mb-0 p-2 lg:p-0;
 }
 
 p {
