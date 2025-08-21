@@ -4,6 +4,8 @@ import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 
 // Components
+import { Header } from '@/components/header';
+import { NavigationBar } from '@/components/navigation-bar';
 import { ThemeProvider } from 'next-themes';
 import NextTopLoader from 'nextjs-toploader';
 
@@ -13,8 +15,6 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 // Styles
-import { Header } from '@/components/header';
-import { NavigationBar } from '@/components/navigation-bar';
 import '../globals.css';
 
 type LocaleLayoutProps = {
