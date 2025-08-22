@@ -68,11 +68,11 @@ export function TechStack() {
       {techStack.map((section) => (
         <div key={section.category}>
           <h3 className="mb-4">{section.category}: </h3>
-          <div className="flex flex-wrap gap-6">
+          <div className="flex flex-wrap gap-2">
             {section.items.map(({ name, icon: Icon }) => (
-              <div key={name} className="flex flex-col items-center gap-2">
+              <div key={name} className="flex flex-col items-center gap-2 bg-card p-4 rounded-lg border-border border">
                 <Icon />
-                <span className="text-sm">{name}</span>
+                <span className="text-xs">{name}</span>
               </div>
             ))}
           </div>
