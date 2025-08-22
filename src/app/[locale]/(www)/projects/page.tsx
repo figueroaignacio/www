@@ -19,7 +19,10 @@ export default function ProjectsPage({ params }: ProjectsPageProps) {
 
   return (
     <section>
-      <Hero title={t('projects.title')} description={t('projects.description')} />
+      <Hero
+        title={t('projects.title')}
+        description={t('projects.description')}
+      />
     </section>
   );
 }

@@ -1,5 +1,9 @@
 // Components
-import { EnvelopeOpenIcon, GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
+import {
+  EnvelopeOpenIcon,
+  GitHubLogoIcon,
+  LinkedInLogoIcon,
+} from '@radix-ui/react-icons';
 
 const socialMedias = [
   {

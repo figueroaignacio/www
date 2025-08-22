@@ -18,7 +18,9 @@ export function Hero({ description, title }: HeroProps) {
           <LocaleSwitcher />
         </div>
       </div>
-      <p className="text-sm text-muted-foreground sm:text-base">{description}</p>
+      <p className="text-sm text-muted-foreground sm:text-base">
+        {description}
+      </p>
       <div className="flex items-center gap-x-4">
         <SocialMedias />
       </div>

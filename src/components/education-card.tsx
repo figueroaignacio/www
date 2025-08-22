@@ -41,8 +41,10 @@ export function EducationCard({
         ) : null}
       </div>
       {description ? (
-        <p className="text-sm text-muted-foreground sm:text-base">{description}</p>
+        <p className="text-sm text-muted-foreground sm:text-base">
+          {description}
+        </p>
       ) : null}
     </TimelineItem>
-  )
+  );
 }

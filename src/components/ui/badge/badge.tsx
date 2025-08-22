@@ -1,6 +1,6 @@
-import { cva, type VariantProps } from "class-variance-authority"
-import clsx from "clsx"
-import styles from "./badge.module.css"
+import { cva, type VariantProps } from 'class-variance-authority';
+import clsx from 'clsx';
+import styles from './badge.module.css';
 
 const badgeVariants = cva(styles.badge, {
   variants: {
@@ -12,24 +12,20 @@ const badgeVariants = cva(styles.badge, {
     },
   },
   defaultVariants: {
-    variant: "default",
+    variant: 'default',
   },
-})
+});
 
 export interface BadgeProps
   extends React.HTMLAttributes<HTMLSpanElement>,
-  VariantProps<typeof badgeVariants> { }
+    VariantProps<typeof badgeVariants> {}
 
-export default function Badge({
-  variant,
-  className,
-  ...props
-}: BadgeProps) {
+export default function Badge({ variant, className, ...props }: BadgeProps) {
   return (
     <span
       data-variant={variant}
       className={clsx(badgeVariants({ variant }), className)}
       {...props}
     />
-  )
+  );
 }
