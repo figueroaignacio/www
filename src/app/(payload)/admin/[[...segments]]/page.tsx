@@ -13,10 +13,7 @@ type Args = {
   }>;
 };
 
-export const generateMetadata = ({
-  params,
-  searchParams,
-}: Args): Promise<Metadata> =>
+export const generateMetadata = ({ params, searchParams }: Args): Promise<Metadata> =>
   generatePageMetadata({ config, params, searchParams });
 
 const Page = ({ params, searchParams }: Args) =>

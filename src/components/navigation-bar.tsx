@@ -38,17 +38,13 @@ export function NavigationBar() {
               href={item.href}
               className={clsx(
                 'flex flex-col items-center text-xs transition-all duration-200',
-                isActive
-                  ? 'text-foreground'
-                  : 'text-muted-foreground hover:text-foreground',
+                isActive ? 'text-foreground' : 'text-muted-foreground hover:text-foreground',
               )}
             >
               <div
                 className={clsx(
                   'p-2 rounded-full transition-colors',
-                  isActive
-                    ? 'bg-accent text-accent-foreground'
-                    : 'bg-transparent',
+                  isActive ? 'bg-accent text-accent-foreground' : 'bg-transparent',
                 )}
               >
                 {icon}

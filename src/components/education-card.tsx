@@ -36,14 +36,10 @@ export function EducationCard({
             {institution}
           </span>
         </div>
-        {location ? (
-          <div className="text-muted-foreground text-sm">{location}</div>
-        ) : null}
+        {location ? <div className="text-muted-foreground text-sm">{location}</div> : null}
       </div>
       {description ? (
-        <p className="text-sm text-muted-foreground sm:text-base">
-          {description}
-        </p>
+        <p className="text-sm text-muted-foreground sm:text-base">{description}</p>
       ) : null}
     </TimelineItem>
   );

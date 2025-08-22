@@ -14,11 +14,7 @@ export async function AllPosts() {
     <ul className="space-y-6">
       {posts.map((post) => (
         <li key={post.id}>
-          <PostCard
-            description={post.description}
-            slug={post.slug}
-            title={post.title}
-          />
+          <PostCard description={post.description} slug={post.slug} title={post.title} />
         </li>
       ))}
     </ul>

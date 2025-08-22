@@ -113,56 +113,25 @@ interface CardFooterProps {
 }
 
 // Componentes
-export function Card({
-  children,
-  className,
-  variant,
-  size,
-  shadow,
-  rounded,
-  ...props
-}: CardProps) {
+export function Card({ children, className, variant, size, shadow, rounded, ...props }: CardProps) {
   return (
-    <div
-      className={clsx(
-        cardVariants({ variant, size, shadow, rounded }),
-        className,
-      )}
-      {...props}
-    >
+    <div className={clsx(cardVariants({ variant, size, shadow, rounded }), className)} {...props}>
       {children}
     </div>
   );
 }
 
-export function CardHeader({
-  children,
-  className,
-  spacing,
-  ...props
-}: CardHeaderProps) {
+export function CardHeader({ children, className, spacing, ...props }: CardHeaderProps) {
   return (
-    <div
-      className={clsx(cardHeaderVariants({ spacing }), className)}
-      {...props}
-    >
+    <div className={clsx(cardHeaderVariants({ spacing }), className)} {...props}>
       {children}
     </div>
   );
 }
 
-export function CardTitle({
-  children,
-  className,
-  size,
-  weight,
-  ...props
-}: CardTitleProps) {
+export function CardTitle({ children, className, size, weight, ...props }: CardTitleProps) {
   return (
-    <h3
-      className={clsx(cardTitleVariants({ size, weight }), className)}
-      {...props}
-    >
+    <h3 className={clsx(cardTitleVariants({ size, weight }), className)} {...props}>
       {children}
     </h3>
   );
@@ -176,11 +145,7 @@ export function CardDescription({
 }: CardDescriptionProps) {
   return (
     <p
-      className={clsx(
-        styles.cardDescription,
-        muted && styles.cardDescriptionMuted,
-        className,
-      )}
+      className={clsx(styles.cardDescription, muted && styles.cardDescriptionMuted, className)}
       {...props}
     >
       {children}
@@ -188,19 +153,12 @@ export function CardDescription({
   );
 }
 
-export function CardContent({
-  children,
-  className,
-  spacing = 'md',
-  ...props
-}: CardContentProps) {
+export function CardContent({ children, className, spacing = 'md', ...props }: CardContentProps) {
   return (
     <div
       className={clsx(
         styles.cardContent,
-        styles[
-          `contentSpacing${spacing.charAt(0).toUpperCase() + spacing.slice(1)}`
-        ],
+        styles[`contentSpacing${spacing.charAt(0).toUpperCase() + spacing.slice(1)}`],
         className,
       )}
       {...props}
@@ -221,12 +179,8 @@ export function CardFooter({
     <div
       className={clsx(
         styles.cardFooter,
-        styles[
-          `footerJustify${justify.charAt(0).toUpperCase() + justify.slice(1)}`
-        ],
-        styles[
-          `footerSpacing${spacing.charAt(0).toUpperCase() + spacing.slice(1)}`
-        ],
+        styles[`footerJustify${justify.charAt(0).toUpperCase() + justify.slice(1)}`],
+        styles[`footerSpacing${spacing.charAt(0).toUpperCase() + spacing.slice(1)}`],
         className,
       )}
       {...props}

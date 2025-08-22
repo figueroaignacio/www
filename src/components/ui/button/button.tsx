@@ -27,12 +27,8 @@ export const button = cva(styles.button, {
 
 export type ButtonVariants = VariantProps<typeof button>;
 
-interface ButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    ButtonVariants {}
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, ButtonVariants {}
 
 export function Button({ className, variant, size, ...props }: ButtonProps) {
-  return (
-    <button className={clsx(button({ variant, size }), className)} {...props} />
-  );
+  return <button className={clsx(button({ variant, size }), className)} {...props} />;
 }

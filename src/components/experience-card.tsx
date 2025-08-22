@@ -52,9 +52,7 @@ export function ExperienceCard({
             {company}
           </span>
         </h3>
-        {contractType ? (
-          <div className="text-muted-foreground text-sm">{contractType}</div>
-        ) : null}
+        {contractType ? <div className="text-muted-foreground text-sm">{contractType}</div> : null}
       </div>
       {description ? (
         <div className="space-y-2">
@@ -76,9 +74,7 @@ export function ExperienceCard({
               isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
             }`}
           >
-            <p className="text-sm text-muted-foreground sm:text-base pt-1">
-              {description}
-            </p>
+            <p className="text-sm text-muted-foreground sm:text-base pt-1">{description}</p>
           </div>
         </div>
       ) : null}

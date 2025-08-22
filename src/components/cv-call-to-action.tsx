@@ -11,12 +11,8 @@ export default function CVCallToAction() {
     <section className="w-full my-16">
       <div className="rounded-2xl border-border border bg-card p-6 shadow-sm">
         <div className="space-y-4 sm:space-y-5">
-          <h2 className="font-semibold tracking-tight text-xl">
-            {t('cvcta.title')}
-          </h2>
-          <p className="text-sm text-muted-foreground sm:text-base">
-            {t('cvcta.description')}
-          </p>
+          <h2 className="font-semibold tracking-tight text-xl">{t('cvcta.title')}</h2>
+          <p className="text-sm text-muted-foreground sm:text-base">{t('cvcta.description')}</p>
           <div>
             <Button>
               <a

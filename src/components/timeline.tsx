@@ -17,11 +17,7 @@ export function Timeline({ children, className, ...props }: TimelineProps) {
 
 export function TimelineDiv({ children, className, ...props }: TimelineProps) {
   return (
-    <div
-      className={clsx('relative space-y-8', className)}
-      role="list"
-      {...props}
-    >
+    <div className={clsx('relative space-y-8', className)} role="list" {...props}>
       {children}
     </div>
   );
@@ -48,18 +44,12 @@ export function TimelineItem({
   return (
     <li className={clsx('relative pl-8', className)} {...props}>
       <span
-        className={clsx(
-          'absolute left-0 top-1 size-4 rounded-full bg-primary z-10',
-          dotClassName,
-        )}
+        className={clsx('absolute left-0 top-1 size-4 rounded-full bg-primary z-10', dotClassName)}
         aria-hidden="true"
       />
       {!isLast && (
         <span
-          className={clsx(
-            'absolute left-2 top-6 bottom-0 w-px bg-border',
-            lineClassName,
-          )}
+          className={clsx('absolute left-2 top-6 bottom-0 w-px bg-border', lineClassName)}
           aria-hidden="true"
         />
       )}

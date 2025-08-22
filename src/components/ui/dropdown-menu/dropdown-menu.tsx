@@ -12,13 +12,7 @@ type DropdownChildProps = {
   closeMenu: () => void;
 };
 
-function DropdownMenu({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
+function DropdownMenu({ children, className }: { children: React.ReactNode; className?: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
@@ -119,11 +113,7 @@ function DropdownMenuContent({
   return (
     <div
       id="dropdown-menu-content"
-      className={clsx(
-        styles.menuContent,
-        visible ? styles.menuEnter : styles.menuExit,
-        className,
-      )}
+      className={clsx(styles.menuContent, visible ? styles.menuEnter : styles.menuExit, className)}
       role="menu"
       aria-hidden={!isOpen}
     >
@@ -157,9 +147,4 @@ function DropdownMenuItem({
   );
 }
 
-export {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-};
+export { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger };
