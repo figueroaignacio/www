@@ -27,8 +27,8 @@ export function NavigationBar() {
   const navigation = t.raw('navigation') as Navigation[];
 
   return (
-    <nav className="fixed lg:hidden -bottom-3 inset-x-0 z-50 mx-auto max-w-2xl w-full rounded-3xl backdrop-blur-3xl bg-card/30 border border-border px-6 py-4 flex items-center justify-between">
-      <div className="flex w-full items-center justify-evenly gap-4">
+    <nav className="fixed lg:hidden -bottom-4 sm:-bottom-1 sm:rounded-2xl inset-x-0 z-50 mx-auto max-w-2xl w-full backdrop-blur-3xl bg-card/30 border border-border px-6 py-4">
+      <div className="flex w-full items-center justify-around gap-4">
         {navigation.map((item) => {
           const icon = iconMap[item.href];
           const isActive = pathname === item.href;
@@ -44,7 +44,7 @@ export function NavigationBar() {
               <div
                 className={clsx(
                   'p-2 rounded-full transition-colors',
-                  isActive ? 'bg-accent text-accent-foreground' : 'bg-transparent',
+                  isActive ? '' : 'bg-transparent',
                 )}
               >
                 {icon}
