@@ -15,9 +15,6 @@ import { geistSans } from '@/lib/fonts';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-// Styles
-import '../globals.css';
-
 type LocaleLayoutProps = {
   children: React.ReactNode;
   params: Promise<{ locale: Locale }>;

@@ -103,7 +103,7 @@ export function TechStack() {
             {section.items.map(({ name, icon: Icon }) => (
               <div
                 key={name}
-                className="flex flex-col items-center gap-2 bg-card p-4 rounded-lg border-border border"
+                className="flex flex-col items-center gap-2 bg-card p-4 rounded-lg border-border border animate-show"
               >
                 <Icon />
                 <span className="text-xs">{name}</span>
