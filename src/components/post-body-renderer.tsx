@@ -23,7 +23,6 @@ export function PostBodyRenderer({ body }: PostBodyRendererProps) {
             </p>
           );
         }
-
         return null;
       })}
     </div>
