@@ -1,3 +1,6 @@
+// Components
+import { SocialMedias } from '@/sections/social-medias';
+
 export function Footer() {
   return (
     <footer className="border-t border-border">
@@ -7,6 +10,7 @@ export function Footer() {
           <p className="text-muted-foreground font-medium">
             Software Developer • Fullstack Developer
           </p>
+          <SocialMedias />
           <div className="pt-8 mt-8 border-t border-border/50">
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} Ignacio Figueroa.
