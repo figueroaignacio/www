@@ -98,7 +98,7 @@ export function TechStack() {
       </h2>
       {techStack.map((section) => (
         <div key={section.category}>
-          <h3 className="mb-4 animate-slide-left">{section.category}: </h3>
+          <h3 className="mb-4 animate-show-soft">{section.category}: </h3>
           <div className="flex flex-wrap gap-2">
             {section.items.map(({ name, icon: Icon }) => (
               <div
