@@ -27,7 +27,7 @@ export function NavigationBar() {
   const navigation = t.raw('navigation') as Navigation[];
 
   return (
-    <nav className="fixed lg:hidden -bottom-4 sm:-bottom-1 sm:rounded-2xl inset-x-0 z-50 mx-auto max-w-2xl w-full backdrop-blur-3xl bg-card/30 border border-border px-6 py-4">
+    <nav className="fixed lg:hidden -bottom-4 sm:-bottom-1 sm:rounded-2xl inset-x-0 z-50 mx-auto max-w-2xl w-full backdrop-blur-3xl bg-card/30 border-t border-border px-6 py-4">
       <div className="flex w-full items-center justify-around gap-4">
         {navigation.map((item) => {
           const icon = iconMap[item.href];
