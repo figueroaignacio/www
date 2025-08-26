@@ -64,6 +64,9 @@
     },
     "postCard": {
       "readMore": "Read more"
+    },
+    "backButton": {
+      "label": "Back"
     }
   }
 }
