@@ -2,7 +2,7 @@
 import { PostCard } from '@/components/post-card';
 
 // Utils
-import { getPosts } from '@/api/get-posts';
+import { getPosts } from '@/lib/api';
 import { getLocale } from 'next-intl/server';
 
 export async function AllPosts() {

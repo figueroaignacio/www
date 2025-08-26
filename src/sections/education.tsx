@@ -3,7 +3,7 @@ import { EducationCard } from '@/components/education-card';
 import { Timeline } from '@/components/timeline';
 
 // Utils
-import { getEducation } from '@/api/get-education';
+import { getEducation } from '@/lib/api';
 import { getLocale, getTranslations } from 'next-intl/server';
 
 // Definitions

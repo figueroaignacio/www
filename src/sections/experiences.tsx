@@ -3,14 +3,14 @@ import { ExperienceCard } from '@/components/experience-card';
 import { Timeline } from '@/components/timeline';
 
 // Utils
-import { getExperiences } from '@/api/get-experience';
+import { getExperience } from '@/lib/api';
 import { Experience } from '@/lib/definitions';
 import { getLocale, getTranslations } from 'next-intl/server';
 
 export async function Experiences() {
   const locale = await getLocale();
   const t = await getTranslations('sections');
-  const allExperiences: Experience[] = await getExperiences();
+  const allExperiences: Experience[] = await getExperience();
   const experiences = allExperiences.filter((item) => item.locale === locale);
 
   if (experiences.length === 0) {
