@@ -59,6 +59,9 @@
         "viewMoreDetails": "Ver más detalles",
         "viewLessDetails": "Ver menos"
       }
+    },
+    "postCard": {
+      "readMore": "Leer más"
     }
   }
 }

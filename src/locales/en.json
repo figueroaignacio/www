@@ -56,11 +56,14 @@
       "url": "",
       "action": "See Resume"
     },
-     "experienceCard": {
+    "experienceCard": {
       "actions": {
         "viewMoreDetails": "View more details",
         "viewLessDetails": "View less"
       }
+    },
+    "postCard": {
+      "readMore": "Read more"
     }
   }
 }
