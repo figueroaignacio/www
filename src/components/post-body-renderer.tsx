@@ -1,4 +1,4 @@
-import type { Post } from '@/api/get-posts';
+import type { Post } from '@/lib/definitions';
 import type { JSX } from 'react';
 
 interface TextNode {
@@ -37,7 +37,7 @@ export function PostBodyRenderer({ body }: PostBodyRendererProps) {
     switch (block.type) {
       case 'paragraph':
         return (
-          <p key={index} className="mb-6 leading-relaxed">
+          <p key={index} className="mb-6 leading-relaxed animate-show-soft">
             {block.children.map((child, i) => renderInline(child as TextNode | LinkNode, i))}
           </p>
         );
@@ -45,7 +45,10 @@ export function PostBodyRenderer({ body }: PostBodyRendererProps) {
       case 'heading':
         const HeadingTag = `h${block.level || 2}` as keyof JSX.IntrinsicElements;
         return (
-          <HeadingTag key={index} className="font-semibold tracking-tight mb-4 mt-8">
+          <HeadingTag
+            key={index}
+            className="font-semibold tracking-tight mb-4 mt-8 animate-show-soft"
+          >
             {block.children.map((child, i) => renderInline(child as TextNode | LinkNode, i))}
           </HeadingTag>
         );
@@ -53,7 +56,7 @@ export function PostBodyRenderer({ body }: PostBodyRendererProps) {
       case 'list':
         const ListTag = block.listType === 'ordered' ? 'ol' : 'ul';
         return (
-          <ListTag key={index} className="mb-6 space-y-2">
+          <ListTag key={index} className="mb-6 space-y-2 animate-show-soft">
             {block.children.map((item, i) => (
               <li key={i} className="leading-relaxed">
                 {(item as ListItem).children.map((child, j) => renderInline(child, j))}
@@ -66,7 +69,7 @@ export function PostBodyRenderer({ body }: PostBodyRendererProps) {
         return (
           <blockquote
             key={index}
-            className="border-l-4 border-border pl-6 my-6 italic text-muted-foreground"
+            className="border-l-4 border-border pl-6 my-6 italic text-muted-foreground animate-show-soft"
           >
             {block.children.map((child, i) => renderInline(child as TextNode | LinkNode, i))}
           </blockquote>
@@ -83,21 +86,24 @@ export function PostBodyRenderer({ body }: PostBodyRendererProps) {
 
       if (child.bold) {
         return (
-          <strong key={index} className="font-semibold">
+          <strong key={index} className="font-semibold animate-show-soft">
             {element}
           </strong>
         );
       }
       if (child.italic) {
         return (
-          <em key={index} className="italic">
+          <em key={index} className="italic animate-show-soft">
             {element}
           </em>
         );
       }
       if (child.code) {
         return (
-          <code key={index} className="bg-muted px-1.5 py-0.5 rounded text-sm font-mono">
+          <code
+            key={index}
+            className="bg-muted px-1.5 py-0.5 rounded text-sm font-mono animate-show-soft"
+          >
             {element}
           </code>
         );
@@ -111,7 +117,7 @@ export function PostBodyRenderer({ body }: PostBodyRendererProps) {
         <a
           key={index}
           href={child.url}
-          className="text-foreground underline underline-offset-4 hover:text-muted-foreground transition-colors"
+          className="text-foreground underline underline-offset-4 hover:text-muted-foreground transition-colors animate-show-soft"
           target={child.url.startsWith('http') ? '_blank' : undefined}
           rel={child.url.startsWith('http') ? 'noopener noreferrer' : undefined}
         >
@@ -124,7 +130,7 @@ export function PostBodyRenderer({ body }: PostBodyRendererProps) {
   };
 
   return (
-    <div className="space-y-4 animate-show-soft">
+    <div className="space-y-4">
       {root.children.map((block, index) => renderBlock(block as Block, index))}
     </div>
   );

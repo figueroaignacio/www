@@ -3,7 +3,7 @@ import { BackButton } from '@/components/back-button';
 import { PostBodyRenderer } from '@/components/post-body-renderer';
 
 // Utils
-import { getPosts } from '@/api/get-posts';
+import { getPosts } from '@/lib/api';
 import { notFound } from 'next/navigation';
 
 interface PostPageProps {
