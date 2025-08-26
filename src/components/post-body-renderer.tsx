@@ -1,6 +1,31 @@
 import type { Post } from '@/api/get-posts';
 import type { JSX } from 'react';
 
+interface TextNode {
+  type: 'text';
+  text: string;
+  bold?: boolean;
+  italic?: boolean;
+  code?: boolean;
+}
+
+interface LinkNode {
+  type: 'link';
+  url: string;
+  children: (TextNode | LinkNode)[];
+}
+
+interface ListItem {
+  children: (TextNode | LinkNode)[];
+}
+
+interface Block {
+  type: 'paragraph' | 'heading' | 'list' | 'quote';
+  level?: number;
+  listType?: 'ordered' | 'unordered';
+  children: (TextNode | LinkNode | ListItem)[];
+}
+
 interface PostBodyRendererProps {
   body: Post['body'];
 }
@@ -8,33 +33,30 @@ interface PostBodyRendererProps {
 export function PostBodyRenderer({ body }: PostBodyRendererProps) {
   const root = body.root;
 
-  const renderBlock = (block: any, index: number) => {
+  const renderBlock = (block: Block, index: number) => {
     switch (block.type) {
       case 'paragraph':
         return (
-          <p key={index} className="mb-6 leading-relaxed animate-show-soft">
-            {block.children.map((child: any, i: number) => renderInline(child, i))}
+          <p key={index} className="mb-6 leading-relaxed">
+            {block.children.map((child, i) => renderInline(child as TextNode | LinkNode, i))}
           </p>
         );
 
       case 'heading':
         const HeadingTag = `h${block.level || 2}` as keyof JSX.IntrinsicElements;
         return (
-          <HeadingTag
-            key={index}
-            className="font-semibold tracking-tight mb-4 mt-8 animate-show-soft"
-          >
-            {block.children.map((child: any, i: number) => renderInline(child, i))}
+          <HeadingTag key={index} className="font-semibold tracking-tight mb-4 mt-8">
+            {block.children.map((child, i) => renderInline(child as TextNode | LinkNode, i))}
           </HeadingTag>
         );
 
       case 'list':
         const ListTag = block.listType === 'ordered' ? 'ol' : 'ul';
         return (
-          <ListTag key={index} className="mb-6 space-y-2 animate-show-soft">
-            {block.children.map((item: any, i: number) => (
+          <ListTag key={index} className="mb-6 space-y-2">
+            {block.children.map((item, i) => (
               <li key={i} className="leading-relaxed">
-                {item.children.map((child: any, j: number) => renderInline(child, j))}
+                {(item as ListItem).children.map((child, j) => renderInline(child, j))}
               </li>
             ))}
           </ListTag>
@@ -44,9 +66,9 @@ export function PostBodyRenderer({ body }: PostBodyRendererProps) {
         return (
           <blockquote
             key={index}
-            className="border-l-4 border-border pl-6 my-6 italic text-muted-foreground animate-show-soft"
+            className="border-l-4 border-border pl-6 my-6 italic text-muted-foreground"
           >
-            {block.children.map((child: any, i: number) => renderInline(child, i))}
+            {block.children.map((child, i) => renderInline(child as TextNode | LinkNode, i))}
           </blockquote>
         );
 
@@ -55,9 +77,8 @@ export function PostBodyRenderer({ body }: PostBodyRendererProps) {
     }
   };
 
-  const renderInline = (child: any, index: number) => {
+  const renderInline = (child: TextNode | LinkNode, index: number) => {
     if (child.type === 'text') {
-      const className = '';
       const element = child.text;
 
       if (child.bold) {
@@ -90,11 +111,11 @@ export function PostBodyRenderer({ body }: PostBodyRendererProps) {
         <a
           key={index}
           href={child.url}
-          className="text-foreground underline underline-offset-4 hover:text-muted-foreground transition-colors animate-show-soft"
+          className="text-foreground underline underline-offset-4 hover:text-muted-foreground transition-colors"
           target={child.url.startsWith('http') ? '_blank' : undefined}
           rel={child.url.startsWith('http') ? 'noopener noreferrer' : undefined}
         >
-          {child.children.map((linkChild: any, i: number) => renderInline(linkChild, i))}
+          {child.children.map((linkChild, i) => renderInline(linkChild, i))}
         </a>
       );
     }
@@ -103,8 +124,8 @@ export function PostBodyRenderer({ body }: PostBodyRendererProps) {
   };
 
   return (
-    <div className="space-y-4">
-      {root.children.map((block: any, index: number) => renderBlock(block, index))}
+    <div className="space-y-4 animate-show-soft">
+      {root.children.map((block, index) => renderBlock(block as Block, index))}
     </div>
   );
 }
