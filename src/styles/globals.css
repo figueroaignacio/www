@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
+@import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -7,7 +7,7 @@
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
-  --card: #f8f8f8;
+  --card: #f8f8fa;
   --card-foreground: #0f172a;
   --popover: #f8f8f8;
   --popover-foreground: #0f172a;
@@ -15,9 +15,9 @@
   --primary-foreground: #f8fafc;
   --secondary: #dbeafe;
   --secondary-foreground: #1e40af;
-  --muted: #e7edff;
+  --muted: #f1f5f9;
   --muted-foreground: #64748b;
-  --accent: #f1f5f9;
+  --accent: #f8f8fa;
   --accent-foreground: #0f172a;
   --destructive: #ef4444;
   --destructive-foreground: #f8fafc;
@@ -26,16 +26,13 @@
   --ring: #3b82f6;
   --radius: 0.5rem;
   --grid-color: rgba(0, 0, 0, 0.08);
-  --success: #10b981;
-  --success-foreground: #f0fdf4;
-  --warning: #f59e0b;
-  --warning-foreground: #fffbeb;
 }
 
 .dark {
-  --background: #0b0c0f;
+  --background: hsl(225, 15%, 5%);
   --foreground: #f8fafc;
-  --card: #0d0e12;
+  /* --card: hsl(225, 15%, 6%); */
+  --card: #131519;
   --card-foreground: #f8fafc;
   --popover: #0b0c0f;
   --popover-foreground: #f8fafc;
@@ -53,22 +50,32 @@
   --input: #131519;
   --ring: #2563eb;
   --grid-color: rgba(255, 255, 255, 0.02);
-  --success: #059669;
-  --success-foreground: #064e3b;
-  --warning: #d97706;
-  --warning-foreground: #92400e;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-primary: var(--primary);
-  --color-accent: var(--accent);
   --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
-  --font-sans: var(--font-manrope);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
 body {
@@ -84,4 +91,3 @@ p {
     @apply max-w-2xl min-h-lvh mx-auto p-2;
   }
 }
-
