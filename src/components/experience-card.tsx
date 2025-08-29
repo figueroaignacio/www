@@ -47,10 +47,7 @@ export function ExperienceCard({
       </div>
       <div className="space-y-1">
         <h3 className="text-foreground text-lg font-semibold">
-          {title} {'at'}{' '}
-          <span className="underline decoration-2 underline-offset-2 decoration-primary">
-            {company}
-          </span>
+          {title} - <span>{company}</span>
         </h3>
         {contractType ? <div className="text-muted-foreground text-sm">{contractType}</div> : null}
       </div>
@@ -70,8 +67,8 @@ export function ExperienceCard({
             )}
           </button>
           <div
-            className={`overflow-hidden transition-all duration-300 ease-in-out ${
-              isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            className={`overflow-hidden transition-all duration-300 ease-in-out  ${
+              isExpanded ? 'max-h-96 opacity-100 bg-card p-5 rounded-xl' : 'max-h-0 opacity-0'
             }`}
           >
             <p className="text-sm text-muted-foreground sm:text-base pt-1">{description}</p>
