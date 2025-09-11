@@ -7,11 +7,11 @@ import { Header } from '@/components/header'
 // next-intl
 import { routing } from '@/i18n/routing'
 import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl'
+import { setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 
-// Styles
+// Font
 import { manrope } from '@/lib/fonts'
-import { setRequestLocale } from 'next-intl/server'
 
 export const metadata = {
   description: 'A blank template using Payload in a Next.js app.',
