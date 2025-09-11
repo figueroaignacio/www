@@ -1,1 +1,55 @@
 @import 'tailwindcss';
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(222, 47%, 11%);
+  --card: hsl(240, 17%, 98%);
+  --card-foreground: hsl(222, 47%, 11%);
+  --popover: hsl(0, 0%, 97%);
+  --popover-foreground: hsl(222, 47%, 11%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(214, 95%, 93%);
+  --secondary-foreground: hsl(226, 71%, 40%);
+  --muted: hsl(210, 40%, 96%);
+  --muted-foreground: hsl(215, 16%, 47%);
+  --accent: hsl(240, 17%, 98%);
+  --accent-foreground: hsl(222, 47%, 11%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --border: hsl(214, 25%, 84%);
+  --input: hsl(214, 32%, 91%);
+  --ring: hsl(217, 91%, 60%);
+  --radius: 0.5rem;
+  --grid-color: hsla(0, 0%, 0%, 0.08);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+body {
+  @apply bg-background text-foreground;
+}
