@@ -9,6 +9,7 @@ import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation'
 
 // Styles
+import { manrope } from '@/lib/fonts'
 import { setRequestLocale } from 'next-intl/server'
 
 export const metadata = {
@@ -31,7 +32,7 @@ export default async function RootLayout({ children, params }: LocaleLayoutProps
 
   return (
     <html lang="en">
-      <body>
+      <body className={`${manrope.className} antialiased`}>
         <NextIntlClientProvider>
           <Header />
           <main>{children}</main>
