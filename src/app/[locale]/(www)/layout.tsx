@@ -1,6 +1,7 @@
 import React from 'react'
 
 // Components
+import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
 
 // next-intl
@@ -34,8 +35,11 @@ export default async function RootLayout({ children, params }: LocaleLayoutProps
     <html lang="en">
       <body className={`${manrope.className} antialiased`}>
         <NextIntlClientProvider>
-          <Header />
-          <main>{children}</main>
+          <div className="grid grid-rows-[auto_1fr_auto] gap-y-5 min-h-lvh">
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>
