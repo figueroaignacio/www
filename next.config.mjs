@@ -1,8 +1,7 @@
 import { withPayload } from '@payloadcms/next/withPayload'
+import createNextIntlPlugin from 'next-intl/plugin'
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Your Next.js config here
+const baseConfig = {
   webpack: (webpackConfig) => {
     webpackConfig.resolve.extensionAlias = {
       '.cjs': ['.cts', '.cjs'],
@@ -14,4 +13,6 @@ const nextConfig = {
   },
 }
 
-export default withPayload(nextConfig, { devBundleServerPackages: false })
+const withNextIntl = createNextIntlPlugin()
+
+export default withNextIntl(withPayload(baseConfig, { devBundleServerPackages: false }))
