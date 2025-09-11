@@ -23,6 +23,7 @@
     "@payloadcms/payload-cloud": "3.55.1",
     "@payloadcms/richtext-lexical": "3.55.1",
     "@payloadcms/ui": "3.55.1",
+    "@radix-ui/react-icons": "^1.3.2",
     "@tailwindcss/postcss": "^4.1.13",
     "cross-env": "^7.0.3",
     "dotenv": "16.4.7",

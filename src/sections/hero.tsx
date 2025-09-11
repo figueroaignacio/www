@@ -1,6 +1,9 @@
 // Hooks
 import { useTranslations } from 'next-intl'
 
+// Components
+import { Contact } from '@/components/contact'
+
 const avatarUrl = 'https://github.com/figueroaignacio.png'
 
 export function Hero() {
@@ -17,6 +20,7 @@ export function Hero() {
         <h1 className="font-bold text-lg">Ignacio Figueroa</h1>
         <h2 className="text-muted-foreground">{t('hero.subtitle')}</h2>
       </div>
+      <Contact />
     </section>
   )
 }
