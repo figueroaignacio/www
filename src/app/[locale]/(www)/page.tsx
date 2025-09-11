@@ -1,8 +1,11 @@
 // React
 import { use } from 'react'
 
+// Sections
+import { Hero } from '@/sections/hero'
+
 // next-intl
-import { useTranslations, type Locale } from 'next-intl'
+import { type Locale } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 
 type HomePageProps = {
@@ -13,7 +16,9 @@ export default function HomePage({ params }: HomePageProps) {
   const { locale } = use(params)
   setRequestLocale(locale)
 
-  const t = useTranslations('HomePage')
-
-  return <div className="flex justify-center items-center min-h-dvh text-2xl">{t('title')}</div>
+  return (
+    <div className="container space-y-12">
+      <Hero />
+    </div>
+  )
 }

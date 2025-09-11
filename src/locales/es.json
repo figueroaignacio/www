@@ -1,6 +1,8 @@
 {
-  "HomePage": {
-    "title": "Hola Mundo"
+  "sections": {
+    "hero": {
+      "subtitle": "Desarrollador de Software // Enfocado en Frontend"
+    }
   },
   "navigation": [
     {
