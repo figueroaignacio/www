@@ -2,6 +2,11 @@
   "sections": {
     "hero": {
       "subtitle": "Software Developer // Focus on Frontend"
+    },
+    "about": {
+      "heading": "> Acerca de mi",
+      "first-paragraph": "frontend web developer with experience in JavaScript, TypeScript, React, and Next.js, building modern, optimized, and user-focused interfaces. I stay up to date with the latest trends and best practices to deliver solid and scalable solutions.",
+      "second-paragraph": "I enjoy continuous learning and applying new technologies to real-world projects, always with attention to quality and detail. I’m open to collaborating on initiatives that are both challenging and impactful"
     }
   },
   "navigation": [

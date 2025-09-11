@@ -2,6 +2,7 @@
 import { use } from 'react'
 
 // Sections
+import { About } from '@/sections/about'
 import { Hero } from '@/sections/hero'
 
 // next-intl
@@ -19,6 +20,7 @@ export default function HomePage({ params }: HomePageProps) {
   return (
     <div className="container space-y-12">
       <Hero />
+      <About />
     </div>
   )
 }
