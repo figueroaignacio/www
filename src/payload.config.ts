@@ -1,25 +1,39 @@
-// Payload
-import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres';
-import { lexicalEditor } from '@payloadcms/richtext-lexical';
-import { buildConfig } from 'payload';
+// storage-adapter-import-placeholder
+import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres'
+import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
+import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import path from 'path'
+import { buildConfig } from 'payload'
+import { fileURLToPath } from 'url'
+import sharp from 'sharp'
 
-// Collections
-import Education from './payload/collections/education';
-import Experience from './payload/collections/experience';
-import Posts from './payload/collections/posts';
-import Projects from './payload/collections/projects';
+import { Users } from './collections/Users'
+import { Media } from './collections/Media'
+
+const filename = fileURLToPath(import.meta.url)
+const dirname = path.dirname(filename)
 
 export default buildConfig({
+  admin: {
+    user: Users.slug,
+    importMap: {
+      baseDir: path.resolve(dirname),
+    },
+  },
+  collections: [Users, Media],
   editor: lexicalEditor(),
-  collections: [Posts, Experience, Projects, Education],
   secret: process.env.PAYLOAD_SECRET || '',
+  typescript: {
+    outputFile: path.resolve(dirname, 'payload-types.ts'),
+  },
   db: vercelPostgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URL,
+      connectionString: process.env.POSTGRES_URL || '',
     },
   }),
-  cors: {
-    origins: ['http://localhost:3000', 'https://ignaciofigueroa.vercel.app'],
-    headers: ['x-custom-header'],
-  },
-});
+  sharp,
+  plugins: [
+    payloadCloudPlugin(),
+    // storage-adapter-placeholder
+  ],
+})
