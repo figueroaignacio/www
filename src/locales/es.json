@@ -1,5 +1,15 @@
 {
   "HomePage": {
     "title": "Hola Mundo"
-  }
+  },
+  "navigation": [
+    {
+      "label": "Inicio",
+      "href": "/"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    }
+  ]
 }

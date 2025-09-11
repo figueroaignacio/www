@@ -1,5 +1,8 @@
 import React from 'react'
 
+// Components
+import { Header } from '@/components/header'
+
 // next-intl
 import { routing } from '@/i18n/routing'
 import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl'
@@ -30,6 +33,7 @@ export default async function RootLayout({ children, params }: LocaleLayoutProps
     <html lang="en">
       <body>
         <NextIntlClientProvider>
+          <Header />
           <main>{children}</main>
         </NextIntlClientProvider>
       </body>
