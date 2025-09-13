@@ -13,7 +13,7 @@ import { TimelineItem } from './ui/timeline'
 
 type Technology = { id: string | number; name: string }
 
-export type ExperienceCardProps = {
+export type ExperienceItemProps = {
   title?: string
   company?: string
   description?: string
@@ -25,7 +25,7 @@ export type ExperienceCardProps = {
   isLast?: boolean
 }
 
-export function ExperienceCard({
+export function ExperienceItem({
   title,
   company,
   description,
@@ -35,7 +35,7 @@ export function ExperienceCard({
   endDate,
   isCurrent,
   isLast = false,
-}: ExperienceCardProps) {
+}: ExperienceItemProps) {
   const t = useTranslations('components')
   const [isExpanded, setIsExpanded] = useState(false)
 
