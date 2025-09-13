@@ -68,7 +68,7 @@ export interface Config {
   blocks: {};
   collections: {
     users: User;
-    media: Media;
+    experience: Experience;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -76,7 +76,7 @@ export interface Config {
   collectionsJoins: {};
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
-    media: MediaSelect<false> | MediaSelect<true>;
+    experience: ExperienceSelect<false> | ExperienceSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -139,22 +139,35 @@ export interface User {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "media".
+ * via the `definition` "experience".
  */
-export interface Media {
+export interface Experience {
   id: number;
-  alt: string;
+  locale: 'en' | 'es';
+  title: string;
+  company: string;
+  location?: string | null;
+  description: string;
+  startDate: string;
+  /**
+   * Leave empty if current
+   */
+  endDate?: string | null;
+  isCurrent?: boolean | null;
+  technologies?:
+    | {
+        name?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  link?: string | null;
+  /**
+   * Use to manually sort experiences
+   */
+  order?: number | null;
   updatedAt: string;
   createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -168,8 +181,8 @@ export interface PayloadLockedDocument {
         value: number | User;
       } | null)
     | ({
-        relationTo: 'media';
-        value: number | Media;
+        relationTo: 'experience';
+        value: number | Experience;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -237,21 +250,28 @@ export interface UsersSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "media_select".
+ * via the `definition` "experience_select".
  */
-export interface MediaSelect<T extends boolean = true> {
-  alt?: T;
+export interface ExperienceSelect<T extends boolean = true> {
+  locale?: T;
+  title?: T;
+  company?: T;
+  location?: T;
+  description?: T;
+  startDate?: T;
+  endDate?: T;
+  isCurrent?: T;
+  technologies?:
+    | T
+    | {
+        name?: T;
+        id?: T;
+      };
+  link?: T;
+  order?: T;
   updatedAt?: T;
   createdAt?: T;
-  url?: T;
-  thumbnailURL?: T;
-  filename?: T;
-  mimeType?: T;
-  filesize?: T;
-  width?: T;
-  height?: T;
-  focalX?: T;
-  focalY?: T;
+  _status?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
