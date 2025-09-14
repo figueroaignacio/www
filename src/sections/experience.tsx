@@ -18,7 +18,7 @@ export async function Experience() {
     <section className="scape-y-3">
       <h2 className="text-lg font-bold mb-3">{t('experience.heading')}</h2>
       <Timeline>
-        {experience.map((item, index) => (
+        {experience.map((item) => (
           <ExperienceItem
             key={item.id}
             title={item.title}
@@ -26,7 +26,6 @@ export async function Experience() {
             company={item.company}
             startDate={item.startDate}
             endDate={item.endDate || ''}
-            isLast={index === experience.length - 1}
           />
         ))}
       </Timeline>

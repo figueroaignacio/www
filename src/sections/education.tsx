@@ -18,7 +18,7 @@ export async function Education() {
     <section>
       <h2 className="text-lg font-bold mb-3">{t('education.heading')}</h2>
       <Timeline>
-        {education.map((item, index) => (
+        {education.map((item) => (
           <EducationItem
             key={item.id}
             title={item.title}
