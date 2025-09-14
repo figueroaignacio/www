@@ -15,3 +15,16 @@ export async function getExperience(locale: string) {
   const data = await res.json()
   return data.docs
 }
+
+export async function getEducation(locale: string) {
+  const res = await fetch(`${API_URL}/api/education?where[locale][equals]=${locale}`, {
+    cache: 'no-store',
+  })
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch experiences')
+  }
+
+  const data = await res.json()
+  return data.docs
+}

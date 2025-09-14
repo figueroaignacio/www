@@ -69,6 +69,7 @@ export interface Config {
   collections: {
     users: User;
     experience: Experience;
+    education: Education;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -77,6 +78,7 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     experience: ExperienceSelect<false> | ExperienceSelect<true>;
+    education: EducationSelect<false> | EducationSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -171,6 +173,33 @@ export interface Experience {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "education".
+ */
+export interface Education {
+  id: number;
+  locale: 'en' | 'es';
+  title: string;
+  institution: string;
+  location?: string | null;
+  description?: string | null;
+  startDate: string;
+  /**
+   * Leave empty if still in progress
+   */
+  endDate?: string | null;
+  isCurrent?: boolean | null;
+  certificateUrl?: string | null;
+  highlight?: boolean | null;
+  /**
+   * Use to manually sort education entries
+   */
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -183,6 +212,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'experience';
         value: number | Experience;
+      } | null)
+    | ({
+        relationTo: 'education';
+        value: number | Education;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -268,6 +301,26 @@ export interface ExperienceSelect<T extends boolean = true> {
         id?: T;
       };
   link?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "education_select".
+ */
+export interface EducationSelect<T extends boolean = true> {
+  locale?: T;
+  title?: T;
+  institution?: T;
+  location?: T;
+  description?: T;
+  startDate?: T;
+  endDate?: T;
+  isCurrent?: T;
+  certificateUrl?: T;
+  highlight?: T;
   order?: T;
   updatedAt?: T;
   createdAt?: T;

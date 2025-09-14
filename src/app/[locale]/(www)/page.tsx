@@ -4,6 +4,7 @@ import { use } from 'react'
 // Sections
 import { CVCta } from '@/components/cv-cta'
 import { About } from '@/sections/about'
+import { Education } from '@/sections/education'
 import { Experience } from '@/sections/experience'
 import { Hero } from '@/sections/hero'
 
@@ -25,6 +26,7 @@ export default function HomePage({ params }: HomePageProps) {
       <About />
       <Experience />
       <CVCta />
+      <Education />
     </div>
   )
 }

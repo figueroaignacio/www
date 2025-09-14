@@ -10,6 +10,7 @@ import sharp from 'sharp'
 import { fileURLToPath } from 'url'
 
 // Collections
+import { Education } from './collections/Education'
 import { Experience } from './collections/Experience'
 import { Users } from './collections/Users'
 
@@ -23,7 +24,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Experience],
+  collections: [Users, Experience, Education],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
