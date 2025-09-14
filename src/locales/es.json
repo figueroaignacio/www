@@ -28,6 +28,11 @@
         "viewLessDetails": "Ver menos",
         "viewMoreDetails": "Ver más detalles"
       }
+    },
+    "cvCta": {
+      "title": "Explorá mi perfil profesional",
+      "description": "> Si querés conocer más sobre mi trayectoria y habilidades, te invito a ver mi CV",
+      "action": "Ver Curriculum"
     }
   }
 }

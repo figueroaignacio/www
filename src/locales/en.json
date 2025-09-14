@@ -28,6 +28,11 @@
         "viewLessDetails": "Ver less",
         "viewMoreDetails": "View more details"
       }
+    },
+    "cvCta": {
+      "title": "Explore my professional profile",
+      "description": "> If you want to learn more about my background and skills, I invite you to check out my CV",
+      "action": "View Resume"
     }
   }
 }
