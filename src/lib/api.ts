@@ -24,7 +24,7 @@ export async function getEducation(locale: Locale) {
   })
 
   if (!res.ok) {
-    throw new Error('Failed to fetch experiences')
+    throw new Error('Failed to fetch education')
   }
 
   const data = await res.json()
