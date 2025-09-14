@@ -16,7 +16,9 @@ export function About() {
     <section className="space-y-3">
       <h2 className="text-lg font-bold">{t('about.heading')}</h2>
       {texts.map((item) => (
-        <p className="text-muted-foreground">{item.text}</p>
+        <p className="text-muted-foreground" key={item.text}>
+          {item.text}
+        </p>
       ))}
     </section>
   )
