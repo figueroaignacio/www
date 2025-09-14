@@ -3,7 +3,9 @@ const API_URL =
     ? process.env.NEXT_PUBLIC_API_URL_PROD
     : process.env.NEXT_PUBLIC_API_URL_DEV
 
-export async function getExperience(locale: string) {
+import { Locale } from 'next-intl'
+
+export async function getExperience(locale: Locale) {
   const res = await fetch(`${API_URL}/api/experience?where[locale][equals]=${locale}`, {
     cache: 'no-store',
   })
@@ -16,7 +18,7 @@ export async function getExperience(locale: string) {
   return data.docs
 }
 
-export async function getEducation(locale: string) {
+export async function getEducation(locale: Locale) {
   const res = await fetch(`${API_URL}/api/education?where[locale][equals]=${locale}`, {
     cache: 'no-store',
   })
