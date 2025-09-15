@@ -3,7 +3,7 @@ import { EducationItem } from '@/components/education-item'
 import { Timeline } from '@/components/ui/timeline'
 
 // Utils
-import { getEducation } from '@/lib/api'
+import { getEducation } from '@/lib/services'
 import { getLocale, getTranslations } from 'next-intl/server'
 
 // Types

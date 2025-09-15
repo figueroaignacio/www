@@ -3,7 +3,7 @@ import { ExperienceItem } from '@/components/experience-item'
 import { Timeline } from '@/components/ui/timeline'
 
 // Utils
-import { getExperience } from '@/lib/api'
+import { getExperience } from '@/lib/services'
 import { getLocale, getTranslations } from 'next-intl/server'
 
 // Types
