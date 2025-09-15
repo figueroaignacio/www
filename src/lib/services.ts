@@ -30,3 +30,16 @@ export async function getEducation(locale: Locale) {
   const data = await res.json()
   return data.docs
 }
+
+export async function getPosts(locale: Locale) {
+  const res = await fetch(`${API_URL}/api/posts?where[locale][equals]=${locale}`, {
+    cache: 'no-store',
+  })
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch posts')
+  }
+
+  const data = await res.json()
+  return data.docs
+}

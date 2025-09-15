@@ -70,6 +70,7 @@ export interface Config {
     users: User;
     experience: Experience;
     education: Education;
+    posts: Post;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -79,6 +80,7 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     experience: ExperienceSelect<false> | ExperienceSelect<true>;
     education: EducationSelect<false> | EducationSelect<true>;
+    posts: PostsSelect<false> | PostsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -200,6 +202,54 @@ export interface Education {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts".
+ */
+export interface Post {
+  id: number;
+  locale: 'en' | 'es';
+  /**
+   * SEO-friendly URL (e.g., "how-to-use-payload")
+   */
+  slug: string;
+  title: string;
+  description: string;
+  /**
+   * SEO keywords
+   */
+  keywords?:
+    | {
+        keyword?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  body: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  /**
+   * Search engine optimization fields
+   */
+  seo?: {
+    metaTitle?: string | null;
+    metaDescription?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -216,6 +266,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'education';
         value: number | Education;
+      } | null)
+    | ({
+        relationTo: 'posts';
+        value: number | Post;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -322,6 +376,32 @@ export interface EducationSelect<T extends boolean = true> {
   certificateUrl?: T;
   highlight?: T;
   order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts_select".
+ */
+export interface PostsSelect<T extends boolean = true> {
+  locale?: T;
+  slug?: T;
+  title?: T;
+  description?: T;
+  keywords?:
+    | T
+    | {
+        keyword?: T;
+        id?: T;
+      };
+  body?: T;
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   _status?: T;

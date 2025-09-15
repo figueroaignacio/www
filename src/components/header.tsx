@@ -2,7 +2,7 @@
 import { useTranslations } from 'next-intl'
 
 // Components
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 
 type Navigation = {
   label: string

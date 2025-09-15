@@ -9,7 +9,7 @@ import { Experience } from '@/sections/experience'
 import { Hero } from '@/sections/hero'
 
 // next-intl
-import { type Locale } from 'next-intl'
+import { useTranslations, type Locale } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 
 type HomePageProps = {
@@ -19,10 +19,11 @@ type HomePageProps = {
 export default function HomePage({ params }: HomePageProps) {
   const { locale } = use(params)
   setRequestLocale(locale)
+  const t = useTranslations('sections')
 
   return (
     <div className="container space-y-12">
-      <Hero />
+      <Hero title="Ignacio Figueroa" description={t('hero.subtitle')} />
       <About />
       <Experience />
       <CVCta />

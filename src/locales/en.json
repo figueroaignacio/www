@@ -13,6 +13,10 @@
     },
     "education": {
       "heading": "> Education"
+    },
+    "blog": {
+      "heading": "> Blog",
+      "description": "In this space, I share articles about web development, best practices, technology trends, and personal experiences from my journey as a developer. The goal is to provide valuable insights and documentation that can help others in the community."
     }
   },
   "navigation": [
@@ -36,6 +40,9 @@
       "title": "Explore my professional profile",
       "description": "> If you want to learn more about my background and skills, I invite you to check out my CV",
       "action": "View Resume"
+    },
+    "postCard": {
+      "readMore": "Read More"
     }
   }
 }

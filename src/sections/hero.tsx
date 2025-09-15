@@ -6,7 +6,12 @@ import { Contact } from '@/components/contact'
 
 const avatarUrl = 'https://github.com/figueroaignacio.png'
 
-export function Hero() {
+type HeroProps = {
+  title: string
+  description: string
+}
+
+export function Hero({ description, title }: HeroProps) {
   const t = useTranslations('sections')
 
   return (
@@ -17,8 +22,8 @@ export function Hero() {
         className="size-14 rounded-full border-border border"
       />
       <div>
-        <h1 className="font-bold text-lg">Ignacio Figueroa</h1>
-        <h2 className="text-muted-foreground">{t('hero.subtitle')}</h2>
+        <h1 className="font-bold text-lg">{title}</h1>
+        <p className="text-muted-foreground">{description}</p>
       </div>
       <Contact />
     </section>

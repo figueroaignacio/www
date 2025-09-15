@@ -13,6 +13,10 @@
     },
     "education": {
       "heading": "> Educación"
+    },
+    "blog": {
+      "heading": "> Blog",
+      "description": "En este espacio comparto artículos sobre desarrollo web, buenas prácticas, tendencias tecnológicas y experiencias personales en mi camino como desarrollador. La idea es aportar valor y documentación que pueda ayudar a otros en la comunidad."
     }
   },
   "navigation": [
@@ -36,6 +40,9 @@
       "title": "Explorá mi perfil profesional",
       "description": "> Si querés conocer más sobre mi trayectoria y habilidades, te invito a ver mi CV",
       "action": "Ver Curriculum"
+    },
+    "postCard": {
+      "readMore": "Leer Más"
     }
   }
 }
