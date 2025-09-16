@@ -30,7 +30,12 @@ export async function FeaturedPosts() {
       <ul>
         {posts.map((post) => (
           <li key={post.slug}>
-            <PostItem title={post.title} description={post.description} slug={post.slug} />
+            <PostItem
+              title={post.title}
+              description={post.description}
+              slug={post.slug}
+              featured={!!post.featured}
+            />
           </li>
         ))}
       </ul>
