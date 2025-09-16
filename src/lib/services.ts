@@ -54,3 +54,16 @@ export async function getPostBySlug(slug: string) {
   const data = await res.json()
   return data.docs?.[0] ?? null
 }
+
+export async function getFeaturedPosts(locale: Locale) {
+  const res = await fetch(
+    `${API_URL}/api/posts?where[featured][equals]=true&where[locale][equals]=${locale}`,
+  )
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch featured posts')
+  }
+
+  const data = await res.json()
+  return data.docs ?? []
+}

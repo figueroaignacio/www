@@ -71,6 +71,15 @@ export const Posts: CollectionConfig = {
       required: true,
     },
     {
+      name: 'featured',
+      label: 'Featured',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: {
+        description: 'Mark this post as featured',
+      },
+    },
+    {
       type: 'group',
       name: 'seo',
       label: 'SEO',

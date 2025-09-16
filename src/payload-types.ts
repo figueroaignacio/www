@@ -238,6 +238,10 @@ export interface Post {
     [k: string]: unknown;
   };
   /**
+   * Mark this post as featured
+   */
+  featured?: boolean | null;
+  /**
    * Search engine optimization fields
    */
   seo?: {
@@ -396,6 +400,7 @@ export interface PostsSelect<T extends boolean = true> {
         id?: T;
       };
   body?: T;
+  featured?: T;
   seo?:
     | T
     | {

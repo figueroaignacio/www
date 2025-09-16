@@ -17,6 +17,10 @@
     "blog": {
       "heading": "> Blog",
       "description": "In this space, I share articles about web development, best practices, technology trends, and personal experiences from my journey as a developer. The goal is to provide valuable insights and documentation that can help others in the community."
+    },
+    "featuredPosts": {
+      "heading": "> Featured posts",
+      "seeAllPosts": "See all posts"
     }
   },
   "navigation": [

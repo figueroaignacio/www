@@ -17,6 +17,10 @@
     "blog": {
       "heading": "> Blog",
       "description": "En este espacio comparto artículos sobre desarrollo web, buenas prácticas, tendencias tecnológicas y experiencias personales en mi camino como desarrollador. La idea es aportar valor y documentación que pueda ayudar a otros en la comunidad."
+    },
+    "featuredPosts": {
+      "heading": "> Publicaciones destacadas",
+      "seeAllPosts": "Mirar todas las publicaciones"
     }
   },
   "navigation": [
