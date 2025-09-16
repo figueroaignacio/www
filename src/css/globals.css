@@ -58,4 +58,12 @@ body {
   .container {
     @apply max-w-2xl mx-auto p-2;
   }
+
+  .prose p {
+    @apply text-muted-foreground mb-3;
+  }
+
+  .prose h2 {
+    @apply text-lg font-semibold border-b border-border mb-3 pb-3;
+  }
 }
