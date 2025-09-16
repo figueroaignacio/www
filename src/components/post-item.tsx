@@ -5,13 +5,13 @@ import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { ArrowRightIcon } from '@radix-ui/react-icons'
 
-interface PostCardProps {
+interface PostItemProps {
   title: string
   description: string
   slug: string
 }
 
-export function PostCard({ description, slug, title }: PostCardProps) {
+export function PostItem({ description, slug, title }: PostItemProps) {
   const t = useTranslations('components')
 
   return (

@@ -1,10 +1,11 @@
 // Components
-import { PostCard } from '@/components/post-card'
+import { PostItem } from '@/components/post-item'
 
 // Utiñs
 import { getPosts } from '@/lib/services'
 import { getLocale } from 'next-intl/server'
 
+// Types
 import { Post } from '@/payload-types'
 
 export async function AllPosts() {
@@ -15,7 +16,7 @@ export async function AllPosts() {
     <ul>
       {posts.map((post) => (
         <li key={post.slug}>
-          <PostCard title={post.title} description={post.description} slug={post.slug} />
+          <PostItem title={post.title} description={post.description} slug={post.slug} />
         </li>
       ))}
     </ul>
