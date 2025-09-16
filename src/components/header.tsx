@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl'
 
 // Components
 import { Link } from '@/i18n/navigation'
+import { ToggleTheme } from './toggle-theme'
 
 type Navigation = {
   label: string
@@ -15,7 +16,7 @@ export function Header() {
 
   return (
     <header className="border-border border-b py-2 sticky top-0 z-50 backdrop-blur-xs">
-      <div className="container flex justify-end">
+      <div className="container flex justify-between items-center gap-x-2">
         <nav className="space-x-5">
           {navigation.map((item) => (
             <Link
@@ -27,6 +28,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
+        <ToggleTheme />
       </div>
     </header>
   )

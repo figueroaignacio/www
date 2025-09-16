@@ -3,6 +3,7 @@ import React from 'react'
 // Components
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
+import { ThemeProvider } from '@/components/theme-provider'
 
 // next-intl
 import { routing } from '@/i18n/routing'
@@ -35,11 +36,13 @@ export default async function RootLayout({ children, params }: LocaleLayoutProps
     <html lang="en">
       <body className={`${manrope.className} antialiased`}>
         <NextIntlClientProvider>
-          <div className="grid grid-rows-[auto_1fr_auto] gap-y-5 min-h-lvh">
-            <Header />
-            <main>{children}</main>
-            <Footer />
-          </div>
+          <ThemeProvider attribute="class" defaultTheme="dark">
+            <div className="grid grid-rows-[auto_1fr_auto] gap-y-5 min-h-lvh">
+              <Header />
+              <main>{children}</main>
+              <Footer />
+            </div>
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>
