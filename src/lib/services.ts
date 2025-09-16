@@ -43,3 +43,14 @@ export async function getPosts(locale: Locale) {
   const data = await res.json()
   return data.docs
 }
+
+export async function getPostBySlug(slug: string) {
+  const res = await fetch(`${API_URL}/api/posts/?where[slug][equals]=${slug}`)
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch post by slug')
+  }
+
+  const data = await res.json()
+  return data.docs?.[0] ?? null
+}

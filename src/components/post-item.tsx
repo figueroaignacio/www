@@ -20,7 +20,7 @@ export function PostItem({ description, slug, title }: PostItemProps) {
         <h3 className="text-lg font-semibold transition-colors">{title}</h3>
         <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
         <Link
-          href={`/post/${slug}`}
+          href={`/blog/${slug}`}
           className="inline-flex items-center gap-x-2 text-sm text-muted-foreground hover:text-primary transition-colors font-medium"
         >
           {t('postCard.readMore')} <ArrowRightIcon />
