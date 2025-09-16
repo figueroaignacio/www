@@ -1,7 +1,7 @@
 // Components
 import { PostItem } from '@/components/post-item'
 
-// Utiñs
+// Utils
 import { getPosts } from '@/lib/services'
 import { getLocale } from 'next-intl/server'
 
