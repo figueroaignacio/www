@@ -4,7 +4,7 @@ import { TimelineItem } from './ui/timeline'
 // Utils
 import { formatRange } from '@/lib/utils'
 
-type EducationItemProps = {
+interface EducationItemProps {
   title: string
   institution: string
   location?: string

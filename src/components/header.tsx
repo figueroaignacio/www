@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { ToggleTheme } from './toggle-theme'
 
-type Navigation = {
+interface Navigation {
   label: string
   href: string
 }

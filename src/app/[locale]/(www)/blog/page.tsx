@@ -8,7 +8,7 @@ import { Hero } from '@/sections/hero'
 import { Locale, useTranslations } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 
-type BlogPageProps = {
+interface BlogPageProps {
   params: Promise<{ locale: Locale }>
 }
 

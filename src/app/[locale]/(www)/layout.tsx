@@ -19,7 +19,7 @@ export const metadata = {
   title: 'Payload Blank Template',
 }
 
-type LocaleLayoutProps = {
+interface LocaleLayoutProps {
   children: React.ReactNode
   params: Promise<{ locale: Locale }>
 }

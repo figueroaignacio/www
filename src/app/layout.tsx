@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 
 import '@/css/globals.css'
 
-type RootLayoutProps = {
+interface RootLayoutProps {
   children: ReactNode
 }
 

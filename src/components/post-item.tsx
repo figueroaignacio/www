@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { ArrowRightIcon, StarIcon } from '@radix-ui/react-icons'
 
-type PostItemProps = {
+interface PostItemProps {
   title: string
   description: string
   slug: string

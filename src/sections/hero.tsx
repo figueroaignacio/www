@@ -6,7 +6,7 @@ import { Contact } from '@/components/contact'
 
 const avatarUrl = 'https://github.com/figueroaignacio.png'
 
-type HeroProps = {
+interface HeroProps {
   title: string
   description: string
 }

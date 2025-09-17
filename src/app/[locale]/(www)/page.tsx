@@ -13,7 +13,7 @@ import { Hero } from '@/sections/hero'
 import { useTranslations, type Locale } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 
-type HomePageProps = {
+interface HomePageProps {
   params: Promise<{ locale: Locale }>
 }
 

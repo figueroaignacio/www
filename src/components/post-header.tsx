@@ -1,4 +1,4 @@
-type PostHeaderProps = {
+interface PostHeaderProps {
   title: string
   description: string
 }

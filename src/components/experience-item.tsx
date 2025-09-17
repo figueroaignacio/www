@@ -13,7 +13,7 @@ import { TimelineItem } from './ui/timeline'
 
 type Technology = { id: string | number; name: string }
 
-export type ExperienceItemProps = {
+export interface ExperienceItemProps {
   title?: string
   company?: string
   description?: string
