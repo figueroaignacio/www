@@ -17,8 +17,8 @@ export async function FeaturedPosts() {
 
   return (
     <section>
-      <div className="flex justify-between items-center">
-        <h2>{t('featuredPosts.heading')}</h2>
+      <div className="flex justify-between">
+        <h2 className="text-lg font-bold mb-3">{t('featuredPosts.heading')}</h2>
         <Link
           href="/blog"
           className="text-xs hidden items-center gap-x-1 text-muted-foreground hover:text-primary hover:underline md:flex"
