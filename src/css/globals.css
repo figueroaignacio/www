@@ -83,10 +83,14 @@ body {
   }
 
   .prose p {
-    @apply text-muted-foreground mb-3;
+    @apply mb-3;
   }
 
   .prose h2 {
     @apply text-lg font-semibold border-b border-border mb-3 pb-3;
+  }
+
+  .prose blockquote {
+    @apply mb-3 border-l-4 border-primary rounded-md pl-4 py-2 text-sm;
   }
 }
