@@ -21,6 +21,15 @@
     "featuredPosts": {
       "heading": "> Featured posts",
       "seeAllPosts": "See all posts"
+    },
+    "techStack": {
+      "heading": "> My Stack",
+      "categories": {
+        "frontend": "Frontend",
+        "backend": "Backend & Infraestructure",
+        "cms": "CSM & Content",
+        "others": "Tools and others"
+      }
     }
   },
   "navigation": [

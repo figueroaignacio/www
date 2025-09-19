@@ -8,6 +8,7 @@ import { Education } from '@/sections/education'
 import { Experience } from '@/sections/experience'
 import { FeaturedPosts } from '@/sections/featured-posts'
 import { Hero } from '@/sections/hero'
+import { TechStack } from '@/sections/tech-stack'
 
 // next-intl
 import { useTranslations, type Locale } from 'next-intl'
@@ -30,6 +31,7 @@ export default function HomePage({ params }: HomePageProps) {
       <CVCta />
       <Education />
       <FeaturedPosts />
+      <TechStack />
     </div>
   )
 }

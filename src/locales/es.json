@@ -21,6 +21,15 @@
     "featuredPosts": {
       "heading": "> Publicaciones destacadas",
       "seeAllPosts": "Mirar todas las publicaciones"
+    },
+    "techStack": {
+      "heading": "> Mi Stack",
+      "categories": {
+        "frontend": "Frontend",
+        "backend": "Backend e Infraestructura",
+        "cms": "CMS y Contenido",
+        "others": "Herramientas y demás"
+      }
     }
   },
   "navigation": [
