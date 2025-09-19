@@ -27,7 +27,7 @@ export async function FeaturedPosts() {
           <ArrowRightIcon />
         </Link>
       </div>
-      <ul>
+      <ul className="space-y-5">
         {posts.map((post) => (
           <li key={post.slug}>
             <PostItem

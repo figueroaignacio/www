@@ -13,7 +13,7 @@ export async function AllPosts() {
   const posts: Post[] = await getPosts(locale)
 
   return (
-    <ul>
+    <ul className="space-y-5 mt-12">
       {posts.map((post) => (
         <li key={post.slug}>
           <PostItem title={post.title} description={post.description} slug={post.slug} />
