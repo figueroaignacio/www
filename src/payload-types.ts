@@ -71,6 +71,7 @@ export interface Config {
     experience: Experience;
     education: Education;
     posts: Post;
+    projects: Project;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -81,6 +82,7 @@ export interface Config {
     experience: ExperienceSelect<false> | ExperienceSelect<true>;
     education: EducationSelect<false> | EducationSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
+    projects: ProjectsSelect<false> | ProjectsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -254,6 +256,34 @@ export interface Post {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects".
+ */
+export interface Project {
+  id: number;
+  locale: 'en' | 'es';
+  title: string;
+  subtitle: string;
+  slug: string;
+  description: string;
+  technologies?:
+    | {
+        name?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  repository?: string | null;
+  demo?: string | null;
+  featured?: boolean | null;
+  /**
+   * Used for custom sorting
+   */
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -274,6 +304,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'posts';
         value: number | Post;
+      } | null)
+    | ({
+        relationTo: 'projects';
+        value: number | Project;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -407,6 +441,30 @@ export interface PostsSelect<T extends boolean = true> {
         metaTitle?: T;
         metaDescription?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects_select".
+ */
+export interface ProjectsSelect<T extends boolean = true> {
+  locale?: T;
+  title?: T;
+  subtitle?: T;
+  slug?: T;
+  description?: T;
+  technologies?:
+    | T
+    | {
+        name?: T;
+        id?: T;
+      };
+  repository?: T;
+  demo?: T;
+  featured?: T;
+  order?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
