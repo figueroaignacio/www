@@ -59,12 +59,12 @@
     },
     "postCard": {
       "readMore": "Read More"
-    }
-  },
-  "projectCard": {
-    "actions": {
-      "demo": "See Demo",
-      "sourceCode": "Source Code"
+    },
+    "projectCard": {
+      "actions": {
+        "demo": "See Demo",
+        "sourceCode": "Source Code"
+      }
     }
   }
 }
