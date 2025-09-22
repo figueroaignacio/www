@@ -63,7 +63,7 @@ export function ProjectCard({
         </div>
         <div className="space-x-3 w-full flex justify-end">
           {actions.map((action) => (
-            <Button variant={action.variant}>
+            <Button variant={action.variant} key={action.href}>
               <a href={action.href ?? undefined} className="flex gap-3 items-center">
                 {action.label}
                 {action.icon}
