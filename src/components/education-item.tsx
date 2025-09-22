@@ -12,7 +12,7 @@ interface EducationItemProps
     Education,
     'title' | 'institution' | 'location' | 'description' | 'startDate' | 'endDate' | 'isCurrent'
   > {
-  isLast: boolean
+  isLast?: boolean
 }
 
 export function EducationItem({
