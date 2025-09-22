@@ -4,15 +4,15 @@ import { TimelineItem } from './ui/timeline'
 // Utils
 import { formatRange } from '@/lib/utils'
 
-interface EducationItemProps {
-  title: string
-  institution: string
-  location?: string
-  description?: string
-  startDate: string
-  endDate?: string
-  isCurrent?: boolean
-  isLast?: boolean
+// Types
+import { type Education } from '@/payload-types'
+
+interface EducationItemProps
+  extends Pick<
+    Education,
+    'title' | 'institution' | 'location' | 'description' | 'startDate' | 'endDate' | 'isCurrent'
+  > {
+  isLast: boolean
 }
 
 export function EducationItem({
@@ -28,7 +28,7 @@ export function EducationItem({
   return (
     <TimelineItem isLast={isLast}>
       <div className="text-muted-foreground text-sm font-medium">
-        {formatRange(startDate, endDate, isCurrent)}
+        {formatRange(startDate, endDate ?? undefined, isCurrent ?? undefined)}
       </div>
       <div className="space-y-1">
         <h3 className="text-foreground text-lg font-semibold">{title}</h3>

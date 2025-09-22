@@ -8,9 +8,11 @@ import { useState } from 'react'
 import { formatRange } from '@/lib/utils'
 
 // Components
-import { Experience } from '@/payload-types'
 import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
 import { TimelineItem } from './ui/timeline'
+
+// Types
+import { type Experience } from '@/payload-types'
 
 interface ExperienceCardProps
   extends Pick<

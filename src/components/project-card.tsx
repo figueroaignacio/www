@@ -7,7 +7,7 @@ import { Button } from './ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card'
 
 // Types
-import { Project } from '@/payload-types'
+import { type Project } from '@/payload-types'
 
 interface ProjectCardProps
   extends Pick<
