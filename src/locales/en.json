@@ -30,6 +30,9 @@
         "cms": "CSM & Content",
         "others": "Tools and others"
       }
+    },
+    "featuredProjects": {
+      "heading": "> Featured Projects"
     }
   },
   "navigation": [
@@ -56,6 +59,12 @@
     },
     "postCard": {
       "readMore": "Read More"
+    }
+  },
+  "projectCard": {
+    "actions": {
+      "demo": "See Demo",
+      "sourceCode": "Source Code"
     }
   }
 }

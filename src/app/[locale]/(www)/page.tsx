@@ -7,6 +7,7 @@ import { About } from '@/sections/about'
 import { Education } from '@/sections/education'
 import { Experience } from '@/sections/experience'
 import { FeaturedPosts } from '@/sections/featured-posts'
+import { FeaturesProjects } from '@/sections/featured-projects'
 import { Hero } from '@/sections/hero'
 import { TechStack } from '@/sections/tech-stack'
 
@@ -29,8 +30,9 @@ export default function HomePage({ params }: HomePageProps) {
       <About />
       <Experience />
       <CVCta />
-      <Education />
+      <FeaturesProjects />
       <FeaturedPosts />
+      <Education />
       <TechStack />
     </div>
   )

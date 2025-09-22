@@ -67,3 +67,16 @@ export async function getFeaturedPosts(locale: Locale) {
   const data = await res.json()
   return data.docs ?? []
 }
+
+export async function getFeaturedProjects(locale: Locale) {
+  const res = await fetch(
+    `${API_URL}/api/projects?where[featured][equals]=true&where[locale][equals]=${locale}`,
+  )
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch featured projects')
+  }
+
+  const data = await res.json()
+  return data.docs ?? []
+}

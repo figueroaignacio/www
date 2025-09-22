@@ -30,6 +30,9 @@
         "cms": "CMS y Contenido",
         "others": "Herramientas y demás"
       }
+    },
+    "featuredProjects": {
+      "heading": "> Proyectos Destacados"
     }
   },
   "navigation": [
@@ -56,6 +59,12 @@
     },
     "postCard": {
       "readMore": "Leer Más"
+    },
+    "projectCard": {
+      "actions": {
+        "demo": "Ver Demo",
+        "sourceCode": "Código Fuente"
+      }
     }
   }
 }
