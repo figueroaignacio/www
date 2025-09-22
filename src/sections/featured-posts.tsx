@@ -8,7 +8,7 @@ import { getFeaturedPosts } from '@/lib/services'
 import { getLocale, getTranslations } from 'next-intl/server'
 
 // Types
-import { Post } from '@/payload-types'
+import { type Post } from '@/payload-types'
 
 export async function FeaturedPosts() {
   const locale = await getLocale()

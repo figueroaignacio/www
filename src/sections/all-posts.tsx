@@ -6,7 +6,7 @@ import { getPosts } from '@/lib/services'
 import { getLocale } from 'next-intl/server'
 
 // Types
-import { Post } from '@/payload-types'
+import { type Post } from '@/payload-types'
 
 export async function AllPosts() {
   const locale = await getLocale()

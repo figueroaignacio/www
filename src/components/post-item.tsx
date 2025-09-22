@@ -6,12 +6,10 @@ import { Link } from '@/i18n/navigation'
 import { ArrowRightIcon, StarIcon } from '@radix-ui/react-icons'
 import { Button } from './ui/button'
 
-interface PostItemProps {
-  title: string
-  description: string
-  slug: string
-  featured?: boolean
-}
+// Types
+import { type Post } from '@/payload-types'
+
+interface PostItemProps extends Partial<Post> {}
 
 export function PostItem({ description, slug, title, featured }: PostItemProps) {
   const t = useTranslations('components')

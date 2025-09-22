@@ -9,7 +9,7 @@ export function CVCta() {
   const t = useTranslations('components')
 
   return (
-    <Card shadow="none" rounded="lg">
+    <Card>
       <CardHeader>
         <CardTitle>{t('cvCta.title')}</CardTitle>
       </CardHeader>
