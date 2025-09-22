@@ -42,15 +42,15 @@ export function ProjectCard({
   ]
 
   return (
-    <Card shadow="none">
+    <Card>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
+        <h3 className="font-semibold">{subtitle}</h3>
       </CardHeader>
       <CardContent>
-        <h3 className="font-semibold">{subtitle}</h3>
         <CardDescription>{description}</CardDescription>
       </CardContent>
-      <CardFooter justify="start" className="flex-col items-start space-y-5">
+      <CardFooter className="flex-col items-start space-y-5">
         <div className="flex gap-3 flex-wrap">
           {technologies?.map((technology) => (
             <span
