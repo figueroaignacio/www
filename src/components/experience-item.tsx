@@ -8,20 +8,15 @@ import { useState } from 'react'
 import { formatRange } from '@/lib/utils'
 
 // Components
+import { Experience } from '@/payload-types'
 import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
 import { TimelineItem } from './ui/timeline'
 
-type Technology = { id: string | number; name: string }
-
-export interface ExperienceItemProps {
-  title?: string
-  company?: string
-  description?: string
-  contractType?: string
-  technologies?: Technology[]
-  startDate?: string
-  endDate?: string
-  isCurrent?: boolean
+interface ExperienceCardProps
+  extends Pick<
+    Experience,
+    'title' | 'company' | 'description' | 'technologies' | 'startDate' | 'endDate' | 'isCurrent'
+  > {
   isLast?: boolean
 }
 
@@ -29,26 +24,24 @@ export function ExperienceItem({
   title,
   company,
   description,
-  contractType,
   technologies = [],
   startDate,
   endDate,
   isCurrent,
   isLast = false,
-}: ExperienceItemProps) {
+}: ExperienceCardProps) {
   const t = useTranslations('components')
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
     <TimelineItem isLast={isLast}>
       <div className="text-muted-foreground text-sm font-medium">
-        {formatRange(startDate, endDate, isCurrent)}
+        {formatRange(startDate ?? undefined, endDate ?? undefined, isCurrent ?? undefined)}
       </div>
       <div className="space-y-1">
         <h3 className="text-foreground text-lg font-semibold">
           {title} - <span>{company}</span>
         </h3>
-        {contractType ? <div className="text-muted-foreground text-sm">{contractType}</div> : null}
       </div>
       {description ? (
         <div className="space-y-2">
@@ -74,9 +67,9 @@ export function ExperienceItem({
           </div>
         </div>
       ) : null}
-      {technologies.length > 0 ? (
+      {(technologies?.length ?? 0) > 0 ? (
         <div className="flex gap-2 flex-wrap pt-2">
-          {technologies.map((technology) => (
+          {(technologies ?? []).map((technology) => (
             <span
               key={technology.id}
               className="text-xs px-3 py-1 rounded-full border border-border"
