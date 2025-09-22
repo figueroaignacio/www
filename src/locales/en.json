@@ -33,12 +33,20 @@
     },
     "featuredProjects": {
       "heading": "> Featured Projects"
+    },
+    "projects": {
+      "heading": "> Projects",
+      "description": "On this page you will find a selection of my personal projects, both in progress and completed, where I apply and experiment with different technologies."
     }
   },
   "navigation": [
     {
       "label": "Home",
       "href": "/"
+    },
+    {
+      "label": "Projects",
+      "href": "/projects"
     },
     {
       "label": "Blog",

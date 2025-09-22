@@ -33,12 +33,20 @@
     },
     "featuredProjects": {
       "heading": "> Proyectos Destacados"
+    },
+    "projects": {
+      "heading": "> Proyectos",
+      "description": "En esta página vas a encontrar una selección de mis proyectos personales, tanto en desarrollo como finalizados, donde aplico y experimento con diferentes tecnologías."
     }
   },
   "navigation": [
     {
       "label": "Inicio",
       "href": "/"
+    },
+    {
+      "label": "Proyectos",
+      "href": "/projects"
     },
     {
       "label": "Blog",

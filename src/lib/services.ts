@@ -68,6 +68,19 @@ export async function getFeaturedPosts(locale: Locale) {
   return data.docs ?? []
 }
 
+export async function getProjects(locale: Locale) {
+  const res = await fetch(`${API_URL}/api/projects?where[locale][equals]=${locale}`, {
+    cache: 'no-store',
+  })
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch projects')
+  }
+
+  const data = await res.json()
+  return data.docs
+}
+
 export async function getFeaturedProjects(locale: Locale) {
   const res = await fetch(
     `${API_URL}/api/projects?where[featured][equals]=true&where[locale][equals]=${locale}`,
