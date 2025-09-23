@@ -22,8 +22,8 @@ function ViteIcon() {
           gradientTransform="translate(0 .937) scale(.3122)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#41d1ff" />
-          <stop offset="1" stop-color="#bd34fe" />
+          <stop offset="0" stopColor="#41d1ff" />
+          <stop offset="1" stopColor="#bd34fe" />
         </linearGradient>
         <linearGradient
           id="b"
@@ -34,9 +34,9 @@ function ViteIcon() {
           gradientTransform="translate(0 .937) scale(.3122)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#ffea83" />
-          <stop offset=".083" stop-color="#ffdd35" />
-          <stop offset="1" stop-color="#ffa800" />
+          <stop offset="0" stopColor="#ffea83" />
+          <stop offset=".083" stopColor="#ffdd35" />
+          <stop offset="1" stopColor="#ffa800" />
         </linearGradient>
       </defs>
       <path
@@ -96,12 +96,12 @@ function VeliteIcon() {
   return (
     <svg viewBox="0 0 82 60" width={20} height={20}>
       <linearGradient id="l" x2="1" y1="1">
-        <stop offset="0%" stop-color="#08A771" />
-        <stop offset="100%" stop-color="#11E49D" />
+        <stop offset="0%" stopColor="#08A771" />
+        <stop offset="100%" stopColor="#11E49D" />
       </linearGradient>
       <linearGradient id="r" x2="1" y1="1">
-        <stop offset="0%" stop-color="#13AAAA" />
-        <stop offset="100%" stop-color="#04D0D0" />
+        <stop offset="0%" stopColor="#13AAAA" />
+        <stop offset="100%" stopColor="#04D0D0" />
       </linearGradient>
       <path
         d="M30.53 27.306l5.11 13.84-11.88 18.52L4 4.306c11.3 0 20.08 6.25 26.53 23z"
@@ -148,8 +148,8 @@ function GitHubIcon() {
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width={20} height={20}>
       <g fill="currentColor">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
         />
         <path d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0" />
@@ -171,8 +171,8 @@ function AstroIcon() {
           gradientTransform="scale(.1)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#000014" />
-          <stop offset="1" stop-color="#150426" />
+          <stop offset="0" stopColor="#000014" />
+          <stop offset="1" stopColor="#150426" />
         </linearGradient>
         <linearGradient
           id="b"
@@ -183,8 +183,8 @@ function AstroIcon() {
           gradientTransform="scale(.1)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#ff1639" />
-          <stop offset="1" stop-color="#ff1639" stop-opacity="0" />
+          <stop offset="0" stopColor="#ff1639" />
+          <stop offset="1" stopColor="#ff1639" stopOpacity="0" />
         </linearGradient>
       </defs>
       <path
@@ -269,13 +269,13 @@ function JsonIcon() {
         gradientUnits="userSpaceOnUse"
       >
         <stop offset="0" />
-        <stop offset="1" stop-color="#fff" />
+        <stop offset="1" stopColor="#fff" />
       </linearGradient>
       <path
         fill="url(#a)"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M63.895 94.303c27.433 37.398 54.281-10.438 54.241-39.205-.046-34.012-34.518-53.021-54.263-53.021C32.182 2.077 2 28.269 2 64.105 2 103.937 36.596 126 63.873 126c-6.172-.889-26.742-5.296-27.019-52.674-.186-32.044 10.453-44.846 26.974-39.214.37.137 18.223 7.18 18.223 30.187 0 22.908-18.156 30.004-18.156 30.004z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
       <linearGradient
         id="b"
@@ -287,13 +287,13 @@ function JsonIcon() {
         gradientUnits="userSpaceOnUse"
       >
         <stop offset="0" />
-        <stop offset="1" stop-color="#fff" />
+        <stop offset="1" stopColor="#fff" />
       </linearGradient>
       <path
         fill="url(#b)"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M63.863 34.086C45.736 27.838 23.53 42.778 23.53 72.703 23.53 121.565 59.739 126 64.128 126 95.818 126 126 99.808 126 63.972 126 24.14 91.404 2.077 64.127 2.077c7.555-1.046 40.719 8.176 40.719 53.504 0 29.559-24.764 45.651-40.87 38.776-.37-.137-18.223-7.18-18.223-30.187 0-22.91 18.11-30.085 18.11-30.084z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
     </svg>
   )
@@ -358,8 +358,8 @@ function TurborepoIcon() {
           y2="698.962346%"
           id="turborepo-linearGradient-1"
         >
-          <stop stop-color="#1E90FF" offset="0%"></stop>
-          <stop stop-color="#FF1E56" offset="100%"></stop>
+          <stop stopColor="#1E90FF" offset="0%"></stop>
+          <stop stopColor="#FF1E56" offset="100%"></stop>
         </linearGradient>
         <linearGradient
           x1="11.4859916%"
@@ -368,8 +368,8 @@ function TurborepoIcon() {
           y2="512.39779%"
           id="turborepo-linearGradient-2"
         >
-          <stop stop-color="#1E90FF" offset="0%"></stop>
-          <stop stop-color="#FF1E56" offset="100%"></stop>
+          <stop stopColor="#1E90FF" offset="0%"></stop>
+          <stop stopColor="#FF1E56" offset="100%"></stop>
         </linearGradient>
         <linearGradient
           x1="-153.743225%"
@@ -378,8 +378,8 @@ function TurborepoIcon() {
           y2="278.479413%"
           id="turborepo-linearGradient-3"
         >
-          <stop stop-color="#1E90FF" offset="0%"></stop>
-          <stop stop-color="#FF1E56" offset="100%"></stop>
+          <stop stopColor="#1E90FF" offset="0%"></stop>
+          <stop stopColor="#FF1E56" offset="100%"></stop>
         </linearGradient>
         <linearGradient
           x1="-153.743225%"
@@ -388,8 +388,8 @@ function TurborepoIcon() {
           y2="162.263952%"
           id="turborepo-linearGradient-4"
         >
-          <stop stop-color="#1E90FF" offset="0%"></stop>
-          <stop stop-color="#FF1E56" offset="100%"></stop>
+          <stop stopColor="#1E90FF" offset="0%"></stop>
+          <stop stopColor="#FF1E56" offset="100%"></stop>
         </linearGradient>
         <linearGradient
           x1="11.4859916%"
@@ -398,8 +398,8 @@ function TurborepoIcon() {
           y2="102.193662%"
           id="turborepo-linearGradient-5"
         >
-          <stop stop-color="#1E90FF" offset="0%"></stop>
-          <stop stop-color="#FF1E56" offset="100%"></stop>
+          <stop stopColor="#1E90FF" offset="0%"></stop>
+          <stop stopColor="#FF1E56" offset="100%"></stop>
         </linearGradient>
         <linearGradient
           x1="123.779228%"
@@ -408,8 +408,8 @@ function TurborepoIcon() {
           y2="99.9997513%"
           id="turborepo-linearGradient-6"
         >
-          <stop stop-color="#1E90FF" offset="0%"></stop>
-          <stop stop-color="#FF1E56" offset="100%"></stop>
+          <stop stopColor="#1E90FF" offset="0%"></stop>
+          <stop stopColor="#FF1E56" offset="100%"></stop>
         </linearGradient>
       </defs>
       <g>
@@ -471,28 +471,28 @@ function PnpmIcon() {
       </defs>
       <g>
         <g>
-          <use xlinkHref="#arNRoK435" opacity="1" fill="#f9ad00" fill-opacity="1" />
+          <use xlinkHref="#arNRoK435" opacity="1" fill="#f9ad00" fillOpacity="1" />
         </g>
         <g>
-          <use xlinkHref="#a3H2WU7Px" opacity="1" fill="#f9ad00" fill-opacity="1" />
+          <use xlinkHref="#a3H2WU7Px" opacity="1" fill="#f9ad00" fillOpacity="1" />
         </g>
         <g>
-          <use xlinkHref="#b1DInM56vl" opacity="1" fill="#f9ad00" fill-opacity="1" />
+          <use xlinkHref="#b1DInM56vl" opacity="1" fill="#f9ad00" fillOpacity="1" />
         </g>
         <g>
-          <use xlinkHref="#a7LFlgQIwu" opacity="1" fill="#f9ad00" fill-opacity="1" />
+          <use xlinkHref="#a7LFlgQIwu" opacity="1" fill="#f9ad00" fillOpacity="1" />
         </g>
         <g>
-          <use xlinkHref="#amwLiZcuo" opacity="1" fill="#4e4e4e" fill-opacity="1" />
+          <use xlinkHref="#amwLiZcuo" opacity="1" fill="#4e4e4e" fillOpacity="1" />
         </g>
         <g>
-          <use xlinkHref="#f3Peu5RWan" opacity="1" fill="#4e4e4e" fill-opacity="1" />
+          <use xlinkHref="#f3Peu5RWan" opacity="1" fill="#4e4e4e" fillOpacity="1" />
         </g>
         <g>
-          <use xlinkHref="#a6DXBfqPa" opacity="1" fill="#4e4e4e" fill-opacity="1" />
+          <use xlinkHref="#a6DXBfqPa" opacity="1" fill="#4e4e4e" fillOpacity="1" />
         </g>
         <g>
-          <use xlinkHref="#c1GWSTH1z7" opacity="1" fill="#4e4e4e" fill-opacity="1" />
+          <use xlinkHref="#c1GWSTH1z7" opacity="1" fill="#4e4e4e" fillOpacity="1" />
         </g>
       </g>
     </svg>
@@ -635,7 +635,7 @@ function ZodIcon() {
           ></feColorMatrix>
         </filter>
       </defs>
-      <g transform="translate(2.000000, 1.510645)" fill-rule="nonzero">
+      <g transform="translate(2.000000, 1.510645)" fillRule="nonzero">
         <polygon
           fill="#18253F"
           points="58.8162023 12.5220497 195.093896 12.5220497 235.027464 54.2130202 122.038097 180.765999 16.9574282 54.2130202"
@@ -653,7 +653,7 @@ function ZodIcon() {
           points="144.596212 12.5642823 33.9304463 76.4571406 16.7194669 54.9715457 90.8141008 12.1929865"
         ></polygon>
         <g>
-          <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlinkHref="#path-1"></use>
+          <use fill="black" fillOpacity="1" filter="url(#filter-2)" xlinkHref="#path-1"></use>
           <use fill="#3068B7" xlinkHref="#path-1"></use>
         </g>
       </g>
@@ -683,8 +683,8 @@ function CVAIcon() {
       height={20}
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M389.95 485.246C467.692 440.298 520 356.258 520 260L710 260L560 520H710L560 780L389.95 485.246ZM389.95 485.246C351.718 507.35 307.336 520 260 520C116.406 520 0 403.594 0 260C0 116.406 116.406 0 260 0C403.594 0 520 116.406 520 260L260 260L389.95 485.246ZM710 520H1160L860 0L710 260L860 260L710 520Z"
         fill="url(#paint0_linear_101_10)"
       ></path>
@@ -697,8 +697,8 @@ function CVAIcon() {
           y2="780"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.145833" stop-color="currentColor"></stop>
-          <stop offset="0.822917" stop-color="currentColor"></stop>
+          <stop offset="0.145833" stopColor="currentColor"></stop>
+          <stop offset="0.822917" stopColor="currentColor"></stop>
         </linearGradient>
       </defs>
     </svg>
