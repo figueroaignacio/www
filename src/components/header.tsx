@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl'
 
 // Components
 import { Link } from '@/i18n/navigation'
+import { LocaleSwitcher } from './locale-switcher'
 import { ToggleTheme } from './toggle-theme'
 
 interface Navigation {
@@ -28,7 +29,10 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <ToggleTheme />
+        <div className="flex items-center gap-x-3">
+          <LocaleSwitcher />
+          <ToggleTheme />
+        </div>
       </div>
     </header>
   )
