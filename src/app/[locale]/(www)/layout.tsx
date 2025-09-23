@@ -3,6 +3,7 @@ import React from 'react'
 // Components
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
+import { NavigationBar } from '@/components/navigation-bar'
 import { ThemeProvider } from '@/components/theme-provider'
 
 // next-intl
@@ -39,6 +40,7 @@ export default async function RootLayout({ children, params }: LocaleLayoutProps
           <ThemeProvider attribute="class" defaultTheme="dark">
             <div className="grid grid-rows-[auto_1fr_auto] gap-y-5 min-h-lvh">
               <Header />
+              <NavigationBar />
               <main>{children}</main>
               <Footer />
             </div>

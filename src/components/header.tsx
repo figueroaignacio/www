@@ -22,7 +22,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-muted-foreground hover:text-primary hover:underline"
+              className="text-muted-foreground hover:text-primary hover:underline hidden md:inline-block"
             >
               {item.label}
             </Link>
