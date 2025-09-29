@@ -265,6 +265,21 @@ export interface Project {
   subtitle: string;
   slug: string;
   description: string;
+  body: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
   technologies?:
     | {
         name?: string | null;
@@ -455,6 +470,7 @@ export interface ProjectsSelect<T extends boolean = true> {
   subtitle?: T;
   slug?: T;
   description?: T;
+  body?: T;
   technologies?:
     | T
     | {

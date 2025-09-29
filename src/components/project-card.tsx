@@ -2,9 +2,10 @@
 import { useTranslations } from 'next-intl'
 
 // Components
-import { ExternalLinkIcon, GitHubLogoIcon } from '@radix-ui/react-icons'
+import { Link } from '@/i18n/navigation'
+import { ExternalLinkIcon, GitHubLogoIcon, InfoCircledIcon } from '@radix-ui/react-icons'
 import { Button } from './ui/button'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card'
+import { Card, CardFooter, CardHeader, CardTitle } from './ui/card'
 
 // Types
 import { type Project } from '@/payload-types'
@@ -12,7 +13,14 @@ import { type Project } from '@/payload-types'
 interface ProjectCardProps
   extends Pick<
     Project,
-    'title' | 'subtitle' | 'description' | 'featured' | 'technologies' | 'repository' | 'demo'
+    | 'title'
+    | 'subtitle'
+    | 'description'
+    | 'featured'
+    | 'technologies'
+    | 'repository'
+    | 'demo'
+    | 'slug'
   > {}
 
 export function ProjectCard({
@@ -23,6 +31,7 @@ export function ProjectCard({
   featured,
   repository,
   technologies,
+  slug,
 }: ProjectCardProps) {
   const t = useTranslations('components')
 
@@ -36,7 +45,7 @@ export function ProjectCard({
     {
       label: t('projectCard.actions.demo'),
       href: demo,
-      variant: 'outline' as const,
+      variant: 'default' as const,
       icon: <ExternalLinkIcon />,
     },
   ]
@@ -47,9 +56,6 @@ export function ProjectCard({
         <CardTitle>{title}</CardTitle>
         <h3 className="font-semibold">{subtitle}</h3>
       </CardHeader>
-      <CardContent>
-        <CardDescription>{description}</CardDescription>
-      </CardContent>
       <CardFooter className="flex-col items-start space-y-5">
         <div className="flex gap-3 flex-wrap">
           {technologies?.map((technology) => (
@@ -61,15 +67,23 @@ export function ProjectCard({
             </span>
           ))}
         </div>
-        <div className="space-x-3 w-full flex justify-end">
+        <div className="space-x-3 w-full flex">
           {actions.map((action) => (
-            <Button variant={action.variant} key={action.href}>
+            <Button variant={action.variant} key={action.href} className="w-full">
               <a href={action.href ?? undefined} className="flex gap-3 items-center">
                 {action.label}
                 {action.icon}
               </a>
             </Button>
           ))}
+        </div>
+        <div className="w-full">
+          <Button variant="outline" className="w-full">
+            <Link href={`/projects/${slug}`} className="flex gap-3 items-center">
+              {t('projectCard.actions.learnMore')}
+              <InfoCircledIcon />
+            </Link>
+          </Button>
         </div>
       </CardFooter>
     </Card>

@@ -22,6 +22,7 @@ export async function AllProjects() {
             subtitle={post.subtitle}
             repository={post.repository}
             technologies={post.technologies}
+            slug={post.slug}
           />
         </li>
       ))}

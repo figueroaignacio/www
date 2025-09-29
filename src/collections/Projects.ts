@@ -52,7 +52,12 @@ export const Projects: CollectionConfig = {
       type: 'textarea',
       required: true,
     },
-
+    {
+      name: 'body',
+      label: 'Body',
+      type: 'richText',
+      required: true,
+    },
     {
       name: 'technologies',
       label: 'Technologies Used',

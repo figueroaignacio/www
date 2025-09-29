@@ -71,7 +71,8 @@
     "projectCard": {
       "actions": {
         "demo": "Ver Demo",
-        "sourceCode": "Código Fuente"
+        "sourceCode": "Código Fuente",
+        "learnMore": "Ver detalles"
       }
     }
   }

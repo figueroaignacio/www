@@ -4,30 +4,30 @@ import { PostHeader } from '@/components/post-header'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 
 // Utils
-import { getPostBySlug } from '@/lib/services'
+import { getProjectBySlug } from '@/lib/services'
 
 // Types
-import { type Post } from '@/payload-types'
+import { type Project } from '@/payload-types'
 
-interface PostPageProps {
+interface ProjectPageProps {
   params: Promise<{
     slug: string
   }>
 }
 
-export default async function PostPage({ params }: PostPageProps) {
+export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params
-  const post: Post = await getPostBySlug(slug)
+  const project: Project = await getProjectBySlug(slug)
 
-  if (!post) {
+  if (!project) {
     return <p className="text-red-600/30">Error</p>
   }
 
   return (
     <article className="container space-y-3">
       <BackButton />
-      <PostHeader description={post.description} title={post.title} />
-      <RichText data={post.body} className="prose" />
+      <PostHeader title={project.title} description={project.description} />
+      <RichText data={project.body} className="prose" />
     </article>
   )
 }

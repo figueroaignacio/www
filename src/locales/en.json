@@ -71,7 +71,8 @@
     "projectCard": {
       "actions": {
         "demo": "See Demo",
-        "sourceCode": "Source Code"
+        "sourceCode": "Source Code",
+        "learnMore": "Learn more"
       }
     }
   }

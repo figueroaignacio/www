@@ -93,3 +93,14 @@ export async function getFeaturedProjects(locale: Locale) {
   const data = await res.json()
   return data.docs ?? []
 }
+
+export async function getProjectBySlug(slug: string) {
+  const res = await fetch(`${API_URL}/api/projects/?where[slug][equals]=${slug}`)
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch project by slug')
+  }
+
+  const data = await res.json()
+  return data.docs?.[0] ?? null
+}

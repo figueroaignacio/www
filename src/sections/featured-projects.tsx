@@ -27,6 +27,7 @@ export async function FeaturesProjects() {
               repository={project.repository}
               technologies={project.technologies}
               featured={project.featured}
+              slug={project.slug}
             />
           </li>
         ))}
