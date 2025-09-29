@@ -1,18 +1,18 @@
 // Components
-import { ExperienceItem } from '@/components/experience-item'
-import { Timeline } from '@/components/ui/timeline'
+import { ExperienceItem } from '@/components/experience-item';
+import { Timeline } from '@/components/ui/timeline';
 
 // Utils
-import { getExperience } from '@/lib/services'
-import { getLocale, getTranslations } from 'next-intl/server'
+import { getExperience } from '@/lib/services';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 // Types
-import { type Experience } from '@/payload-types'
+import { type Experience } from '@/payload-types';
 
 export async function Experience() {
-  const locale = await getLocale()
-  const experience: Experience[] = await getExperience(locale)
-  const t = await getTranslations('sections')
+  const locale = await getLocale();
+  const experience: Experience[] = await getExperience(locale);
+  const t = await getTranslations('sections');
 
   return (
     <section className="scape-y-3">
@@ -30,5 +30,5 @@ export async function Experience() {
         ))}
       </Timeline>
     </section>
-  )
+  );
 }

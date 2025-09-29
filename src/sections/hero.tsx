@@ -1,18 +1,18 @@
 // Hooks
-import { useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl';
 
 // Components
-import { Contact } from '@/components/contact'
+import { Contact } from '@/components/contact';
 
-const avatarUrl = 'https://github.com/figueroaignacio.png'
+const avatarUrl = 'https://github.com/figueroaignacio.png';
 
 interface HeroProps {
-  title: string
-  description: string
+  title: string;
+  description: string;
 }
 
 export function Hero({ description, title }: HeroProps) {
-  const t = useTranslations('sections')
+  const t = useTranslations('sections');
 
   return (
     <section className="space-y-3">
@@ -27,5 +27,5 @@ export function Hero({ description, title }: HeroProps) {
       </div>
       <Contact />
     </section>
-  )
+  );
 }

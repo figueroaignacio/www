@@ -1,39 +1,39 @@
-'use client'
+'use client';
 
-import type React from 'react'
+import type React from 'react';
 
 // Hooks
-import { useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl';
 
 // Components
-import { Link, usePathname } from '@/i18n/navigation'
-import { ChatBubbleIcon, GearIcon, HomeIcon } from '@radix-ui/react-icons'
+import { Link, usePathname } from '@/i18n/navigation';
+import { ChatBubbleIcon, GearIcon, HomeIcon } from '@radix-ui/react-icons';
 
 // Utils
-import clsx from 'clsx'
+import clsx from 'clsx';
 
 type Navigation = {
-  label: string
-  href: string
-}
+  label: string;
+  href: string;
+};
 
 const iconMap: Record<string, React.ReactNode> = {
   '/': <HomeIcon className="size-5" />,
   '/projects': <GearIcon className="size-5" />,
   '/blog': <ChatBubbleIcon className="size-5" />,
-}
+};
 
 export function NavigationBar() {
-  const t = useTranslations('')
-  const pathname = usePathname()
-  const navigation = t.raw('navigation') as Navigation[]
+  const t = useTranslations('');
+  const pathname = usePathname();
+  const navigation = t.raw('navigation') as Navigation[];
 
   return (
     <nav className="fixed md:hidden -bottom-1 sm:-bottom-1 sm:rounded-2xl inset-x-0 z-50 mx-auto max-w-2xl w-full backdrop-blur-3xl bg-card/80 border border-border/50 px-4 py-3 shadow-lg shadow-black/5">
       <div className="flex w-full items-center justify-around gap-2">
         {navigation.map((item) => {
-          const icon = iconMap[item.href]
-          const isActive = pathname === item.href
+          const icon = iconMap[item.href];
+          const isActive = pathname === item.href;
           return (
             <Link
               key={item.href}
@@ -61,9 +61,9 @@ export function NavigationBar() {
                 {item.label}
               </span>
             </Link>
-          )
+          );
         })}
       </div>
     </nav>
-  )
+  );
 }

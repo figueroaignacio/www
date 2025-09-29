@@ -1,23 +1,23 @@
 // Payload
-import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres'
-import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
-import { buildConfig } from 'payload'
+import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres';
+import { payloadCloudPlugin } from '@payloadcms/payload-cloud';
+import { lexicalEditor } from '@payloadcms/richtext-lexical';
+import { buildConfig } from 'payload';
 
 // Utils
-import path from 'path'
-import sharp from 'sharp'
-import { fileURLToPath } from 'url'
+import path from 'path';
+import sharp from 'sharp';
+import { fileURLToPath } from 'url';
 
 // Collections
-import { Education } from './collections/Education'
-import { Experience } from './collections/Experience'
-import { Posts } from './collections/Posts'
-import { Projects } from './collections/Projects'
-import { Users } from './collections/Users'
+import { Education } from './collections/Education';
+import { Experience } from './collections/Experience';
+import { Posts } from './collections/Posts';
+import { Projects } from './collections/Projects';
+import { Users } from './collections/Users';
 
-const filename = fileURLToPath(import.meta.url)
-const dirname = path.dirname(filename)
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
 
 export default buildConfig({
   admin: {
@@ -42,4 +42,4 @@ export default buildConfig({
     payloadCloudPlugin(),
     // storage-adapter-placeholder
   ],
-})
+});

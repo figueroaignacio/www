@@ -1,18 +1,18 @@
 // Hooks
-import { useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl';
 
 // Components
-import { Link } from '@/i18n/navigation'
-import { ArrowRightIcon, StarIcon } from '@radix-ui/react-icons'
-import { Button } from './ui/button'
+import { Link } from '@/i18n/navigation';
+import { ArrowRightIcon, StarIcon } from '@radix-ui/react-icons';
+import { Button } from './ui/button';
 
 // Types
-import { type Post } from '@/payload-types'
+import { type Post } from '@/payload-types';
 
 interface PostItemProps extends Partial<Post> {}
 
 export function PostItem({ description, slug, title, featured }: PostItemProps) {
-  const t = useTranslations('components')
+  const t = useTranslations('components');
 
   return (
     <div className="py-6 last:border-b-0 border-l-8 border-primary rounded-md px-4">
@@ -34,5 +34,5 @@ export function PostItem({ description, slug, title, featured }: PostItemProps) 
         </div>
       </div>
     </div>
-  )
+  );
 }

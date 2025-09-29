@@ -1,37 +1,37 @@
-import React from 'react'
+import React from 'react';
 
 // Components
-import { Footer } from '@/components/footer'
-import { Header } from '@/components/header'
-import { NavigationBar } from '@/components/navigation-bar'
-import { ThemeProvider } from '@/components/theme-provider'
+import { Footer } from '@/components/footer';
+import { Header } from '@/components/header';
+import { NavigationBar } from '@/components/navigation-bar';
+import { ThemeProvider } from '@/components/theme-provider';
 
 // next-intl
-import { routing } from '@/i18n/routing'
-import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl'
-import { setRequestLocale } from 'next-intl/server'
-import { notFound } from 'next/navigation'
+import { routing } from '@/i18n/routing';
+import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 
 // Font
-import { manrope } from '@/lib/fonts'
+import { manrope } from '@/lib/fonts';
 
 export const metadata = {
   description: 'A blank template using Payload in a Next.js app.',
   title: 'Payload Blank Template',
-}
+};
 
 interface LocaleLayoutProps {
-  children: React.ReactNode
-  params: Promise<{ locale: Locale }>
+  children: React.ReactNode;
+  params: Promise<{ locale: Locale }>;
 }
 
 export default async function RootLayout({ children, params }: LocaleLayoutProps) {
-  const { locale } = await params
+  const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
-    notFound()
+    notFound();
   }
 
-  setRequestLocale(locale)
+  setRequestLocale(locale);
 
   return (
     <html lang="en">
@@ -48,5 +48,5 @@ export default async function RootLayout({ children, params }: LocaleLayoutProps
         </NextIntlClientProvider>
       </body>
     </html>
-  )
+  );
 }

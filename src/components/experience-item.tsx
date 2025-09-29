@@ -1,25 +1,25 @@
-'use client'
+'use client';
 
 // Hooks
-import { useTranslations } from 'next-intl'
-import { useState } from 'react'
+import { useTranslations } from 'next-intl';
+import { useState } from 'react';
 
 // Utils
-import { formatRange } from '@/lib/utils'
+import { formatRange } from '@/lib/utils';
 
 // Components
-import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
-import { TimelineItem } from './ui/timeline'
+import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
+import { TimelineItem } from './ui/timeline';
 
 // Types
-import { type Experience } from '@/payload-types'
+import { type Experience } from '@/payload-types';
 
 interface ExperienceCardProps
   extends Pick<
     Experience,
     'title' | 'company' | 'description' | 'technologies' | 'startDate' | 'endDate' | 'isCurrent'
   > {
-  isLast?: boolean
+  isLast?: boolean;
 }
 
 export function ExperienceItem({
@@ -32,8 +32,8 @@ export function ExperienceItem({
   isCurrent,
   isLast = false,
 }: ExperienceCardProps) {
-  const t = useTranslations('components')
-  const [isExpanded, setIsExpanded] = useState(false)
+  const t = useTranslations('components');
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <TimelineItem isLast={isLast}>
@@ -82,5 +82,5 @@ export function ExperienceItem({
         </div>
       ) : null}
     </TimelineItem>
-  )
+  );
 }

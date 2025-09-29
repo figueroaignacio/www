@@ -1,7 +1,7 @@
-import { useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl';
 
 export function About() {
-  const t = useTranslations('sections')
+  const t = useTranslations('sections');
 
   const texts = [
     {
@@ -10,7 +10,7 @@ export function About() {
     {
       text: t('about.second-paragraph'),
     },
-  ]
+  ];
 
   return (
     <section className="space-y-3">
@@ -21,5 +21,5 @@ export function About() {
         </p>
       ))}
     </section>
-  )
+  );
 }

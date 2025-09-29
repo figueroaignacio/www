@@ -1,18 +1,18 @@
 // Components
-import { TimelineItem } from './ui/timeline'
+import { TimelineItem } from './ui/timeline';
 
 // Utils
-import { formatRange } from '@/lib/utils'
+import { formatRange } from '@/lib/utils';
 
 // Types
-import { type Education } from '@/payload-types'
+import { type Education } from '@/payload-types';
 
 interface EducationItemProps
   extends Pick<
     Education,
     'title' | 'institution' | 'location' | 'description' | 'startDate' | 'endDate' | 'isCurrent'
   > {
-  isLast?: boolean
+  isLast?: boolean;
 }
 
 export function EducationItem({
@@ -41,5 +41,5 @@ export function EducationItem({
         <p className="text-sm text-muted-foreground sm:text-base">{description}</p>
       ) : null}
     </TimelineItem>
-  )
+  );
 }

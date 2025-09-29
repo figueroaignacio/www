@@ -1,17 +1,17 @@
 // Components
-import { ProjectCard } from '@/components/project-card'
+import { ProjectCard } from '@/components/project-card';
 
 // Utils
-import { getFeaturedProjects } from '@/lib/services'
-import { getLocale, getTranslations } from 'next-intl/server'
+import { getFeaturedProjects } from '@/lib/services';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 // Types
-import { type Project } from '@/payload-types'
+import { type Project } from '@/payload-types';
 
 export async function FeaturesProjects() {
-  const locale = await getLocale()
-  const featuredProjects: Project[] = await getFeaturedProjects(locale)
-  const t = await getTranslations('sections')
+  const locale = await getLocale();
+  const featuredProjects: Project[] = await getFeaturedProjects(locale);
+  const t = await getTranslations('sections');
 
   return (
     <section>
@@ -33,5 +33,5 @@ export async function FeaturesProjects() {
         ))}
       </ul>
     </section>
-  )
+  );
 }

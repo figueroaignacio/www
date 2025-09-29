@@ -1,12 +1,12 @@
 // Hooks
-import { useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl';
 
 // Components
-import { Button } from './ui/button'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card'
+import { Button } from './ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 
 export function CVCta() {
-  const t = useTranslations('components')
+  const t = useTranslations('components');
 
   return (
     <Card>
@@ -22,5 +22,5 @@ export function CVCta() {
         </Button>
       </CardFooter>
     </Card>
-  )
+  );
 }

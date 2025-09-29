@@ -1,19 +1,19 @@
 // Components
-import { PostItem } from '@/components/post-item'
-import { Link } from '@/i18n/navigation'
-import { ArrowRightIcon } from '@radix-ui/react-icons'
+import { PostItem } from '@/components/post-item';
+import { Link } from '@/i18n/navigation';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
 
 // Utils
-import { getFeaturedPosts } from '@/lib/services'
-import { getLocale, getTranslations } from 'next-intl/server'
+import { getFeaturedPosts } from '@/lib/services';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 // Types
-import { type Post } from '@/payload-types'
+import { type Post } from '@/payload-types';
 
 export async function FeaturedPosts() {
-  const locale = await getLocale()
-  const posts: Post[] = await getFeaturedPosts(locale)
-  const t = await getTranslations('sections')
+  const locale = await getLocale();
+  const posts: Post[] = await getFeaturedPosts(locale);
+  const t = await getTranslations('sections');
 
   return (
     <section>
@@ -40,5 +40,5 @@ export async function FeaturedPosts() {
         ))}
       </ul>
     </section>
-  )
+  );
 }

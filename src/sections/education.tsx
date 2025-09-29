@@ -1,18 +1,18 @@
 // Components
-import { EducationItem } from '@/components/education-item'
-import { Timeline } from '@/components/ui/timeline'
+import { EducationItem } from '@/components/education-item';
+import { Timeline } from '@/components/ui/timeline';
 
 // Utils
-import { getEducation } from '@/lib/services'
-import { getLocale, getTranslations } from 'next-intl/server'
+import { getEducation } from '@/lib/services';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 // Types
-import { type Education } from '@/payload-types'
+import { type Education } from '@/payload-types';
 
 export async function Education() {
-  const locale = await getLocale()
-  const education: Education[] = await getEducation(locale)
-  const t = await getTranslations('sections')
+  const locale = await getLocale();
+  const education: Education[] = await getEducation(locale);
+  const t = await getTranslations('sections');
 
   return (
     <section>
@@ -31,5 +31,5 @@ export async function Education() {
         ))}
       </Timeline>
     </section>
-  )
+  );
 }

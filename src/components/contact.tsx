@@ -1,5 +1,5 @@
 // Components
-import { EnvelopeOpenIcon, GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons'
+import { EnvelopeOpenIcon, GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
 
 const contacts = [
   {
@@ -17,7 +17,7 @@ const contacts = [
     href: 'mailto:ignaciofigueroadev@gmail.com',
     target: '',
   },
-]
+];
 
 export function Contact() {
   return (
@@ -30,5 +30,5 @@ export function Contact() {
         </li>
       ))}
     </ul>
-  )
+  );
 }

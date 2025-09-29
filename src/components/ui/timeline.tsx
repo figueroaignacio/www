@@ -1,18 +1,18 @@
-import { cn } from '@/lib/utils'
-import * as React from 'react'
+import { cn } from '@/lib/utils';
+import * as React from 'react';
 
 type TimelineProps = {
-  className?: string
-  children: React.ReactNode
-  'aria-label'?: string
-}
+  className?: string;
+  children: React.ReactNode;
+  'aria-label'?: string;
+};
 
 export function Timeline({ children, className, ...props }: TimelineProps) {
   return (
     <ol className={cn('relative space-y-8', className)} {...props}>
       {children}
     </ol>
-  )
+  );
 }
 
 export function TimelineDiv({ children, className, ...props }: TimelineProps) {
@@ -20,17 +20,17 @@ export function TimelineDiv({ children, className, ...props }: TimelineProps) {
     <div className={cn('relative space-y-8', className)} role="list" {...props}>
       {children}
     </div>
-  )
+  );
 }
 
 type TimelineItemProps = React.PropsWithChildren<{
-  isLast?: boolean
-  className?: string
-  dotClassName?: string
-  lineClassName?: string
-  contentClassName?: string
-  'aria-label'?: string
-}>
+  isLast?: boolean;
+  className?: string;
+  dotClassName?: string;
+  lineClassName?: string;
+  contentClassName?: string;
+  'aria-label'?: string;
+}>;
 
 export function TimelineItem({
   children,
@@ -55,5 +55,5 @@ export function TimelineItem({
       )}
       <div className={cn('space-y-3', contentClassName)}>{children}</div>
     </li>
-  )
+  );
 }

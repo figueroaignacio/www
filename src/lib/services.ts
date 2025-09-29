@@ -1,106 +1,106 @@
 const API_URL =
   process.env.NODE_ENV === 'production'
     ? process.env.NEXT_PUBLIC_API_URL_PROD
-    : process.env.NEXT_PUBLIC_API_URL_DEV
+    : process.env.NEXT_PUBLIC_API_URL_DEV;
 
-import { Locale } from 'next-intl'
+import { Locale } from 'next-intl';
 
 export async function getExperience(locale: Locale) {
   const res = await fetch(`${API_URL}/api/experience?where[locale][equals]=${locale}`, {
     cache: 'no-store',
-  })
+  });
 
   if (!res.ok) {
-    throw new Error('Failed to fetch experiences')
+    throw new Error('Failed to fetch experiences');
   }
 
-  const data = await res.json()
-  return data.docs
+  const data = await res.json();
+  return data.docs;
 }
 
 export async function getEducation(locale: Locale) {
   const res = await fetch(`${API_URL}/api/education?where[locale][equals]=${locale}`, {
     cache: 'no-store',
-  })
+  });
 
   if (!res.ok) {
-    throw new Error('Failed to fetch education')
+    throw new Error('Failed to fetch education');
   }
 
-  const data = await res.json()
-  return data.docs
+  const data = await res.json();
+  return data.docs;
 }
 
 export async function getPosts(locale: Locale) {
   const res = await fetch(`${API_URL}/api/posts?where[locale][equals]=${locale}`, {
     cache: 'no-store',
-  })
+  });
 
   if (!res.ok) {
-    throw new Error('Failed to fetch posts')
+    throw new Error('Failed to fetch posts');
   }
 
-  const data = await res.json()
-  return data.docs
+  const data = await res.json();
+  return data.docs;
 }
 
 export async function getPostBySlug(slug: string) {
-  const res = await fetch(`${API_URL}/api/posts/?where[slug][equals]=${slug}`)
+  const res = await fetch(`${API_URL}/api/posts/?where[slug][equals]=${slug}`);
 
   if (!res.ok) {
-    throw new Error('Failed to fetch post by slug')
+    throw new Error('Failed to fetch post by slug');
   }
 
-  const data = await res.json()
-  return data.docs?.[0] ?? null
+  const data = await res.json();
+  return data.docs?.[0] ?? null;
 }
 
 export async function getFeaturedPosts(locale: Locale) {
   const res = await fetch(
     `${API_URL}/api/posts?where[featured][equals]=true&where[locale][equals]=${locale}`,
-  )
+  );
 
   if (!res.ok) {
-    throw new Error('Failed to fetch featured posts')
+    throw new Error('Failed to fetch featured posts');
   }
 
-  const data = await res.json()
-  return data.docs ?? []
+  const data = await res.json();
+  return data.docs ?? [];
 }
 
 export async function getProjects(locale: Locale) {
   const res = await fetch(`${API_URL}/api/projects?where[locale][equals]=${locale}`, {
     cache: 'no-store',
-  })
+  });
 
   if (!res.ok) {
-    throw new Error('Failed to fetch projects')
+    throw new Error('Failed to fetch projects');
   }
 
-  const data = await res.json()
-  return data.docs
+  const data = await res.json();
+  return data.docs;
 }
 
 export async function getFeaturedProjects(locale: Locale) {
   const res = await fetch(
     `${API_URL}/api/projects?where[featured][equals]=true&where[locale][equals]=${locale}`,
-  )
+  );
 
   if (!res.ok) {
-    throw new Error('Failed to fetch featured projects')
+    throw new Error('Failed to fetch featured projects');
   }
 
-  const data = await res.json()
-  return data.docs ?? []
+  const data = await res.json();
+  return data.docs ?? [];
 }
 
 export async function getProjectBySlug(slug: string) {
-  const res = await fetch(`${API_URL}/api/projects/?where[slug][equals]=${slug}`)
+  const res = await fetch(`${API_URL}/api/projects/?where[slug][equals]=${slug}`);
 
   if (!res.ok) {
-    throw new Error('Failed to fetch project by slug')
+    throw new Error('Failed to fetch project by slug');
   }
 
-  const data = await res.json()
-  return data.docs?.[0] ?? null
+  const data = await res.json();
+  return data.docs?.[0] ?? null;
 }

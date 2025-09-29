@@ -1,11 +1,11 @@
-import { ReactNode } from 'react'
+import { ReactNode } from 'react';
 
-import '@/css/globals.css'
+import '@/css/globals.css';
 
 interface RootLayoutProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  return children
+  return children;
 }

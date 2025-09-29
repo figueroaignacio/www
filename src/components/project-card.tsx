@@ -1,14 +1,14 @@
 // Hooks
-import { useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl';
 
 // Components
-import { Link } from '@/i18n/navigation'
-import { ExternalLinkIcon, GitHubLogoIcon, InfoCircledIcon } from '@radix-ui/react-icons'
-import { Button } from './ui/button'
-import { Card, CardFooter, CardHeader, CardTitle } from './ui/card'
+import { Link } from '@/i18n/navigation';
+import { ExternalLinkIcon, GitHubLogoIcon, InfoCircledIcon } from '@radix-ui/react-icons';
+import { Button } from './ui/button';
+import { Card, CardFooter, CardHeader, CardTitle } from './ui/card';
 
 // Types
-import { type Project } from '@/payload-types'
+import { type Project } from '@/payload-types';
 
 interface ProjectCardProps
   extends Pick<
@@ -33,7 +33,7 @@ export function ProjectCard({
   technologies,
   slug,
 }: ProjectCardProps) {
-  const t = useTranslations('components')
+  const t = useTranslations('components');
 
   const actions = [
     {
@@ -48,7 +48,7 @@ export function ProjectCard({
       variant: 'default' as const,
       icon: <ExternalLinkIcon />,
     },
-  ]
+  ];
 
   return (
     <Card>
@@ -87,5 +87,5 @@ export function ProjectCard({
         </div>
       </CardFooter>
     </Card>
-  )
+  );
 }

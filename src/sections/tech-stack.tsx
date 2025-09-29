@@ -1,5 +1,5 @@
 // Hooks
-import { useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl';
 
 // Icons
 import {
@@ -33,10 +33,10 @@ import {
   VeliteIcon,
   ViteIcon,
   ZodIcon,
-} from '@/components/tech-icons'
+} from '@/components/tech-icons';
 
 export function TechStack() {
-  const t = useTranslations('sections')
+  const t = useTranslations('sections');
 
   const techStack = [
     {
@@ -89,7 +89,7 @@ export function TechStack() {
         { name: 'Zod', icon: ZodIcon },
       ],
     },
-  ]
+  ];
 
   return (
     <div className="space-y-8">
@@ -111,5 +111,5 @@ export function TechStack() {
         </div>
       ))}
     </div>
-  )
+  );
 }

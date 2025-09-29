@@ -1,19 +1,19 @@
 // Hooks
-import { useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl';
 
 // Components
-import { Link } from '@/i18n/navigation'
-import { LocaleSwitcher } from './locale-switcher'
-import { ToggleTheme } from './toggle-theme'
+import { Link } from '@/i18n/navigation';
+import { LocaleSwitcher } from './locale-switcher';
+import { ToggleTheme } from './toggle-theme';
 
 interface Navigation {
-  label: string
-  href: string
+  label: string;
+  href: string;
 }
 
 export function Header() {
-  const t = useTranslations('')
-  const navigation = t.raw('navigation') as Navigation[]
+  const t = useTranslations('');
+  const navigation = t.raw('navigation') as Navigation[];
 
   return (
     <header className="border-border border-b py-2 sticky top-0 z-50 backdrop-blur-xs">
@@ -35,5 +35,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }

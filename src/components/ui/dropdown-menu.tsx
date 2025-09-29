@@ -1,29 +1,29 @@
-'use client'
+'use client';
 
-import { cn } from '@/lib/utils'
-import * as React from 'react'
-import { useEffect, useState } from 'react'
-import { Button } from './button'
+import { cn } from '@/lib/utils';
+import * as React from 'react';
+import { useEffect, useState } from 'react';
+import { Button } from './button';
 
 type DropdownChildProps = {
-  isOpen: boolean
-  toggleMenu: () => void
-  closeMenu: () => void
-}
+  isOpen: boolean;
+  toggleMenu: () => void;
+  closeMenu: () => void;
+};
 
 function DropdownMenu({ children, className }: { children: React.ReactNode; className?: string }) {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen)
-  const closeMenu = () => setIsOpen(false)
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   useEffect(() => {
-    if (!isOpen) return
+    if (!isOpen) return;
 
-    const handleClick = () => closeMenu()
-    document.addEventListener('click', handleClick)
-    return () => document.removeEventListener('click', handleClick)
-  }, [isOpen])
+    const handleClick = () => closeMenu();
+    document.addEventListener('click', handleClick);
+    return () => document.removeEventListener('click', handleClick);
+  }, [isOpen]);
 
   const items = React.Children.map(children, (child) =>
     React.isValidElement(child)
@@ -33,7 +33,7 @@ function DropdownMenu({ children, className }: { children: React.ReactNode; clas
           closeMenu,
         })
       : child,
-  )
+  );
 
   return (
     <div
@@ -42,7 +42,7 @@ function DropdownMenu({ children, className }: { children: React.ReactNode; clas
     >
       {items}
     </div>
-  )
+  );
 }
 
 function DropdownMenuTrigger({
@@ -52,17 +52,17 @@ function DropdownMenuTrigger({
   className,
   isOpen,
 }: {
-  children: React.ReactNode
-  onClick?: () => void
-  toggleMenu?: () => void
-  className?: string
-  isOpen?: boolean
+  children: React.ReactNode;
+  onClick?: () => void;
+  toggleMenu?: () => void;
+  className?: string;
+  isOpen?: boolean;
 }) {
   return (
     <Button
       onClick={() => {
-        toggleMenu?.()
-        onClick?.()
+        toggleMenu?.();
+        onClick?.();
       }}
       variant="ghost"
       size="sm"
@@ -78,7 +78,7 @@ function DropdownMenuTrigger({
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
       </svg>
     </Button>
-  )
+  );
 }
 
 function DropdownMenuContent({
@@ -86,11 +86,11 @@ function DropdownMenuContent({
   children,
   className,
 }: {
-  isOpen?: boolean
-  children: React.ReactNode
-  className?: string
+  isOpen?: boolean;
+  children: React.ReactNode;
+  className?: string;
 }) {
-  if (!isOpen) return null
+  if (!isOpen) return null;
 
   return (
     <div
@@ -101,7 +101,7 @@ function DropdownMenuContent({
     >
       <div className="py-1">{children}</div>
     </div>
-  )
+  );
 }
 
 function DropdownMenuItem({
@@ -110,22 +110,22 @@ function DropdownMenuItem({
   closeMenu,
   className,
 }: {
-  children: React.ReactNode
-  onClick?: () => void
-  closeMenu?: () => void
-  className?: string
+  children: React.ReactNode;
+  onClick?: () => void;
+  closeMenu?: () => void;
+  className?: string;
 }) {
   return (
     <div
       onClick={() => {
-        onClick?.()
-        closeMenu?.()
+        onClick?.();
+        closeMenu?.();
       }}
       className={cn('cursor-pointer px-3 py-2 text-sm hover:bg-muted', className)}
     >
       {children}
     </div>
-  )
+  );
 }
 
-export { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger }
+export { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger };

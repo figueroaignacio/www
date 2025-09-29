@@ -1,25 +1,25 @@
-'use client'
+'use client';
 
 // Hooks
-import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 // Components
-import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
-import { Button } from './ui/button'
+import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
+import { Button } from './ui/button';
 
 export function ToggleTheme() {
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   if (!mounted)
-    return <Button variant="ghost" size="icon" className="bg-muted animate-pulse"></Button>
+    return <Button variant="ghost" size="icon" className="bg-muted animate-pulse"></Button>;
 
-  const isDark = theme === 'dark'
+  const isDark = theme === 'dark';
 
   return (
     <Button
@@ -30,5 +30,5 @@ export function ToggleTheme() {
     >
       {isDark ? <SunIcon /> : <MoonIcon />}
     </Button>
-  )
+  );
 }

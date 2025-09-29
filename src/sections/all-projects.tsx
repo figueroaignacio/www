@@ -1,16 +1,16 @@
 // Components
-import { ProjectCard } from '@/components/project-card'
+import { ProjectCard } from '@/components/project-card';
 
 // Utils
-import { getProjects } from '@/lib/services'
-import { getLocale } from 'next-intl/server'
+import { getProjects } from '@/lib/services';
+import { getLocale } from 'next-intl/server';
 
 // Types
-import { type Project } from '@/payload-types'
+import { type Project } from '@/payload-types';
 
 export async function AllProjects() {
-  const locale = await getLocale()
-  const projects: Project[] = await getProjects(locale)
+  const locale = await getLocale();
+  const projects: Project[] = await getProjects(locale);
 
   return (
     <ul className="space-y-5 mt-12">
@@ -27,5 +27,5 @@ export async function AllProjects() {
         </li>
       ))}
     </ul>
-  )
+  );
 }

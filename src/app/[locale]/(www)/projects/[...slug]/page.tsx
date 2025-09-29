@@ -1,26 +1,26 @@
 // Components
-import { BackButton } from '@/components/back-button'
-import { PostHeader } from '@/components/post-header'
-import { RichText } from '@payloadcms/richtext-lexical/react'
+import { BackButton } from '@/components/back-button';
+import { PostHeader } from '@/components/post-header';
+import { RichText } from '@payloadcms/richtext-lexical/react';
 
 // Utils
-import { getProjectBySlug } from '@/lib/services'
+import { getProjectBySlug } from '@/lib/services';
 
 // Types
-import { type Project } from '@/payload-types'
+import { type Project } from '@/payload-types';
 
 interface ProjectPageProps {
   params: Promise<{
-    slug: string
-  }>
+    slug: string;
+  }>;
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  const { slug } = await params
-  const project: Project = await getProjectBySlug(slug)
+  const { slug } = await params;
+  const project: Project = await getProjectBySlug(slug);
 
   if (!project) {
-    return <p className="text-red-600/30">Error</p>
+    return <p className="text-red-600/30">Error</p>;
   }
 
   return (
@@ -29,5 +29,5 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <PostHeader title={project.title} description={project.description} />
       <RichText data={project.body} className="prose" />
     </article>
-  )
+  );
 }
