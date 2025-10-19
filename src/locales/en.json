@@ -3,6 +3,18 @@
     "hero": {
       "greeting": "Hey, I'm Ignacio",
       "description": "Software Developer from Argentina. Contact me below. Currently bulding I7A UI"
+    },
+    "thoughts": {
+      "title": "thoughts",
+      "description": "a place to record what I learn, build, and break along the way."
+    },
+    "me": {
+      "title": "me",
+      "description": "who i am, what i do"
+    },
+    "projects": {
+      "title": "projects",
+      "description": "what I build"
     }
   },
   "ui": {

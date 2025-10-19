@@ -3,6 +3,18 @@
     "hero": {
       "greeting": "Hey, soy Ignacio",
       "description": "Desarrollador de Software de Argentina. Contactame aquí abajo. Actualmente construyendo I7A UI"
+    },
+    "thoughts": {
+      "title": "pensamientos",
+      "description": "> un lugar para registrar lo que aprendo, construyo y rompo en el camino."
+    },
+    "me": {
+      "title": "yo",
+      "description": "> quien soy, que hago"
+    },
+    "projects": {
+      "title": "proyectos",
+      "description": "> lo que construyo"
     }
   },
   "ui": {

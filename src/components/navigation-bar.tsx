@@ -28,7 +28,7 @@ export function NavigationBar() {
             className={`inline-block text-sm transition-all ${
               isActive
                 ? 'text-foreground font-medium scale-110'
-                : 'text-muted-foreground hover:text-foreground hover:scale-110'
+                : 'text-muted-foreground hover:text-foreground '
             }`}
           >
             {item.label}
