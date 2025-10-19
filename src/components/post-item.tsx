@@ -5,9 +5,9 @@ import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 
 // Utils
+import { formatFullDateWithWeekday } from '@/lib/utils';
 
 // Types
-import { formatFullDateWithWeekday } from '@/lib/utils';
 import { type Post } from '@/payload-types';
 
 interface PostItemProps extends Pick<Post, 'title' | 'slug' | 'createdAt'> {}
