@@ -6,6 +6,7 @@ import { useTranslations, type Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 
 // Sections
+import { PageDescription } from '@/components/page-description';
 import { AllProjects } from '@/sections/all-projects';
 
 interface ProjectsPageProps {
@@ -19,7 +20,7 @@ export default function ProjectsPage({ params }: ProjectsPageProps) {
 
   return (
     <div className="space-y-5">
-      <h2 className="text-muted-foreground text-sm">{t('projects.description')}</h2>
+      <PageDescription title={t('projects.description')} />
       <AllProjects />
     </div>
   );

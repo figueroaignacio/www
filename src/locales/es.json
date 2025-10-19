@@ -39,6 +39,10 @@
         "cms": "CMS y Contenido",
         "others": "Herramientas y demás"
       }
+    },
+    "experience": {
+      "title": "experiencia",
+      "description": "> un resumen de mi camino como desarrollador"
     }
   },
   "ui": {
@@ -54,6 +58,10 @@
       {
         "label": "proyectos",
         "href": "/projects"
+      },
+      {
+        "label": "experiencia",
+        "href": "/experience"
       },
       {
         "label": "stack",

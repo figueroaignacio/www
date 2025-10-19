@@ -5,23 +5,23 @@ import { use } from 'react';
 import { useTranslations, type Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 
-// Components
+// Sections
 import { PageDescription } from '@/components/page-description';
-import AboutMe from '@/sections/about-me';
+import { AllExperience } from '@/sections/all-experience';
 
-interface MePageProps {
+interface ExeperiencePageProps {
   params: Promise<{ locale: Locale }>;
 }
 
-export default function MePage({ params }: MePageProps) {
+export default function ExperiencePage({ params }: ExeperiencePageProps) {
   const { locale } = use(params);
   setRequestLocale(locale);
   const t = useTranslations('sections');
 
   return (
     <div className="space-y-5">
-      <PageDescription title={t('me.description')} />
-      <AboutMe />
+      <PageDescription title={t('experience.description')} />
+      <AllExperience />
     </div>
   );
 }

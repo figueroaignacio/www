@@ -5,7 +5,8 @@ import { use } from 'react';
 import { useTranslations, type Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 
-// Sections
+// Components
+import { PageDescription } from '@/components/page-description';
 import { TechStack } from '@/sections/tech-stack';
 
 interface StackPageProps {
@@ -19,7 +20,7 @@ export default function StackPage({ params }: StackPageProps) {
 
   return (
     <div className="space-y-5">
-      <h2 className="text-muted-foreground text-sm">{t('stack.description')}</h2>
+      <PageDescription title={t('stack.description')} />
       <TechStack />
     </div>
   );
