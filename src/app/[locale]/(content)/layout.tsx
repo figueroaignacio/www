@@ -1,7 +1,5 @@
 import React from 'react';
 
-// Components
-
 // next-intl
 import { routing } from '@/i18n/routing';
 import { hasLocale, Locale } from 'next-intl';
@@ -13,7 +11,7 @@ interface BlogLayoutProps {
   params: Promise<{ locale: Locale }>;
 }
 
-export default async function BlogLayout({ children, params }: BlogLayoutProps) {
+export default async function ContentLayout({ children, params }: BlogLayoutProps) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
