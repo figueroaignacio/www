@@ -1,6 +1,7 @@
 import React from 'react';
 
 // Components
+import { Footer } from '@/components/footer';
 import { ThemeProvider } from '@/components/theme-provider';
 
 // next-intl
@@ -10,7 +11,6 @@ import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
 // Font
-import { Footer } from '@/components/footer';
 import { fontSans } from '@/lib/fonts';
 
 export const metadata = {

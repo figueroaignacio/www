@@ -5,6 +5,7 @@ import { usePathname } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 
 // Components
+import { AnimateIn } from '@/components/animate-in';
 import { Link } from '@/i18n/navigation';
 
 interface Navigation {
@@ -19,20 +20,22 @@ export function NavigationBar() {
 
   return (
     <nav className="space-x-5">
-      {navigation.map((item) => {
+      {navigation.map((item, index) => {
         const isActive = pathname === item.href;
+        const delay = 0.1 + index * 0.1;
         return (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={`inline-block text-sm transition-all ${
-              isActive
-                ? 'text-foreground font-medium scale-110'
-                : 'text-muted-foreground hover:text-foreground '
-            }`}
-          >
-            {item.label}
-          </Link>
+          <AnimateIn key={item.href} variant="fadeUp" delay={delay} className="inline-block">
+            <Link
+              href={item.href}
+              className={`inline-block text-sm transition-all ${
+                isActive
+                  ? 'text-foreground font-medium scale-110'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              {item.label}
+            </Link>
+          </AnimateIn>
         );
       })}
     </nav>

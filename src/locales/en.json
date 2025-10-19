@@ -39,6 +39,10 @@
         "cms": "CSM & Content",
         "others": "Tools and others"
       }
+    },
+    "experience": {
+      "title": "experiencie",
+      "description": "> a summary of my journey as a developer"
     }
   },
   "ui": {
@@ -54,6 +58,10 @@
       {
         "label": "projects",
         "href": "/projects"
+      },
+      {
+        "label": "experiencie",
+        "href": "/experience"
       },
       {
         "label": "stack",

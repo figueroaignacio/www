@@ -86,3 +86,13 @@ export function formatTimeOnly(date: string | Date, locale: Locale): string {
     locale: dateLocale,
   });
 }
+
+export function formatMonthYear(date: string | Date, locale: Locale): string {
+  const dateLocale = getDateLocale(locale);
+
+  if (locale === 'es') {
+    return format(new Date(date), "MMMM 'de' yyyy", { locale: dateLocale });
+  }
+
+  return format(new Date(date), 'MMMM yyyy', { locale: dateLocale });
+}

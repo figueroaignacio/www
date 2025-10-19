@@ -5,7 +5,8 @@ import { use } from 'react';
 import { useTranslations, type Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 
-// Sections
+// Components
+import { PageDescription } from '@/components/page-description';
 import { AllPosts } from '@/sections/all-posts';
 
 interface HomePageProps {
@@ -19,7 +20,7 @@ export default function HomePage({ params }: HomePageProps) {
 
   return (
     <div className="space-y-5">
-      <h2 className="text-muted-foreground text-sm">{t('thoughts.description')}</h2>
+      <PageDescription title={t('thoughts.description')} />
       <AllPosts />
     </div>
   );
