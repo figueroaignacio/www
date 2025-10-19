@@ -6,15 +6,29 @@
     },
     "thoughts": {
       "title": "thoughts",
-      "description": "a place to record what I learn, build, and break along the way."
+      "description": "> a place to record what I learn, build, and break along the way."
     },
     "me": {
       "title": "me",
-      "description": "who i am, what i do"
+      "description": "> who i am, what i do",
+      "items": [
+        {
+          "content": "I'm Ignacio Figueroa, I study programming at UTN and I love learning on my own. I like exploring new technologies and seeing what I can do with them. For me, programming is a cool challenge and a way to create useful and creative things."
+        },
+        {
+          "content": "I like building my own projects, from small components to complete apps. Each project is an excuse to try new ideas and learn. I'm really into frontend, making clean and nice-looking interfaces, but I also love understanding how everything works behind the scenes."
+        },
+        {
+          "content": "I work by trying things out, making mistakes, and adjusting until it's right. I read, look at examples, and then apply it to real projects. I like documenting what I learn and sharing it on my portfolio or blog."
+        },
+        {
+          "content": "What motivates me most is learning, creating, and experimenting. I really enjoy solving problems, discovering new tools, and improving what I do. Every line of code is an opportunity to learn something and grow, and I always try to make my projects reflect my curiosity and the passion I put into programming."
+        }
+      ]
     },
     "projects": {
       "title": "projects",
-      "description": "what I build"
+      "description": "> what I build"
     },
     "stack": {
       "title": "skills",
