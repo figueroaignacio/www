@@ -10,6 +10,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
 // Font
+import { Footer } from '@/components/footer';
 import { fontSans } from '@/lib/fonts';
 
 export const metadata = {
@@ -32,10 +33,13 @@ export default async function RootLayout({ children, params }: LocaleLayoutProps
 
   return (
     <html lang="en">
-      <body className={`${fontSans.className} antialiased`}>
+      <body className={`${fontSans.className} antialiased flex flex-col min-h-screen`}>
         <NextIntlClientProvider>
           <ThemeProvider attribute="class" defaultTheme="dark">
-            <main className="max-w-xl mx-auto p-4 space-y-5">{children}</main>
+            <div className="min-h-screen grid grid-rows-[1fr_auto]">
+              <main className="max-w-xl mx-auto p-4 space-y-5 w-full">{children}</main>
+              <Footer />
+            </div>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
