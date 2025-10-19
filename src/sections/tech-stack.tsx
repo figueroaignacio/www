@@ -1,0 +1,122 @@
+// Hooks
+import { useTranslations } from 'next-intl';
+
+// Components
+import { AnimateIn } from '@/components/animate-in';
+import {
+  AstroIcon,
+  CSSIcon,
+  CVAIcon,
+  ExpressIcon,
+  GitHubIcon,
+  GitIcon,
+  HTMLIcon,
+  JavascriptIcon,
+  JsonIcon,
+  MDXIcon,
+  MarkdownIcon,
+  MaterialIcon,
+  NextJSIcon,
+  NodeJSIcon,
+  PGIcon,
+  PayloadIcon,
+  PnpmIcon,
+  PrismaIcon,
+  RadixIcon,
+  ReactHookFormIcon,
+  ReactIcon,
+  ReactRouterIcon,
+  SanityIcon,
+  TailwindIcon,
+  TurborepoIcon,
+  TypeOrmIcon,
+  TypescriptIcon,
+  VeliteIcon,
+  ViteIcon,
+  ZodIcon,
+} from '@/components/tech-icons';
+
+export function TechStack() {
+  const t = useTranslations('sections');
+
+  const techStack = [
+    {
+      category: t('stack.categories.frontend'),
+      items: [
+        { name: 'React', icon: ReactIcon },
+        { name: 'NextJS', icon: NextJSIcon },
+        { name: 'Vite', icon: ViteIcon },
+        { name: 'Typescript', icon: TypescriptIcon },
+        { name: 'Javascript', icon: JavascriptIcon },
+        { name: 'TailwindCSS', icon: TailwindIcon },
+        { name: 'CSS', icon: CSSIcon },
+        { name: 'HTML', icon: HTMLIcon },
+        { name: 'Material UI', icon: MaterialIcon },
+        { name: 'Astro', icon: AstroIcon },
+        { name: 'Radix UI', icon: RadixIcon },
+        { name: 'React Router', icon: ReactRouterIcon },
+        { name: 'React Hook Form', icon: ReactHookFormIcon },
+        { name: 'CVA', icon: CVAIcon },
+      ],
+    },
+    {
+      category: t('stack.categories.backend'),
+      items: [
+        { name: 'NodeJS', icon: NodeJSIcon },
+        { name: 'Express', icon: ExpressIcon },
+        { name: 'PostgreSQL', icon: PGIcon },
+        { name: 'Prisma', icon: PrismaIcon },
+        { name: 'TypeORM', icon: TypeOrmIcon },
+      ],
+    },
+    {
+      category: t('stack.categories.cms'),
+      items: [
+        { name: 'Sanity', icon: SanityIcon },
+        { name: 'Payload', icon: PayloadIcon },
+        { name: 'Velite', icon: VeliteIcon },
+      ],
+    },
+    {
+      category: t('stack.categories.others'),
+      items: [
+        { name: 'Git', icon: GitIcon },
+        { name: 'GitHub', icon: GitHubIcon },
+        { name: 'PNPM', icon: PnpmIcon },
+        { name: 'Turborepo', icon: TurborepoIcon },
+        { name: 'MDX', icon: MDXIcon },
+        { name: 'Markdown', icon: MarkdownIcon },
+        { name: 'JSON', icon: JsonIcon },
+        { name: 'Zod', icon: ZodIcon },
+      ],
+    },
+  ];
+
+  return (
+    <div className="space-y-8">
+      {techStack.map((section, sectionIndex) => {
+        const sectionDelay = 0.1 + sectionIndex * 0.2;
+        return (
+          <AnimateIn key={section.category} variant="fadeUp" delay={sectionDelay}>
+            <div>
+              <h3 className="mb-4 text-sm">{section.category}: </h3>
+              <div className="flex flex-wrap gap-10">
+                {section.items.map(({ name, icon: Icon }, itemIndex) => {
+                  const itemDelay = sectionDelay + 0.05 + itemIndex * 0.03;
+                  return (
+                    <AnimateIn key={name} variant="scale" delay={itemDelay}>
+                      <div className="flex flex-col items-center gap-2 backdrop-blur-3xl rounded-lg">
+                        <Icon />
+                        <span className="text-xs">{name}</span>
+                      </div>
+                    </AnimateIn>
+                  );
+                })}
+              </div>
+            </div>
+          </AnimateIn>
+        );
+      })}
+    </div>
+  );
+}

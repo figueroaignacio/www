@@ -10,11 +10,35 @@
     },
     "me": {
       "title": "yo",
-      "description": "> quien soy, que hago"
+      "description": "> quién soy, qué hago",
+      "items": [
+        {
+          "content": "Soy Ignacio Figueroa, estudio programación en la utn y me encanta aprender por mi cuenta. Me gusta explorar nuevas tecnologías y ver qué puedo hacer con ellas. Para mí programar es un desafío copado y una forma de crear cosas útiles y creativas."
+        },
+        {
+          "content": "Me gusta armar proyectos propios, desde componentes chicos hasta apps completas. Cada proyecto es una excusa para probar ideas nuevas y aprender. Me va mucho el frontend, hacer interfaces limpias y lindas, pero también me copa entender cómo funciona todo por atrás."
+        },
+        {
+          "content": "Trabajo probando cosas, equivocándome y ajustando hasta que quede bien. Leo, miro ejemplos y después lo aplico en proyectos reales. Me gusta ir documentando lo que aprendo y compartirlo en mi portfolio o blog."
+        },
+        {
+          "content": "Lo que más me motiva es aprender, crear y experimentar. Me re copa resolver problemas, descubrir herramientas nuevas y mejorar lo que hago. Cada línea de código es una oportunidad para aprender algo y crecer, y siempre busco que mis proyectos reflejen mi curiosidad y las ganas que le pongo a programar."
+        }
+      ]
     },
     "projects": {
       "title": "proyectos",
       "description": "> lo que construyo"
+    },
+    "stack": {
+      "title": "habilidades",
+      "description": "> stack de tecnologias que me gusta y sé usar",
+      "categories": {
+        "frontend": "Frontend",
+        "backend": "Backend e Infraestructura",
+        "cms": "CMS y Contenido",
+        "others": "Herramientas y demás"
+      }
     }
   },
   "ui": {
@@ -30,6 +54,10 @@
       {
         "label": "proyectos",
         "href": "/projects"
+      },
+      {
+        "label": "stack",
+        "href": "/stack"
       }
     ]
   }
