@@ -5,9 +5,9 @@ interface PostHeaderProps {
 
 export function PostHeader({ description, title }: PostHeaderProps) {
   return (
-    <header className="space-y-3 border-b border-border pb-3 mb-6">
-      <h1 className="text-xl font-bold">{title}</h1>
-      <p className="text-muted-foreground">{description}</p>
+    <header className="space-y-3 pb-3 mb-6">
+      <h1 className="text-lg">{title}</h1>
+      <p className="text-muted-foreground text-sm">{description}</p>
     </header>
   );
 }

@@ -1,38 +1,30 @@
 // Hooks
-import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 
 // Components
 import { Link } from '@/i18n/navigation';
-import { ArrowRightIcon, StarIcon } from '@radix-ui/react-icons';
-import { Button } from './ui/button';
+
+// Utils
+import { formatFullDateWithWeekday } from '@/lib/utils';
 
 // Types
 import { type Post } from '@/payload-types';
 
-interface PostItemProps extends Partial<Post> {}
+interface PostItemProps extends Pick<Post, 'title' | 'slug' | 'createdAt'> {}
 
-export function PostItem({ description, slug, title, featured }: PostItemProps) {
-  const t = useTranslations('components');
+export function PostItem({ slug, title, createdAt }: PostItemProps) {
+  const locale = useLocale();
 
   return (
-    <div className="py-6 last:border-b-0 border-l-8 border-primary rounded-md px-4">
-      <div className="space-y-5">
-        <div className="flex justify-between items-center">
-          <h3 className="text-lg font-semibold transition-colors">{title}</h3>
-          {featured ? <StarIcon className="text-yellow-500 size-3" /> : null}
-        </div>
-        <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
-        <div className="flex justify-end w-full">
-          <Button>
-            <Link
-              href={`/blog/${slug}`}
-              className="inline-flex items-center gap-x-2 text-sm transition-colors font-medium"
-            >
-              {t('postCard.readMore')} <ArrowRightIcon />
-            </Link>
-          </Button>
-        </div>
-      </div>
+    <div>
+      <p className="text-xs text-muted-foreground mb-2">
+        {formatFullDateWithWeekday(createdAt, locale)}
+      </p>
+      <Link href={`/blog/${slug}`} className="underline">
+        <h3 className="text-sm transition-transform hover:scale-[1.02] active:scale-[0.99]">
+          {title}
+        </h3>
+      </Link>
     </div>
   );
 }

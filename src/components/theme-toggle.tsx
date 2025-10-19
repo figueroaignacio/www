@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 import { Button } from './ui/button';
 
-export function ToggleTheme() {
+export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 

@@ -1,12 +1,12 @@
+// React
 import { use } from 'react';
+
+// next-intl
+import { useTranslations, type Locale } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
 
 // Sections
 import { AllProjects } from '@/sections/all-projects';
-import { Hero } from '@/sections/hero';
-
-// next-intl
-import { type Locale, useTranslations } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
 
 interface ProjectsPageProps {
   params: Promise<{ locale: Locale }>;
@@ -18,9 +18,9 @@ export default function ProjectsPage({ params }: ProjectsPageProps) {
   const t = useTranslations('sections');
 
   return (
-    <section className="container space-y-3">
-      <Hero title={t('projects.heading')} description={t('projects.description')} />
+    <div className="space-y-5">
+      <h2 className="text-muted-foreground text-sm">{t('projects.description')}</h2>
       <AllProjects />
-    </section>
+    </div>
   );
 }

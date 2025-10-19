@@ -1,79 +1,36 @@
 {
   "sections": {
     "hero": {
-      "subtitle": "Desarrollador de Software // Enfocado en Frontend"
+      "greeting": "Hey, soy Ignacio",
+      "description": "Desarrollador de Software de Argentina. Contactame aquí abajo. Actualmente construyendo I7A UI"
     },
-    "about": {
-      "heading": "> Acerca de mi",
-      "first-paragraph": "Soy desarrollador web frontend con experiencia en JavaScript, TypeScript, React y Next.js, creando interfaces modernas, optimizadas y centradas en la experiencia del usuario. Me mantengo actualizado con las últimas tendencias y buenas prácticas para entregar soluciones sólidas y escalables.",
-      "second-paragraph": "IDisfruto aprender de forma constante y aplicar nuevas tecnologías en proyectos reales, siempre con foco en la calidad y el detalle. Estoy abierto a colaborar en iniciativas que representen un desafío y generen un impacto positivo."
+    "thoughts": {
+      "title": "pensamientos",
+      "description": "> un lugar para registrar lo que aprendo, construyo y rompo en el camino."
     },
-    "experience": {
-      "heading": "> Experiencia"
-    },
-    "education": {
-      "heading": "> Educación"
-    },
-    "blog": {
-      "heading": "> Blog",
-      "description": "En este espacio comparto artículos sobre desarrollo web, buenas prácticas, tendencias tecnológicas y experiencias personales en mi camino como desarrollador. La idea es aportar valor y documentación que pueda ayudar a otros en la comunidad."
-    },
-    "featuredPosts": {
-      "heading": "> Publicaciones destacadas",
-      "seeAllPosts": "Mirar todas las publicaciones"
-    },
-    "techStack": {
-      "heading": "> Mi Stack",
-      "categories": {
-        "frontend": "Frontend",
-        "backend": "Backend e Infraestructura",
-        "cms": "CMS y Contenido",
-        "others": "Herramientas y demás"
-      }
-    },
-    "featuredProjects": {
-      "heading": "> Proyectos Destacados"
+    "me": {
+      "title": "yo",
+      "description": "> quien soy, que hago"
     },
     "projects": {
-      "heading": "> Proyectos",
-      "description": "En esta página vas a encontrar una selección de mis proyectos personales, tanto en desarrollo como finalizados, donde aplico y experimento con diferentes tecnologías."
+      "title": "proyectos",
+      "description": "> lo que construyo"
     }
   },
-  "navigation": [
-    {
-      "label": "Inicio",
-      "href": "/"
-    },
-    {
-      "label": "Proyectos",
-      "href": "/projects"
-    },
-    {
-      "label": "Blog",
-      "href": "/blog"
-    }
-  ],
-  "components": {
-    "experienceCard": {
-      "actions": {
-        "viewLessDetails": "Ver menos",
-        "viewMoreDetails": "Ver más detalles"
+  "ui": {
+    "navigation": [
+      {
+        "label": "pensamientos",
+        "href": "/"
+      },
+      {
+        "label": "yo",
+        "href": "/me"
+      },
+      {
+        "label": "proyectos",
+        "href": "/projects"
       }
-    },
-    "cvCta": {
-      "title": "Explorá mi perfil profesional",
-      "description": "> Si querés conocer más sobre mi trayectoria y habilidades, te invito a ver mi CV",
-      "action": "Ver Curriculum"
-    },
-    "postCard": {
-      "readMore": "Leer Más"
-    },
-    "projectCard": {
-      "actions": {
-        "demo": "Ver Demo",
-        "sourceCode": "Código Fuente",
-        "learnMore": "Ver detalles"
-      }
-    }
+    ]
   }
 }

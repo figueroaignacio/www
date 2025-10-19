@@ -1,26 +1,88 @@
 import { clsx, type ClassValue } from 'clsx';
+import type { Locale as DateFnsLocale } from 'date-fns';
+import { format, formatDistanceToNow } from 'date-fns';
+import { enUS, es } from 'date-fns/locale';
+import { Locale } from 'next-intl';
 import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatDate(date: string) {
-  return new Intl.DateTimeFormat('en-US', {
-    year: 'numeric',
-    month: 'short',
-  }).format(new Date(date));
+const localeMap: Record<Locale, DateFnsLocale> = {
+  es,
+  en: enUS,
+};
+
+function getDateLocale(locale: Locale): DateFnsLocale {
+  return localeMap[locale];
 }
 
-export function formatMonthYear(date?: string) {
-  if (!date) return 'N/A';
-  const d = new Date(date);
-  if (isNaN(d.getTime())) return date;
-  return d.toLocaleDateString(undefined, { year: 'numeric', month: 'long' });
+export function formatFullDateWithWeekday(date: string | Date, locale: Locale): string {
+  const dateLocale = getDateLocale(locale);
+
+  if (locale === 'es') {
+    return format(new Date(date), "EEEE, d 'de' MMMM 'de' yyyy", {
+      locale: dateLocale,
+    });
+  }
+
+  return format(new Date(date), 'EEEE, MMMM d, yyyy', {
+    locale: dateLocale,
+  });
 }
 
-export function formatRange(start?: string, end?: string, isCurrent?: boolean) {
-  const startFmt = start ? formatMonthYear(start) : 'N/A';
-  const endFmt = isCurrent ? 'Present' : end ? formatMonthYear(end) : 'N/A';
-  return `${startFmt} - ${endFmt}`;
+export function formatShortDate(date: string | Date, locale: Locale): string {
+  const dateLocale = getDateLocale(locale);
+
+  if (locale === 'es') {
+    return format(new Date(date), 'dd/MM/yyyy', {
+      locale: dateLocale,
+    });
+  }
+
+  return format(new Date(date), 'MM/dd/yyyy', {
+    locale: dateLocale,
+  });
+}
+
+export function formatRelativeDate(date: string | Date, locale: Locale): string {
+  const dateLocale = getDateLocale(locale);
+
+  return formatDistanceToNow(new Date(date), {
+    addSuffix: true,
+    locale: dateLocale,
+  });
+}
+
+/**
+ * Solo fecha sin hora: "15 de septiembre de 2025"
+ * EN: "September 15, 2025"
+ */
+export function formatDateOnly(date: string | Date, locale: Locale): string {
+  const dateLocale = getDateLocale(locale);
+
+  if (locale === 'es') {
+    return format(new Date(date), "d 'de' MMMM 'de' yyyy", {
+      locale: dateLocale,
+    });
+  }
+
+  return format(new Date(date), 'MMMM d, yyyy', {
+    locale: dateLocale,
+  });
+}
+
+export function formatTimeOnly(date: string | Date, locale: Locale): string {
+  const dateLocale = getDateLocale(locale);
+
+  if (locale === 'es') {
+    return format(new Date(date), 'HH:mm', {
+      locale: dateLocale,
+    });
+  }
+
+  return format(new Date(date), 'h:mm a', {
+    locale: dateLocale,
+  });
 }

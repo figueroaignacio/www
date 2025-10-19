@@ -1,5 +1,5 @@
 // Components
-import { ProjectCard } from '@/components/project-card';
+import { ProjectItem } from '@/components/project-item';
 
 // Utils
 import { getProjects } from '@/lib/services';
@@ -13,12 +13,11 @@ export async function AllProjects() {
   const projects: Project[] = await getProjects(locale);
 
   return (
-    <ul className="space-y-5 mt-12">
+    <ul className="space-y-5 ">
       {projects.map((post) => (
         <li key={post.slug}>
-          <ProjectCard
+          <ProjectItem
             title={post.title}
-            description={post.description}
             subtitle={post.subtitle}
             repository={post.repository}
             technologies={post.technologies}
