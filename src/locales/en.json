@@ -15,6 +15,16 @@
     "projects": {
       "title": "projects",
       "description": "what I build"
+    },
+    "stack": {
+      "title": "skills",
+      "description": "> tech stack i like and i know to use",
+      "categories": {
+        "frontend": "Frontend",
+        "backend": "Backend & Infraestructure",
+        "cms": "CSM & Content",
+        "others": "Tools and others"
+      }
     }
   },
   "ui": {
@@ -30,6 +40,10 @@
       {
         "label": "projects",
         "href": "/projects"
+      },
+      {
+        "label": "stack",
+        "href": "/stack"
       }
     ]
   }
