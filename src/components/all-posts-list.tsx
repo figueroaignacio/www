@@ -1,18 +1,17 @@
+'use client';
+
 // Components
 import { AnimateIn } from '@/components/animate-in';
 import { PostItem } from '@/components/post-item';
 
-// Utils
-import { getPosts } from '@/lib/services';
-import { getLocale } from 'next-intl/server';
-
 // Types
 import { type Post } from '@/payload-types';
 
-export async function AllPosts() {
-  const locale = await getLocale();
-  const posts: Post[] = await getPosts(locale);
+interface AllPostsListProps {
+  posts: Post[];
+}
 
+export function AllPostsList({ posts }: AllPostsListProps) {
   return (
     <ul className="space-y-5">
       {posts.map((post, index) => {
