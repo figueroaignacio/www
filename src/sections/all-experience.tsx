@@ -4,8 +4,10 @@ import { ExperienceItem } from '@/components/experience-item';
 
 // Utils
 import { getExperience } from '@/lib/services';
-import { Experience } from '@/payload-types';
 import { getLocale, getTranslations } from 'next-intl/server';
+
+// Types
+import { type Experience } from '@/payload-types';
 
 export async function AllExperience() {
   const locale = await getLocale();
@@ -22,7 +24,7 @@ export async function AllExperience() {
         {experience.map((item, index) => {
           const delay = 0.1 + index * 0.15;
           return (
-            <AnimateIn key={item.id} variant="fadeUp" delay={delay}>
+            <AnimateIn key={item.id} variant="fadeLeft" delay={delay}>
               <ExperienceItem
                 title={item.title}
                 description={item.description}

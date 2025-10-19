@@ -1,5 +1,5 @@
 // Hooks
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 
 // Utils
 import { formatMonthYear } from '@/lib/utils';
@@ -20,7 +20,6 @@ export function ExperienceItem({
   endDate,
   isCurrent,
 }: ExperienceItemProps) {
-  const t = useTranslations('components');
   const locale = useLocale();
 
   const formattedStart = startDate ? formatMonthYear(startDate, locale) : null;
