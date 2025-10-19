@@ -1,6 +1,6 @@
-import { Manrope } from 'next/font/google';
+import { Geist } from 'next/font/google';
 
-export const manrope = Manrope({
-  variable: '--font-manrope',
+export const fontSans = Geist({
+  variable: '--font-sans',
   subsets: ['latin'],
 });

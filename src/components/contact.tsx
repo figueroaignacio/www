@@ -21,7 +21,7 @@ const contacts = [
 
 export function Contact() {
   return (
-    <ul className="flex gap-x-5">
+    <ul className="flex gap-x-5 mt-5">
       {contacts.map((item) => (
         <li key={item.href}>
           <a href={item.href} target={item.target} className="">

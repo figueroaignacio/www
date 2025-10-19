@@ -1,8 +1,7 @@
 import React from 'react';
 
 // Components
-import { Footer } from '@/components/footer';
-import { Header } from '@/components/header';
+import { Hero } from '@/components/hero';
 import { NavigationBar } from '@/components/navigation-bar';
 import { ThemeProvider } from '@/components/theme-provider';
 
@@ -13,7 +12,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
 // Font
-import { manrope } from '@/lib/fonts';
+import { fontSans } from '@/lib/fonts';
 
 export const metadata = {
   description: 'A blank template using Payload in a Next.js app.',
@@ -35,14 +34,13 @@ export default async function RootLayout({ children, params }: LocaleLayoutProps
 
   return (
     <html lang="en">
-      <body className={`${manrope.className} antialiased`}>
+      <body className={`${fontSans.className} antialiased`}>
         <NextIntlClientProvider>
           <ThemeProvider attribute="class" defaultTheme="dark">
-            <div className="grid grid-rows-[auto_1fr_auto] gap-y-5 min-h-lvh">
-              <Header />
+            <div className="max-w-xl mx-auto p-4 space-y-5">
+              <Hero />
               <NavigationBar />
               <main>{children}</main>
-              <Footer />
             </div>
           </ThemeProvider>
         </NextIntlClientProvider>
