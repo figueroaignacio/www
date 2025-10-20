@@ -75,6 +75,9 @@
       "actions": {
         "details": "Detalles"
       }
+    },
+    "footer": {
+      "builtIn": "construido en next.js y payloadcms"
     }
   }
 }
