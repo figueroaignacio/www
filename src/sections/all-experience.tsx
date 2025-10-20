@@ -1,21 +1,29 @@
 // Components
 import { AnimateIn } from '@/components/animate-in';
+import { Error } from '@/components/error';
 import { ExperienceItem } from '@/components/experience-item';
 
 // Utils
 import { getExperience } from '@/lib/services';
-import { getLocale, getTranslations } from 'next-intl/server';
+import { getLocale } from 'next-intl/server';
 
 // Types
 import { type Experience } from '@/payload-types';
 
 export async function AllExperience() {
   const locale = await getLocale();
-  const t = await getTranslations('sections');
-  const experience: Experience[] = await getExperience(locale);
+  let experience: Experience[] = [];
+  let error = false;
 
-  if (experience.length === 0) {
-    return <p className="text-muted-foreground">{t('experience.empty')}</p>;
+  try {
+    experience = await getExperience(locale);
+  } catch (error) {
+    console.error(error);
+    error = true;
+  }
+
+  if (error || experience.length === 0) {
+    return <Error />;
   }
 
   return (

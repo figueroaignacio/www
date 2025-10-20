@@ -1,6 +1,10 @@
+// Hooks
+import { useTranslations } from 'next-intl';
+
 // Components
 import { Link } from '@/i18n/navigation';
 import { ExternalLinkIcon, InfoCircledIcon } from '@radix-ui/react-icons';
+import { Badge } from './ui/badge';
 
 // Types
 import { type Project } from '@/payload-types';
@@ -15,12 +19,14 @@ export function ProjectItem({
   repository,
   technologies,
 }: ProjectCardProps) {
+  const t = useTranslations('components.projectItem.actions');
+
   const links = [
     repository && { href: repository, label: 'GitHub', icon: <ExternalLinkIcon /> },
     demo && { href: demo, label: 'Demo', icon: <ExternalLinkIcon /> },
     slug && {
       href: `/project/${slug}`,
-      label: 'Details',
+      label: t('details'),
       icon: <InfoCircledIcon />,
       internal: true,
     },
@@ -62,12 +68,9 @@ export function ProjectItem({
         </div>
       </div>
       <h4 className="text-sm text-muted-foreground">{subtitle}</h4>
-      <div className="flex gap-1 flex-wrap text-xs text-muted-foreground">
-        {technologies?.map((tech, index) => (
-          <span key={tech.id}>
-            {tech.name}
-            {index < technologies.length - 1 && ' / '}
-          </span>
+      <div className="flex gap-1 flex-wrap">
+        {technologies?.map((tech) => (
+          <Badge key={tech.id} label={tech.name || ''} />
         ))}
       </div>
     </div>

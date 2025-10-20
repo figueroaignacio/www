@@ -69,5 +69,16 @@
         "href": "/stack"
       }
     ]
+  },
+  "components": {
+    "projectItem": {
+      "actions": {
+        "details": "Details"
+      }
+    },
+    "footer": {
+      "builtIn": "built in next.js and payloadcms"
+    },
+    "error": "An error occurred while loading the data."
   }
 }

@@ -1,6 +1,9 @@
 // Hooks
 import { useLocale } from 'next-intl';
 
+// Components
+import { Badge } from './ui/badge';
+
 // Utils
 import { formatMonthYear } from '@/lib/utils';
 
@@ -42,18 +45,15 @@ export function ExperienceItem({
         )}
       </div>
       <div>
-        <h3 className="text-lg">
+        <h3 className="text-sm">
           {title} - <span>{company}</span>
         </h3>
       </div>
       {description && <p className="text-sm text-muted-foreground pt-1">{description}</p>}
       {technologies.length > 0 && (
         <div className="flex gap-2 flex-wrap pt-2">
-          {technologies.map((technology, index) => (
-            <span key={technology.id} className="text-muted-foreground text-xs">
-              {technology.name}
-              {index < technologies.length - 1 && ' / '}
-            </span>
+          {technologies.map((technology) => (
+            <Badge key={technology.id} label={technology.name || ''} />
           ))}
         </div>
       )}

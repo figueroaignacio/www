@@ -1,17 +1,30 @@
 // Components
 import { AnimateIn } from '@/components/animate-in';
+import { Error } from '@/components/error';
 import { PostItem } from '@/components/post-item';
 
 // Utils
-import { getPosts } from '@/lib/services';
 import { getLocale } from 'next-intl/server';
 
 // Types
+import { getPosts } from '@/lib/services';
 import { type Post } from '@/payload-types';
 
 export async function AllPosts() {
   const locale = await getLocale();
-  const posts: Post[] = await getPosts(locale);
+  let posts: Post[] = [];
+  let error = false;
+
+  try {
+    posts = await getPosts(locale);
+  } catch (error) {
+    console.error(error);
+    error = true;
+  }
+
+  if (error || posts.length === 0) {
+    return <Error />;
+  }
 
   return (
     <ul className="space-y-5">
