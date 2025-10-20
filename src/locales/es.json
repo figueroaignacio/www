@@ -29,7 +29,9 @@
     },
     "projects": {
       "title": "Proyectos",
-      "description": "> lo que construyo"
+      "description": "> lo que construyo",
+      "featuredProjects": "proyectos destacados",
+      "otherProjects": "otros proyectos"
     },
     "stack": {
       "title": "Stack",
