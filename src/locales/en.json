@@ -1,15 +1,16 @@
 {
   "sections": {
     "hero": {
+      "title": "Fullstack Developer",
       "greeting": "Hey, I'm Ignacio",
       "description": "Software Developer from Argentina. Contact me below. Currently bulding I7A UI"
     },
     "thoughts": {
-      "title": "thoughts",
+      "title": "Thoughts",
       "description": "> a place to record what I learn, build, and break along the way."
     },
     "me": {
-      "title": "me",
+      "title": "Me",
       "description": "> who i am, what i do",
       "items": [
         {
@@ -27,11 +28,11 @@
       ]
     },
     "projects": {
-      "title": "projects",
+      "title": "Projects",
       "description": "> what I build"
     },
     "stack": {
-      "title": "skills",
+      "title": "Stack",
       "description": "> tech stack i like and i know to use",
       "categories": {
         "frontend": "Frontend",
@@ -41,7 +42,7 @@
       }
     },
     "experience": {
-      "title": "experiencie",
+      "title": "Experiencie",
       "description": "> a summary of my journey as a developer"
     }
   },

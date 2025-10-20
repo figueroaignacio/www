@@ -1,15 +1,16 @@
 {
   "sections": {
     "hero": {
+      "title": "Desarrollador Fullstack",
       "greeting": "Hey, soy Ignacio",
       "description": "Desarrollador de Software de Argentina. Contactame aquí abajo. Actualmente construyendo I7A UI"
     },
     "thoughts": {
-      "title": "pensamientos",
+      "title": "Pensamientos",
       "description": "> un lugar para registrar lo que aprendo, construyo y rompo en el camino."
     },
     "me": {
-      "title": "yo",
+      "title": "Yo",
       "description": "> quién soy, qué hago",
       "items": [
         {
@@ -27,11 +28,11 @@
       ]
     },
     "projects": {
-      "title": "proyectos",
+      "title": "Proyectos",
       "description": "> lo que construyo"
     },
     "stack": {
-      "title": "habilidades",
+      "title": "Stack",
       "description": "> stack de tecnologias que me gusta y sé usar",
       "categories": {
         "frontend": "Frontend",
@@ -41,7 +42,7 @@
       }
     },
     "experience": {
-      "title": "experiencia",
+      "title": "Experiencia",
       "description": "> un resumen de mi camino como desarrollador"
     }
   },

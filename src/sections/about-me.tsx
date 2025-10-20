@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 // Components
 import { AnimateIn } from '@/components/animate-in';
 
-export default function AboutMe() {
+export function AboutMe() {
   const t = useTranslations('sections.me');
   const about: { content: string }[] = t.raw('items');
 

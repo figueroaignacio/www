@@ -99,23 +99,23 @@ body {
   }
 
   .prose h1 {
-    @apply text-2xl font-bold text-gray-900 mb-4;
+    @apply text-2xl font-bold  mb-4;
   }
 
   .prose h3 {
-    @apply text-base font-semibold text-gray-800 mb-2 mt-4;
+    @apply text-base font-semibold mb-2 mt-4;
   }
 
   .prose strong {
-    @apply font-semibold text-gray-900;
+    @apply font-semibold;
   }
 
   .prose ul {
-    @apply mb-3 ml-5 text-sm text-gray-700 list-disc;
+    @apply mb-3 ml-5 text-sm  list-disc;
   }
 
   .prose ol {
-    @apply mb-3 ml-5 text-sm text-gray-700 list-decimal;
+    @apply mb-3 ml-5 text-sm list-decimal;
   }
 
   .prose li {
@@ -123,6 +123,6 @@ body {
   }
 
   .prose code {
-    @apply bg-gray-100 text-gray-800 px-1 py-0.5 rounded text-xs;
+    @apply px-1 py-0.5 rounded text-xs;
   }
 }
