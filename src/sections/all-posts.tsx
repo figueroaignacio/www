@@ -19,7 +19,12 @@ export async function AllPosts() {
         const delay = 0.1 + index * 0.1;
         return (
           <AnimateIn key={post.id} variant="fadeLeft" delay={delay}>
-            <PostItem createdAt={post.createdAt} title={post.title} slug={post.slug} />
+            <PostItem
+              createdAt={post.createdAt}
+              title={post.title}
+              slug={post.slug}
+              description={post.description}
+            />
           </AnimateIn>
         );
       })}
