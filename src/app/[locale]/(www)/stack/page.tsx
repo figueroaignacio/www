@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: StackPageProps): Promise<Meta
     title: t('title'),
     description: t('description'),
     openGraph: {
-      title: t('greeting'),
+      title: t('title'),
       description: t('description'),
       type: 'website',
       locale: locale,
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: StackPageProps): Promise<Meta
     },
     twitter: {
       card: 'summary_large_image',
-      title: t('greeting'),
+      title: t('title'),
       description: t('description'),
     },
   };

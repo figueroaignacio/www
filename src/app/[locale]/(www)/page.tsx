@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
     title: t('title'),
     description: t('description'),
     openGraph: {
-      title: t('greeting'),
+      title: t('title'),
       description: t('description'),
       type: 'website',
       locale: locale,
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
     },
     twitter: {
       card: 'summary_large_image',
-      title: t('greeting'),
+      title: t('title'),
       description: t('description'),
       images: [`/${locale}/opengraph-image`],
     },
