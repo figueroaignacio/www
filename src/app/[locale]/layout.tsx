@@ -14,8 +14,9 @@ import { notFound } from 'next/navigation';
 import { fontSans } from '@/lib/fonts';
 
 export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+  title: {
+    template: `Ignacio Figueroa - %s`,
+  },
 };
 
 interface LocaleLayoutProps {
