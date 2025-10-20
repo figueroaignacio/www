@@ -87,14 +87,42 @@ body {
   }
 
   .prose p {
-    @apply mb-3 text-sm;
+    @apply mb-3 text-sm leading-relaxed;
   }
 
   .prose h2 {
-    @apply text-lg font-semibold border-b border-border mb-3 pb-3;
+    @apply text-lg font-semibold  border-b border-border mb-3 pb-3 mt-6;
   }
 
   .prose blockquote {
-    @apply mb-3 border-l-4 border-primary rounded-md pl-4 py-2 text-sm;
+    @apply mb-3 border-l-4 border-primary pl-4 py-2 text-sm italic;
+  }
+
+  .prose h1 {
+    @apply text-2xl font-bold text-gray-900 mb-4;
+  }
+
+  .prose h3 {
+    @apply text-base font-semibold text-gray-800 mb-2 mt-4;
+  }
+
+  .prose strong {
+    @apply font-semibold text-gray-900;
+  }
+
+  .prose ul {
+    @apply mb-3 ml-5 text-sm text-gray-700 list-disc;
+  }
+
+  .prose ol {
+    @apply mb-3 ml-5 text-sm text-gray-700 list-decimal;
+  }
+
+  .prose li {
+    @apply mb-2 leading-relaxed;
+  }
+
+  .prose code {
+    @apply bg-gray-100 text-gray-800 px-1 py-0.5 rounded text-xs;
   }
 }
