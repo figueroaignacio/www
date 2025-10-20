@@ -13,16 +13,14 @@ import { type Project } from '@/payload-types';
 export async function AllProjects() {
   const locale = await getLocale();
   let projects: Project[] = [];
-  let error = false;
 
   try {
     projects = await getProjects(locale);
-  } catch (err) {
-    console.error(err);
-    error = true;
+  } catch (error) {
+    return <Error />;
   }
 
-  if (error || projects.length === 0) {
+  if (projects.length === 0) {
     return <Error />;
   }
 

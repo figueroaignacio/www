@@ -13,16 +13,14 @@ import { type Experience } from '@/payload-types';
 export async function AllExperience() {
   const locale = await getLocale();
   let experience: Experience[] = [];
-  let error = false;
 
   try {
     experience = await getExperience(locale);
   } catch (error) {
-    console.error(error);
-    error = true;
+    return <Error />;
   }
 
-  if (error || experience.length === 0) {
+  if (experience.length === 0) {
     return <Error />;
   }
 

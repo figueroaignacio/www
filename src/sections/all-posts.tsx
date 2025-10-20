@@ -13,16 +13,14 @@ import { type Post } from '@/payload-types';
 export async function AllPosts() {
   const locale = await getLocale();
   let posts: Post[] = [];
-  let error = false;
 
   try {
     posts = await getPosts(locale);
   } catch (error) {
-    console.error(error);
-    error = true;
+    return <Error />;
   }
 
-  if (error || posts.length === 0) {
+  if (posts.length === 0) {
     return <Error />;
   }
 
