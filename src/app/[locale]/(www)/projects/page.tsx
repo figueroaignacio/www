@@ -5,8 +5,9 @@ import { use } from 'react';
 import { useTranslations, type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
-// Sections
+// Components
 import { PageDescription } from '@/components/page-description';
+import { Separator } from '@/components/ui/separator';
 import { FeaturedProjects } from '@/sections/featured-projects';
 import { OtherProjects } from '@/sections/other-projects';
 
@@ -49,6 +50,7 @@ export default function ProjectsPage({ params }: ProjectsPageProps) {
     <div className="space-y-5">
       <PageDescription title={t('projects.description')} />
       <FeaturedProjects />
+      <Separator />
       <OtherProjects />
     </div>
   );
