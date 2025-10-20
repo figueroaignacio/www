@@ -5,9 +5,11 @@ import { use } from 'react';
 import { useTranslations, type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
-// Sections
+// Components
 import { PageDescription } from '@/components/page-description';
-import { AllProjects } from '@/sections/all-projects';
+import { Separator } from '@/components/ui/separator';
+import { FeaturedProjects } from '@/sections/featured-projects';
+import { OtherProjects } from '@/sections/other-projects';
 
 // Types
 import { type Metadata } from 'next';
@@ -47,7 +49,9 @@ export default function ProjectsPage({ params }: ProjectsPageProps) {
   return (
     <div className="space-y-5">
       <PageDescription title={t('projects.description')} />
-      <AllProjects />
+      <FeaturedProjects />
+      <Separator />
+      <OtherProjects />
     </div>
   );
 }

@@ -29,7 +29,9 @@
     },
     "projects": {
       "title": "Projects",
-      "description": "> what I build"
+      "description": "> what I build",
+      "featuredProjects": "featured projects",
+      "otherProjects": "other projects"
     },
     "stack": {
       "title": "Stack",
