@@ -1,5 +1,6 @@
 // Components
 import { AnimateIn } from '@/components/animate-in';
+import { Error } from '@/components/error';
 import { ProjectItem } from '@/components/project-item';
 
 // Utils
@@ -11,7 +12,19 @@ import { type Project } from '@/payload-types';
 
 export async function AllProjects() {
   const locale = await getLocale();
-  const projects: Project[] = await getProjects(locale);
+  let projects: Project[] = [];
+  let error = false;
+
+  try {
+    projects = await getProjects(locale);
+  } catch (err) {
+    console.error(err);
+    error = true;
+  }
+
+  if (error || projects.length === 0) {
+    return <Error />;
+  }
 
   return (
     <ul className="space-y-5">

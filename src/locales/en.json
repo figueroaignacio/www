@@ -78,6 +78,7 @@
     },
     "footer": {
       "builtIn": "built in next.js and payloadcms"
-    }
+    },
+    "error": "An error occurred while loading the data."
   }
 }
