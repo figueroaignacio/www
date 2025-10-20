@@ -4,7 +4,7 @@ import { PostHeader } from '@/components/post-header';
 import { RichText } from '@payloadcms/richtext-lexical/react';
 
 // Utils
-import { getPostBySlug } from '@/lib/services';
+import { getPostBySlug, getPosts } from '@/lib/services';
 
 // Types
 import type { Post } from '@/payload-types';
@@ -58,6 +58,21 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       images: [`/${locale}/blog/${slug}/opengraph-image`],
     },
   };
+}
+
+export async function generateStaticParams() {
+  const locales: Locale[] = ['es', 'en'];
+  const allPosts = await Promise.all(locales.map((locale) => getPosts(locale)));
+
+  const params: { slug: string; locale: Locale }[] = [];
+
+  locales.forEach((locale, i) => {
+    allPosts[i].forEach((post: Post) => {
+      params.push({ slug: post.slug, locale });
+    });
+  });
+
+  return params;
 }
 
 export default async function PostPage({ params }: PostPageProps) {
