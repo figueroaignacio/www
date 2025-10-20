@@ -17,7 +17,7 @@ export function PostItem({ slug, title, createdAt, description }: PostItemProps)
 
   return (
     <div className="space-y-3">
-      <div className="flex items-center justify-between flex-wrap gap-3">
+      <div className="flex items-center justify-between flex-wrap-reverse gap-3">
         <Link href={`/blog/${slug}`} className="underline">
           <h3 className="text-sm transition-transform hover:scale-[1.02] active:scale-[0.99]">
             {title}

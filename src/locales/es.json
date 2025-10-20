@@ -69,5 +69,12 @@
         "href": "/stack"
       }
     ]
+  },
+  "components": {
+    "projectItem": {
+      "actions": {
+        "details": "Detalles"
+      }
+    }
   }
 }

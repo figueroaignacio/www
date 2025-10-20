@@ -42,7 +42,7 @@ export function ExperienceItem({
         )}
       </div>
       <div>
-        <h3 className="text-lg">
+        <h3 className="text-sm">
           {title} - <span>{company}</span>
         </h3>
       </div>

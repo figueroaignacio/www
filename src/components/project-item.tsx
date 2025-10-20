@@ -1,3 +1,6 @@
+// Hooks
+import { useTranslations } from 'next-intl';
+
 // Components
 import { Link } from '@/i18n/navigation';
 import { ExternalLinkIcon, InfoCircledIcon } from '@radix-ui/react-icons';
@@ -15,12 +18,14 @@ export function ProjectItem({
   repository,
   technologies,
 }: ProjectCardProps) {
+  const t = useTranslations('components.projectItem.actions');
+
   const links = [
     repository && { href: repository, label: 'GitHub', icon: <ExternalLinkIcon /> },
     demo && { href: demo, label: 'Demo', icon: <ExternalLinkIcon /> },
     slug && {
       href: `/project/${slug}`,
-      label: 'Details',
+      label: t('details'),
       icon: <InfoCircledIcon />,
       internal: true,
     },
