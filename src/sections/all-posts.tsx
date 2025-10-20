@@ -2,7 +2,6 @@
 import { AnimateIn } from '@/components/animate-in';
 import { Error } from '@/components/error';
 import { PostItem } from '@/components/post-item';
-import { Separator } from '@/components/ui/separator';
 
 // Utils
 import { getLocale } from 'next-intl/server';
@@ -29,8 +28,6 @@ export async function AllPosts() {
     <ul className="space-y-5">
       {posts.map((post, index) => {
         const delay = 0.1 + index * 0.1;
-        const isLast = index === posts.length - 1;
-
         return (
           <div key={post.id} className="space-y-5">
             <AnimateIn variant="fadeLeft" delay={delay}>
@@ -41,8 +38,6 @@ export async function AllPosts() {
                 description={post.description}
               />
             </AnimateIn>
-
-            {!isLast && <Separator />}
           </div>
         );
       })}
