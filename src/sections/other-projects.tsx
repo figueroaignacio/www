@@ -1,6 +1,3 @@
-// Hooks
-import { useTranslations } from 'next-intl';
-
 // Components
 import { AnimateIn } from '@/components/animate-in';
 import { Error } from '@/components/error';
@@ -8,13 +5,13 @@ import { ProjectItem } from '@/components/project-item';
 
 // Utils
 import { getOtherProjects } from '@/lib/services';
-import { getLocale } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 // Types
 import { type Project } from '@/payload-types';
 
 export async function OtherProjects() {
-  const t = useTranslations('sections.projects');
+  const t = await getTranslations('sections.projects');
   const locale = await getLocale();
   let projects: Project[] = [];
 
