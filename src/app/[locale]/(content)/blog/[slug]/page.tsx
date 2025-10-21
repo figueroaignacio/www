@@ -94,6 +94,7 @@ export async function generateStaticParams() {
     return [];
   }
 }
+
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
   const post: Post = await getPostBySlug(slug);
