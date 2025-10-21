@@ -5,10 +5,8 @@ import { useLocale } from 'next-intl';
 import { useTransition } from 'react';
 
 // Types
-import type { Locale } from 'next-intl';
-
-// Config
 import { locales } from '@/i18n/routing';
+import type { Locale } from 'next-intl';
 
 export function LocaleSwitcher() {
   const router = useRouter();
@@ -17,24 +15,25 @@ export function LocaleSwitcher() {
   const [_, startTransition] = useTransition();
 
   function handleLocaleChange(newLocale: Locale) {
+    if (newLocale === locale) return;
     startTransition(() => {
-      router.replace({ pathname }, { locale: newLocale });
+      router.replace(pathname, { locale: newLocale, scroll: false });
     });
   }
 
   return (
     <div className="flex items-center gap-2">
-      {locales.map((localeOption) => (
+      {locales.map((option) => (
         <button
-          key={localeOption}
-          onClick={() => handleLocaleChange(localeOption as Locale)}
+          key={option}
+          onClick={() => handleLocaleChange(option as Locale)}
           className={`text-sm font-medium transition-colors ${
-            locale === localeOption
+            locale === option
               ? 'text-foreground underline underline-offset-4'
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
-          {localeOption.toUpperCase()}
+          {option.toUpperCase()}
         </button>
       ))}
     </div>

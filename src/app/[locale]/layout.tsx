@@ -1,3 +1,4 @@
+import { cookies } from 'next/headers';
 import React from 'react';
 
 // Components
@@ -24,7 +25,7 @@ interface LocaleLayoutProps {
   params: Promise<{ locale: Locale }>;
 }
 
-export default async function RootLayout({ children, params }: LocaleLayoutProps) {
+export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
@@ -32,11 +33,15 @@ export default async function RootLayout({ children, params }: LocaleLayoutProps
 
   setRequestLocale(locale);
 
+  const cookieStore = await cookies();
+  const themeCookie = cookieStore.get('theme');
+  const theme = themeCookie?.value === 'light' ? 'light' : 'dark';
+
   return (
-    <html lang="en">
+    <html lang={locale} suppressHydrationWarning className={theme}>
       <body className={`${fontSans.className} antialiased flex flex-col min-h-screen`}>
         <NextIntlClientProvider>
-          <ThemeProvider attribute="class" defaultTheme="dark">
+          <ThemeProvider>
             <div className="min-h-screen grid grid-rows-[1fr_auto]">
               <main className="max-w-xl mx-auto p-4 space-y-5 w-full">{children}</main>
               <Footer />
