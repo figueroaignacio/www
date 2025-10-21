@@ -1,5 +1,9 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 3600;
+
 // Components
 import { BackButton } from '@/components/back-button';
+import { Error } from '@/components/error';
 import { PostHeader } from '@/components/post-header';
 import { RichText } from '@payloadcms/richtext-lexical/react';
 
@@ -61,26 +65,41 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
 }
 
 export async function generateStaticParams() {
-  const locales: Locale[] = ['es', 'en'];
-  const allPosts = await Promise.all(locales.map((locale) => getPosts(locale)));
+  try {
+    const locales: Locale[] = ['es', 'en'];
+    const allPosts = await Promise.all(
+      locales.map(async (locale) => {
+        try {
+          return await getPosts(locale);
+        } catch (error) {
+          console.warn(`Failed to fetch posts for locale ${locale}:`, error);
+          return [];
+        }
+      }),
+    );
 
-  const params: { slug: string; locale: Locale }[] = [];
+    const params: { slug: string; locale: Locale }[] = [];
 
-  locales.forEach((locale, i) => {
-    allPosts[i].forEach((post: Post) => {
-      params.push({ slug: post.slug, locale });
+    locales.forEach((locale, i) => {
+      allPosts[i].forEach((post: Post) => {
+        if (post?.slug) {
+          params.push({ slug: post.slug, locale });
+        }
+      });
     });
-  });
 
-  return params;
+    return params;
+  } catch (error) {
+    console.error('Error in generateStaticParams:', error);
+    return [];
+  }
 }
-
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
   const post: Post = await getPostBySlug(slug);
 
   if (!post) {
-    return <p className="text-red-600/30">Error</p>;
+    return <Error />;
   }
 
   return (
