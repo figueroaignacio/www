@@ -1,6 +1,7 @@
-import { Geist } from 'next/font/google';
+import { Inter } from 'next/font/google';
 
-export const fontSans = Geist({
-  variable: '--font-sans',
+export const fontSans = Inter({
   subsets: ['latin'],
+  weight: ['300', '400'],
+  variable: '--font-sans',
 });
