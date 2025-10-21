@@ -1,15 +1,15 @@
 'use client';
 
 // Hooks
-import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { useTheme } from './theme-provider';
 
 // Components
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 import { Button } from './ui/button';
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -22,12 +22,7 @@ export function ThemeToggle() {
   const isDark = theme === 'dark';
 
   return (
-    <Button
-      size="icon"
-      variant="ghost"
-      onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      aria-label="Toggle theme"
-    >
+    <Button size="icon" variant="ghost" onClick={() => toggleTheme()} aria-label="Toggle theme">
       {isDark ? <SunIcon /> : <MoonIcon />}
     </Button>
   );

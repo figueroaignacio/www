@@ -73,12 +73,12 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-a {
-  @apply cursor-default;
+html {
+  @apply bg-background text-foreground;
 }
 
-body {
-  @apply bg-background text-foreground;
+a {
+  @apply cursor-default;
 }
 
 @layer {
