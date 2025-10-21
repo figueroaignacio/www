@@ -42,6 +42,7 @@ export async function OtherProjects() {
                   repository={project.repository}
                   technologies={project.technologies}
                   slug={project.slug}
+                  demo={project.demo}
                 />
               </li>
             </AnimateIn>
