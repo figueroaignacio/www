@@ -3,7 +3,7 @@ import React from 'react';
 
 // Components
 import { Footer } from '@/components/footer';
-import { ThemeProvider } from '@/components/theme-provider';
+import { Providers } from '@/components/providers';
 
 // next-intl
 import { routing } from '@/i18n/routing';
@@ -41,12 +41,12 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
     <html lang={locale} suppressHydrationWarning className={theme}>
       <body className={`${fontSans.className} antialiased flex flex-col min-h-screen`}>
         <NextIntlClientProvider>
-          <ThemeProvider>
+          <Providers>
             <div className="min-h-screen grid grid-rows-[1fr_auto]">
               <main className="max-w-xl mx-auto p-4 space-y-5 w-full">{children}</main>
               <Footer />
             </div>
-          </ThemeProvider>
+          </Providers>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -1,8 +1,11 @@
 'use client';
 
-import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
+// Hooks
+import { useTheme } from 'i7a-themes';
 import { useEffect, useState } from 'react';
-import { useTheme } from './theme-provider';
+
+// Components
+import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 import { Button } from './ui/button';
 
 export function ThemeToggle() {
