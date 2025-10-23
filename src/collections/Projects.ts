@@ -28,6 +28,13 @@ export const Projects: CollectionConfig = {
       ],
     },
     {
+      name: 'projectImage',
+      label: 'Project Image',
+      type: 'upload',
+      relationTo: 'media',
+      required: false,
+    },
+    {
       name: 'title',
       label: 'Title',
       type: 'text',
