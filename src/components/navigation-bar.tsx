@@ -27,7 +27,7 @@ export function NavigationBar() {
           <AnimateIn key={item.href} variant="fadeUp" delay={delay} className="inline-block">
             <Link
               href={item.href}
-              className={`inline-block text-sm transition-all ${
+              className={`inline-block text-sm transition-all hover:scale-110 ${
                 isActive
                   ? 'text-foreground font-medium scale-110'
                   : 'text-muted-foreground hover:text-foreground'
