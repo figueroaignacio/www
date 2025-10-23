@@ -7,9 +7,11 @@ import { ExternalLinkIcon, InfoCircledIcon } from '@radix-ui/react-icons';
 import { Badge } from './ui/badge';
 
 // Types
-import { type Project } from '@/payload-types';
+import type { Media, Project } from '@/payload-types';
 
-interface ProjectCardProps extends Partial<Project> {}
+interface ProjectCardProps extends Omit<Partial<Project>, 'projectImage'> {
+  projectImage?: Media;
+}
 
 export function ProjectItem({
   slug,
@@ -21,36 +23,6 @@ export function ProjectItem({
   projectImage,
 }: ProjectCardProps) {
   const t = useTranslations('components.projectItem.actions');
-
-  const getImageUrl = () => {
-    if (!projectImage) return null;
-
-    let url = '';
-
-    if (typeof projectImage === 'object' && 'url' in projectImage) {
-      url = projectImage.url || '';
-    } else if (typeof projectImage === 'string') {
-      url = projectImage;
-    }
-
-    // Si la URL es relativa (empieza con /api), agregar el dominio base
-    if (url && url.startsWith('/')) {
-      const baseUrl =
-        process.env.NODE_ENV === 'production'
-          ? process.env.NEXT_PUBLIC_API_URL_PROD
-          : process.env.NEXT_PUBLIC_API_URL_DEV;
-      return `${baseUrl}${url}`;
-    }
-
-    return url || '/placeholder.jpg';
-  };
-
-  const getImageAlt = () => {
-    if (typeof projectImage === 'object' && projectImage && 'alt' in projectImage) {
-      return projectImage.alt || title || '';
-    }
-    return title || '';
-  };
 
   const links = [
     repository && { href: repository, label: 'GitHub', icon: <ExternalLinkIcon /> },
@@ -73,8 +45,8 @@ export function ProjectItem({
       {projectImage ? (
         <div className="relative overflow-hidden rounded-xl border border-border bg-muted">
           <img
-            src={getImageUrl() || ''}
-            alt={getImageAlt()}
+            src={projectImage.url ?? ''}
+            alt={title}
             className="h-[260px] object-cover w-full transition-transform hover:scale-105"
           />
         </div>
