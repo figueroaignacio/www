@@ -80,12 +80,27 @@
   --radius-2xl: calc(var(--radius) + 0.5rem);
 }
 
-body {
-  @apply bg-background text-foreground;
-}
+@layer base {
+  body::-webkit-scrollbar {
+    width: 5px;
+  }
 
-a {
-  @apply cursor-default;
+  body::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 5px;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  a {
+    @apply cursor-default;
+  }
 }
 
 @layer {
