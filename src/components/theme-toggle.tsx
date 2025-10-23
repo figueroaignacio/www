@@ -9,7 +9,7 @@ import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 import { Button } from './ui/button';
 
 export function ThemeToggle() {
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export function ThemeToggle() {
 
   return (
     <Button size="icon" variant="ghost" onClick={toggleTheme} aria-label="Toggle theme">
-      {isDark ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
+      {isDark ? <SunIcon className="size-3" /> : <MoonIcon className="size-3" />}
     </Button>
   );
 }
