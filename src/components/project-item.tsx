@@ -24,6 +24,19 @@ export function ProjectItem({
 }: ProjectCardProps) {
   const t = useTranslations('components.projectItem.actions');
 
+  // Construir URL completa para producción y desarrollo
+  const getImageUrl = (url: string | null | undefined) => {
+    if (!url) return '';
+    if (url.startsWith('http')) return url;
+
+    const isDev = process.env.NODE_ENV === 'development';
+    const baseUrl = isDev
+      ? process.env.NEXT_PUBLIC_API_URL_DEV
+      : process.env.NEXT_PUBLIC_API_URL_PROD;
+
+    return `${baseUrl}${url}`;
+  };
+
   const links = [
     repository && { href: repository, label: 'GitHub', icon: <ExternalLinkIcon /> },
     demo && { href: demo, label: 'Demo', icon: <ExternalLinkIcon /> },
@@ -45,8 +58,8 @@ export function ProjectItem({
       {projectImage ? (
         <div className="relative overflow-hidden rounded-xl border border-border bg-muted">
           <img
-            src={projectImage.url ?? ''}
-            alt={title}
+            src={getImageUrl(projectImage.url)}
+            alt={projectImage.alt || title || ''}
             className="h-[260px] object-cover w-full transition-transform hover:scale-105"
           />
         </div>
