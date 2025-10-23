@@ -25,15 +25,24 @@ export function ProjectItem({
   const getImageUrl = () => {
     if (!projectImage) return null;
 
+    let url = '';
+
     if (typeof projectImage === 'object' && 'url' in projectImage) {
-      return projectImage.url;
+      url = projectImage.url || '';
+    } else if (typeof projectImage === 'string') {
+      url = projectImage;
     }
 
-    if (typeof projectImage === 'string') {
-      return projectImage;
+    // Si la URL es relativa (empieza con /api), agregar el dominio base
+    if (url && url.startsWith('/')) {
+      const baseUrl =
+        process.env.NODE_ENV === 'production'
+          ? process.env.NEXT_PUBLIC_API_URL_PROD
+          : process.env.NEXT_PUBLIC_API_URL_DEV;
+      return `${baseUrl}${url}`;
     }
 
-    return '/placeholder.jpg';
+    return url || '/placeholder.jpg';
   };
 
   const getImageAlt = () => {
