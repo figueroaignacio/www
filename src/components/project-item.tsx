@@ -18,8 +18,30 @@ export function ProjectItem({
   demo,
   repository,
   technologies,
+  projectImage,
 }: ProjectCardProps) {
   const t = useTranslations('components.projectItem.actions');
+
+  const getImageUrl = () => {
+    if (!projectImage) return null;
+
+    if (typeof projectImage === 'object' && 'url' in projectImage) {
+      return projectImage.url;
+    }
+
+    if (typeof projectImage === 'string') {
+      return projectImage;
+    }
+
+    return '/placeholder.jpg';
+  };
+
+  const getImageAlt = () => {
+    if (typeof projectImage === 'object' && projectImage && 'alt' in projectImage) {
+      return projectImage.alt || title || '';
+    }
+    return title || '';
+  };
 
   const links = [
     repository && { href: repository, label: 'GitHub', icon: <ExternalLinkIcon /> },
@@ -39,6 +61,16 @@ export function ProjectItem({
 
   return (
     <div className="space-y-3">
+      {projectImage ? (
+        <div className="relative overflow-hidden rounded-xl border border-border bg-muted">
+          <img
+            src={getImageUrl() || ''}
+            alt={getImageAlt()}
+            className="h-[260px] object-cover w-full transition-transform hover:scale-105"
+          />
+        </div>
+      ) : null}
+
       <div className="flex justify-between">
         <Link href={`/project/${slug}`}>
           <h3 className="text-sm underline">{title}</h3>

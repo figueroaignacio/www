@@ -43,6 +43,7 @@ export async function FeaturedProjects() {
                   technologies={project.technologies}
                   slug={project.slug}
                   demo={project.demo}
+                  projectImage={project.projectImage}
                 />
               </li>
             </AnimateIn>
