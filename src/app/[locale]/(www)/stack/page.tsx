@@ -6,7 +6,6 @@ import { useTranslations, type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 // Components
-import { PageDescription } from '@/components/page-description';
 import { TechStack } from '@/sections/tech-stack';
 
 // Types
@@ -46,7 +45,6 @@ export default function StackPage({ params }: StackPageProps) {
 
   return (
     <div className="space-y-5">
-      <PageDescription title={t('stack.description')} />
       <TechStack />
     </div>
   );

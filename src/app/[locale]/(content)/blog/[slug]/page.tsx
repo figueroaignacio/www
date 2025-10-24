@@ -1,8 +1,8 @@
 export const dynamic = 'force-dynamic';
 export const revalidate = 3600;
 
+import { AnimateIn } from '@/components/animate-in';
 // Components
-import { BackButton } from '@/components/back-button';
 import { Error } from '@/components/error';
 import { PostHeader } from '@/components/post-header';
 import { CustomRichText } from '@/components/rich-text';
@@ -105,9 +105,12 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <article className="space-y-3">
-      <BackButton />
-      <PostHeader description={post.description} title={post.title} variant="post" />
-      <CustomRichText data={post.body} className="prose prose-invert max-w-none" />
+      <AnimateIn variant="fadeUp" delay={0.4}>
+        <PostHeader description={post.description} title={post.title} variant="post" />
+      </AnimateIn>
+      <AnimateIn variant="fadeUp" delay={0.6}>
+        <CustomRichText data={post.body} className="prose prose-invert max-w-none" />
+      </AnimateIn>
     </article>
   );
 }

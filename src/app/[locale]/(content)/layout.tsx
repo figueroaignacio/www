@@ -1,5 +1,10 @@
 import React from 'react';
 
+// Components
+import { AnimateIn } from '@/components/animate-in';
+import { BackButton } from '@/components/back-button';
+import { ThemeToggle } from '@/components/theme-toggle';
+
 // next-intl
 import { routing } from '@/i18n/routing';
 import { hasLocale, Locale } from 'next-intl';
@@ -19,5 +24,13 @@ export default async function ContentLayout({ children, params }: BlogLayoutProp
 
   setRequestLocale(locale);
 
-  return <div>{children}</div>;
+  return (
+    <div>
+      <AnimateIn className="flex justify-between items-center mb-5" variant="fadeLeft">
+        <BackButton />
+        <ThemeToggle />
+      </AnimateIn>
+      {children}
+    </div>
+  );
 }

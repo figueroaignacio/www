@@ -6,7 +6,6 @@ import { useTranslations, type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 // Sections
-import { PageDescription } from '@/components/page-description';
 import { AllExperience } from '@/sections/all-experience';
 
 // Types
@@ -46,7 +45,6 @@ export default function ExperiencePage({ params }: ExeperiencePageProps) {
 
   return (
     <div className="space-y-5">
-      <PageDescription title={t('experience.description')} />
       <AllExperience />
     </div>
   );

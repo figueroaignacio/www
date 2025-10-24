@@ -16,7 +16,6 @@ export function PostHeader({ title, description, variant = 'post' }: PostHeaderP
       {variant === 'post' ? (
         <div className="space-y-1">
           <Thumbnail title={title} />
-          {description && <p className="max-w-2xl text-muted-foreground">{description}</p>}
         </div>
       ) : (
         <div className="space-y-1">

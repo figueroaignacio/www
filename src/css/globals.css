@@ -111,6 +111,7 @@
   .prose {
     box-sizing: border-box;
     overflow-wrap: anywhere;
+    @apply px-2;
   }
 
   .prose p {
