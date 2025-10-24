@@ -1,8 +1,8 @@
 export const dynamic = 'force-dynamic';
 export const revalidate = 3600;
 
-import { AnimateIn } from '@/components/animate-in';
 // Components
+import { AnimateIn } from '@/components/animate-in';
 import { Error } from '@/components/error';
 import { PostHeader } from '@/components/post-header';
 import { CustomRichText } from '@/components/rich-text';
