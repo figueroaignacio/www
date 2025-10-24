@@ -33,6 +33,12 @@ export async function OtherProjects() {
       <ul className="space-y-5">
         {projects.map((project, index) => {
           const delay = 0.1 + index * 0.1;
+
+          const projectImage =
+            typeof project.projectImage === 'object' && project.projectImage !== null
+              ? project.projectImage
+              : undefined;
+
           return (
             <AnimateIn key={project.slug} variant="fadeUp" delay={delay}>
               <li>
@@ -43,7 +49,7 @@ export async function OtherProjects() {
                   technologies={project.technologies}
                   slug={project.slug}
                   demo={project.demo}
-                  projectImage={project.projectImage}
+                  projectImage={projectImage}
                 />
               </li>
             </AnimateIn>
