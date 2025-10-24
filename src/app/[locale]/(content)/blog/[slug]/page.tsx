@@ -5,7 +5,7 @@ export const revalidate = 3600;
 import { BackButton } from '@/components/back-button';
 import { Error } from '@/components/error';
 import { PostHeader } from '@/components/post-header';
-import { RichText } from '@payloadcms/richtext-lexical/react';
+import { CustomRichText } from '@/components/rich-text';
 
 // Utils
 import { getPostBySlug, getPosts } from '@/lib/services';
@@ -107,7 +107,7 @@ export default async function PostPage({ params }: PostPageProps) {
     <article className="space-y-3">
       <BackButton />
       <PostHeader description={post.description} title={post.title} />
-      <RichText data={post.body} className="prose" />
+      <CustomRichText data={post.body} className="prose prose-invert max-w-none" />
     </article>
   );
 }
