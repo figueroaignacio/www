@@ -3,6 +3,7 @@ import { useLocale } from 'next-intl';
 
 // Components
 import { Link } from '@/i18n/navigation';
+import { Thumbnail } from './thumbnail';
 
 // Utils
 import { formatFullDateWithWeekday } from '@/lib/utils';
@@ -17,17 +18,15 @@ export function PostItem({ slug, title, createdAt, description }: PostItemProps)
 
   return (
     <div className="space-y-3">
-      <div className="flex flex-col gap-3">
+      <Link href={`/blog/${slug}`}>
+        <Thumbnail title={title} />
+      </Link>
+      <div className="flex flex-col px-3 gap-3">
         <p className="text-xs text-muted-foreground">
           {formatFullDateWithWeekday(createdAt, locale)}
         </p>
-        <Link href={`/blog/${slug}`} className="underline">
-          <h3 className="text-sm transition-transform hover:scale-[1.02] active:scale-[0.99]">
-            {title}
-          </h3>
-        </Link>
+        <p className="text-sm text-muted-foreground">{description}</p>
       </div>
-      <p className="text-sm text-muted-foreground mt-3">{description}</p>
     </div>
   );
 }
