@@ -1,3 +1,5 @@
+'use client';
+
 // Hooks
 import { useTranslations } from 'next-intl';
 
@@ -6,12 +8,13 @@ import { Link } from '@/i18n/navigation';
 import { ExternalLinkIcon, InfoCircledIcon } from '@radix-ui/react-icons';
 import { Badge } from './ui/badge';
 
-// Types
-import type { Media, Project } from '@/payload-types';
+// Utils
+import { getGradientForSlug } from '@/lib/utils';
 
-interface ProjectCardProps extends Omit<Partial<Project>, 'projectImage'> {
-  projectImage?: Media;
-}
+// Types
+import type { Project } from '@/payload-types';
+
+interface ProjectCardProps extends Omit<Partial<Project>, 'projectImage'> {}
 
 export function ProjectItem({
   slug,
@@ -20,22 +23,9 @@ export function ProjectItem({
   demo,
   repository,
   technologies,
-  projectImage,
+  description,
 }: ProjectCardProps) {
   const t = useTranslations('components.projectItem.actions');
-
-  // Construir URL completa para producción y desarrollo
-  const getImageUrl = (url: string | null | undefined) => {
-    if (!url) return '';
-    if (url.startsWith('http')) return url;
-
-    const isDev = process.env.NODE_ENV === 'development';
-    const baseUrl = isDev
-      ? process.env.NEXT_PUBLIC_API_URL_DEV
-      : process.env.NEXT_PUBLIC_API_URL_PROD;
-
-    return `${baseUrl}${url}`;
-  };
 
   const links = [
     repository && { href: repository, label: 'GitHub', icon: <ExternalLinkIcon /> },
@@ -55,21 +45,12 @@ export function ProjectItem({
 
   return (
     <div className="space-y-3">
-      {projectImage ? (
-        <div className="relative overflow-hidden rounded-xl border border-border bg-muted">
-          <img
-            src={getImageUrl(projectImage.url)}
-            alt={projectImage.alt || title || ''}
-            className="h-[260px] object-cover w-full transition-transform hover:scale-105"
-          />
-        </div>
-      ) : null}
-
-      <div className="flex justify-between">
-        <Link href={`/project/${slug}`}>
-          <h3 className="text-sm underline">{title}</h3>
-        </Link>
-        <div className="flex gap-2">
+      <div className={`aspect-[4/1] ${getGradientForSlug(slug)} rounded-xl p-4`}>
+        <h2 className="text-xl text-white font-semibold drop-shadow-md">{title}</h2>
+        <h3 className="text-white/90 drop-shadow-sm">{subtitle}</h3>
+      </div>
+      <div className="flex gap-2 justify-between flex-wrap px-3">
+        <div className="flex gap-x-2">
           {links.map((link) =>
             link.internal ? (
               <Link
@@ -92,9 +73,9 @@ export function ProjectItem({
             ),
           )}
         </div>
+        <p className="text-sm text-muted-foreground">{description}</p>
       </div>
-      <h4 className="text-sm text-muted-foreground">{subtitle}</h4>
-      <div className="flex gap-1 flex-wrap">
+      <div className="flex gap-1 flex-wrap px-3">
         {technologies?.map((tech) => (
           <Badge key={tech.id} label={tech.name || ''} />
         ))}

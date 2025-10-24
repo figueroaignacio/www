@@ -49,7 +49,7 @@ export async function OtherProjects() {
                   technologies={project.technologies}
                   slug={project.slug}
                   demo={project.demo}
-                  projectImage={projectImage}
+                  description={project.description}
                 />
               </li>
             </AnimateIn>

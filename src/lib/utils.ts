@@ -96,3 +96,20 @@ export function formatMonthYear(date: string | Date, locale: Locale): string {
 
   return format(new Date(date), 'MMMM yyyy', { locale: dateLocale });
 }
+
+const gradients = [
+  'bg-gradient-to-br from-blue-500 to-cyan-500',
+  'bg-gradient-to-br from-purple-500 to-pink-500',
+  'bg-gradient-to-br from-orange-500 to-red-500',
+  'bg-gradient-to-br from-emerald-500 to-teal-500',
+  'bg-gradient-to-br from-indigo-500 to-purple-500',
+  'bg-gradient-to-br from-amber-500 to-orange-500',
+  'bg-gradient-to-br from-rose-500 to-pink-500',
+  'bg-gradient-to-br from-sky-500 to-blue-500',
+];
+
+export function getGradientForSlug(slug: string | undefined): string {
+  if (!slug) return gradients[0];
+  const hash = slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  return gradients[hash % gradients.length];
+}
