@@ -1,7 +1,7 @@
 {
   "sections": {
     "home": {
-      "title": "Fullstack Developer",
+      "title": "Fullstack Developer and Programming Student",
       "greeting": "Hey, I'm Ignacio",
       "description": "Software developer from Argentina. Currently building I7A UI and always working on something new. If you want to chat or collaborate, reach out below."
     },
@@ -12,6 +12,7 @@
     "me": {
       "title": "About me",
       "description": "> who I am, what I do, and why I enjoy coding so much",
+      "headline": "Fullstack Developer and Programming Student",
       "items": [
         {
           "content": "I'm Ignacio Figueroa, I study programming at UTN and love learning on my own. I enjoy exploring new technologies and seeing what I can build with them. For me, programming is both a fun challenge and a way to create useful, creative things."

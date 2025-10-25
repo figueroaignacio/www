@@ -1,7 +1,7 @@
 {
   "sections": {
     "home": {
-      "title": "Desarrollador Fullstack",
+      "title": "Desarrollador Fullstack y Estudiante de Programación",
       "greeting": "Hey, soy Ignacio",
       "description": "Desarrollador de software de Argentina. Actualmente construyendo I7A UI y siempre metido en algo nuevo. Si querés charlar o colaborar, contactame acá abajo."
     },
@@ -12,6 +12,7 @@
     "me": {
       "title": "Sobre mí",
       "description": "> quién soy, qué hago y por qué me gusta tanto programar",
+      "headline": "Desarrollador Fullstack y Estudiante de Programación",
       "items": [
         {
           "content": "Soy Ignacio Figueroa, estudio programación en la utn y me encanta aprender por mi cuenta. Me gusta explorar nuevas tecnologías y ver qué puedo hacer con ellas. Para mí programar es un desafío copado y una forma de crear cosas útiles y creativas."
