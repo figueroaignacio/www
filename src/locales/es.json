@@ -81,6 +81,7 @@
     "footer": {
       "builtIn": "construido en next.js y payloadcms"
     },
-    "error": "Ha ocurrido un error al cargar los datos."
+    "error": "Ha ocurrido un error al cargar los datos.",
+    "loader": "Cargando..."
   }
 }
