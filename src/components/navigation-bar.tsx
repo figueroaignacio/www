@@ -19,7 +19,7 @@ export function NavigationBar() {
   const pathname = usePathname();
 
   return (
-    <nav className="space-x-5 my-7">
+    <nav className="space-x-5 mt-3 mb-6">
       {navigation.map((item, index) => {
         const isActive = pathname === item.href;
         const delay = 0.1 + index * 0.1;

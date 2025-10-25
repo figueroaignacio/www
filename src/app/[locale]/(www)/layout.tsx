@@ -1,6 +1,7 @@
 import React from 'react';
 
 // Components
+import { NavigationBar } from '@/components/navigation-bar';
 
 // next-intl
 import { routing } from '@/i18n/routing';
@@ -23,7 +24,10 @@ export default async function WwwLayout({ children, params }: LocaleLayoutProps)
 
   return (
     <div className="space-y-5">
-      <div>{children}</div>
+      <div>
+        <NavigationBar />
+        {children}
+      </div>
     </div>
   );
 }

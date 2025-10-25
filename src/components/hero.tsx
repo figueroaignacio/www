@@ -2,7 +2,6 @@
 import { AnimateIn } from '@/components/animate-in';
 import { Contact } from './contact';
 import { LocaleSwitcher } from './locale-switcher';
-import { NavigationBar } from './navigation-bar';
 import { ThemeToggle } from './theme-toggle';
 
 interface HeroProps {
@@ -28,7 +27,6 @@ export function Hero({ description, title }: HeroProps) {
       <AnimateIn variant="fadeUp" delay={0.3}>
         <Contact />
       </AnimateIn>
-      <NavigationBar />
     </div>
   );
 }

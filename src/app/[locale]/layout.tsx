@@ -43,7 +43,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         <NextIntlClientProvider>
           <Providers>
             <div className="min-h-screen md:grid md:grid-rows-[1fr_auto]">
-              <main className="max-w-xl mx-auto p-4 space-y-5 w-full">{children}</main>
+              <main className="container">{children}</main>
               <Footer />
             </div>
           </Providers>
