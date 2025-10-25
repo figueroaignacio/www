@@ -6,6 +6,7 @@ import { useTranslations, type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 // Components
+import { Hero } from '@/components/hero';
 import { AllPosts } from '@/sections/all-posts';
 
 // Types
@@ -17,7 +18,7 @@ interface HomePageProps {
 
 export async function generateMetadata({ params }: HomePageProps): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'sections.hero' });
+  const t = await getTranslations({ locale, namespace: 'sections.home' });
 
   return {
     title: t('title'),
@@ -50,10 +51,11 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
 export default function HomePage({ params }: HomePageProps) {
   const { locale } = use(params);
   setRequestLocale(locale);
-  const t = useTranslations('sections');
+  const t = useTranslations('sections.home');
 
   return (
     <div className="space-y-5">
+      <Hero title={t('greeting')} description={t('description')} />
       <AllPosts />
     </div>
   );

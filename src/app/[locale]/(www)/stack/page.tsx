@@ -9,6 +9,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { TechStack } from '@/sections/tech-stack';
 
 // Types
+import { Hero } from '@/components/hero';
 import { type Metadata } from 'next';
 
 interface StackPageProps {
@@ -41,10 +42,11 @@ export async function generateMetadata({ params }: StackPageProps): Promise<Meta
 export default function StackPage({ params }: StackPageProps) {
   const { locale } = use(params);
   setRequestLocale(locale);
-  const t = useTranslations('sections');
+  const t = useTranslations('sections.stack');
 
   return (
     <div className="space-y-5">
+      <Hero title={t('title')} description={t('description')} />
       <TechStack />
     </div>
   );

@@ -1,50 +1,50 @@
 {
   "sections": {
-    "hero": {
+    "home": {
       "title": "Fullstack Developer",
       "greeting": "Hey, I'm Ignacio",
-      "description": "Software Developer from Argentina. Contact me below. Currently bulding I7A UI"
+      "description": "Software developer from Argentina. Currently building I7A UI and always working on something new. If you want to chat or collaborate, reach out below."
     },
     "thoughts": {
       "title": "Thoughts",
-      "description": "> a place to record what I learn, build, and break along the way."
+      "description": "> a space where I write down what I learn, experiment with, and break while coding."
     },
     "me": {
-      "title": "Me",
-      "description": "> who i am, what i do",
+      "title": "About me",
+      "description": "> who I am, what I do, and why I enjoy coding so much",
       "items": [
         {
-          "content": "I'm Ignacio Figueroa, I study programming at UTN and I love learning on my own. I like exploring new technologies and seeing what I can do with them. For me, programming is a cool challenge and a way to create useful and creative things."
+          "content": "I'm Ignacio Figueroa, I study programming at UTN and love learning on my own. I enjoy exploring new technologies and seeing what I can build with them. For me, programming is both a fun challenge and a way to create useful, creative things."
         },
         {
-          "content": "I like building my own projects, from small components to complete apps. Each project is an excuse to try new ideas and learn. I'm really into frontend, making clean and nice-looking interfaces, but I also love understanding how everything works behind the scenes."
+          "content": "I like working on personal projects, from small components to full apps. Each project is an excuse to try new ideas and keep learning. I’m really into frontend —building clean and nice interfaces— but I also enjoy understanding how everything works behind the scenes."
         },
         {
-          "content": "I work by trying things out, making mistakes, and adjusting until it's right. I read, look at examples, and then apply it to real projects. I like documenting what I learn and sharing it on my portfolio or blog."
+          "content": "I work by testing things out, making mistakes, and adjusting until it feels right. I read, watch examples, and then apply what I learn to real projects. I like documenting what I learn and sharing it in my portfolio or blog."
         },
         {
-          "content": "What motivates me most is learning, creating, and experimenting. I really enjoy solving problems, discovering new tools, and improving what I do. Every line of code is an opportunity to learn something and grow, and I always try to make my projects reflect my curiosity and the passion I put into programming."
+          "content": "What motivates me the most is learning, creating, and experimenting. I love solving problems, discovering new tools, and improving my craft. Every line of code is a chance to learn and grow, and I always try to make my projects reflect my curiosity and passion for programming."
         }
       ]
     },
     "projects": {
       "title": "Projects",
-      "description": "> what I build",
+      "description": "> the things I build out of curiosity or need",
       "featuredProjects": "featured projects",
       "otherProjects": "other projects"
     },
     "stack": {
       "title": "Stack",
-      "description": "> tech stack i like and i know to use",
+      "description": "> the technologies I use, like, and rely on to create",
       "categories": {
         "frontend": "Frontend",
-        "backend": "Backend & Infraestructure",
-        "cms": "CSM & Content",
-        "others": "Tools and others"
+        "backend": "Backend & Infrastructure",
+        "cms": "CMS & Content",
+        "others": "Tools & extras"
       }
     },
     "experience": {
-      "title": "Experiencie",
+      "title": "Experience",
       "description": "> a summary of my journey as a developer"
     }
   },

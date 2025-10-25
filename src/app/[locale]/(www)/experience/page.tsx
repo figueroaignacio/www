@@ -6,6 +6,7 @@ import { useTranslations, type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 // Sections
+import { Hero } from '@/components/hero';
 import { AllExperience } from '@/sections/all-experience';
 
 // Types
@@ -41,10 +42,11 @@ export async function generateMetadata({ params }: ExeperiencePageProps): Promis
 export default function ExperiencePage({ params }: ExeperiencePageProps) {
   const { locale } = use(params);
   setRequestLocale(locale);
-  const t = useTranslations('sections');
+  const t = useTranslations('sections.experience');
 
   return (
     <div className="space-y-5">
+      <Hero title={t('title')} description={t('description')} />
       <AllExperience />
     </div>
   );

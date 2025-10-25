@@ -6,6 +6,7 @@ import { useTranslations, type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 // Components
+import { Hero } from '@/components/hero';
 import { AboutMe } from '@/sections/about-me';
 
 // Types
@@ -41,10 +42,11 @@ export async function generateMetadata({ params }: MePageProps): Promise<Metadat
 export default function MePage({ params }: MePageProps) {
   const { locale } = use(params);
   setRequestLocale(locale);
-  const t = useTranslations('sections');
+  const t = useTranslations('sections.me');
 
   return (
     <div className="space-y-5">
+      <Hero title={t('title')} description={t('description')} />
       <AboutMe />
     </div>
   );

@@ -1,17 +1,17 @@
 {
   "sections": {
-    "hero": {
+    "home": {
       "title": "Desarrollador Fullstack",
       "greeting": "Hey, soy Ignacio",
-      "description": "Desarrollador de Software de Argentina. Contactame aquí abajo. Actualmente construyendo I7A UI"
+      "description": "Desarrollador de software de Argentina. Actualmente construyendo I7A UI y siempre metido en algo nuevo. Si querés charlar o colaborar, contactame acá abajo."
     },
     "thoughts": {
       "title": "Pensamientos",
-      "description": "> un lugar para registrar lo que aprendo, construyo y rompo en el camino."
+      "description": "> un espacio donde anoto lo que aprendo, experimento y rompo mientras programo."
     },
     "me": {
-      "title": "Yo",
-      "description": "> quién soy, qué hago",
+      "title": "Sobre mí",
+      "description": "> quién soy, qué hago y por qué me gusta tanto programar",
       "items": [
         {
           "content": "Soy Ignacio Figueroa, estudio programación en la utn y me encanta aprender por mi cuenta. Me gusta explorar nuevas tecnologías y ver qué puedo hacer con ellas. Para mí programar es un desafío copado y una forma de crear cosas útiles y creativas."
@@ -29,23 +29,23 @@
     },
     "projects": {
       "title": "Proyectos",
-      "description": "> lo que construyo",
+      "description": "> las cosas que construyo por curiosidad o necesidad",
       "featuredProjects": "proyectos destacados",
       "otherProjects": "otros proyectos"
     },
     "stack": {
       "title": "Stack",
-      "description": "> stack de tecnologias que me gusta y sé usar",
+      "description": "> las tecnologías que uso, me gustan y me ayudan a crear",
       "categories": {
         "frontend": "Frontend",
         "backend": "Backend e Infraestructura",
         "cms": "CMS y Contenido",
-        "others": "Herramientas y demás"
+        "others": "Herramientas y extras"
       }
     },
     "experience": {
       "title": "Experiencia",
-      "description": "> un resumen de mi camino como desarrollador"
+      "description": "> un resumen de mi recorrido como desarrollador"
     }
   },
   "ui": {

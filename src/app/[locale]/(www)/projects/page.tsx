@@ -6,6 +6,7 @@ import { useTranslations, type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 // Components
+import { Hero } from '@/components/hero';
 import { Separator } from '@/components/ui/separator';
 import { FeaturedProjects } from '@/sections/featured-projects';
 import { OtherProjects } from '@/sections/other-projects';
@@ -43,10 +44,11 @@ export async function generateMetadata({ params }: ProjectsPageProps): Promise<M
 export default function ProjectsPage({ params }: ProjectsPageProps) {
   const { locale } = use(params);
   setRequestLocale(locale);
-  const t = useTranslations('sections');
+  const t = useTranslations('sections.projects');
 
   return (
     <div className="space-y-5">
+      <Hero title={t('title')} description={t('description')} />
       <FeaturedProjects />
       <Separator />
       <OtherProjects />
