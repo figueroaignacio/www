@@ -1,5 +1,5 @@
 // React
-import { use } from 'react';
+import { Suspense, use } from 'react';
 
 // next-intl
 import { useTranslations, type Locale } from 'next-intl';
@@ -7,6 +7,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 // Sections
 import { Hero } from '@/components/hero';
+import { Loader } from '@/components/loader';
 import { AllExperience } from '@/sections/all-experience';
 
 // Types
@@ -47,7 +48,9 @@ export default function ExperiencePage({ params }: ExeperiencePageProps) {
   return (
     <div className="space-y-5">
       <Hero title={t('title')} description={t('description')} />
-      <AllExperience />
+      <Suspense fallback={<Loader />}>
+        <AllExperience />
+      </Suspense>
     </div>
   );
 }

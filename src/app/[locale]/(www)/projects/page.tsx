@@ -1,5 +1,5 @@
 // React
-import { use } from 'react';
+import { Suspense, use } from 'react';
 
 // next-intl
 import { useTranslations, type Locale } from 'next-intl';
@@ -7,6 +7,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 // Components
 import { Hero } from '@/components/hero';
+import { Loader } from '@/components/loader';
 import { Separator } from '@/components/ui/separator';
 import { FeaturedProjects } from '@/sections/featured-projects';
 import { OtherProjects } from '@/sections/other-projects';
@@ -49,9 +50,11 @@ export default function ProjectsPage({ params }: ProjectsPageProps) {
   return (
     <div className="space-y-5">
       <Hero title={t('title')} description={t('description')} />
-      <FeaturedProjects />
-      <Separator />
-      <OtherProjects />
+      <Suspense fallback={<Loader />}>
+        <FeaturedProjects />
+        <Separator />
+        <OtherProjects />
+      </Suspense>
     </div>
   );
 }
