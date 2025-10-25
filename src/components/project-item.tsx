@@ -8,13 +8,24 @@ import { Link } from '@/i18n/navigation';
 import { ExternalLinkIcon, InfoCircledIcon } from '@radix-ui/react-icons';
 import { Badge } from './ui/badge';
 
-// Utils
-import { getGradientForSlug } from '@/lib/utils';
-
 // Types
 import type { Project } from '@/payload-types';
 
-interface ProjectCardProps extends Omit<Partial<Project>, 'projectImage'> {}
+interface ProjectItemProps extends Omit<Partial<Project>, 'projectImage'> {
+  index?: number;
+}
+
+const cardStyles = [
+  {
+    header: 'bg-gradient-to-br from-primary/40 via-primary/25 to-accent/35',
+  },
+  {
+    header: 'bg-gradient-to-br from-accent/40 via-accent/25 to-primary/35',
+  },
+  {
+    header: 'bg-gradient-to-br from-primary/35 via-accent/30 to-primary/35',
+  },
+];
 
 export function ProjectItem({
   slug,
@@ -24,61 +35,95 @@ export function ProjectItem({
   repository,
   technologies,
   description,
-}: ProjectCardProps) {
+  index = 0,
+}: ProjectItemProps) {
   const t = useTranslations('components.projectItem.actions');
 
   const links = [
-    repository && { href: repository, label: 'GitHub', icon: <ExternalLinkIcon /> },
-    demo && { href: demo, label: 'Demo', icon: <ExternalLinkIcon /> },
+    repository && { href: repository, label: 'GitHub', icon: <ExternalLinkIcon />, type: 'repo' },
+    demo && { href: demo, label: 'Demo', icon: <ExternalLinkIcon />, type: 'demo' },
     slug && {
       href: `/project/${slug}`,
       label: t('details'),
       icon: <InfoCircledIcon />,
       internal: true,
+      type: 'details',
     },
   ].filter(Boolean) as {
     href: string;
     label: string;
     icon: React.ReactNode;
     internal?: boolean;
+    type: string;
   }[];
 
+  const style = cardStyles[index % cardStyles.length];
+
   return (
-    <div className="space-y-3">
-      <div className={`aspect-[4/1] ${getGradientForSlug(slug)} rounded-xl p-4`}>
-        <h2 className="text-xl text-white font-semibold drop-shadow-md">{title}</h2>
-        <h3 className="text-white/90 drop-shadow-sm">{subtitle}</h3>
-      </div>
-      <div className="flex gap-2 justify-between flex-wrap px-3">
-        <div className="flex gap-x-2">
-          {links.map((link) =>
-            link.internal ? (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="flex items-center gap-1 text-xs text-muted-foreground hover:underline"
+    <div className="group relative space-y-4 transition-all duration-300 ease-out">
+      <div className="relative">
+        <div
+          className={`relative aspect-[4/1] overflow-hidden rounded-xl transition-all duration-300 ease-out ${style.header} `}
+        >
+          <div
+            className={`absolute inset-0 bg-gradient-to-br from-card/60 via-card/40 to-transparent transition-opacity duration-300`}
+          />
+          <div className="relative flex h-full flex-col justify-center p-6">
+            <h2
+              className={`text-lg font-bold text-foreground drop-shadow-sm transition-all duration-300`}
+            >
+              {title}
+            </h2>
+            <h3
+              className={`mt-1 text-sm text-muted-foreground transition-all duration-300 delay-50`}
+            >
+              {subtitle}
+            </h3>
+          </div>
+        </div>
+        <div className="space-y-4 px-1 pt-4">
+          <div className="space-y-3">
+            <div className="flex  gap-2">
+              {links.map((link) =>
+                link.internal ? (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="flex items-center gap-1 text-xs text-muted-foreground hover:underline"
+                  >
+                    {link.label} {link.icon}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-xs text-muted-foreground hover:underline"
+                  >
+                    {link.label} {link.icon}
+                  </a>
+                ),
+              )}
+            </div>
+            {description && (
+              <p
+                className={`text-pretty text-sm leading-relaxed text-foreground/70 transition-colors duration-300`}
               >
-                {link.label} {link.icon}
-              </Link>
-            ) : (
-              <a
-                key={link.href}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1 text-xs text-muted-foreground hover:underline"
-              >
-                {link.label} {link.icon}
-              </a>
-            ),
+                {description}
+              </p>
+            )}
+          </div>
+          {technologies && technologies.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              {technologies.map((tech, idx) => (
+                <div key={tech.id} className={`transition-all duration-300`}>
+                  <Badge label={tech.name || ''} />
+                </div>
+              ))}
+            </div>
           )}
         </div>
-        <p className="text-sm text-muted-foreground">{description}</p>
-      </div>
-      <div className="flex gap-1 flex-wrap px-3">
-        {technologies?.map((tech) => (
-          <Badge key={tech.id} label={tech.name || ''} />
-        ))}
       </div>
     </div>
   );

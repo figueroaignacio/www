@@ -86,7 +86,7 @@
   }
 
   body {
-    @apply bg-background text-foreground border-border;
+    @apply bg-background text-foreground;
   }
 
   body::-webkit-scrollbar {
