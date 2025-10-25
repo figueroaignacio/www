@@ -56,11 +56,11 @@ export default function HomePage({ params }: HomePageProps) {
   const t = useTranslations('sections.home');
 
   return (
-    <Suspense fallback={<Loader />}>
-      <div className="space-y-5">
-        <Hero title={t('greeting')} description={t('description')} />
+    <div className="space-y-5">
+      <Hero title={t('greeting')} description={t('description')} />
+      <Suspense fallback={<Loader />}>
         <AllPosts />
-      </div>
-    </Suspense>
+      </Suspense>
+    </div>
   );
 }
