@@ -3,7 +3,6 @@ import { cookies } from 'next/headers';
 // Components
 import { Footer } from '@/components/footer';
 import { Providers } from '@/components/providers';
-import { ViewTransition } from 'react';
 
 // next-intl
 import { routing } from '@/i18n/routing';
@@ -40,16 +39,14 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   return (
     <html lang={locale} suppressHydrationWarning className={theme}>
       <body className={`${fontSans.className} antialiased flex flex-col min-h-screen`}>
-        <ViewTransition>
-          <NextIntlClientProvider>
-            <Providers>
-              <div className="min-h-screen md:grid md:grid-rows-[1fr_auto]">
-                <main className="container">{children}</main>
-                <Footer />
-              </div>
-            </Providers>
-          </NextIntlClientProvider>
-        </ViewTransition>
+        <NextIntlClientProvider>
+          <Providers>
+            <div className="min-h-screen md:grid md:grid-rows-[1fr_auto]">
+              <main className="container">{children}</main>
+              <Footer />
+            </div>
+          </Providers>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
