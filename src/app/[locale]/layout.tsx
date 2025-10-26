@@ -1,5 +1,4 @@
 import { cookies } from 'next/headers';
-import React from 'react';
 
 // Components
 import { Footer } from '@/components/footer';
