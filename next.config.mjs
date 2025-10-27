@@ -4,4 +4,4 @@ const nextConfig = {
   // your existing next config
 };
 
-export default withPayload(nextConfig, { devBundleServerPackages: false });
+export default withPayload(nextConfig);
