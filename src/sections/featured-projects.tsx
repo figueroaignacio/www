@@ -30,14 +30,9 @@ export async function FeaturedProjects() {
       <AnimateIn variant="fadeLeft">
         <h2 className="text-sm font-bold">{t('featuredProjects')}</h2>
       </AnimateIn>
-      <ul className="space-y-5">
+      <ul className="space-y-12">
         {projects.map((project, index) => {
           const delay = 0.1 + index * 0.1;
-
-          const projectImage =
-            typeof project.projectImage === 'object' && project.projectImage !== null
-              ? project.projectImage
-              : undefined;
 
           return (
             <AnimateIn key={project.slug} variant="fadeUp" delay={delay}>
