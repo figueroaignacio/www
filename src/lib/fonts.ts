@@ -1,6 +1,6 @@
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Manrope, Playfair_Display } from 'next/font/google';
 
-export const fontSans = Inter({
+export const fontSans = Manrope({
   subsets: ['latin'],
   weight: ['300', '400'],
   variable: '--font-sans',
