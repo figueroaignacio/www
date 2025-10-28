@@ -4,7 +4,7 @@ import { Error } from '@/components/error';
 import { ProjectItem } from '@/components/project-item';
 
 // Utils
-import { getFeaturedProjects } from '@/lib/services';
+import { getFeaturedProjects } from '@/api/projects';
 import { getLocale, getTranslations } from 'next-intl/server';
 
 // Types

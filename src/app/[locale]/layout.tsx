@@ -41,8 +41,8 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
       <body className={`${fontSans.className} antialiased flex flex-col min-h-screen`}>
         <NextIntlClientProvider>
           <Providers>
-            <div className="min-h-screen md:grid md:grid-rows-[1fr_auto]">
-              <main className="container">{children}</main>
+            <div className="min-h-screen flex flex-col">
+              <main className="container flex-1">{children}</main>
               <Footer />
             </div>
           </Providers>

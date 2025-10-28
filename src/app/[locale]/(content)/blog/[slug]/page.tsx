@@ -8,7 +8,7 @@ import { PostHeader } from '@/components/post-header';
 import { CustomRichText } from '@/components/rich-text';
 
 // Utils
-import { getPostBySlug, getPosts } from '@/lib/services';
+import { getPostBySlug, getPosts } from '@/api/posts';
 
 // Types
 import type { Post } from '@/payload-types';

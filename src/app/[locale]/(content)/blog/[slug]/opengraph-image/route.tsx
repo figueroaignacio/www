@@ -1,4 +1,4 @@
-import { getPostBySlug } from '@/lib/services';
+import { getPostBySlug } from '@/api/posts';
 import { ImageResponse } from 'next/og';
 import type { NextRequest } from 'next/server';
 

@@ -7,7 +7,7 @@ import { PostItem } from '@/components/post-item';
 import { getLocale } from 'next-intl/server';
 
 // Types
-import { getPosts } from '@/lib/services';
+import { getPosts } from '@/api/posts';
 import { type Post } from '@/payload-types';
 
 export async function AllPosts() {

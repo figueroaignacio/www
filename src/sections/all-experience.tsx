@@ -4,7 +4,7 @@ import { Error } from '@/components/error';
 import { ExperienceItem } from '@/components/experience-item';
 
 // Utils
-import { getExperience } from '@/lib/services';
+import { getExperience } from '@/api/experience';
 import { getLocale } from 'next-intl/server';
 
 // Types
