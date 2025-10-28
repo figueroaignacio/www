@@ -16,7 +16,7 @@ export function Thumbnail({ title }: PostThumbnailProps) {
 
   return (
     <div
-      className="relative w-full aspect-2/1 overflow-hidden rounded-xl border border-border/50 mb-3 bg-linear-to-br from-background via-muted to-card transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:border-border active:scale-[0.98] group cursor-pointer"
+      className="relative w-full aspect-4/1 overflow-hidden rounded-xl border border-border/50 mb-3 bg-linear-to-br from-background via-muted to-card transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-xl hover:border-border active:scale-[0.98] group cursor-pointer"
       style={{
         ['--hue' as any]: hue,
         ['--pos1-x' as any]: `${pos1X}%`,
@@ -46,7 +46,7 @@ export function Thumbnail({ title }: PostThumbnailProps) {
         <h2
           className={cn(
             fontSans.className,
-            'text-xl sm:text-2xl font-bold tracking-tight text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] transition-all duration-300 group-hover:translate-x-1 leading-tight',
+            'text-xl font-bold tracking-tight text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] transition-all duration-300 group-hover:translate-x-1 leading-tight',
           )}
         >
           {title}

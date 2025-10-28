@@ -61,10 +61,10 @@ export function ProjectItem({
     <div className="group relative space-y-4 transition-all duration-300 ease-out">
       <div className="relative">
         <div
-          className={`relative aspect-[4/1] overflow-hidden rounded-xl transition-all duration-300 ease-out ${style.header} `}
+          className={`relative aspect-4/1 overflow-hidden rounded-xl transition-all duration-300 ease-out ${style.header} `}
         >
           <div
-            className={`absolute inset-0 bg-gradient-to-br from-card/60 via-card/40 to-transparent transition-opacity duration-300`}
+            className={`absolute inset-0 bg-linear-to-br from-card/60 via-card/40 to-transparent transition-opacity duration-300`}
           />
           <div className="relative flex h-full flex-col justify-center p-6">
             <h2

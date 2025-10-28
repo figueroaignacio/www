@@ -80,7 +80,8 @@
       }
     },
     "footer": {
-      "builtIn": "built in next.js and payloadcms"
+      "builtIn": "built in next.js and payloadcms",
+      "headline": "Fullstack Developer and Programming Student"
     },
     "error": "An error occurred while loading the data.",
     "loader": "Loading..."

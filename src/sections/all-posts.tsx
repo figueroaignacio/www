@@ -25,7 +25,7 @@ export async function AllPosts() {
   }
 
   return (
-    <ul className="space-y-5">
+    <ul className="space-y-12">
       {posts.map((post, index) => {
         const delay = 0.1 + index * 0.1;
         return (
