@@ -84,6 +84,9 @@
       "headline": "Desarrollador Fullstack y Estudiante de Programación"
     },
     "error": "Ha ocurrido un error al cargar los datos.",
-    "loader": "Cargando..."
+    "loader": "Cargando...",
+    "postItem": {
+      "readMore": "Leer Más"
+    }
   }
 }

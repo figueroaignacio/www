@@ -84,6 +84,9 @@
       "headline": "Fullstack Developer and Programming Student"
     },
     "error": "An error occurred while loading the data.",
-    "loader": "Loading..."
+    "loader": "Loading...",
+    "postItem": {
+      "readMore": "Read More"
+    }
   }
 }
