@@ -1,5 +1,4 @@
 // Components
-import { BackButton } from '@/components/back-button';
 import { PostHeader } from '@/components/post-header';
 import { RichText } from '@payloadcms/richtext-lexical/react';
 
@@ -25,7 +24,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <article className="container space-y-3">
-      <BackButton />
       <PostHeader title={project.title} description={project.description} variant="project" />
       <RichText data={project.body} className="prose" />
     </article>

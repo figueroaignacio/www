@@ -55,31 +55,15 @@ export function ProjectItem({
     type: string;
   }[];
 
-  const style = cardStyles[index % cardStyles.length];
-
   return (
     <div className="group relative space-y-4 transition-all duration-300 ease-out">
       <div className="relative">
-        <div
-          className={`relative aspect-4/1 overflow-hidden rounded-xl transition-all duration-300 ease-out ${style.header} `}
-        >
-          <div
-            className={`absolute inset-0 bg-linear-to-br from-card/60 via-card/40 to-transparent transition-opacity duration-300`}
-          />
-          <div className="relative flex h-full flex-col justify-center p-6">
-            <h2
-              className={`text-lg font-bold text-foreground drop-shadow-sm transition-all duration-300`}
-            >
-              {title}
-            </h2>
-            <h3
-              className={`mt-1 text-sm text-muted-foreground transition-all duration-300 delay-50`}
-            >
-              {subtitle}
-            </h3>
-          </div>
+        <div className="relative flex h-full flex-col justify-center">
+          <h2 className={`text-lg font-bold text-foreground`}>{title}</h2>
+          <h3 className={`mt-1 text-sm text-muted-foreground`}>{subtitle}</h3>
         </div>
-        <div className="space-y-4 px-1 pt-4">
+
+        <div className="space-y-4 pt-4">
           <div className="space-y-3">
             <div className="flex  gap-2">
               {links.map((link) =>

@@ -23,18 +23,20 @@ export function PostItem({ slug, title, createdAt, description }: PostItemProps)
         {formatFullDateWithWeekday(createdAt, locale)}
       </p>
       <Link href={`/blog/${slug}`}>
-        <h2 className="hover:underline">{title}</h2>
+        <h2 className="hover:underline hover:text-primary">{title}</h2>
       </Link>
       <div className="flex flex-col gap-3">
         <p className="text-sm text-muted-foreground">{description}</p>
       </div>
-      <Link
-        href={`/blog/${slug}`}
-        className="text-primary hover:underline w-fit flex items-center gap-x-2 text-sm active:scale-[0.98] transition duration-200"
-      >
-        {t('readMore')}
-        <ArrowRight className="size-4" />
-      </Link>
+      <div className="flex justify-self-end">
+        <Link
+          href={`/blog/${slug}`}
+          className="underline hover:text-primary w-fit flex items-center gap-x-2 text-sm active:scale-[0.98] transition duration-200 "
+        >
+          {t('readMore')}
+          <ArrowRight className="size-4" />
+        </Link>
+      </div>
     </div>
   );
 }

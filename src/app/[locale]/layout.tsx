@@ -1,7 +1,7 @@
 import { cookies } from 'next/headers';
 
 // Components
-import { Footer } from '@/components/footer';
+import { BgBlur } from '@/components/bg-blur';
 import { Providers } from '@/components/providers';
 
 // next-intl
@@ -38,12 +38,12 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   return (
     <html lang={locale} suppressHydrationWarning className={theme}>
-      <body className={`${fontSans.className} antialiased flex flex-col min-h-screen`}>
+      <body className={`${fontSans.className} antialiased flex flex-col min-h-screen relative`}>
+        <BgBlur />
         <NextIntlClientProvider>
           <Providers>
             <div className="min-h-screen flex flex-col">
               <main className="container flex-1">{children}</main>
-              <Footer />
             </div>
           </Providers>
         </NextIntlClientProvider>
