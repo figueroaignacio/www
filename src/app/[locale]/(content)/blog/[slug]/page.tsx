@@ -106,7 +106,7 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <article className="space-y-3">
       <AnimateIn variant="fadeUp" delay={0.2}>
-        <PostHeader description={post.description} title={post.title} variant="post" />
+        <PostHeader description={post.description} title={post.title} />
       </AnimateIn>
       <AnimateIn variant="fadeUp" delay={0.4}>
         <CustomRichText data={post.body} className="prose prose-invert max-w-none" />

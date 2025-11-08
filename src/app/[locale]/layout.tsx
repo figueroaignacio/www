@@ -2,6 +2,7 @@ import { cookies } from 'next/headers';
 
 // Components
 import { BgBlur } from '@/components/bg-blur';
+import { Footer } from '@/components/footer';
 import { Providers } from '@/components/providers';
 
 // next-intl
@@ -44,6 +45,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
           <Providers>
             <div className="min-h-screen flex flex-col">
               <main className="container flex-1">{children}</main>
+              <Footer />
             </div>
           </Providers>
         </NextIntlClientProvider>

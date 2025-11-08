@@ -1,6 +1,5 @@
 // Components
 import { AnimateIn } from '@/components/animate-in';
-import { Contact } from './contact';
 import { LocaleSwitcher } from './locale-switcher';
 import { ThemeToggle } from './theme-toggle';
 
@@ -23,9 +22,6 @@ export function Hero({ description, title }: HeroProps) {
       </AnimateIn>
       <AnimateIn variant="fadeUp" delay={0.2}>
         <p className="text-sm text-muted-foreground">{description}</p>
-      </AnimateIn>
-      <AnimateIn variant="fadeUp" delay={0.3}>
-        <Contact />
       </AnimateIn>
     </div>
   );

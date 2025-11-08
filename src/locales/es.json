@@ -81,7 +81,7 @@
     },
     "footer": {
       "builtIn": "construido en next.js y payloadcms",
-      "headline": "Desarrollador Fullstack y Estudiante de Programación"
+      "text": "Puedes contactarme aquí abajo."
     },
     "error": "Ha ocurrido un error al cargar los datos.",
     "loader": "Cargando...",

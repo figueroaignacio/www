@@ -1,5 +1,4 @@
 // Components
-import { Thumbnail } from '@/components/thumbnail';
 
 // Utils
 import { cn } from '@/lib/utils';
@@ -7,22 +6,15 @@ import { cn } from '@/lib/utils';
 interface PostHeaderProps {
   title: string;
   description?: string;
-  variant?: 'post' | 'project';
 }
 
-export function PostHeader({ title, description, variant = 'post' }: PostHeaderProps) {
+export function PostHeader({ title, description }: PostHeaderProps) {
   return (
-    <header className="space-y-3">
-      {variant === 'post' ? (
-        <div className="space-y-1">
-          <Thumbnail title={title} />
-        </div>
-      ) : (
-        <div className="space-y-1">
-          <h1 className={cn('text-lg')}>{title}</h1>
-          {description && <p className="max-w-2xl text-muted-foreground">{description}</p>}
-        </div>
-      )}
+    <header className="space-y-3 border-border border-b pb-3">
+      <div className="space-y-1">
+        <h1 className={cn('text-lg font-semibold')}>{title}</h1>
+        {description && <p className="text-sm text-muted-foreground">{description}</p>}
+      </div>
     </header>
   );
 }

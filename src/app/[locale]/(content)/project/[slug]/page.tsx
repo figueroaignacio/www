@@ -24,7 +24,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <article className="container space-y-3">
-      <PostHeader title={project.title} description={project.description} variant="project" />
+      <PostHeader title={project.title} description={project.description} />
       <RichText data={project.body} className="prose" />
     </article>
   );

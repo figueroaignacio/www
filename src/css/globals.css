@@ -118,7 +118,7 @@
   }
 
   .prose h2 {
-    @apply text-lg font-semibold  border-b border-border mb-3 pb-3 mt-6;
+    @apply text-lg pb-3 mt-6;
   }
 
   .prose blockquote {
