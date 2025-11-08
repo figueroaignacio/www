@@ -1,5 +1,3 @@
-// Components
-
 // Utils
 import { cn } from '@/lib/utils';
 
