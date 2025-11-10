@@ -1,5 +1,4 @@
 // Components
-import { AnimateIn } from '@/components/animate-in';
 import { LocaleSwitcher } from './locale-switcher';
 import { ThemeToggle } from './theme-toggle';
 
@@ -11,18 +10,14 @@ interface HeroProps {
 export function Hero({ description, title }: HeroProps) {
   return (
     <div className="space-y-3">
-      <AnimateIn variant="fadeUp" delay={0.1}>
-        <div className="flex justify-between items-center">
-          <h1 className="text-xl">{title}</h1>
-          <div className="flex gap-x-3">
-            <LocaleSwitcher />
-            <ThemeToggle />
-          </div>
+      <div className="flex justify-between items-center">
+        <h1 className="text-xl">{title}</h1>
+        <div className="flex gap-x-3">
+          <LocaleSwitcher />
+          <ThemeToggle />
         </div>
-      </AnimateIn>
-      <AnimateIn variant="fadeUp" delay={0.2}>
-        <p className="text-sm text-muted-foreground">{description}</p>
-      </AnimateIn>
+      </div>
+      <p className="text-sm text-muted-foreground">{description}</p>
     </div>
   );
 }
