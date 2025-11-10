@@ -101,10 +101,6 @@
     background: var(--border);
     border-radius: 5px;
   }
-
-  a {
-    @apply cursor-default;
-  }
 }
 
 @layer components {
