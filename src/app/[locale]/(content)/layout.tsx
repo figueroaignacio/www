@@ -1,7 +1,4 @@
-import React from 'react';
-
 // Components
-import { AnimateIn } from '@/components/animate-in';
 import { BackButton } from '@/components/back-button';
 import { ThemeToggle } from '@/components/theme-toggle';
 
@@ -26,10 +23,10 @@ export default async function ContentLayout({ children, params }: BlogLayoutProp
 
   return (
     <div>
-      <AnimateIn className="flex justify-between items-center mb-5" variant="fadeLeft">
+      <header className="flex justify-between items-center mb-5">
         <BackButton />
         <ThemeToggle />
-      </AnimateIn>
+      </header>
       {children}
     </div>
   );
