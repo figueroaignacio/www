@@ -145,22 +145,53 @@
     @apply mb-2 leading-relaxed;
   }
 
-  .prose pre {
-    @apply overflow-x-auto rounded-lg p-4 text-sm bg-card border border-border;
-    box-sizing: border-box;
-    max-width: 100%;
-  }
-
-  .prose pre code {
-    display: block;
-    box-sizing: border-box;
-    max-width: 100%;
-    white-space: pre;
-  }
-
   .prose * {
     box-sizing: border-box;
     min-width: 0;
+  }
+}
+
+@layer utilities {
+  @keyframes bg-flow {
+    0%,
+    100% {
+      filter: hue-rotate(0deg) brightness(1);
+    }
+    50% {
+      filter: hue-rotate(15deg) brightness(1.1);
+    }
+  }
+
+  @keyframes blob-slow {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(3%, -3%) scale(1.05);
+    }
+  }
+
+  @keyframes blob-slower {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(-3%, 3%) scale(1.05);
+    }
+  }
+
+  .animate-bg-flow {
+    animation: bg-flow 20s ease-in-out infinite;
+  }
+
+  .animate-blob-slow {
+    animation: blob-slow 30s ease-in-out infinite;
+  }
+
+  .animate-blob-slower {
+    animation: blob-slower 40s ease-in-out infinite;
   }
 }
 
