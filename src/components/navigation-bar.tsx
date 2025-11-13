@@ -23,6 +23,7 @@ export function NavigationBar() {
         const isActive = pathname === item.href;
         return (
           <Link
+            key={item.href}
             href={item.href}
             className={`inline-block text-sm transition-all hover:scale-110 ${
               isActive
