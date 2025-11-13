@@ -151,50 +151,86 @@
   }
 }
 
-@layer utilities {
-  @keyframes bg-flow {
-    0%,
-    100% {
-      filter: hue-rotate(0deg) brightness(1);
-    }
-    50% {
-      filter: hue-rotate(15deg) brightness(1.1);
-    }
-  }
+.container {
+  @apply max-w-xl mx-auto p-4 space-y-5 w-full;
+}
 
-  @keyframes blob-slow {
-    0%,
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
-    50% {
-      transform: translate(3%, -3%) scale(1.05);
-    }
+@keyframes float1 {
+  0%,
+  100% {
+    transform: translate(0%, 0%) scale(1);
+    opacity: 0.18;
   }
-
-  @keyframes blob-slower {
-    0%,
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
-    50% {
-      transform: translate(-3%, 3%) scale(1.05);
-    }
+  33% {
+    transform: translate(12%, -8%) scale(1.1);
+    opacity: 0.28;
   }
-
-  .animate-bg-flow {
-    animation: bg-flow 20s ease-in-out infinite;
-  }
-
-  .animate-blob-slow {
-    animation: blob-slow 30s ease-in-out infinite;
-  }
-
-  .animate-blob-slower {
-    animation: blob-slower 40s ease-in-out infinite;
+  66% {
+    transform: translate(-7%, 7%) scale(0.95);
+    opacity: 0.15;
   }
 }
 
-.container {
-  @apply max-w-xl mx-auto p-4 space-y-5 w-full;
+@keyframes float2 {
+  0%,
+  100% {
+    transform: translate(0%, 0%) scale(1);
+    opacity: 0.22;
+  }
+  25% {
+    transform: translate(-10%, 12%) scale(1.05);
+    opacity: 0.12;
+  }
+  50% {
+    transform: translate(6%, -6%) scale(1.15);
+    opacity: 0.32;
+  }
+  75% {
+    transform: translate(4%, 9%) scale(0.92);
+    opacity: 0.16;
+  }
+}
+
+@keyframes float3 {
+  0%,
+  100% {
+    transform: translate(0%, 0%) scale(1);
+    opacity: 0.2;
+  }
+  40% {
+    transform: translate(10%, 10%) scale(1.08);
+    opacity: 0.3;
+  }
+  80% {
+    transform: translate(-12%, -4%) scale(0.94);
+    opacity: 0.14;
+  }
+}
+
+@keyframes float4 {
+  0%,
+  100% {
+    transform: translate(0%, 0%) scale(1);
+    opacity: 0.16;
+  }
+  50% {
+    transform: translate(-11%, 13%) scale(1.12);
+    opacity: 0.26;
+  }
+}
+
+.blob1 {
+  animation: float1 26s ease-in-out infinite;
+}
+
+.blob2 {
+  animation: float2 32s ease-in-out infinite;
+}
+
+.blob3 {
+  animation: float3 29s ease-in-out infinite;
+}
+
+.blob4 {
+  animation: float4 35s ease-in-out infinite;
 }
