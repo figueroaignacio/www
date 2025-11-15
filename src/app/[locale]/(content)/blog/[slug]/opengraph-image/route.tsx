@@ -17,13 +17,13 @@ export async function GET(
         (
           <div
             style={{
-              background: '#ffffff',
+              background: '#040609',
               width: '100%',
               height: '100%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: '#0f1729',
+              color: '#ffffff',
               fontSize: 48,
               fontWeight: '600',
             }}
@@ -38,105 +38,33 @@ export async function GET(
       );
     }
 
-    const date = new Date(post.createdAt);
-    const formattedDate = date.toLocaleDateString('es-ES', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-
     return new ImageResponse(
       (
         <div
           style={{
-            background: '#ffffff',
+            background: '#040609',
             width: '100%',
             height: '100%',
             display: 'flex',
-            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
             padding: '80px',
             fontFamily: 'system-ui, -apple-system, sans-serif',
           }}
         >
-          <div
+          <h1
             style={{
-              width: '120px',
-              height: '4px',
-              background: '#3b82f6',
-              marginBottom: '60px',
-            }}
-          />
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '24px',
-              flex: 1,
+              fontSize: 64,
+              fontWeight: '700',
+              color: '#ffffff',
+              margin: 0,
+              lineHeight: 1.2,
+              letterSpacing: '-0.02em',
+              textAlign: 'center',
             }}
           >
-            <h1
-              style={{
-                fontSize: 64,
-                fontWeight: '700',
-                color: '#0f1729',
-                margin: 0,
-                lineHeight: 1.1,
-                letterSpacing: '-0.02em',
-              }}
-            >
-              {post.title}
-            </h1>
-
-            {post.description && (
-              <p
-                style={{
-                  fontSize: 28,
-                  color: '#64748b',
-                  margin: 0,
-                  lineHeight: 1.5,
-                  fontWeight: '400',
-                }}
-              >
-                {post.description}
-              </p>
-            )}
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              paddingTop: '40px',
-              borderTop: '1px solid #e2e8f0',
-            }}
-          >
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '8px',
-              }}
-            >
-              <span
-                style={{
-                  fontSize: 24,
-                  color: '#0f1729',
-                  fontWeight: '600',
-                }}
-              >
-                Ignacio Figueroa
-              </span>
-              <span
-                style={{
-                  fontSize: 20,
-                  color: '#94a3b8',
-                  fontWeight: '400',
-                }}
-              >
-                {formattedDate}
-              </span>
-            </div>
-          </div>
+            {post.title}
+          </h1>
         </div>
       ),
       {
