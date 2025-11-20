@@ -14,7 +14,7 @@ export function CodeBlock({ code, language = 'typescript' }: CodeBlockProps) {
     <Highlight code={trimmed} language={language} theme={themes.oneDark}>
       {({ className, tokens, getLineProps, getTokenProps }) => (
         <div className="relative my-6 w-full">
-          <div className="rounded-xl bg-card border border-border overflow-x-auto max-w-full">
+          <div className="rounded-xl bg-[#2a2c33] border border-border overflow-x-auto max-w-full text-white">
             <pre
               className={`${className} w-full max-w-full p-4 text-sm leading-relaxed font-mono box-border`}
               style={{ boxSizing: 'border-box' }}
@@ -27,7 +27,7 @@ export function CodeBlock({ code, language = 'typescript' }: CodeBlockProps) {
                     className="flex items-start"
                     style={{ boxSizing: 'border-box' }}
                   >
-                    <span className="inline-block w-8 flex-shrink-0 select-none text-right opacity-50 pr-4">
+                    <span className="inline-block w-8 shrink-0 select-none text-right opacity-50 pr-4">
                       {i + 1}
                     </span>
                     <span className="flex-1 min-w-0 whitespace-pre">

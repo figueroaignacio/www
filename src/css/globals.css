@@ -30,13 +30,13 @@
 .dark {
   --background: oklch(12% 0.01 260);
   --foreground: oklch(98% 0.002 270);
-  --card: oklch(15% 0.01 260);
+  --card: oklch(15.402% 0.00922 264.301);
   --card-foreground: oklch(98% 0.002 270);
   --popover: oklch(10% 0.012 260);
   --popover-foreground: oklch(98% 0.002 270);
   --primary: oklch(61.319% 0.22952 291.745);
   --primary-foreground: oklch(100% 0.00011 271.152);
-  --secondary: oklch(29.399% 0.01304 272.934);
+  --secondary: #2a2c33;
   --secondary-foreground: oklch(95.514% 0.00011 271.152);
   --muted: oklch(29.399% 0.01304 272.934);
   --muted-foreground: oklch(70.576% 0.00008 271.152);
@@ -114,7 +114,7 @@
   }
 
   .prose h2 {
-    @apply text-lg pb-3 mt-6;
+    @apply text-lg pb-3 mt-6 border-b border-border mb-3;
   }
 
   .prose blockquote {
@@ -139,6 +139,10 @@
 
   .prose ol {
     @apply mb-3 ml-5 text-sm list-decimal;
+  }
+
+  .prose code {
+    @apply bg-[#2a2c33] px-1.5 py-0.5 rounded-md text-[13px] font-mono text-white;
   }
 
   .prose li {
