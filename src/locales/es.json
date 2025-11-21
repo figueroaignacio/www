@@ -87,6 +87,10 @@
     "loader": "Cargando...",
     "postItem": {
       "readMore": "Leer Más"
+    },
+    "viewCvButton": {
+      "label": "Ver Curriculum Vitae",
+      "url": "/pdf/IgnacioFigueroa_CV_FullstackDeveloper_ES.pdf"
     }
   }
 }

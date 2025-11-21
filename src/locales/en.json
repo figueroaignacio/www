@@ -87,6 +87,10 @@
     "loader": "Loading...",
     "postItem": {
       "readMore": "Read More"
+    },
+    "viewCvButton": {
+      "label": "View Resume",
+      "url": "/pdf/IgnacioFigueroa_CV_FullstackDeveloper_EN.pdf"
     }
   }
 }

@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 
 // Components
 import { AnimateIn } from '@/components/animate-in';
+import { DeveloperWatermark } from '@/components/developer-watermark';
 
 export function AboutMe() {
   const t = useTranslations('sections.me');
@@ -20,10 +21,7 @@ export function AboutMe() {
             className="w-14 h-14 rounded-full ring-1 ring-border"
             loading="eager"
           />
-          <div>
-            <h2 className="text-base font-semibold">Ignacio Figueroa</h2>
-            <p className="text-xs text-muted-foreground">{t('headline')}</p>
-          </div>
+          <DeveloperWatermark />
         </div>
       </AnimateIn>
       <div className="space-y-4">
