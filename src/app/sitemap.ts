@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/constants';
 import type { MetadataRoute } from 'next';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticRoutes = ['', '/me', '/blog', '/projects'];
+  const staticRoutes = ['', '/blog', '/projects', "experience", "stack"];
 
   const localizedStatic = routing.locales.flatMap((locale) =>
     staticRoutes.map((route) => ({
