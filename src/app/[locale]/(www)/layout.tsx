@@ -1,6 +1,5 @@
-import React from 'react';
-
 // Components
+import { MobileMenu } from '@/components/mobile-menu';
 import { NavigationBar } from '@/components/navigation-bar';
 
 // next-intl
@@ -26,6 +25,7 @@ export default async function WwwLayout({ children, params }: LocaleLayoutProps)
     <div className="space-y-5">
       <div>
         <NavigationBar />
+        <MobileMenu />
         {children}
       </div>
     </div>

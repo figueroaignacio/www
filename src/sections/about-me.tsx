@@ -8,21 +8,11 @@ import { DeveloperWatermark } from '@/components/developer-watermark';
 export function AboutMe() {
   const t = useTranslations('sections.aboutMe');
   const about: { content: string }[] = t.raw('items');
-  const githubUsername = 'figueroaignacio';
-  const avatarUrl = `https://github.com/${githubUsername}.png`;
 
   return (
     <div className="space-y-8 mt-12">
       <AnimateIn variant="scale" delay={0}>
-        <div className="flex items-center gap-4">
-          <img
-            src={avatarUrl}
-            alt="Ignacio Figueroa"
-            className="w-14 h-14 rounded-full ring-1 ring-border"
-            loading="eager"
-          />
-          <DeveloperWatermark />
-        </div>
+        <DeveloperWatermark />
       </AnimateIn>
       <div className="space-y-4">
         {about.map((section, index) => {

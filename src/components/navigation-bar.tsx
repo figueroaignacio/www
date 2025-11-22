@@ -18,8 +18,8 @@ export function NavigationBar() {
   const pathname = usePathname();
 
   return (
-    <nav className="space-x-5 mt-3 mb-6">
-      {navigation.map((item, index) => {
+    <nav className="space-x-5 mt-3 mb-6 hidden lg:block">
+      {navigation.map((item) => {
         const isActive = pathname === item.href;
         return (
           <Link
