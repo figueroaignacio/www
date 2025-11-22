@@ -36,12 +36,13 @@
     },
     "stack": {
       "title": "Stack",
-      "description": "The technologies I use, like, and rely on to create",
+      "description": "Technologies I work with and focus on the most.",
       "categories": {
         "frontend": "Frontend",
         "backend": "Backend & Infrastructure",
         "cms": "CMS & Content",
-        "others": "Tools & extras"
+        "others": "Tools & extras",
+        "ai": "AI & Copilots"
       }
     },
     "experience": {

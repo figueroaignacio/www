@@ -36,12 +36,13 @@
     },
     "stack": {
       "title": "Stack",
-      "description": "Las tecnologías que uso, me gustan y me ayudan a crear",
+      "description": "Tecnologías con las que trabajo y en las que más me enfoco.",
       "categories": {
         "frontend": "Frontend",
         "backend": "Backend e Infraestructura",
         "cms": "CMS y Contenido",
-        "others": "Herramientas y extras"
+        "others": "Herramientas y extras",
+        "ai": "IA y Copilotos"
       }
     },
     "experience": {
