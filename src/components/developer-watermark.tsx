@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { ViewCvButton } from './view-cv-button';
 
 export function DeveloperWatermark() {
-  const t = useTranslations('sections.me');
+  const t = useTranslations('sections.aboutMe');
 
   return (
     <div className="flex items-center justify-between flex-wrap w-full">

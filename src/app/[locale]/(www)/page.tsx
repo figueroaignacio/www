@@ -7,11 +7,11 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 // Components
 import { Hero } from '@/components/hero';
-import { AllPosts } from '@/sections/all-posts';
+import { Loader } from '@/components/loader';
+import { AboutMe } from '@/sections/about-me';
 import { Suspense } from 'react';
 
 // Types
-import { Loader } from '@/components/loader';
 import { type Metadata } from 'next';
 
 interface HomePageProps {
@@ -59,7 +59,7 @@ export default function HomePage({ params }: HomePageProps) {
     <div className="space-y-5">
       <Hero title={t('greeting')} description={t('description')} />
       <Suspense fallback={<Loader />}>
-        <AllPosts />
+        <AboutMe />
       </Suspense>
     </div>
   );

@@ -2,12 +2,12 @@
 import { use } from 'react';
 
 // next-intl
+import { AllPosts } from '@/sections/all-posts';
 import { useTranslations, type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 // Components
 import { Hero } from '@/components/hero';
-import { AboutMe } from '@/sections/about-me';
 
 // Types
 import { type Metadata } from 'next';
@@ -18,7 +18,7 @@ interface MePageProps {
 
 export async function generateMetadata({ params }: MePageProps): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'sections.me' });
+  const t = await getTranslations({ locale, namespace: 'sections.blog' });
 
   return {
     title: t('title'),
@@ -42,12 +42,12 @@ export async function generateMetadata({ params }: MePageProps): Promise<Metadat
 export default function MePage({ params }: MePageProps) {
   const { locale } = use(params);
   setRequestLocale(locale);
-  const t = useTranslations('sections.me');
+  const t = useTranslations('sections.blog');
 
   return (
     <div className="space-y-5">
       <Hero title={t('title')} description={t('description')} />
-      <AboutMe />
+      <AllPosts />
     </div>
   );
 }

@@ -1,42 +1,42 @@
 {
   "sections": {
     "home": {
-      "title": "Desarrollador Fullstack y Estudiante de Programación",
-      "greeting": "Hola, soy Ignacio",
-      "description": "> desarrollador de fullstack de Argentina. Actualmente construyendo I7A UI y siempre metido en algo nuevo. Si querés charlar o colaborar, no dudes en contactarme."
+      "title": "Desarrollador Fullstack y estudiante de Programación",
+      "description": "Desarrollador Fullstack de Argentina y estudiante de Programación. Actualmente construyendo I7A UI e integrando Inteligencia Artificial en aplicaciones modernas.",
+      "greeting": "Hola, soy Ignacio"
     },
-    "thoughts": {
-      "title": "Pensamientos",
-      "description": "> un espacio donde anoto lo que aprendo, experimento y rompo mientras programo."
+    "blog": {
+      "title": "Blog",
+      "description": "Descubre mis publicaciones sobre tecnología, programación, IA, opiniones, etc."
     },
-    "me": {
+    "aboutMe": {
       "title": "Sobre mí",
-      "description": "> quién soy, qué hago y por qué me gusta tanto programar",
+      "description": "Quién soy, qué hago y por qué me gusta tanto programar",
       "headline": "Desarrollador Fullstack y Estudiante de Programación",
       "items": [
         {
-          "content": "Soy Ignacio Figueroa, estudio programación en la UTN y me encanta aprender por mi cuenta. Me gusta explorar nuevas tecnologías y ver qué puedo hacer con ellas. Para mí programar es un desafío copado y una forma de crear cosas útiles y creativas."
+          "content": "Soy <b>Ignacio Figueroa</b>, estudio Programación en la UTN y también voy aprendiendo por mi cuenta. Me interesa mucho el <b>Desarrollo Fullstack</b> y entender cómo se arma una aplicación desde cero. Me gusta utilizar <b>tecnologías modernas</b> y ver qué puedo construir con ellas. Además, me interesa trabajar con <b>buenas arquitecturas</b>, pensar en la <b>estructura</b> de los proyectos y aplicar <b>POO</b> para mantener todo ordenado y fácil de escalar. Para mí, programar es un desafío donde siempre aparece algo nuevo para resolver."
         },
         {
-          "content": "Me gusta armar proyectos propios, desde componentes chicos hasta apps completas. Cada proyecto es una excusa para probar ideas nuevas y aprender. Me va mucho el frontend, hacer interfaces limpias y lindas, pero también me copa entender cómo funciona todo por atrás."
+          "content": "Suelo armar <b>proyectos propios</b>, desde componentes sueltos hasta apps completas. Cada proyecto es una excusa para experimentar y meter ideas nuevas. Mi fuerte es el <b>Frontend</b> por el diseño y la interacción, pero también disfruto trabajar el <b>Backend</b> construyendo API's y entender cómo se conectan todas las piezas."
         },
         {
-          "content": "Trabajo probando cosas, equivocándome y ajustando hasta que quede bien. Leo, miro ejemplos y después lo aplico en proyectos reales. Me gusta ir documentando lo que aprendo y compartirlo en mi portfolio o blog."
+          "content": "Mi forma de trabajar es simple: <b>pruebo</b>, rompo cosas, ajusto y sigo. Leo, miro ejemplos y después lo aplico en <b>proyectos reales</b>."
         },
         {
-          "content": "Lo que más me motiva es aprender, crear y experimentar. Me re copa resolver problemas, descubrir herramientas nuevas y mejorar lo que hago. Cada línea de código es una oportunidad para aprender algo y crecer, y siempre busco que mis proyectos reflejen mi curiosidad y las ganas que le pongo a programar."
+          "content": "Últimamente estoy metiéndome fuerte en integrar <b>Inteligencia Artificial</b> en aplicaciones modernas, buscando sumar funciones más inteligentes y automatizar lo que antes llevaba tiempo. Lo que me mueve es la idea de seguir <b>mejorando</b> lo que hago, descubrir herramientas nuevas y encontrar soluciones que estén buenas. Cada proyecto es una manera de <b>crecer</b> y de mostrar lo que voy aprendiendo."
         }
       ]
     },
     "projects": {
       "title": "Proyectos",
-      "description": "> las cosas que construyo por curiosidad o necesidad",
+      "description": "Las cosas que construyo por curiosidad o necesidad",
       "featuredProjects": "proyectos destacados",
       "otherProjects": "otros proyectos"
     },
     "stack": {
       "title": "Stack",
-      "description": "> las tecnologías que uso, me gustan y me ayudan a crear",
+      "description": "Las tecnologías que uso, me gustan y me ayudan a crear",
       "categories": {
         "frontend": "Frontend",
         "backend": "Backend e Infraestructura",
@@ -46,18 +46,18 @@
     },
     "experience": {
       "title": "Experiencia",
-      "description": "> un resumen de mi recorrido como desarrollador"
+      "description": "Un resumen de mi recorrido como desarrollador"
     }
   },
   "ui": {
     "navigation": [
       {
-        "label": "blog",
+        "label": "sobre mi",
         "href": "/"
       },
       {
-        "label": "yo",
-        "href": "/me"
+        "label": "blog",
+        "href": "/blog"
       },
       {
         "label": "proyectos",
