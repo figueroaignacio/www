@@ -15,13 +15,13 @@
       "headline": "Desarrollador Fullstack y Estudiante de Programación",
       "items": [
         {
-          "content": "Soy <b>Ignacio Figueroa</b>, estudio Programación en la UTN y también voy aprendiendo por mi cuenta. Me interesa mucho el <b>Desarrollo Fullstack</b> y entender cómo se arma una aplicación desde cero. Me gusta utilizar <b>tecnologías modernas</b> y ver qué puedo construir con ellas. Además, me interesa trabajar con <b>buenas arquitecturas</b>, pensar en la <b>estructura</b> de los proyectos y aplicar <b>POO</b> para mantener todo ordenado y fácil de escalar. Para mí, programar es un desafío donde siempre aparece algo nuevo para resolver."
+          "content": "<b>Estudiante de Programación en la UTN y autodidacta</b>. Me interesa el <b>Desarrollo Fullstack</b>, construir aplicaciones desde cero y trabajar con <b>tecnologías modernas</b>. Disfruto pensar buenas <b>arquitecturas</b> y aplicar <b>POO</b> para mantener proyectos sólidos y escalables."
         },
         {
-          "content": "Suelo armar <b>proyectos propios</b>, desde componentes sueltos hasta apps completas. Cada proyecto es una excusa para experimentar y meter ideas nuevas. Mi fuerte es el <b>Frontend</b> por el diseño y la interacción, pero también disfruto trabajar el <b>Backend</b> construyendo API's y entender cómo se conectan todas las piezas."
+          "content": "Creo <b>proyectos propios</b> para experimentar ideas y mejorar mis habilidades. Mi fuerte es el <b>Frontend</b>, pero también disfruto trabajar el <b>Backend</b> construyendo API's y entendiendo cómo encaja todo."
         },
         {
-          "content": "Últimamente estoy metiéndome fuerte en integrar <b>Inteligencia Artificial</b> en aplicaciones modernas, buscando sumar funciones más inteligentes y automatizar lo que antes llevaba tiempo. Lo que me mueve es la idea de seguir <b>mejorando</b> lo que hago, descubrir herramientas nuevas y encontrar soluciones que estén buenas. Cada proyecto es una manera de <b>crecer</b> y de mostrar lo que voy aprendiendo."
+          "content": "Estoy explorando cómo integrar <b>Inteligencia Artificial</b> en aplicaciones modernas para sumar funciones más inteligentes y automatizar procesos. Busco <b>mejorar</b> constantemente, aprender nuevas herramientas y crecer en cada proyecto."
         }
       ]
     },
@@ -88,7 +88,11 @@
     },
     "viewCvButton": {
       "label": "Ver Curriculum Vitae",
-      "url": "/pdf/IgnacioFigueroa_CV_FullstackDeveloper_ES.pdf"
+      "url": "/pdf/IgnacioFigueroa_CV_FullstackDeveloper_ES.pdf",
+      "cta": {
+        "title": "¿Querés conocer más sobre mi perfil profesional?",
+        "text": "Te invito a ver mi CV."
+      }
     },
     "chat": {
       "header": {
