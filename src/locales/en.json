@@ -89,6 +89,19 @@
     "viewCvButton": {
       "label": "View Resume",
       "url": "/pdf/IgnacioFigueroa_CV_FullstackDeveloper_EN.pdf"
+    },
+    "chat": {
+      "header": {
+        "title": "N.A.I",
+        "subtitle": "Ask me anything"
+      },
+      "input": {
+        "placeholder": "Type a message..."
+      },
+      "messages": {
+        "initial": "Hi! 👋 I'm N.A.I, Ignacio's assistant. How can I help you today?",
+        "error": "I'm sorry, I encountered an error. Please try again."
+      }
     }
   }
 }
