@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 
 // Components
 import { AnimateIn } from '@/components/animate-in';
+import { CvCta } from '@/components/cv-cta';
 import { DeveloperWatermark } from '@/components/developer-watermark';
 
 export function AboutMe() {
@@ -28,6 +29,7 @@ export function AboutMe() {
           );
         })}
       </div>
+      <CvCta />
     </div>
   );
 }

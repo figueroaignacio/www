@@ -11,6 +11,9 @@ import { Loader } from '@/components/loader';
 import { AboutMe } from '@/sections/about-me';
 import { Suspense } from 'react';
 
+// Utils
+import { getTimeBasedGreeting } from '@/lib/greeting';
+
 // Types
 import { type Metadata } from 'next';
 
@@ -55,9 +58,12 @@ export default function HomePage({ params }: HomePageProps) {
   setRequestLocale(locale);
   const t = useTranslations('sections.home');
 
+  const greetingKey = getTimeBasedGreeting();
+  const greeting = t(`greeting.${greetingKey}`);
+
   return (
     <div className="space-y-5">
-      <Hero title={t('greeting')} description={t('description')} />
+      <Hero title={greeting} description={t('description')} />
       <Suspense fallback={<Loader />}>
         <AboutMe />
       </Suspense>

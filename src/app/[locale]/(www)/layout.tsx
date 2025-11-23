@@ -1,5 +1,6 @@
 // Components
 import { MobileMenu } from '@/components/mobile-menu';
+import { NaiChat } from '@/components/nai-chat';
 import { NavigationBar } from '@/components/navigation-bar';
 
 // next-intl
@@ -26,6 +27,7 @@ export default async function WwwLayout({ children, params }: LocaleLayoutProps)
       <div>
         <NavigationBar />
         <MobileMenu />
+        <NaiChat />
         {children}
       </div>
     </div>

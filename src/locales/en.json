@@ -2,26 +2,32 @@
   "sections": {
     "home": {
       "title": "Fullstack Developer and Programming Student",
-      "description": "Fullstack Developer from Argentina and Programming Student. Currently building I7A UI and integrating Artificial Intelligence into modern applications.",
-      "greeting": "Hello, I'm Ignacio"
+      "description": "I love about artificial intelligence, programming, and writing articles. I'm always exploring new things that spark my curiosity and keep me creating.",
+
+      "greeting": {
+        "morning": "Good morning ☀️ (yes, I woke up early)",
+        "afternoon": "Good afternoon 🌤️ (the productive hour)",
+        "evening": "Good evening 🌙 (almost bug-free today)",
+        "lateNight": "Coding at this hour? 🦉 (me debugging)"
+      }
     },
     "blog": {
       "title": "Blog",
       "description": "Discover my posts about tech, programming, AI, opinions, etc."
     },
     "aboutMe": {
-      "title": "About me",
-      "description": "Who I am, what I do, and why I enjoy coding so much",
-      "headline": "Fullstack Developer and Programming Student",
+      "title": "About Me",
+      "description": "Who I am, what I do, and why I love programming",
+      "headline": "Fullstack Developer & Programming Student",
       "items": [
         {
-          "content": "I'm <b>Ignacio Figueroa</b>, I study Programming at UTN and I also learn a lot on my own. I'm really interested in <b>Fullstack Development</b> and understanding how an application is built from scratch. I enjoy working with <b>modern technologies</b> and seeing what I can create with them. I also care about using <b>good architectures</b>, thinking through the <b>structure</b> of projects, and applying <b>OOP</b> to keep everything organized and scalable. For me, programming is a challenge where there's always something new to figure out."
+          "content": "<b>Programming student at UTN and a self-taught developer</b>. I'm passionate about <b>Fullstack Development</b>, building applications from scratch, and working with <b>modern technologies</b>. I enjoy designing solid <b>architectures</b> and applying <b>OOP</b> to keep projects organized and scalable."
         },
         {
-          "content": "I usually build <b>personal projects</b>, from small components to full applications. Each project is an excuse to experiment and try new ideas. My strongest area is the <b>Frontend</b> because of the design and interaction, but I also enjoy working on the <b>Backend</b>, building APIs and understanding how all the pieces connect."
+          "content": "I often build <b>personal projects</b>, from small components to complete apps. Each project is a chance to experiment and explore new ideas. My strength is the <b>Frontend</b>, but I also enjoy working on the <b>Backend</b> by building APIs and understanding how everything connects."
         },
         {
-          "content": "Lately, I've been diving deeper into integrating <b>Artificial Intelligence</b> into modern applications, aiming to add smarter features and automate tasks that used to take more time. What drives me is the idea of continuously <b>improving</b> what I do, discovering new tools, and finding solutions that actually work. Every project is a way to <b>grow</b> and show what I'm learning."
+          "content": "I'm currently diving into integrating <b>Artificial Intelligence</b> into modern applications to add smarter features and automate tasks. I'm always looking to <b>improve</b>, discover new tools, and grow through every project I build."
         }
       ]
     },
@@ -88,7 +94,24 @@
     },
     "viewCvButton": {
       "label": "View Resume",
-      "url": "/pdf/IgnacioFigueroa_CV_FullstackDeveloper_EN.pdf"
+      "url": "/pdf/IgnacioFigueroa_CV_FullstackDeveloper_EN.pdf",
+      "cta": {
+        "title": "Want to learn more about my professional profile?",
+        "text": "Feel free to check out my CV."
+      }
+    },
+    "chat": {
+      "header": {
+        "title": "N.A.I",
+        "subtitle": "Ask me anything"
+      },
+      "input": {
+        "placeholder": "Type a message..."
+      },
+      "messages": {
+        "initial": "Hi! 👋 I'm N.A.I, Ignacio's assistant. How can I help you today?",
+        "error": "I'm sorry, I encountered an error. Please try again."
+      }
     }
   }
 }
