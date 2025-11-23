@@ -3,7 +3,12 @@
     "home": {
       "title": "Fullstack Developer and Programming Student",
       "description": "Fullstack Developer from Argentina and Programming Student. Currently building I7A UI and integrating Artificial Intelligence into modern applications.",
-      "greeting": "Hello, I'm Ignacio"
+      "greeting": {
+        "morning": "Good morning ☀️ (yes, I woke up early)",
+        "afternoon": "Good afternoon 🌤️ (the productive hour)",
+        "evening": "Good evening 🌙 (almost bug-free today)",
+        "lateNight": "Coding at this hour? 🦉 (me debugging)"
+      }
     },
     "blog": {
       "title": "Blog",

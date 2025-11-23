@@ -1,11 +1,14 @@
 'use client';
+
 // Hooks
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
+
 // Components
 import { Link } from '@/i18n/navigation';
 import { Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
 import { DeveloperWatermark } from './developer-watermark';
+import { HeaderActions } from './header-actions';
 
 export function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,6 +52,7 @@ export function MobileMenu() {
           <DeveloperWatermark />
         </div>
       </nav>
+      <HeaderActions />
     </div>
   );
 }

@@ -3,7 +3,12 @@
     "home": {
       "title": "Desarrollador Fullstack y estudiante de Programación",
       "description": "Desarrollador Fullstack de Argentina y estudiante de Programación. Actualmente construyendo I7A UI e integrando Inteligencia Artificial en aplicaciones modernas.",
-      "greeting": "Hola, soy Ignacio"
+      "greeting": {
+        "morning": "Buenos días ☀️ (sí, me levanté temprano)",
+        "afternoon": "Buenas tardes 🌤️ (la hora productiva)",
+        "evening": "Buenas noches 🌙 (casi termino el día sin bugs)",
+        "lateNight": "¿Programando a esta hora? 🦉 (yo debugueando)"
+      }
     },
     "blog": {
       "title": "Blog",

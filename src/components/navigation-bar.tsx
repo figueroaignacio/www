@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 
 // Components
 import { Link } from '@/i18n/navigation';
+import { HeaderActions } from './header-actions';
 
 interface Navigation {
   label: string;
@@ -18,23 +19,26 @@ export function NavigationBar() {
   const pathname = usePathname();
 
   return (
-    <nav className="space-x-5 mt-3 mb-6 hidden lg:block">
-      {navigation.map((item) => {
-        const isActive = pathname === item.href;
-        return (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={`inline-block text-sm transition-all hover:scale-110 ${
-              isActive
-                ? 'text-foreground font-medium scale-110'
-                : 'text-muted-foreground hover:text-foreground'
-            }`}
-          >
-            {item.label}
-          </Link>
-        );
-      })}
+    <nav className="mt-3 mb-6 hidden lg:flex lg:justify-between lg:items-center">
+      <div className="space-x-5">
+        {navigation.map((item) => {
+          const isActive = pathname === item.href;
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`inline-block text-sm transition-all hover:scale-110 ${
+                isActive
+                  ? 'text-foreground font-medium scale-110'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              {item.label}
+            </Link>
+          );
+        })}
+      </div>
+      <HeaderActions />
     </nav>
   );
 }
