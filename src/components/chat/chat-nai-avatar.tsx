@@ -1,4 +1,4 @@
-let avatar = '/images/nai-assistant.png';
+const avatar = '/images/nai-assistant.png';
 
 export function ChatNaiAvatar() {
   return (
