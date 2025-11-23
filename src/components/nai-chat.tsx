@@ -14,6 +14,8 @@ export function NaiChat() {
   const { messages, isLoading, messagesEndRef, sendMessage } = useChat();
   const { message, setMessage, handleSubmit, handleKeyPress } = useChatInput(sendMessage);
 
+  const handleClose = () => setOpen(false);
+
   return (
     <div className="fixed bottom-8 right-8 z-50">
       <ChatToggleButton isOpen={open} onClick={() => setOpen(!open)} />
@@ -26,6 +28,7 @@ export function NaiChat() {
         onMessageChange={setMessage}
         onSubmit={handleSubmit}
         onKeyPress={handleKeyPress}
+        onClose={handleClose}
       />
     </div>
   );

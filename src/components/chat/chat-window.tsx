@@ -13,6 +13,7 @@ interface ChatWindowProps {
   onMessageChange: (value: string) => void;
   onSubmit: (e?: React.FormEvent) => void;
   onKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  onClose: () => void;
 }
 
 export function ChatWindow({
@@ -24,27 +25,41 @@ export function ChatWindow({
   onMessageChange,
   onSubmit,
   onKeyPress,
+  onClose,
 }: ChatWindowProps) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: 20, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 20, scale: 0.95 }}
-          transition={{ type: 'spring', duration: 0.4 }}
-          className="absolute bottom-20 right-0 w-[380px] h-[580px] bg-card shadow-2xl rounded-2xl border border-border overflow-hidden flex flex-col"
-        >
-          <ChatHeader />
-          <ChatMessages messages={messages} isLoading={isLoading} messagesEndRef={messagesEndRef} />
-          <ChatInput
-            message={message}
-            isLoading={isLoading}
-            onMessageChange={onMessageChange}
-            onSubmit={onSubmit}
-            onKeyPress={onKeyPress}
+        <>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm md:hidden z-40"
+            onClick={onClose}
           />
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            transition={{ type: 'spring', duration: 0.4 }}
+            className="fixed md:absolute inset-0 md:inset-auto md:bottom-20 md:right-0 w-full md:w-[380px] h-full md:h-[580px] bg-card shadow-2xl rounded-none md:rounded-2xl border-0 md:border md:border-border overflow-hidden flex flex-col z-50"
+          >
+            <ChatHeader onClose={onClose} />
+            <ChatMessages
+              messages={messages}
+              isLoading={isLoading}
+              messagesEndRef={messagesEndRef}
+            />
+            <ChatInput
+              message={message}
+              isLoading={isLoading}
+              onMessageChange={onMessageChange}
+              onSubmit={onSubmit}
+              onKeyPress={onKeyPress}
+            />
+          </motion.div>
+        </>
       )}
     </AnimatePresence>
   );
