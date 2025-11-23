@@ -1,5 +1,6 @@
 // Components
 import { motion } from 'framer-motion';
+import { ChatMarkdownContent } from './chat-markdown-content';
 
 // Types
 import type { Message } from '@/lib/types';
@@ -24,7 +25,13 @@ export function ChatMessage({ message }: ChatMessageProps) {
             : 'bg-muted text-foreground rounded-tl-sm'
         }`}
       >
-        <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+        {isUser ? (
+          <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+        ) : (
+          <div className="text-sm">
+            <ChatMarkdownContent content={message.content} />
+          </div>
+        )}
       </div>
     </motion.div>
   );
