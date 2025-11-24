@@ -54,7 +54,7 @@ export function TimelineItem({
             />
           )}
         </div>
-        <div className="from-border mt-2 h-full w-px flex-1 bg-gradient-to-b to-transparent" />
+        <div className="from-border mt-2 h-full w-px flex-1 bg-linear-to-b to-transparent" />
       </div>
       <div className="flex-1 pb-8">
         <div className={cn('', active && 'border-primary/50')}>{children}</div>
@@ -117,7 +117,7 @@ export function TimelineHeader({ children, className }: React.HTMLAttributes<HTM
 }
 
 export function TimelineTitle({ children, className }: React.HTMLAttributes<HTMLHeadingElement>) {
-  return <h3 className={cn('text-xl font-semibold tracking-tight', className)}>{children}</h3>;
+  return <h3 className={cn('text-lg font-semibold tracking-tight', className)}>{children}</h3>;
 }
 
 export function TimelineDescription({

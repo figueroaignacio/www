@@ -1,13 +1,14 @@
 // React
-import { use } from 'react';
+import { Suspense, use } from 'react';
 
 // next-intl
-import { AllPosts } from '@/features/blog/components/all-posts';
 import { useTranslations, type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 // Components
 import { Hero } from '@/components/hero';
+import { AllPosts } from '@/features/blog/components/all-posts';
+import { PostItemLoader } from '@/features/blog/components/post-item-loader';
 
 // Types
 import { type Metadata } from 'next';
@@ -47,7 +48,9 @@ export default function MePage({ params }: MePageProps) {
   return (
     <div className="space-y-5">
       <Hero title={t('title')} description={t('description')} />
-      <AllPosts />
+      <Suspense fallback={<PostItemLoader />}>
+        <AllPosts />
+      </Suspense>
     </div>
   );
 }

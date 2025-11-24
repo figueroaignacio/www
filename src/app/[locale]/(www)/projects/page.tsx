@@ -7,10 +7,10 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 // Components
 import { Hero } from '@/components/hero';
-import { Loader } from '@/components/loader';
 import { Separator } from '@/components/ui/separator';
 import { FeaturedProjects } from '@/features/projects/components/featured-projects';
 import { OtherProjects } from '@/features/projects/components/other-projects';
+import { ProjectItemLoader } from '@/features/projects/components/project-item-loader';
 
 // Types
 import { type Metadata } from 'next';
@@ -50,7 +50,7 @@ export default function ProjectsPage({ params }: ProjectsPageProps) {
   return (
     <div className="space-y-5">
       <Hero title={t('title')} description={t('description')} />
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<ProjectItemLoader />}>
         <FeaturedProjects />
         <Separator />
         <OtherProjects />
