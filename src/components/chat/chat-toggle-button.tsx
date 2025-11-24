@@ -13,7 +13,7 @@ export function ChatToggleButton({ isOpen, onClick }: ChatToggleButtonProps) {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={onClick}
-      className="relative group p-4 rounded-full shadow-lg bg-foreground text-background overflow-hidden"
+      className="relative group p-4 rounded-full shadow-lg bg-foreground text-background overflow-hidden z-50"
     >
       <AnimatePresence mode="wait">
         {isOpen ? (
