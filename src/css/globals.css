@@ -89,15 +89,15 @@
     @apply bg-background text-foreground;
   }
 
-  body::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 5px;
   }
 
-  body::-webkit-scrollbar-track {
+  ::-webkit-scrollbar-track {
     background: transparent;
   }
 
-  body::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {
     background: var(--border);
     border-radius: 5px;
   }

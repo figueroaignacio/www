@@ -1,6 +1,6 @@
 // Components
 import { AnimatePresence, motion } from 'framer-motion';
-import { MessageCircle, X } from 'lucide-react';
+import { BotMessageSquare, X } from 'lucide-react';
 
 interface ChatToggleButtonProps {
   isOpen: boolean;
@@ -34,15 +34,10 @@ export function ChatToggleButton({ isOpen, onClick }: ChatToggleButtonProps) {
             exit={{ rotate: 90, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <MessageCircle className="w-6 h-6" />
+            <BotMessageSquare className="w-6 h-6" />
           </motion.div>
         )}
       </AnimatePresence>
-      <motion.div
-        animate={{ scale: [1, 1.2, 1] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute top-1 right-1 w-2 h-2 bg-green-500 rounded-full"
-      />
     </motion.button>
   );
 }
