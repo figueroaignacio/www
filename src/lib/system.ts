@@ -78,15 +78,23 @@ function formatExperience(experience: PayloadContextData['experience'], lang: La
 }
 
 export async function getSystemPrompt(messages: Message[]): Promise<string> {
-  const lang = detectLanguage(messages);
-  const context = await getPayloadContext(lang);
+  let lang: Language = 'en';
 
-  return [
-    SYSTEM_PROMPTS[lang],
-    formatProjects(context.projects, lang),
-    formatPosts(context.posts, lang),
-    formatExperience(context.experience, lang),
-  ]
-    .filter(Boolean)
-    .join('\n\n');
+  try {
+    lang = detectLanguage(messages) as Language;
+    const context = await getPayloadContext(lang);
+
+    return [
+      SYSTEM_PROMPTS[lang],
+      formatProjects(context.projects, lang),
+      formatPosts(context.posts, lang),
+      formatExperience(context.experience, lang),
+    ]
+      .filter(Boolean)
+      .join('\n\n');
+  } catch (error) {
+    console.warn('⚠️ Using base prompt (Payload unavailable):', error);
+
+    return SYSTEM_PROMPTS[lang];
+  }
 }

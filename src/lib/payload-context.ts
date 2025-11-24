@@ -37,33 +37,39 @@ export async function getPayloadContext(locale: 'en' | 'es'): Promise<PayloadCon
   const payload = await getPayload({ config });
 
   const [projects, posts, experience] = await Promise.all([
-    payload.find({
-      collection: 'projects',
-      limit: 5,
-      where: {
-        locale: { equals: locale },
-        _status: { equals: 'published' },
-      },
-      sort: '-featured,-order',
-    }),
-    payload.find({
-      collection: 'posts',
-      limit: 5,
-      where: {
-        locale: { equals: locale },
-        _status: { equals: 'published' },
-      },
-      sort: '-createdAt',
-    }),
-    payload.find({
-      collection: 'experience',
-      limit: 5,
-      where: {
-        locale: { equals: locale },
-        _status: { equals: 'published' },
-      },
-      sort: '-isCurrent,-startDate',
-    }),
+    payload
+      .find({
+        collection: 'projects',
+        limit: 5,
+        where: {
+          locale: { equals: locale },
+          _status: { equals: 'published' },
+        },
+        sort: '-featured,-order',
+      })
+      .catch(() => ({ docs: [] })),
+    payload
+      .find({
+        collection: 'posts',
+        limit: 5,
+        where: {
+          locale: { equals: locale },
+          _status: { equals: 'published' },
+        },
+        sort: '-createdAt',
+      })
+      .catch(() => ({ docs: [] })),
+    payload
+      .find({
+        collection: 'experience',
+        limit: 5,
+        where: {
+          locale: { equals: locale },
+          _status: { equals: 'published' },
+        },
+        sort: '-isCurrent,-startDate',
+      })
+      .catch(() => ({ docs: [] })),
   ]);
 
   return {
