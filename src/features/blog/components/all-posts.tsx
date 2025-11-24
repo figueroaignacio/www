@@ -1,5 +1,4 @@
 // Components
-import { AnimateIn } from '@/components/animate-in';
 import { Error } from '@/components/error';
 import { PostItem } from './post-item';
 
@@ -30,14 +29,12 @@ export async function AllPosts() {
         const delay = 0.1 + index * 0.1;
         return (
           <div key={post.id} className="space-y-5">
-            <AnimateIn variant="fadeLeft" delay={delay}>
-              <PostItem
-                createdAt={post.createdAt}
-                title={post.title}
-                slug={post.slug}
-                description={post.description}
-              />
-            </AnimateIn>
+            <PostItem
+              createdAt={post.createdAt}
+              title={post.title}
+              slug={post.slug}
+              description={post.description}
+            />
           </div>
         );
       })}
