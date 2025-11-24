@@ -79,7 +79,7 @@ export async function getPayloadContext(): Promise<PayloadContextData> {
       title: e.title,
       company: e.company,
       location: e.location ?? undefined,
-      description: truncateText(e.description, 100),
+      tasks: e.tasks?.slice(0, 5) || [],
       startDate: formatDateOnly(e.startDate, locale),
       endDate: e.endDate ? formatDateOnly(e.endDate, locale) : undefined,
       isCurrent: e.isCurrent ?? false,
