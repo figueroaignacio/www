@@ -69,7 +69,7 @@ function formatExperience(experience: PayloadContextData['experience'], lang: La
     return [
       `• ${e.title} @ ${e.company}${location}`,
       `  ${e.startDate} - ${endDate}`,
-      `  ${e.description}`,
+      `  Tasks: ${(e.tasks ?? []).join('; ')}`,
       `  ${tech}: ${(e.technologies ?? []).join(', ')}`,
     ].join('\n');
   });
