@@ -35,7 +35,7 @@ function formatProjects(projects: PayloadContextData['projects'], lang: Language
     const lines = [
       `• ${p.title} - ${p.subtitle}`,
       `  ${p.description}`,
-      `  ${tech}: ${p.technologies.join(', ')}`,
+      `  ${tech}: ${(p.technologies ?? []).join(', ')}`,
     ];
 
     if (p.demo) lines.push(`  ${demo}: ${p.demo}`);
@@ -70,7 +70,7 @@ function formatExperience(experience: PayloadContextData['experience'], lang: La
       `• ${e.title} @ ${e.company}${location}`,
       `  ${e.startDate} - ${endDate}`,
       `  ${e.description}`,
-      `  ${tech}: ${e.technologies.join(', ')}`,
+      `  ${tech}: ${(e.technologies ?? []).join(', ')}`,
     ].join('\n');
   });
 
@@ -82,7 +82,7 @@ export async function getSystemPrompt(messages: Message[]): Promise<string> {
 
   try {
     lang = detectLanguage(messages) as Language;
-    const context = await getPayloadContext(lang);
+    const context = await getPayloadContext();
 
     return [
       SYSTEM_PROMPTS[lang],
