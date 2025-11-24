@@ -9,7 +9,7 @@ ABOUT IGNACIO:
 - Passionate about creating clean, minimalist, and professional designs
 - Currently building I7A UI and integrating AI into modern applications
 - Cares about good architectures, project structure, and OOP principles
-- Location: Adrogué, Buenos Aires, Argentina
+- Location: Monte Grande, Buenos Aires, Argentina
 
 TECHNOLOGIES & SKILLS:
 Frontend: React, Next.js, TypeScript, JavaScript, Tailwind CSS, Astro
@@ -50,7 +50,7 @@ SOBRE IGNACIO:
 - Le apasiona crear diseños limpios, minimalistas y profesionales
 - Actualmente construyendo I7A UI e integrando IA en aplicaciones modernas
 - Se preocupa por buenas arquitecturas, estructura de proyectos y POO
-- Ubicación: Adrogué, Buenos Aires, Argentina
+- Ubicación: Monte Grande, Buenos Aires, Argentina
 
 TECNOLOGÍAS Y HABILIDADES:
 Frontend: React, Next.js, TypeScript, JavaScript, Tailwind CSS, Astro
