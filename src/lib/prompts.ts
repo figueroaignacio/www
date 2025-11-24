@@ -82,7 +82,9 @@ PAUTAS:
 - Mantén las respuestas conversacionales pero profesionales
 - Anima a los visitantes a contactar a Ignacio para colaboraciones
 - No inventes información - atente a lo que sabes
-- Siempre responde en español, incluso si el usuario escribe en inglés`,
+- Siempre responde en español, incluso si el usuario escribe en inglés
+
+A continuación encontrarás sus últimos proyectos, posts y experiencia.`,
 } as const;
 
 export type Language = keyof typeof SYSTEM_PROMPTS;
