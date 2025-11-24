@@ -24,10 +24,10 @@ export async function AllExperience() {
           <ExperienceItem
             key={item.id}
             title={item.title}
-            description={item.description}
             company={item.company}
             startDate={item.startDate}
             endDate={item.endDate}
+            tasks={item.tasks}
             technologies={item.technologies || []}
           />
         ))}

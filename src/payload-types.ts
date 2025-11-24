@@ -155,7 +155,10 @@ export interface Experience {
   title: string;
   company: string;
   location?: string | null;
-  description: string;
+  tasks: {
+    item: string;
+    id?: string | null;
+  }[];
   startDate: string;
   /**
    * Leave empty if current
@@ -433,7 +436,12 @@ export interface ExperienceSelect<T extends boolean = true> {
   title?: T;
   company?: T;
   location?: T;
-  description?: T;
+  tasks?:
+    | T
+    | {
+        item?: T;
+        id?: T;
+      };
   startDate?: T;
   endDate?: T;
   isCurrent?: T;

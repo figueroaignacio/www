@@ -8,6 +8,9 @@ import {
   TimelineDescription,
   TimelineHeader,
   TimelineItem,
+  TimelineList,
+  TimelineListItem,
+  TimelineMeta,
   TimelineTitle,
 } from '@/components/ui/timeline';
 
@@ -19,16 +22,18 @@ import { type Experience } from '@/payload-types';
 
 interface ExperienceItemProps extends Omit<Partial<Experience>, 'technologies'> {
   technologies?: { name?: string | null; id?: string | null }[];
+  active?: boolean;
 }
 
 export function ExperienceItem({
   title,
   company,
-  description,
+  tasks,
   technologies = [],
   startDate,
   endDate,
   isCurrent,
+  active = false,
 }: ExperienceItemProps) {
   const locale = useLocale();
 
@@ -41,28 +46,39 @@ export function ExperienceItem({
       ? formatMonthYear(endDate, locale)
       : null;
 
+  const dateRange =
+    formattedStart && formattedEnd ? `${formattedStart} — ${formattedEnd}` : formattedStart || null;
+
   return (
-    <TimelineItem>
+    <TimelineItem active={active}>
       <TimelineHeader>
         <TimelineTitle>{title}</TimelineTitle>
         <TimelineDescription>{company}</TimelineDescription>
+        {dateRange && (
+          <TimelineMeta>
+            <span>{dateRange}</span>
+          </TimelineMeta>
+        )}
       </TimelineHeader>
-      <TimelineContent>
-        {formattedStart && (
-          <div className="text-muted-foreground text-xs font-medium">
-            {formattedStart}
-            {formattedEnd && ` — ${formattedEnd}`}
-          </div>
-        )}
-        {description && <p className="text-sm text-muted-foreground pt-1">{description}</p>}
-        {technologies.length > 0 && (
-          <div className="flex gap-2 flex-wrap pt-2">
-            {technologies.map((tech) => (
-              <Badge key={tech.id} label={tech.name || ''} />
-            ))}
-          </div>
-        )}
-      </TimelineContent>
+
+      {(tasks?.length || technologies.length > 0) && (
+        <TimelineContent>
+          {tasks && tasks.length > 0 && (
+            <TimelineList>
+              {tasks.map((task) => (
+                <TimelineListItem key={task.id}>{task.item}</TimelineListItem>
+              ))}
+            </TimelineList>
+          )}
+          {technologies.length > 0 && (
+            <div className="mt-4 flex flex-wrap gap-2">
+              {technologies.map((tech) =>
+                tech.name ? <Badge key={tech.id} label={tech.name} /> : null,
+              )}
+            </div>
+          )}
+        </TimelineContent>
+      )}
     </TimelineItem>
   );
 }

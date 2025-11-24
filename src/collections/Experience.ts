@@ -45,10 +45,18 @@ export const Experience: CollectionConfig = {
       type: 'text',
     },
     {
-      name: 'description',
-      label: 'Description',
-      type: 'textarea',
+      name: 'tasks',
+      label: 'Tasks / Responsibilities',
+      type: 'array',
       required: true,
+      fields: [
+        {
+          name: 'item',
+          type: 'text',
+          label: 'Task',
+          required: true,
+        },
+      ],
     },
     {
       name: 'startDate',

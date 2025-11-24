@@ -124,7 +124,7 @@ export function TimelineDescription({
   children,
   className,
 }: React.HTMLAttributes<HTMLParagraphElement>) {
-  return <p className={cn('text-muted-foreground text-sm', className)}>{children}</p>;
+  return <p className={cn('text-sm', className)}>{children}</p>;
 }
 
 export function TimelineMeta({ children, className }: React.HTMLAttributes<HTMLDivElement>) {
@@ -161,14 +161,9 @@ export function TimelineBadge({
 }
 
 export function TimelineContent({ children, className }: React.HTMLAttributes<HTMLDivElement>) {
-  return (
-    <div className={cn('text-muted-foreground mt-3 text-sm leading-relaxed', className)}>
-      {children}
-    </div>
-  );
+  return <div className={cn('mt-3 text-sm leading-relaxed', className)}>{children}</div>;
 }
 
-// Lista dentro del contenido
 export function TimelineList({ children, className }: React.HTMLAttributes<HTMLUListElement>) {
   return <ul className={cn('mt-2 space-y-1.5 text-sm', className)}>{children}</ul>;
 }
