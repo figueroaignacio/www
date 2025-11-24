@@ -1,5 +1,5 @@
 // Components
-import { PostHeader } from '@/components/post-header';
+import { PostHeader } from '@/features/blog/components/post-header';
 import { RichText } from '@payloadcms/richtext-lexical/react';
 
 // Utils

@@ -1,14 +1,21 @@
-import { formatMonthYear } from '@/lib/cn';
-import { type Experience } from '@/payload-types';
+// Hooks
 import { useLocale } from 'next-intl';
-import { Badge } from './ui/badge';
+
+// Components
+import { Badge } from '@/components/ui/badge';
 import {
   TimelineContent,
   TimelineDescription,
   TimelineHeader,
   TimelineItem,
   TimelineTitle,
-} from './ui/timeline';
+} from '@/components/ui/timeline';
+
+// Utils
+import { formatMonthYear } from '@/lib/format-date';
+
+// Types
+import { type Experience } from '@/payload-types';
 
 interface ExperienceItemProps extends Omit<Partial<Experience>, 'technologies'> {
   technologies?: { name?: string | null; id?: string | null }[];
