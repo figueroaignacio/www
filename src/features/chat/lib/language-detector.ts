@@ -1,4 +1,4 @@
-import type { Message } from '@/lib/types';
+import type { Message } from '../types';
 import type { Language } from './prompts';
 
 const SPANISH_INDICATORS = [

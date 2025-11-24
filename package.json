@@ -10,7 +10,7 @@
     "devsafe": "rm -rf .next && cross-env NODE_OPTIONS=--no-deprecation next dev",
     "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
-    "lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
+    "lint": "cross-env NODE_OPTIONS=--no-deprecation eslint .",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
     "format": "prettier --write ."
@@ -46,7 +46,6 @@
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.1",
     "@playwright/test": "1.55.0",
     "@testing-library/react": "16.3.0",
     "@types/node": "^24.5.2",

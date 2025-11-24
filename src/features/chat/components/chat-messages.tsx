@@ -3,7 +3,7 @@ import { ChatLoading } from './chat-loading';
 import { ChatMessage } from './chat-message';
 
 // Types
-import type { Message } from '@/lib/types';
+import type { Message } from '../types';
 
 interface ChatMessagesProps {
   messages: Message[];
