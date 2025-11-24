@@ -1,8 +1,9 @@
 import {
   TimelineContent,
-  TimelineDescription,
   TimelineHeader,
   TimelineItem,
+  TimelineList,
+  TimelineListItem,
   TimelineTitle,
 } from '@/components/ui/timeline';
 
@@ -17,16 +18,16 @@ export function ExperienceItemLoader() {
                 <TimelineTitle>
                   <div className="h-4 w-40 rounded-md bg-secondary/60" />
                 </TimelineTitle>
-                <TimelineDescription>
-                  <div className="h-3 w-28 rounded-md bg-secondary/50 mt-1" />
-                </TimelineDescription>
               </TimelineHeader>
               <TimelineContent>
                 <div className="h-3 w-24 rounded-md bg-secondary/50 mb-2" />
-                <div className="space-y-2">
-                  <div className="h-3 w-full rounded-md bg-secondary/40" />
-                  <div className="h-3 w-10/12 rounded-md bg-secondary/40" />
-                </div>
+                <TimelineList>
+                  {Array.from({ length: 4 }).map((_, idx) => (
+                    <TimelineListItem key={idx}>
+                      <div className="h-3 w-full rounded-md bg-secondary/40" />
+                    </TimelineListItem>
+                  ))}
+                </TimelineList>
                 <div className="flex gap-2 flex-wrap mt-3">
                   <div className="h-6 w-16 rounded-full bg-secondary/40" />
                   <div className="h-6 w-12 rounded-full bg-secondary/40" />

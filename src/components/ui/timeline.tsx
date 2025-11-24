@@ -171,7 +171,7 @@ export function TimelineList({ children, className }: React.HTMLAttributes<HTMLU
 export function TimelineListItem({ children, className }: React.HTMLAttributes<HTMLLIElement>) {
   return (
     <li className={cn('flex items-start gap-2', className)}>
-      <span className="bg-primary mt-1.5 size-1.5 shrink-0 rounded-full" />
+      <span className="bg-secondary mt-1.5 size-1.5 shrink-0 rounded-full" />
       <span className="flex-1">{children}</span>
     </li>
   );

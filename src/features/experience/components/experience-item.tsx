@@ -20,7 +20,7 @@ import { formatMonthYear } from '@/lib/format-date';
 // Types
 import { type Experience } from '@/payload-types';
 
-interface ExperienceItemProps extends Omit<Partial<Experience>, 'technologies'> {
+interface ExperienceItemProps extends Partial<Experience> {
   technologies?: { name?: string | null; id?: string | null }[];
   active?: boolean;
 }
