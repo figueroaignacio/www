@@ -4,7 +4,7 @@ import type { Language } from './prompts';
 const SPANISH_INDICATORS = [
   'hola',
   'qué',
-  'cómo',
+  'como',
   'por favor',
   'gracias',
   'sí',
@@ -20,14 +20,18 @@ const SPANISH_INDICATORS = [
   'información',
 ] as const;
 
+const EXTRA_ES_INDICATORS = ['¿', '¡', 'ñ'];
+
 export function detectLanguage(messages: Message[]): Language {
   const userMessages = messages.filter((m) => m.role === 'user');
 
   if (userMessages.length === 0) return 'en';
 
-  const lastUserMessage = userMessages[userMessages.length - 1].content.toLowerCase();
+  const lastMessage = userMessages.at(-1)!.content.toLowerCase();
 
-  const hasSpanishWords = SPANISH_INDICATORS.some((word) => lastUserMessage.includes(word));
+  const hasSpanish =
+    SPANISH_INDICATORS.some((w) => lastMessage.includes(w)) ||
+    EXTRA_ES_INDICATORS.some((c) => lastMessage.includes(c));
 
-  return hasSpanishWords ? 'es' : 'en';
+  return hasSpanish ? 'es' : 'en';
 }

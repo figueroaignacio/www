@@ -1,34 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-// Utils
+// Utilities
 import { groq, GROQ_CONFIG } from '@/lib/groq-client';
-import { detectLanguage } from '@/lib/language-detector';
-
-// Prompts
-import { SYSTEM_PROMPTS } from '@/lib/prompts';
-
-// Types
-import type { Message } from '@/lib/types';
+import { getSystemPrompt } from '@/lib/system';
 
 export async function POST(req: NextRequest) {
   try {
     const { messages } = await req.json();
 
-    if (!messages || !Array.isArray(messages)) {
-      return NextResponse.json({ error: 'Messages array is required' }, { status: 400 });
+    if (!Array.isArray(messages) || messages.some((m) => !m.role || !m.content)) {
+      return NextResponse.json({ error: 'Invalid messages format' }, { status: 400 });
     }
-
-    const language = detectLanguage(messages as Message[]);
-    const systemPrompt = SYSTEM_PROMPTS[language];
-
+    const sanitizedMessages = messages.slice(-10);
+    const systemPrompt = getSystemPrompt(sanitizedMessages);
     const completion = await groq.chat.completions.create({
-      messages: [
-        {
-          role: 'system',
-          content: systemPrompt,
-        },
-        ...messages,
-      ],
+      messages: [{ role: 'system', content: systemPrompt }, ...sanitizedMessages],
       model: GROQ_CONFIG.model,
       temperature: GROQ_CONFIG.temperature,
       max_tokens: GROQ_CONFIG.maxTokens,
@@ -36,14 +22,13 @@ export async function POST(req: NextRequest) {
       stream: false,
     });
 
-    const responseMessage =
+    const reply =
       completion.choices[0]?.message?.content || 'Sorry, I could not generate a response.';
 
-    return NextResponse.json({
-      message: responseMessage,
-    });
+    return NextResponse.json({ message: reply });
   } catch (error: any) {
     console.error('Groq API Error:', error);
+
     return NextResponse.json(
       { error: error.message || 'Failed to process chat request' },
       { status: 500 },
