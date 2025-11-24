@@ -15,6 +15,7 @@ import { Suspense } from 'react';
 import { getTimeBasedGreeting } from '@/lib/greeting';
 
 // Types
+import { GreetingMessage } from '@/features/about/components/greeting-message';
 import { type Metadata } from 'next';
 
 interface HomePageProps {
@@ -63,7 +64,7 @@ export default function HomePage({ params }: HomePageProps) {
 
   return (
     <div className="space-y-5">
-      <Hero title={greeting} description={t('description')} />
+      <Hero title={<GreetingMessage />} description={t('description')} />
       <Suspense fallback={<Loader />}>
         <AboutMe />
       </Suspense>

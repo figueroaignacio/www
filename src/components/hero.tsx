@@ -1,7 +1,7 @@
 // Components
 
 interface HeroProps {
-  title: string;
+  title: string | React.ReactNode;
   description: string;
 }
 
