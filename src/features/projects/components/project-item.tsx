@@ -9,22 +9,6 @@ import { Badge } from '../../../components/ui/badge';
 // Types
 import type { Project } from '@/payload-types';
 
-interface ProjectItemProps extends Omit<Partial<Project>, 'projectImage'> {
-  index?: number;
-}
-
-const cardStyles = [
-  {
-    header: 'bg-gradient-to-br from-primary/40 via-primary/25 to-accent/35',
-  },
-  {
-    header: 'bg-gradient-to-br from-accent/40 via-accent/25 to-primary/35',
-  },
-  {
-    header: 'bg-gradient-to-br from-primary/35 via-accent/30 to-primary/35',
-  },
-];
-
 export function ProjectItem({
   slug,
   subtitle,
@@ -33,8 +17,7 @@ export function ProjectItem({
   repository,
   technologies,
   description,
-  index = 0,
-}: ProjectItemProps) {
+}: Partial<Project>) {
   const t = useTranslations('components.projectItem.actions');
 
   const links = [
@@ -98,7 +81,7 @@ export function ProjectItem({
           </div>
           {technologies && technologies.length > 0 && (
             <div className="flex flex-wrap gap-2">
-              {technologies.map((tech, idx) => (
+              {technologies.map((tech) => (
                 <div key={tech.id} className={`transition-all duration-300`}>
                   <Badge label={tech.name || ''} />
                 </div>

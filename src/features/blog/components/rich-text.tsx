@@ -1,7 +1,10 @@
 'use client';
 
+// Payload
 import type { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical';
 import { RichText as PayloadRichText } from '@payloadcms/richtext-lexical/react';
+
+// Components
 import { CodeBlock } from './codeblock';
 
 interface CustomRichTextProps {
@@ -19,7 +22,11 @@ export function CustomRichText({ data, className }: CustomRichTextProps) {
       converters={({ defaultConverters }) => ({
         ...defaultConverters,
         blocks: {
-          codeBlock: ({ node }: any) => {
+          codeBlock: ({
+            node,
+          }: {
+            node?: { fields?: { code?: string; language?: string } } | undefined;
+          }) => {
             const fields = node?.fields ?? {};
             const code = fields.code ?? '';
             const language = fields.language ?? 'typescript';

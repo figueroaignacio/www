@@ -1,5 +1,4 @@
 // Components
-import { AnimateIn } from '@/components/animate-in';
 import { Error } from '@/components/error';
 import { ProjectItem } from '@/features/projects/components/project-item';
 
@@ -8,18 +7,12 @@ import { getOtherProjects } from '@/features/projects/api/projects';
 import { getLocale, getTranslations } from 'next-intl/server';
 
 // Types
-import { type Project } from '@/payload-types';
+import type { Project } from '@/payload-types';
 
 export async function OtherProjects() {
   const t = await getTranslations('sections.projects');
   const locale = await getLocale();
-  let projects: Project[] = [];
-
-  try {
-    projects = await getOtherProjects(locale);
-  } catch (error) {
-    return <Error />;
-  }
+  const projects: Project[] = await getOtherProjects(locale);
 
   if (projects.length === 0) {
     return <Error />;
@@ -27,12 +20,10 @@ export async function OtherProjects() {
 
   return (
     <>
-      <AnimateIn variant="fadeLeft">
-        <h2 className="text-sm font-bold">{t('otherProjects')}</h2>
-      </AnimateIn>
+      <h2 className="text-sm font-bold">{t('otherProjects')}</h2>
       <ul className="space-y-12">
         {projects.map((project) => (
-          <li>
+          <li key={project.id}>
             <ProjectItem
               title={project.title}
               subtitle={project.subtitle}

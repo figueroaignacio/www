@@ -1,40 +1,25 @@
+// Payload
 import config from '@payload-config';
 import { getPayload } from 'payload';
 
-interface CompactProject {
-  title: string;
-  subtitle: string;
-  description: string;
-  technologies: string[];
-  demo?: string;
-  repository?: string;
-}
+// Next Intl
+import { getLocale } from 'next-intl/server';
 
-interface CompactPost {
-  title: string;
-  description: string;
-  slug: string;
-}
+// Utils
+import { formatDateOnly } from '@/lib/format-date';
 
-interface CompactExperience {
-  title: string;
-  company: string;
-  location?: string;
-  description: string;
-  startDate: string;
-  endDate?: string;
-  isCurrent: boolean;
-  technologies: string[];
-}
+// Types
+import type { Experience, Post, Project } from '@/payload-types';
 
 export interface PayloadContextData {
-  projects: CompactProject[];
-  posts: CompactPost[];
-  experience: CompactExperience[];
+  projects: Partial<Project>[];
+  posts: Partial<Post>[];
+  experience: Partial<Experience>[];
 }
 
-export async function getPayloadContext(locale: 'en' | 'es'): Promise<PayloadContextData> {
+export async function getPayloadContext(): Promise<PayloadContextData> {
   const payload = await getPayload({ config });
+  const locale = await getLocale();
 
   const [projects, posts, experience] = await Promise.all([
     payload
@@ -80,8 +65,8 @@ export async function getPayloadContext(locale: 'en' | 'es'): Promise<PayloadCon
       technologies:
         p.technologies
           ?.slice(0, 5)
-          .map((t: any) => t.name)
-          .filter(Boolean) || [],
+          .map((t) => ({ name: t?.name }))
+          .filter((t) => t.name) || [],
       demo: p.demo ?? undefined,
       repository: p.repository ?? undefined,
     })),
@@ -95,14 +80,14 @@ export async function getPayloadContext(locale: 'en' | 'es'): Promise<PayloadCon
       company: e.company,
       location: e.location ?? undefined,
       description: truncateText(e.description, 100),
-      startDate: formatDate(e.startDate),
-      endDate: e.endDate ? formatDate(e.endDate) : undefined,
+      startDate: formatDateOnly(e.startDate, locale),
+      endDate: e.endDate ? formatDateOnly(e.endDate, locale) : undefined,
       isCurrent: e.isCurrent ?? false,
       technologies:
         e.technologies
           ?.slice(0, 5)
-          .map((t: any) => t.name)
-          .filter(Boolean) || [],
+          .map((t) => ({ name: t?.name }))
+          .filter((t) => t.name) || [],
     })),
   };
 }
@@ -111,9 +96,4 @@ function truncateText(text: string, maxLength: number): string {
   if (!text) return '';
   if (text.length <= maxLength) return text;
   return text.substring(0, maxLength).trim() + '...';
-}
-
-function formatDate(date: string | Date): string {
-  const d = new Date(date);
-  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
 }

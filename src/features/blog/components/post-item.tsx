@@ -11,17 +11,17 @@ import { formatFullDateWithWeekday } from '@/lib/format-date';
 // Types
 import { type Post } from '@/payload-types';
 
-interface PostItemProps extends Pick<Post, 'title' | 'slug' | 'createdAt' | 'description'> {}
-
-export function PostItem({ slug, title, createdAt, description }: PostItemProps) {
+export function PostItem({ slug, title, createdAt, description }: Partial<Post>) {
   const t = useTranslations('components.postItem');
   const locale = useLocale();
 
   return (
     <div className="space-y-3">
-      <p className="text-xs text-muted-foreground">
-        {formatFullDateWithWeekday(createdAt, locale)}
-      </p>
+      {createdAt ? (
+        <p className="text-xs text-muted-foreground">
+          {formatFullDateWithWeekday(createdAt, locale)}
+        </p>
+      ) : null}
       <Link href={`/blog/${slug}`}>
         <h2 className="hover:underline hover:text-primary">{title}</h2>
       </Link>

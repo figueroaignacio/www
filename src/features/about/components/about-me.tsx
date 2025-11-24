@@ -15,7 +15,7 @@ export function AboutMe() {
       <div className="space-y-4">
         {about.map((section, index) => {
           return (
-            <p className="text-sm text-foreground/80 leading-relaxed">
+            <p className="text-sm text-foreground/80 leading-relaxed" key={index}>
               {t.rich(`items.${index}.content`, {
                 b: (chunks) => <strong className="font-semibold">{chunks}</strong>,
               })}

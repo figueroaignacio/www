@@ -4,9 +4,12 @@ import { ChatHeader } from './chat-header';
 import { ChatInput } from './chat-input';
 import { ChatMessages } from './chat-messages';
 
+// Types
+import type { Message } from '@/features/chat/types';
+
 interface ChatWindowProps {
   isOpen: boolean;
-  messages: any[];
+  messages: Message[];
   isLoading: boolean;
   messagesEndRef: React.RefObject<HTMLDivElement>;
   message: string;

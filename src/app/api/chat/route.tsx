@@ -41,10 +41,15 @@ export async function POST(req: NextRequest) {
       completion.choices[0]?.message?.content || 'Sorry, I could not generate a response.';
 
     return NextResponse.json({ message: reply });
-  } catch (error: any) {
+  } catch (error) {
     console.error('❌ Groq API Error:', error);
 
-    if (error.status === 413 || error.message?.includes('rate_limit_exceeded')) {
+    const err = error as { status?: number; message?: unknown } | undefined;
+
+    if (
+      err?.status === 413 ||
+      (typeof err?.message === 'string' && err.message.includes('rate_limit_exceeded'))
+    ) {
       return NextResponse.json(
         {
           error: 'The message is too long. Please try a shorter message.',
@@ -55,7 +60,12 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json(
-      { error: error.message || 'Failed to process chat request' },
+      {
+        error:
+          typeof err?.message === 'string'
+            ? err.message
+            : String(error) || 'Failed to process chat request',
+      },
       { status: 500 },
     );
   }

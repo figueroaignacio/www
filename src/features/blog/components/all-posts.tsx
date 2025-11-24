@@ -3,21 +3,15 @@ import { Error } from '@/components/error';
 import { PostItem } from './post-item';
 
 // Utils
+import { getPosts } from '@/features/blog/api/posts';
 import { getLocale } from 'next-intl/server';
 
 // Types
-import { getPosts } from '@/features/blog/api/posts';
 import { type Post } from '@/payload-types';
 
 export async function AllPosts() {
   const locale = await getLocale();
-  let posts: Post[] = [];
-
-  try {
-    posts = await getPosts(locale);
-  } catch (error) {
-    return <Error />;
-  }
+  const posts: Post[] = await getPosts(locale);
 
   if (posts.length === 0) {
     return <Error />;
@@ -25,8 +19,7 @@ export async function AllPosts() {
 
   return (
     <ul className="space-y-10">
-      {posts.map((post, index) => {
-        const delay = 0.1 + index * 0.1;
+      {posts.map((post) => {
         return (
           <div key={post.id} className="space-y-5">
             <PostItem

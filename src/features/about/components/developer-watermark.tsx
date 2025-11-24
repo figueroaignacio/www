@@ -2,6 +2,7 @@
 import { useTranslations } from 'next-intl';
 
 // Components
+import Image from 'next/image';
 
 export function DeveloperWatermark() {
   const t = useTranslations('sections.aboutMe');
@@ -10,11 +11,13 @@ export function DeveloperWatermark() {
 
   return (
     <div className="flex items-center gap-x-5  w-full">
-      <img
+      <Image
         src={avatarUrl}
         alt="Ignacio Figueroa"
         className="w-14 h-14 rounded-full ring-1 ring-border"
         loading="eager"
+        width={54}
+        height={54}
       />
       <div className="flex gap-x-3 flex-col">
         <span className="text-foreground text-sm font-semibold">Ignacio Figueroa</span>

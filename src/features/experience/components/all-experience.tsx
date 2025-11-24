@@ -7,17 +7,11 @@ import { getExperience } from '@/features/experience/api/experience';
 import { getLocale } from 'next-intl/server';
 
 // Types
-import { type Experience } from '@/payload-types';
+import type { Experience } from '@/payload-types';
 
 export async function AllExperience() {
   const locale = await getLocale();
-  let experience: Experience[] = [];
-
-  try {
-    experience = await getExperience(locale);
-  } catch (error) {
-    return <Error />;
-  }
+  const experience: Experience[] = await getExperience(locale);
 
   if (experience.length === 0) {
     return <Error />;
@@ -26,8 +20,9 @@ export async function AllExperience() {
   return (
     <div className="relative">
       <div className="space-y-12">
-        {experience.map((item, index) => (
+        {experience.map((item) => (
           <ExperienceItem
+            key={item.id}
             title={item.title}
             description={item.description}
             company={item.company}

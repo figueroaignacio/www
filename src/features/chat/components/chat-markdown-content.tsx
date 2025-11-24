@@ -1,3 +1,4 @@
+import { ComponentProps } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 interface MarkdownContentProps {
@@ -27,11 +28,16 @@ export function ChatMarkdownContent({ content }: MarkdownContentProps) {
           <ol className="list-decimal list-inside mb-2 space-y-1 text-foreground">{children}</ol>
         ),
         li: ({ children }) => <li className="text-foreground">{children}</li>,
-        code: ({ inline, className, children, ...props }: any) => {
-          const match = /language-(\w+)/.exec(className || '');
+        code: ({
+          inline,
+          className,
+          children,
+          ...props
+        }: ComponentProps<'code'> & { inline?: boolean }) => {
+          const _match = /language-(\w+)/.exec(className || '');
           return !inline ? (
             <code
-              className={`block bg-muted/50 rounded-lg p-3 mb-2 text-xs overflow-x-auto ${className}`}
+              className={`block bg-muted/50 rounded-lg p-3 mb-2 text-xs overflow-x-auto ${className ?? ''}`}
               {...props}
             >
               {children}

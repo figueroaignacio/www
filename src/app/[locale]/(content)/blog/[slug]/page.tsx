@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   return {
     title: metaTitle,
     description: metaDescription,
-    keywords: post.keywords?.map((k: any) => k.keyword),
+    keywords: post.keywords?.map((k: { keyword?: string }) => k.keyword),
     openGraph: {
       title: metaTitle,
       description: metaDescription,

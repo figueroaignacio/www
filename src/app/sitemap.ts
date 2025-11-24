@@ -1,7 +1,13 @@
+// Utils
 import { getPosts } from '@/features/blog/api/posts';
 import { routing } from '@/i18n/routing';
-import { SITE_URL } from '@/lib/constants';
+
+// Types
+import type { Post } from '@/payload-types';
 import type { MetadataRoute } from 'next';
+
+// Constants
+import { SITE_URL } from '@/lib/constants';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = ['', '/blog', '/projects', 'experience', 'stack'];
@@ -19,7 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const locale of routing.locales) {
     const posts = await getPosts(locale);
 
-    const localeEntries = posts.map((post: any) => ({
+    const localeEntries = posts.map((post: Post) => ({
       url: `${SITE_URL}/${locale}/blog/${post.slug}`,
       lastModified: post.updatedAt ?? post.createdAt ?? new Date().toISOString(),
       changeFrequency: 'monthly' as const,
