@@ -3,11 +3,11 @@ export const revalidate = 3600;
 
 // Components
 import { Error } from '@/components/error';
-import { PostHeader } from '@/components/post-header';
-import { CustomRichText } from '@/components/rich-text';
+import { PostHeader } from '@/features/blog/components/post-header';
+import { CustomRichText } from '@/features/blog/components/rich-text';
 
 // Utils
-import { getPostBySlug, getPosts } from '@/api/posts';
+import { getPostBySlug, getPosts } from '@/features/blog/api/posts';
 
 // Types
 import type { Post } from '@/payload-types';

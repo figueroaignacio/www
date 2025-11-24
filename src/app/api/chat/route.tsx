@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 // Utilities
-import { groq, GROQ_CONFIG } from '@/lib/groq-client';
-import { getSystemPrompt } from '@/lib/system';
+import { groq, GROQ_CONFIG } from '@/features/chat/lib/groq-client';
+import { getSystemPrompt } from '@/features/chat/lib/system';
 
 export async function POST(req: NextRequest) {
   try {

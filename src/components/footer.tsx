@@ -2,7 +2,7 @@
 import { useTranslations } from 'next-intl';
 
 // Components
-import { Contact } from './contact';
+import { Contact } from '../features/about/components/contact';
 
 export function Footer() {
   const t = useTranslations('components.footer');

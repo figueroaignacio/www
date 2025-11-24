@@ -3,7 +3,7 @@ import { PostHeader } from '@/components/post-header';
 import { RichText } from '@payloadcms/richtext-lexical/react';
 
 // Utils
-import { getProjectBySlug } from '@/api/projects';
+import { getProjectBySlug } from '@/features/projects/api/projects';
 
 // Types
 import { type Project } from '@/payload-types';

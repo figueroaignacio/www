@@ -1,7 +1,7 @@
+import type { Message } from '../types';
 import { detectLanguage } from './language-detector';
 import { getPayloadContext, type PayloadContextData } from './payload-context';
 import { SYSTEM_PROMPTS } from './prompts';
-import type { Message } from './types';
 
 type Language = 'en' | 'es';
 

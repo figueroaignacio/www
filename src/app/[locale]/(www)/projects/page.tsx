@@ -9,8 +9,8 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Hero } from '@/components/hero';
 import { Loader } from '@/components/loader';
 import { Separator } from '@/components/ui/separator';
-import { FeaturedProjects } from '@/sections/featured-projects';
-import { OtherProjects } from '@/sections/other-projects';
+import { FeaturedProjects } from '@/features/projects/components/featured-projects';
+import { OtherProjects } from '@/features/projects/components/other-projects';
 
 // Types
 import { type Metadata } from 'next';

@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 // Components
 import { Link } from '@/i18n/navigation';
 import { ExternalLinkIcon, InfoCircledIcon } from '@radix-ui/react-icons';
-import { Badge } from './ui/badge';
+import { Badge } from '../../../components/ui/badge';
 
 // Types
 import type { Project } from '@/payload-types';

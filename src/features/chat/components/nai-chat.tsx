@@ -1,13 +1,13 @@
 'use client';
 
 // Hooks
-import { useChat } from '@/hooks/use-chat';
-import { useChatInput } from '@/hooks/use-chat-input';
+import { useChat } from '@/features/chat/hooks/use-chat';
+import { useChatInput } from '@/features/chat/hooks/use-chat-input';
 import { useState, type RefObject } from 'react';
 
 // Components
-import { ChatToggleButton } from './chat/chat-toggle-button';
-import { ChatWindow } from './chat/chat-window';
+import { ChatToggleButton } from './chat-toggle-button';
+import { ChatWindow } from './chat-window';
 
 export function NaiChat() {
   const [open, setOpen] = useState(false);

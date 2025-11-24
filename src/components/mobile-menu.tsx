@@ -5,9 +5,9 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 // Components
+import { DeveloperWatermark } from '@/features/about/components/developer-watermark';
 import { Link } from '@/i18n/navigation';
 import { Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
-import { DeveloperWatermark } from './developer-watermark';
 import { HeaderActions } from './header-actions';
 
 export function MobileMenu() {

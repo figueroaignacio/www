@@ -3,8 +3,8 @@ import { useTranslations } from 'next-intl';
 
 // Components
 import { AnimateIn } from '@/components/animate-in';
-import { CvCta } from '@/components/cv-cta';
-import { DeveloperWatermark } from '@/components/developer-watermark';
+import { CvCta } from '@/features/about/components/cv-cta';
+import { DeveloperWatermark } from '@/features/about/components/developer-watermark';
 
 export function AboutMe() {
   const t = useTranslations('sections.aboutMe');

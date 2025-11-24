@@ -1,4 +1,4 @@
-import { formatMonthYear } from '@/lib/utils';
+import { formatMonthYear } from '@/lib/cn';
 import { type Experience } from '@/payload-types';
 import { useLocale } from 'next-intl';
 import { Badge } from './ui/badge';

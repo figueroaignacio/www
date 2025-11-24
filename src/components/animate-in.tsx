@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/cn';
 import { motion } from 'framer-motion';
 
 type AnimationVariant = 'fadeUp' | 'fadeLeft' | 'fadeRight' | 'scale';

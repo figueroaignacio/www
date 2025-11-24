@@ -1,10 +1,10 @@
 // Components
 import { AnimateIn } from '@/components/animate-in';
 import { Error } from '@/components/error';
-import { ProjectItem } from '@/components/project-item';
+import { ProjectItem } from '@/features/projects/components/project-item';
 
 // Utils
-import { getFeaturedProjects } from '@/api/projects';
+import { getFeaturedProjects } from '@/features/projects/api/projects';
 import { getLocale, getTranslations } from 'next-intl/server';
 
 // Types

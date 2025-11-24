@@ -2,7 +2,7 @@
 import { use } from 'react';
 
 // next-intl
-import { AllPosts } from '@/sections/all-posts';
+import { AllPosts } from '@/features/blog/components/all-posts';
 import { useTranslations, type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 

@@ -6,7 +6,7 @@ import { Link } from '@/i18n/navigation';
 import { ArrowRight } from 'lucide-react';
 
 // Utils
-import { formatFullDateWithWeekday } from '@/lib/utils';
+import { formatFullDateWithWeekday } from '@/lib/format-date';
 
 // Types
 import { type Post } from '@/payload-types';

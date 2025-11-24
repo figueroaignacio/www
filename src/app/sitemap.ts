@@ -1,10 +1,10 @@
-import { getPosts } from '@/api/posts';
+import { getPosts } from '@/features/blog/api/posts';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/constants';
 import type { MetadataRoute } from 'next';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticRoutes = ['', '/blog', '/projects', "experience", "stack"];
+  const staticRoutes = ['', '/blog', '/projects', 'experience', 'stack'];
 
   const localizedStatic = routing.locales.flatMap((locale) =>
     staticRoutes.map((route) => ({

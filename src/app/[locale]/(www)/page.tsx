@@ -8,7 +8,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 // Components
 import { Hero } from '@/components/hero';
 import { Loader } from '@/components/loader';
-import { AboutMe } from '@/sections/about-me';
+import { AboutMe } from '@/features/about/components/about-me';
 import { Suspense } from 'react';
 
 // Utils

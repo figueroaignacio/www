@@ -1,7 +1,7 @@
 // Components
 import { MobileMenu } from '@/components/mobile-menu';
-import { NaiChat } from '@/components/nai-chat';
 import { NavigationBar } from '@/components/navigation-bar';
+import { NaiChat } from '@/features/chat/components/nai-chat';
 
 // next-intl
 import { routing } from '@/i18n/routing';

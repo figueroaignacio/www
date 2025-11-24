@@ -1,13 +1,13 @@
 // Components
 import { AnimateIn } from '@/components/animate-in';
 import { Error } from '@/components/error';
-import { PostItem } from '@/components/post-item';
+import { PostItem } from './post-item';
 
 // Utils
 import { getLocale } from 'next-intl/server';
 
 // Types
-import { getPosts } from '@/api/posts';
+import { getPosts } from '@/features/blog/api/posts';
 import { type Post } from '@/payload-types';
 
 export async function AllPosts() {

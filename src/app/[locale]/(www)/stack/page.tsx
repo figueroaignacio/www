@@ -6,7 +6,7 @@ import { useTranslations, type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 // Components
-import { TechStack } from '@/sections/tech-stack';
+import { TechStack } from '@/features/stack/components/tech-stack';
 
 // Types
 import { Hero } from '@/components/hero';

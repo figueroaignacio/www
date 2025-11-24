@@ -8,7 +8,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 // Sections
 import { Hero } from '@/components/hero';
 import { Loader } from '@/components/loader';
-import { AllExperience } from '@/sections/all-experience';
+import { AllExperience } from '@/features/experience/components/all-experience';
 
 // Types
 import { type Metadata } from 'next';

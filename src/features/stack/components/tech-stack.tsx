@@ -31,7 +31,7 @@ import {
   TypescriptIcon,
   VeliteIcon,
   ViteIcon,
-} from '@/components/tech-icons';
+} from '@/features/stack/components/tech-icons';
 
 export function TechStack() {
   const t = useTranslations('sections');

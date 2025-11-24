@@ -1,10 +1,10 @@
 // Components
 import { AnimateIn } from '@/components/animate-in';
 import { Error } from '@/components/error';
-import { ExperienceItem } from '@/components/experience-item';
+import { ExperienceItem } from './experience-item';
 
 // Utils
-import { getExperience } from '@/api/experience';
+import { getExperience } from '@/features/experience/api/experience';
 import { getLocale } from 'next-intl/server';
 
 // Types
