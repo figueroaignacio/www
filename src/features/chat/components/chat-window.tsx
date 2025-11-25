@@ -38,16 +38,15 @@ export function ChatWindow({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+            className="fixed inset-0 bg-black/30 backdrop-blur-xs z-40"
             onClick={onClose}
           />
-
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', duration: 0.4 }}
-            className="fixed md:absolute inset-0 md:inset-auto md:bottom-20 md:right-0 w-full md:w-[580px] h-full md:h-[680px] bg-card shadow-2xl rounded-none md:rounded-2xl border-0 md:border md:border-border overflow-hidden flex flex-col z-50"
+            className="fixed inset-0 md:inset-auto md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 w-full md:w-[580px] h-full md:h-[680px] bg-card shadow-2xl rounded-none md:rounded-2xl border-0 md:border md:border-border overflow-hidden flex flex-col z-50"
           >
             <ChatHeader onClose={onClose} />
             <ChatMessages
