@@ -14,6 +14,9 @@
       "title": "Blog",
       "description": "Descubre mis publicaciones sobre tecnología, programación, IA, opiniones, etc."
     },
+    "recentPosts": {
+      "title": "Posts Recientes"
+    },
     "aboutMe": {
       "title": "Sobre mí",
       "description": "Quién soy, qué hago y por qué me gusta tanto programar",

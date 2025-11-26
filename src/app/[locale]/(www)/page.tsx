@@ -9,13 +9,14 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Hero } from '@/components/hero';
 import { Loader } from '@/components/loader';
 import { AboutMe } from '@/features/about/components/about-me';
+import { GreetingMessage } from '@/features/about/components/greeting-message';
+import { RecentPosts } from '@/features/blog/components/recent-posts';
 import { Suspense } from 'react';
 
 // Utils
 import { getTimeBasedGreeting } from '@/lib/greeting';
 
 // Types
-import { GreetingMessage } from '@/features/about/components/greeting-message';
 import { type Metadata } from 'next';
 
 interface HomePageProps {
@@ -68,6 +69,7 @@ export default function HomePage({ params }: HomePageProps) {
       <Suspense fallback={<Loader />}>
         <AboutMe />
       </Suspense>
+      <RecentPosts />
     </div>
   );
 }
