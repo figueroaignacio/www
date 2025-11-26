@@ -11,9 +11,6 @@ import { AboutMe } from '@/features/about/components/about-me';
 import { GreetingMessage } from '@/features/about/components/greeting-message';
 import { RecentPosts } from '@/features/blog/components/recent-posts';
 
-// Utils
-import { getTimeBasedGreeting } from '@/lib/greeting';
-
 // Types
 import { type Metadata } from 'next';
 
@@ -57,9 +54,6 @@ export default function HomePage({ params }: HomePageProps) {
   const { locale } = use(params);
   setRequestLocale(locale);
   const t = useTranslations('sections.home');
-
-  const greetingKey = getTimeBasedGreeting();
-  const greeting = t(`greeting.${greetingKey}`);
 
   return (
     <div className="space-y-5">
