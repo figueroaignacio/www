@@ -7,11 +7,9 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 // Components
 import { Hero } from '@/components/hero';
-import { Loader } from '@/components/loader';
 import { AboutMe } from '@/features/about/components/about-me';
 import { GreetingMessage } from '@/features/about/components/greeting-message';
 import { RecentPosts } from '@/features/blog/components/recent-posts';
-import { Suspense } from 'react';
 
 // Utils
 import { getTimeBasedGreeting } from '@/lib/greeting';
@@ -66,9 +64,7 @@ export default function HomePage({ params }: HomePageProps) {
   return (
     <div className="space-y-5">
       <Hero title={<GreetingMessage />} description={t('description')} />
-      <Suspense fallback={<Loader />}>
-        <AboutMe />
-      </Suspense>
+      <AboutMe />
       <RecentPosts />
     </div>
   );
