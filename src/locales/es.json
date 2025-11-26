@@ -15,7 +15,8 @@
       "description": "Descubre mis publicaciones sobre tecnología, programación, IA, opiniones, etc."
     },
     "recentPosts": {
-      "title": "Posts Recientes"
+      "title": "Posts Recientes",
+      "allPosts": "Todos los posts"
     },
     "aboutMe": {
       "title": "Sobre mí",

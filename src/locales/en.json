@@ -16,7 +16,8 @@
       "description": "Discover my posts about tech, programming, AI, opinions, etc."
     },
     "recentPosts": {
-      "title": "Recent Posts"
+      "title": "Recent Posts",
+      "allPosts": "All Posts"
     },
     "aboutMe": {
       "title": "About Me",

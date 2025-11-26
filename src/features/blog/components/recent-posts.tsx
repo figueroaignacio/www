@@ -23,7 +23,7 @@ export async function RecentPosts() {
           href="/blog"
           className="underline text-muted-foreground hover:text-foreground text-xs flex items-center gap-x-3"
         >
-          Todos los posts
+          {t('allPosts')}
           <ArrowRight className="size-3" />
         </Link>
       </div>
