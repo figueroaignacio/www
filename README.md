@@ -1,67 +1,93 @@
-# Payload Blank Template
+# Ignacio Figueroa — Personal Portfolio
 
-This template comes configured with the bare minimum to get started on anything you need.
+## A modern, fast, and fully custom portfolio built with Next.js, Tailwind CSS, Payload CMS, and PostgreSQL.
 
-## Quick start
+It showcases my work, articles, projects, and includes an AI-powered assistant named N.A.I (Nacho Artificial Intelligence) to help visitors explore my content in an interactive way.
 
-This template can be deployed directly from our Cloud hosting and it will setup MongoDB and cloud S3 object storage for media.
+This portfolio reflects my focus on clean UI, high performance, accessibility, and a great developer experience.
 
-## Quick Start - local setup
+## 🚀 Tech Stack
 
-To spin up this template locally, follow these steps:
+This project uses a modern full-stack setup:
 
-### Clone
+### Frontend
 
-After you click the `Deploy` button above, you'll want to have standalone copy of this repo on your machine. If you've already cloned this repo, skip to [Development](#development).
+- Next.js
+- React
+- Tailwind CSS
+- Framer Motion (animations)
+- Lucide React (icons)
+- next-intl (internationalization)
 
-### Development
+### Backend & CMS
 
-1. First [clone the repo](#clone) if you have not done so already
-2. `cd my-project && cp .env.example .env` to copy the example environment variables. You'll need to add the `MONGODB_URI` from your Cloud project to your `.env` if you want to use S3 storage and the MongoDB database that was created for you.
+- Payload CMS
+- PostgreSQL
+- Vercel Postgres adapter
 
-3. `pnpm install && pnpm dev` to install dependencies and start the dev server
-4. open `http://localhost:3000` to open the app in your browser
+### AI
 
-That's it! Changes made in `./src` will be reflected in your app. Follow the on-screen instructions to login and create your first admin user. Then check out [Production](#production) once you're ready to build and serve your app, and [Deployment](#deployment) when you're ready to go live.
+- Groq SDK – ultra-fast inference
+- Custom AI chatbot: N.A.I (Nacho Artificial Intelligence)
 
-#### Docker (Optional)
+### Tooling
 
-If you prefer to use Docker for local development instead of a local MongoDB instance, the provided docker-compose.yml file can be used.
+- ESLint, Prettier
+- pnpm workspace setup
 
-To do so, follow these steps:
+## 🤖 N.A.I — Nacho Artificial Intelligence
 
-- Modify the `MONGODB_URI` in your `.env` file to `mongodb://127.0.0.1/<dbname>`
-- Modify the `docker-compose.yml` file's `MONGODB_URI` to match the above `<dbname>`
-- Run `docker-compose up` to start the database, optionally pass `-d` to run in the background.
+This portfolio includes a fully integrated AI assistant called N.A.I.
 
-## How it works
+### Powered by the Groq SDK, N.A.I provides:
 
-The Payload config is tailored specifically to the needs of most websites. It is pre-configured in the following ways:
+- Answers about me, my background, and my work
+- Help navigating the website
+- Insights about the technologies I use
+- Discussions and summaries of my blog posts
+- Context-aware guidance about my projects and stack
 
-### Collections
+### N.A.I shows how real-world AI features can be integrated into a modern UI using:
 
-See the [Collections](https://payloadcms.com/docs/configuration/collections) docs for details on how to extend this functionality.
+- Next.js App Router
+- Groq models
+- Framer Motion animations
+- Clean, minimal UI with Tailwind
 
-- #### Users (Authentication)
+It is part personal assistant, part tech demo — and a fun nod to my name:
+Nacho Artificial Intelligence.
 
-  Users are auth-enabled collections that have access to the admin panel.
+## 🧩 Pages & Site Structure
 
-  For additional help, see the official [Auth Example](https://github.com/payloadcms/payload/tree/main/examples/auth) or the [Authentication](https://payloadcms.com/docs/authentication/overview#authentication-overview) docs.
+### About Me
 
-- #### Media
+A personal overview of who I am, my background, my experience, and my philosophy as a web developer.
 
-  This is the uploads enabled collection. It features pre-configured sizes, focal point and manual resizing to help you manage your pictures.
+### Blog
 
-### Docker
+Long-form writing about:
 
-Alternatively, you can use [Docker](https://www.docker.com) to spin up this template locally. To do so, follow these steps:
+- Programming
+- Web development
+- Technology
+- Opinions on frontend, tooling, and modern stacks
 
-1. Follow [steps 1 and 2 from above](#development), the docker-compose file will automatically use the `.env` file in your project root
-1. Next run `docker-compose up`
-1. Follow [steps 4 and 5 from above](#development) to login and create your first admin user
+### Projects
 
-That's it! The Docker instance will help you get up and running quickly while also standardizing the development environment across your teams.
+A curated list of the projects I've worked on, with descriptions, tech stacks, and case studies.
+Managed through Payload CMS.
 
-## Questions
+### Stack
 
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+A breakdown of the technologies I use daily:
+React • Next.js • Tailwind • Payload • Postgres • Groq • TypeScript, etc.
+
+Almost all content is dynamically loaded from Payload CMS + PostgreSQL.
+
+## 💬 Contact
+
+Feel free to reach out:
+
+- Email: figueroaignaciodev@gmail.com
+- LinkedIn: https://www.linkedin.com/in/figueroa-ignacio
+- GitHub: https://github.com/figueroaignacio
