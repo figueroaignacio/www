@@ -18,7 +18,7 @@ export async function AllPosts() {
   }
 
   return (
-    <ul className="space-y-10">
+    <ul className="space-y-3">
       {posts.map((post) => {
         return (
           <div key={post.id} className="space-y-5">

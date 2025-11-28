@@ -27,7 +27,7 @@ export async function RecentPosts() {
           <ArrowRight className="size-3" />
         </Link>
       </div>
-      <ul className="space-y-10">
+      <ul className="space-y-3">
         {posts.map((post) => {
           return (
             <div key={post.id} className="space-y-5">

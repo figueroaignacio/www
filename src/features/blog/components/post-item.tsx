@@ -16,7 +16,7 @@ export function PostItem({ slug, title, createdAt, description }: Partial<Post>)
   const locale = useLocale();
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-6 p-6 border-border border rounded-2xl">
       {createdAt ? (
         <p className="text-xs text-muted-foreground">
           {formatFullDateWithWeekday(createdAt, locale)}
