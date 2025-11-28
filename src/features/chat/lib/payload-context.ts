@@ -62,6 +62,7 @@ export async function getPayloadContext(): Promise<PayloadContextData> {
       title: p.title,
       subtitle: p.subtitle,
       description: truncateText(p.description, 120),
+      body: p.body,
       technologies:
         p.technologies
           ?.slice(0, 5)

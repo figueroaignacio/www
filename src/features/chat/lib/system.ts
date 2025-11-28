@@ -36,6 +36,7 @@ function formatProjects(projects: PayloadContextData['projects'], lang: Language
       `• ${p.title} - ${p.subtitle}`,
       `  ${p.description}`,
       `  ${tech}: ${(p.technologies ?? []).join(', ')}`,
+      `  ${p.body ? `Details: ${p.body}` : ''}`,
     ];
 
     if (p.demo) lines.push(`  ${demo}: ${p.demo}`);
