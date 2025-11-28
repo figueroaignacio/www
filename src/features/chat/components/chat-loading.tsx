@@ -11,7 +11,7 @@ export function ChatLoading() {
       <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0">
         <BotMessageSquare className="w-6 h-6 text-foreground" />
       </div>
-      <div className="bg-muted rounded-2xl rounded-tl-sm px-4 py-2.5">
+      <div className="bg-card rounded-2xl rounded-tl-sm px-4 py-2.5">
         <Loader2 className="w-4 h-4 animate-spin text-muted-foreground" />
       </div>
     </motion.div>
