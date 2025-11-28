@@ -13,7 +13,7 @@ export function ChatHeader({ onClose }: ChatHeaderProps) {
   const t = useTranslations('components.chat.header');
 
   return (
-    <div className="relative bg-card p-4 border-b border-border">
+    <div className="relative bg-background p-4 border-b border-border">
       <div className="relative flex items-center gap-3">
         <BotMessageSquare />
         <div className="flex-1">
@@ -25,7 +25,7 @@ export function ChatHeader({ onClose }: ChatHeaderProps) {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={onClose}
-            className="md:hidden w-8 h-8 rounded-full bg-muted flex items-center justify-center hover:bg-muted/80 transition"
+            className="md:hidden size-8  flex items-center justify-center transition"
             aria-label="Close chat"
           >
             <X className="w-4 h-4 text-foreground" />

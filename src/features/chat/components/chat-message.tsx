@@ -20,9 +20,7 @@ export function ChatMessage({ message }: ChatMessageProps) {
     >
       <div
         className={`rounded-2xl px-4 py-2.5 max-w-[75%] ${
-          isUser
-            ? 'bg-foreground text-background rounded-tr-sm'
-            : 'bg-muted text-foreground rounded-tl-sm'
+          isUser ? 'bg-foreground text-background rounded-tr-sm' : 'bg-card rounded-tl-sm'
         }`}
       >
         {isUser ? (
