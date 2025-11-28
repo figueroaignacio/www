@@ -45,7 +45,6 @@ export function ProjectItem({
           <h2 className={`text-lg font-bold text-foreground`}>{title}</h2>
           <h3 className={`mt-1 text-sm text-muted-foreground`}>{subtitle}</h3>
         </div>
-
         <div className="space-y-4 pt-4">
           <div className="space-y-3">
             <div className="flex  gap-2">
@@ -72,9 +71,7 @@ export function ProjectItem({
               )}
             </div>
             {description && (
-              <p
-                className={`text-pretty text-sm leading-relaxed text-foreground/70 transition-colors duration-300`}
-              >
+              <p className={`text-pretty text-sm leading-relaxed text-foreground/70`}>
                 {description}
               </p>
             )}
