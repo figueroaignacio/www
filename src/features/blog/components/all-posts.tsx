@@ -27,6 +27,7 @@ export async function AllPosts() {
               title={post.title}
               slug={post.slug}
               description={post.description}
+              categories={post.categories}
             />
           </div>
         );

@@ -52,6 +52,23 @@ export const Posts: CollectionConfig = {
       required: true,
     },
     {
+      name: 'categories',
+      label: 'Categories',
+      type: 'relationship',
+      relationTo: 'post-categories',
+      hasMany: true,
+      admin: {
+        description: 'Select one or multiple categories for this post',
+      },
+      filterOptions: ({ siblingData }: { siblingData?: any }) => {
+        return {
+          locale: {
+            equals: siblingData?.locale,
+          },
+        };
+      },
+    },
+    {
       name: 'keywords',
       label: 'Keywords',
       type: 'array',

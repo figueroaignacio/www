@@ -10,6 +10,7 @@ import sharp from 'sharp';
 import { fileURLToPath } from 'url';
 
 // Collections
+import { PostCategories } from './collections/Categories';
 import { Education } from './collections/Education';
 import { Experience } from './collections/Experience';
 import { Media } from './collections/Media';
@@ -28,7 +29,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Experience, Education, Posts, Projects, Media, TechStack],
+  collections: [Users, Experience, Education, Posts, Projects, Media, TechStack, PostCategories],
   editor: lexicalEditor({
     features: ({ defaultFeatures }) => [...defaultFeatures],
   }),

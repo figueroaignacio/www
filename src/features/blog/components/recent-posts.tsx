@@ -36,6 +36,7 @@ export async function RecentPosts() {
                 title={post.title}
                 slug={post.slug}
                 description={post.description}
+                categories={post.categories}
               />
             </div>
           );

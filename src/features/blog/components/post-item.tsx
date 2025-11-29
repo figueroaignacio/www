@@ -2,6 +2,7 @@
 import { useLocale, useTranslations } from 'next-intl';
 
 // Components
+import { Badge } from '@/components/ui/badge';
 import { Link } from '@/i18n/navigation';
 import { ArrowRight } from 'lucide-react';
 
@@ -9,11 +10,14 @@ import { ArrowRight } from 'lucide-react';
 import { formatFullDateWithWeekday } from '@/lib/format-date';
 
 // Types
-import { type Post } from '@/payload-types';
+import { type Post, PostCategory } from '@/payload-types';
 
-export function PostItem({ slug, title, createdAt, description }: Partial<Post>) {
+export function PostItem({ slug, title, createdAt, description, categories }: Partial<Post>) {
   const t = useTranslations('components.postItem');
   const locale = useLocale();
+
+  const categoryList =
+    categories?.filter((cat): cat is PostCategory => typeof cat === 'object') ?? [];
 
   return (
     <div className="space-y-6 p-6 border-border border rounded-2xl">
@@ -28,6 +32,15 @@ export function PostItem({ slug, title, createdAt, description }: Partial<Post>)
       <div className="flex flex-col gap-3">
         <p className="text-sm text-muted-foreground">{description}</p>
       </div>
+      {categoryList.length > 0 && (
+        <div className="flex flex-wrap gap-2">
+          {categoryList.map((cat) => (
+            <div key={cat.id} className="transition-all duration-300">
+              <Badge label={cat.label} />
+            </div>
+          ))}
+        </div>
+      )}
       <div className="flex justify-self-end">
         <Link
           href={`/blog/${slug}`}

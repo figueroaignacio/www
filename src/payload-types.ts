@@ -74,6 +74,7 @@ export interface Config {
     projects: Project;
     media: Media;
     'tech-stack': TechStack;
+    'post-categories': PostCategory;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -87,6 +88,7 @@ export interface Config {
     projects: ProjectsSelect<false> | ProjectsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     'tech-stack': TechStackSelect<false> | TechStackSelect<true>;
+    'post-categories': PostCategoriesSelect<false> | PostCategoriesSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -223,6 +225,10 @@ export interface Post {
   title: string;
   description: string;
   /**
+   * Select one or multiple categories for this post
+   */
+  categories?: (number | PostCategory)[] | null;
+  /**
    * SEO keywords
    */
   keywords?:
@@ -260,6 +266,20 @@ export interface Post {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "post-categories".
+ */
+export interface PostCategory {
+  id: number;
+  locale: 'en' | 'es';
+  name: string;
+  label: string;
+  slug: string;
+  description?: string | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -373,6 +393,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'tech-stack';
         value: number | TechStack;
+      } | null)
+    | ({
+        relationTo: 'post-categories';
+        value: number | PostCategory;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -497,6 +521,7 @@ export interface PostsSelect<T extends boolean = true> {
   slug?: T;
   title?: T;
   description?: T;
+  categories?: T;
   keywords?:
     | T
     | {
@@ -574,6 +599,19 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface TechStackSelect<T extends boolean = true> {
   name?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "post-categories_select".
+ */
+export interface PostCategoriesSelect<T extends boolean = true> {
+  locale?: T;
+  name?: T;
+  label?: T;
+  slug?: T;
+  description?: T;
   updatedAt?: T;
   createdAt?: T;
 }
