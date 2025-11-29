@@ -10,6 +10,12 @@ export function PostItemLoader() {
               <div className="h-3 w-full rounded-md bg-secondary/70" />
               <div className="h-3 w-11/12 rounded-md bg-secondary/70" />
             </div>
+            <div className="flex gap-3">
+              <div className="h-5 w-12 rounded-md bg-secondary/70" />
+              <div className="h-5 w-12 rounded-md bg-secondary/70" />
+              <div className="h-5 w-12 rounded-md bg-secondary/70" />
+              <div className="h-5 w-12 rounded-md bg-secondary/70" />
+            </div>
             <div className="flex justify-self-end">
               <div className="h-4 w-24 rounded-md bg-secondary/50" />
             </div>

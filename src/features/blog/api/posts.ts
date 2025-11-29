@@ -2,19 +2,31 @@ import { API_URL } from '@/lib/constants';
 import { Post } from '@/payload-types';
 import { Locale } from 'next-intl';
 
-export async function getPosts(locale: Locale) {
-  const res = await fetch(`${API_URL}/api/posts?where[locale][equals]=${locale}`, {
-    cache: 'no-store',
-  });
+export async function getPosts(locale: Locale, categorySlug?: string) {
+  let url = `${API_URL}/api/posts`;
+  const params = new URLSearchParams();
+  params.append('where[locale][equals]', locale);
+
+  if (categorySlug) {
+    params.append('where[categories.slug][equals]', categorySlug);
+  }
+
+  const queryString = params.toString();
+  if (queryString) {
+    url += `?${queryString}`;
+  }
+
+  const res = await fetch(url, { cache: 'no-store' });
 
   if (!res.ok) {
-    throw new Error('Failed to fetch posts');
+    const errorData = await res.json().catch(() => ({}));
+    console.error('Error fetching posts:', errorData);
+    throw new Error('Error getting posts');
   }
 
   const data = await res.json();
   return data.docs;
 }
-
 export async function getPostBySlug(slug: string) {
   const res = await fetch(`${API_URL}/api/posts/?where[slug][equals]=${slug}`);
 

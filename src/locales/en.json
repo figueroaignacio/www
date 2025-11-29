@@ -112,6 +112,9 @@
         "initial": "Hi! 👋 I'm N.A.I, Ignacio's assistant. How can I help you today?",
         "error": "I'm sorry, I encountered an error. Please try again."
       }
+    },
+    "categoryFilter": {
+      "allCategories": "All categories"
     }
   }
 }

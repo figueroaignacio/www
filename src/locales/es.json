@@ -111,6 +111,9 @@
         "initial": "¡Hola! 👋 Soy N.A.I, el asistente de Ignacio. ¿En qué puedo ayudarte hoy?",
         "error": "Lo siento, ocurrió un error. Por favor, intenta de nuevo."
       }
+    },
+    "categoryFilter": {
+      "allCategories": "Todas las categorías"
     }
   }
 }
