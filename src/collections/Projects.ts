@@ -68,14 +68,10 @@ export const Projects: CollectionConfig = {
     {
       name: 'technologies',
       label: 'Technologies Used',
-      type: 'array',
-      fields: [
-        {
-          name: 'name',
-          label: 'Technology',
-          type: 'text',
-        },
-      ],
+      type: 'relationship',
+      relationTo: 'tech-stack',
+      hasMany: true,
+      required: false,
     },
     {
       name: 'repository',

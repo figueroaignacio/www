@@ -7,7 +7,7 @@ import { ExternalLinkIcon, InfoCircledIcon } from '@radix-ui/react-icons';
 import { Badge } from '../../../components/ui/badge';
 
 // Types
-import type { Project } from '@/payload-types';
+import type { Project, TechStack } from '@/payload-types';
 
 export function ProjectItem({
   slug,
@@ -38,16 +38,20 @@ export function ProjectItem({
     type: string;
   }[];
 
+  const techList =
+    technologies?.filter((tech): tech is TechStack => typeof tech === 'object') ?? [];
+
   return (
     <div className="group relative space-y-4 transition-all duration-300 ease-out">
       <div className="relative">
         <div className="relative flex h-full flex-col justify-center">
-          <h2 className={`text-lg font-bold text-foreground`}>{title}</h2>
-          <h3 className={`mt-1 text-sm text-muted-foreground`}>{subtitle}</h3>
+          <h2 className="text-lg font-bold text-foreground">{title}</h2>
+          <h3 className="mt-1 text-sm text-muted-foreground">{subtitle}</h3>
         </div>
         <div className="space-y-4 pt-4">
+          {/* Links */}
           <div className="space-y-3">
-            <div className="flex  gap-2">
+            <div className="flex gap-2">
               {links.map((link) =>
                 link.internal ? (
                   <Link
@@ -71,16 +75,16 @@ export function ProjectItem({
               )}
             </div>
             {description && (
-              <p className={`text-pretty text-sm leading-relaxed text-foreground/70`}>
+              <p className="text-pretty text-sm leading-relaxed text-foreground/70">
                 {description}
               </p>
             )}
           </div>
-          {technologies && technologies.length > 0 && (
+          {techList.length > 0 && (
             <div className="flex flex-wrap gap-2">
-              {technologies.map((tech) => (
-                <div key={tech.id} className={`transition-all duration-300`}>
-                  <Badge label={tech.name || ''} />
+              {techList.map((tech) => (
+                <div key={tech.id} className="transition-all duration-300">
+                  <Badge label={tech.name} />
                 </div>
               ))}
             </div>

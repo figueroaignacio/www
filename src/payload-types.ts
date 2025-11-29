@@ -73,6 +73,7 @@ export interface Config {
     posts: Post;
     projects: Project;
     media: Media;
+    'tech-stack': TechStack;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -85,6 +86,7 @@ export interface Config {
     posts: PostsSelect<false> | PostsSelect<true>;
     projects: ProjectsSelect<false> | ProjectsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    'tech-stack': TechStackSelect<false> | TechStackSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -286,12 +288,7 @@ export interface Project {
     };
     [k: string]: unknown;
   };
-  technologies?:
-    | {
-        name?: string | null;
-        id?: string | null;
-      }[]
-    | null;
+  technologies?: (number | TechStack)[] | null;
   repository?: string | null;
   demo?: string | null;
   featured?: boolean | null;
@@ -334,6 +331,16 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tech-stack".
+ */
+export interface TechStack {
+  id: number;
+  name: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -362,6 +369,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'tech-stack';
+        value: number | TechStack;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -516,12 +527,7 @@ export interface ProjectsSelect<T extends boolean = true> {
   slug?: T;
   description?: T;
   body?: T;
-  technologies?:
-    | T
-    | {
-        name?: T;
-        id?: T;
-      };
+  technologies?: T;
   repository?: T;
   demo?: T;
   featured?: T;
@@ -561,6 +567,15 @@ export interface MediaSelect<T extends boolean = true> {
               filename?: T;
             };
       };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tech-stack_select".
+ */
+export interface TechStackSelect<T extends boolean = true> {
+  name?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
