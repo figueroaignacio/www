@@ -1,5 +1,9 @@
+// Payload
 import { BlocksFeature, FixedToolbarFeature, lexicalEditor } from '@payloadcms/richtext-lexical';
 import { CollectionConfig } from 'payload';
+
+// Utils
+import slugify from 'slugify';
 
 export const Posts: CollectionConfig = {
   slug: 'posts',
@@ -15,6 +19,19 @@ export const Posts: CollectionConfig = {
   },
   versions: {
     drafts: true,
+  },
+  hooks: {
+    beforeValidate: [
+      ({ data }) => {
+        if (data?.title && !data?.slug) {
+          data.slug = slugify(data.title, {
+            lower: true,
+            strict: true,
+          });
+        }
+        return data;
+      },
+    ],
   },
   fields: [
     {
