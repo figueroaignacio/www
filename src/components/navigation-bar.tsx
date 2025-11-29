@@ -27,7 +27,7 @@ export function NavigationBar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`inline-block text-sm transition-all hover:scale-110 ${
+              className={`inline-block text-sm transition-all  ${
                 isActive
                   ? 'text-foreground font-medium scale-110'
                   : 'text-muted-foreground hover:text-foreground'
