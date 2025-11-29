@@ -21,7 +21,7 @@ export async function FeaturedProjects() {
   return (
     <>
       <h2 className="text-sm font-bold">{t('featuredProjects')}</h2>
-      <ul className="space-y-12">
+      <ul className="space-y-3">
         {projects.map((project) => (
           <li key={project.id}>
             <ProjectItem

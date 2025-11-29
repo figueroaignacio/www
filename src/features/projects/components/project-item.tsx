@@ -2,11 +2,11 @@
 import { useTranslations } from 'next-intl';
 
 // Components
-import { Link } from '@/i18n/navigation';
+import { Badge } from '@/components/ui/badge';
 import { ExternalLinkIcon, InfoCircledIcon } from '@radix-ui/react-icons';
-import { Badge } from '../../../components/ui/badge';
 
 // Types
+import { Link } from '@/i18n/navigation';
 import type { Project, TechStack } from '@/payload-types';
 
 export function ProjectItem({
@@ -42,38 +42,14 @@ export function ProjectItem({
     technologies?.filter((tech): tech is TechStack => typeof tech === 'object') ?? [];
 
   return (
-    <div className="group relative space-y-4 transition-all duration-300 ease-out">
+    <div className="relative space-y-4 border-border border p-6 rounded-2xl">
       <div className="relative">
         <div className="relative flex h-full flex-col justify-center">
           <h2 className="text-lg font-bold text-foreground">{title}</h2>
           <h3 className="mt-1 text-sm text-muted-foreground">{subtitle}</h3>
         </div>
         <div className="space-y-4 pt-4">
-          {/* Links */}
           <div className="space-y-3">
-            <div className="flex gap-2">
-              {links.map((link) =>
-                link.internal ? (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="flex items-center gap-1 text-xs text-muted-foreground hover:underline"
-                  >
-                    {link.label} {link.icon}
-                  </Link>
-                ) : (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-xs text-muted-foreground hover:underline"
-                  >
-                    {link.label} {link.icon}
-                  </a>
-                ),
-              )}
-            </div>
             {description && (
               <p className="text-pretty text-sm leading-relaxed text-foreground/70">
                 {description}
@@ -89,6 +65,29 @@ export function ProjectItem({
               ))}
             </div>
           )}
+          <div className="flex gap-2 justify-end mt-12">
+            {links.map((link) =>
+              link.internal ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="flex items-center gap-1 text-xs text-muted-foreground hover:underline"
+                >
+                  {link.label} {link.icon}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-xs text-muted-foreground hover:underline"
+                >
+                  {link.label} {link.icon}
+                </a>
+              ),
+            )}
+          </div>
         </div>
       </div>
     </div>
