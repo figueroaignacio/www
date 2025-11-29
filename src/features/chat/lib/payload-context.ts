@@ -63,13 +63,13 @@ export async function getPayloadContext(): Promise<PayloadContextData> {
       subtitle: p.subtitle,
       description: truncateText(p.description, 120),
       body: p.body,
-      technologies:
-        p.technologies
-          ?.slice(0, 5)
-          .map((t) => ({ name: t?.name }))
-          .filter((t) => t.name) || [],
       demo: p.demo ?? undefined,
       repository: p.repository ?? undefined,
+      technologies:
+        (p.technologies
+          ?.slice(0, 5)
+          .map((t) => (typeof t === 'number' ? t : t.id))
+          .filter((t) => typeof t === 'number') as number[]) || [],
     })),
     posts: posts.docs.map((p) => ({
       title: p.title,
