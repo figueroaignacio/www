@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 // Components
+import { Contact } from '@/features/about/components/contact';
 import { DeveloperWatermark } from '@/features/about/components/developer-watermark';
 import { Link } from '@/i18n/navigation';
 import { Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
@@ -20,13 +21,13 @@ export function MobileMenu() {
   };
 
   return (
-    <div className="relative z-50 flex w-full items-center justify-between lg:hidden mt-3 mb-6">
+    <div className="relative z-1000 flex w-full items-center justify-between lg:hidden mt-3 mb-6">
       <button onClick={toggleMenu} className="flex items-center gap-x-3">
         <HamburgerMenuIcon className="h-6 w-6 cursor-pointer" />
         menu
       </button>
       <nav
-        className={`bg-background/60 backdrop-blur-sm fixed inset-0 z-50 flex h-screen w-full flex-col transition-all duration-300 ease-in-out ${
+        className={`bg-background/60 backdrop-blur-md fixed inset-0 z-50 flex h-screen w-full flex-col transition-all duration-300 ease-in-out ${
           isMenuOpen
             ? 'pointer-events-auto scale-100 opacity-100'
             : 'pointer-events-none scale-95 opacity-0'
@@ -47,6 +48,9 @@ export function MobileMenu() {
               </li>
             ))}
           </ul>
+          <div className="border-t border-border mt-3 py-5">
+            <Contact />
+          </div>
         </div>
         <div className="px-5 py-4 border-t border-border">
           <DeveloperWatermark />
