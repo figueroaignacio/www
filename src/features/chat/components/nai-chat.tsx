@@ -1,18 +1,28 @@
 'use client';
 
-// Hooks
 import { useChat } from '@/features/chat/hooks/use-chat';
 import { useChatInput } from '@/features/chat/hooks/use-chat-input';
-import { useState, type RefObject } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useState, type RefObject } from 'react';
 
 // Components
 import { ChatToggleButton } from './chat-toggle-button';
 import { ChatWindow } from './chat-window';
 
 export function NaiChat() {
+  const searchParams = useSearchParams();
+  const chatParam = searchParams.get('chat');
+
   const [open, setOpen] = useState(false);
   const { messages, isLoading, messagesEndRef, sendMessage } = useChat();
   const { message, setMessage, handleSubmit, handleKeyPress } = useChatInput(sendMessage);
+
+  useEffect(() => {
+    if (chatParam === 'open') {
+      setOpen(true);
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+  }, [chatParam]);
 
   const handleClose = () => setOpen(false);
 
