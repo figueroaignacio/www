@@ -1,3 +1,4 @@
+// Components
 import { motion } from 'framer-motion';
 import { BotMessageSquare, Loader2 } from 'lucide-react';
 

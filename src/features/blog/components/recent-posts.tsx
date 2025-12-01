@@ -1,14 +1,14 @@
 // Hooks
 import { useTranslations } from 'next-intl';
 
-// Utils
-import { getLocale } from 'next-intl/server';
-import { getRecentPosts } from '../api/posts';
-
 // Components
 import { Link } from '@/i18n/navigation';
 import { ArrowRight } from 'lucide-react';
 import { PostItem } from './post-item';
+
+// Utils
+import { getLocale } from 'next-intl/server';
+import { getRecentPosts } from '../api/posts';
 
 export async function RecentPosts() {
   const t = useTranslations('sections.recentPosts');

@@ -3,10 +3,10 @@ import { useTranslations } from 'next-intl';
 
 // Components
 import { Badge } from '@/components/ui/badge';
+import { Link } from '@/i18n/navigation';
 import { ExternalLinkIcon, InfoCircledIcon } from '@radix-ui/react-icons';
 
 // Types
-import { Link } from '@/i18n/navigation';
 import type { Project, TechStack } from '@/payload-types';
 
 export function ProjectItem({

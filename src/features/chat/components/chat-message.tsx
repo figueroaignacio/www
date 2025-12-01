@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ChatMarkdownContent } from './chat-markdown-content';
 
 // Types
-import { Message } from '../types';
+import type { Message } from '../types';
 
 interface ChatMessageProps {
   message: Message;

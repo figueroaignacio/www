@@ -5,7 +5,7 @@ import { PostItem } from './post-item';
 import { getPosts } from '@/features/blog/api/posts';
 
 // Types
-import { type Post } from '@/payload-types';
+import type { Post } from '@/payload-types';
 
 interface AllPostsProps {
   categorySlug?: string;
