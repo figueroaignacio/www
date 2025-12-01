@@ -55,6 +55,9 @@
     "experience": {
       "title": "Experience",
       "description": "A summary of my journey as a developer"
+    },
+    "testimonials": {
+      "title": "Testimonies"
     }
   },
   "ui": {

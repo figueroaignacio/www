@@ -75,6 +75,7 @@ export interface Config {
     media: Media;
     'tech-stack': TechStack;
     'post-categories': PostCategory;
+    testimonials: Testimonial;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -89,6 +90,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     'tech-stack': TechStackSelect<false> | TechStackSelect<true>;
     'post-categories': PostCategoriesSelect<false> | PostCategoriesSelect<true>;
+    testimonials: TestimonialsSelect<false> | TestimonialsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -361,6 +363,30 @@ export interface TechStack {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials".
+ */
+export interface Testimonial {
+  id: number;
+  locale: 'en' | 'es';
+  name: string;
+  role: string;
+  company?: string | null;
+  /**
+   * Insert an image URL (e.g. from GitHub, LinkedIn, etc.)
+   */
+  avatar?: string | null;
+  testimonial: string;
+  date?: string | null;
+  /**
+   * Used to manually sort testimonials
+   */
+  order?: number | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -397,6 +423,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'post-categories';
         value: number | PostCategory;
+      } | null)
+    | ({
+        relationTo: 'testimonials';
+        value: number | Testimonial;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -614,6 +644,23 @@ export interface PostCategoriesSelect<T extends boolean = true> {
   description?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials_select".
+ */
+export interface TestimonialsSelect<T extends boolean = true> {
+  locale?: T;
+  name?: T;
+  role?: T;
+  company?: T;
+  avatar?: T;
+  testimonial?: T;
+  date?: T;
+  order?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

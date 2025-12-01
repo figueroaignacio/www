@@ -10,6 +10,7 @@ import { Hero } from '@/components/hero';
 import { AboutMe } from '@/features/about/components/about-me';
 import { GreetingMessage } from '@/features/about/components/greeting-message';
 import { RecentPosts } from '@/features/blog/components/recent-posts';
+import { AllTestimonials } from '@/features/experience/components/all-testimonials';
 
 // Types
 import { type Metadata } from 'next';
@@ -59,6 +60,7 @@ export default function HomePage({ params }: HomePageProps) {
     <div className="space-y-5">
       <Hero title={<GreetingMessage />} description={t('description')} />
       <AboutMe />
+      <AllTestimonials />
       <RecentPosts />
     </div>
   );

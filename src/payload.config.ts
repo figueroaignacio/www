@@ -17,6 +17,7 @@ import { Media } from './collections/Media';
 import { Posts } from './collections/Posts';
 import { Projects } from './collections/Projects';
 import { TechStack } from './collections/TechStack';
+import { Testimonials } from './collections/Testimonials';
 import { Users } from './collections/Users';
 
 const filename = fileURLToPath(import.meta.url);
@@ -29,7 +30,17 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Experience, Education, Posts, Projects, Media, TechStack, PostCategories],
+  collections: [
+    Users,
+    Experience,
+    Education,
+    Posts,
+    Projects,
+    Media,
+    TechStack,
+    PostCategories,
+    Testimonials,
+  ],
   editor: lexicalEditor({
     features: ({ defaultFeatures }) => [...defaultFeatures],
   }),
