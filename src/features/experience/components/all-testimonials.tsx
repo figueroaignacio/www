@@ -19,7 +19,7 @@ export async function AllTestimonials() {
   return (
     <>
       <h2>{t('title')}</h2>
-      <ul>
+      <ul className="space-y-3">
         {testimonials.map((testimonial) => (
           <li key={testimonial.id}>
             <TestimonialCard
