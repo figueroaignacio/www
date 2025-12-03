@@ -1,5 +1,3 @@
-// Components
-
 interface HeroProps {
   title: string | React.ReactNode;
   description: string;
@@ -8,8 +6,8 @@ interface HeroProps {
 export function Hero({ description, title }: HeroProps) {
   return (
     <div className="space-y-3">
-      <h1 className="text-xl">{title}</h1>
-      <p className="text-sm text-muted-foreground">{description}</p>
+      <h1 className="text-2xl">{title}</h1>
+      <p className="text-muted-foreground">{description}</p>
     </div>
   );
 }

@@ -13,7 +13,7 @@ export function TestimonialCard({ avatar, name, testimonial, role }: Partial<Tes
           <span className="text-muted-foreground text-xs">{role}</span>
         </div>
       </div>
-      <p className="text-muted-foreground text-sm leading-6">{testimonial}</p>
+      <p className="text-muted-foreground leading-6">{testimonial}</p>
     </div>
   );
 }

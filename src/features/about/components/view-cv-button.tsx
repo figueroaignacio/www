@@ -8,7 +8,7 @@ export function ViewCvButton() {
   const t = useTranslations('components.viewCvButton');
 
   return (
-    <Link href={t('url')} target="_blank" rel="noopener noreferrer" className="text-sm underline">
+    <Link href={t('url')} target="_blank" rel="noopener noreferrer" className="underline">
       {t('label')}
     </Link>
   );

@@ -46,14 +46,12 @@ export function ProjectItem({
       <div className="relative">
         <div className="relative flex h-full flex-col justify-center">
           <h2 className="text-lg font-bold text-foreground">{title}</h2>
-          <h3 className="mt-1 text-sm text-muted-foreground">{subtitle}</h3>
+          <h3 className="mt-1">{subtitle}</h3>
         </div>
         <div className="space-y-4 pt-4">
           <div className="space-y-3">
             {description && (
-              <p className="text-pretty text-sm leading-relaxed text-foreground/70">
-                {description}
-              </p>
+              <p className="text-pretty leading-relaxed text-foreground/70">{description}</p>
             )}
           </div>
           {techList.length > 0 && (
@@ -71,7 +69,7 @@ export function ProjectItem({
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="flex items-center gap-1 text-xs text-muted-foreground hover:underline"
+                  className="flex items-center gap-1 text-muted-foreground hover:underline"
                 >
                   {link.label} {link.icon}
                 </Link>
@@ -81,7 +79,7 @@ export function ProjectItem({
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-xs text-muted-foreground hover:underline"
+                  className="flex items-center gap-1 text-muted-foreground hover:underline"
                 >
                   {link.label} {link.icon}
                 </a>

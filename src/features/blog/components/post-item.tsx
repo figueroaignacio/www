@@ -22,15 +22,15 @@ export function PostItem({ slug, title, createdAt, description, categories }: Pa
   return (
     <div className="space-y-6 p-6 border-border border rounded-2xl">
       {createdAt ? (
-        <p className="text-xs text-muted-foreground">
+        <p className="text-sm text-muted-foreground">
           {formatFullDateWithWeekday(createdAt, locale)}
         </p>
       ) : null}
       <Link href={`/blog/${slug}`}>
-        <h2 className="hover:underline hover:text-primary">{title}</h2>
+        <h2 className="text-lg hover:underline">{title}</h2>
       </Link>
       <div className="flex flex-col gap-3">
-        <p className="text-sm text-muted-foreground">{description}</p>
+        <p className="text-muted-foreground">{description}</p>
       </div>
       {categoryList.length > 0 && (
         <div className="flex flex-wrap gap-2">
@@ -42,10 +42,7 @@ export function PostItem({ slug, title, createdAt, description, categories }: Pa
         </div>
       )}
       <div className="flex justify-self-end">
-        <Link
-          href={`/blog/${slug}`}
-          className="underline hover:text-primary w-fit flex items-center gap-x-2 text-sm active:scale-[0.98] transition duration-200 "
-        >
+        <Link href={`/blog/${slug}`} className="hover:underline w-fit flex items-center gap-x-2">
           {t('readMore')}
           <ArrowRight className="size-4" />
         </Link>
