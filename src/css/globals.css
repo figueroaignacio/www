@@ -110,23 +110,19 @@
   }
 
   .prose p {
-    @apply mb-3 text-sm leading-relaxed;
+    @apply mb-3 leading-7;
   }
 
   .prose h2 {
     @apply text-lg pb-3 mt-6 border-b border-border mb-3;
   }
 
-  .prose blockquote {
-    @apply mb-3 border-l-4 border-primary pl-4 py-2 text-sm italic;
-  }
-
-  .prose h1 {
-    @apply text-2xl font-bold  mb-4;
-  }
-
   .prose h3 {
     @apply text-base font-semibold mb-2 mt-4;
+  }
+
+  .prose blockquote {
+    @apply mb-3 border-l-4 border-primary pl-4 py-2 text-sm italic;
   }
 
   .prose strong {
@@ -134,11 +130,11 @@
   }
 
   .prose ul {
-    @apply mb-3 ml-5 text-sm  list-disc;
+    @apply mb-3 ml-5 list-disc;
   }
 
   .prose ol {
-    @apply mb-3 ml-5 text-sm list-decimal;
+    @apply mb-3 ml-5 list-decimal;
   }
 
   .prose code {
@@ -146,7 +142,7 @@
   }
 
   .prose li {
-    @apply mb-2 leading-relaxed;
+    @apply mb-2 leading-7;
   }
 
   .prose * {

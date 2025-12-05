@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 
 // Components
 import { ArrowLeftIcon } from '@radix-ui/react-icons';
-import { Button } from './ui/button';
 
 export function BackButton() {
   const router = useRouter();
@@ -15,8 +14,11 @@ export function BackButton() {
   }
 
   return (
-    <Button onClick={onBack} size="icon" variant="ghost">
+    <button
+      onClick={onBack}
+      className="hover:scale-[1.1] transition-transform duration-100 ease cursor-pointer"
+    >
       <ArrowLeftIcon className="size-6" />
-    </Button>
+    </button>
   );
 }

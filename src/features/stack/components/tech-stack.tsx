@@ -2,7 +2,6 @@
 import { useTranslations } from 'next-intl';
 
 // Components
-import { AnimateIn } from '@/components/animate-in';
 import {
   AstroIcon,
   CSSIcon,
@@ -93,29 +92,24 @@ export function TechStack() {
 
   return (
     <div className="space-y-8">
-      {techStack.map((section, sectionIndex) => {
-        const sectionDelay = 0.1 + sectionIndex * 0.2;
-        return (
-          <AnimateIn key={section.category} variant="fadeUp" delay={sectionDelay}>
-            <div>
-              <h3 className="mb-4 text-sm">{section.category}: </h3>
-              <div className="flex flex-wrap gap-10">
-                {section.items.map(({ name, icon: Icon }, itemIndex) => {
-                  const itemDelay = sectionDelay + 0.05 + itemIndex * 0.03;
-                  return (
-                    <AnimateIn key={name} variant="scale" delay={itemDelay}>
-                      <div className="flex flex-col items-center gap-2 backdrop-blur-3xl rounded-lg">
-                        <Icon />
-                        <span className="text-xs">{name}</span>
-                      </div>
-                    </AnimateIn>
-                  );
-                })}
-              </div>
-            </div>
-          </AnimateIn>
-        );
-      })}
+      {techStack.map((section) => (
+        <div key={section.category}>
+          <h3 className="mb-4 text-lg border-border border-b pb-3">{section.category}</h3>
+          <div className="flex flex-wrap gap-2 py-5">
+            {section.items.map(({ name, icon: Icon }) => {
+              return (
+                <div
+                  key={name}
+                  className="flex flex-col items-center gap-2 rounded-xl border-border border px-5 py-4"
+                >
+                  <Icon />
+                  <span className="text-sm">{name}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
