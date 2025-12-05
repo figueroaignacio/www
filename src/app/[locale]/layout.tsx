@@ -12,6 +12,9 @@ import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
 // Font
+import { MobileMenu } from '@/components/mobile-menu';
+import { NavigationBar } from '@/components/navigation-bar';
+import { NaiChat } from '@/features/chat/components/nai-chat';
 import { fontSans } from '@/lib/fonts';
 
 export const metadata = {
@@ -43,8 +46,11 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         <BgBlur />
         <NextIntlClientProvider>
           <Providers>
-            <div className="min-h-screen flex flex-col">
-              <main className="container flex-1">{children}</main>
+            <div className="min-h-screen flex flex-col container">
+              <NaiChat />
+              <NavigationBar />
+              <MobileMenu />
+              <main className="flex-1">{children}</main>
               <Footer />
             </div>
           </Providers>
