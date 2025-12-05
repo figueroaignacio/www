@@ -24,7 +24,7 @@ export function ProjectItem({
     repository && { href: repository, label: 'GitHub', icon: <ExternalLinkIcon />, type: 'repo' },
     demo && { href: demo, label: 'Demo', icon: <ExternalLinkIcon />, type: 'demo' },
     slug && {
-      href: `/project/${slug}`,
+      href: `/projects/${slug}`,
       label: t('details'),
       icon: <InfoCircledIcon />,
       internal: true,
