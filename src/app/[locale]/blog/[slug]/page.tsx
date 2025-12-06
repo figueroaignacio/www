@@ -104,7 +104,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <article className="space-y-3">
-      <PostHeader description={post.description} title={post.title} />
+      <PostHeader description={post.description} title={post.title} createdAt={post.createdAt} />
       <CustomRichText data={post.body} className="prose prose-invert max-w-none" />
     </article>
   );

@@ -13,7 +13,8 @@
     },
     "blog": {
       "title": "Blog",
-      "description": "Discover my posts about tech, programming, AI, opinions, etc."
+      "description": "Discover my posts about tech, programming, AI, opinions, etc.",
+      "postedBy": "Posted by"
     },
     "recentPosts": {
       "title": "Recent Posts",

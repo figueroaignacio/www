@@ -12,7 +12,8 @@
     },
     "blog": {
       "title": "Blog",
-      "description": "Descubre mis publicaciones sobre tecnología, programación, IA, opiniones, etc."
+      "description": "Descubre mis publicaciones sobre tecnología, programación, IA, opiniones, etc.",
+      "postedBy": "Publicado por"
     },
     "recentPosts": {
       "title": "Posts Recientes",

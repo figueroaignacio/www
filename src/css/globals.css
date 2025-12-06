@@ -114,7 +114,7 @@
   }
 
   .prose h2 {
-    @apply text-lg pb-3 mt-6 border-b border-border mb-3;
+    @apply text-lg pb-3 mt-6 border-b border-border mb-3 font-semibold;
   }
 
   .prose h3 {
