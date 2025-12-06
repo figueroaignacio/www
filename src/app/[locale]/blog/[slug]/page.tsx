@@ -1,6 +1,3 @@
-export const dynamic = 'force-dynamic';
-export const revalidate = 3600;
-
 // Components
 import { Error } from '@/components/error';
 import { PostHeader } from '@/features/blog/components/post-header';
@@ -104,7 +101,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <article className="space-y-3">
-      <PostHeader description={post.description} title={post.title} createdAt={post.createdAt} />
+      <PostHeader description={post.description} title={post.title} />
       <CustomRichText data={post.body} className="prose prose-invert max-w-none" />
     </article>
   );
