@@ -27,7 +27,7 @@ export function MobileMenu() {
         menu
       </button>
       <nav
-        className={`bg-background/60 backdrop-blur-md fixed inset-0 z-600 flex h-screen w-full flex-col transition-all duration-300 ease-in-out ${
+        className={`bg-background/80 backdrop-blur-xl fixed inset-0 z-600 flex h-screen w-full flex-col transition-all duration-300 ease-in-out ${
           isMenuOpen
             ? 'pointer-events-auto scale-100 opacity-100'
             : 'pointer-events-none scale-95 opacity-0'
