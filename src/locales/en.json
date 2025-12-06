@@ -1,7 +1,7 @@
 {
   "sections": {
     "home": {
-      "title": "Fullstack Developer and Programming Student",
+      "title": "Fullstack Developer and Programming Student at UTN",
       "description": "I love about artificial intelligence, programming, and writing articles. I'm always exploring new things that spark my curiosity and keep me creating.",
 
       "greeting": {
@@ -23,10 +23,10 @@
     "aboutMe": {
       "title": "About Me",
       "description": "Who I am, what I do, and why I love programming",
-      "headline": "Fullstack Developer & Programming Student",
+      "headline": "Fullstack Developer & Programming Student at UTN",
       "items": [
         {
-          "content": "<b>Programming student at UTN and a self-taught developer</b>. I'm passionate about <b>Fullstack Development</b>, building applications from scratch, and working with <b>modern technologies</b>. I enjoy designing solid <b>architectures</b> and applying <b>OOP</b> to keep projects organized and scalable."
+          "content": "<b>Programming student at National Technological University (UTN) and a self-taught developer</b>. I'm passionate about <b>Fullstack Development</b>, building applications from scratch, and working with <b>modern technologies</b>. I enjoy designing solid <b>architectures</b> and applying <b>good practices</b> to keep projects organized and scalable."
         },
         {
           "content": "I often build <b>personal projects</b>, from small components to complete apps. Each project is a chance to experiment and explore new ideas. My strength is the <b>Frontend</b>, but I also enjoy working on the <b>Backend</b> by building APIs and understanding how everything connects."

@@ -1,7 +1,7 @@
 {
   "sections": {
     "home": {
-      "title": "Desarrollador Fullstack y estudiante de Programación",
+      "title": "Desarrollador Fullstack y estudiante de Programación en la UTN",
       "description": "Me encanta la inteligencia artificial, la programación y escribir artículos. Siempre estoy aprendiendo cosas nuevas que me despiertan curiosidad y me motivan a seguir creando.",
       "greeting": {
         "morning": "Buenos días ☀️ (sí, me levanté temprano)",
@@ -22,10 +22,10 @@
     "aboutMe": {
       "title": "Sobre mí",
       "description": "Quién soy, qué hago y por qué me gusta tanto programar",
-      "headline": "Desarrollador Fullstack y Estudiante de Programación",
+      "headline": "Desarrollador Fullstack y Estudiante de Programación en la UTN",
       "items": [
         {
-          "content": "<b>Estudiante de Programación en la UTN y autodidacta</b>. Me interesa el <b>Desarrollo Fullstack</b>, construir aplicaciones desde cero y trabajar con <b>tecnologías modernas</b>. Disfruto pensar buenas <b>arquitecturas</b> y aplicar <b>POO</b> para mantener proyectos sólidos y escalables."
+          "content": "<b>Estudiante de Programación en la Universidad Tecnologica Nacional (UTN) y autodidacta</b>. Me interesa el <b>Desarrollo Fullstack</b>, construir aplicaciones desde cero y trabajar con <b>tecnologías modernas</b>. Disfruto pensar buenas <b>arquitecturas</b> y aplicar <b>buenas practicas</b> para mantener proyectos sólidos y escalables."
         },
         {
           "content": "Creo <b>proyectos propios</b> para experimentar ideas y mejorar mis habilidades. Mi fuerte es el <b>Frontend</b>, pero también disfruto trabajar el <b>Backend</b> construyendo API's y entendiendo cómo encaja todo."
