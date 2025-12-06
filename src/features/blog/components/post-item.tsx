@@ -29,7 +29,7 @@ export function PostItem({ slug, title, createdAt, description, categories }: Pa
       <Link href={`/blog/${slug}`}>
         <h2 className="text-lg hover:underline">{title}</h2>
       </Link>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 mt-5">
         <p className="text-muted-foreground">{description}</p>
       </div>
       {categoryList.length > 0 && (
