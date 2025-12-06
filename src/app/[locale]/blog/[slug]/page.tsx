@@ -1,3 +1,6 @@
+export const revalidate = 3600;
+export const dynamic = 'force-static';
+
 // Components
 import { Error } from '@/components/error';
 import { PostHeader } from '@/features/blog/components/post-header';
@@ -5,6 +8,7 @@ import { CustomRichText } from '@/features/blog/components/rich-text';
 
 // Utils
 import { getPostBySlug, getPosts } from '@/features/blog/api/posts';
+import { SITE_URL } from '@/lib/constants';
 
 // Types
 import type { Post } from '@/payload-types';
@@ -40,8 +44,8 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       description: metaDescription,
       type: 'article',
       locale: locale,
-      url: `https://ignaciofigueroa.vercel.app/${locale}/blog/${slug}`,
-      siteName: 'https://ignaciofigueroa.vercel.app',
+      url: `${SITE_URL}/${locale}/blog/${slug}`,
+      siteName: '${SITE_URL}',
       images: [
         {
           url: `/${locale}/blog/${slug}/opengraph-image`,
@@ -56,6 +60,23 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       title: metaTitle,
       description: metaDescription,
       images: [`/${locale}/blog/${slug}/opengraph-image`],
+    },
+    alternates: {
+      canonical: `${SITE_URL}/${locale}/blog/${slug}`,
+      languages: {
+        es: `${SITE_URL}/es/blog/${slug}`,
+        en: `${SITE_URL}/en/blog/${slug}`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
   };
 }
