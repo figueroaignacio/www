@@ -9,7 +9,7 @@ import { useEffect, useState, type RefObject } from 'react';
 import { ChatToggleButton } from './chat-toggle-button';
 import { ChatWindow } from './chat-window';
 
-export function NaiChat() {
+export function NBotChat() {
   const searchParams = useSearchParams();
   const chatParam = searchParams.get('chat');
 

@@ -105,14 +105,14 @@
     },
     "chat": {
       "header": {
-        "title": "N.A.I",
-        "subtitle": "Pregúntame lo que quieras"
+        "title": "N-bot",
+        "subtitle": "Asistente virtual de Ignacio"
       },
       "input": {
         "placeholder": "Escribe un mensaje..."
       },
       "messages": {
-        "initial": "¡Hola! 👋 Soy N.A.I, el asistente de Ignacio. ¿En qué puedo ayudarte hoy?",
+        "initial": "¡Hola! 👋 ¿En qué puedo ayudarte hoy?",
         "error": "Lo siento, ocurrió un error. Por favor, intenta de nuevo."
       }
     },

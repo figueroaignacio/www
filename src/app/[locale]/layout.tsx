@@ -14,7 +14,7 @@ import { notFound } from 'next/navigation';
 // Font
 import { MobileMenu } from '@/components/mobile-menu';
 import { NavigationBar } from '@/components/navigation-bar';
-import { NaiChat } from '@/features/chat/components/nai-chat';
+import { NBotChat } from '@/features/chat/components/n-bot-chat';
 import { fontSans } from '@/lib/fonts';
 
 export const metadata = {
@@ -47,7 +47,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         <NextIntlClientProvider>
           <Providers>
             <div className="min-h-screen flex flex-col container">
-              <NaiChat />
+              <NBotChat />
               <NavigationBar />
               <MobileMenu />
               <main className="flex-1">{children}</main>

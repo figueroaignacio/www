@@ -46,7 +46,7 @@ export function ChatWindow({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', duration: 0.4 }}
-            className="fixed inset-0 md:inset-auto md:bottom-30 md:right-8 w-full md:w-[420px] h-full md:h-[600px] bg-card shadow-2xl rounded-none md:rounded-2xl border-0 md:border md:border-border overflow-hidden flex flex-col z-50"
+            className="fixed inset-0 md:inset-auto md:bottom-30 md:right-8 w-full md:w-[520px] h-full md:h-[650px] bg-card shadow-2xl rounded-none md:rounded-2xl border-0 md:border md:border-border overflow-hidden flex flex-col z-50"
           >
             <ChatHeader onClose={onClose} />
             <ChatMessages
