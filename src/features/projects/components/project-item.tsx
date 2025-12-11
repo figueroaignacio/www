@@ -58,7 +58,7 @@ export function ProjectItem({
             <div className="flex flex-wrap gap-2">
               {techList.map((tech) => (
                 <div key={tech.id} className="transition-all duration-300">
-                  <Badge label={tech.name} />
+                  <Badge variant="secondary">{tech.name}</Badge>
                 </div>
               ))}
             </div>

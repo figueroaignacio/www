@@ -36,7 +36,7 @@ export function PostItem({ slug, title, createdAt, description, categories }: Pa
         <div className="flex flex-wrap gap-2">
           {categoryList.map((cat) => (
             <div key={cat.id} className="transition-all duration-300">
-              <Badge label={cat.label} />
+              <Badge variant="secondary">{cat.label}</Badge>
             </div>
           ))}
         </div>

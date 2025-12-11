@@ -55,7 +55,11 @@ export function ExperienceItem({
           {technologies.length > 0 && (
             <div className="flex flex-wrap gap-2">
               {technologies.map((tech) =>
-                tech.name ? <Badge key={tech.id} label={tech.name} /> : null,
+                tech.name ? (
+                  <Badge key={tech.id} variant="secondary">
+                    {tech.name}
+                  </Badge>
+                ) : null,
               )}
             </div>
           )}
