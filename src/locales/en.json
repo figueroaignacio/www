@@ -59,6 +59,24 @@
     },
     "testimonials": {
       "title": "Testimonies"
+    },
+    "interests": {
+      "title": "Interests & Technologies",
+      "description": "Concepts I constantly explore and apply.",
+      "items": {
+        "frontend": "Frontend Development",
+        "backend": "Backend Architecture",
+        "ai": "Artificial Intelligence",
+        "prompts": "Prompt Engineering",
+        "arch": "Software Architecture",
+        "clean": "Best Practices (Clean Code)",
+        "ui": "UX/UI Design",
+        "a11y": "Web Accessibility",
+        "perf": "Performance Optimization",
+        "qa": "Testing & QA",
+        "devops": "DevOps Culture",
+        "opensource": "Open Source"
+      }
     }
   },
   "ui": {

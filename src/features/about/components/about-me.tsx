@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 
 // Components
 import { DeveloperWatermark } from '@/features/about/components/developer-watermark';
+import { Interests } from './interests';
 
 export function AboutMe() {
   const t = useTranslations('sections');
@@ -22,6 +23,7 @@ export function AboutMe() {
           );
         })}
       </div>
+      <Interests />
     </div>
   );
 }
