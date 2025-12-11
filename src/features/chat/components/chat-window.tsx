@@ -17,6 +17,7 @@ interface ChatWindowProps {
   onSubmit: (e?: React.FormEvent) => void;
   onKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   onClose: () => void;
+  onSuggestionClick: (text: string) => void;
 }
 
 export function ChatWindow({
@@ -29,6 +30,7 @@ export function ChatWindow({
   onSubmit,
   onKeyPress,
   onClose,
+  onSuggestionClick,
 }: ChatWindowProps) {
   return (
     <AnimatePresence>
@@ -52,7 +54,7 @@ export function ChatWindow({
             <ChatMessages
               messages={messages}
               isLoading={isLoading}
-              messagesEndRef={messagesEndRef}
+              onSuggestionClick={onSuggestionClick}
             />
             <ChatInput
               message={message}

@@ -113,7 +113,16 @@
       },
       "messages": {
         "initial": "¡Hola! 👋 ¿En qué puedo ayudarte hoy?",
-        "error": "Lo siento, ocurrió un error. Por favor, intenta de nuevo."
+        "error": "Lo siento, ocurrió un error. Por favor, intenta de nuevo.",
+        "tooltip": "Pregúntame sobre Ignacio"
+      },
+      "suggestions": {
+        "title": "Prueba con...",
+        "subtitle": "Haz click en una sugerencia para empezar",
+        "who": "¿Quién es Ignacio Figueroa?",
+        "technologies": "¿Qué tecnologías utiliza?",
+        "education": "¿Qué estudia y cómo se forma?",
+        "funFact": "Cuéntame un dato curioso sobre Ignacio"
       }
     },
     "categoryFilter": {

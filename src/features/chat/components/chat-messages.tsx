@@ -1,7 +1,13 @@
+'use client';
+
+// Hooks
+import { useEffect, useRef } from 'react';
+
 // Components
 import { BotMessageSquare } from 'lucide-react';
 import { ChatLoading } from './chat-loading';
 import { ChatMessage } from './chat-message';
+import { ChatSuggestions } from './chat-suggestions';
 
 // Types
 import type { Message } from '../types';
@@ -9,10 +15,23 @@ import type { Message } from '../types';
 interface ChatMessagesProps {
   messages: Message[];
   isLoading: boolean;
-  messagesEndRef: React.RefObject<HTMLDivElement>;
+  onSuggestionClick: (text: string) => void;
 }
 
-export function ChatMessages({ messages, isLoading, messagesEndRef }: ChatMessagesProps) {
+export function ChatMessages({ messages, isLoading, onSuggestionClick }: ChatMessagesProps) {
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end',
+      });
+    }
+  }, [messages]);
+
+  const showSuggestions = messages.length === 1 && messages[0].role === 'assistant';
+
   return (
     <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-background">
       {messages.map((msg, idx) => (
@@ -29,6 +48,9 @@ export function ChatMessages({ messages, isLoading, messagesEndRef }: ChatMessag
           </div>
         </div>
       ))}
+
+      {showSuggestions && !isLoading && <ChatSuggestions onSuggestionClick={onSuggestionClick} />}
+
       {isLoading && <ChatLoading />}
       <div ref={messagesEndRef} />
     </div>

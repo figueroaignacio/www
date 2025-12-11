@@ -14,8 +14,13 @@ export function NBotChat() {
   const chatParam = searchParams.get('chat');
 
   const [open, setOpen] = useState(false);
-  const { messages, isLoading, messagesEndRef, sendMessage } = useChat();
+  const { messages, isLoading, messagesEndRef, sendMessage, handleSuggestionClick } = useChat();
   const { message, setMessage, handleSubmit, handleKeyPress } = useChatInput(sendMessage);
+
+  const handleSuggestionClickWrapper = (text: string) => {
+    handleSuggestionClick(text);
+    setMessage('');
+  };
 
   useEffect(() => {
     if (chatParam === 'open') {
@@ -39,6 +44,7 @@ export function NBotChat() {
         onSubmit={handleSubmit}
         onKeyPress={handleKeyPress}
         onClose={handleClose}
+        onSuggestionClick={handleSuggestionClickWrapper}
       />
     </div>
   );

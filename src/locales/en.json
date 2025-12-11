@@ -113,8 +113,17 @@
         "placeholder": "Type a message..."
       },
       "messages": {
-        "initial": "Hi! 👋 I'm N-bot,  How can I help you today?",
-        "error": "I'm sorry, I encountered an error. Please try again."
+        "initial": "Hi! 👋 How can I help you today?",
+        "error": "I'm sorry, I encountered an error. Please try again.",
+        "tooltip": "Ask me about Ignacio"
+      },
+      "suggestions": {
+        "title": "Try with...",
+        "subtitle": "Click any suggestion to get started",
+        "who": "Who is Ignacio Figueroa?",
+        "technologies": "What technologies does he use?",
+        "education": "What does he study and how does he learn?",
+        "funFact": "Tell me a fun fact about Ignacio"
       }
     },
     "categoryFilter": {
