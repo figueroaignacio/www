@@ -2,11 +2,7 @@
 import { useTranslations } from 'next-intl';
 
 // Components
-import { CvCta } from '@/features/about/components/cv-cta';
 import { DeveloperWatermark } from '@/features/about/components/developer-watermark';
-import { AllExperience } from '@/features/experience/components/all-experience';
-import { ExperienceItemLoader } from '@/features/experience/components/experience-item-loader';
-import { Suspense } from 'react';
 
 export function AboutMe() {
   const t = useTranslations('sections');
@@ -26,11 +22,6 @@ export function AboutMe() {
           );
         })}
       </div>
-      <h2>{t('experience.title')}</h2>
-      <Suspense fallback={<ExperienceItemLoader />}>
-        <AllExperience />
-      </Suspense>
-      <CvCta />
     </div>
   );
 }

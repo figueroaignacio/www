@@ -63,8 +63,12 @@
   "ui": {
     "navigation": [
       {
-        "label": "sobre mi",
+        "label": "inicio",
         "href": "/"
+      },
+      {
+        "label": "sobre mi",
+        "href": "/about"
       },
       {
         "label": "blog",

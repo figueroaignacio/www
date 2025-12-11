@@ -64,8 +64,12 @@
   "ui": {
     "navigation": [
       {
-        "label": "about me",
+        "label": "home",
         "href": "/"
+      },
+      {
+        "label": "about me",
+        "href": "/about"
       },
       {
         "label": "blog",

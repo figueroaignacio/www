@@ -1,6 +1,6 @@
 interface HeroProps {
   title: string | React.ReactNode;
-  description: string;
+  description?: string;
 }
 
 export function Hero({ description, title }: HeroProps) {

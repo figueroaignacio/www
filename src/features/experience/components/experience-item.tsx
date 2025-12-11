@@ -1,23 +1,7 @@
-// Hooks
+import { Badge } from '@/components/ui/badge';
+import { formatMonthYear } from '@/lib/format-date';
 import { useLocale } from 'next-intl';
 
-// Components
-import { Badge } from '@/components/ui/badge';
-import {
-  TimelineContent,
-  TimelineDescription,
-  TimelineHeader,
-  TimelineItem,
-  TimelineList,
-  TimelineListItem,
-  TimelineMeta,
-  TimelineTitle,
-} from '@/components/ui/timeline';
-
-// Utils
-import { formatMonthYear } from '@/lib/format-date';
-
-// Types
 import { type Experience } from '@/payload-types';
 
 interface ExperienceItemProps extends Partial<Experience> {
@@ -33,7 +17,6 @@ export function ExperienceItem({
   startDate,
   endDate,
   isCurrent,
-  active = false,
 }: ExperienceItemProps) {
   const locale = useLocale();
 
@@ -50,35 +33,34 @@ export function ExperienceItem({
     formattedStart && formattedEnd ? `${formattedStart} — ${formattedEnd}` : formattedStart || null;
 
   return (
-    <TimelineItem active={active}>
-      <TimelineHeader>
-        <TimelineTitle>{title}</TimelineTitle>
-        <TimelineDescription>{company}</TimelineDescription>
-        {dateRange && (
-          <TimelineMeta>
-            <span>{dateRange}</span>
-          </TimelineMeta>
-        )}
-      </TimelineHeader>
+    <div className="flex flex-col gap-4">
+      <div className="flex flex-col">
+        {title && <h3 className="text-lg font-semibold">{title}</h3>}
+        {company && <p className="text-muted-foreground">{company}</p>}
+        {dateRange && <p className="text-sm text-muted-foreground">{dateRange}</p>}
+      </div>
 
       {(tasks?.length || technologies.length > 0) && (
-        <TimelineContent>
+        <div className="flex flex-col gap-4">
           {tasks && tasks.length > 0 && (
-            <TimelineList>
+            <ul className="list-disc pl-5 space-y-1">
               {tasks.map((task) => (
-                <TimelineListItem key={task.id}>{task.item}</TimelineListItem>
+                <li key={task.id} className="text-sm leading-relaxed">
+                  {task.item}
+                </li>
               ))}
-            </TimelineList>
+            </ul>
           )}
+
           {technologies.length > 0 && (
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2">
               {technologies.map((tech) =>
                 tech.name ? <Badge key={tech.id} label={tech.name} /> : null,
               )}
             </div>
           )}
-        </TimelineContent>
+        </div>
       )}
-    </TimelineItem>
+    </div>
   );
 }
