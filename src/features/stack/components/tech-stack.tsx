@@ -6,6 +6,7 @@ import {
   AstroIcon,
   CSSIcon,
   ClaudeAiIcon,
+  GeminiIcon,
   GitHubIcon,
   GitIcon,
   GroqAiIcon,
@@ -68,7 +69,9 @@ export function TechStack() {
       items: [
         { name: 'OpenAI', icon: OpenAiIcon },
         { name: 'Claude / Anthropic', icon: ClaudeAiIcon },
-        { name: 'Groq', icon: GroqAiIcon },
+        { name: 'Gemini', icon: GeminiIcon },
+        { name: 'Gen AI SDK', icon: GeminiIcon },
+        { name: 'Groq SDK', icon: GroqAiIcon },
       ],
     },
     {
