@@ -1,3 +1,6 @@
+export const revalidate = 3600;
+export const dynamic = 'force-static';
+
 // Components
 import { PostHeader } from '@/features/blog/components/post-header';
 import { RichText } from '@payloadcms/richtext-lexical/react';
