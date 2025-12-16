@@ -5,10 +5,10 @@
       "description": "I love about artificial intelligence, programming, and writing articles. I'm always exploring new things that spark my curiosity and keep me creating.",
 
       "greeting": {
-        "morning": "Good morning ☀️ (yes, I woke up early)",
-        "afternoon": "Good afternoon 🌤️ (the productive hour)",
-        "evening": "Good evening 🌙 (almost bug-free today)",
-        "lateNight": "Coding at this hour? 🦉 (me debugging)"
+        "morning": "Good morning ☀️ What are we doing today?",
+        "afternoon": "Good afternoon 🌤️",
+        "evening": "Good evening 🌙",
+        "lateNight": "Hey night owl 🦉 What are you looking for?"
       }
     },
     "blog": {

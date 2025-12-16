@@ -4,10 +4,10 @@
       "title": "Desarrollador Fullstack y estudiante de Programación en la UTN",
       "description": "Me encanta la inteligencia artificial, la programación y escribir artículos. Siempre estoy aprendiendo cosas nuevas que me despiertan curiosidad y me motivan a seguir creando.",
       "greeting": {
-        "morning": "Buenos días ☀️ (sí, me levanté temprano)",
-        "afternoon": "Buenas tardes 🌤️ (la hora productiva)",
-        "evening": "Buenas noches 🌙 (casi termino el día sin bugs)",
-        "lateNight": "¿Programando a esta hora? 🦉 (yo debugueando)"
+        "morning": "Buenos días ☀️ ¿Qué hacemos hoy?",
+        "afternoon": "Buenas tardes 🌤️",
+        "evening": "Buenas noches 🌙",
+        "lateNight": "Hola nocturno 🦉 ¿Qué buscas?"
       }
     },
     "blog": {
