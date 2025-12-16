@@ -6,8 +6,8 @@ export const runtime = 'edge';
 export async function GET(req: NextRequest, { params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
 
-  const avatarUrl = new URL('./nacho-avatar-greeting.png', import.meta.url);
-  const avatarBuffer = await fetch(avatarUrl).then((res) => res.arrayBuffer());
+  // const avatarUrl = new URL('./nacho-avatar-greeting.png', import.meta.url);
+  // const avatarBuffer = await fetch(avatarUrl).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
     <div

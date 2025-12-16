@@ -27,8 +27,8 @@ export async function GET(
 
     const project = await getProjectBySlug(slug);
 
-    const avatarUrl = new URL('./nacho-avatar.jpg', import.meta.url);
-    const avatarBuffer = await fetch(avatarUrl).then((res) => res.arrayBuffer());
+    // const avatarUrl = new URL('./nacho-avatar.jpg', import.meta.url);
+    // const avatarBuffer = await fetch(avatarUrl).then((res) => res.arrayBuffer());
 
     if (!project) {
       return new ImageResponse(

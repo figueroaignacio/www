@@ -27,8 +27,8 @@ export async function GET(
 
     const post = await getPostBySlug(slug);
 
-    const avatarUrl = new URL('./nacho-avatar.jpg', import.meta.url);
-    const avatarBuffer = await fetch(avatarUrl).then((res) => res.arrayBuffer());
+    // const avatarUrl = new URL('./nacho-avatar.jpg', import.meta.url);
+    // const avatarBuffer = await fetch(avatarUrl).then((res) => res.arrayBuffer());
 
     if (!post) {
       return new ImageResponse(
