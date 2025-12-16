@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 
 // Components
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
-import { AnimatePresence, motion } from 'framer-motion';
 import { BotMessageSquare, X } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
 
 interface ChatToggleButtonProps {
   isOpen: boolean;

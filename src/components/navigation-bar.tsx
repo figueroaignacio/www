@@ -19,7 +19,7 @@ export function NavigationBar() {
   const pathname = usePathname();
 
   return (
-    <nav className="mt-3 mb-6 hidden lg:flex lg:justify-between lg:items-center">
+    <nav className="hidden lg:flex lg:justify-between lg:items-center sticky top-0 py-5 bg-background/60 backdrop-blur-lg z-100 container">
       <div className="space-x-5">
         {navigation.map((item) => {
           const isActive = pathname === item.href;

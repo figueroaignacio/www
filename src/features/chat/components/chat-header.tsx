@@ -2,8 +2,8 @@
 import { useTranslations } from 'next-intl';
 
 // Components
-import { motion } from 'framer-motion';
 import { BotMessageSquare, X } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface ChatHeaderProps {
   onClose?: () => void;

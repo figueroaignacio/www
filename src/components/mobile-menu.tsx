@@ -21,13 +21,13 @@ export function MobileMenu() {
   };
 
   return (
-    <div className="relative flex w-full items-center justify-between lg:hidden mt-3 mb-6">
+    <div className="flex w-full items-center justify-between lg:hidden py-5 container sticky top-0 bg-background/60 backdrop-blur-lg z-100">
       <button onClick={toggleMenu} className="flex items-center gap-x-3">
         <HamburgerMenuIcon className="h-6 w-6 cursor-pointer" />
         menu
       </button>
       <nav
-        className={`bg-background/80 backdrop-blur-xl fixed inset-0 z-600 flex h-screen w-full flex-col transition-all duration-300 ease-in-out ${
+        className={`bg-background fixed inset-0 z-600 flex h-screen w-full flex-col transition-all duration-300 ease-in-out ${
           isMenuOpen
             ? 'pointer-events-auto scale-100 opacity-100'
             : 'pointer-events-none scale-95 opacity-0'

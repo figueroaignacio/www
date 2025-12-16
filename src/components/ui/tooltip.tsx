@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/cn';
-import { AnimatePresence, HTMLMotionProps, motion } from 'framer-motion';
+import { AnimatePresence, HTMLMotionProps, motion } from 'motion/react';
 import * as React from 'react';
 
 interface TooltipContextType {
@@ -51,7 +51,7 @@ export function Tooltip({
 
   return (
     <TooltipContext.Provider value={{ open, setOpen, delayDuration }}>
-      <div className="relative flex items-center justify-center w-fit h-fit">{children}</div>
+      <div className="relative flex h-fit w-fit items-center justify-center">{children}</div>
     </TooltipContext.Provider>
   );
 }
@@ -67,7 +67,7 @@ export function TooltipTrigger({
   ...props
 }: TooltipTriggerProps) {
   const { setOpen, delayDuration } = useTooltip();
-  const timeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleMouseEnter = () => {
     timeoutRef.current = setTimeout(() => {
@@ -132,10 +132,22 @@ export function TooltipContent({
   };
 
   const animationVariants = {
-    top: { initial: { opacity: 0, y: 5 }, animate: { opacity: 1, y: 0 } },
-    bottom: { initial: { opacity: 0, y: -5 }, animate: { opacity: 1, y: 0 } },
-    left: { initial: { opacity: 0, x: 5 }, animate: { opacity: 1, x: 0 } },
-    right: { initial: { opacity: 0, x: -5 }, animate: { opacity: 1, x: 0 } },
+    top: {
+      initial: { opacity: 0, y: 5, filter: 'blur(4px)' },
+      animate: { opacity: 1, y: 0, filter: 'blur(0px)' },
+    },
+    bottom: {
+      initial: { opacity: 0, y: -5, filter: 'blur(4px)' },
+      animate: { opacity: 1, y: 0, filter: 'blur(0px)' },
+    },
+    left: {
+      initial: { opacity: 0, x: 5, filter: 'blur(4px)' },
+      animate: { opacity: 1, x: 0, filter: 'blur(0px)' },
+    },
+    right: {
+      initial: { opacity: 0, x: -5, filter: 'blur(4px)' },
+      animate: { opacity: 1, x: 0, filter: 'blur(0px)' },
+    },
   };
 
   const arrowPosition = {
@@ -152,7 +164,7 @@ export function TooltipContent({
           initial={animationVariants[side].initial}
           animate={animationVariants[side].animate}
           exit={animationVariants[side].initial}
-          transition={{ duration: 0.15, ease: 'easeOut' }}
+          transition={{ duration: 0.2, ease: 'easeOut' }}
           style={{
             ...(side === 'top' && { marginBottom: sideOffset }),
             ...(side === 'bottom' && { marginTop: sideOffset }),
@@ -160,14 +172,14 @@ export function TooltipContent({
             ...(side === 'right' && { marginLeft: sideOffset }),
           }}
           className={cn(
-            'absolute z-50 whitespace-nowrap rounded-xl bg-foreground px-3 py-1.5 text-xs text-background shadow-md',
+            'bg-foreground text-background absolute z-50 rounded-xl px-3 py-1.5 text-xs whitespace-nowrap shadow-md',
             positionClasses[side],
             className,
           )}
           {...props}
         >
           {children}
-          <div className={cn('absolute h-2 w-2 rotate-45 bg-foreground', arrowPosition[side])} />
+          <div className={cn('bg-foreground absolute h-2 w-2 rotate-45', arrowPosition[side])} />
         </motion.div>
       )}
     </AnimatePresence>

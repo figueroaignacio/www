@@ -2,8 +2,8 @@
 import { useTranslations } from 'next-intl';
 
 // Components
-import { motion } from 'framer-motion';
 import { Code2, Lightbulb, MessageSquare, Sparkles } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface ChatSuggestionsProps {
   onSuggestionClick: (text: string) => void;

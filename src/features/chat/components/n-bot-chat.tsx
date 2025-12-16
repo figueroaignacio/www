@@ -32,7 +32,7 @@ export function NBotChat() {
   const handleClose = () => setOpen(false);
 
   return (
-    <div className="fixed bottom-8 right-8 z-50">
+    <div className="fixed bottom-8 right-8 z-500">
       <ChatToggleButton isOpen={open} onClick={() => setOpen(!open)} />
       <ChatWindow
         isOpen={open}

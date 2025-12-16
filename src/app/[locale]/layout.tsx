@@ -46,11 +46,11 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         <BgBlur />
         <NextIntlClientProvider>
           <Providers>
-            <div className="min-h-screen flex flex-col container">
+            <div className="min-h-screen flex flex-col">
               <NBotChat />
               <NavigationBar />
               <MobileMenu />
-              <main className="flex-1">{children}</main>
+              <main className="flex-1 container">{children}</main>
               <Footer />
             </div>
           </Providers>
