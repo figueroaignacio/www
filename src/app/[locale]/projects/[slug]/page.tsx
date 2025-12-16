@@ -2,7 +2,6 @@ export const revalidate = 3600;
 export const dynamic = 'force-static';
 
 // Components
-import { PostHeader } from '@/features/blog/components/post-header';
 import { RichText } from '@payloadcms/richtext-lexical/react';
 
 // Utils
@@ -14,6 +13,7 @@ import type { Metadata } from 'next';
 import type { Locale } from 'next-intl';
 
 // Constants
+import { ProjectHeaderPost } from '@/features/projects/components/project-header-post';
 import { SITE_URL } from '@/lib/constants';
 
 interface ProjectPageProps {
@@ -123,7 +123,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <article className="space-y-3">
-      <PostHeader title={project.title} description={project.description} />
+      <ProjectHeaderPost
+        title={project.title}
+        description={project.description}
+        demo={project.demo || ''}
+        repository={project.repository || ''}
+      />
       <RichText data={project.body} className="prose" />
     </article>
   );
