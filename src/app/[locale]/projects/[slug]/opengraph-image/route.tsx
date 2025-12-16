@@ -27,8 +27,8 @@ export async function GET(
 
     const project = await getProjectBySlug(slug);
 
-    // const avatarUrl = new URL('./nacho-avatar.jpg', import.meta.url);
-    // const avatarBuffer = await fetch(avatarUrl).then((res) => res.arrayBuffer());
+    const avatarUrl = new URL('./nacho-avatar.jpg', import.meta.url);
+    const avatarBuffer = await fetch(avatarUrl).then((res) => res.arrayBuffer());
 
     if (!project) {
       return new ImageResponse(
@@ -107,17 +107,15 @@ export async function GET(
             gap: 20,
           }}
         >
-          {/* <img
+          <img
             src={avatarBuffer as any}
             style={{
               width: 64,
               height: 64,
               borderRadius: '9999px',
               objectFit: 'cover',
-              border: '2px solid rgba(255,255,255,0.15)',
             }}
-          /> */}
-
+          />
           <span
             style={{
               fontSize: 22,
