@@ -3,7 +3,7 @@ import { PostHeader } from '@/features/blog/components/post-header';
 import { RichText } from '@payloadcms/richtext-lexical/react';
 
 // Utils
-import { getProjectBySlug } from '@/features/projects/api/projects';
+import { getProjectBySlug, getProjects } from '@/features/projects/api/projects';
 
 // Types
 import type { Project } from '@/payload-types';
@@ -77,6 +77,37 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       },
     },
   };
+}
+
+export async function generateStaticParams() {
+  try {
+    const locales: Locale[] = ['es', 'en'];
+    const allProjects = await Promise.all(
+      locales.map(async (locale) => {
+        try {
+          return await getProjects(locale);
+        } catch (error) {
+          console.warn(`Failed to fetch posts for locale ${locale}:`, error);
+          return [];
+        }
+      }),
+    );
+
+    const params: { slug: string; locale: Locale }[] = [];
+
+    locales.forEach((locale, i) => {
+      allProjects[i].forEach((project: Project) => {
+        if (project?.slug) {
+          params.push({ slug: project.slug, locale });
+        }
+      });
+    });
+
+    return params;
+  } catch (error) {
+    console.error('Error in generateStaticParams:', error);
+    return [];
+  }
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {

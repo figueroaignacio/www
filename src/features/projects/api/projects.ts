@@ -1,6 +1,19 @@
 import { API_URL } from '@/lib/constants';
 import { Locale } from 'next-intl';
 
+export async function getProjects(locale: Locale) {
+  const res = await fetch(`${API_URL}/api/projects?where[locale][equals]=${locale}`, {
+    cache: 'no-store',
+  });
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch experiences');
+  }
+
+  const data = await res.json();
+  return data.docs;
+}
+
 export async function getOtherProjects(locale: Locale) {
   const res = await fetch(
     `${API_URL}/api/projects?where[featured][equals]=false&where[locale][equals]=${locale}`,
