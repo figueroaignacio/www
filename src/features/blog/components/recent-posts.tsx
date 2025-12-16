@@ -18,7 +18,7 @@ export async function RecentPosts() {
   return (
     <>
       <div className="flex justify-between items-center flex-wrap">
-        <h2>{t('title')}</h2>
+        <h2>&gt;{t('title')}</h2>
         <Link
           href="/blog"
           className="underline text-muted-foreground hover:text-foreground text-xs flex items-center gap-x-3"

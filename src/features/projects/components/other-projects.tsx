@@ -20,7 +20,7 @@ export async function OtherProjects() {
 
   return (
     <>
-      <h2 className="text-sm font-bold">{t('otherProjects')}</h2>
+      <h2>&gt;{t('otherProjects')}</h2>
       <ul className="space-y-3">
         {projects.map((project) => (
           <li key={project.id}>

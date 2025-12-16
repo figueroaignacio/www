@@ -91,10 +91,10 @@ export function TechStack() {
   ];
 
   return (
-    <div className="space-y-8">
+    <>
       {techStack.map((section) => (
         <div key={section.category}>
-          <h3 className="mb-4 text-lg border-border border-b pb-3">{section.category}</h3>
+          <h3>&gt;{section.category}</h3>
           <div className="flex flex-wrap gap-2 py-5">
             {section.items.map(({ name, icon: Icon }) => {
               return (
@@ -110,6 +110,6 @@ export function TechStack() {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 }

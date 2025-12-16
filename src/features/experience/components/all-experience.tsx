@@ -19,7 +19,7 @@ export async function AllExperience() {
 
   return (
     <div className="relative">
-      <h2 className="mb-5">{t('experience.title')}</h2>
+      <h2 className="mb-5">&gt;{t('experience.title')}</h2>
       <div className="space-y-12">
         {experience.map((item) => (
           <ExperienceItem

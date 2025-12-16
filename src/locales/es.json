@@ -38,8 +38,8 @@
     "projects": {
       "title": "Proyectos",
       "description": "Las cosas que construyo por curiosidad o necesidad",
-      "featuredProjects": "proyectos destacados",
-      "otherProjects": "otros proyectos"
+      "featuredProjects": "Proyectos destacados",
+      "otherProjects": "Otros proyectos"
     },
     "stack": {
       "title": "Stack",

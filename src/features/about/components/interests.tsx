@@ -46,7 +46,7 @@ export function Interests() {
   return (
     <section className="space-y-4 py-8">
       <div className="space-y-2">
-        <h3 className="font-bold ">{tSection('title')}</h3>
+        <h3>&gt;{tSection('title')}</h3>
         <p className="text-muted-foreground">{tSection('description')}</p>
       </div>
       <div className="flex flex-wrap gap-2">

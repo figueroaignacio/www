@@ -39,8 +39,8 @@
     "projects": {
       "title": "Projects",
       "description": "The things I build out of curiosity or need",
-      "featuredProjects": "featured projects",
-      "otherProjects": "other projects"
+      "featuredProjects": "Featured projects",
+      "otherProjects": "Other projects"
     },
     "stack": {
       "title": "Stack",
