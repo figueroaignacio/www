@@ -139,7 +139,8 @@
       "messages": {
         "initial": "Hi! 👋 How can I help you today?",
         "error": "I'm sorry, I encountered an error. Please try again.",
-        "tooltip": "Ask me about Ignacio"
+        "tooltip": "Ask me about Ignacio",
+        "thinking": "Thinking..."
       },
       "suggestions": {
         "title": "Try with...",

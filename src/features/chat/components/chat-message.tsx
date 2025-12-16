@@ -19,7 +19,7 @@ export function ChatMessage({ message }: ChatMessageProps) {
       className={`flex gap-3 ${isUser ? 'flex-row-reverse' : ''}`}
     >
       <div
-        className={`rounded-2xl px-4 py-2.5 max-w-[75%] ${
+        className={`rounded-2xl px-4 py-2.5  ${
           isUser ? 'bg-foreground text-background rounded-tr-sm' : 'bg-card rounded-tl-sm'
         }`}
       >
