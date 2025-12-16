@@ -6,8 +6,8 @@ export const runtime = 'edge';
 export async function GET(req: NextRequest, { params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
 
-  // const avatarUrl = new URL('./nacho-avatar-greeting.png', import.meta.url);
-  // const avatarBuffer = await fetch(avatarUrl).then((res) => res.arrayBuffer());
+  const avatarUrl = new URL('./nacho-avatar-greeting.png', import.meta.url);
+  const avatarBuffer = await fetch(avatarUrl).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
     <div
@@ -24,11 +24,19 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ loca
         style={{
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
           gap: '32px',
           maxWidth: 1000,
         }}
       >
+        <img
+          src={avatarBuffer as any}
+          style={{
+            width: 160,
+            height: 160,
+            borderRadius: '9999px',
+            objectFit: 'cover',
+          }}
+        />
         <h1
           style={{
             fontSize: 72,
