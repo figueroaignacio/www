@@ -1,12 +1,14 @@
 'use client';
 
+// Hooks
 import { useChat } from '@/features/chat/hooks/use-chat';
 import { useChatInput } from '@/features/chat/hooks/use-chat-input';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState, type RefObject } from 'react';
+import { useEffect, useState, type RefObject } from 'react';
 
-// Components
 import { ChatToggleButton } from './chat-toggle-button';
+import { ChatWindow } from './chat-window';
 import { ChatWindow } from './chat-window';
 
 export function NBotChat() {
