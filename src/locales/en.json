@@ -110,8 +110,10 @@
       }
     },
     "footer": {
-      "builtIn": "built in next.js and payloadcms",
-      "text": "You can contact me below."
+      "name": "Ignacio Figueroa",
+      "role": "Fullstack Developer",
+      "thanks": "Thanks for visiting my portfolio",
+      "rights": "All rights reserved"
     },
     "error": "An error occurred while loading the data.",
     "loader": "Loading...",
