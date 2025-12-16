@@ -15,7 +15,7 @@ export function Footer() {
   const navigation: Navigation[] = t.raw('ui.navigation');
 
   return (
-    <footer className="max-w-xl mx-auto w-full flex flex-col space-y-8 py-12">
+    <footer className="container w-full flex flex-col space-y-8 py-12">
       <div className="flex flex-col space-y-4 ">
         <div className="space-y-1">
           <h3 className="text-lg font-semibold">{t('components.footer.name')}</h3>
