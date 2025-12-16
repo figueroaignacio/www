@@ -107,7 +107,7 @@ export async function GET(
             gap: 20,
           }}
         >
-          <img
+          {/* <img
             src={avatarBuffer as any}
             style={{
               width: 64,
@@ -116,7 +116,7 @@ export async function GET(
               objectFit: 'cover',
               border: '2px solid rgba(255,255,255,0.15)',
             }}
-          />
+          /> */}
 
           <span
             style={{

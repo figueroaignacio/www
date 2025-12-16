@@ -24,20 +24,11 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ loca
         style={{
           display: 'flex',
           flexDirection: 'column',
+          justifyContent: 'center',
           gap: '32px',
           maxWidth: 1000,
         }}
       >
-        <img
-          src={avatarBuffer as any}
-          style={{
-            width: 160,
-            height: 160,
-            borderRadius: '9999px',
-            objectFit: 'cover',
-            border: '4px solid rgba(255,255,255,0.15)',
-          }}
-        />
         <h1
           style={{
             fontSize: 72,
