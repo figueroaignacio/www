@@ -152,6 +152,32 @@
     },
     "categoryFilter": {
       "allCategories": "Todas las categorías"
+    },
+    "comments": {
+      "title": "Comunidad",
+      "count": "({count})",
+      "placeholder": {
+        "authenticated": "Comparte lo que piensas...",
+        "unauthenticated": "Inicia sesión para participar en la conversación"
+      },
+      "button": {
+        "submit": "Publicar",
+        "submitting": "Enviando..."
+      },
+      "logout": "Cerrar sesión",
+      "status": {
+        "postingAs": "{name}",
+        "loading": "Cargando comentarios...",
+        "empty": "Aún no hay reflexiones aquí. Sé el primero.",
+        "error": "Error al publicar el comentario"
+      },
+      "modal": {
+        "title": "Únete a la charla",
+        "description": "Inicia sesión con tu cuenta de GitHub para poder dejar un comentario.",
+        "button": "Continuar con GitHub",
+        "footer": "Sin registros largos • Solo un click"
+      },
+      "overlay": "Espera un momento..."
     }
   }
 }

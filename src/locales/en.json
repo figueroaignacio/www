@@ -153,6 +153,32 @@
     },
     "categoryFilter": {
       "allCategories": "All categories"
+    },
+    "comments": {
+      "title": "Community",
+      "count": "({count})",
+      "placeholder": {
+        "authenticated": "Share your thoughts...",
+        "unauthenticated": "Sign in to join the conversation"
+      },
+      "button": {
+        "submit": "Post",
+        "submitting": "Posting..."
+      },
+      "logout": "Log Out",
+      "status": {
+        "postingAs": "{name}",
+        "loading": "Loading comments...",
+        "empty": "No thoughts here yet. Be the first to share.",
+        "error": "Error posting comment"
+      },
+      "modal": {
+        "title": "Join the conversation",
+        "description": "Sign in with your GitHub account to leave a comment.",
+        "button": "Continue with GitHub",
+        "footer": "No long forms • Just one click"
+      },
+      "overlay": "Wait a moment..."
     }
   }
 }

@@ -3,6 +3,7 @@ export const dynamic = 'force-static';
 
 // Components
 import { Error } from '@/components/error';
+import CommentsWithAuth from '@/features/blog/components/comments-with-auth';
 import { PostHeader } from '@/features/blog/components/post-header';
 import { CustomRichText } from '@/features/blog/components/rich-text';
 
@@ -45,7 +46,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       type: 'article',
       locale: locale,
       url: `${SITE_URL}/${locale}/blog/${slug}`,
-      siteName: '${SITE_URL}',
+      siteName: SITE_URL,
       images: [
         {
           url: `/${locale}/blog/${slug}/opengraph-image`,
@@ -124,6 +125,7 @@ export default async function PostPage({ params }: PostPageProps) {
     <article className="space-y-3">
       <PostHeader description={post.description} title={post.title} />
       <CustomRichText data={post.body} className="prose prose-invert max-w-none" />
+      <CommentsWithAuth postId={post.id} slug={slug} />
     </article>
   );
 }
