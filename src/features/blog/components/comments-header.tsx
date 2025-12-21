@@ -1,3 +1,4 @@
+// Components
 import { Button } from '@/components/ui/button';
 import { LogOut, MessageSquare } from 'lucide-react';
 
