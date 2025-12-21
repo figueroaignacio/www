@@ -24,7 +24,6 @@ export async function AllTestimonials() {
           <li key={testimonial.id}>
             <TestimonialCard
               testimonial={testimonial.testimonial}
-              avatar={testimonial.avatar}
               name={testimonial.name}
               role={testimonial.role}
             />
