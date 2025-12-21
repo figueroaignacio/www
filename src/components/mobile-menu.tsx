@@ -1,6 +1,7 @@
 'use client';
 
 // Hooks
+import { usePathname } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
@@ -9,10 +10,12 @@ import { Contact } from '@/features/about/components/contact';
 import { DeveloperWatermark } from '@/features/about/components/developer-watermark';
 import { Link } from '@/i18n/navigation';
 import { Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
+import { ArrowRightIcon } from 'lucide-react';
 import { HeaderActions } from './header-actions';
 
 export function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
   const t = useTranslations('ui');
   const navigation = t.raw('navigation') as Array<{ label: string; href: string }>;
 
@@ -33,22 +36,32 @@ export function MobileMenu() {
             : 'pointer-events-none scale-95 opacity-0'
         }`}
       >
-        <div className="flex items-center justify-between px-4 py-3">
+        <div className="py-3 px-5">
           <button onClick={toggleMenu}>
             <Cross1Icon className="size-8 cursor-pointer" />
           </button>
         </div>
-        <div className="flex-1 overflow-y-auto px-5 py-4">
+        <div className="flex-1 overflow-y-auto py-5">
           <ul>
-            {navigation.map((item, index) => (
-              <li key={`item-${index}`} onClick={toggleMenu} className="mr-6">
-                <Link href={item.href} className="animate-show-soft block py-2 text-2xl">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+            {navigation.map((item, index) => {
+              const isActive = pathname === item.href;
+
+              return (
+                <li key={`item-${index}`} onClick={toggleMenu} className="border-y border-border">
+                  <Link
+                    href={item.href}
+                    className={`animate-show-soft text-2xl py-5 flex items-center justify-between px-5 transition-colors ${
+                      isActive ? 'bg-primary text-primary-foreground border-y-0' : 'hover:bg-accent'
+                    }`}
+                  >
+                    {item.label}
+                    <ArrowRightIcon className={`size-5 ${isActive ? 'translate-x-1' : ''}`} />
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
-          <div className="border-t border-border mt-3 py-5">
+          <div className="mt-3 p-5">
             <Contact />
           </div>
         </div>
