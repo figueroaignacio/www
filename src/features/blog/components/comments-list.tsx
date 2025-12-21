@@ -23,9 +23,18 @@ interface CommentsListProps {
   isLoading: boolean;
   locale: string;
   t: (key: string) => string;
+  currentUserId?: string;
+  onDeleteComment: (id: number) => void;
 }
 
-export function CommentsList({ comments, isLoading, locale, t }: CommentsListProps) {
+export function CommentsList({
+  comments,
+  isLoading,
+  locale,
+  t,
+  onDeleteComment,
+  currentUserId,
+}: CommentsListProps) {
   if (isLoading) {
     return (
       <div className="space-y-4">
@@ -58,7 +67,13 @@ export function CommentsList({ comments, isLoading, locale, t }: CommentsListPro
     <div className="space-y-8">
       <AnimatePresence initial={false} mode="popLayout">
         {comments.map((comment) => (
-          <CommentItem key={comment.id} comment={comment} locale={locale} />
+          <CommentItem
+            key={comment.id}
+            comment={comment}
+            locale={locale}
+            currentUserId={currentUserId}
+            onDelete={onDeleteComment}
+          />
         ))}
       </AnimatePresence>
     </div>

@@ -1,5 +1,7 @@
 'use client';
 
+// Components
+import { Trash2 } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface User {
@@ -19,9 +21,11 @@ interface Comment {
 interface CommentItemProps {
   comment: Comment;
   locale: string;
+  currentUserId?: string;
+  onDelete: (id: number) => void;
 }
 
-export function CommentItem({ comment, locale }: CommentItemProps) {
+export function CommentItem({ comment, locale, onDelete, currentUserId }: CommentItemProps) {
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString(locale, {
       day: 'numeric',
@@ -30,17 +34,14 @@ export function CommentItem({ comment, locale }: CommentItemProps) {
     });
   };
 
+  const isOwner = currentUserId === comment.user.id;
+
   return (
     <motion.div
+      layout
       initial={{ opacity: 0, x: -20, scale: 0.95 }}
       animate={{ opacity: 1, x: 0, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
-      transition={{
-        type: 'spring',
-        stiffness: 260,
-        damping: 20,
-      }}
-      layout
       className="group flex gap-4"
     >
       <div className="relative shrink-0">
@@ -54,10 +55,30 @@ export function CommentItem({ comment, locale }: CommentItemProps) {
 
       <div className="flex-1 min-w-0">
         <div className="flex items-baseline justify-between mb-1.5 gap-2">
-          <span className="font-bold text-sm text-foreground truncate">{comment.user.name}</span>
-          <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium whitespace-nowrap">
-            {formatDate(comment.created_at)}
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-sm text-foreground truncate">{comment.user.name}</span>
+            {isOwner && (
+              <span className="text-[9px] bg-primary/10 text-primary px-1.5 py-0.5 rounded-full font-bold uppercase tracking-tighter">
+                Tú
+              </span>
+            )}
+          </div>
+
+          <div className="flex items-center gap-3">
+            <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium whitespace-nowrap">
+              {formatDate(comment.created_at)}
+            </span>
+
+            {isOwner && (
+              <button
+                onClick={() => onDelete(comment.id)}
+                className="opacity-0 group-hover:opacity-100 p-1 text-muted-foreground hover:text-destructive transition-all"
+                title="Eliminar"
+              >
+                <Trash2 className="w-3.5 h-3.5" />
+              </button>
+            )}
+          </div>
         </div>
 
         <div className="relative bg-muted/30 hover:bg-muted/50 transition-colors p-4 rounded-2xl rounded-tl-none border border-border/50">

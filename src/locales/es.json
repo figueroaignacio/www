@@ -168,8 +168,10 @@
       "status": {
         "postingAs": "{name}",
         "loading": "Cargando comentarios...",
-        "empty": "Aún no hay reflexiones aquí. Sé el primero.",
-        "error": "Error al publicar el comentario"
+        "error": "Error al publicar el comentario",
+        "confirmDelete": "¿Estás seguro de que quieres eliminar este comentario?",
+        "errorDelete": "No se pudo eliminar el comentario",
+        "empty": "Aún no hay reflexiones aquí..."
       },
       "modal": {
         "title": "Únete a la charla",

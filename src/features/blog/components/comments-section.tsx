@@ -31,6 +31,7 @@ export function CommentsSection({ postId, session, onLogin }: CommentsSectionPro
     handleLogout,
     handleSocialLogin,
     handleSubmit,
+    handleDelete,
   } = useComments({ postId, session, onLogin, t });
 
   return (
@@ -53,7 +54,14 @@ export function CommentsSection({ postId, session, onLogin }: CommentsSectionPro
           onLoginClick={() => setShowLoginModal(true)}
           t={t}
         />
-        <CommentsList comments={comments} isLoading={isLoading} locale={locale} t={t} />
+        <CommentsList
+          comments={comments}
+          isLoading={isLoading}
+          locale={locale}
+          t={t}
+          currentUserId={session?.user.id}
+          onDeleteComment={handleDelete}
+        />
         <LoginModal
           isOpen={showLoginModal}
           isRedirecting={isRedirecting}

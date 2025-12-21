@@ -85,6 +85,25 @@ export function useComments({ postId, session, onLogin, t }: UseCommentsProps) {
     }
   };
 
+  const handleDelete = async (commentId: number) => {
+    if (!confirm(t('status.confirmDelete'))) return;
+
+    try {
+      const response = await fetch(`/api/comments/${commentId}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        setComments((prev) => prev.filter((c) => c.id !== commentId));
+      } else {
+        alert(t('status.errorDelete'));
+      }
+    } catch (error) {
+      console.error('Error deleting comment:', error);
+      alert(t('status.errorDelete'));
+    }
+  };
+
   return {
     comments,
     newComment,
@@ -98,5 +117,6 @@ export function useComments({ postId, session, onLogin, t }: UseCommentsProps) {
     handleLogout,
     handleSocialLogin,
     handleSubmit,
+    handleDelete,
   };
 }
