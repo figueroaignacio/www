@@ -1,7 +1,11 @@
 'use client';
 
+// Hooks
 import { signIn, useSession } from '@/lib/auth-client';
 import { useLocale } from 'next-intl';
+import { useEffect, useState } from 'react';
+
+// Components
 import { CommentsSection } from './comments-section';
 
 interface CommentsWithAuthProps {
@@ -13,14 +17,20 @@ export default function CommentsWithAuth({ postId, slug }: CommentsWithAuthProps
   const { data: sessionData, isPending } = useSession();
   const locale = useLocale();
 
+  const [isInitialLoading, setIsInitialLoading] = useState(true);
+
+  useEffect(() => {
+    if (!isPending) {
+      setIsInitialLoading(false);
+    }
+  }, [isPending]);
+
   const handleLogin = async () => {
     await signIn.social({
       provider: 'github',
       callbackURL: `/${locale}/blog/${slug}`,
     });
   };
-
-  if (isPending) return <div className="animate-pulse h-20 bg-neutral-800 rounded-lg" />;
 
   const session = sessionData
     ? {
@@ -33,5 +43,9 @@ export default function CommentsWithAuth({ postId, slug }: CommentsWithAuthProps
       }
     : null;
 
-  return <CommentsSection postId={postId} session={session} onLogin={handleLogin} />;
+  return (
+    <div className="my-20 mx-auto max-w-xl">
+      <CommentsSection postId={postId} session={session} onLogin={handleLogin} />
+    </div>
+  );
 }
