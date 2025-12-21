@@ -36,7 +36,7 @@ export function LoginModal({ isOpen, isRedirecting, onOpenChange, onLogin, t }: 
             onClick={onLogin}
             disabled={isRedirecting}
             variant="secondary"
-            className="space-x-3"
+            className="flex gap-2"
           >
             {!isRedirecting && <GitHubIcon />}
             {isRedirecting ? (
