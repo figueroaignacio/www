@@ -1,3 +1,6 @@
+'use client';
+
+import { AnimatePresence, motion } from 'motion/react';
 import { CommentItem } from './comment-item';
 
 interface User {
@@ -40,17 +43,23 @@ export function CommentsList({ comments, isLoading, locale, t }: CommentsListPro
 
   if (comments.length === 0) {
     return (
-      <div className="text-center py-12 px-6 rounded-3xl border border-dashed border-border bg-muted/10">
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="text-center py-12 px-6 rounded-3xl border border-dashed border-border bg-muted/10"
+      >
         <p className="text-muted-foreground text-sm italic">{t('status.empty')}</p>
-      </div>
+      </motion.div>
     );
   }
 
   return (
     <div className="space-y-8">
-      {comments.map((comment) => (
-        <CommentItem key={comment.id} comment={comment} locale={locale} />
-      ))}
+      <AnimatePresence initial={false} mode="popLayout">
+        {comments.map((comment) => (
+          <CommentItem key={comment.id} comment={comment} locale={locale} />
+        ))}
+      </AnimatePresence>
     </div>
   );
 }
