@@ -1,6 +1,5 @@
 'use client';
 
-// Components
 import { AnimatePresence, motion } from 'motion/react';
 import { CommentItem } from './comment-item';
 
@@ -25,6 +24,7 @@ interface CommentsListProps {
   t: (key: string) => string;
   currentUserId?: string;
   onDeleteComment: (id: number) => void;
+  deletingId: number | null;
 }
 
 export function CommentsList({
@@ -32,8 +32,9 @@ export function CommentsList({
   isLoading,
   locale,
   t,
-  onDeleteComment,
   currentUserId,
+  onDeleteComment,
+  deletingId,
 }: CommentsListProps) {
   if (isLoading) {
     return (
@@ -73,6 +74,7 @@ export function CommentsList({
             locale={locale}
             currentUserId={currentUserId}
             onDelete={onDeleteComment}
+            isDeleting={deletingId === comment.id}
           />
         ))}
       </AnimatePresence>

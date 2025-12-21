@@ -1,18 +1,14 @@
 'use client';
 
-// Hooks
 import { useLocale, useTranslations } from 'next-intl';
 import { useComments } from '../hooks/use-comments';
-
-// Components
+import type { CommentsSectionProps } from '../types';
 import { CommentForm } from './comment-form';
 import { CommentsHeader } from './comments-header';
 import { CommentsList } from './comments-list';
+import { DeleteConfirmModal } from './delete-confirm-modal';
 import { LoadingOverlay } from './loading-overlay';
 import { LoginModal } from './login-modal';
-
-// Types
-import type { CommentsSectionProps } from '../types';
 
 export function CommentsSection({ postId, session, onLogin }: CommentsSectionProps) {
   const t = useTranslations('components.comments');
@@ -32,11 +28,16 @@ export function CommentsSection({ postId, session, onLogin }: CommentsSectionPro
     handleSocialLogin,
     handleSubmit,
     handleDelete,
+    openDeleteModal,
+    commentToDelete,
+    deletingComment,
+    setCommentToDelete,
   } = useComments({ postId, session, onLogin, t });
 
   return (
     <div className="relative">
       <LoadingOverlay isVisible={isRedirecting} />
+
       <div className="my-20 mx-auto max-w-xl">
         <CommentsHeader
           session={session}
@@ -45,6 +46,7 @@ export function CommentsSection({ postId, session, onLogin }: CommentsSectionPro
           onLogout={handleLogout}
           t={t}
         />
+
         <CommentForm
           session={session}
           newComment={newComment}
@@ -54,14 +56,25 @@ export function CommentsSection({ postId, session, onLogin }: CommentsSectionPro
           onLoginClick={() => setShowLoginModal(true)}
           t={t}
         />
+
         <CommentsList
           comments={comments}
           isLoading={isLoading}
           locale={locale}
           t={t}
           currentUserId={session?.user.id}
-          onDeleteComment={handleDelete}
+          onDeleteComment={openDeleteModal}
+          deletingId={deletingComment}
         />
+
+        <DeleteConfirmModal
+          isOpen={!!commentToDelete}
+          onOpenChange={(open) => !open && setCommentToDelete(null)}
+          onConfirm={handleDelete}
+          isDeleting={!!deletingComment}
+          t={t}
+        />
+
         <LoginModal
           isOpen={showLoginModal}
           isRedirecting={isRedirecting}

@@ -163,22 +163,25 @@
       },
       "button": {
         "submit": "Post",
-        "submitting": "Posting..."
+        "submitting": "Posting...",
+        "delete": "Delete"
       },
       "logout": "Log Out",
       "status": {
         "postingAs": "{name}",
         "loading": "Loading comments...",
-        "confirmDelete": "Are you sure you want to delete this comment?",
         "errorDelete": "The comment could not be deleted",
         "empty": "There are no reflections here yet...",
-        "error": "Error posting comment"
+        "error": "Error posting comment",
+        "confirmDeleteTitle": "Delete comment?",
+        "confirmDelete": "This action cannot be undone. The comment will be permanently removed."
       },
       "modal": {
         "title": "Join the conversation",
         "description": "Sign in with your GitHub account to leave a comment.",
         "button": "Continue with GitHub",
-        "footer": "No long forms • Just one click"
+        "footer": "No long forms • Just one click",
+        "cancel": "Cancel"
       },
       "overlay": "Wait a moment..."
     }

@@ -1,7 +1,6 @@
 'use client';
 
-// Components
-import { Trash2 } from 'lucide-react';
+import { Loader2, Trash2 } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface User {
@@ -23,9 +22,16 @@ interface CommentItemProps {
   locale: string;
   currentUserId?: string;
   onDelete: (id: number) => void;
+  isDeleting: boolean;
 }
 
-export function CommentItem({ comment, locale, onDelete, currentUserId }: CommentItemProps) {
+export function CommentItem({
+  comment,
+  locale,
+  onDelete,
+  currentUserId,
+  isDeleting,
+}: CommentItemProps) {
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString(locale, {
       day: 'numeric',
@@ -42,12 +48,12 @@ export function CommentItem({ comment, locale, onDelete, currentUserId }: Commen
       initial={{ opacity: 0, x: -20, scale: 0.95 }}
       animate={{ opacity: 1, x: 0, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
-      className="group flex gap-4"
+      className={`group flex gap-4 transition-opacity ${isDeleting ? 'opacity-50' : ''}`}
     >
       <div className="relative shrink-0">
         <img
           src={comment.user.image || `https://ui-avatars.com/api/?name=${comment.user.name}`}
-          className="w-10 h-10 rounded-full border border-border object-cover"
+          className="w-10 h-10 rounded-full border border-border object-cover bg-muted"
           alt={comment.user.name}
         />
         <div className="absolute top-10 left-1/2 -translate-x-1/2 w-px h-full bg-border/50 group-last:hidden" />
@@ -72,10 +78,14 @@ export function CommentItem({ comment, locale, onDelete, currentUserId }: Commen
             {isOwner && (
               <button
                 onClick={() => onDelete(comment.id)}
-                className="opacity-0 group-hover:opacity-100 p-1 text-muted-foreground hover:text-destructive transition-all"
-                title="Eliminar"
+                disabled={isDeleting}
+                className={`transition-all p-1 text-muted-foreground hover:text-destructive ${isDeleting ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
               >
-                <Trash2 className="w-3.5 h-3.5" />
+                {isDeleting ? (
+                  <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                ) : (
+                  <Trash2 className="w-3.5 h-3.5" />
+                )}
               </button>
             )}
           </div>

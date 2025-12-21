@@ -1,3 +1,5 @@
+'use client';
+
 // Hooks
 import { useEffect, useState } from 'react';
 
@@ -22,6 +24,8 @@ export function useComments({ postId, session, onLogin, t }: UseCommentsProps) {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
   const [isRedirecting, setIsRedirecting] = useState(false);
+  const [deletingComment, setDeletingComment] = useState<number | null>(null);
+  const [commentToDelete, setCommentToDelete] = useState<number | null>(null);
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -75,7 +79,7 @@ export function useComments({ postId, session, onLogin, t }: UseCommentsProps) {
 
       if (response.ok) {
         const data = await response.json();
-        setComments([data.comment, ...comments]);
+        setComments((prev) => [data.comment, ...prev]);
         setNewComment('');
       }
     } catch (error) {
@@ -85,38 +89,50 @@ export function useComments({ postId, session, onLogin, t }: UseCommentsProps) {
     }
   };
 
-  const handleDelete = async (commentId: number) => {
-    if (!confirm(t('status.confirmDelete'))) return;
+  const openDeleteModal = (id: number) => {
+    setCommentToDelete(id);
+  };
 
+  const handleDelete = async () => {
+    if (!commentToDelete) return;
+
+    setDeletingComment(commentToDelete);
     try {
-      const response = await fetch(`/api/comments/${commentId}`, {
+      const response = await fetch(`/api/comments/${commentToDelete}`, {
         method: 'DELETE',
       });
 
       if (response.ok) {
-        setComments((prev) => prev.filter((c) => c.id !== commentId));
+        setComments((prev) => prev.filter((c) => c.id !== commentToDelete));
+        setCommentToDelete(null);
       } else {
         alert(t('status.errorDelete'));
       }
     } catch (error) {
       console.error('Error deleting comment:', error);
       alert(t('status.errorDelete'));
+    } finally {
+      setDeletingComment(null);
     }
   };
 
   return {
     comments,
     newComment,
-    setNewComment,
     isLoading,
     isSubmitting,
     showLoginModal,
-    setShowLoginModal,
     isLoggingOut,
     isRedirecting,
+    commentToDelete,
+    deletingComment,
+    setNewComment,
+    setShowLoginModal,
+    setCommentToDelete,
     handleLogout,
     handleSocialLogin,
     handleSubmit,
     handleDelete,
+    openDeleteModal,
   };
 }
