@@ -33,11 +33,20 @@ export async function generateMetadata({ params }: ProjectsPageProps): Promise<M
       locale: locale,
       url: `https://ignaciofigueroa.vercel.app/${locale}/projects`,
       siteName: 'Ignacio Figueroa',
+      images: [
+        {
+          url: `/${locale}/projects/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: t('description'),
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: t('title'),
       description: t('description'),
+      images: [`/${locale}/projects/opengraph-image`],
     },
   };
 }

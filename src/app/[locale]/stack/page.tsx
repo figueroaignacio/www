@@ -30,6 +30,14 @@ export async function generateMetadata({ params }: StackPageProps): Promise<Meta
       locale: locale,
       url: `https://ignaciofigueroa.vercel.app/${locale}/stack`,
       siteName: 'Ignacio Figueroa',
+      images: [
+        {
+          url: `/${locale}/stack/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: t('description'),
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
