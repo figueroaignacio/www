@@ -48,7 +48,7 @@ export function CommentItem({
       initial={{ opacity: 0, x: -20, scale: 0.95 }}
       animate={{ opacity: 1, x: 0, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
-      className={`group flex gap-4 transition-opacity ${isDeleting ? 'opacity-50' : ''}`}
+      className={`flex gap-4 ${isDeleting ? 'opacity-50' : ''}`}
     >
       <div className="relative shrink-0">
         <img
@@ -79,7 +79,7 @@ export function CommentItem({
               <button
                 onClick={() => onDelete(comment.id)}
                 disabled={isDeleting}
-                className={`transition-all p-1 text-muted-foreground hover:text-destructive ${isDeleting ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+                className={`transition-all p-1 text-muted-foreground hover:text-destructive ${isDeleting ? 'opacity-100' : ''}`}
               >
                 {isDeleting ? (
                   <Loader2 className="w-3.5 h-3.5 animate-spin" />
