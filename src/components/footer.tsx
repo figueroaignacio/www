@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 
 // Components
 import { Contact } from '@/features/about/components/contact';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 
 interface Navigation {
   href: string;
@@ -21,7 +21,6 @@ export function Footer() {
           <h3 className="text-lg font-semibold">{t('components.footer.name')}</h3>
           <p className="text-sm text-muted-foreground">{t('components.footer.role')}</p>
         </div>
-
         <p className="text-muted-foreground pt-2">{t('components.footer.thanks')}</p>
       </div>
       <nav className="flex flex-col gap-x-6 gap-y-2 text-sm">
