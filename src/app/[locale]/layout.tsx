@@ -19,7 +19,7 @@ import { fontSans } from '@/lib/fonts';
 
 export const metadata = {
   title: {
-    template: `Ignacio Figueroa - %s`,
+    template: `Ignacio Figueroa | %s`,
   },
 };
 
