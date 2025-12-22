@@ -10,7 +10,7 @@ import { Hero } from '@/components/hero';
 import { Separator } from '@/components/ui/separator';
 import { FeaturedProjects } from '@/features/projects/components/featured-projects';
 import { OtherProjects } from '@/features/projects/components/other-projects';
-import { ProjectItemLoader } from '@/features/projects/components/project-item-loader';
+import { ProjectCardLoader } from '@/features/projects/components/project-card-loader';
 
 // Types
 import { type Metadata } from 'next';
@@ -50,7 +50,7 @@ export default function ProjectsPage({ params }: ProjectsPageProps) {
   return (
     <div className="space-y-5">
       <Hero title={t('title')} description={t('description')} />
-      <Suspense fallback={<ProjectItemLoader />}>
+      <Suspense fallback={<ProjectCardLoader />}>
         <FeaturedProjects />
         <Separator />
         <OtherProjects />

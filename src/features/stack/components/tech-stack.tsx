@@ -103,7 +103,7 @@ export function TechStack() {
               return (
                 <div
                   key={name}
-                  className="flex flex-col items-center gap-2 rounded-xl border-border border px-5 py-4"
+                  className="flex flex-col items-center gap-2 rounded-xl border-border border px-5 py-4 bg-background/40"
                 >
                   <Icon />
                   <span className="text-sm">{name}</span>

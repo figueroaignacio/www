@@ -9,7 +9,7 @@ import { ExternalLinkIcon, InfoCircledIcon } from '@radix-ui/react-icons';
 // Types
 import type { Project, TechStack } from '@/payload-types';
 
-export function ProjectItem({
+export function ProjectCard({
   slug,
   subtitle,
   title,
@@ -42,7 +42,7 @@ export function ProjectItem({
     technologies?.filter((tech): tech is TechStack => typeof tech === 'object') ?? [];
 
   return (
-    <div className="relative space-y-4 border-border border p-6 rounded-2xl">
+    <div className="relative space-y-4 border-border border p-6 rounded-2xl bg-background/40">
       <div className="relative">
         <div className="relative flex h-full flex-col justify-center">
           <h2 className="text-lg font-bold text-foreground">{title}</h2>

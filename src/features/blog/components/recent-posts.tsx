@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 // Components
 import { Link } from '@/i18n/navigation';
 import { ArrowRight } from 'lucide-react';
-import { PostItem } from './post-item';
+import { PostCard } from './post-card';
 
 // Utils
 import { getLocale } from 'next-intl/server';
@@ -31,7 +31,7 @@ export async function RecentPosts() {
         {posts.map((post) => {
           return (
             <div key={post.id} className="space-y-5">
-              <PostItem
+              <PostCard
                 createdAt={post.createdAt}
                 title={post.title}
                 slug={post.slug}

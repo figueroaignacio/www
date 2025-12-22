@@ -1,6 +1,6 @@
 // Components
 import { Error } from '@/components/error';
-import { ProjectItem } from '@/features/projects/components/project-item';
+import { ProjectCard } from '@/features/projects/components/project-card';
 
 // Utils
 import { getFeaturedProjects } from '@/features/projects/api/projects';
@@ -24,7 +24,7 @@ export async function FeaturedProjects() {
       <ul className="space-y-3">
         {projects.map((project) => (
           <li key={project.id}>
-            <ProjectItem
+            <ProjectCard
               title={project.title}
               subtitle={project.subtitle}
               repository={project.repository}

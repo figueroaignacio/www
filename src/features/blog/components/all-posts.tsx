@@ -1,5 +1,5 @@
 // Components
-import { PostItem } from './post-item';
+import { PostCard } from './post-card';
 
 // Utils
 import { getPosts } from '@/features/blog/api/posts';
@@ -29,7 +29,7 @@ export async function AllPosts({ categorySlug, locale }: AllPostsProps) {
     <ul className="space-y-3">
       {posts.map((post) => (
         <li key={post.id} className="space-y-5">
-          <PostItem
+          <PostCard
             createdAt={post.createdAt}
             title={post.title}
             slug={post.slug}

@@ -9,7 +9,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Hero } from '@/components/hero';
 import { AllPosts } from '@/features/blog/components/all-posts';
 import { CategoryFilter } from '@/features/blog/components/category-filter';
-import { PostItemLoader } from '@/features/blog/components/post-item-loader';
+import { PostCardLoader } from '@/features/blog/components/post-card-loader';
 
 // Utils
 import { getCategories } from '@/features/blog/api/categories';
@@ -59,7 +59,7 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
     <div className="space-y-5">
       <Hero title={t('title')} description={t('description')} />
       <CategoryFilter categories={categories} currentCategory={category || null} />
-      <Suspense key={category || 'all'} fallback={<PostItemLoader />}>
+      <Suspense key={category || 'all'} fallback={<PostCardLoader />}>
         <AllPosts categorySlug={category} locale={locale} />
       </Suspense>
     </div>

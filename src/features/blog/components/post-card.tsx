@@ -12,7 +12,7 @@ import { formatFullDateWithWeekday } from '@/lib/format-date';
 // Types
 import { type Post, PostCategory } from '@/payload-types';
 
-export function PostItem({ slug, title, createdAt, description, categories }: Partial<Post>) {
+export function PostCard({ slug, title, createdAt, description, categories }: Partial<Post>) {
   const t = useTranslations('components.postItem');
   const locale = useLocale();
 
@@ -20,7 +20,7 @@ export function PostItem({ slug, title, createdAt, description, categories }: Pa
     categories?.filter((cat): cat is PostCategory => typeof cat === 'object') ?? [];
 
   return (
-    <div className="space-y-6 p-6 border-border border rounded-2xl">
+    <div className="space-y-6 p-6 border-border border rounded-2xl bg-background/40">
       {createdAt ? (
         <p className="text-sm text-muted-foreground">
           {formatFullDateWithWeekday(createdAt, locale)}
