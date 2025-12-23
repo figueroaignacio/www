@@ -2,7 +2,7 @@
 
 ## A modern, fast, and fully custom portfolio built with Next.js, Tailwind CSS, Payload CMS, and PostgreSQL.
 
-It showcases my work, articles, projects, and includes an AI-powered assistant named N.A.I (Nacho Artificial Intelligence) to help visitors explore my content in an interactive way.
+It showcases my work, articles, projects, and includes an AI-powered assistant named N-bot to help visitors explore my content in an interactive way.
 
 This portfolio reflects my focus on clean UI, high performance, accessibility, and a great developer experience.
 
