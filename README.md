@@ -1,5 +1,3 @@
-# Ignacio Figueroa — Personal Portfolio
-
 ![Ignacio Figueroa Portfolio](https://ignaciofigueroa.vercel.app/en/opengraph-image)
 
 ## A modern, fast, and fully custom portfolio built with Next.js, Tailwind CSS, Payload CMS, and PostgreSQL.
