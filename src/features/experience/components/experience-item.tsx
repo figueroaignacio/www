@@ -34,9 +34,12 @@ export function ExperienceItem({
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-col">
-        {title && <h3 className="text-lg font-semibold">{title}</h3>}
-        {company && <p className="text-muted-foreground">{company}</p>}
+      <div className="flex flex-col space-y-3">
+        <div className="flex items-center gap-x-1">
+          {title && <h3 className="text-lg font-semibold">{title}</h3>}
+          <span className="text-lg font-semibold"> | </span>
+          {company && <p className="text-lg font-semibold">@{company}</p>}
+        </div>
         {dateRange && <p className="text-sm text-muted-foreground">{dateRange}</p>}
       </div>
 
