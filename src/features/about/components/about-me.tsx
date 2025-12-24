@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 
 // Components
 import { DeveloperWatermark } from '@/features/about/components/developer-watermark';
+import { TechStack } from '@/features/stack/components/tech-stack';
 import { Interests } from './interests';
 
 export function AboutMe() {
@@ -23,6 +24,7 @@ export function AboutMe() {
           );
         })}
       </div>
+      <TechStack />
       <Interests />
     </div>
   );

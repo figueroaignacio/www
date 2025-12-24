@@ -95,10 +95,6 @@
       {
         "label": "proyectos",
         "href": "/projects"
-      },
-      {
-        "label": "stack",
-        "href": "/stack"
       }
     ]
   },
