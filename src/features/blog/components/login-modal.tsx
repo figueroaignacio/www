@@ -7,7 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { GitHubIcon } from '@/features/stack/components/tech-icons';
+import { GitHubIcon } from '@/features/about/components/tech-icons';
 import { MessageSquare } from 'lucide-react';
 
 interface LoginModalProps {

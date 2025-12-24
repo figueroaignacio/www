@@ -1,7 +1,7 @@
 // Components
 import { BackButton } from '@/components/back-button';
 import { Button } from '@/components/ui/button';
-import { GitHubIcon } from '@/features/stack/components/tech-icons';
+import { GitHubIcon } from '@/features/about/components/tech-icons';
 import { ExternalLink } from 'lucide-react';
 
 // Utils

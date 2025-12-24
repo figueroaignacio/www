@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 
 // Components
 import { DeveloperWatermark } from '@/features/about/components/developer-watermark';
-import { TechStack } from '@/features/stack/components/tech-stack';
+import { TechStack } from '@/features/about/components/tech-stack';
 import { Interests } from './interests';
 
 export function AboutMe() {
