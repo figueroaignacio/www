@@ -1,12 +1,12 @@
-# Ignacio Figueroa — Personal Portfolio
+![Ignacio Figueroa Portfolio](https://ignaciofigueroa.vercel.app/en/opengraph-image)
 
 ## A modern, fast, and fully custom portfolio built with Next.js, Tailwind CSS, Payload CMS, and PostgreSQL.
 
-It showcases my work, articles, projects, and includes an AI-powered assistant named N.A.I (Nacho Artificial Intelligence) to help visitors explore my content in an interactive way.
+It showcases my work, articles, projects, and includes an AI-powered assistant named N-bot to help visitors explore my content in an interactive way.
 
 This portfolio reflects my focus on clean UI, high performance, accessibility, and a great developer experience.
 
-## 🚀 Tech Stack
+## Tech Stack
 
 This project uses a modern full-stack setup:
 
@@ -24,22 +24,23 @@ This project uses a modern full-stack setup:
 - Payload CMS
 - PostgreSQL
 - Vercel Postgres adapter
+- Better Auth with GitHub OAuth provider 
 
 ### AI
 
 - Groq SDK – ultra-fast inference
-- Custom AI chatbot: N.A.I (Nacho Artificial Intelligence)
+- Custom AI chatbot
 
 ### Tooling
 
 - ESLint, Prettier
 - pnpm workspace setup
 
-## 🤖 N.A.I — Nacho Artificial Intelligence
+## N-bot — Nacho's portfolio assistant
 
-This portfolio includes a fully integrated AI assistant called N.A.I.
+This portfolio includes a fully integrated AI assistant called N-bot.
 
-### Powered by the Groq SDK, N.A.I provides:
+### Powered by the Groq SDK, N-bot provides:
 
 - Answers about me, my background, and my work
 - Help navigating the website
@@ -47,14 +48,14 @@ This portfolio includes a fully integrated AI assistant called N.A.I.
 - Discussions and summaries of my blog posts
 - Context-aware guidance about my projects and stack
 
-### N.A.I shows how real-world AI features can be integrated into a modern UI using:
+### N-bot shows how real-world AI features can be integrated into a modern UI using:
 
 - Next.js App Router
 - Groq models
 - Framer Motion animations
 - Clean, minimal UI with Tailwind
 
-It is part personal assistant, part tech demo — and a fun nod to my name:
+It is part personal assistant, part tech demo, and a fun nod to my name:
 Nacho Artificial Intelligence.
 
 ## 🧩 Pages & Site Structure
@@ -71,6 +72,7 @@ Long-form writing about:
 - Web development
 - Technology
 - Opinions on frontend, tooling, and modern stacks
+- Comments system
 
 ### Projects
 
@@ -80,7 +82,7 @@ Managed through Payload CMS.
 ### Stack
 
 A breakdown of the technologies I use daily:
-React • Next.js • Tailwind • Payload • Postgres • Groq • TypeScript, etc.
+React • Next.js • Tailwind • Payload • Postgres • Groq SDK • TypeScript • Better Auth + GitHub OAuth Provider.
 
 Almost all content is dynamically loaded from Payload CMS + PostgreSQL.
 
