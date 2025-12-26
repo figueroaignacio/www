@@ -1,6 +1,12 @@
-import { Badge } from '@/components/ui/badge';
-import { formatMonthYear } from '@/lib/format-date';
+// Hooks
 import { useLocale } from 'next-intl';
+
+// Components
+import { Badge } from '@/components/ui/badge';
+import { MapPin } from 'lucide-react';
+
+// Utils
+import { formatMonthYear } from '@/lib/format-date';
 
 import { type Experience } from '@/payload-types';
 
@@ -17,6 +23,7 @@ export function ExperienceItem({
   startDate,
   endDate,
   isCurrent,
+  location,
 }: ExperienceItemProps) {
   const locale = useLocale();
 
@@ -35,11 +42,14 @@ export function ExperienceItem({
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col space-y-3">
-        <div className="flex items-center gap-x-1">
+        <div className="flex items-center gap-x-1 flex-wrap">
           {title && <h3 className="text-lg font-semibold">{title}</h3>}
-          <span className="text-lg font-semibold"> | </span>
+          <span className="text-lg font-semibold mx-1">{locale === 'es' ? 'en' : 'at'}</span>
           {company && <p className="text-lg font-semibold">@{company}</p>}
         </div>
+        <p className="text-sm flex items-center gap-2">
+          <MapPin className="size-3" /> {location}
+        </p>
         {dateRange && <p className="text-sm text-muted-foreground">{dateRange}</p>}
       </div>
 

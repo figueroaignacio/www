@@ -30,6 +30,8 @@ export async function AllExperience() {
             endDate={item.endDate}
             tasks={item.tasks}
             technologies={item.technologies || []}
+            isCurrent={item.isCurrent}
+            location={item.location}
           />
         ))}
       </div>
