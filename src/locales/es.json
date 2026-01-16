@@ -33,7 +33,16 @@
         {
           "content": "Estoy explorando cómo integrar <b>Inteligencia Artificial</b> en aplicaciones modernas para sumar funciones más inteligentes y automatizar procesos. Busco <b>mejorar</b> constantemente, aprender nuevas herramientas y crecer en cada proyecto."
         }
-      ]
+      ],
+      "hero": {
+        "stats": {
+          "projects": "Proyectos",
+          "experience": "Años",
+          "learning": "Aprendiendo"
+        },
+        "location": "Buenos Aires, Argentina",
+        "joined": "Desde 2022"
+      }
     },
     "projects": {
       "title": "Proyectos",

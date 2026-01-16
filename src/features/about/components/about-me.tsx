@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { DeveloperWatermark } from '@/features/about/components/developer-watermark';
 import { TechStack } from '@/features/about/components/tech-stack';
 import { Interests } from './interests';
+import { SocialPostCard } from './social-post-card';
 
 export function AboutMe() {
   const t = useTranslations('sections');
@@ -16,11 +17,11 @@ export function AboutMe() {
       <div className="space-y-4">
         {about.map((section, index) => {
           return (
-            <p className="text-foreground/80 leading-relaxed" key={index}>
+            <SocialPostCard key={index}>
               {t.rich(`aboutMe.items.${index}.content`, {
                 b: (chunks) => <strong className="font-semibold">{chunks}</strong>,
               })}
-            </p>
+            </SocialPostCard>
           );
         })}
       </div>
