@@ -11,7 +11,7 @@ export function DeveloperWatermark() {
   const avatarUrl = `https://github.com/${githubUsername}.png`;
 
   return (
-    <div className="flex flex-col gap-6 w-full py-8">
+    <div className="flex flex-col gap-6 w-full pb-8">
       <div className="flex items-start gap-8">
         <div className="relative shrink-0">
           <div className="absolute inset-0 rounded-full bg-linear-to-tr from-yellow-400 via-pink-500 to-purple-600 p-0.75">
