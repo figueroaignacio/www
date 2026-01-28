@@ -7,7 +7,6 @@ import { useState } from 'react';
 
 // Components
 import { Contact } from '@/features/about/components/contact';
-import { DeveloperWatermark } from '@/features/about/components/developer-watermark';
 import { Link } from '@/i18n/navigation';
 import { Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
 import { ArrowRightIcon } from 'lucide-react';
@@ -64,9 +63,6 @@ export function MobileMenu() {
           <div className="mt-3 p-5">
             <Contact />
           </div>
-        </div>
-        <div className="px-5 py-4 border-t border-border">
-          <DeveloperWatermark />
         </div>
       </nav>
       <HeaderActions />
