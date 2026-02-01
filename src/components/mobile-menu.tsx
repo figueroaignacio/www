@@ -1,14 +1,9 @@
 'use client';
 
-// Hooks
-import { usePathname } from '@/i18n/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
+import { Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
-
-// Components
-import { Link } from '@/i18n/navigation';
-import { Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
-import { ArrowRightIcon } from 'lucide-react';
 import { HeaderActions } from './header-actions';
 
 export function MobileMenu() {
@@ -22,43 +17,56 @@ export function MobileMenu() {
   };
 
   return (
-    <div className="flex w-full items-center justify-between lg:hidden py-5 container sticky top-0 bg-background/60 backdrop-blur-lg z-100">
-      <button onClick={toggleMenu} className="flex items-center gap-x-3">
-        <HamburgerMenuIcon className="h-6 w-6 cursor-pointer" />
-        menu
+    <div className="flex w-full items-center justify-between lg:hidden py-4 container sticky top-0 bg-background/80 backdrop-blur-md z-50 border-b border-border/40">
+      <button
+        onClick={toggleMenu}
+        className="p-2 -ml-2 hover:bg-accent rounded-md transition-colors"
+        aria-label="Toggle menu"
+      >
+        <HamburgerMenuIcon className="h-5 w-5" />
       </button>
       <nav
-        className={`bg-background fixed inset-0 z-600 flex h-screen w-full flex-col transition-all duration-300 ease-in-out ${
-          isMenuOpen
-            ? 'pointer-events-auto scale-100 opacity-100'
-            : 'pointer-events-none scale-95 opacity-0'
+        className={`bg-background/95 backdrop-blur-lg fixed inset-0 z-50 flex flex-col transition-all duration-300 ease-out ${
+          isMenuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
         }`}
       >
-        <div className="py-3 px-5">
-          <button onClick={toggleMenu}>
-            <Cross1Icon className="size-8 cursor-pointer" />
+        <div className="flex items-center justify-between p-4 border-b border-border/40">
+          <span className="text-sm font-medium text-muted-foreground">Menu</span>
+          <button
+            onClick={toggleMenu}
+            className="p-2 hover:bg-accent rounded-md transition-colors"
+            aria-label="Close menu"
+          >
+            <Cross1Icon className="h-5 w-5" />
           </button>
         </div>
-        <div className="flex-1 overflow-y-auto py-5">
-          <ul>
+        <div className="flex-1 min-h-screen bg-background px-4 py-8">
+          <ul className="space-y-1">
             {navigation.map((item, index) => {
               const isActive = pathname === item.href;
 
               return (
-                <li key={`item-${index}`} onClick={toggleMenu} className="border-y border-border">
+                <li key={`item-${index}`}>
                   <Link
                     href={item.href}
-                    className={`animate-show-soft text-2xl py-5 flex items-center justify-between px-5 transition-colors ${
-                      isActive ? 'bg-primary text-primary-foreground border-y-0' : 'hover:bg-accent'
+                    onClick={toggleMenu}
+                    className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                      isActive
+                        ? 'bg-accent text-foreground'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
                     }`}
                   >
                     {item.label}
-                    <ArrowRightIcon className={`size-5 ${isActive ? 'translate-x-1' : ''}`} />
                   </Link>
                 </li>
               );
             })}
           </ul>
+        </div>
+        <div className="p-4 border-t border-border/40">
+          <div className="flex justify-center">
+            <HeaderActions />
+          </div>
         </div>
       </nav>
       <HeaderActions />
