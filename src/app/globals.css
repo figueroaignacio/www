@@ -99,6 +99,22 @@
 }
 
 @layer components {
+  .btn {
+    @apply inline-flex items-center gap-2 border border-border px-5 py-2.5 text-sm font-medium rounded-lg;
+  }
+
+  .btn-primary {
+    @apply hover:border-muted-foreground/50 transition-colors bg-foreground text-background;
+  }
+
+  .btn-outline {
+    @apply text-foreground hover:text-foreground transition-colors hover:bg-card hover:border-muted-foreground/50;
+  }
+
+  .btn-link {
+    @apply inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors underline;
+  }
+
   .prose {
     box-sizing: border-box;
     overflow-wrap: anywhere;
