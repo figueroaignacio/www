@@ -1,18 +1,11 @@
 // React
-import { Suspense, use } from 'react';
+import { use } from 'react';
 
 // next-intl
 import { useTranslations, type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 // Components
-import { Hero } from '@/components/hero';
-import { CvCta } from '@/features/about/components/cv-cta';
-import { GreetingMessage } from '@/features/about/components/greeting-message';
-import { RecentPosts } from '@/features/blog/components/recent-posts';
-import { AllExperience } from '@/features/experience/components/all-experience';
-import { AllTestimonials } from '@/features/experience/components/all-testimonials';
-import { ExperienceItemLoader } from '@/features/experience/components/experience-item-loader';
 
 // Types
 import { type Metadata } from 'next';
@@ -60,13 +53,13 @@ export default function HomePage({ params }: HomePageProps) {
 
   return (
     <div className="space-y-5">
-      <Hero title={<GreetingMessage />} description={t('description')} />
-      <Suspense fallback={<ExperienceItemLoader />}>
-        <AllExperience />
-      </Suspense>
-      <CvCta />
-      <AllTestimonials />
-      <RecentPosts />
+      <div className="space-y-5">
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-balance">
+          Ignacio Figueroa
+        </h1>
+        <h2 className="text-xl text-muted-foreground leading-relaxed max-w-2xl">{t('title')}</h2>
+        <p className="text-muted-foreground leading-relaxed max-w-2xl">{t('description')}</p>
+      </div>
     </div>
   );
 }

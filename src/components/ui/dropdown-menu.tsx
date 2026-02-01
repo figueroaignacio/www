@@ -306,7 +306,7 @@ function DropdownMenuContent({
           }}
           style={{ ...verticalStyle }}
           className={cn(
-            'border-border absolute z-50 min-w-48 overflow-hidden rounded-xl border',
+            'border-border absolute z-50 min-w-48 overflow-hidden rounded-md border',
             'bg-background backdrop-blur-lg',
             alignClasses[align].split(' ')[0],
             transformOriginClass,

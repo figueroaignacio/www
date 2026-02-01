@@ -2,7 +2,8 @@ import { cookies } from 'next/headers';
 
 // Components
 import { BgBlur } from '@/components/bg-blur';
-import { Footer } from '@/components/footer';
+import { MobileMenu } from '@/components/mobile-menu';
+import { NavigationBar } from '@/components/navigation-bar';
 import { Providers } from '@/components/providers';
 
 // next-intl
@@ -12,9 +13,6 @@ import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
 // Font
-import { MobileMenu } from '@/components/mobile-menu';
-import { NavigationBar } from '@/components/navigation-bar';
-import { NBotChat } from '@/features/chat/components/n-bot-chat';
 import { fontSans } from '@/lib/fonts';
 
 export const metadata = {
@@ -47,11 +45,9 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         <NextIntlClientProvider>
           <Providers>
             <div className="min-h-screen flex flex-col">
-              <NBotChat />
               <NavigationBar />
               <MobileMenu />
-              <main className="flex-1 container">{children}</main>
-              <Footer />
+              {/* <main className="flex-1 container py-24">{children}</main> */}
             </div>
           </Providers>
         </NextIntlClientProvider>
