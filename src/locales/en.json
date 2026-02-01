@@ -37,7 +37,7 @@
     },
     "recentPosts": {
       "title": "Recent Posts",
-      "allPosts": "All Posts"
+      "viewAll": "View all"
     },
     "aboutMe": {
       "title": "About Me",
@@ -144,12 +144,12 @@
     "postItem": {
       "readMore": "Read More"
     },
-    "viewCvButton": {
-      "label": "View Resume",
+    "ctaCv": {
       "url": "/pdf/IgnacioFigueroa_CV_FrontendReactDeveloper_EN.pdf",
       "cta": {
         "title": "Want to learn more about my professional profile?",
-        "text": "Feel free to check out my CV."
+        "description": "Check out my experience, projects and technical skills. Available for job opportunities.",
+        "text": "I invite you to see my CV."
       }
     },
     "chat": {

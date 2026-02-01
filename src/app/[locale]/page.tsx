@@ -1,16 +1,11 @@
-// React
-import { use } from 'react';
-
-// next-intl
-import { type Locale } from 'next-intl';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
-
-// Components
+import { CTACurriculum } from '@/features/home/components/cta-curriculum';
 import { HomeHero } from '@/features/home/components/home-hero';
 import { QuickLinks } from '@/features/home/components/quick-links';
-
-// Types
+import { RecentPosts } from '@/features/home/components/recent-posts';
 import { type Metadata } from 'next';
+import { type Locale } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { use } from 'react';
 
 interface HomePageProps {
   params: Promise<{ locale: Locale }>;
@@ -56,6 +51,8 @@ export default function HomePage({ params }: HomePageProps) {
     <div className="space-y-5">
       <HomeHero />
       <QuickLinks />
+      <RecentPosts />
+      <CTACurriculum />
     </div>
   );
 }
