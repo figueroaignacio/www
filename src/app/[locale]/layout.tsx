@@ -5,6 +5,7 @@ import { BgBlur } from '@/components/bg-blur';
 import { MobileMenu } from '@/components/mobile-menu';
 import { NavigationBar } from '@/components/navigation-bar';
 import { Providers } from '@/components/providers';
+import { NBotChat } from '@/features/chat/components/n-bot-chat';
 
 // next-intl
 import { routing } from '@/i18n/routing';
@@ -47,7 +48,8 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
             <div className="min-h-screen flex flex-col">
               <NavigationBar />
               <MobileMenu />
-              {/* <main className="flex-1 container py-24">{children}</main> */}
+              <NBotChat />
+              <main className="flex-1 container">{children}</main>
             </div>
           </Providers>
         </NextIntlClientProvider>

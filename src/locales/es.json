@@ -1,13 +1,12 @@
 {
   "sections": {
     "home": {
-      "title": "Desarrollador Fullstack y estudiante de Programación en la UTN",
-      "description": "Fullstack Developer con foco en Frontend. Estudiante de Programación en la UTN y autodidacta. Construyo aplicaciones desde cero con tecnologías modernas.",
-      "greeting": {
-        "morning": "Buenos días ☀️ ¿Qué hacemos hoy?",
-        "afternoon": "Buenas tardes 🌤️",
-        "evening": "Buenas noches 🌙",
-        "lateNight": "Hola nocturno 🦉 ¿Qué buscas?"
+      "subtitle": "Desarrollador Fullstack | Especialista en Frontend",
+      "description": "Transformo ideas en productos digitales escalables. Estudiante de la UTN y aprendiz incansable, enfocado en crear interfaces de alto impacto y arquitecturas sólidas con tecnologías modernas.",
+      "currently": "Desarrollando I7A UI y experimentando con la integración de LLMs vía APIs para crear soluciones inteligentes y optimizar flujos de trabajo con IA.",
+      "actions": {
+        "viewProjects": "Ver Proyectos",
+        "viewCv": "Ver CV"
       }
     },
     "blog": {
@@ -90,20 +89,20 @@
   "ui": {
     "navigation": [
       {
-        "label": "Inicio",
+        "label": "inicio",
         "href": "/"
       },
       {
-        "label": "Sobre mi",
+        "label": "sobre mi",
         "href": "/about"
       },
       {
-        "label": "Proyectos",
-        "href": "/projects"
+        "label": "blog",
+        "href": "/blog"
       },
       {
-        "label": "Blog",
-        "href": "/blog"
+        "label": "proyectos",
+        "href": "/projects"
       }
     ]
   },

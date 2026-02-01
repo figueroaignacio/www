@@ -6,7 +6,6 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 // Components
-import { Contact } from '@/features/about/components/contact';
 import { Link } from '@/i18n/navigation';
 import { Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
 import { ArrowRightIcon } from 'lucide-react';
@@ -60,9 +59,6 @@ export function MobileMenu() {
               );
             })}
           </ul>
-          <div className="mt-3 p-5">
-            <Contact />
-          </div>
         </div>
       </nav>
       <HeaderActions />

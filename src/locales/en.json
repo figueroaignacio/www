@@ -1,14 +1,12 @@
 {
   "sections": {
     "home": {
-      "title": "Fullstack Developer and Programming Student at UTN",
-      "description": "Currently building I7A UI and exploring LLM-powered applications through API integrations, while leveraging AI to accelerate my development workflow and learning.",
-
-      "greeting": {
-        "morning": "Good morning ☀️ What are we doing today?",
-        "afternoon": "Good afternoon 🌤️",
-        "evening": "Good evening 🌙",
-        "lateNight": "Hey night owl 🦉 What are you looking for?"
+      "subtitle": "Fullstack Developer | Frontend Specialist",
+      "description": "Turning ideas into scalable digital products. UTN student and lifelong learner, focused on building high-impact interfaces and robust architectures using modern tech stacks.",
+      "currently": "Building I7A UI and exploring LLM integrations to develop AI-powered applications and streamline development workflows.",
+      "actions": {
+        "viewProjects": "View Projects",
+        "viewCv": "View CV"
       }
     },
     "blog": {

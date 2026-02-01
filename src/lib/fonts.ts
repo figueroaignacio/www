@@ -1,6 +1,6 @@
-import { Manrope, Playfair_Display } from 'next/font/google';
+import { Geist, Playfair_Display } from 'next/font/google';
 
-export const fontSans = Manrope({
+export const fontSans = Geist({
   subsets: ['latin'],
   weight: ['300', '400'],
   variable: '--font-sans',

@@ -2,10 +2,8 @@
 import { use } from 'react';
 
 // next-intl
-import { useTranslations, type Locale } from 'next-intl';
+import { type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-
-// Components
 
 // Types
 import { type Metadata } from 'next';
@@ -49,17 +47,6 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
 export default function HomePage({ params }: HomePageProps) {
   const { locale } = use(params);
   setRequestLocale(locale);
-  const t = useTranslations('sections.home');
 
-  return (
-    <div className="space-y-5">
-      <div className="space-y-5">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-balance">
-          Ignacio Figueroa
-        </h1>
-        <h2 className="text-xl text-muted-foreground leading-relaxed max-w-2xl">{t('title')}</h2>
-        <p className="text-muted-foreground leading-relaxed max-w-2xl">{t('description')}</p>
-      </div>
-    </div>
-  );
+  return <div className="space-y-5"></div>;
 }
