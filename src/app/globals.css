@@ -115,6 +115,10 @@
     @apply inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors underline;
   }
 
+  .card {
+    @apply block p-6 bg-card rounded-lg border border-border;
+  }
+
   .prose {
     box-sizing: border-box;
     overflow-wrap: anywhere;

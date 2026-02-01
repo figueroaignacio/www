@@ -11,7 +11,24 @@
         "viewProjects": "View projects",
         "viewBlog": "View Blog",
         "learnMore": "Learn more about me"
-      }
+      },
+      "quickLinks": [
+        {
+          "title": "Projects",
+          "description": "Applications and experiments I build",
+          "href": "/projects"
+        },
+        {
+          "title": "Blog",
+          "description": "Articles about development and technology",
+          "href": "/blog"
+        },
+        {
+          "title": "About me",
+          "description": "My story, stack and experience",
+          "href": "/about"
+        }
+      ]
     },
     "blog": {
       "title": "Blog",

@@ -7,6 +7,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 // Components
 import { HomeHero } from '@/features/home/components/home-hero';
+import { QuickLinks } from '@/features/home/components/quick-links';
 
 // Types
 import { type Metadata } from 'next';
@@ -54,6 +55,7 @@ export default function HomePage({ params }: HomePageProps) {
   return (
     <div className="space-y-5">
       <HomeHero />
+      <QuickLinks />
     </div>
   );
 }
