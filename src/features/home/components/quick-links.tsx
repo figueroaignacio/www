@@ -8,7 +8,6 @@ interface QuickLink {
   href: string;
 }
 
-// Mapeo de rutas a iconos
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   '/projects': FolderGit2,
   '/blog': BookOpen,
