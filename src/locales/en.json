@@ -1,12 +1,16 @@
 {
   "sections": {
     "home": {
-      "subtitle": "Fullstack Developer | Frontend Specialist",
-      "description": "Turning ideas into scalable digital products. UTN student and lifelong learner, focused on building high-impact interfaces and robust architectures using modern tech stacks.",
-      "currently": "Building I7A UI and exploring LLM integrations to develop AI-powered applications and streamline development workflows.",
+      "greeting": "Hi, I'm",
+      "name": "Ignacio Figueroa",
+      "title": "Fullstack Developer",
+      "titleComplement": "focused on Frontend",
+      "subtitle": "Programming student at UTN and self-taught developer. I build applications from scratch using modern technologies.",
+      "description": "Currently building I7A UI and exploring LLM-powered applications. I aim to create solid, scalable products with good architecture.",
       "actions": {
-        "viewProjects": "View Projects",
-        "viewCv": "View CV"
+        "viewProjects": "View projects",
+        "viewBlog": "View Blog",
+        "learnMore": "Learn more about me"
       }
     },
     "blog": {
@@ -89,19 +93,19 @@
   "ui": {
     "navigation": [
       {
-        "label": "home",
+        "label": "Home",
         "href": "/"
       },
       {
-        "label": "about me",
+        "label": "About me",
         "href": "/about"
       },
       {
-        "label": "blog",
+        "label": "Blog",
         "href": "/blog"
       },
       {
-        "label": "projects",
+        "label": "Projects",
         "href": "/projects"
       }
     ]

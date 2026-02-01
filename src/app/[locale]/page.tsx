@@ -5,6 +5,9 @@ import { use } from 'react';
 import { type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
+// Components
+import { HomeHero } from '@/features/home/components/home-hero';
+
 // Types
 import { type Metadata } from 'next';
 
@@ -48,5 +51,9 @@ export default function HomePage({ params }: HomePageProps) {
   const { locale } = use(params);
   setRequestLocale(locale);
 
-  return <div className="space-y-5"></div>;
+  return (
+    <div className="space-y-5">
+      <HomeHero />
+    </div>
+  );
 }
