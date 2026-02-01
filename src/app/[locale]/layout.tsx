@@ -1,7 +1,6 @@
 import { cookies } from 'next/headers';
 
 // Components
-import { BgBlur } from '@/components/bg-blur';
 import { MobileMenu } from '@/components/mobile-menu';
 import { NavigationBar } from '@/components/navigation-bar';
 import { Providers } from '@/components/providers';
@@ -42,7 +41,6 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   return (
     <html lang={locale} suppressHydrationWarning className={theme}>
       <body className={`${fontSans.className} antialiased flex flex-col min-h-screen relative`}>
-        <BgBlur />
         <NextIntlClientProvider>
           <Providers>
             <div className="min-h-screen flex flex-col">
