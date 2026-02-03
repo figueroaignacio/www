@@ -1,4 +1,3 @@
-// Components
 import { GitHubIcon } from '@/components/tech-icons';
 import { Button } from '@/components/ui/button';
 import {

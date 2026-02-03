@@ -1,10 +1,7 @@
 // Components
 import { BackButton } from '@/components/back-button';
-import { DeveloperWatermark } from '@/features/about/components/developer-watermark';
-
-// Utils
 import { cn } from '@/lib/cn';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 interface PostHeaderProps {
   title: string;
@@ -13,7 +10,6 @@ interface PostHeaderProps {
 
 export function PostHeader({ title, description }: PostHeaderProps) {
   const t = useTranslations('sections.blog');
-  const locale = useLocale();
 
   return (
     <header className="space-y-6 border-border border-b pb-3">
@@ -26,7 +22,7 @@ export function PostHeader({ title, description }: PostHeaderProps) {
       </div>
       <div className="space-y-3">
         <p className="text-sm">{t('postedBy')}</p>
-        <DeveloperWatermark />
+        Ignacio Figueroa
       </div>
     </header>
   );
