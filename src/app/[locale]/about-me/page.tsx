@@ -1,4 +1,7 @@
+import { AboutHero } from '@/features/about-me/components/about-hero';
 import { Bio } from '@/features/about-me/components/bio';
+import { Interests } from '@/features/about-me/components/interests';
+import { TechStack } from '@/features/about-me/components/tech-stack';
 import type { Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
@@ -13,11 +16,10 @@ export default function AboutPage({ params }: AboutPageProps) {
 
   return (
     <div className="space-y-16">
-      <section className="space-y-4">
-        <h1 className="text-3xl font-bold tracking-tight">Sobre mí</h1>
-        <p className="text-muted-foreground">Construyendo software con propósito</p>
-      </section>
+      <AboutHero />
       <Bio />
+      <Interests />
+      <TechStack />
     </div>
   );
 }

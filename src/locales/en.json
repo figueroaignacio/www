@@ -41,8 +41,7 @@
     },
     "aboutMe": {
       "title": "About Me",
-      "description": "Who I am, what I do, and why I love programming",
-      "headline": "Fullstack Developer & Programming Student at UTN",
+      "description": "Learning. Building. Coding. Improving. Asking AI. Fixing what AI broke. More coding. Drinking mate. Reading docs. And yes, more coding.",
       "items": [
         {
           "content": "<b>Programming student at National Technological University (UTN) and a self-taught developer</b>. I'm passionate about <b>Fullstack Development</b>, building applications from scratch, and working with <b>modern technologies</b>. I enjoy designing solid <b>architectures</b> and applying <b>good practices</b> to keep projects organized and scalable."
