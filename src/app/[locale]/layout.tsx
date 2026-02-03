@@ -1,19 +1,14 @@
-import { cookies } from 'next/headers';
-
-// Components
+import { Footer } from '@/components/footer';
 import { MobileMenu } from '@/components/mobile-menu';
 import { NavigationBar } from '@/components/navigation-bar';
 import { Providers } from '@/components/providers';
 import { NBotChat } from '@/features/chat/components/n-bot-chat';
-
-// next-intl
 import { routing } from '@/i18n/routing';
+import { fontSans } from '@/lib/fonts';
 import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
+import { cookies } from 'next/headers';
 import { notFound } from 'next/navigation';
-
-// Font
-import { fontSans } from '@/lib/fonts';
 
 export const metadata = {
   title: {
@@ -48,6 +43,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
               <MobileMenu />
               <NBotChat />
               <main className="flex-1 container">{children}</main>
+              <Footer />
             </div>
           </Providers>
         </NextIntlClientProvider>

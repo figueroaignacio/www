@@ -1,9 +1,5 @@
-// Hooks
-import { useTranslations } from 'next-intl';
-
-// Components
-import { Contact } from '@/features/about/components/contact';
 import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 
 interface Navigation {
   href: string;
@@ -34,7 +30,6 @@ export function Footer() {
           </Link>
         ))}
       </nav>
-      <Contact />
       <div className="text-muted-foreground">
         <p>
           © {new Date().getFullYear()} {t('components.footer.name')}.{' '}
