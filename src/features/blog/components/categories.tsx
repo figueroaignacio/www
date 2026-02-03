@@ -1,18 +1,7 @@
 'use client';
 
-// Hooks
-import { useTranslations } from 'next-intl';
-
-// Components
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-
-// Types
 import type { CategoryWithCount } from '@/features/blog/api/categories';
+import { useTranslations } from 'next-intl';
 
 interface CategoriesProps {
   categories: CategoryWithCount[];
@@ -21,48 +10,51 @@ interface CategoriesProps {
 }
 
 export function Categories({ categories, currentCategory, onCategoryChange }: CategoriesProps) {
-  const selectedCategory = categories.find((cat) => cat.slug === currentCategory);
   const t = useTranslations('components.categoryFilter');
-  const displayText = selectedCategory ? selectedCategory.name : `${t('allCategories')}`;
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger>{displayText}</DropdownMenuTrigger>
-      <DropdownMenuContent align="start" className="min-w-[200px]">
-        <DropdownMenuItem
-          onClick={() => onCategoryChange(null)}
-          className={`font-light tracking-wide ${
-            !currentCategory ? 'text-foreground font-medium' : 'text-muted-foreground'
+    <div className="flex flex-wrap gap-2">
+      <button
+        onClick={() => onCategoryChange(null)}
+        className={`
+          inline-flex items-center px-3 py-1 rounded-full text-sm tracking-wide transition-colors
+          ${
+            !currentCategory
+              ? 'bg-foreground text-background font-medium'
+              : 'bg-muted text-muted-foreground hover:text-foreground'
           }`}
-        >
-          {t('allCategories')}
-        </DropdownMenuItem>
-        {categories.map((category) => {
-          const hasNoPosts = category.postCount === 0;
+      >
+        {t('allCategories')}
+      </button>
 
-          return (
-            <DropdownMenuItem
-              key={category.slug}
-              onClick={() => !hasNoPosts && onCategoryChange(category.slug)}
-              disabled={hasNoPosts}
-              className={`font-light tracking-wide ${
-                currentCategory === category.slug
-                  ? 'text-foreground font-medium'
+      {categories.map((category) => {
+        const hasNoPosts = category.postCount === 0;
+        const isSelected = currentCategory === category.slug;
+
+        return (
+          <button
+            key={category.slug}
+            disabled={hasNoPosts}
+            onClick={() => onCategoryChange(category.slug)}
+            className={`
+              inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm tracking-wide transition-colors
+              ${
+                isSelected
+                  ? 'bg-foreground text-background font-medium'
                   : hasNoPosts
-                    ? 'text-muted-foreground/50 cursor-not-allowed'
-                    : 'text-muted-foreground'
+                    ? 'bg-muted text-muted-foreground/50 cursor-not-allowed'
+                    : 'bg-muted text-muted-foreground hover:text-foreground'
               }`}
+          >
+            <span>{category.name.charAt(0).toUpperCase() + category.name.slice(1)}</span>
+            <span
+              className={`text-xs ${isSelected ? 'text-background/60' : 'text-muted-foreground/60'}`}
             >
-              <span className="flex items-center justify-between w-full">
-                <span>{category.name.charAt(0).toUpperCase() + category.name.slice(1)}</span>
-                <span className="text-xs text-muted-foreground/70 ml-2">
-                  ({category.postCount})
-                </span>
-              </span>
-            </DropdownMenuItem>
-          );
-        })}
-      </DropdownMenuContent>
-    </DropdownMenu>
+              ({category.postCount})
+            </span>
+          </button>
+        );
+      })}
+    </div>
   );
 }

@@ -1,6 +1,11 @@
+import { getCategories } from '@/features/blog/api/categories';
+import { AllPosts } from '@/features/blog/components/all-posts';
 import { BlogHero } from '@/features/blog/components/blog-hero';
+import { CategoryFilter } from '@/features/blog/components/category-filter';
+import { PostCardLoader } from '@/features/blog/components/post-card-loader';
 import type { Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
+import { Suspense } from 'react';
 
 interface BlogPageProps {
   params: Promise<{ locale: Locale }>;
@@ -9,13 +14,21 @@ interface BlogPageProps {
   }>;
 }
 
-export default async function BlogPage({ params }: BlogPageProps) {
+export default async function BlogPage({ params, searchParams }: BlogPageProps) {
   const { locale } = await params;
+  const { category } = await searchParams;
+  const categories = await getCategories(locale);
   setRequestLocale(locale);
 
   return (
     <div className="space-y-16">
       <BlogHero />
+      <div className="space-y-5">
+        <CategoryFilter categories={categories} currentCategory={category || null} />
+        <Suspense fallback={<PostCardLoader />}>
+          <AllPosts categorySlug={category} locale={locale} />
+        </Suspense>
+      </div>
     </div>
   );
 }

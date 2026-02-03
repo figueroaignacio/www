@@ -1,14 +1,9 @@
 'use client';
 
-// Hooks
+import type { CategoryWithCount } from '@/features/blog/api/categories';
 import { usePathname, useRouter } from 'next/navigation';
 import { useTransition } from 'react';
-
-// Components
 import { Categories } from './categories';
-
-// Types
-import type { CategoryWithCount } from '@/features/blog/api/categories';
 
 interface CategoryFilterProps {
   categories: CategoryWithCount[];
@@ -31,7 +26,7 @@ export function CategoryFilter({ categories, currentCategory }: CategoryFilterPr
   };
 
   return (
-    <div className="mb-12">
+    <div>
       <Categories
         categories={categories}
         currentCategory={currentCategory}

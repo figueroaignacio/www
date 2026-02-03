@@ -1,11 +1,6 @@
-// Components
-import { PostCard } from './post-card';
-
-// Utils
 import { getPosts } from '@/features/blog/api/posts';
-
-// Types
 import type { Post } from '@/payload-types';
+import { PostCard } from './post-card';
 
 interface AllPostsProps {
   categorySlug?: string;
@@ -26,9 +21,9 @@ export async function AllPosts({ categorySlug, locale }: AllPostsProps) {
   }
 
   return (
-    <ul className="space-y-3">
+    <ul>
       {posts.map((post) => (
-        <li key={post.id} className="space-y-5">
+        <li key={post.id}>
           <PostCard
             createdAt={post.createdAt}
             title={post.title}

@@ -1,6 +1,5 @@
 import { Footer } from '@/components/footer';
-import { MobileMenu } from '@/components/mobile-menu';
-import { NavigationBar } from '@/components/navigation-bar';
+import { Header } from '@/components/header';
 import { Providers } from '@/components/providers';
 import { NBotChat } from '@/features/chat/components/n-bot-chat';
 import { routing } from '@/i18n/routing';
@@ -35,13 +34,12 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   return (
     <html lang={locale} suppressHydrationWarning className={theme}>
-      <body className={`${fontSans.className} antialiased flex flex-col min-h-screen relative`}>
+      <body className={`${fontSans.className} antialiased`}>
         <NextIntlClientProvider>
           <Providers>
+            <NBotChat />
             <div className="min-h-screen flex flex-col">
-              <NavigationBar />
-              <MobileMenu />
-              <NBotChat />
+              <Header />
               <main className="flex-1 container">{children}</main>
               <Footer />
             </div>
