@@ -182,6 +182,7 @@
     "categoryFilter": {
       "allCategories": "Todas las categorías"
     },
+    "openToWorkBadge": "Disponible para trabajar",
     "comments": {
       "title": "Comunidad",
       "count": "({count})",

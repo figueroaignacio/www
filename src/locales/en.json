@@ -182,6 +182,7 @@
     "categoryFilter": {
       "allCategories": "All categories"
     },
+    "openToWorkBadge": "Open to work",
     "comments": {
       "title": "Community",
       "count": "({count})",

@@ -5,6 +5,7 @@ import { Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { HeaderActions } from './header-actions';
+import { OpenToWorkBadge } from './open-to-work-badge';
 
 export function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -63,13 +64,11 @@ export function MobileMenu() {
             })}
           </ul>
         </div>
-        <div className="p-4 border-t border-border/40">
-          <div className="flex justify-center">
-            <HeaderActions />
-          </div>
-        </div>
       </nav>
-      <HeaderActions />
+      <div className="flex items-center gap-3">
+        <OpenToWorkBadge />
+        <HeaderActions />
+      </div>
     </div>
   );
 }

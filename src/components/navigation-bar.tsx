@@ -1,13 +1,10 @@
 'use client';
 
-// Hooks
-import { usePathname } from '@/i18n/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
-
-// Components
-import { Link } from '@/i18n/navigation';
 import { HeaderActions } from './header-actions';
 import { Logo } from './logo';
+import { OpenToWorkBadge } from './open-to-work-badge';
 
 interface Navigation {
   label: string;
@@ -40,7 +37,10 @@ export function NavigationBar() {
           );
         })}
       </div>
-      <HeaderActions />
+      <div className="flex items-center gap-3">
+        <OpenToWorkBadge />
+        <HeaderActions />
+      </div>
     </nav>
   );
 }
