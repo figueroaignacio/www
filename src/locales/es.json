@@ -152,6 +152,10 @@
         "text": "Te invito a ver mi CV."
       }
     },
+    "ctaContact": {
+      "title": "Conectemos",
+      "description": "Siempre abierto a nuevas oportunidades, colaboraciones o simplemente charlar sobre tecnología."
+    },
     "chat": {
       "header": {
         "title": "N-bot",

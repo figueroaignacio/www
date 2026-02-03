@@ -1,3 +1,4 @@
+import { CTAContact } from '@/features/home/components/cta-contact';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 
@@ -19,6 +20,8 @@ export function Footer() {
         </div>
         <p className="text-muted-foreground pt-2">{t('components.footer.thanks')}</p>
       </div>
+      <CTAContact />
+      <p>Quick Links</p>
       <nav className="flex flex-col gap-x-6 gap-y-2 text-sm">
         {navigation.map((item) => (
           <Link
