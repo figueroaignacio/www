@@ -1,4 +1,5 @@
 // Components
+import { GitHubIcon } from '@/components/tech-icons';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -7,7 +8,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { GitHubIcon } from '@/features/about/components/tech-icons';
 import { MessageSquare } from 'lucide-react';
 
 interface LoginModalProps {
