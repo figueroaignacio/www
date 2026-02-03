@@ -32,7 +32,7 @@
     },
     "blog": {
       "title": "Blog",
-      "description": "Discover my posts about tech, programming, AI, opinions, etc.",
+      "description": "Articles about web development, software architecture, and the technologies I use daily. I share what I learn while building.",
       "postedBy": "Posted by"
     },
     "recentPosts": {

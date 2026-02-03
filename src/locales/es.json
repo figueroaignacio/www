@@ -32,7 +32,7 @@
     },
     "blog": {
       "title": "Blog",
-      "description": "Descubre mis publicaciones sobre tecnología, programación, IA, opiniones, etc.",
+      "description": "Artículos sobre desarrollo web, arquitectura de software, y las tecnologías que uso día a día. Comparto lo que aprendo mientras construyo.",
       "postedBy": "Publicado por"
     },
     "recentPosts": {
