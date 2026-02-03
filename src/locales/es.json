@@ -41,8 +41,7 @@
     },
     "aboutMe": {
       "title": "Sobre mí",
-      "description": "Quién soy, qué hago y por qué me gusta tanto programar",
-      "headline": "Desarrollador Fullstack y Estudiante de Programación en la UTN",
+      "description": "Construyendo software con propósito",
       "items": [
         {
           "content": "<b>Estudiante de Programación en la Universidad Tecnologica Nacional (UTN) y autodidacta</b>. Me interesa el <b>Desarrollo Fullstack</b>, construir aplicaciones desde cero y trabajar con <b>tecnologías modernas</b>. Disfruto pensar buenas <b>arquitecturas</b> y aplicar <b>buenas practicas</b> para mantener proyectos sólidos y escalables."
@@ -53,16 +52,7 @@
         {
           "content": "Estoy explorando cómo integrar <b>Inteligencia Artificial</b> en aplicaciones modernas para sumar funciones más inteligentes y automatizar procesos. Busco <b>mejorar</b> constantemente, aprender nuevas herramientas y crecer en cada proyecto."
         }
-      ],
-      "hero": {
-        "stats": {
-          "projects": "Proyectos",
-          "experience": "Años",
-          "learning": "Aprendiendo"
-        },
-        "location": "Buenos Aires, Argentina",
-        "joined": "Desde 2022"
-      }
+      ]
     },
     "projects": {
       "title": "Proyectos",

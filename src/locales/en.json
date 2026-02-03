@@ -53,16 +53,7 @@
         {
           "content": "I'm currently diving into integrating <b>Artificial Intelligence</b> into modern applications to add smarter features and automate tasks. I'm always looking to <b>improve</b>, discover new tools, and grow through every project I build."
         }
-      ],
-      "hero": {
-        "stats": {
-          "projects": "Projects",
-          "experience": "Years",
-          "learning": "Learning"
-        },
-        "location": "Buenos Aires, Argentina",
-        "joined": "Since 2022"
-      }
+      ]
     },
     "projects": {
       "title": "Projects",
