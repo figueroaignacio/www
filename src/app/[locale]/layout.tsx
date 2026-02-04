@@ -3,7 +3,7 @@ import { Header } from '@/components/header';
 import { Providers } from '@/components/providers';
 import { NBotChat } from '@/features/chat/components/n-bot-chat';
 import { routing } from '@/i18n/routing';
-import { fontSans } from '@/lib/fonts';
+import { fontHeading, fontSans } from '@/lib/fonts';
 import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { cookies } from 'next/headers';
@@ -34,7 +34,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   return (
     <html lang={locale} suppressHydrationWarning className={theme}>
-      <body className={`${fontSans.className} antialiased`}>
+      <body className={`${fontSans.variable} ${fontHeading.variable} antialiased`}>
         <NextIntlClientProvider>
           <Providers>
             <NBotChat />

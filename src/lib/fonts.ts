@@ -1,9 +1,11 @@
-import { Geist, Playfair_Display } from 'next/font/google';
+import { Geist, Geist_Mono } from 'next/font/google';
+
+export const fontHeading = Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-heading',
+});
 
 export const fontSans = Geist({
   subsets: ['latin'],
-  weight: ['300', '400'],
   variable: '--font-sans',
 });
-
-export const fontHeading = Playfair_Display({ subsets: ['latin'], weight: ['600', '700'] });
