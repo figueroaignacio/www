@@ -37,8 +37,7 @@ export function CommentsSection({ postId, session, onLogin }: CommentsSectionPro
   return (
     <div className="relative">
       <LoadingOverlay isVisible={isRedirecting} />
-
-      <div className="my-20 mx-auto max-w-xl">
+      <div className="my-20 mx-auto">
         <CommentsHeader
           session={session}
           commentsCount={comments.length}
@@ -46,7 +45,6 @@ export function CommentsSection({ postId, session, onLogin }: CommentsSectionPro
           onLogout={handleLogout}
           t={t}
         />
-
         <CommentForm
           session={session}
           newComment={newComment}
@@ -56,7 +54,6 @@ export function CommentsSection({ postId, session, onLogin }: CommentsSectionPro
           onLoginClick={() => setShowLoginModal(true)}
           t={t}
         />
-
         <CommentsList
           comments={comments}
           isLoading={isLoading}
@@ -74,7 +71,6 @@ export function CommentsSection({ postId, session, onLogin }: CommentsSectionPro
           isDeleting={!!deletingComment}
           t={t}
         />
-
         <LoginModal
           isOpen={showLoginModal}
           isRedirecting={isRedirecting}

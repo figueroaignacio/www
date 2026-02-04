@@ -1,11 +1,7 @@
 'use client';
 
-// Hooks
 import { signIn, useSession } from '@/lib/auth-client';
 import { useLocale } from 'next-intl';
-import { useEffect, useState } from 'react';
-
-// Components
 import { CommentsSection } from './comments-section';
 
 interface CommentsWithAuthProps {
@@ -13,17 +9,9 @@ interface CommentsWithAuthProps {
   slug: string;
 }
 
-export default function CommentsWithAuth({ postId, slug }: CommentsWithAuthProps) {
-  const { data: sessionData, isPending } = useSession();
+export function CommentsWithAuth({ postId, slug }: CommentsWithAuthProps) {
+  const { data: sessionData } = useSession();
   const locale = useLocale();
-
-  const [isInitialLoading, setIsInitialLoading] = useState(true);
-
-  useEffect(() => {
-    if (!isPending) {
-      setIsInitialLoading(false);
-    }
-  }, [isPending]);
 
   const handleLogin = async () => {
     await signIn.social({
