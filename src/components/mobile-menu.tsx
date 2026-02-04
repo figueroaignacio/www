@@ -1,10 +1,12 @@
 'use client';
 
+import { CTAContact } from '@/features/home/components/cta-contact';
 import { Link, usePathname } from '@/i18n/navigation';
 import { Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { HeaderActions } from './header-actions';
+import { Logo } from './logo';
 import { OpenToWorkBadge } from './open-to-work-badge';
 
 export function MobileMenu() {
@@ -32,7 +34,10 @@ export function MobileMenu() {
         }`}
       >
         <div className="flex items-center justify-between p-4 border-b border-border/40">
-          <span className="text-sm font-medium text-muted-foreground">Menu</span>
+          <div className="flex items-center gap-2">
+            <Logo />
+            <span className="text-sm font-medium text-muted-foreground">Ignacio Figueroa</span>
+          </div>
           <button
             onClick={toggleMenu}
             className="p-2 hover:bg-accent rounded-md transition-colors"
@@ -63,6 +68,9 @@ export function MobileMenu() {
               );
             })}
           </ul>
+          <div className="mt-8">
+            <CTAContact />
+          </div>
         </div>
       </nav>
       <div className="flex items-center gap-3">
