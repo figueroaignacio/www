@@ -51,7 +51,7 @@ function QuickLink({
       <Icon className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
       <div className="flex items-start gap-4">
         <div className="flex-1">
-          <h3 className="font-medium text-foreground group-hover:text-foreground/80 transition-colors">
+          <h3 className="text-foreground group-hover:text-foreground/80 text-xl font-semibold transition-colors">
             {title}
           </h3>
           <p className="mt-2 text-sm text-muted-foreground">{description}</p>
