@@ -1,10 +1,7 @@
 'use client';
 
-// Payload
 import type { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical';
 import { RichText as PayloadRichText } from '@payloadcms/richtext-lexical/react';
-
-// Components
 import { CodeBlock } from './codeblock';
 
 interface CustomRichTextProps {

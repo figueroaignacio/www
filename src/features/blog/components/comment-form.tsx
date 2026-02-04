@@ -1,4 +1,3 @@
-// Components
 import { Button } from '@/components/ui/button';
 import { Send, UserCircle2 } from 'lucide-react';
 
