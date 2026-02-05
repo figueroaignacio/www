@@ -1,4 +1,3 @@
-import { Error } from '@/components/error';
 import { getProjects } from '@/features/projects/api/projects';
 import { ProjectCard } from '@/features/projects/components/project-card';
 import type { Project } from '@/payload-types';
@@ -7,10 +6,6 @@ import { getLocale } from 'next-intl/server';
 export async function AllProjects() {
   const locale = await getLocale();
   const projects: Project[] = await getProjects(locale);
-
-  if (projects.length === 0) {
-    return <Error />;
-  }
 
   return (
     <section>

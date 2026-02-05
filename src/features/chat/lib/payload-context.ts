@@ -1,14 +1,8 @@
-// Payload
+import { formatDateOnly } from '@/lib/format-date';
 import config from '@payload-config';
+import { getLocale } from 'next-intl/server';
 import { getPayload } from 'payload';
 
-// Next Intl
-import { getLocale } from 'next-intl/server';
-
-// Utils
-import { formatDateOnly } from '@/lib/format-date';
-
-// Types
 import type { Experience, Post, Project } from '@/payload-types';
 
 export interface PayloadContextData {

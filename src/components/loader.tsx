@@ -1,7 +1,4 @@
-// Hooks
 import { useTranslations } from 'next-intl';
-
-// Components
 import { Spinner } from './ui/spinner';
 
 export function Loader() {

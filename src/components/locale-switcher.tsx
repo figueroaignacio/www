@@ -1,24 +1,17 @@
 'use client';
 
-// Hooks
-import { usePathname, useRouter } from '@/i18n/navigation';
-import { useLocale } from 'next-intl';
-import { useTransition } from 'react';
-
-// Components
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Check } from 'lucide-react';
-
-// Types
-import type { Locale } from 'next-intl';
-
-// Config
+import { usePathname, useRouter } from '@/i18n/navigation';
 import { locales } from '@/i18n/routing';
+import { Check } from 'lucide-react';
+import type { Locale } from 'next-intl';
+import { useLocale } from 'next-intl';
+import { useTransition } from 'react';
 
 const LOCALE_LABELS: Record<string, string> = {
   es: 'ES',
