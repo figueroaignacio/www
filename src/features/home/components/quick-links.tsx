@@ -19,7 +19,7 @@ export function QuickLinks() {
   const quickLinks: QuickLink[] = t.raw('quickLinks');
 
   return (
-    <section className="grid sm:grid-cols-3 gap-4">
+    <section className="grid sm:grid-cols-3 gap-4 mt-16">
       {quickLinks.map((item) => (
         <QuickLink
           key={item.href}
