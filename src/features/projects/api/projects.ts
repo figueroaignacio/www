@@ -14,7 +14,7 @@ export async function getProjects(locale: Locale) {
   return data.docs;
 }
 
-export async function getOtherProjects(locale: Locale) {
+export async function getCommercialProjects(locale: Locale) {
   const res = await fetch(
     `${API_URL}/api/projects?where[featured][equals]=false&where[locale][equals]=${locale}`,
     {
@@ -30,7 +30,7 @@ export async function getOtherProjects(locale: Locale) {
   return data.docs;
 }
 
-export async function getFeaturedProjects(locale: Locale) {
+export async function getPersonalProjects(locale: Locale) {
   const res = await fetch(
     `${API_URL}/api/projects?where[featured][equals]=true&where[locale][equals]=${locale}`,
   );

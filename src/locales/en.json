@@ -57,8 +57,8 @@
     "projects": {
       "title": "Projects",
       "description": "Thinking of ideas. Turning them into projects. Writing code. Breaking things. Fixing them. Asking AI. Arguing with AI. More code. Reading documentation. Drinking mate. Repeat.",
-      "featuredProjects": "Featured projects",
-      "otherProjects": "Other projects"
+      "personalProjects": "Personal projects",
+      "commercialProjects": "Commercial projects"
     },
     "stack": {
       "title": "Stack",
