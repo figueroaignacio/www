@@ -58,7 +58,6 @@ export function CommentItem({
         />
         <div className="absolute top-10 left-1/2 -translate-x-1/2 w-px h-full bg-border/50 group-last:hidden" />
       </div>
-
       <div className="flex-1 min-w-0">
         <div className="flex items-baseline justify-between mb-1.5 gap-2">
           <div className="flex items-center gap-2">
@@ -69,12 +68,10 @@ export function CommentItem({
               </span>
             )}
           </div>
-
           <div className="flex items-center gap-3">
             <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium whitespace-nowrap">
               {formatDate(comment.created_at)}
             </span>
-
             {isOwner && (
               <button
                 onClick={() => onDelete(comment.id)}
@@ -90,8 +87,7 @@ export function CommentItem({
             )}
           </div>
         </div>
-
-        <div className="relative bg-muted/30 hover:bg-muted/50 transition-colors p-4 rounded-2xl rounded-tl-none border border-border/50">
+        <div className="relative bg-card hover:bg-card/50 transition-colors p-4 rounded-2xl rounded-tl-none border border-border/50">
           <p className="text-sm leading-relaxed text-foreground/90 whitespace-pre-wrap wrap-break-word">
             {comment.content}
           </p>

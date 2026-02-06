@@ -7,7 +7,6 @@ import { CommentForm } from './comment-form';
 import { CommentsHeader } from './comments-header';
 import { CommentsList } from './comments-list';
 import { DeleteConfirmModal } from './delete-confirm-modal';
-import { LoadingOverlay } from './loading-overlay';
 import { LoginModal } from './login-modal';
 
 export function CommentsSection({ postId, session, onLogin }: CommentsSectionProps) {
@@ -36,7 +35,6 @@ export function CommentsSection({ postId, session, onLogin }: CommentsSectionPro
 
   return (
     <div className="relative">
-      <LoadingOverlay isVisible={isRedirecting} />
       <div className="my-20 mx-auto">
         <CommentsHeader
           session={session}
@@ -63,7 +61,6 @@ export function CommentsSection({ postId, session, onLogin }: CommentsSectionPro
           onDeleteComment={openDeleteModal}
           deletingId={deletingComment}
         />
-
         <DeleteConfirmModal
           isOpen={!!commentToDelete}
           onOpenChange={(open) => !open && setCommentToDelete(null)}

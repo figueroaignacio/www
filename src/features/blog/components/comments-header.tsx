@@ -26,9 +26,7 @@ export function CommentsHeader({
   return (
     <div className="flex items-center justify-between mb-8">
       <div className="flex items-center gap-3">
-        <div className="p-2 rounded-xl bg-primary/10 text-primary">
-          <MessageSquare className="w-5 h-5" />
-        </div>
+        <MessageSquare className="w-5 h-5" />
         <h2 className="text-xl font-bold tracking-tight text-foreground">
           {t('title')}{' '}
           <span className="text-muted-foreground font-normal ml-1">({commentsCount})</span>

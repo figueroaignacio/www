@@ -32,7 +32,7 @@ export function CommentsWithAuth({ postId, slug }: CommentsWithAuthProps) {
     : null;
 
   return (
-    <div className="my-20 mx-auto max-w-xl">
+    <div className="my-20">
       <CommentsSection postId={postId} session={session} onLogin={handleLogin} />
     </div>
   );

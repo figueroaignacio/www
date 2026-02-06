@@ -28,7 +28,7 @@ export function CommentForm({
   t,
 }: CommentFormProps) {
   return (
-    <div className="group relative mb-12 rounded-2xl bg-card border border-border p-1 focus-within:ring-2 focus-within:ring-primary/20 transition-all ">
+    <div className="group relative mb-12 rounded-xl bg-card border border-border p-1 focus-within:ring-2 focus-within:ring-primary/20 transition-all ">
       <textarea
         value={newComment}
         onChange={(e) => onCommentChange(e.target.value)}
