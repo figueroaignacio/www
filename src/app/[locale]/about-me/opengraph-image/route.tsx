@@ -1,5 +1,6 @@
 import { ImageResponse } from 'next/og';
 import type { NextRequest } from 'next/server';
+
 export const runtime = 'edge';
 
 export async function GET(req: NextRequest, { params }: { params: Promise<{ locale: string }> }) {
@@ -45,7 +46,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ loca
             lineHeight: 1,
           }}
         >
-          Ignacio Figueroa
+          {locale === 'en' ? 'About me' : 'Sobre mí'}
         </div>
         <div
           style={{
@@ -53,9 +54,12 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ loca
             color: '#888',
             letterSpacing: '-0.02em',
             fontWeight: 400,
+            maxWidth: 900,
           }}
         >
-          {locale === 'en' ? 'Full Stack Developer' : 'Desarrollador Full Stack'}
+          {locale === 'en'
+            ? 'Who I am, what I do, and why I love programming'
+            : 'Quién soy, qué hago y por qué me gusta tanto programar'}
         </div>
       </div>
     </div>,

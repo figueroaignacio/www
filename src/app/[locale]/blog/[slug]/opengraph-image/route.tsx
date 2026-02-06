@@ -31,11 +31,11 @@ export async function GET(
       return new ImageResponse(
         <div
           style={{
-            background: '#000000',
+            background: '#040609',
             width: '100%',
             height: '100%',
             padding: '80px',
-            color: '#e3e3e3',
+            color: '#ffffff',
             fontSize: 48,
             fontWeight: '600',
             fontFamily: 'system-ui, -apple-system, sans-serif',
@@ -50,7 +50,8 @@ export async function GET(
     return new ImageResponse(
       <div
         style={{
-          background: '#000000',
+          backgroundColor: '#030303',
+          backgroundImage: 'radial-gradient(circle at 50% 100%, #222 0%, #000 50%)',
           width: '100%',
           height: '100%',
           padding: '80px',
@@ -75,7 +76,7 @@ export async function GET(
             style={{
               fontSize: 38,
               fontWeight: '700',
-              color: '#e3e3e3',
+              color: '#ffffff',
               margin: 0,
               lineHeight: 1.2,
               letterSpacing: '-0.02em',
@@ -87,7 +88,7 @@ export async function GET(
           <p
             style={{
               fontSize: 32,
-              color: '#969696',
+              color: '#a0a0a0',
               margin: 0,
               lineHeight: 1.2,
               letterSpacing: '-0.02em',

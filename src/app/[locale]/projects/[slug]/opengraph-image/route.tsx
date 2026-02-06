@@ -50,7 +50,8 @@ export async function GET(
     return new ImageResponse(
       <div
         style={{
-          background: '#000000',
+          backgroundColor: '#030303',
+          backgroundImage: 'radial-gradient(circle at 50% 100%, #222 0%, #000 50%)',
           width: '100%',
           height: '100%',
           padding: '80px',
