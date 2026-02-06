@@ -4,7 +4,7 @@ import { BlogHero } from '@/features/blog/components/blog-hero';
 import { CategoryFilter } from '@/features/blog/components/category-filter';
 import { PostCardLoader } from '@/features/blog/components/post-card-loader';
 import type { Locale } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Suspense } from 'react';
 
 interface BlogPageProps {
@@ -31,4 +31,15 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
       </div>
     </div>
   );
+}
+
+export async function generateMetadata({ params }: BlogPageProps) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'metadata.blog' });
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    keywords: t('keywords'),
+  };
 }

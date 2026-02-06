@@ -1,4 +1,26 @@
 {
+  "metadata": {
+    "home": {
+      "title": "Ignacio Figueroa | Desarrollador Fullstack & Arquitectura de Software",
+      "description": "Portafolio de Ignacio Figueroa. Desarrollador Fullstack especializado en Frontend, React, Next.js y arquitecturas escalables. Estudiante UTN.",
+      "keywords": "Desarrollador Web, Fullstack, Frontend, React, Next.js, Argentina, UTN, Desarrollador Software, Portfolio"
+    },
+    "blog": {
+      "title": "Blog de Desarrollo Web y Tecnología | Ignacio Figueroa",
+      "description": "Artículos, tutoriales y reflexiones sobre desarrollo frontend, backend, buenas prácticas, AI y carrera profesional en tecnología.",
+      "keywords": "Blog Desarrollo Web, Tutoriales React, Next.js, Arquitectura de Software, Programación, Frontend Tips"
+    },
+    "aboutMe": {
+      "title": "Sobre Mí | Ignacio Figueroa",
+      "description": "Conoce mi trayectoria como desarrollador, mis estudios en la UTN, mi stack tecnológico (React, Node, AI) y mi experiencia profesional.",
+      "keywords": "Sobre mí, Biografía Developer, Stack Tecnológico, Experiencia Laboral, Ignacio Figueroa, Perfil Profesional"
+    },
+    "projects": {
+      "title": "Proyectos | Ignacio Figueroa",
+      "description": "Explora mis proyectos personales y comerciales. Desarrollos web modernos, interfaces de usuario y aplicaciones con Inteligencia Artificial.",
+      "keywords": "Proyectos Web, Portfolio Proyectos, Casos de Éxito, Desarrollo Apps, React Projects, Open Source"
+    }
+  },
   "sections": {
     "home": {
       "greeting": "Hola, soy",

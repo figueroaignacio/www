@@ -1,7 +1,7 @@
 import { AllProjects } from '@/features/projects/components/all-projects';
 import { ProjectHero } from '@/features/projects/components/project-hero';
 import type { Locale } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
 
 interface ProjectsPageProps {
@@ -18,4 +18,15 @@ export default function ProjectsPage({ params }: ProjectsPageProps) {
       <AllProjects />
     </div>
   );
+}
+
+export async function generateMetadata({ params }: ProjectsPageProps) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'metadata.projects' });
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    keywords: t('keywords'),
+  };
 }

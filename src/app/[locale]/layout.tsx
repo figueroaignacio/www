@@ -11,7 +11,7 @@ import { notFound } from 'next/navigation';
 
 export const metadata = {
   title: {
-    template: `Ignacio Figueroa | %s`,
+    template: `%s | Ignacio Figueroa`,
   },
 };
 
