@@ -1,13 +1,14 @@
+export const revalidate = 3600;
+export const dynamic = 'force-static';
+
 import { getProjectBySlug, getProjects } from '@/features/projects/api/projects';
 import { ProjectHeaderPage } from '@/features/projects/components/project-header-page';
+import { ProjectVideo } from '@/features/projects/components/project-video';
 import { SITE_URL } from '@/lib/constants';
 import type { Project } from '@/payload-types';
 import { RichText } from '@payloadcms/richtext-lexical/react';
 import type { Metadata } from 'next';
 import type { Locale } from 'next-intl';
-
-export const revalidate = 3600;
-export const dynamic = 'force-static';
 
 interface ProjectPageProps {
   params: Promise<{
@@ -28,6 +29,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         demo={project.demo || ''}
         repository={project.repository || ''}
       />
+      <ProjectVideo videoUrl={project.videoUrl} />
       <RichText data={project.body} className="prose" />
     </div>
   );
