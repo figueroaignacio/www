@@ -293,6 +293,10 @@ export interface Project {
   id: number;
   locale: 'en' | 'es';
   projectImage?: (number | null) | Media;
+  /**
+   * Cloudinary video URL for project demo
+   */
+  videoUrl?: string | null;
   title: string;
   subtitle: string;
   slug: string;
@@ -596,6 +600,7 @@ export interface PostsSelect<T extends boolean = true> {
 export interface ProjectsSelect<T extends boolean = true> {
   locale?: T;
   projectImage?: T;
+  videoUrl?: T;
   title?: T;
   subtitle?: T;
   slug?: T;

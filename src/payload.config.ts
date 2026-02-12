@@ -1,15 +1,10 @@
-// Payload
 import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres';
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud';
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
-import { buildConfig } from 'payload';
-
-// Utils
 import path from 'path';
+import { buildConfig } from 'payload';
 import sharp from 'sharp';
 import { fileURLToPath } from 'url';
-
-// Collections
 import { PostCategories } from './collections/Categories';
 import { Education } from './collections/Education';
 import { Experience } from './collections/Experience';
