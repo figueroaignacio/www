@@ -1,9 +1,6 @@
-// Hooks
-import { useTranslations } from 'next-intl';
-
-// Components
 import { BotMessageSquare, Loader2 } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useTranslations } from 'next-intl';
 
 export function ChatLoading() {
   const t = useTranslations('components.chat.messages');

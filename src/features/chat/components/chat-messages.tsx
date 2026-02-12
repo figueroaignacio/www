@@ -1,16 +1,11 @@
 'use client';
 
-// Hooks
-import { useEffect, useRef } from 'react';
-
-// Components
 import { BotMessageSquare } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import type { Message } from '../types';
 import { ChatLoading } from './chat-loading';
 import { ChatMessage } from './chat-message';
 import { ChatSuggestions } from './chat-suggestions';
-
-// Types
-import type { Message } from '../types';
 
 interface ChatMessagesProps {
   messages: Message[];

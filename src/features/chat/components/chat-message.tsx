@@ -1,9 +1,6 @@
-// Components
 import { motion } from 'motion/react';
-import { ChatMarkdownContent } from './chat-markdown-content';
-
-// Types
 import type { Message } from '../types';
+import { ChatMarkdownContent } from './chat-markdown-content';
 
 interface ChatMessageProps {
   message: Message;

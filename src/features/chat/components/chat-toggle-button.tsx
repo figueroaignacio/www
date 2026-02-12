@@ -1,11 +1,8 @@
-// Hooks
-import { useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
-
-// Components
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { BotMessageSquare, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
+import { useTranslations } from 'next-intl';
+import { useEffect, useState } from 'react';
 
 interface ChatToggleButtonProps {
   isOpen: boolean;

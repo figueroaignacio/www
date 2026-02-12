@@ -1,10 +1,7 @@
 'use client';
 
-// Hooks
 import { useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
-
-// Types
 import type { Message } from '../types';
 
 export function useChat() {

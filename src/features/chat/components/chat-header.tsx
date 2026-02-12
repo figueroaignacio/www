@@ -1,9 +1,6 @@
-// Hooks
-import { useTranslations } from 'next-intl';
-
-// Components
 import { BotMessageSquare, X } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useTranslations } from 'next-intl';
 
 interface ChatHeaderProps {
   onClose?: () => void;
