@@ -35,6 +35,15 @@ export const Projects: CollectionConfig = {
       required: false,
     },
     {
+      name: 'videoUrl',
+      label: 'Video URL',
+      type: 'text',
+      required: false,
+      admin: {
+        description: 'Cloudinary video URL for project demo',
+      },
+    },
+    {
       name: 'title',
       label: 'Title',
       type: 'text',
