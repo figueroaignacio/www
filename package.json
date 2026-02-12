@@ -16,6 +16,8 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@hugeicons/core-free-icons": "^3.1.1",
+    "@hugeicons/react": "^1.1.5",
     "@neondatabase/serverless": "^1.0.2",
     "@payloadcms/db-vercel-postgres": "3.75.0",
     "@payloadcms/next": "3.75.0",

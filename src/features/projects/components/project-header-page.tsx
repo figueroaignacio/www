@@ -14,20 +14,28 @@ export function ProjectHeaderPage({ title, description, demo, repository }: Part
         <h1 className="text-3xl font-semibold">{title}</h1>
         {description && <p className="text-muted-foreground">{description}</p>}
       </div>
-      <div className="mb-5 space-x-3">
+      <div className="mb-5 gap-x-2 flex items-center">
         {demo && (
           <a href={demo} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="sm" className="gap-x-3 items-center">
+            <Button
+              variant="outline"
+              size="sm"
+              className="gap-x-3 items-center"
+              leftIcon={<ExternalLink className="size-4" />}
+            >
               Demo
-              <ExternalLink className="size-4" />
             </Button>
           </a>
         )}
         {repository && (
           <a href={repository} target="_blank" rel="noopener noreferrer">
-            <Button variant="ghost" size="sm" className="gap-x-3 items-center">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="gap-x-3 items-center"
+              leftIcon={<GitHubIcon />}
+            >
               Source Code
-              <GitHubIcon />
             </Button>
           </a>
         )}
