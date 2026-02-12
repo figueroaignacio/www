@@ -21,6 +21,7 @@ export async function PersonalProjects() {
               technologies={project.technologies}
               slug={project.slug}
               demo={project.demo}
+              videoUrl={project.videoUrl}
               description={project.description}
             />
           </li>

@@ -4,6 +4,8 @@ import type { Project, TechStack } from '@/payload-types';
 import { ExternalLinkIcon, InfoCircledIcon } from '@radix-ui/react-icons';
 import { useTranslations } from 'next-intl';
 
+import { ProjectVideo } from './project-video';
+
 export function ProjectCard({
   slug,
   subtitle,
@@ -11,6 +13,7 @@ export function ProjectCard({
   demo,
   repository,
   technologies,
+  videoUrl,
   description,
 }: Partial<Project>) {
   const t = useTranslations('components.projectItem.actions');
@@ -37,7 +40,15 @@ export function ProjectCard({
     technologies?.filter((tech): tech is TechStack => typeof tech === 'object') ?? [];
 
   return (
-    <div className="relative space-y-4 border-border border p-8 rounded-xl bg-card">
+    <div className="relative space-y-4 border-border border p-6 rounded-xl bg-card">
+      <ProjectVideo
+        videoUrl={videoUrl}
+        className="my-0 mb-6"
+        autoPlay
+        muted
+        loop
+        controls={false}
+      />
       <div className="relative">
         <div className="relative flex h-full flex-col justify-center">
           <h2 className="text-lg font-bold text-foreground">{title}</h2>
