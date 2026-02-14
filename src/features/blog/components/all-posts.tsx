@@ -12,27 +12,26 @@ export async function AllPosts({ categorySlug, locale }: AllPostsProps) {
 
   if (posts.length === 0) {
     return (
-      <div>
-        <p className="text-gray-400 font-light tracking-wide">
-          {categorySlug ? 'No hay posts en esta categoría' : 'No hay posts disponibles'}
+      <div className="flex flex-col items-center justify-center py-20 text-center">
+        <p className="text-lg text-muted-foreground">
+          {categorySlug ? 'No posts in this category yet.' : 'No posts available yet.'}
         </p>
       </div>
     );
   }
 
   return (
-    <ul>
+    <div className="space-y-12">
       {posts.map((post) => (
-        <li key={post.id}>
-          <PostCard
-            createdAt={post.createdAt}
-            title={post.title}
-            slug={post.slug}
-            description={post.description}
-            categories={post.categories}
-          />
-        </li>
+        <PostCard
+          key={post.id}
+          createdAt={post.createdAt}
+          title={post.title}
+          slug={post.slug}
+          description={post.description}
+          categories={post.categories}
+        />
       ))}
-    </ul>
+    </div>
   );
 }

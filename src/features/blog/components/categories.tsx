@@ -17,11 +17,11 @@ export function Categories({ categories, currentCategory, onCategoryChange }: Ca
       <button
         onClick={() => onCategoryChange(null)}
         className={`
-          inline-flex items-center px-3 py-1 rounded-full text-sm tracking-wide transition-colors
+          px-4 py-2 rounded-full text-sm font-medium transition-all duration-200
           ${
             !currentCategory
-              ? 'bg-foreground text-background font-medium'
-              : 'bg-muted text-muted-foreground hover:text-foreground'
+              ? 'bg-foreground text-background shadow-md'
+              : 'bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground'
           }`}
       >
         {t('allCategories')}
@@ -37,20 +37,20 @@ export function Categories({ categories, currentCategory, onCategoryChange }: Ca
             disabled={hasNoPosts}
             onClick={() => onCategoryChange(category.slug)}
             className={`
-              inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm tracking-wide transition-colors
+              px-4 py-2 rounded-full text-sm font-medium transition-all duration-200
               ${
                 isSelected
-                  ? 'bg-foreground text-background font-medium'
+                  ? 'bg-foreground text-background shadow-md'
                   : hasNoPosts
-                    ? 'bg-muted text-muted-foreground/50 cursor-not-allowed'
-                    : 'bg-muted text-muted-foreground hover:text-foreground'
+                    ? 'bg-muted/40 text-muted-foreground/50 cursor-not-allowed'
+                    : 'bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground'
               }`}
           >
             <span>{category.name.charAt(0).toUpperCase() + category.name.slice(1)}</span>
             <span
-              className={`text-xs ${isSelected ? 'text-background/60' : 'text-muted-foreground/60'}`}
+              className={`ml-1.5 text-xs ${isSelected ? 'text-background/70' : 'text-muted-foreground/70'}`}
             >
-              ({category.postCount})
+              {category.postCount}
             </span>
           </button>
         );

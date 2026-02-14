@@ -21,14 +21,12 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
   setRequestLocale(locale);
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-12">
       <BlogHero />
-      <div className="space-y-5">
-        <CategoryFilter categories={categories} currentCategory={category || null} />
-        <Suspense fallback={<PostCardLoader />}>
-          <AllPosts categorySlug={category} locale={locale} />
-        </Suspense>
-      </div>
+      <CategoryFilter categories={categories} currentCategory={category || null} />
+      <Suspense fallback={<PostCardLoader />}>
+        <AllPosts categorySlug={category} locale={locale} />
+      </Suspense>
     </div>
   );
 }
