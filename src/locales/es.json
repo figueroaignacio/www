@@ -140,6 +140,10 @@
       {
         "label": "Proyectos",
         "href": "/projects"
+      },
+      {
+        "label": "Chat",
+        "href": "/chat"
       }
     ]
   },
