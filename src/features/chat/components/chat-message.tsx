@@ -13,17 +13,13 @@ export function ChatMessage({ message }: ChatMessageProps) {
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`flex gap-3 ${isUser ? 'flex-row-reverse' : ''}`}
+      className={`flex w-full ${isUser ? 'justify-end' : 'justify-start'}`}
     >
-      <div
-        className={`rounded-lg px-8 py-4  ${
-          isUser ? 'bg-foreground text-background rounded-tr-sm' : 'bg-card rounded-tl-sm'
-        }`}
-      >
+      <div className={`max-w-full py-3 ${isUser ? 'bg-secondary rounded-3xl rounded-tr-xs' : ''}`}>
         {isUser ? (
-          <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+          <p className="text-base whitespace-pre-wrap leading-relaxed px-5">{message.content}</p>
         ) : (
-          <div className="text-sm">
+          <div className="">
             <ChatMarkdownContent content={message.content} />
           </div>
         )}

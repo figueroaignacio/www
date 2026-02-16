@@ -19,6 +19,10 @@
       "title": "Proyectos | Ignacio Figueroa",
       "description": "Explora mis proyectos personales y comerciales. Desarrollos web modernos, interfaces de usuario y aplicaciones con Inteligencia Artificial.",
       "keywords": "Proyectos Web, Portfolio Proyectos, Casos de Éxito, Desarrollo Apps, React Projects, Open Source"
+    },
+    "chat": {
+      "title": "N-bot | Ignacio Figueroa",
+      "description": "Charla con mi asistente de IA para conocer más sobre mí, mis habilidades y mis proyectos."
     }
   },
   "sections": {
@@ -188,7 +192,20 @@
         "who": "¿Quién es Ignacio Figueroa?",
         "technologies": "¿Qué tecnologías utiliza?",
         "education": "¿Qué estudia y cómo se forma?",
-        "funFact": "Cuéntame un dato curioso sobre Ignacio"
+        "funFact": "Contame un dato curioso sobre Ignacio"
+      },
+      "page": {
+        "greeting": "Hola!",
+        "subtitle": "¿En qué puedo ayudarte hoy?",
+        "role": "Asistente IA",
+        "inputPlaceholder": "Mensaje a N-bot...",
+        "quickActions": {
+          "me": "Yo",
+          "projects": "Proyectos",
+          "skills": "Habilidades",
+          "fun": "Diversión",
+          "contact": "Contacto"
+        }
       }
     },
     "categoryFilter": {

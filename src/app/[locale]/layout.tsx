@@ -1,7 +1,6 @@
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { Providers } from '@/components/providers';
-import { NBotChat } from '@/features/chat/components/n-bot-chat';
 import { routing } from '@/i18n/routing';
 import { fontHeading, fontSans } from '@/lib/fonts';
 import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
@@ -37,7 +36,6 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
       <body className={`${fontSans.variable} ${fontHeading.variable} antialiased`}>
         <NextIntlClientProvider>
           <Providers>
-            <NBotChat />
             <div className="min-h-screen flex flex-col">
               <Header />
               <main className="flex-1 container">{children}</main>

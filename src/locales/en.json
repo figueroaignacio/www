@@ -19,6 +19,10 @@
       "title": "Projects | Ignacio Figueroa",
       "description": "Explore my personal and commercial projects. Modern web developments, UI designs, and AI-powered applications.",
       "keywords": "Web Projects, Project Portfolio, Case Studies, App Development, React Projects, Open Source"
+    },
+    "chat": {
+      "title": "N-bot | Ignacio Figueroa",
+      "description": "Chat with my AI assistant to learn more about me, my skills, and my projects."
     }
   },
   "sections": {
@@ -189,6 +193,19 @@
         "technologies": "What technologies does he use?",
         "education": "What does he study and how does he learn?",
         "funFact": "Tell me a fun fact about Ignacio"
+      },
+      "page": {
+        "greeting": "Hello, Ignacio",
+        "subtitle": "How can I help you today?",
+        "role": "AI Assistant",
+        "inputPlaceholder": "Message N-bot...",
+        "quickActions": {
+          "me": "Me",
+          "projects": "Projects",
+          "skills": "Skills",
+          "fun": "Fun",
+          "contact": "Contact"
+        }
       }
     },
     "categoryFilter": {

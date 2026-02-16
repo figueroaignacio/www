@@ -1,13 +1,17 @@
-import { Loader2, Send } from 'lucide-react';
+'use client';
+
+import { ArrowUp } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
+import React, { useEffect, useRef } from 'react';
 
 interface ChatInputProps {
   message: string;
   isLoading: boolean;
   onMessageChange: (value: string) => void;
   onSubmit: (e?: React.FormEvent) => void;
-  onKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  onKeyPress: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
+  isHero?: boolean;
 }
 
 export function ChatInput({
@@ -16,30 +20,79 @@ export function ChatInput({
   onMessageChange,
   onSubmit,
   onKeyPress,
+  isHero = false,
 }: ChatInputProps) {
-  const t = useTranslations('components.chat.input');
+  const t = useTranslations('components.chat.page');
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = 'auto';
+      textareaRef.current.style.height = `${Math.min(textareaRef.current.scrollHeight, 200)}px`;
+    }
+  }, [message]);
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      onSubmit();
+    }
+  };
 
   return (
-    <form onSubmit={onSubmit} className="p-4 bg-card border-t border-border">
-      <div className="flex gap-2">
-        <input
+    <motion.div
+      layout
+      className={`relative w-full transition-all duration-500 ${
+        isHero ? 'max-w-3xl mx-auto' : 'max-w-3xl mx-auto'
+      }`}
+    >
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          onSubmit();
+        }}
+        className={`relative flex items-end gap-2 p-2 rounded-4xl bg-secondary/50 dark:bg-secondary/20 hover:bg-secondary/70 dark:hover:bg-secondary/30 transition-all ${
+          isHero ? 'min-h-[64px]' : 'min-h-[56px] border border-border'
+        } ${isLoading ? 'opacity-90' : ''}`}
+      >
+        <textarea
+          ref={textareaRef}
           value={message}
           onChange={(e) => onMessageChange(e.target.value)}
-          onKeyPress={onKeyPress}
+          onKeyDown={handleKeyDown}
+          placeholder={t('inputPlaceholder')}
+          rows={1}
           disabled={isLoading}
-          className="flex-1 px-4 py-2.5 rounded-xl bg-background border border-border focus:outline-none focus:ring-1 focus:ring-foreground/20 text-sm placeholder:text-muted-foreground transition disabled:opacity-50"
-          placeholder={t('placeholder')}
+          className={`w-full bg-transparent resize-none border-0 focus:ring-0 focus:outline-none px-6 py-4 max-h-[200px] overflow-y-auto placeholder:text-muted-foreground/70 ${
+            isHero ? 'text-lg' : 'text-base'
+          }`}
+          style={{ minHeight: isHero ? '64px' : '56px' }}
         />
-        <motion.button
-          type="submit"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          disabled={isLoading || !message.trim()}
-          className="w-10 h-10 rounded-xl bg-foreground text-background flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
-        </motion.button>
-      </div>
-    </form>
+        <div className="flex pb-2 pr-2">
+          <motion.button
+            type="submit"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            disabled={!message.trim() && !isLoading}
+            className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-all duration-200 ${
+              message.trim() || isLoading
+                ? 'bg-foreground text-background shadow-md cursor-pointer'
+                : 'bg-transparent text-muted-foreground/30 cursor-not-allowed'
+            }`}
+          >
+            {isLoading ? (
+              <div className="w-3 h-3 bg-current rounded-sm animate-pulse" />
+            ) : (
+              <ArrowUp className="h-5 w-5" />
+            )}
+          </motion.button>
+        </div>
+      </form>
+      {isHero && (
+        <div className="absolute -bottom-8 right-4 text-xs text-muted-foreground/60">
+          N-bot can make mistakes. Check important info.
+        </div>
+      )}
+    </motion.div>
   );
 }
