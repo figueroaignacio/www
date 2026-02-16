@@ -2,6 +2,8 @@
 
 import { useChat } from '@/features/chat/hooks/use-chat';
 import { useChatInput } from '@/features/chat/hooks/use-chat-input';
+import { Link } from '@/i18n/navigation';
+import { ArrowLeft } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
 import { ChatHero } from './chat-hero';
@@ -28,7 +30,14 @@ export function ChatPage() {
   const showHero = !hasInteracted && messages.length <= 1;
 
   return (
-    <div className="flex flex-col h-[calc(100vh-80px)] w-full max-w-5xl mx-auto py-6">
+    <div className="flex flex-col h-[calc(100vh-40px)] w-full max-w-5xl mx-auto py-6">
+      <Link
+        href="/"
+        className="absolute top-6 left-6 p-2 rounded-full hover:bg-secondary/50 transition-colors"
+        title="Back to Home"
+      >
+        <ArrowLeft className="w-6 h-6 text-muted-foreground hover:text-foreground" />
+      </Link>
       <AnimatePresence mode="wait">
         {showHero ? (
           <motion.div

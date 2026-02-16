@@ -1,5 +1,3 @@
-import { Footer } from '@/components/footer';
-import { Header } from '@/components/header';
 import { Providers } from '@/components/providers';
 import { routing } from '@/i18n/routing';
 import { fontHeading, fontSans } from '@/lib/fonts';
@@ -35,13 +33,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
     <html lang={locale} suppressHydrationWarning className={theme}>
       <body className={`${fontSans.variable} ${fontHeading.variable} antialiased`}>
         <NextIntlClientProvider>
-          <Providers>
-            <div className="min-h-screen flex flex-col">
-              <Header />
-              <main className="flex-1 container">{children}</main>
-              <Footer />
-            </div>
-          </Providers>
+          <Providers>{children}</Providers>
         </NextIntlClientProvider>
       </body>
     </html>
