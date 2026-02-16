@@ -7,12 +7,7 @@ import type { Message } from '../types';
 export function useChat() {
   const t = useTranslations('components.chat.messages');
 
-  const INITIAL_MESSAGE: Message = {
-    role: 'assistant',
-    content: t('initial'),
-  };
-
-  const [messages, setMessages] = useState<Message[]>([INITIAL_MESSAGE]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
