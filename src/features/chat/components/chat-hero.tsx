@@ -14,8 +14,8 @@ export function ChatHero({ onQuickAction }: ChatHeroProps) {
   return (
     <div className="flex flex-col items-start justify-center min-h-[40vh] space-y-8 max-w-3xl mx-auto w-full px-4">
       <motion.div className="space-y-2">
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight">{t('greeting')}</h1>
-        <p className="text-2xl md:text-3xl text-muted-foreground font-medium">{t('subtitle')}</p>
+        <h1 className="text-2xl font-bold tracking-tight">{t('greeting')}</h1>
+        <p className="text-xl  text-muted-foreground font-medium">{t('subtitle')}</p>
       </motion.div>
 
       <motion.div className="w-full">

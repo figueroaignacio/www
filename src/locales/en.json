@@ -199,8 +199,8 @@
         "funFact": "Tell me a fun fact about Ignacio"
       },
       "page": {
-        "greeting": "Hello, Ignacio",
-        "subtitle": "How can I help you today?",
+        "greeting": "Hi, I'm Ignacio's Assistant",
+        "subtitle": "I'm here to answer your questions about his profile, projects, and experience.",
         "role": "AI Assistant",
         "inputPlaceholder": "Message N-bot...",
         "quickActions": {
