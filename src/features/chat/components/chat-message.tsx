@@ -15,11 +15,13 @@ export function ChatMessage({ message }: ChatMessageProps) {
       animate={{ opacity: 1, y: 0 }}
       className={`flex w-full ${isUser ? 'justify-end' : 'justify-start'}`}
     >
-      <div className={`max-w-full py-3 ${isUser ? 'bg-secondary rounded-3xl rounded-tr-xs' : ''}`}>
+      <div
+        className={`max-w-full py-4  ${isUser ? 'bg-secondary/60 rounded-3xl rounded-tr-xs' : ''}`}
+      >
         {isUser ? (
           <p className="text-base whitespace-pre-wrap leading-relaxed px-5">{message.content}</p>
         ) : (
-          <div className="">
+          <div>
             <ChatMarkdownContent content={message.content} />
           </div>
         )}

@@ -29,9 +29,9 @@ export function ChatMessages({ messages, isLoading, onSuggestionClick }: ChatMes
   const showSuggestions = messages.length === 1 && messages[0].role === 'assistant';
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 container">
       {messages.map((msg, idx) => (
-        <div key={idx} className="flex items-start space-x-3">
+        <div key={idx} className="flex items-start space-x-3 ">
           <div className="mt-1">
             {msg.role === 'assistant' ? <div className="" /> : <div className="w-6 h-6" />}
           </div>
