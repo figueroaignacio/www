@@ -1,7 +1,20 @@
 import { ChatPage } from '@/features/chat/components/chat-page';
-import { getTranslations } from 'next-intl/server';
+import type { Locale } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { use } from 'react';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+interface HomePageProps {
+  params: Promise<{ locale: Locale }>;
+}
+
+export default function Page({ params }: HomePageProps) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
+
+  return <ChatPage />;
+}
+
+export async function generateMetadata({ params }: HomePageProps) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'metadata.chat' });
 
@@ -9,8 +22,4 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t('title'),
     description: t('description'),
   };
-}
-
-export default function Page() {
-  return <ChatPage />;
 }
