@@ -42,7 +42,7 @@ export function ChatFloatingLink() {
             </motion.button>
           </Link>
         </TooltipTrigger>
-        <TooltipContent side="left" className="text-sm font-bold">
+        <TooltipContent side="left" className="text-sm">
           {t('tooltip')}
         </TooltipContent>
       </Tooltip>

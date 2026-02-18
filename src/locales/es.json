@@ -187,7 +187,7 @@
       "messages": {
         "initial": "¡Hola! 👋 ¿En qué puedo ayudarte hoy?",
         "error": "Lo siento, ocurrió un error. Por favor, intenta de nuevo.",
-        "tooltip": "Pregúntame sobre Ignacio",
+        "tooltip": "Preguntame sobre Ignacio",
         "thinking": "Pensando..."
       },
       "suggestions": {
@@ -199,17 +199,10 @@
         "funFact": "Contame un dato curioso sobre Ignacio"
       },
       "page": {
-        "greeting": "Hola, soy el asistente de Ignacio",
+        "greeting": "Hola, soy el asistente IA de Ignacio",
         "subtitle": "Estoy acá para responder tus dudas sobre su perfil, proyectos y experiencia.",
         "role": "Asistente IA",
-        "inputPlaceholder": "Mensaje a N-bot...",
-        "quickActions": {
-          "me": "Yo",
-          "projects": "Proyectos",
-          "skills": "Habilidades",
-          "fun": "Diversión",
-          "contact": "Contacto"
-        }
+        "inputPlaceholder": "Mensaje a N-bot..."
       }
     },
     "categoryFilter": {

@@ -29,7 +29,7 @@ export function ChatPage() {
 
   return (
     <div className="flex flex-col h-[calc(100vh-10px)] w-full max-w-5xl mx-auto py-6">
-      <BackButton className="absolute md:top-6 md:left-6 p-2 rounded-full bg-card z-100 top-7 left-4" />
+      <BackButton className="absolute md:top-6 md:left-6 z-100 top-4 left-4" />
       {showHero ? (
         <div className="flex-1 flex flex-col justify-center">
           <ChatHero onQuickAction={handleQuickAction} />
