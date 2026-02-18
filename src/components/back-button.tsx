@@ -1,7 +1,7 @@
 'use client';
 
+import { useRouter } from '@/i18n/navigation';
 import { ArrowLeftIcon } from '@radix-ui/react-icons';
-import { useRouter } from 'next/navigation';
 
 export function BackButton({ className }: { className?: string }) {
   const router = useRouter();
