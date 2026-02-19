@@ -40,6 +40,11 @@
       },
       "quickLinks": [
         {
+          "title": "AI Virtual Assistant",
+          "description": "Chat with my AI assistant to learn more about me, my skills, and my projects.",
+          "href": "/chat"
+        },
+        {
           "title": "Projects",
           "description": "Applications and experiments I build",
           "href": "/projects"
@@ -53,11 +58,6 @@
           "title": "About me",
           "description": "My story, stack and experience",
           "href": "/about"
-        },
-        {
-          "title": "AI Virtual Assistant",
-          "description": "Chat with my AI assistant to learn more about me, my skills, and my projects.",
-          "href": "/chat"
         }
       ]
     },

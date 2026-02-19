@@ -28,7 +28,7 @@ export function QuickLinks() {
           title={item.title}
           description={item.description}
           href={item.href}
-          className={index === 3 ? 'sm:col-span-3' : undefined}
+          className={index === 0 ? 'sm:col-span-3' : undefined}
         />
       ))}
     </section>
