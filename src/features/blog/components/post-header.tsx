@@ -17,9 +17,9 @@ export function PostHeader({ title, description, createdAt, categories }: Partia
         <BackButton />
       </div>
       <div className="flex text-muted-foreground gap-x-2 text-sm flex-wrap">
-        {createdAt && <p>{formatFullDateWithWeekday(createdAt, locale)}</p>}
-        <div className="hidden md:block">|</div>
-        <p>{t('postedBy')} Ignacio Figueroa</p>
+        <p>
+          {t('postedBy')} {formatFullDateWithWeekday(createdAt || '', locale)}
+        </p>
       </div>
       <div className="space-y-3">
         <h1 className="text-3xl font-semibold">{title}</h1>
