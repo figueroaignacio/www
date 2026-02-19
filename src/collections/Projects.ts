@@ -17,18 +17,18 @@ export const Projects: CollectionConfig = {
     drafts: true,
   },
   hooks: {
-      beforeValidate: [
-        ({ data }) => {
-          if (data?.title && !data?.slug) {
-            data.slug = slugify(data.title, {
-              lower: true,
-              strict: true,
-            });
-          }
-          return data;
-        },
-      ],
-    },
+    beforeValidate: [
+      ({ data }) => {
+        if (data?.title && !data?.slug) {
+          data.slug = slugify(data.title, {
+            lower: true,
+            strict: true,
+          });
+        }
+        return data;
+      },
+    ],
+  },
   fields: [
     {
       name: 'locale',
