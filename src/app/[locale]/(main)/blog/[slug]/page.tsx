@@ -2,6 +2,7 @@ export const revalidate = 3600;
 export const dynamic = 'force-static';
 
 import { getPostBySlug, getPosts } from '@/features/blog/api/posts';
+import { CommentCTA } from '@/features/blog/components/comment-cta';
 import { CommentsWithAuth } from '@/features/blog/components/comments-with-auth';
 import { PostHeader } from '@/features/blog/components/post-header';
 import { CustomRichText } from '@/features/blog/components/rich-text';
@@ -31,6 +32,7 @@ export default async function PostPage({ params }: PostPageProps) {
       />
       <CustomRichText data={post.body} className="prose prose-invert max-w-none" />
       <CommentsWithAuth postId={post.id} slug={slug} />
+      <CommentCTA />
     </article>
   );
 }

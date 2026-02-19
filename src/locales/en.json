@@ -256,6 +256,11 @@
       "previous": "Previous",
       "next": "Next",
       "info": "Page {current} of {total}"
+    },
+    "commentNotification": {
+      "user": "Ignacio Figueroa",
+      "time": "Now",
+      "message": "What did you think of the article? If it was useful or you want to add something, leave a comment below 👇"
     }
   }
 }

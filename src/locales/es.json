@@ -249,6 +249,11 @@
       "previous": "Anterior",
       "next": "Siguiente",
       "info": "Página {current} de {total}"
+    },
+    "commentNotification": {
+      "user": "Ignacio Figueroa",
+      "time": "Ahora",
+      "message": "¿Qué te pareció el artículo? Si te sirvió o querés agregar algo, dejame un comentario abajo 👇"
     }
   }
 }
