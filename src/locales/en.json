@@ -53,6 +53,11 @@
           "title": "About me",
           "description": "My story, stack and experience",
           "href": "/about"
+        },
+        {
+          "title": "AI Virtual Assistant",
+          "description": "Chat with my AI assistant to learn more about me, my skills, and my projects.",
+          "href": "/chat"
         }
       ]
     },

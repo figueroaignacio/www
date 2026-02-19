@@ -53,6 +53,11 @@
           "title": "Sobre mí",
           "description": "Mi historia, stack y experiencia",
           "href": "/about-me"
+        },
+        {
+          "title": "Asistente Virtual de IA",
+          "description": "Charla con mi asistente de IA para conocer más sobre mí, mis habilidades y mis proyectos.",
+          "href": "/chat"
         }
       ]
     },
