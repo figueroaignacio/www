@@ -1,4 +1,5 @@
 import { CollectionConfig } from 'payload';
+import slugify from 'slugify';
 
 export const Projects: CollectionConfig = {
   slug: 'projects',
@@ -15,6 +16,19 @@ export const Projects: CollectionConfig = {
   versions: {
     drafts: true,
   },
+  hooks: {
+      beforeValidate: [
+        ({ data }) => {
+          if (data?.title && !data?.slug) {
+            data.slug = slugify(data.title, {
+              lower: true,
+              strict: true,
+            });
+          }
+          return data;
+        },
+      ],
+    },
   fields: [
     {
       name: 'locale',

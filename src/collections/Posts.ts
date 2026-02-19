@@ -1,8 +1,5 @@
-// Payload
 import { BlocksFeature, FixedToolbarFeature, lexicalEditor } from '@payloadcms/richtext-lexical';
 import { CollectionConfig } from 'payload';
-
-// Utils
 import slugify from 'slugify';
 
 export const Posts: CollectionConfig = {
