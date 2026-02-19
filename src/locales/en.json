@@ -251,6 +251,11 @@
         "cancel": "Cancel"
       },
       "overlay": "Wait a moment..."
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "info": "Page {current} of {total}"
     }
   }
 }

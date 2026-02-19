@@ -244,6 +244,11 @@
         "cancel": "Cancelar"
       },
       "overlay": "Espera un momento..."
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "info": "Página {current} de {total}"
     }
   }
 }

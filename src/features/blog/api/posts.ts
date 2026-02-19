@@ -27,6 +27,40 @@ export async function getPosts(locale: Locale, categorySlug?: string) {
   const data = await res.json();
   return data.docs;
 }
+
+export async function getPaginatedPosts({
+  locale,
+  page = 1,
+  limit = 6,
+  categorySlug,
+}: {
+  locale: Locale;
+  page?: number;
+  limit?: number;
+  categorySlug?: string;
+}) {
+  const params = new URLSearchParams();
+  params.append('where[locale][equals]', locale);
+  params.append('page', page.toString());
+  params.append('limit', limit.toString());
+
+  if (categorySlug) {
+    params.append('where[categories.slug][equals]', categorySlug);
+  }
+
+  const url = `${API_URL}/api/posts?${params.toString()}`;
+
+  const res = await fetch(url, { cache: 'no-store' });
+
+  if (!res.ok) {
+    const errorData = await res.json().catch(() => ({}));
+    console.error('Error fetching posts:', errorData);
+    throw new Error('Error getting posts');
+  }
+
+  const data = await res.json();
+  return data;
+}
 export async function getPostBySlug(slug: string) {
   const res = await fetch(`${API_URL}/api/posts/?where[slug][equals]=${slug}`);
 

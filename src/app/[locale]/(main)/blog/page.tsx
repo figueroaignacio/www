@@ -11,21 +11,24 @@ interface BlogPageProps {
   params: Promise<{ locale: Locale }>;
   searchParams: Promise<{
     category?: string;
+    page?: string;
   }>;
 }
 
 export default async function BlogPage({ params, searchParams }: BlogPageProps) {
   const { locale } = await params;
-  const { category } = await searchParams;
+  const { category, page } = await searchParams;
   const categories = await getCategories(locale);
   setRequestLocale(locale);
+
+  const pageNumber = page ? parseInt(page) : 1;
 
   return (
     <div className="space-y-12">
       <BlogHero />
       <CategoryFilter categories={categories} currentCategory={category || null} />
       <Suspense fallback={<PostCardLoader />}>
-        <AllPosts categorySlug={category} locale={locale} />
+        <AllPosts categorySlug={category} locale={locale} page={pageNumber} />
       </Suspense>
     </div>
   );
