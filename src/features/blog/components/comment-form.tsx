@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import { Spinner } from '@/components/ui/spinner';
 import { Send, UserCircle2 } from 'lucide-react';
 
 interface User {
@@ -54,21 +54,20 @@ export function CommentForm({
             <UserCircle2 className="w-5 h-5 text-muted-foreground" />
           )}
         </div>
-        <Button
+        <button
           onClick={onSubmit}
           disabled={!session || isSubmitting || newComment.trim().length < 3}
-          size="sm"
-          className="gap-2"
+          className="flex items-center gap-2 p-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 disabled:bg-muted disabled:text-muted-foreground disabled:cursor-not-allowed"
         >
           {isSubmitting ? (
-            <div className="w-4 h-4 border-2 border-primary-foreground border-t-primary-foreground rounded-full animate-spin" />
+            <Spinner />
           ) : (
             <>
-              <span>{t('button.submit')}</span>
+              <span className="text-xs">{t('button.submit')}</span>
               <Send className="w-3.5 h-3.5" />
             </>
           )}
-        </Button>
+        </button>
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
 import { GitHubIcon } from '@/components/tech-icons';
-import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -31,11 +30,10 @@ export function LoginModal({ isOpen, isRedirecting, onOpenChange, onLogin, t }: 
           </DialogDescription>
         </DialogHeader>
         <div className="flex flex-col gap-3 py-6">
-          <Button
+          <button
             onClick={onLogin}
             disabled={isRedirecting}
-            variant="secondary"
-            className="flex gap-2"
+            className="flex gap-2 items-center justify-center p-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/90 disabled:bg-muted disabled:text-muted-foreground disabled:cursor-not-allowed"
           >
             {!isRedirecting && <GitHubIcon />}
             {isRedirecting ? (
@@ -43,7 +41,7 @@ export function LoginModal({ isOpen, isRedirecting, onOpenChange, onLogin, t }: 
             ) : (
               t('modal.button')
             )}
-          </Button>
+          </button>
           <p className="text-[11px] text-center text-muted-foreground uppercase tracking-tighter">
             {t('modal.footer')}
           </p>
