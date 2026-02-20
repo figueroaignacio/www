@@ -1,16 +1,20 @@
 import { Badge } from '@/components/ui/badge';
 import { Link } from '@/i18n/navigation';
-import { formatFullDateWithWeekday } from '@/lib/format-date';
+import { formatDateOnly } from '@/lib/format-date';
 import { type Post, PostCategory } from '@/payload-types';
-import { ArrowRight, CalendarDays } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 
-export function PostCard({ slug, title, createdAt, description, categories }: Partial<Post>) {
+import { getReadingTime } from '@/lib/reading-time';
+
+export function PostCard({ slug, title, createdAt, description, categories, body }: Partial<Post>) {
   const t = useTranslations('components.postItem');
   const locale = useLocale();
 
   const categoryList =
     categories?.filter((cat): cat is PostCategory => typeof cat === 'object') ?? [];
+
+  const readingTime = getReadingTime(body);
 
   return (
     <Link
@@ -18,13 +22,8 @@ export function PostCard({ slug, title, createdAt, description, categories }: Pa
       className="group block p-6 -mx-6 hover:bg-muted/50 transition-all duration-300 rounded-lg"
     >
       <article className="space-y-4">
-        <div className="flex items-center gap-x-4 text-muted-foreground/70">
-          {createdAt && (
-            <span className="flex items-center text-xs gap-1.5">
-              <CalendarDays className="size-4" />
-              <time>{formatFullDateWithWeekday(createdAt, locale)}</time>
-            </span>
-          )}
+        <div className="flex items-center gap-4 text-muted-foreground/70 flex-wrap">
+          {createdAt && <time className="text-xs">{formatDateOnly(createdAt, locale)}</time>}
           {categoryList.length > 0 && (
             <div className="flex gap-2">
               {categoryList.slice(0, 1).map((cat) => (
@@ -38,6 +37,9 @@ export function PostCard({ slug, title, createdAt, description, categories }: Pa
                 </Badge>
               )}
             </div>
+          )}
+          {readingTime > 0 && (
+            <span className="text-xs">{t('minRead', { count: readingTime })}</span>
           )}
         </div>
         <h2 className="text-2xl font-semibold text-foreground group-hover:text-foreground/80 transition-colors leading-tight">

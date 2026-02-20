@@ -167,7 +167,8 @@
     "error": "An error occurred while loading the data.",
     "loader": "Loading...",
     "postItem": {
-      "readMore": "Read More"
+      "readMore": "Read More",
+      "minRead": "{count} min read"
     },
     "ctaCv": {
       "url": "/pdf/CV_Ignacio_Figueroa_Frontend_Developer.pdf",

@@ -29,6 +29,7 @@ export default async function PostPage({ params }: PostPageProps) {
         title={post.title}
         createdAt={post.createdAt}
         categories={post.categories}
+        body={post.body}
       />
       <CustomRichText data={post.body} className="prose prose-invert max-w-none" />
       <CommentsWithAuth postId={post.id} slug={slug} />

@@ -28,6 +28,7 @@ export async function RecentPosts() {
                 slug={post.slug}
                 description={post.description}
                 createdAt={post.createdAt}
+                body={post.body}
               />
             </div>
           );

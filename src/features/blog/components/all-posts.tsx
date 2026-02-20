@@ -12,7 +12,7 @@ interface AllPostsProps {
 
 export async function AllPosts({ categorySlug, locale, page = 1 }: AllPostsProps) {
   const data = await getPaginatedPosts({ locale, categorySlug, page });
-  const posts = data.docs as Post[];
+  const posts: Post[] = data.docs;
   const totalPages = data.totalPages;
 
   if (posts.length === 0) {
@@ -36,6 +36,7 @@ export async function AllPosts({ categorySlug, locale, page = 1 }: AllPostsProps
             slug={post.slug}
             description={post.description}
             categories={post.categories}
+            body={post.body}
           />
         ))}
       </div>

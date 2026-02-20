@@ -167,7 +167,8 @@
     "error": "Ha ocurrido un error al cargar los datos.",
     "loader": "Cargando...",
     "postItem": {
-      "readMore": "Leer Más"
+      "readMore": "Leer Más",
+      "minRead": "{count} min de lectura"
     },
     "ctaCv": {
       "url": "/pdf/CV_Ignacio_Figueroa_Desarrollador_Frontend.pdf",
