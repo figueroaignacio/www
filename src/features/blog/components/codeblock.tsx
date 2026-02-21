@@ -1,5 +1,6 @@
 'use client';
 
+import { fontCode } from '@/lib/fonts';
 import { Highlight, themes } from 'prism-react-renderer';
 
 interface CodeBlockProps {
@@ -7,41 +8,41 @@ interface CodeBlockProps {
   language?: string;
 }
 
-export function CodeBlock({ code, language = 'typescript' }: CodeBlockProps) {
-  const trimmed = code?.trim() ?? '';
+export function CodeBlock({ code, language = 'tsx' }: CodeBlockProps) {
+  const codeString = code.trim();
 
   return (
-    <Highlight code={trimmed} language={language} theme={themes.oneDark}>
-      {({ className, tokens, getLineProps, getTokenProps }) => (
-        <div className="relative my-6 w-full">
-          <div className="rounded-xl bg-[#2a2c33] border border-border overflow-x-auto max-w-full text-white">
-            <pre
-              className={`${className} w-full max-w-full p-4 text-sm leading-relaxed font-mono box-border`}
-              style={{ boxSizing: 'border-box' }}
-            >
-              <code className="block w-full max-w-full box-border">
-                {tokens.map((line, i) => (
-                  <div
-                    key={i}
-                    {...getLineProps({ line })}
-                    className="flex items-start"
-                    style={{ boxSizing: 'border-box' }}
-                  >
-                    <span className="inline-block w-8 shrink-0 select-none text-right opacity-50 pr-4">
-                      {i + 1}
-                    </span>
-                    <span className="flex-1 min-w-0 whitespace-pre">
-                      {line.map((token, key) => (
-                        <span key={key} {...getTokenProps({ token })} />
-                      ))}
-                    </span>
-                  </div>
-                ))}
-              </code>
-            </pre>
+    <div className="group relative my-6 w-full overflow-hidden rounded-md bg-[#1e1f20] border-border border">
+      <div className="flex items-center justify-between border-b border-white/5 bg-white/2 px-4 py-2">
+        <div className="flex items-center gap-3">
+          <div className="flex gap-1.5">
+            <div className="h-2.5 w-2.5 rounded-full bg-white/10" />
+            <div className="h-2.5 w-2.5 rounded-full bg-white/10" />
+            <div className="h-2.5 w-2.5 rounded-full bg-white/10" />
           </div>
         </div>
-      )}
-    </Highlight>
+      </div>
+      <Highlight code={codeString} language={language} theme={themes.vsDark}>
+        {({ className: _className, style, tokens, getLineProps, getTokenProps }) => (
+          <pre
+            className={`overflow-x-auto p-5 text-[13px] leading-relaxed ${fontCode.className}`}
+            style={{ ...style, backgroundColor: 'transparent' }}
+          >
+            {tokens.map((line, i) => {
+              const { key, ...lineProps } = getLineProps({ line, key: i });
+              return (
+                <div key={i} {...lineProps} className={`table-row ${lineProps.className ?? ''}`}>
+                  <span className="table-cell">
+                    {line.map((token, key) => (
+                      <span key={key} {...getTokenProps({ token })} />
+                    ))}
+                  </span>
+                </div>
+              );
+            })}
+          </pre>
+        )}
+      </Highlight>
+    </div>
   );
 }
