@@ -57,7 +57,7 @@ export function ProjectCard({
         <div className="space-y-4 pt-4">
           <div className="space-y-3">
             {description && (
-              <p className="text-pretty leading-relaxed text-foreground/70">{description}</p>
+              <p className="text-pretty leading-relaxed text-foreground/70 line-clamp-3">{description}</p>
             )}
           </div>
           {techList.length > 0 && (
