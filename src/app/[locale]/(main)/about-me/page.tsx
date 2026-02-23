@@ -2,6 +2,7 @@ import { AboutHero } from '@/features/about-me/components/about-hero';
 import { Bio } from '@/features/about-me/components/bio';
 import { Interests } from '@/features/about-me/components/interests';
 import { TechStack } from '@/features/about-me/components/tech-stack';
+import { CTACurriculum } from '@/features/home/components/cta-curriculum';
 import type { Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
@@ -18,6 +19,7 @@ export default function AboutPage({ params }: AboutPageProps) {
     <div className="space-y-16">
       <AboutHero />
       <Bio />
+      <CTACurriculum />
       <Interests />
       <TechStack />
     </div>
