@@ -1,6 +1,7 @@
 'use client';
 
 import { CTAContact } from '@/features/home/components/cta-contact';
+import { CTACurriculum } from '@/features/home/components/cta-curriculum';
 import { Link, usePathname } from '@/i18n/navigation';
 import { Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
 import { useTranslations } from 'next-intl';
@@ -29,8 +30,8 @@ export function MobileMenu() {
         <HamburgerMenuIcon className="h-5 w-5" />
       </button>
       <nav
-        className={`bg-background/95 backdrop-blur-lg fixed inset-0 z-50 flex flex-col transition-all duration-300 ease-out ${
-          isMenuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
+        className={`bg-background/95 backdrop-blur-lg fixed inset-0 z-50 flex flex-col transition-transform duration-300 ease-out ${
+          isMenuOpen ? 'pointer-events-auto translate-x-0' : 'pointer-events-none -translate-x-full'
         }`}
       >
         <div className="flex items-center justify-between p-4 border-b border-border/40">
@@ -46,7 +47,7 @@ export function MobileMenu() {
             <Cross1Icon className="h-5 w-5" />
           </button>
         </div>
-        <div className="flex-1 min-h-screen bg-background px-4 py-8">
+        <div className="flex-1 min-h-screen overflow-y-auto bg-background px-4 py-8">
           <ul className="space-y-1">
             {navigation.map((item, index) => {
               const isActive = pathname === item.href;
@@ -68,7 +69,8 @@ export function MobileMenu() {
               );
             })}
           </ul>
-          <div className="mt-8">
+          <div className="my-12 space-y-5">
+            <CTACurriculum />
             <CTAContact />
           </div>
         </div>
