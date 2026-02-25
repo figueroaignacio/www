@@ -1,6 +1,3 @@
-export const revalidate = 3600;
-export const dynamic = 'force-static';
-
 import { getPostBySlug, getPosts } from '@/features/blog/api/posts';
 import { CommentCTA } from '@/features/blog/components/comment-cta';
 import { CommentsWithAuth } from '@/features/blog/components/comments-with-auth';

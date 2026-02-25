@@ -44,7 +44,9 @@ export async function getPersonalProjects(locale: Locale) {
 }
 
 export async function getProjectBySlug(slug: string) {
-  const res = await fetch(`${API_URL}/api/projects/?where[slug][equals]=${slug}`);
+  const res = await fetch(`${API_URL}/api/projects/?where[slug][equals]=${slug}`, {
+    cache: 'no-store',
+  });
 
   if (!res.ok) {
     throw new Error('Failed to fetch project by slug');

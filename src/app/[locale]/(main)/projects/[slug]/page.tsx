@@ -1,6 +1,3 @@
-export const revalidate = 3600;
-export const dynamic = 'force-static';
-
 import { getProjectBySlug, getProjects } from '@/features/projects/api/projects';
 import { ProjectHeaderPage } from '@/features/projects/components/project-header-page';
 import { ProjectVideo } from '@/features/projects/components/project-video';

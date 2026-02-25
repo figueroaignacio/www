@@ -62,7 +62,9 @@ export async function getPaginatedPosts({
   return data;
 }
 export async function getPostBySlug(slug: string) {
-  const res = await fetch(`${API_URL}/api/posts/?where[slug][equals]=${slug}`);
+  const res = await fetch(`${API_URL}/api/posts/?where[slug][equals]=${slug}`, {
+    cache: 'no-store',
+  });
 
   if (!res.ok) {
     throw new Error('Failed to fetch post by slug');
