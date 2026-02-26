@@ -23,7 +23,7 @@ export function ChatSidebar({ onNewChat, isOpen, onClose }: ChatSidebarProps) {
   ];
 
   const sidebarContent = (
-    <div className="flex flex-col h-full p-3 bg-card border-r border-border/40 w-64 shrink-0">
+    <div className="flex flex-col h-full p-4 bg-card/60 backdrop-blur-xl border border-border/50 w-[260px] shrink-0 rounded-lg overflow-hidden">
       <div className="mb-6 flex items-center justify-between">
         <motion.button
           whileTap={{ scale: 0.98 }}
@@ -36,7 +36,6 @@ export function ChatSidebar({ onNewChat, isOpen, onClose }: ChatSidebarProps) {
           <span className="text-[14px] font-semibold tracking-tight">N-bot</span>
           <SquarePen className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
         </motion.button>
-
         {onClose && (
           <button
             onClick={onClose}
@@ -46,7 +45,6 @@ export function ChatSidebar({ onNewChat, isOpen, onClose }: ChatSidebarProps) {
           </button>
         )}
       </div>
-
       <nav className="flex-1 space-y-6">
         <div>
           <p className="px-3 mb-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60">
@@ -96,7 +94,9 @@ export function ChatSidebar({ onNewChat, isOpen, onClose }: ChatSidebarProps) {
 
   return (
     <>
-      <aside className="hidden lg:flex flex-col h-full shrink-0">{sidebarContent}</aside>
+      <aside className="hidden lg:flex flex-col h-screen py-4 pl-4 pr-1 shrink-0">
+        {sidebarContent}
+      </aside>
       <AnimatePresence>
         {isOpen && (
           <>
@@ -112,7 +112,7 @@ export function ChatSidebar({ onNewChat, isOpen, onClose }: ChatSidebarProps) {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 left-0 z-50 lg:hidden shadow-2xl"
+              className="fixed inset-y-0 left-0 z-50 lg:hidden p-4"
             >
               {sidebarContent}
             </motion.div>

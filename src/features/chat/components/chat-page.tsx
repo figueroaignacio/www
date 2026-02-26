@@ -37,15 +37,12 @@ export function ChatPage() {
 
   return (
     <div className="flex h-screen w-full overflow-hidden bg-background">
-      {/* Sidebar - Desktop and Mobile (Drawer) */}
       <ChatSidebar
         onNewChat={handleNewChat}
         isOpen={isSidebarOpen}
         onClose={() => setIsSidebarOpen(false)}
       />
-
       <main className="flex-1 flex flex-col min-w-0 h-full relative">
-        {/* Mobile Menu Trigger */}
         <div className="lg:hidden absolute top-4 left-4 z-40">
           <button
             onClick={() => setIsSidebarOpen(true)}
@@ -54,7 +51,6 @@ export function ChatPage() {
             <Menu className="w-5 h-5" />
           </button>
         </div>
-
         <div className="flex-1 flex flex-col w-full max-w-4xl mx-auto px-4 md:px-6">
           {showHero ? (
             <div className="flex-1 flex flex-col justify-center py-20">
@@ -73,13 +69,6 @@ export function ChatPage() {
           ) : (
             <div className="flex flex-col h-full py-4">
               <div className="flex-1 overflow-hidden relative mb-4">
-                {/* Header for mobile when in chat */}
-                <div className="lg:hidden h-12 flex items-center justify-center border-b border-border/10 mb-2">
-                  <span className="text-sm font-semibold opacity-50 uppercase tracking-widest">
-                    N-bot
-                  </span>
-                </div>
-
                 <div className="absolute inset-0 overflow-y-auto">
                   <ChatMessages
                     messages={messages}
