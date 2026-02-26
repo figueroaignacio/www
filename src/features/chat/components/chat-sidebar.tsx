@@ -23,7 +23,7 @@ export function ChatSidebar({ onNewChat, isOpen, onClose }: ChatSidebarProps) {
   ];
 
   const sidebarContent = (
-    <div className="flex flex-col h-full p-4 bg-card/60 backdrop-blur-xl border border-border/50 w-[260px] shrink-0 rounded-lg overflow-hidden">
+    <div className="flex flex-col h-full p-4 bg-card  w-[260px] shrink-0 rounded-lg overflow-hidden">
       <div className="mb-6 flex items-center justify-between">
         <motion.button
           whileTap={{ scale: 0.98 }}
@@ -31,7 +31,7 @@ export function ChatSidebar({ onNewChat, isOpen, onClose }: ChatSidebarProps) {
             onNewChat?.();
             onClose?.();
           }}
-          className="flex-1 flex items-center justify-between gap-2 px-3 py-2.5 rounded-xl text-sm font-medium hover:bg-accent/80 transition-all duration-200 group border border-transparent hover:border-border/50 shadow-sm hover:shadow-none"
+          className="flex-1 flex items-center justify-between gap-2 px-3 py-2.5 rounded-xl text-sm font-medium hover:bg-accent/80 transition-all duration-200 group border border-transparent hover:border-border/50"
         >
           <span className="text-[14px] font-semibold tracking-tight">N-bot</span>
           <SquarePen className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />

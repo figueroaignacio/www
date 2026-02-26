@@ -49,7 +49,7 @@ export function ChatInput({
           e.preventDefault();
           onSubmit();
         }}
-        className={`relative flex items-end gap-2 p-2 rounded-4xl bg-secondary/50 dark:bg-secondary/20 hover:bg-secondary/70 dark:hover:bg-secondary/30 ${
+        className={`relative flex items-end gap-2 p-2 rounded-lg bg-card hover:bg-secondary ${
           isHero ? 'min-h-[64px]' : 'min-h-[56px] border border-border'
         } ${isLoading ? 'opacity-90' : ''}`}
       >

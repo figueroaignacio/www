@@ -7,7 +7,6 @@ import {
   MessageSquare,
   Sparkles,
 } from 'lucide-react';
-import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 
 interface ChatSuggestionsProps {
@@ -61,16 +60,14 @@ export function ChatSuggestions({ onSuggestionClick }: ChatSuggestionsProps) {
         {suggestions.map((suggestion, index) => {
           const Icon = suggestion.icon;
           return (
-            <motion.button
+            <button
               key={index}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
               onClick={() => onSuggestionClick(suggestion.text)}
-              className="flex items-center gap-3 px-5 py-3 rounded-full bg-secondary/30 hover:bg-secondary/50 border border-transparent hover:border-border/30 transition-all duration-200"
+              className="flex items-center gap-3 px-5 py-3 rounded-full bg-card hover:bg-secondary/50 border border-transparent hover:border-border/30 transition-all duration-200"
             >
               <Icon className={`w-4 h-4 ${suggestion.color}`} />
               <span className="text-sm font-medium text-foreground/80">{suggestion.text}</span>
-            </motion.button>
+            </button>
           );
         })}
       </div>
