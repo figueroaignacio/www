@@ -200,8 +200,11 @@
         "title": "Prueba con...",
         "subtitle": "Haz click en una sugerencia para empezar",
         "who": "Perfil",
+        "experience": "Experiencia",
+        "projects": "Proyectos",
         "technologies": "Tecnologías",
         "education": "Educación",
+        "blog": "Artículos",
         "funFact": "Dato curioso"
       },
       "page": {

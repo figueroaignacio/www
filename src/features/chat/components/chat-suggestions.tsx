@@ -1,4 +1,12 @@
-import { Code2, Lightbulb, MessageSquare, Sparkles } from 'lucide-react';
+import {
+  BookText,
+  Briefcase,
+  Code2,
+  FolderGit2,
+  Lightbulb,
+  MessageSquare,
+  Sparkles,
+} from 'lucide-react';
 import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 
@@ -16,9 +24,24 @@ export function ChatSuggestions({ onSuggestionClick }: ChatSuggestionsProps) {
       color: 'text-blue-500 dark:text-blue-400',
     },
     {
+      icon: Briefcase,
+      text: t('experience'),
+      color: 'text-orange-500 dark:text-orange-400',
+    },
+    {
+      icon: FolderGit2,
+      text: t('projects'),
+      color: 'text-cyan-500 dark:text-cyan-400',
+    },
+    {
       icon: Code2,
       text: t('technologies'),
       color: 'text-green-500 dark:text-green-400',
+    },
+    {
+      icon: BookText,
+      text: t('blog'),
+      color: 'text-rose-500 dark:text-rose-400',
     },
     {
       icon: Sparkles,

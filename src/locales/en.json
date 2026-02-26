@@ -200,8 +200,11 @@
         "title": "Try with...",
         "subtitle": "Click any suggestion to get started",
         "who": "Profile",
+        "experience": "Experience",
+        "projects": "Projects",
         "technologies": "Technologies",
         "education": "Education",
+        "blog": "Blog",
         "funFact": "Fun Fact"
       },
       "page": {
