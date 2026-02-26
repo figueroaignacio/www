@@ -6,12 +6,6 @@ import { setRequestLocale } from 'next-intl/server';
 import { cookies } from 'next/headers';
 import { notFound } from 'next/navigation';
 
-export const metadata = {
-  title: {
-    template: `%s | Ignacio Figueroa`,
-  },
-};
-
 interface LocaleLayoutProps {
   children: React.ReactNode;
   params: Promise<{ locale: Locale }>;
@@ -39,3 +33,9 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
     </html>
   );
 }
+
+export const metadata = {
+  title: {
+    template: `%s | Ignacio Figueroa`,
+  },
+};

@@ -62,11 +62,16 @@ export function useChat() {
     sendMessage(text);
   };
 
+  const resetChat = () => {
+    setMessages([]);
+  };
+
   return {
     messages,
     isLoading,
     messagesEndRef,
     sendMessage,
     handleSuggestionClick,
+    resetChat,
   };
 }

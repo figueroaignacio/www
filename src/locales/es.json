@@ -209,6 +209,14 @@
         "subtitle": "Estoy acá para responder tus dudas sobre su perfil, proyectos y experiencia.",
         "role": "Asistente IA",
         "inputPlaceholder": "Mensaje a N-bot..."
+      },
+      "sidebar": {
+        "explore": "Explorar Portfolio",
+        "projects": "Ver proyectos",
+        "blog": "Leer el blog",
+        "cv": "Ver CV",
+        "contact": "Contactar",
+        "newChat": "Nuevo chat"
       }
     },
     "categoryFilter": {
