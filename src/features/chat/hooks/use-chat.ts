@@ -36,14 +36,30 @@ export function useChat() {
       });
 
       if (!response.ok) throw new Error('Failed to get response');
+      if (!response.body) throw new Error('No response body');
 
-      const data = await response.json();
-      const assistantMessage: Message = {
-        role: 'assistant',
-        content: data.message,
-      };
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let done = false;
+      let streamedText = '';
 
-      setMessages((prev) => [...prev, assistantMessage]);
+      setMessages((prev) => [...prev, { role: 'assistant', content: '' }]);
+
+      while (!done) {
+        const { value, done: readerDone } = await reader.read();
+        done = readerDone;
+        if (value) {
+          streamedText += decoder.decode(value, { stream: true });
+          setMessages((prev) => {
+            const updated = [...prev];
+            updated[updated.length - 1] = {
+              ...updated[updated.length - 1],
+              content: streamedText,
+            };
+            return updated;
+          });
+        }
+      }
     } catch (error) {
       console.error('Chat error:', error);
       setMessages((prev) => [

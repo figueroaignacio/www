@@ -1,6 +1,6 @@
 import { groq, GROQ_CONFIG } from '@/features/chat/lib/groq-client';
 import { getSystemPrompt } from '@/features/chat/lib/system';
-import { generateText } from 'ai';
+import { streamText } from 'ai';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
@@ -21,13 +21,7 @@ export async function POST(req: NextRequest) {
 
     const systemPrompt = await getSystemPrompt(normalizedMessages);
 
-    const estimatedTokens = Math.ceil(
-      (systemPrompt.length + normalizedMessages.reduce((acc, m) => acc + m.content.length, 0)) / 4,
-    );
-
-    console.log(`📊 Estimated tokens: ${estimatedTokens}`);
-
-    const { text } = await generateText({
+    const result = streamText({
       model: groq(GROQ_CONFIG.model),
       system: systemPrompt,
       messages: normalizedMessages as any,
@@ -36,7 +30,7 @@ export async function POST(req: NextRequest) {
       topP: GROQ_CONFIG.topP,
     });
 
-    return NextResponse.json({ message: text });
+    return result.toTextStreamResponse();
   } catch (error) {
     console.error('❌ Groq API Error:', error);
 
