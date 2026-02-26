@@ -200,12 +200,10 @@
         "title": "Prueba con...",
         "subtitle": "Haz click en una sugerencia para empezar",
         "who": "¿Quién es Ignacio?",
-        "experience": "Contame sobre su experiencia laboral",
         "projects": "¿Qué proyectos destacados tiene?",
-        "technologies": "¿Qué stack tecnológico maneja?",
-        "education": "Hablame sobre su educación en la UTN",
-        "blog": "¿De qué escribe en su blog de tecnología?",
-        "funFact": "Decime un dato curioso sobre él"
+        "technologies": "¿Qué stack maneja?",
+        "education": "Hablame sobre su educación",
+        "funFact": "Dato Curioso"
       },
       "page": {
         "goodMorning": "¡Buenos días!",
@@ -217,6 +215,7 @@
         "inputPlaceholder": "Mensaje a N-bot..."
       },
       "sidebar": {
+        "home": "Volver a inicio",
         "explore": "Explorar Portfolio",
         "projects": "Ver proyectos",
         "blog": "Leer el blog",

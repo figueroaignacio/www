@@ -200,12 +200,10 @@
         "title": "Try with...",
         "subtitle": "Click any suggestion to get started",
         "who": "Who is Ignacio?",
-        "experience": "Tell me about his work experience",
         "projects": "What are his featured projects?",
-        "technologies": "What tech stack does he use?",
+        "technologies": "What stack does he use?",
         "education": "Tell me about his studies",
-        "blog": "What does he write about on his tech blog?",
-        "funFact": "Tell me a fun fact about him"
+        "funFact": "Fun Fact"
       },
       "page": {
         "goodMorning": "Good morning!",
@@ -224,6 +222,7 @@
         }
       },
       "sidebar": {
+        "home": "Back to home",
         "explore": "Explore Portfolio",
         "projects": "View projects",
         "blog": "Read the blog",
