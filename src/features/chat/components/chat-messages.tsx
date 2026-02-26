@@ -36,7 +36,7 @@ export function ChatMessages({ messages, isLoading, onSuggestionClick }: ChatMes
         });
       }
     }
-  }, [messages, isLoading]);
+  }, [messages.length, isLoading]);
 
   const showSuggestions = messages.length === 1 && messages[0].role === 'assistant';
 

@@ -1,10 +1,16 @@
+'use client';
+
 import { Badge } from '@/components/ui/badge';
 import { Link } from '@/i18n/navigation';
 import type { Project, TechStack } from '@/payload-types';
 import { ExternalLinkIcon, InfoCircledIcon } from '@radix-ui/react-icons';
 import { useTranslations } from 'next-intl';
 
-import { ProjectVideo } from './project-video';
+import dynamic from 'next/dynamic';
+
+const ProjectVideo = dynamic(() => import('./project-video').then((mod) => mod.ProjectVideo), {
+  ssr: false,
+});
 
 export function ProjectCard({
   slug,
@@ -57,7 +63,9 @@ export function ProjectCard({
         <div className="space-y-4 pt-4">
           <div className="space-y-3">
             {description && (
-              <p className="text-pretty leading-relaxed text-foreground/70 line-clamp-3">{description}</p>
+              <p className="text-pretty leading-relaxed text-foreground/70 line-clamp-3">
+                {description}
+              </p>
             )}
           </div>
           {techList.length > 0 && (

@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'motion/react';
 import type { Message } from '../types';
 import { ChatMarkdownContent } from './chat-markdown-content';
@@ -6,7 +7,7 @@ interface ChatMessageProps {
   message: Message;
 }
 
-export function ChatMessage({ message }: ChatMessageProps) {
+export const ChatMessage = React.memo(function ChatMessage({ message }: ChatMessageProps) {
   const isUser = message.role === 'user';
 
   return (
@@ -28,4 +29,4 @@ export function ChatMessage({ message }: ChatMessageProps) {
       </div>
     </motion.div>
   );
-}
+});

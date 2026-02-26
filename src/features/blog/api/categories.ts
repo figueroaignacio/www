@@ -10,7 +10,9 @@ export async function getCategories(locale: Locale): Promise<CategoryWithCount[]
   const params = new URLSearchParams();
   params.append('where[locale][equals]', locale);
 
-  const res = await fetch(`${API_URL}/api/post-categories?${params.toString()}`);
+  const res = await fetch(`${API_URL}/api/post-categories?${params.toString()}`, {
+    next: { revalidate: 3600, tags: ['categories'] },
+  });
 
   if (!res.ok) {
     throw new Error('Error getting categories');

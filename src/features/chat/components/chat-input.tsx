@@ -33,22 +33,24 @@ export function ChatInput({
     }
   }, [message]);
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+  const handleKeyDown = React.useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       onSubmit();
     }
-  };
+  }, [onSubmit]);
+
+  const handleSubmit = React.useCallback((e: React.FormEvent) => {
+    e.preventDefault();
+    onSubmit();
+  }, [onSubmit]);
 
   return (
     <motion.div
       className={`relative w-full ${isHero ? 'max-w-3xl mx-auto container' : 'max-w-3xl container mx-auto'}`}
     >
       <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          onSubmit();
-        }}
+        onSubmit={handleSubmit}
         className={`relative flex items-end gap-2 p-2 rounded-lg bg-card hover:bg-secondary ${
           isHero ? 'min-h-[64px]' : 'min-h-[56px] border border-border'
         } ${isLoading ? 'opacity-90' : ''}`}

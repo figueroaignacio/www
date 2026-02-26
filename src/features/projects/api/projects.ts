@@ -3,7 +3,7 @@ import { Locale } from 'next-intl';
 
 export async function getProjects(locale: Locale) {
   const res = await fetch(`${API_URL}/api/projects?where[locale][equals]=${locale}`, {
-    cache: 'no-store',
+    next: { revalidate: 3600, tags: ['projects'] },
   });
 
   if (!res.ok) {
@@ -18,7 +18,7 @@ export async function getCommercialProjects(locale: Locale) {
   const res = await fetch(
     `${API_URL}/api/projects?where[featured][equals]=false&where[locale][equals]=${locale}`,
     {
-      cache: 'no-store',
+      next: { revalidate: 3600, tags: ['projects', 'commercial'] },
     },
   );
 
@@ -33,6 +33,9 @@ export async function getCommercialProjects(locale: Locale) {
 export async function getPersonalProjects(locale: Locale) {
   const res = await fetch(
     `${API_URL}/api/projects?where[featured][equals]=true&where[locale][equals]=${locale}`,
+    {
+      next: { revalidate: 3600, tags: ['projects', 'personal'] },
+    },
   );
 
   if (!res.ok) {
@@ -45,7 +48,7 @@ export async function getPersonalProjects(locale: Locale) {
 
 export async function getProjectBySlug(slug: string) {
   const res = await fetch(`${API_URL}/api/projects/?where[slug][equals]=${slug}`, {
-    cache: 'no-store',
+    next: { revalidate: 3600, tags: [`project-${slug}`] },
   });
 
   if (!res.ok) {

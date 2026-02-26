@@ -16,7 +16,9 @@ export async function getPosts(locale: Locale, categorySlug?: string) {
     url += `?${queryString}`;
   }
 
-  const res = await fetch(url, { cache: 'no-store' });
+  const res = await fetch(url, {
+    next: { revalidate: 3600, tags: ['posts', categorySlug ? `category-${categorySlug}` : 'all'] },
+  });
 
   if (!res.ok) {
     const errorData = await res.json().catch(() => ({}));
@@ -50,7 +52,9 @@ export async function getPaginatedPosts({
 
   const url = `${API_URL}/api/posts?${params.toString()}`;
 
-  const res = await fetch(url, { cache: 'no-store' });
+  const res = await fetch(url, {
+    next: { revalidate: 3600, tags: ['posts', `page-${page}`] },
+  });
 
   if (!res.ok) {
     const errorData = await res.json().catch(() => ({}));
@@ -61,9 +65,10 @@ export async function getPaginatedPosts({
   const data = await res.json();
   return data;
 }
+
 export async function getPostBySlug(slug: string) {
   const res = await fetch(`${API_URL}/api/posts/?where[slug][equals]=${slug}`, {
-    cache: 'no-store',
+    next: { revalidate: 3600, tags: [`post-${slug}`] },
   });
 
   if (!res.ok) {
@@ -77,6 +82,9 @@ export async function getPostBySlug(slug: string) {
 export async function getFeaturedPosts(locale: Locale) {
   const res = await fetch(
     `${API_URL}/api/posts?where[featured][equals]=true&where[locale][equals]=${locale}`,
+    {
+      next: { revalidate: 3600, tags: ['posts', 'featured'] },
+    },
   );
 
   if (!res.ok) {

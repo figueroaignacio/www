@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { Link } from '@/i18n/navigation';
 import { BookOpen, Download, FolderGit2, Mail, SquarePen, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
@@ -15,14 +16,14 @@ export function ChatSidebar({ onNewChat, isOpen, onClose }: ChatSidebarProps) {
   const t = useTranslations('components.chat.sidebar');
   const cvT = useTranslations('components.ctaCv');
 
-  const links = [
+  const links = React.useMemo(() => [
     { icon: FolderGit2, label: t('projects'), href: '/projects', external: false },
     { icon: BookOpen, label: t('blog'), href: '/blog', external: false },
     { icon: Download, label: t('cv'), href: cvT('url'), external: true },
     { icon: Mail, label: t('contact'), href: '/about-me', external: false },
-  ];
+  ], [t, cvT]);
 
-  const sidebarContent = (
+  const sidebarContent = React.useMemo(() => (
     <div className="flex flex-col h-full p-4 bg-card  w-[260px] shrink-0 rounded-lg overflow-hidden">
       <div className="mb-6 flex items-center justify-between">
         <motion.button
@@ -90,7 +91,7 @@ export function ChatSidebar({ onNewChat, isOpen, onClose }: ChatSidebarProps) {
         </div>
       </nav>
     </div>
-  );
+  ), [links, onClose, onNewChat, t]);
 
   return (
     <>
