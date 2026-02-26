@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
         : String(m.content),
     }));
 
-    const systemPrompt = await getSystemPrompt(normalizedMessages);
+    const systemPrompt = await getSystemPrompt();
 
     const result = streamText({
       model: groq(GROQ_CONFIG.model),
