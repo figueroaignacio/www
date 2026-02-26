@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import type { Message } from '../types';
 
 export function useChat() {
@@ -9,15 +9,6 @@ export function useChat() {
 
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
 
   const sendMessage = async (content: string) => {
     if (!content.trim() || isLoading) return;
@@ -85,7 +76,6 @@ export function useChat() {
   return {
     messages,
     isLoading,
-    messagesEndRef,
     sendMessage,
     handleSuggestionClick,
     resetChat,

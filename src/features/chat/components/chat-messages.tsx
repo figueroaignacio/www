@@ -16,15 +16,27 @@ export function ChatMessages({ messages, isLoading, onSuggestionClick }: ChatMes
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    {
-      if (messagesEndRef.current) {
-        messagesEndRef.current.scrollIntoView({
-          behavior: 'smooth',
+    if (messagesEndRef.current) {
+      const el = messagesEndRef.current;
+      const parent = el.closest('.overflow-y-auto');
+
+      if (parent) {
+        const isNearBottom = parent.scrollHeight - parent.scrollTop - parent.clientHeight < 150;
+
+        if (isNearBottom || !isLoading) {
+          el.scrollIntoView({
+            behavior: isLoading ? 'auto' : 'smooth',
+            block: 'end',
+          });
+        }
+      } else {
+        el.scrollIntoView({
+          behavior: isLoading ? 'auto' : 'smooth',
           block: 'end',
         });
       }
     }
-  }, [messages]);
+  }, [messages, isLoading]);
 
   const showSuggestions = messages.length === 1 && messages[0].role === 'assistant';
 
