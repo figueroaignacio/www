@@ -1,10 +1,10 @@
-import Groq from 'groq-sdk';
+import { createGroq } from '@ai-sdk/groq';
 
 if (!process.env.GROQ_API_KEY) {
   throw new Error('GROQ_API_KEY is not defined in environment variables');
 }
 
-export const groq = new Groq({
+export const groq = createGroq({
   apiKey: process.env.GROQ_API_KEY,
 });
 

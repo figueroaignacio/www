@@ -1,8 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
-
-// Utilities
 import { groq, GROQ_CONFIG } from '@/features/chat/lib/groq-client';
 import { getSystemPrompt } from '@/features/chat/lib/system';
+import { generateText } from 'ai';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
   try {
@@ -28,19 +27,16 @@ export async function POST(req: NextRequest) {
 
     console.log(`📊 Estimated tokens: ${estimatedTokens}`);
 
-    const completion = await groq.chat.completions.create({
-      messages: [{ role: 'system', content: systemPrompt }, ...normalizedMessages],
-      model: GROQ_CONFIG.model,
+    const { text } = await generateText({
+      model: groq(GROQ_CONFIG.model),
+      system: systemPrompt,
+      messages: normalizedMessages as any,
       temperature: GROQ_CONFIG.temperature,
-      max_tokens: 800,
-      top_p: GROQ_CONFIG.topP,
-      stream: false,
+      maxOutputTokens: 800,
+      topP: GROQ_CONFIG.topP,
     });
 
-    const reply =
-      completion.choices[0]?.message?.content || 'Sorry, I could not generate a response.';
-
-    return NextResponse.json({ message: reply });
+    return NextResponse.json({ message: text });
   } catch (error) {
     console.error('❌ Groq API Error:', error);
 
