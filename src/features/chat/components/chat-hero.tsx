@@ -1,8 +1,7 @@
 'use client';
 
-import { BotMessageSquare } from 'lucide-react';
-import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
+import { useEffect, useState } from 'react';
 import { ChatSuggestions } from './chat-suggestions';
 
 interface ChatHeroProps {
@@ -11,20 +10,32 @@ interface ChatHeroProps {
 
 export function ChatHero({ onQuickAction }: ChatHeroProps) {
   const t = useTranslations('components.chat.page');
+  const [timeGreeting, setTimeGreeting] = useState('');
+
+  useEffect(() => {
+    const hour = new Date().getHours();
+    if (hour >= 5 && hour < 12) {
+      setTimeGreeting(t('goodMorning'));
+    } else if (hour >= 12 && hour < 19) {
+      setTimeGreeting(t('goodAfternoon'));
+    } else {
+      setTimeGreeting(t('goodEvening'));
+    }
+  }, [t]);
 
   return (
-    <div className="flex flex-col items-start justify-center min-h-[40vh] space-y-8 max-w-3xl mx-auto w-full px-4">
-      <motion.div className="space-y-2">
-        <div className="flex items-center gap-2 flex-wrap">
-          <h1 className="text-2xl font-bold tracking-tight">{t('greeting')}</h1>
-          <BotMessageSquare className="w-6 h-6 hidden md-block" />
-        </div>
-        <p className="text-xl  text-muted-foreground font-medium">{t('subtitle')}</p>
-      </motion.div>
-
-      <motion.div className="w-full">
+    <div className="flex flex-col items-center justify-center min-h-[40vh] space-y-10 max-w-3xl mx-auto w-full px-4 text-center">
+      <div className="space-y-4 flex flex-col items-center">
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
+          {timeGreeting ? `${timeGreeting} ${t('greeting')}` : t('greeting')}
+        </h1>
+        <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-[600px] leading-relaxed">
+          {t('subtitle')}
+        </p>
+      </div>
+      <div className="max-w-lg ">
         <ChatSuggestions onSuggestionClick={onQuickAction} />
-      </motion.div>
+      </div>
     </div>
   );
 }

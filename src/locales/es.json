@@ -199,14 +199,17 @@
       "suggestions": {
         "title": "Prueba con...",
         "subtitle": "Haz click en una sugerencia para empezar",
-        "who": "¿Quién es Ignacio Figueroa?",
-        "technologies": "¿Qué tecnologías utiliza?",
-        "education": "¿Qué estudia y cómo se forma?",
-        "funFact": "Contame un dato curioso sobre Ignacio"
+        "who": "Perfil",
+        "technologies": "Tecnologías",
+        "education": "Educación",
+        "funFact": "Dato curioso"
       },
       "page": {
-        "greeting": "Hola, soy el asistente IA de Ignacio",
-        "subtitle": "Estoy acá para responder tus dudas sobre su perfil, proyectos y experiencia.",
+        "goodMorning": "¡Buenos días!",
+        "goodAfternoon": "¡Buenas tardes!",
+        "goodEvening": "¡Buenas noches!",
+        "greeting": "¿En qué te puedo ayudar?",
+        "subtitle": "Soy el asistente virtual de Ignacio. Pregúntame sobre su experiencia, proyectos o habilidades.",
         "role": "Asistente IA",
         "inputPlaceholder": "Mensaje a N-bot..."
       },

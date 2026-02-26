@@ -199,14 +199,17 @@
       "suggestions": {
         "title": "Try with...",
         "subtitle": "Click any suggestion to get started",
-        "who": "Who is Ignacio Figueroa?",
-        "technologies": "What technologies does he use?",
-        "education": "What does he study and how does he learn?",
-        "funFact": "Tell me a fun fact about Ignacio"
+        "who": "Profile",
+        "technologies": "Technologies",
+        "education": "Education",
+        "funFact": "Fun Fact"
       },
       "page": {
-        "greeting": "Hi, I'm Ignacio's Assistant",
-        "subtitle": "I'm here to answer your questions about his profile, projects, and experience.",
+        "goodMorning": "Good morning!",
+        "goodAfternoon": "Good afternoon!",
+        "goodEvening": "Good evening!",
+        "greeting": "How can I help you today?",
+        "subtitle": "I'm Ignacio's virtual assistant. Ask me anything about his experience, projects, or background.",
         "role": "AI Assistant",
         "inputPlaceholder": "Message N-bot...",
         "quickActions": {
