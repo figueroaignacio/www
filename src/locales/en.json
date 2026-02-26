@@ -211,8 +211,8 @@
         "goodMorning": "Good morning!",
         "goodAfternoon": "Good afternoon!",
         "goodEvening": "Good evening!",
-        "greeting": "How can I help you today?",
-        "subtitle": "I'm Ignacio's virtual assistant. Ask me anything about his experience, projects, or background.",
+        "greeting": "Whatever you need.",
+        "subtitle": "You can ask me anything about his experience, projects, or background.",
         "role": "AI Assistant",
         "inputPlaceholder": "Message N-bot...",
         "quickActions": {
