@@ -199,13 +199,13 @@
       "suggestions": {
         "title": "Prueba con...",
         "subtitle": "Haz click en una sugerencia para empezar",
-        "who": "Perfil",
-        "experience": "Experiencia",
-        "projects": "Proyectos",
-        "technologies": "Tecnologías",
-        "education": "Educación",
-        "blog": "Artículos",
-        "funFact": "Dato curioso"
+        "who": "¿Quién es Ignacio?",
+        "experience": "Contame sobre su experiencia laboral",
+        "projects": "¿Qué proyectos destacados tiene?",
+        "technologies": "¿Qué stack tecnológico maneja?",
+        "education": "Hablame sobre su educación en la UTN",
+        "blog": "¿De qué escribe en su blog de tecnología?",
+        "funFact": "Decime un dato curioso sobre él"
       },
       "page": {
         "goodMorning": "¡Buenos días!",
