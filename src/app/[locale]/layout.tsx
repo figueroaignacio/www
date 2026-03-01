@@ -3,7 +3,6 @@ import { routing } from '@/i18n/routing';
 import { fontHeading, fontSans } from '@/lib/fonts';
 import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
-import { cookies } from 'next/headers';
 import { notFound } from 'next/navigation';
 
 interface LocaleLayoutProps {
@@ -19,12 +18,8 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   setRequestLocale(locale);
 
-  const cookieStore = await cookies();
-  const themeCookie = cookieStore.get('theme');
-  const theme = themeCookie?.value === 'light' ? 'light' : 'dark';
-
   return (
-    <html lang={locale} suppressHydrationWarning className={theme}>
+    <html lang={locale} suppressHydrationWarning>
       <body className={`${fontSans.variable} ${fontHeading.variable} antialiased`}>
         <NextIntlClientProvider>
           <Providers>{children}</Providers>

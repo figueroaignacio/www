@@ -1,7 +1,7 @@
 'use client';
 
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
-import { useTheme } from 'i7a-themes';
+import { useTheme } from 'nach-themes';
 import { useEffect, useState } from 'react';
 import { Button } from './ui/button';
 
