@@ -68,9 +68,6 @@ importers:
       groq-sdk:
         specifier: ^0.37.0
         version: 0.37.0
-      i7a-themes:
-        specifier: ^2.0.1
-        version: 2.0.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       lucide-react:
         specifier: ^0.575.0
         version: 0.575.0(react@19.2.4)
@@ -3611,12 +3608,6 @@ packages:
 
   humanize-ms@1.2.1:
     resolution: {integrity: sha512-Fl70vYtsAFb/C06PTS9dZBo7ihau+Tu/DNCk/OyHhea07S+aeMWpFFkUaXRa8fI+ScZbEI8dfSxwY7gxZ9SAVQ==}
-
-  i7a-themes@2.0.1:
-    resolution: {integrity: sha512-r6C4IlL4XKXvlCTK2mSQA90gUJXvzottV702mD35M+/lWaLR6EaIdUSrJSLiqv0slVS5PWaiWxLw6fB7kbzJjw==}
-    peerDependencies:
-      react: ^18.0.0 || ^19.0.0
-      react-dom: ^18.0.0 || ^19.0.0
 
   icu-minify@4.8.3:
     resolution: {integrity: sha512-65Av7FLosNk7bPbmQx5z5XG2Y3T2GFppcjiXh4z1idHeVgQxlDpAmkGoYI0eFzAvrOnjpWTL5FmPDhsdfRMPEA==}
@@ -9392,11 +9383,6 @@ snapshots:
   humanize-ms@1.2.1:
     dependencies:
       ms: 2.1.3
-
-  i7a-themes@2.0.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
-    dependencies:
-      react: 19.2.4
-      react-dom: 19.2.4(react@19.2.4)
 
   icu-minify@4.8.3:
     dependencies:
