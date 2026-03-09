@@ -4,7 +4,7 @@ import { Spinner } from '@/components/ui/spinner';
 import { ArrowUp } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface ChatInputProps {
   message: string;
@@ -24,7 +24,16 @@ export function ChatInput({
   isHero = false,
 }: ChatInputProps) {
   const t = useTranslations('components.chat.page');
+  const tChat = useTranslations('components.chat');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const disclaimers = tChat.raw('disclaimers') as string[];
+  const [disclaimerIndex, setDisclaimerIndex] = useState<number>(0);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    setDisclaimerIndex(Math.floor(Math.random() * disclaimers.length));
+  }, [disclaimers.length]);
 
   useEffect(() => {
     if (textareaRef.current) {
@@ -33,17 +42,23 @@ export function ChatInput({
     }
   }, [message]);
 
-  const handleKeyDown = React.useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+  const handleKeyDown = React.useCallback(
+    (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        onSubmit();
+      }
+    },
+    [onSubmit],
+  );
+
+  const handleSubmit = React.useCallback(
+    (e: React.FormEvent) => {
       e.preventDefault();
       onSubmit();
-    }
-  }, [onSubmit]);
-
-  const handleSubmit = React.useCallback((e: React.FormEvent) => {
-    e.preventDefault();
-    onSubmit();
-  }, [onSubmit]);
+    },
+    [onSubmit],
+  );
 
   return (
     <motion.div
@@ -85,8 +100,12 @@ export function ChatInput({
         </div>
       </form>
       {isHero && (
-        <div className="absolute -bottom-8 right-4 text-xs text-muted-foreground/60">
-          N-bot can make mistakes. Check important info.
+        <div className="absolute -bottom-8 left-0 right-0 flex justify-center text-xs text-muted-foreground/60 transition-opacity duration-300">
+          {mounted && (
+            <span key={disclaimerIndex} className="text-center px-4">
+              {disclaimers[disclaimerIndex]}
+            </span>
+          )}
         </div>
       )}
     </motion.div>

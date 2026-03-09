@@ -183,6 +183,27 @@
       "description": "Siempre abierto a nuevas oportunidades, colaboraciones o simplemente charlar sobre tecnología."
     },
     "chat": {
+      "disclaimers": [
+        " Puede que invente un poco. Como mi confianza escribiendo CSS desde cero.",
+        " Impulsado por LLMs y una cantidad preocupante de mate.",
+        " 100% generado por IA. Cualquier bug es culpa de @figueroaignacio.",
+        " Creado mientras procrastinaba trabajos prácticos de la UTN.",
+        " Las respuestas dependen de la vibra de React en este momento.",
+        " No soy una IA real, solo un script avanzado lleno de if/else.",
+        " Entrenado con el código de Ignacio. Por favor, bajen sus expectativas.",
+        " Corriendo en Next.js, así que es rápido. O al menos parece.",
+        " Respondo rápido para que no te des cuenta de que estoy adivinando.",
+        " Cuidado: Puedo dar opiniones no solicitadas sobre TypeScript.",
+        " Potenciado por IA, supervisado por alguien que ama el dark mode.",
+        " Si digo algo mal, avisale a Ignacio. Necesita algo que hacer.",
+        " Soy tan avanzado que solo a veces me olvido cómo centrar un div.",
+        " La combinación perfecta entre inteligencia artificial y sueño acumulado.",
+        " Diseñado con Tailwind: 'estilos en línea pero aceptados socialmente'.",
+        " Sigo aprendiendo igual que Ignacio, pero sin rendir finales en la UTN.",
+        " Funciono mejor si el prompt viene acompañado de un mate.",
+        " No es una alucinación, es una 'interpretación creativa del prompt'.",
+        " Deployeado un viernes a la tarde. ¿Qué es lo peor que podría pasar?"
+      ],
       "header": {
         "title": "N-bot",
         "subtitle": "Asistente virtual de Ignacio"

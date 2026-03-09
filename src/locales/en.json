@@ -183,6 +183,27 @@
       "description": "Always open to new opportunities, collaborations or simply chatting about technology."
     },
     "chat": {
+      "disclaimers": [
+        " Might invent some facts. Like my confidence writing CSS from scratch.",
+        " Powered by LLMs and a concerning amount of mate.",
+        " 100% AI-generated. Any bugs are probably @figueroaignacio's fault.",
+        " Built while procrastinating on UTN assignments.",
+        " Answers rely on the vibe of the current React render cycle.",
+        " Not a real developer, just a highly advanced copy-paste script.",
+        " Trained on Ignacio's codebase. Please lower your expectations.",
+        " Running on Next.js, so it's fast. Or at least it looks fast.",
+        " I answer quickly so you don't realize I'm just guessing.",
+        " Caution: May occasionally drop unprompted opinions about TypeScript.",
+        " Powered by AI, supervised by a guy who really likes dark mode.",
+        " If I say something wrong, tell Ignacio. He needs the Jira tickets.",
+        " So advanced, it only occasionally forgets how to center a div.",
+        " A collaboration between artificial intelligence and natural exhaustion.",
+        " Designed with Tailwind. Or as I call it, 'inline styles but socially acceptable'.",
+        " Still learning exactly like Ignacio, but without the UTN exams.",
+        " Works best when prompted with a virtual mate.",
+        " It's not a hallucination, it's a 'creative interpretation of your prompt'.",
+        " Deployed on a Friday. What's the worst that could happen?"
+      ],
       "header": {
         "title": "N-bot",
         "subtitle": "Ignacio's virtual assistant."
