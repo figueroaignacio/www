@@ -200,8 +200,8 @@
         "title": "Prueba con...",
         "subtitle": "Haz click en una sugerencia para empezar",
         "who": "¿Quién es Ignacio?",
-        "projects": "¿Qué proyectos destacados tiene?",
-        "technologies": "¿Qué stack maneja?",
+        "projects": "¿Qué proyectos tiene?",
+        "technologies": "¿Qué tecnologías usa?",
         "education": "Hablame sobre su educación",
         "funFact": "Dato Curioso"
       },
@@ -209,7 +209,7 @@
         "goodMorning": "¡Buenos días!",
         "goodAfternoon": "¡Buenas tardes!",
         "goodEvening": "¡Buenas noches!",
-        "greeting": "¿En qué te puedo ayudar?",
+        "greeting": "Hola! Pregunta sobre Ignacio",
         "subtitle": "Podés preguntarme sobre su experiencia, proyectos o habilidades.",
         "role": "Asistente IA",
         "inputPlaceholder": "Mensaje a N-bot..."

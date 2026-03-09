@@ -37,14 +37,15 @@ export function ChatSuggestions({ onSuggestionClick }: ChatSuggestionsProps) {
   ];
 
   return (
-    <div className="flex flex-wrap justify-center gap-3">
+    <div className="flex flex-wrap max-w-xl  gap-3">
       {suggestions.map((suggestion, index) => {
         const Icon = suggestion.icon;
         return (
           <button
+            type="button"
             key={index}
             onClick={() => onSuggestionClick(suggestion.text)}
-            className="flex items-center gap-3 px-5 py-3 rounded-full bg-card hover:bg-secondary/50 border border-transparent hover:border-border/30 transition-all duration-200"
+            className="flex items-center gap-3 px-3 py-2 rounded-full bg-card hover:bg-secondary/50 border border-transparent hover:border-border/30 transition-all duration-200"
           >
             <Icon className={`size-3 ${suggestion.color}`} />
             <span className="text-xs font-medium text-foreground/80">{suggestion.text}</span>

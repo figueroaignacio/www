@@ -200,7 +200,7 @@
         "title": "Try with...",
         "subtitle": "Click any suggestion to get started",
         "who": "Who is Ignacio?",
-        "projects": "What are his featured projects?",
+        "projects": "What are his projects?",
         "technologies": "What stack does he use?",
         "education": "Tell me about his studies",
         "funFact": "Fun Fact"
@@ -209,7 +209,7 @@
         "goodMorning": "Good morning!",
         "goodAfternoon": "Good afternoon!",
         "goodEvening": "Good evening!",
-        "greeting": "Whatever you need.",
+        "greeting": "Hey! Ask about Ignacio",
         "subtitle": "You can ask me anything about his experience, projects, or background.",
         "role": "AI Assistant",
         "inputPlaceholder": "Message N-bot...",
