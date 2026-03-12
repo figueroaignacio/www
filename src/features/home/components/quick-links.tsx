@@ -1,6 +1,6 @@
 import { Link } from '@/i18n/navigation';
 import { cn } from '@/lib/cn';
-import { BookOpen, BotIcon, FolderGit2, User } from 'lucide-react';
+import { ArrowRight, BookOpen, BotIcon, FolderGit2, User } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 interface QuickLink {
@@ -59,11 +59,14 @@ function QuickLink({
       <Icon className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
       <div className="flex items-start gap-4">
         <div className="flex-1">
-          <h3 className="text-foreground group-hover:text-foreground/80 text-xl font-semibold transition-colors">
+          <h3 className="text-foreground group-hover:text-foreground/80 text-sm font-semibold transition-colors">
             {title}
           </h3>
           <p className="mt-2 text-sm text-muted-foreground">{description}</p>
         </div>
+      </div>
+      <div className="w-full flex justify-end">
+        <ArrowRight className="size-4 text-muted-foreground group-hover:text-foreground transition-colors" />
       </div>
     </Link>
   );

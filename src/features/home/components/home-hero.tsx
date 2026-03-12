@@ -1,6 +1,4 @@
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
-import { ArrowRight, FileText } from 'lucide-react';
 
 export function HomeHero() {
   const t = useTranslations('sections.home');
@@ -14,16 +12,6 @@ export function HomeHero() {
         {t('subtitle')}
       </p>
       <p className="text-muted-foreground leading-relaxed max-w-2xl">{t('description')}</p>
-      <div className="flex flex-wrap items-center gap-4 pt-4">
-        <Link href="/projects" className="btn btn-primary">
-          {t('actions.viewProjects')}
-          <ArrowRight className="size-4" />
-        </Link>
-        <Link href="/blog" className="btn btn-outline">
-          <FileText className="size-4" />
-          {t('actions.viewBlog')}
-        </Link>
-      </div>
     </section>
   );
 }
