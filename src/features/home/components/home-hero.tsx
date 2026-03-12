@@ -1,7 +1,4 @@
-// Hooks
 import { useTranslations } from 'next-intl';
-
-// Components
 import { Link } from '@/i18n/navigation';
 import { ArrowRight, FileText } from 'lucide-react';
 
@@ -17,10 +14,6 @@ export function HomeHero() {
         {t('subtitle')}
       </p>
       <p className="text-muted-foreground leading-relaxed max-w-2xl">{t('description')}</p>
-      <Link href="/about-me" className="btn-link">
-        {t('actions.learnMore')}
-        <ArrowRight className="size-4" />
-      </Link>
       <div className="flex flex-wrap items-center gap-4 pt-4">
         <Link href="/projects" className="btn btn-primary">
           {t('actions.viewProjects')}
