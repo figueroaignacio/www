@@ -42,7 +42,7 @@
         {
           "title": "Chat with my AI Virtual Assistant",
           "description": "Learn more about me, my skills, and my projects.",
-          "href": "/chat"
+          "href": "/assistant"
         },
         {
           "title": "See my Projects",
@@ -147,8 +147,8 @@
         "href": "/projects"
       },
       {
-        "label": "Chat",
-        "href": "/chat"
+        "label": "Assistant",
+        "href": "/assistant"
       }
     ]
   },

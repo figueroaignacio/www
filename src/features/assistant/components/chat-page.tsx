@@ -1,7 +1,7 @@
 'use client';
 
-import { useChat } from '@/features/chat/hooks/use-chat';
-import { useChatInput } from '@/features/chat/hooks/use-chat-input';
+import { useChat } from '@/features/assistant/hooks/use-chat';
+import { useChatInput } from '@/features/assistant/hooks/use-chat-input';
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
 import { ChatHero } from './chat-hero';

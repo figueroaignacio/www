@@ -1,20 +1,20 @@
-import { ChatPage } from '@/features/chat/components/chat-page';
+import { ChatPage } from '@/features/assistant/components/chat-page';
 import type { Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
 
-interface ChatPageProps {
+interface AssistantPageProps {
   params: Promise<{ locale: Locale }>;
 }
 
-export default function Page({ params }: ChatPageProps) {
+export default function AssistantPage({ params }: AssistantPageProps) {
   const { locale } = use(params);
   setRequestLocale(locale);
 
   return <ChatPage />;
 }
 
-export async function generateMetadata({ params }: ChatPageProps) {
+export async function generateMetadata({ params }: AssistantPageProps) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'metadata.chat' });
 
