@@ -21,7 +21,7 @@
       "keywords": "Proyectos Web, Portfolio Proyectos, Casos de Éxito, Desarrollo Apps, React Projects, Open Source"
     },
     "chat": {
-      "title": "N-bot | Asistente de IA de Ignacio",
+      "title": "Asistente de IA",
       "description": "Charla con mi asistente de IA para conocer más sobre mí, mis habilidades y mis proyectos."
     }
   },
@@ -205,8 +205,7 @@
         " Deployeado un viernes a la tarde. ¿Qué es lo peor que podría pasar?"
       ],
       "header": {
-        "title": "N-bot",
-        "subtitle": "Asistente virtual de Ignacio"
+        "title": "Asistente virtual de Ignacio"
       },
       "input": {
         "placeholder": "Escribe un mensaje..."
@@ -233,7 +232,7 @@
         "greeting": "Hola! Preguntame sobre Ignacio",
         "subtitle": "Podés preguntarme sobre su experiencia, proyectos o habilidades.",
         "role": "Asistente IA",
-        "inputPlaceholder": "Mensaje a N-bot..."
+        "inputPlaceholder": "Cual es tu duda?"
       },
       "sidebar": {
         "home": "Volver a inicio",

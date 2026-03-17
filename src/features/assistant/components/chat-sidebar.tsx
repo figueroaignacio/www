@@ -58,7 +58,7 @@ export function ChatSidebar({ onNewChat, isOpen, onClose }: ChatSidebarProps) {
             }}
             className="flex-1 flex items-center justify-between gap-2 px-3 py-2.5 rounded-xl text-sm font-medium hover:bg-accent/80 transition-all duration-200 group border border-transparent hover:border-border/50"
           >
-            <span className="text-[14px] font-semibold tracking-tight">N-bot</span>
+            <span className="text-[14px] font-semibold tracking-tight">Assistant</span>
             <SquarePen className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
           </button>
           {onClose && (

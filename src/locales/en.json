@@ -21,7 +21,7 @@
       "keywords": "Web Projects, Project Portfolio, Case Studies, App Development, React Projects, Open Source"
     },
     "chat": {
-      "title": "N-bot | Ignacio's AI Assistant",
+      "title": "AI Assistant",
       "description": "Chat with my AI assistant to learn more about me, my skills, and my projects."
     }
   },
@@ -233,7 +233,7 @@
         "greeting": "Hey! Ask about Ignacio",
         "subtitle": "You can ask me anything about his experience, projects, or background.",
         "role": "AI Assistant",
-        "inputPlaceholder": "Message N-bot...",
+        "inputPlaceholder": "What's your question?",
         "quickActions": {
           "me": "Me",
           "projects": "Projects",
