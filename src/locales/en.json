@@ -224,7 +224,7 @@
         "projects": "What are his projects?",
         "technologies": "What stack does he use?",
         "education": "Tell me about his studies",
-        "funFact": "Fun Fact"
+        "recruiterMode": "Recruiter Mode"
       },
       "page": {
         "goodMorning": "Good morning!",

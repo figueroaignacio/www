@@ -223,7 +223,7 @@
         "projects": "¿Qué proyectos tiene?",
         "technologies": "¿Qué tecnologías usa?",
         "education": "Hablame sobre su educación",
-        "funFact": "Dato Curioso"
+        "recruiterMode": "Modo reclutador"
       },
       "page": {
         "goodMorning": "¡Buenos días!",

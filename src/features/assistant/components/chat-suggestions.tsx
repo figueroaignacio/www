@@ -31,7 +31,7 @@ export function ChatSuggestions({ onSuggestionClick }: ChatSuggestionsProps) {
     },
     {
       icon: Lightbulb,
-      text: t('funFact'),
+      text: t('recruiterMode'),
       color: 'text-yellow-500 dark:text-yellow-400',
     },
   ];
