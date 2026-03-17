@@ -1,5 +1,5 @@
-import { groq, GROQ_CONFIG } from '@/features/chat/lib/groq-client';
-import { getSystemPrompt } from '@/features/chat/lib/system';
+import { groq, GROQ_CONFIG } from '@/features/assistant/lib/groq-client';
+import { getSystemPrompt } from '@/features/assistant/lib/system';
 import { streamText } from 'ai';
 import { NextRequest, NextResponse } from 'next/server';
 

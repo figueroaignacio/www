@@ -1,5 +1,5 @@
-import React from 'react';
 import { motion } from 'motion/react';
+import React from 'react';
 import type { Message } from '../types';
 import { ChatMarkdownContent } from './chat-markdown-content';
 
@@ -17,7 +17,7 @@ export const ChatMessage = React.memo(function ChatMessage({ message }: ChatMess
       className={`flex w-full ${isUser ? 'justify-end' : 'justify-start'}`}
     >
       <div
-        className={`max-w-full py-4  ${isUser ? 'bg-secondary/60 rounded-3xl rounded-tr-xs' : ''}`}
+        className={`max-w-full py-4  ${isUser ? 'bg-secondary-foreground text-background rounded-3xl rounded-tr-xs' : ''}`}
       >
         {isUser ? (
           <p className="text-base whitespace-pre-wrap leading-relaxed px-5">{message.content}</p>
