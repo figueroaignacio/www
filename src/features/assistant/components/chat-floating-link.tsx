@@ -47,7 +47,7 @@ export function ChatFloatingLink() {
         >
           <Tooltip open={true} onOpenChange={setIsHovered} delayDuration={0}>
             <TooltipTrigger asChild>
-              <Link href="/chat">
+              <Link href="/assistant">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
