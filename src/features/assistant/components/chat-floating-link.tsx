@@ -32,7 +32,8 @@ export function ChatFloatingLink() {
     return () => clearTimeout(timeoutId);
   }, []);
 
-  if (pathname?.includes('/chat')) return null;
+  if (pathname?.includes('/assistant')) return null;
+  if (pathname?.includes('/blog')) return null;
 
   return (
     <AnimatePresence>
