@@ -52,19 +52,19 @@ function QuickLink({
     <Link
       href={href}
       className={cn(
-        'group block p-6 btn-primary rounded-lg border border-border hover:scale-[1.02] active:scale-[0.99] transition-transform duration-100 space-y-4',
+        'group block p-6 bg-card text-foreground rounded-lg border border-border hover:scale-[1.02] active:scale-[0.99] transition-transform duration-100 space-y-4',
         className,
       )}
     >
-      <Icon className="w-5 h-5 text-background transition-colors" />
+      <Icon className="w-5 h-5  transition-colors" />
       <div className="flex items-start gap-4">
         <div className="flex-1">
-          <h3 className="text-background text-sm font-semibold transition-colors">{title}</h3>
-          <p className="mt-2 text-sm text-background/50">{description}</p>
+          <h3 className=" text-sm font-semibold transition-colors">{title}</h3>
+          <p className="mt-2 text-sm text-muted-foreground">{description}</p>
         </div>
       </div>
       <div className="w-full flex justify-end">
-        <ArrowRight className="size-4 text-background/50 transition-colors" />
+        <ArrowRight className="size-4 text-muted-foreground transition-colors" />
       </div>
     </Link>
   );
