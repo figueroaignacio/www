@@ -1,4 +1,3 @@
-import { Providers } from '@/components/providers';
 import { routing } from '@/i18n/routing';
 import { fontHeading, fontSans } from '@/lib/fonts';
 import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
@@ -21,9 +20,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${fontSans.variable} ${fontHeading.variable} antialiased`}>
-        <NextIntlClientProvider>
-          <Providers>{children}</Providers>
-        </NextIntlClientProvider>
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
   );

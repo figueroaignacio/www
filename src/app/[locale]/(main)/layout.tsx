@@ -1,6 +1,3 @@
-import { Footer } from '@/components/footer';
-import { Header } from '@/components/header';
-import { ChatFloatingLink } from '@/features/assistant/components/chat-floating-link';
 import { routing } from '@/i18n/routing';
 import { hasLocale, type Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
@@ -21,10 +18,7 @@ export default async function MainLayout({ children, params }: LocaleLayoutProps
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
       <main className="flex-1 container">{children}</main>
-      <Footer />
-      <ChatFloatingLink />
     </div>
   );
 }
