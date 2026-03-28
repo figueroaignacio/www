@@ -2,7 +2,7 @@
 
 ## A modern, fast, and fully custom portfolio built with Next.js, Tailwind CSS, Payload CMS, and PostgreSQL.
 
-It showcases my work, articles, projects, and includes an AI-powered assistant named N-bot to help visitors explore my content in an interactive way.
+It showcases my work, articles, projects, and includes an AI-powered assistant to help visitors explore my content in an interactive way.
 
 This portfolio reflects my focus on clean UI, high performance, accessibility, and a great developer experience.
 
@@ -15,20 +15,19 @@ This project uses a modern full-stack setup:
 - Next.js
 - React
 - Tailwind CSS
-- Framer Motion (animations)
-- Lucide React (icons)
-- next-intl (internationalization)
+- Motion (animations)
 
 ### Backend & CMS
 
 - Payload CMS
 - PostgreSQL
 - Vercel Postgres adapter
-- Better Auth with GitHub OAuth provider 
+- Better Auth with GitHub OAuth provider
 
 ### AI
 
-- Groq SDK – ultra-fast inference
+- Vercel AI SDK
+- Groq – ultra-fast inference
 - Custom AI chatbot
 
 ### Tooling
@@ -36,11 +35,36 @@ This project uses a modern full-stack setup:
 - ESLint, Prettier
 - pnpm workspace setup
 
-## N-bot — Nacho's portfolio assistant
+## 🏗️ Project Structure
 
-This portfolio includes a fully integrated AI assistant called N-bot.
+The project follows a standard Next.js 16 (App Router) structure, integrated with Payload CMS 3.0.
 
-### Powered by the Groq SDK, N-bot provides:
+```
+.
+├── public/              # Static assets (images, fonts, etc.)
+└── src/
+    ├── app/             # Next.js App Router pages
+    │   ├── [locale]/    # Internationalized routes
+    │   ├── (payload)/   # Payload admin routes
+    │   └── api/         # API routes
+    ├── collections/     # Payload CMS collections definitions
+    ├── components/      # Global React components
+    │   └── ui/          # Reusable UI primitives (shadcn/ui style)
+    ├── features/        # Feature-specific logic and components
+    ├── hooks/           # Custom React hooks
+    ├── i18n/            # Internationalization configuration
+    ├── lib/             # Shared utilities, DB client, and auth
+    ├── locales/         # Translation dictionaries (JSON)
+    ├── migrations/      # Database migrations
+    ├── payload.config.ts # Payload CMS configuration
+    └── payload-types.ts # Auto-generated CMS types
+```
+
+## AI Assistant
+
+This portfolio includes a fully integrated AI assistant to help visitors explore my content in an interactive way.
+
+### Powered by Vercel AI SDK and Groq, AI Assistant provides:
 
 - Answers about me, my background, and my work
 - Help navigating the website
@@ -48,7 +72,7 @@ This portfolio includes a fully integrated AI assistant called N-bot.
 - Discussions and summaries of my blog posts
 - Context-aware guidance about my projects and stack
 
-### N-bot shows how real-world AI features can be integrated into a modern UI using:
+### AI Assistant shows how real-world AI features can be integrated into a modern UI using:
 
 - Next.js App Router
 - Groq models
@@ -56,9 +80,8 @@ This portfolio includes a fully integrated AI assistant called N-bot.
 - Clean, minimal UI with Tailwind
 
 It is part personal assistant, part tech demo, and a fun nod to my name:
-Nacho Artificial Intelligence.
 
-## 🧩 Pages & Site Structure
+## 🧩 Site Content & Pages
 
 ### About Me
 
