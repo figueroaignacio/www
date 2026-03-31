@@ -66,7 +66,7 @@ export function ChatInput({
     >
       <form
         onSubmit={handleSubmit}
-        className={`relative flex items-end gap-2 p-2 rounded-lg bg-card hover:bg-secondary ${
+        className={`relative flex items-end gap-2 rounded-lg bg-card hover:bg-secondary ${
           isHero ? 'min-h-[64px]' : 'min-h-[56px] border border-border'
         } ${isLoading ? 'opacity-90' : ''}`}
       >

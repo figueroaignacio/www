@@ -45,10 +45,10 @@ export function ChatSuggestions({ onSuggestionClick }: ChatSuggestionsProps) {
             type="button"
             key={index}
             onClick={() => onSuggestionClick(suggestion.text)}
-            className="flex items-center gap-3 px-3 py-2 rounded-full bg-secondary-foreground  border border-transparent hover:border-border/30 transition-transform duration-100 cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+            className="flex items-center gap-3 px-3 py-2 rounded-full border border-border bg-card hover:bg-secondary transition-transform duration-100 cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
           >
             <Icon className={`size-3 ${suggestion.color}`} />
-            <span className="text-xs font-medium text-background">{suggestion.text}</span>
+            <span className="text-xs font-medium text-foreground">{suggestion.text}</span>
           </button>
         );
       })}

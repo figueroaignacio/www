@@ -2,9 +2,9 @@
 
 import { useChat } from '@/features/assistant/hooks/use-chat';
 import { useChatInput } from '@/features/assistant/hooks/use-chat-input';
+import { Link } from '@/i18n/navigation';
 import { ArrowLeft } from 'lucide-react';
 import { useState } from 'react';
-import { Link } from '@/i18n/navigation';
 import { ChatHero } from './chat-hero';
 import { ChatInput } from './chat-input';
 import { ChatMessages } from './chat-messages';
@@ -35,11 +35,11 @@ export function ChatPage() {
 
   return (
     <div className="flex h-screen w-full overflow-hidden bg-background">
-      <main className="flex-1 flex flex-col min-w-0 h-full relative">
+      <div className="flex-1 flex flex-col min-w-0 h-full relative">
         <div className="absolute top-4 left-4 z-40">
           <Link
             href="/"
-            className="p-2 flex items-center justify-center rounded-lg bg-card border border-border/50 shadow-sm text-muted-foreground hover:text-foreground transition-colors hover:bg-muted"
+            className="p-2 flex items-center justify-center rounded-lg bg-card border border-border/50 shadow-sm text-muted-foreground hover:text-foreground transition-colors hover:bg-secondary"
           >
             <ArrowLeft className="w-5 h-5" />
           </Link>
@@ -81,7 +81,7 @@ export function ChatPage() {
             </div>
           )}
         </div>
-      </main>
+      </div>
     </div>
   );
 }
