@@ -241,15 +241,6 @@
           "fun": "Fun",
           "contact": "Contact"
         }
-      },
-      "sidebar": {
-        "home": "Back to home",
-        "explore": "Explore Portfolio",
-        "projects": "View projects",
-        "blog": "Read the blog",
-        "cv": "View Resume",
-        "contact": "Contact me",
-        "newChat": "New chat"
       }
     },
     "categoryFilter": {

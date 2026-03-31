@@ -233,15 +233,6 @@
         "subtitle": "Podés preguntarme sobre su experiencia, proyectos o habilidades.",
         "role": "Asistente IA",
         "inputPlaceholder": "Cual es tu duda?"
-      },
-      "sidebar": {
-        "home": "Volver a inicio",
-        "explore": "Explorar Portfolio",
-        "projects": "Ver proyectos",
-        "blog": "Leer el blog",
-        "cv": "Ver CV",
-        "contact": "Contactar",
-        "newChat": "Nuevo chat"
       }
     },
     "categoryFilter": {
