@@ -11,13 +11,14 @@ export function ChatHero({ onQuickAction }: ChatHeroProps) {
   const t = useTranslations('components.chat.page');
 
   return (
-    <div className="flex flex-col  justify-center min-h-[40vh] space-y-10 max-w-3xl mx-auto w-full px-4 ">
-      <div className="space-y-4 flex flex-col">
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight">{t('greeting')}</h1>
+    <div className="flex flex-col justify-center items-center min-h-[40vh] space-y-10 max-w-3xl mx-auto w-full text-center">
+      <div className="space-y-4">
+        <h1 className="text-3xl font-bold tracking-tight text-balance">{t('greeting')}</h1>
+        <p className="text-muted-foreground text-base max-w-2xl mx-auto text-balance">
+          {t('subtitle')}
+        </p>
       </div>
-      <div>
-        <ChatSuggestions onSuggestionClick={onQuickAction} />
-      </div>
+      <ChatSuggestions onSuggestionClick={onQuickAction} />
     </div>
   );
 }
