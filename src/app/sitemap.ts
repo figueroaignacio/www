@@ -1,13 +1,13 @@
 import { getPosts } from '@/features/blog/api/posts';
-import { getPosts } from '@/features/blog/api/posts';
 import { routing } from '@/i18n/routing';
-import type { MetadataRoute } from 'next';
 import { SITE_URL } from '@/lib/constants';
 import type { Post } from '@/payload-types';
 import type { MetadataRoute } from 'next';
-  const staticRoutes = ['', '/blog', '/assistant'];
 
-import { SITE_URL } from '@/lib/constants';
+const staticRoutes = ['', '/blog', '/assistant'];
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const localizedStatic = routing.locales.flatMap((locale) =>
     staticRoutes.map((route) => ({
       url: `${SITE_URL}/${locale}${route}`,
       lastModified: new Date().toISOString(),
@@ -15,19 +15,17 @@ import { SITE_URL } from '@/lib/constants';
     })),
   );
 
-  let localizedPosts: MetadataRoute.Sitemap = [];
+  const postsPerLocale = await Promise.all(routing.locales.map((locale) => getPosts(locale)));
 
-  for (const locale of routing.locales) {
-    const posts = await getPosts(locale);
+  const localizedPosts = postsPerLocale.flatMap((posts, index) => {
+    const locale = routing.locales[index];
 
-    const localeEntries = posts.map((post: Post) => ({
+    return posts.map((post: Post) => ({
       url: `${SITE_URL}/${locale}/blog/${post.slug}`,
       lastModified: post.updatedAt ?? post.createdAt ?? new Date().toISOString(),
       changeFrequency: 'monthly' as const,
     }));
-
-    localizedPosts = [...localizedPosts, ...localeEntries];
-  }
+  });
 
   return [...localizedStatic, ...localizedPosts];
 }
