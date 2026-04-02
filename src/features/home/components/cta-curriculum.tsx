@@ -11,7 +11,7 @@ export function CTACurriculum() {
       <a
         href={t('url')}
         target="_blank"
-        className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 text-sm font-medium rounded-lg hover:bg-foreground/90 transition-colors"
+        className="btn btn-primary"
       >
         <FileText className="h-4 w-4" />
         {t('cta.text')}

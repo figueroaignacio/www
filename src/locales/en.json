@@ -36,30 +36,11 @@
       "actions": {
         "viewProjects": "View projects",
         "viewBlog": "View Blog",
-        "learnMore": "Learn more about me"
+        "learnMore": "Learn more about me",
+        "chatAssistant": "Chat with assistant",
+        "viewCv": "View CV"
       },
-      "quickLinks": [
-        {
-          "title": "Chat with my AI Virtual Assistant",
-          "description": "Learn more about me, my skills, and my projects.",
-          "href": "/assistant"
-        },
-        {
-          "title": "See my Projects",
-          "description": "Applications and experiments I build",
-          "href": "/projects"
-        },
-        {
-          "title": "Read my Blog",
-          "description": "Articles about development and technology",
-          "href": "/blog"
-        },
-        {
-          "title": "Learn more about me",
-          "description": "My story, stack and experience",
-          "href": "/about"
-        }
-      ]
+      "quickLinks": []
     },
     "blog": {
       "title": "Blog",
@@ -107,7 +88,9 @@
       "description": "A summary of my journey as a developer"
     },
     "testimonials": {
-      "title": "What people say about me."
+      "title": "What people say about me.",
+      "showMore": "Show more",
+      "showLess": "Show less"
     },
     "interests": {
       "title": "Interests & Technologies",
@@ -135,16 +118,8 @@
         "href": "/"
       },
       {
-        "label": "About me",
-        "href": "/about-me"
-      },
-      {
         "label": "Blog",
         "href": "/blog"
-      },
-      {
-        "label": "Projects",
-        "href": "/projects"
       },
       {
         "label": "Assistant",
@@ -155,14 +130,17 @@
   "components": {
     "projectItem": {
       "actions": {
-        "details": "Details"
+        "details": "Details",
+        "source": "Source",
+        "preview": "Preview"
       }
     },
     "footer": {
       "name": "Ignacio Figueroa",
       "role": "Fullstack Developer",
       "thanks": "Thanks for visiting my portfolio",
-      "rights": "All rights reserved"
+      "rights": "All rights reserved",
+      "kiss": "Keep it simple, Stupid."
     },
     "error": "An error occurred while loading the data.",
     "loader": "Loading...",

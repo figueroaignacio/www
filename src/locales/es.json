@@ -36,30 +36,11 @@
       "actions": {
         "viewProjects": "Ver proyectos",
         "viewBlog": "Ver Blog",
-        "learnMore": "Conocé más sobre mí"
+        "learnMore": "Conocé más sobre mí",
+        "chatAssistant": "Charlar con asistente",
+        "viewCv": "Ver CV"
       },
-      "quickLinks": [
-        {
-          "title": "Chatea con mi Asistente Virtual de IA",
-          "description": "Conoce más sobre mí, mis habilidades y mis proyectos.",
-          "href": "/assistant"
-        },
-        {
-          "title": "Mirá mis proyectos",
-          "description": "Aplicaciones y experimentos que construyo",
-          "href": "/projects"
-        },
-        {
-          "title": "Leé mi blog",
-          "description": "Artículos sobre desarrollo y tecnología",
-          "href": "/blog"
-        },
-        {
-          "title": "Conoce más sobre mí",
-          "description": "Mi historia, stack y experiencia",
-          "href": "/about-me"
-        }
-      ]
+      "quickLinks": []
     },
     "blog": {
       "title": "Blog",
@@ -107,7 +88,9 @@
       "description": "Un resumen de mi recorrido como desarrollador"
     },
     "testimonials": {
-      "title": "Lo que dicen sobre mi."
+      "title": "Lo que dicen sobre mi.",
+      "showMore": "Ver más",
+      "showLess": "Ver menos"
     },
     "interests": {
       "title": "Intereses y Tecnologías",
@@ -135,16 +118,8 @@
         "href": "/"
       },
       {
-        "label": "Sobre mi",
-        "href": "/about-me"
-      },
-      {
         "label": "Blog",
         "href": "/blog"
-      },
-      {
-        "label": "Proyectos",
-        "href": "/projects"
       },
       {
         "label": "Asistente",
@@ -155,14 +130,17 @@
   "components": {
     "projectItem": {
       "actions": {
-        "details": "Detalles"
+        "details": "Detalles",
+        "source": "Código",
+        "preview": "Demo"
       }
     },
     "footer": {
       "name": "Ignacio Figueroa",
       "role": "Fullstack Developer",
       "thanks": "Gracias por visitar mi portafolio",
-      "rights": "Todos los derechos reservados"
+      "rights": "Todos los derechos reservados",
+      "kiss": "Keep it simple, Stupid."
     },
     "error": "Ha ocurrido un error al cargar los datos.",
     "loader": "Cargando...",

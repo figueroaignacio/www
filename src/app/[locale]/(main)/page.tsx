@@ -1,7 +1,7 @@
 import { CTACurriculum } from '@/features/home/components/cta-curriculum';
+import { ExperienceSection } from '@/features/home/components/experience-section';
 import { HomeHero } from '@/features/home/components/home-hero';
-import { QuickLinks } from '@/features/home/components/quick-links';
-import { RecentPosts } from '@/features/home/components/recent-posts';
+import { ProjectsSection } from '@/features/home/components/projects-section';
 import { Testimonials } from '@/features/home/components/testimonials';
 import { type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
@@ -16,10 +16,10 @@ export default function HomePage({ params }: HomePageProps) {
   setRequestLocale(locale);
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-16">
       <HomeHero />
-      <QuickLinks />
-      <RecentPosts />
+      <ProjectsSection />
+      <ExperienceSection />
       <Testimonials />
       <CTACurriculum />
     </div>
