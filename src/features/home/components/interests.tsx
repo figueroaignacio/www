@@ -41,19 +41,21 @@ export function Interests() {
   const tSection = useTranslations('sections.interests');
 
   return (
-    <section className="space-y-6">
+    <section className="space-y-6" aria-labelledby="interests-title">
       <div className="space-y-2">
-        <h2 className="text-lg font-medium">{tSection('title')}</h2>
+        <h2 id="interests-title" className="text-lg font-medium">{tSection('title')}</h2>
         <p className="text-sm text-muted-foreground mt-1">{tSection('description')}</p>
       </div>
-      <div className="flex flex-wrap gap-2">
+      <ul className="flex flex-wrap gap-2" role="list">
         {INTERESTS_CONFIG.map(({ key, icon: Icon }) => (
-          <Badge key={key} variant="outline" className="space-x-3 py-2">
-            <Icon className="w-3.5 h-3.5" />
-            <span>{t(key)}</span>
-          </Badge>
+          <li key={key} role="listitem">
+            <Badge variant="outline" className="space-x-3 py-2">
+              <Icon className="w-3.5 h-3.5" aria-hidden="true" />
+              <span>{t(key)}</span>
+            </Badge>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

@@ -23,18 +23,20 @@ export function TestimonialsList({ testimonials }: { testimonials: TestimonialDa
 
   return (
     <div className="relative">
-      <div className="grid gap-4">
+      <div id="testimonials-grid" className="grid gap-4">
         {visible.map((testimonial) => (
-          <div key={testimonial.id} className="p-6 bg-card rounded-lg border border-border">
-            <Quote className="h-6 w-6 text-muted-foreground/50 mb-4" />
-            <p className="text-foreground/90 leading-relaxed mb-6">{testimonial.testimonial}</p>
-            <div className="flex items-center gap-3">
+          <figure key={testimonial.id} className="p-6 bg-card rounded-lg border border-border m-0">
+            <Quote className="h-6 w-6 text-muted-foreground/50 mb-4" aria-hidden="true" />
+            <blockquote className="text-foreground/90 leading-relaxed mb-6">
+              <p>{testimonial.testimonial}</p>
+            </blockquote>
+            <figcaption className="flex items-center gap-3">
               <div>
                 <p className="text-sm font-medium text-foreground">{testimonial.name}</p>
                 <p className="text-xs text-muted-foreground">{testimonial.role}</p>
               </div>
-            </div>
-          </div>
+            </figcaption>
+          </figure>
         ))}
       </div>
 
@@ -46,6 +48,8 @@ export function TestimonialsList({ testimonials }: { testimonials: TestimonialDa
             <button
               onClick={() => setExpanded(true)}
               className="btn btn-outline"
+              aria-expanded={expanded}
+              aria-controls="testimonials-grid"
             >
               {t('showMore')}
             </button>
@@ -58,6 +62,8 @@ export function TestimonialsList({ testimonials }: { testimonials: TestimonialDa
           <button
             onClick={() => setExpanded(false)}
             className={cn('btn btn-outline')}
+            aria-expanded={expanded}
+            aria-controls="testimonials-grid"
           >
             {t('showLess')}
           </button>

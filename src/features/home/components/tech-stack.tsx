@@ -85,27 +85,30 @@ export function TechStack() {
   ];
 
   return (
-    <section className="space-y-3">
+    <section className="space-y-3" aria-labelledby="tech-stack-title">
       <div className="space-y-2">
-        <h2 className="text-lg font-medium">{t('stack.title')}</h2>
+        <h2 id="tech-stack-title" className="text-lg font-medium">{t('stack.title')}</h2>
         <p className="text-sm text-muted-foreground mt-1">{t('stack.description')}</p>
       </div>
       {techStack.map((section) => (
         <div key={section.category}>
           <h3>{section.category}</h3>
-          <div className="flex flex-wrap gap-2 py-5">
+          <ul className="flex flex-wrap gap-2 py-5" role="list">
             {section.items.map(({ name, icon: Icon }) => {
               return (
-                <div
+                <li
                   key={name}
                   className="flex items-center gap-2 rounded-full border-border border px-4 py-1.5 bg-background/40"
+                  role="listitem"
                 >
-                  <Icon />
+                  <span aria-hidden="true">
+                    <Icon />
+                  </span>
                   <span className="text-sm">{name}</span>
-                </div>
+                </li>
               );
             })}
-          </div>
+          </ul>
         </div>
       ))}
     </section>

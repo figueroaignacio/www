@@ -9,8 +9,8 @@ export async function Testimonials() {
   const testimonials: Testimonial[] = await getTestimonials(locale);
 
   return (
-    <section className="space-y-6">
-      <h2 className="text-lg font-medium">{t('title')}</h2>
+    <section className="space-y-6" aria-labelledby="testimonials-title">
+      <h2 id="testimonials-title" className="text-lg font-medium">{t('title')}</h2>
       <TestimonialsList
         testimonials={testimonials.map((t) => ({
           id: t.id,

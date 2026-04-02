@@ -9,9 +9,9 @@ export async function ProjectsSection() {
   const projects: Project[] = await getProjects(locale);
 
   return (
-    <section className="space-y-6">
+    <section className="space-y-6" aria-labelledby="projects-title">
       <div>
-        <h2 className="text-lg font-medium">{t('title')}</h2>
+        <h2 id="projects-title" className="text-lg font-medium">{t('title')}</h2>
         <p className="text-sm text-muted-foreground mt-1">{t('description')}</p>
       </div>
       <div className="grid gap-4">

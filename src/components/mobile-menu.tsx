@@ -26,10 +26,16 @@ export function MobileMenu() {
         onClick={toggleMenu}
         className="p-2 -ml-2 hover:bg-accent rounded-md transition-colors"
         aria-label="Toggle menu"
+        aria-expanded={isMenuOpen}
+        aria-controls="mobile-nav-menu"
       >
         <HamburgerMenuIcon className="h-5 w-5" />
       </button>
       <nav
+        id="mobile-nav-menu"
+        aria-label="Mobile Navigation"
+        role="dialog"
+        aria-modal="true"
         className={`bg-background/95 backdrop-blur-lg fixed inset-0 z-50 flex flex-col transition-transform duration-300 ease-out ${
           isMenuOpen ? 'pointer-events-auto translate-x-0' : 'pointer-events-none -translate-x-full'
         }`}
@@ -57,6 +63,7 @@ export function MobileMenu() {
                   <Link
                     href={item.href}
                     onClick={toggleMenu}
+                    aria-current={isActive ? 'page' : undefined}
                     className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
                       isActive
                         ? 'bg-accent text-foreground'

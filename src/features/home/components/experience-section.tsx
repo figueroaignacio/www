@@ -19,17 +19,17 @@ export async function ExperienceSection() {
   if (!experiences || experiences.length === 0) return null;
 
   return (
-    <section className="space-y-6">
+    <section className="space-y-6" aria-labelledby="experience-title">
       <div>
-        <h2 className="text-lg font-medium">{t('title')}</h2>
+        <h2 id="experience-title" className="text-lg font-medium">{t('title')}</h2>
         <p className="text-sm text-muted-foreground mt-1">{t('description')}</p>
       </div>
-      <div className="relative space-y-0">
+      <ol className="relative space-y-0">
         {/* Timeline line */}
         <div className="absolute left-[11px] top-2 bottom-2 w-px bg-border" />
 
         {experiences.map((experience, index) => (
-          <div key={experience.id} className="relative pl-10 pb-8 last:pb-0">
+          <li key={experience.id} className="relative pl-10 pb-8 last:pb-0">
             {/* Timeline dot */}
             <div
               className={`absolute left-0 top-1.5 size-[23px] rounded-full border-2 flex items-center justify-center ${
@@ -43,7 +43,7 @@ export async function ExperienceSection() {
               />
             </div>
 
-            <div className="space-y-3">
+            <article className="space-y-3">
               {/* Header */}
               <div className="space-y-1">
                 <div className="flex items-center gap-2 flex-wrap">
@@ -110,10 +110,10 @@ export async function ExperienceSection() {
                   ))}
                 </div>
               )}
-            </div>
-          </div>
+            </article>
+          </li>
         ))}
-      </div>
+      </ol>
     </section>
   );
 }

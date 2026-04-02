@@ -20,10 +20,15 @@ export function ProjectCard({
     technologies?.filter((tech): tech is TechStack => typeof tech === 'object') ?? [];
 
   return (
-    <div className="group relative flex flex-col justify-between gap-4 border-border border p-6 rounded-xl bg-card hover:border-foreground/20 transition-colors duration-200">
+    <article
+      className="group relative flex flex-col justify-between gap-4 border-border border p-6 rounded-xl bg-card hover:border-foreground/20 transition-colors duration-200"
+      aria-labelledby={`project-title-${title}`}
+    >
       <div className="space-y-3">
         <div>
-          <h3 className="font-semibold text-foreground">{title}</h3>
+          <h3 id={`project-title-${title}`} className="font-semibold text-foreground">
+            {title}
+          </h3>
           {subtitle && <p className="text-sm text-muted-foreground mt-0.5">{subtitle}</p>}
         </div>
         {techList.length > 0 && (
@@ -42,6 +47,7 @@ export function ProjectCard({
             href={repository}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`View source code for ${title}`}
             className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
           >
             <CodeIcon className="size-3.5" />
@@ -53,6 +59,7 @@ export function ProjectCard({
             href={demo}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`View live demo for ${title}`}
             className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
           >
             <ExternalLinkIcon className="size-3.5" />
@@ -62,6 +69,7 @@ export function ProjectCard({
         {slug && (
           <Link
             href={`/projects/${slug}`}
+            aria-label={`View details for ${title}`}
             className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors ml-auto"
           >
             <InfoCircledIcon className="size-3.5" />
@@ -69,6 +77,6 @@ export function ProjectCard({
           </Link>
         )}
       </div>
-    </div>
+    </article>
   );
 }

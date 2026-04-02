@@ -17,26 +17,31 @@ export function NavigationBar() {
   const pathname = usePathname();
 
   return (
-    <nav className="hidden lg:flex lg:justify-between lg:items-center sticky top-0 py-5 bg-background/60 backdrop-blur-lg z-100 container">
+    <nav
+      className="hidden lg:flex lg:justify-between lg:items-center sticky top-0 py-5 bg-background/60 backdrop-blur-lg z-100 container"
+      aria-label="Main Navigation"
+    >
       <Logo />
-      <div className="space-x-5">
+      <ul className="flex items-center space-x-5">
         {navigation.map((item) => {
           const isActive = pathname === item.href;
           return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`inline-block text-sm transition-all  ${
-                isActive
-                  ? 'text-foreground font-medium scale-110'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              {item.label}
-            </Link>
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                aria-current={isActive ? 'page' : undefined}
+                className={`inline-block text-sm transition-all  ${
+                  isActive
+                    ? 'text-foreground font-medium scale-110'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                {item.label}
+              </Link>
+            </li>
           );
         })}
-      </div>
+      </ul>
       <div className="flex items-center gap-3">
         <OpenToWorkBadge />
         <HeaderActions />
