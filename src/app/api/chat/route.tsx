@@ -1,11 +1,13 @@
 import { groq, GROQ_CONFIG } from '@/features/assistant/lib/groq-client';
 import { getSystemPrompt } from '@/features/assistant/lib/system';
 import { streamText } from 'ai';
+import { getLocale } from 'next-intl/server';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
   try {
     const { messages } = await req.json();
+    const locale = (await getLocale()) as any;
 
     if (!Array.isArray(messages) || messages.some((m) => !m.role || !m.content)) {
       return NextResponse.json({ error: 'Invalid messages format' }, { status: 400 });
@@ -19,7 +21,7 @@ export async function POST(req: NextRequest) {
         : String(m.content),
     }));
 
-    const systemPrompt = await getSystemPrompt();
+    const systemPrompt = await getSystemPrompt(locale);
 
     const result = streamText({
       model: groq(GROQ_CONFIG.model),
