@@ -6,6 +6,7 @@ import type { Project } from '@/payload-types';
 import { RichText } from '@payloadcms/richtext-lexical/react';
 import type { Metadata } from 'next';
 import type { Locale } from 'next-intl';
+import { notFound } from 'next/navigation';
 
 interface ProjectPageProps {
   params: Promise<{
@@ -17,6 +18,10 @@ interface ProjectPageProps {
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
   const project = await getProjectBySlug(slug);
+
+  if (!project) {
+    notFound();
+  }
 
   return (
     <div>
@@ -42,16 +47,12 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     };
   }
 
-  const metaTitle = project.seo?.metaTitle || project.title;
-  const metaDescription = project.seo?.metaDescription || project.description;
-
   return {
-    title: metaTitle,
-    description: metaDescription,
-    keywords: project.keywords?.map((k: { keyword?: string }) => k.keyword),
+    title: project.title,
+    description: project.description,
     openGraph: {
-      title: metaTitle,
-      description: metaDescription,
+      title: project.title,
+      description: project.description,
       type: 'article',
       locale: locale,
       url: `${SITE_URL}/${locale}/projects/${slug}`,
@@ -61,14 +62,14 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
           url: `/${locale}/projects/${slug}/opengraph-image`,
           width: 1200,
           height: 630,
-          alt: metaTitle,
+          alt: project.title,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: metaTitle,
-      description: metaDescription,
+      title: project.title,
+      description: project.description,
       images: [`/${locale}/projects/${slug}/opengraph-image`],
     },
     alternates: {

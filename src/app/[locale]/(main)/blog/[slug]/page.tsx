@@ -7,6 +7,7 @@ import { SITE_URL } from '@/lib/constants';
 import type { Post } from '@/payload-types';
 import type { Metadata } from 'next';
 import type { Locale } from 'next-intl';
+import { notFound } from 'next/navigation';
 
 interface PostPageProps {
   params: Promise<{
@@ -17,7 +18,11 @@ interface PostPageProps {
 
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
-  const post: Post = await getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
+
+  if (!post) {
+    notFound();
+  }
 
   return (
     <article>
@@ -51,7 +56,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   return {
     title: metaTitle,
     description: metaDescription,
-    keywords: post.keywords?.map((k: { keyword?: string }) => k.keyword),
+    keywords: post.keywords?.map((k) => k.keyword).filter((k): k is string => Boolean(k)),
     openGraph: {
       title: metaTitle,
       description: metaDescription,
