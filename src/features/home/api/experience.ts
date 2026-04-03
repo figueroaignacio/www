@@ -1,18 +1,20 @@
-import { API_URL } from '@/lib/constants';
+import config from '@payload-config';
 import { Locale } from 'next-intl';
+import { getPayload } from 'payload';
 
-export async function getExperiences(locale: Locale) {
-  const res = await fetch(
-    `${API_URL}/api/experience?where[locale][equals]=${locale}&sort=order&where[_status][equals]=published`,
-    {
-      next: { revalidate: 3600, tags: ['experience'] },
+import type { Experience } from '@/payload-types';
+
+export async function getExperiences(locale: Locale): Promise<Experience[]> {
+  const payload = await getPayload({ config });
+
+  const result = await payload.find({
+    collection: 'experience',
+    where: {
+      locale: { equals: locale },
+      _status: { equals: 'published' },
     },
-  );
+    sort: 'order',
+  });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch experiences');
-  }
-
-  const data = await res.json();
-  return data.docs;
+  return result.docs;
 }

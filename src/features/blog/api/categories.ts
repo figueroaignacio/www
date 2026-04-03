@@ -1,39 +1,40 @@
-import { API_URL } from '@/lib/constants';
-import { PostCategory } from '@/payload-types';
+import config from '@payload-config';
 import { Locale } from 'next-intl';
+import { getPayload } from 'payload';
+
+import type { PostCategory } from '@/payload-types';
 
 export interface CategoryWithCount extends PostCategory {
   postCount: number;
 }
 
 export async function getCategories(locale: Locale): Promise<CategoryWithCount[]> {
-  const params = new URLSearchParams();
-  params.append('where[locale][equals]', locale);
+  const payload = await getPayload({ config });
 
-  const res = await fetch(`${API_URL}/api/post-categories?${params.toString()}`, {
-    next: { revalidate: 3600, tags: ['categories'] },
+  const result = await payload.find({
+    collection: 'post-categories',
+    where: {
+      locale: { equals: locale },
+    },
   });
 
-  if (!res.ok) {
-    throw new Error('Error getting categories');
-  }
-
-  const data = await res.json();
-  const categories: PostCategory[] = data.docs;
+  const categories = result.docs;
 
   const categoriesWithCount = await Promise.all(
     categories.map(async (category) => {
-      const postParams = new URLSearchParams();
-      postParams.append('where[locale][equals]', locale);
-      postParams.append('where[categories.slug][equals]', category.slug);
-      postParams.append('limit', '0');
-
-      const postsRes = await fetch(`${API_URL}/api/posts?${postParams.toString()}`);
-      const postsData = await postsRes.json();
+      const postsResult = await payload.find({
+        collection: 'posts',
+        where: {
+          locale: { equals: locale },
+          'categories.slug': { equals: category.slug },
+          _status: { equals: 'published' },
+        },
+        limit: 0,
+      });
 
       return {
         ...category,
-        postCount: postsData.totalDocs || 0,
+        postCount: postsResult.totalDocs,
       };
     }),
   );

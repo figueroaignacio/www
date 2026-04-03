@@ -1,33 +1,26 @@
-import { API_URL } from '@/lib/constants';
-import { Post } from '@/payload-types';
+import type { Post } from '@/payload-types';
+import config from '@payload-config';
 import { Locale } from 'next-intl';
+import { getPayload, type Where } from 'payload';
 
-export async function getPosts(locale: Locale, categorySlug?: string) {
-  let url = `${API_URL}/api/posts`;
-  const params = new URLSearchParams();
-  params.append('where[locale][equals]', locale);
+export async function getPosts(locale: Locale, categorySlug?: string): Promise<Post[]> {
+  const payload = await getPayload({ config });
+
+  const where: Where = {
+    locale: { equals: locale },
+    _status: { equals: 'published' },
+  };
 
   if (categorySlug) {
-    params.append('where[categories.slug][equals]', categorySlug);
+    where['categories.slug'] = { equals: categorySlug };
   }
 
-  const queryString = params.toString();
-  if (queryString) {
-    url += `?${queryString}`;
-  }
-
-  const res = await fetch(url, {
-    next: { revalidate: 3600, tags: ['posts', categorySlug ? `category-${categorySlug}` : 'all'] },
+  const result = await payload.find({
+    collection: 'posts',
+    where,
   });
 
-  if (!res.ok) {
-    const errorData = await res.json().catch(() => ({}));
-    console.error('Error fetching posts:', errorData);
-    throw new Error('Error getting posts');
-  }
-
-  const data = await res.json();
-  return data.docs;
+  return result.docs;
 }
 
 export async function getPaginatedPosts({
@@ -41,73 +34,68 @@ export async function getPaginatedPosts({
   limit?: number;
   categorySlug?: string;
 }) {
-  const params = new URLSearchParams();
-  params.append('where[locale][equals]', locale);
-  params.append('page', page.toString());
-  params.append('limit', limit.toString());
+  const payload = await getPayload({ config });
+
+  const where: Where = {
+    locale: { equals: locale },
+    _status: { equals: 'published' },
+  };
 
   if (categorySlug) {
-    params.append('where[categories.slug][equals]', categorySlug);
+    where['categories.slug'] = { equals: categorySlug };
   }
 
-  const url = `${API_URL}/api/posts?${params.toString()}`;
-
-  const res = await fetch(url, {
-    next: { revalidate: 3600, tags: ['posts', `page-${page}`] },
+  const result = await payload.find({
+    collection: 'posts',
+    where,
+    page,
+    limit,
   });
 
-  if (!res.ok) {
-    const errorData = await res.json().catch(() => ({}));
-    console.error('Error fetching posts:', errorData);
-    throw new Error('Error getting posts');
-  }
-
-  const data = await res.json();
-  return data;
+  return result;
 }
 
-export async function getPostBySlug(slug: string) {
-  const res = await fetch(`${API_URL}/api/posts/?where[slug][equals]=${slug}`, {
-    next: { revalidate: 3600, tags: [`post-${slug}`] },
-  });
+export async function getPostBySlug(slug: string): Promise<Post | null> {
+  const payload = await getPayload({ config });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch post by slug');
-  }
-
-  const data = await res.json();
-  return data.docs?.[0] ?? null;
-}
-
-export async function getFeaturedPosts(locale: Locale) {
-  const res = await fetch(
-    `${API_URL}/api/posts?where[featured][equals]=true&where[locale][equals]=${locale}`,
-    {
-      next: { revalidate: 3600, tags: ['posts', 'featured'] },
+  const result = await payload.find({
+    collection: 'posts',
+    where: {
+      slug: { equals: slug },
     },
-  );
+    limit: 1,
+  });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch featured posts');
-  }
+  return result.docs?.[0] ?? null;
+}
 
-  const data = await res.json();
-  return data.docs ?? [];
+export async function getFeaturedPosts(locale: Locale): Promise<Post[]> {
+  const payload = await getPayload({ config });
+
+  const result = await payload.find({
+    collection: 'posts',
+    where: {
+      featured: { equals: true },
+      locale: { equals: locale },
+      _status: { equals: 'published' },
+    },
+  });
+
+  return result.docs ?? [];
 }
 
 export async function getRecentPosts(locale: Locale): Promise<Post[]> {
-  const posts: any[] = await getPosts(locale);
-  if (!posts || posts.length === 0) return [];
+  const payload = await getPayload({ config });
 
-  const getTimestamp = (p: any) => {
-    const dateValue =
-      p.publishedAt ?? p.published_at ?? p.createdAt ?? p.created_at ?? p.date ?? null;
-    const t = dateValue ? Date.parse(dateValue) : 0;
-    return Number.isNaN(t) ? 0 : t;
-  };
+  const result = await payload.find({
+    collection: 'posts',
+    where: {
+      locale: { equals: locale },
+      _status: { equals: 'published' },
+    },
+    sort: '-createdAt',
+    limit: 2,
+  });
 
-  return posts
-    .slice()
-    .sort((a, b) => getTimestamp(b) - getTimestamp(a))
-    .slice(0, 2);
+  return result.docs;
 }

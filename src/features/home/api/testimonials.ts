@@ -1,15 +1,19 @@
-import { API_URL } from '@/lib/constants';
+import config from '@payload-config';
 import { Locale } from 'next-intl';
+import { getPayload } from 'payload';
 
-export async function getTestimonials(locale: Locale) {
-  const res = await fetch(`${API_URL}/api/testimonials?where[locale][equals]=${locale}`, {
-    cache: 'no-store',
+import type { Testimonial } from '@/payload-types';
+
+export async function getTestimonials(locale: Locale): Promise<Testimonial[]> {
+  const payload = await getPayload({ config });
+
+  const result = await payload.find({
+    collection: 'testimonials',
+    where: {
+      locale: { equals: locale },
+      _status: { equals: 'published' },
+    },
   });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch experiences');
-  }
-
-  const data = await res.json();
-  return data.docs;
+  return result.docs;
 }
