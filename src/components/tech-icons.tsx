@@ -22,8 +22,8 @@ function ViteIcon() {
           gradientTransform="translate(0 .937) scale(.3122)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#41d1ff" />
-          <stop offset="1" stop-color="#bd34fe" />
+          <stop offset="0" stopColor="#41d1ff" />
+          <stop offset="1" stopColor="#bd34fe" />
         </linearGradient>
         <linearGradient
           id="b"
@@ -34,9 +34,9 @@ function ViteIcon() {
           gradientTransform="translate(0 .937) scale(.3122)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#ffea83" />
-          <stop offset=".083" stop-color="#ffdd35" />
-          <stop offset="1" stop-color="#ffa800" />
+          <stop offset="0" stopColor="#ffea83" />
+          <stop offset=".083" stopColor="#ffdd35" />
+          <stop offset="1" stopColor="#ffa800" />
         </linearGradient>
       </defs>
       <path
@@ -56,7 +56,6 @@ function TypescriptIcon() {
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width={20} height={20}>
       <path fill="#fff" d="M22.67 47h99.67v73.67H22.67z" />
       <path
-        data-name="original"
         fill="#007acc"
         d="M1.5 63.91v62.5h125v-125H1.5zm100.73-5a15.56 15.56 0 017.82 4.5 20.58 20.58 0 013 4c0 .16-5.4 3.81-8.69 5.85-.12.08-.6-.44-1.13-1.23a7.09 7.09 0 00-5.87-3.53c-3.79-.26-6.23 1.73-6.21 5a4.58 4.58 0 00.54 2.34c.83 1.73 2.38 2.76 7.24 4.86 8.95 3.85 12.78 6.39 15.16 10 2.66 4 3.25 10.46 1.45 15.24-2 5.2-6.9 8.73-13.83 9.9a38.32 38.32 0 01-9.52-.1 23 23 0 01-12.72-6.63c-1.15-1.27-3.39-4.58-3.25-4.82a9.34 9.34 0 011.15-.73L82 101l3.59-2.08.75 1.11a16.78 16.78 0 004.74 4.54c4 2.1 9.46 1.81 12.16-.62a5.43 5.43 0 00.69-6.92c-1-1.39-3-2.56-8.59-5-6.45-2.78-9.23-4.5-11.77-7.24a16.48 16.48 0 01-3.43-6.25 25 25 0 01-.22-8c1.33-6.23 6-10.58 12.82-11.87a31.66 31.66 0 019.49.26zm-29.34 5.24v5.12H56.66v46.23H45.15V69.26H28.88v-5a49.19 49.19 0 01.12-5.17C29.08 59 39 59 51 59h21.83z"
       />
@@ -96,12 +95,12 @@ function VeliteIcon() {
   return (
     <svg viewBox="0 0 82 60" width={20} height={20}>
       <linearGradient id="l" x2="1" y1="1">
-        <stop offset="0%" stop-color="#08A771" />
-        <stop offset="100%" stop-color="#11E49D" />
+        <stop offset="0%" stopColor="#08A771" />
+        <stop offset="100%" stopColor="#11E49D" />
       </linearGradient>
       <linearGradient id="r" x2="1" y1="1">
-        <stop offset="0%" stop-color="#13AAAA" />
-        <stop offset="100%" stop-color="#04D0D0" />
+        <stop offset="0%" stopColor="#13AAAA" />
+        <stop offset="100%" stopColor="#04D0D0" />
       </linearGradient>
       <path
         d="M30.53 27.306l5.11 13.84-11.88 18.52L4 4.306c11.3 0 20.08 6.25 26.53 23z"
@@ -171,8 +170,8 @@ function AstroIcon() {
           gradientTransform="scale(.1)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#000014" />
-          <stop offset="1" stop-color="#150426" />
+          <stop offset="0" stopColor="#000014" />
+          <stop offset="1" stopColor="#150426" />
         </linearGradient>
         <linearGradient
           id="b"
@@ -183,8 +182,8 @@ function AstroIcon() {
           gradientTransform="scale(.1)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#ff1639" />
-          <stop offset="1" stop-color="#ff1639" stop-opacity="0" />
+          <stop offset="0" stopColor="#ff1639" />
+          <stop offset="1" stopColor="#ff1639" stopOpacity="0" />
         </linearGradient>
       </defs>
       <path
@@ -269,11 +268,11 @@ function JsonIcon() {
         gradientUnits="userSpaceOnUse"
       >
         <stop offset="0" />
-        <stop offset="1" stop-color="#fff" />
+        <stop offset="1" stopColor="#fff" />
       </linearGradient>
       <path
         fill="url(#a)"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M63.895 94.303c27.433 37.398 54.281-10.438 54.241-39.205-.046-34.012-34.518-53.021-54.263-53.021C32.182 2.077 2 28.269 2 64.105 2 103.937 36.596 126 63.873 126c-6.172-.889-26.742-5.296-27.019-52.674-.186-32.044 10.453-44.846 26.974-39.214.37.137 18.223 7.18 18.223 30.187 0 22.908-18.156 30.004-18.156 30.004z"
         clip-rule="evenodd"
       />
@@ -287,11 +286,11 @@ function JsonIcon() {
         gradientUnits="userSpaceOnUse"
       >
         <stop offset="0" />
-        <stop offset="1" stop-color="#fff" />
+        <stop offset="1" stopColor="#fff" />
       </linearGradient>
       <path
         fill="url(#b)"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M63.863 34.086C45.736 27.838 23.53 42.778 23.53 72.703 23.53 121.565 59.739 126 64.128 126 95.818 126 126 99.808 126 63.972 126 24.14 91.404 2.077 64.127 2.077c7.555-1.046 40.719 8.176 40.719 53.504 0 29.559-24.764 45.651-40.87 38.776-.37-.137-18.223-7.18-18.223-30.187 0-22.91 18.11-30.085 18.11-30.084z"
         clip-rule="evenodd"
       />
@@ -358,8 +357,8 @@ function TurborepoIcon() {
           y2="698.962346%"
           id="turborepo-linearGradient-1"
         >
-          <stop stop-color="#1E90FF" offset="0%"></stop>
-          <stop stop-color="#FF1E56" offset="100%"></stop>
+          <stop stopColor="#1E90FF" offset="0%"></stop>
+          <stop stopColor="#FF1E56" offset="100%"></stop>
         </linearGradient>
         <linearGradient
           x1="11.4859916%"
@@ -368,8 +367,8 @@ function TurborepoIcon() {
           y2="512.39779%"
           id="turborepo-linearGradient-2"
         >
-          <stop stop-color="#1E90FF" offset="0%"></stop>
-          <stop stop-color="#FF1E56" offset="100%"></stop>
+          <stop stopColor="#1E90FF" offset="0%"></stop>
+          <stop stopColor="#FF1E56" offset="100%"></stop>
         </linearGradient>
         <linearGradient
           x1="-153.743225%"
@@ -378,8 +377,8 @@ function TurborepoIcon() {
           y2="278.479413%"
           id="turborepo-linearGradient-3"
         >
-          <stop stop-color="#1E90FF" offset="0%"></stop>
-          <stop stop-color="#FF1E56" offset="100%"></stop>
+          <stop stopColor="#1E90FF" offset="0%"></stop>
+          <stop stopColor="#FF1E56" offset="100%"></stop>
         </linearGradient>
         <linearGradient
           x1="-153.743225%"
@@ -388,8 +387,8 @@ function TurborepoIcon() {
           y2="162.263952%"
           id="turborepo-linearGradient-4"
         >
-          <stop stop-color="#1E90FF" offset="0%"></stop>
-          <stop stop-color="#FF1E56" offset="100%"></stop>
+          <stop stopColor="#1E90FF" offset="0%"></stop>
+          <stop stopColor="#FF1E56" offset="100%"></stop>
         </linearGradient>
         <linearGradient
           x1="11.4859916%"
@@ -398,8 +397,8 @@ function TurborepoIcon() {
           y2="102.193662%"
           id="turborepo-linearGradient-5"
         >
-          <stop stop-color="#1E90FF" offset="0%"></stop>
-          <stop stop-color="#FF1E56" offset="100%"></stop>
+          <stop stopColor="#1E90FF" offset="0%"></stop>
+          <stop stopColor="#FF1E56" offset="100%"></stop>
         </linearGradient>
         <linearGradient
           x1="123.779228%"
@@ -408,8 +407,8 @@ function TurborepoIcon() {
           y2="99.9997513%"
           id="turborepo-linearGradient-6"
         >
-          <stop stop-color="#1E90FF" offset="0%"></stop>
-          <stop stop-color="#FF1E56" offset="100%"></stop>
+          <stop stopColor="#1E90FF" offset="0%"></stop>
+          <stop stopColor="#FF1E56" offset="100%"></stop>
         </linearGradient>
       </defs>
       <g>
@@ -471,28 +470,28 @@ function PnpmIcon() {
       </defs>
       <g>
         <g>
-          <use xlinkHref="#arNRoK435" opacity="1" fill="#f9ad00" fill-opacity="1" />
+          <use xlinkHref="#arNRoK435" opacity="1" fill="#f9ad00" fillOpacity="1" />
         </g>
         <g>
-          <use xlinkHref="#a3H2WU7Px" opacity="1" fill="#f9ad00" fill-opacity="1" />
+          <use xlinkHref="#a3H2WU7Px" opacity="1" fill="#f9ad00" fillOpacity="1" />
         </g>
         <g>
-          <use xlinkHref="#b1DInM56vl" opacity="1" fill="#f9ad00" fill-opacity="1" />
+          <use xlinkHref="#b1DInM56vl" opacity="1" fill="#f9ad00" fillOpacity="1" />
         </g>
         <g>
-          <use xlinkHref="#a7LFlgQIwu" opacity="1" fill="#f9ad00" fill-opacity="1" />
+          <use xlinkHref="#a7LFlgQIwu" opacity="1" fill="#f9ad00" fillOpacity="1" />
         </g>
         <g>
-          <use xlinkHref="#amwLiZcuo" opacity="1" fill="#4e4e4e" fill-opacity="1" />
+          <use xlinkHref="#amwLiZcuo" opacity="1" fill="#4e4e4e" fillOpacity="1" />
         </g>
         <g>
-          <use xlinkHref="#f3Peu5RWan" opacity="1" fill="#4e4e4e" fill-opacity="1" />
+          <use xlinkHref="#f3Peu5RWan" opacity="1" fill="#4e4e4e" fillOpacity="1" />
         </g>
         <g>
-          <use xlinkHref="#a6DXBfqPa" opacity="1" fill="#4e4e4e" fill-opacity="1" />
+          <use xlinkHref="#a6DXBfqPa" opacity="1" fill="#4e4e4e" fillOpacity="1" />
         </g>
         <g>
-          <use xlinkHref="#c1GWSTH1z7" opacity="1" fill="#4e4e4e" fill-opacity="1" />
+          <use xlinkHref="#c1GWSTH1z7" opacity="1" fill="#4e4e4e" fillOpacity="1" />
         </g>
       </g>
     </svg>
@@ -635,7 +634,7 @@ function ZodIcon() {
           ></feColorMatrix>
         </filter>
       </defs>
-      <g transform="translate(2.000000, 1.510645)" fill-rule="nonzero">
+      <g transform="translate(2.000000, 1.510645)" fillRule="nonzero">
         <polygon
           fill="#18253F"
           points="58.8162023 12.5220497 195.093896 12.5220497 235.027464 54.2130202 122.038097 180.765999 16.9574282 54.2130202"
@@ -653,7 +652,7 @@ function ZodIcon() {
           points="144.596212 12.5642823 33.9304463 76.4571406 16.7194669 54.9715457 90.8141008 12.1929865"
         ></polygon>
         <g>
-          <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlinkHref="#path-1"></use>
+          <use fill="black" fillOpacity="1" filter="url(#filter-2)" xlinkHref="#path-1"></use>
           <use fill="#3068B7" xlinkHref="#path-1"></use>
         </g>
       </g>
@@ -683,7 +682,7 @@ function CVAIcon() {
       height={20}
     >
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         clip-rule="evenodd"
         d="M389.95 485.246C467.692 440.298 520 356.258 520 260L710 260L560 520H710L560 780L389.95 485.246ZM389.95 485.246C351.718 507.35 307.336 520 260 520C116.406 520 0 403.594 0 260C0 116.406 116.406 0 260 0C403.594 0 520 116.406 520 260L260 260L389.95 485.246ZM710 520H1160L860 0L710 260L860 260L710 520Z"
         fill="url(#paint0_linear_101_10)"
@@ -697,8 +696,8 @@ function CVAIcon() {
           y2="780"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.145833" stop-color="currentColor"></stop>
-          <stop offset="0.822917" stop-color="currentColor"></stop>
+          <stop offset="0.145833" stopColor="currentColor"></stop>
+          <stop offset="0.822917" stopColor="currentColor"></stop>
         </linearGradient>
       </defs>
     </svg>
@@ -794,7 +793,7 @@ function GroqAiIcon() {
   return (
     <svg
       fill="currentColor"
-      fill-rule="evenodd"
+      fillRule="evenodd"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       width={20}
@@ -813,7 +812,7 @@ function ClaudeAiIcon() {
       <path
         d="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.552-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.747-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.315.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.638-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.049-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z"
         fill="#D97757"
-        fill-rule="nonzero"
+        fillRule="nonzero"
       ></path>
     </svg>
   );
@@ -864,8 +863,8 @@ function GeminiIcon() {
           y1="15.5"
           y2="12"
         >
-          <stop stop-color="#08B962"></stop>
-          <stop offset="1" stop-color="#08B962" stop-opacity="0"></stop>
+          <stop stopColor="#08B962"></stop>
+          <stop offset="1" stopColor="#08B962" stopOpacity="0"></stop>
         </linearGradient>
         <linearGradient
           gradientUnits="userSpaceOnUse"
@@ -875,8 +874,8 @@ function GeminiIcon() {
           y1="5.5"
           y2="11"
         >
-          <stop stop-color="#F94543"></stop>
-          <stop offset="1" stop-color="#F94543" stop-opacity="0"></stop>
+          <stop stopColor="#F94543"></stop>
+          <stop offset="1" stopColor="#F94543" stopOpacity="0"></stop>
         </linearGradient>
         <linearGradient
           gradientUnits="userSpaceOnUse"
@@ -886,8 +885,8 @@ function GeminiIcon() {
           y1="13.5"
           y2="12"
         >
-          <stop stop-color="#FABC12"></stop>
-          <stop offset=".46" stop-color="#FABC12" stop-opacity="0"></stop>
+          <stop stopColor="#FABC12"></stop>
+          <stop offset=".46" stopColor="#FABC12" stopOpacity="0"></stop>
         </linearGradient>
       </defs>
     </svg>

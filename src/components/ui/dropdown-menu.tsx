@@ -79,10 +79,6 @@ function useClickOutside(
   }, [ref, triggerRef, handler, enabled]);
 }
 
-function generateId() {
-  return Math.random().toString(36).substring(2, 11);
-}
-
 function DropdownMenu({
   children,
   className,
@@ -110,12 +106,13 @@ function DropdownMenu({
     });
   }, [onOpenChange]);
 
+  const baseId = React.useId();
   const { triggerId, contentId } = React.useMemo(
     () => ({
-      triggerId: `dropdown-trigger-${generateId()}`,
-      contentId: `dropdown-content-${generateId()}`,
+      triggerId: `dropdown-trigger-${baseId}`,
+      contentId: `dropdown-content-${baseId}`,
     }),
-    [],
+    [baseId],
   );
 
   const contextValue = React.useMemo(
