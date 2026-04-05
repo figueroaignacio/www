@@ -1,10 +1,18 @@
 import { neon } from '@neondatabase/serverless';
 
-export const pool = {
-  query: async (text: string, params: any[]) => {
-    const sql = neon(process.env.POSTGRES_URL!);
-    const rows = await (sql as any).query(text, params);
+type QueryResult = {
+  rows: Record<string, unknown>[];
+  rowCount?: number;
+};
 
-    return rows;
+const sql = neon(process.env.POSTGRES_URL!);
+
+export const pool = {
+  query: async (text: string, params: unknown[] = []): Promise<QueryResult> => {
+    const result = await sql.query(text, params, { fullResults: true });
+    return {
+      rows: result.rows as QueryResult['rows'],
+      rowCount: result.rowCount,
+    };
   },
 };

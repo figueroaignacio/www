@@ -8,6 +8,9 @@ import type { Metadata } from 'next';
 import type { Locale } from 'next-intl';
 import { notFound } from 'next/navigation';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 interface ProjectPageProps {
   params: Promise<{
     slug: string;

@@ -16,21 +16,21 @@ export async function DELETE(request: Request, { params }: { params: Promise<{ i
     const { id } = await params;
     const commentId = parseInt(id, 10);
     const result = await pool.query('SELECT user_id FROM comments WHERE id = $1', [commentId]);
-    const commentsFound = result as any[];
 
-    if (commentsFound.length === 0) {
+    if (result.rows.length === 0) {
       return NextResponse.json({ error: 'No encontrado' }, { status: 404 });
     }
 
-    if (commentsFound[0].user_id !== session.user.id) {
+    if (result.rows[0].user_id !== session.user.id) {
       return NextResponse.json({ error: 'No tienes permiso' }, { status: 403 });
     }
 
     await pool.query('DELETE FROM comments WHERE id = $1', [commentId]);
 
     return NextResponse.json({ success: true });
-  } catch (error: any) {
-    console.error('--- ERROR EN DELETE ---', error.message);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    console.error('--- ERROR EN DELETE ---', message);
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

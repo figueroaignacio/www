@@ -1,3 +1,4 @@
+import type { Metadata, Viewport } from 'next';
 import { Providers } from '@/components/providers';
 import { routing } from '@/i18n/routing';
 import { fontHeading, fontSans } from '@/lib/fonts';
@@ -9,6 +10,71 @@ interface LocaleLayoutProps {
   children: React.ReactNode;
   params: Promise<{ locale: Locale }>;
 }
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
+  ],
+  colorScheme: 'dark light',
+  width: 'device-width',
+  initialScale: 1,
+};
+
+export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
+  title: {
+    default: 'Ignacio Figueroa - Full Stack Developer',
+    template: '%s | Ignacio Figueroa',
+  },
+  description:
+    'Full Stack Developer specializing in React, Next.js, and TypeScript. Portfolio, blog, and projects.',
+  keywords: [
+    'Full Stack Developer',
+    'React',
+    'Next.js',
+    'TypeScript',
+    'Frontend Developer',
+    'Portfolio',
+  ],
+  authors: [{ name: 'Ignacio Figueroa' }],
+  creator: 'Ignacio Figueroa',
+  publisher: 'Ignacio Figueroa',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    alternateLocale: ['es_ES'],
+    siteName: 'Ignacio Figueroa',
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: '/favicon.ico',
+  },
+  alternates: {
+    canonical: '/',
+    languages: {
+      es: '/es',
+      en: '/en',
+    },
+  },
+};
 
 export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
   const { locale } = await params;
@@ -28,9 +94,3 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
     </html>
   );
 }
-
-export const metadata = {
-  title: {
-    template: `%s | Ignacio Figueroa`,
-  },
-};
