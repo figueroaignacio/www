@@ -18,23 +18,19 @@ export function ProjectHeaderPage({ title, description, demo, repository }: Part
         {demo && (
           <a href={demo} target="_blank" rel="noopener noreferrer">
             <Button
-              variant="outline"
+              variant="link"
               size="sm"
-              className="gap-x-3 items-center"
+              className="px-0"
               leftIcon={<ExternalLink className="size-4" />}
             >
               Demo
             </Button>
           </a>
         )}
+        <span>|</span>
         {repository && (
           <a href={repository} target="_blank" rel="noopener noreferrer">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="gap-x-3 items-center"
-              leftIcon={<GitHubIcon />}
-            >
+            <Button variant="link" size="sm" className=" px-0" leftIcon={<GitHubIcon />}>
               Source Code
             </Button>
           </a>

@@ -28,7 +28,7 @@ export function CTAContact() {
   const t = useTranslations('components.ctaContact');
 
   return (
-    <section className="p-8 rounded-lg border border-border space-y-6">
+    <section className="   space-y-6">
       <div className=" space-y-2">
         <h2 className="text-xl font-semibold">{t('title')}</h2>
         <p className="text-muted-foreground">{t('description')}</p>

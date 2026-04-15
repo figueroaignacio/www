@@ -1,6 +1,5 @@
 'use client';
 
-import { CTAContact } from '@/features/home/components/cta-contact';
 import { CTACurriculum } from '@/features/home/components/cta-curriculum';
 import { Link, usePathname } from '@/i18n/navigation';
 import { Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
@@ -78,7 +77,6 @@ export function MobileMenu() {
           </ul>
           <div className="my-12 space-y-5">
             <CTACurriculum />
-            <CTAContact />
           </div>
         </div>
       </nav>
