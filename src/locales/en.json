@@ -109,6 +109,23 @@
         "devops": "DevOps Culture",
         "opensource": "Open Source"
       }
+    },
+    "nachUiCta": {
+      "badge": "UI Components",
+      "title": "I have built {count}+ components",
+      "description": "A kit of ready-to-use components, designed to build interfaces quickly and consistently.",
+      "actions": {
+        "viewComponents": "View components",
+        "viewDocumentation": "View documentation"
+      },
+      "href": {
+        "components": "https://nach-ui.vercel.app/en/docs/components",
+        "documentation": "https://nach-ui.vercel.app/en/docs"
+      },
+      "stats": {
+        "components": "components",
+        "openSource": "open source"
+      }
     }
   },
   "ui": {

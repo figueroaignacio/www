@@ -2,6 +2,7 @@ import { CTACurriculum } from '@/features/home/components/cta-curriculum';
 import { ExperienceSection } from '@/features/home/components/experience-section';
 import { HomeHero } from '@/features/home/components/home-hero';
 import { Interests } from '@/features/home/components/interests';
+import NachUICTA from '@/features/home/components/nach-ui-cta';
 import { ProjectsSection } from '@/features/home/components/projects-section';
 import { TechStack } from '@/features/home/components/tech-stack';
 import { Testimonials } from '@/features/home/components/testimonials';
@@ -26,6 +27,7 @@ export default function HomePage({ params }: HomePageProps) {
       <ExperienceSection />
       <Testimonials />
       <CTACurriculum />
+      <NachUICTA />
     </div>
   );
 }

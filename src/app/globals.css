@@ -130,6 +130,10 @@
     @apply block p-6 bg-card rounded-lg border border-border;
   }
 
+  .card-outline {
+    @apply block p-6 bg-transparent rounded-lg border border-border;
+  }
+
   .prose {
     box-sizing: border-box;
     overflow-wrap: anywhere;
