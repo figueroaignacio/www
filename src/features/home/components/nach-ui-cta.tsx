@@ -1,14 +1,7 @@
-import { NACH_UI_API } from '@/lib/constants';
 import { ArrowRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
-
-async function getNachUiComponents() {
-  const res = await fetch(`${NACH_UI_API}/api/v1/registry`, {
-    cache: 'no-store',
-  });
-  const data = await res.json();
-  return Array.isArray(data) ? data : data.components || data.data || Object.values(data);
-}
+import { Fragment } from 'react/jsx-runtime';
+import { getNachUiComponents } from '../api/get-nach-ui-components';
 
 export default async function NachUICTA() {
   const t = await getTranslations('sections.nachUiCta');
@@ -27,6 +20,17 @@ export default async function NachUICTA() {
       href: t('href.documentation'),
       icon: <ArrowRight />,
       className: 'btn btn-outline',
+    },
+  ];
+
+  const stats = [
+    {
+      value: count,
+      label: t('stats.components'),
+    },
+    {
+      value: '100%',
+      label: t('stats.openSource'),
     },
   ];
 
@@ -58,15 +62,15 @@ export default async function NachUICTA() {
           ))}
         </div>
         <div className="flex gap-6 justify-center mt-8 pt-6 border-t border-border">
-          <div className="text-center">
-            <p className="text-xl font-semibold text-foreground">{count}+</p>
-            <p className="text-xs text-muted-foreground mt-1">{t('stats.components')}</p>
-          </div>
-          <div className="w-px bg-border" />
-          <div className="text-center">
-            <p className="text-xl font-semibold text-foreground">100%</p>
-            <p className="text-xs text-muted-foreground mt-1">{t('stats.openSource')}</p>
-          </div>
+          {stats.map((stat, index) => (
+            <Fragment key={stat.label}>
+              <div className="text-center">
+                <p className="text-xl font-semibold text-foreground">{stat.value}</p>
+                <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
+              </div>
+              {index < stats.length - 1 && <div className="w-px bg-border" />}
+            </Fragment>
+          ))}
         </div>
       </div>
     </div>
