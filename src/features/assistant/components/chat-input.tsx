@@ -67,7 +67,7 @@ export function ChatInput({
       <form
         onSubmit={handleSubmit}
         className={`relative flex items-end gap-2 rounded-lg bg-card hover:bg-secondary ${
-          isHero ? 'min-h-[64px]' : 'min-h-[56px] border border-border'
+          isHero ? 'min-h-[64px] border border-border' : 'min-h-[56px] border border-border'
         } ${isLoading ? 'opacity-90' : ''}`}
       >
         <textarea
@@ -78,7 +78,7 @@ export function ChatInput({
           placeholder={t('inputPlaceholder')}
           rows={1}
           disabled={isLoading}
-          className={`w-full bg-transparent resize-none border-0 focus:ring-0 focus:outline-none px-6 py-4 max-h-[200px] overflow-y-auto placeholder:text-muted-foreground/70 ${
+          className={`w-full bg-transparent resize-none  rounded-lg  focus:ring-0 focus:outline-none px-6 py-4 max-h-[200px] overflow-y-auto placeholder:text-muted-foreground/70 ${
             isHero ? 'text-lg' : 'text-base'
           }`}
           style={{ minHeight: isHero ? '64px' : '56px' }}

@@ -17,14 +17,12 @@ export const ChatMessage = React.memo(function ChatMessage({ message }: ChatMess
       className={`flex w-full ${isUser ? 'justify-end' : 'justify-start'}`}
     >
       <div
-        className={`max-w-full py-2  ${isUser ? 'bg-secondary-foreground text-background rounded-3xl rounded-tr-xs' : ''}`}
+        className={`max-w-full py-2  ${isUser ? 'bg-secondary-foreground text-background rounded-3xl rounded-tr-xs' : 'border border-border rounded-tl-xs rounded-3xl px-5'}`}
       >
         {isUser ? (
           <p className="text-base whitespace-pre-wrap leading-relaxed px-5">{message.content}</p>
         ) : (
-          <div>
-            <ChatMarkdownContent content={message.content} />
-          </div>
+          <ChatMarkdownContent content={message.content} />
         )}
       </div>
     </motion.div>

@@ -19,7 +19,7 @@ export function HomeHero() {
       <div className="flex flex-wrap gap-3 pt-2">
         <Link href="/assistant" className="btn btn-primary">
           {t('actions.chatAssistant')}
-          <AssistantAvatar size="24" />
+          <AssistantAvatar size="md" />
         </Link>
         <a href={tCv('url')} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
           <FileText className="size-4" />

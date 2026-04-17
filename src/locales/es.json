@@ -204,7 +204,7 @@
       "messages": {
         "initial": "¡Hola! 👋 ¿En qué puedo ayudarte hoy?",
         "error": "Lo siento, ocurrió un error. Por favor, intenta de nuevo.",
-        "tooltip": "Preguntame sobre Ignacio",
+        "tooltip": "Hey, ¿Que onda?",
         "thinking": "Pensando..."
       },
       "suggestions": {
@@ -220,10 +220,10 @@
         "goodMorning": "¡Buenos días!",
         "goodAfternoon": "¡Buenas tardes!",
         "goodEvening": "¡Buenas noches!",
-        "greeting": "Hola! Preguntame sobre Ignacio",
-        "subtitle": "Soy el asistente virtual de Ignacio, potenciado con IA.",
+        "greeting": "Hola!, ¿Como estas?",
+        "subtitle": "Preguntame lo que quieras sobre Ignacio",
         "role": "Asistente IA",
-        "inputPlaceholder": "Cual es tu duda?"
+        "inputPlaceholder": "¿Cual es tu duda?"
       }
     },
     "categoryFilter": {

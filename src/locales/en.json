@@ -221,8 +221,8 @@
         "goodMorning": "Good morning!",
         "goodAfternoon": "Good afternoon!",
         "goodEvening": "Good evening!",
-        "greeting": "Hey! Ask about Ignacio",
-        "subtitle": "I'm Ignacio's virtual assistant, powered by AI. Feel free to ask me anything about him.",
+        "greeting": "Hey, what's up?",
+        "subtitle": "Feel free to ask me anything about him.",
         "role": "AI Assistant",
         "inputPlaceholder": "What's your question?",
         "quickActions": {

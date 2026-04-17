@@ -37,7 +37,7 @@ export function ChatSuggestions({ onSuggestionClick }: ChatSuggestionsProps) {
   ];
 
   return (
-    <div className="flex flex-wrap max-w-xl justify-center gap-3">
+    <div className="flex flex-wrap max-w-xl justify-center  gap-3">
       {suggestions.map((suggestion, index) => {
         const Icon = suggestion.icon;
         return (

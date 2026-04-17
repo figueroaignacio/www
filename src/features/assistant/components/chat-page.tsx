@@ -2,10 +2,8 @@
 
 import { useChat } from '@/features/assistant/hooks/use-chat';
 import { useChatInput } from '@/features/assistant/hooks/use-chat-input';
-import { Link } from '@/i18n/navigation';
-import { ArrowLeft } from 'lucide-react';
 import { useState } from 'react';
-import { AssistantAvatar } from './assistant-avatar';
+import { ChatHeader } from './chat-header';
 import { ChatHero } from './chat-hero';
 import { ChatInput } from './chat-input';
 import { ChatMessages } from './chat-messages';
@@ -27,26 +25,13 @@ export function ChatPage() {
     handleSuggestionClick(text);
   };
 
-  const handleNewChat = () => {
-    resetChat();
-    setHasInteracted(false);
-  };
-
   const showHero = !hasInteracted && messages.length <= 1;
 
   return (
     <div className="flex h-screen w-full overflow-hidden bg-background">
       <div className="flex-1 flex flex-col min-w-0 h-full relative">
-        <div className="z-40 flex items-center gap-2 justify-between w-full p-4">
-          <Link
-            href="/"
-            className="p-2 flex items-center justify-center rounded-lg bg-card border border-border/50 shadow-sm text-muted-foreground hover:text-foreground transition-colors hover:bg-secondary"
-          >
-            <ArrowLeft className="w-5 h-5" />
-          </Link>
-          <AssistantAvatar size="24" />
-        </div>
-        <div className="flex-1 flex flex-col w-full max-w-4xl mx-auto px-4 md:px-6">
+        <ChatHeader />
+        <div className="flex-1 flex flex-col w-full max-w-4xl mx-auto ">
           {showHero ? (
             <div className="flex-1 flex flex-col justify-center py-20">
               <ChatHero onQuickAction={handleQuickAction} />

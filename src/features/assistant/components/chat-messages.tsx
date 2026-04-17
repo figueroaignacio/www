@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import type { Message } from '../types';
+import { AssistantAvatar } from './assistant-avatar';
 import { ChatLoading } from './chat-loading';
 import { ChatMessage } from './chat-message';
 import { ChatSuggestions } from './chat-suggestions';
@@ -45,7 +46,7 @@ export function ChatMessages({ messages, isLoading, onSuggestionClick }: ChatMes
       {messages.map((msg, idx) => (
         <div key={idx} className="flex items-start space-x-3 ">
           <div className="mt-1">
-            {msg.role === 'assistant' ? <div className="" /> : <div className="w-6 h-6" />}
+            {msg.role === 'assistant' ? <AssistantAvatar /> : <div className="w-6 h-6" />}
           </div>
           <div className="flex-1">
             <ChatMessage message={msg} />
