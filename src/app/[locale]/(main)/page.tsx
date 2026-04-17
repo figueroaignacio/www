@@ -23,11 +23,11 @@ export default function HomePage({ params }: HomePageProps) {
       <HomeHero />
       <ProjectsSection />
       <Interests />
+      <NachUICTA />
       <TechStack />
       <ExperienceSection />
       <Testimonials />
       <CTACurriculum />
-      <NachUICTA />
     </div>
   );
 }
