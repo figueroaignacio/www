@@ -24,6 +24,7 @@ export async function ProjectsSection() {
             technologies={project.technologies}
             repository={project.repository}
             demo={project.demo}
+            icon={project.icon}
           />
         ))}
       </div>

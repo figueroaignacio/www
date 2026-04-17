@@ -13,7 +13,8 @@ export function ProjectCard({
   demo,
   repository,
   technologies,
-}: Partial<Project>) {
+  icon,
+}: Partial<Project> & { icon?: string | null }) {
   const t = useTranslations('components.projectItem.actions');
 
   const techList =
@@ -25,11 +26,19 @@ export function ProjectCard({
       aria-labelledby={`project-title-${title}`}
     >
       <div className="space-y-3">
-        <div>
-          <h3 id={`project-title-${title}`} className="font-semibold text-foreground">
-            {title}
-          </h3>
-          {subtitle && <p className="text-sm text-muted-foreground mt-0.5">{subtitle}</p>}
+        {icon && (
+          <div
+            className="mt-1 size-8 shrink-0 [&>svg]:size-full [&>svg]:text-foreground"
+            dangerouslySetInnerHTML={{ __html: icon }}
+          />
+        )}
+        <div className="flex items-start gap-3">
+          <div>
+            <h3 id={`project-title-${title}`} className="font-semibold text-foreground">
+              {title}
+            </h3>
+            {subtitle && <p className="text-sm text-muted-foreground mt-0.5">{subtitle}</p>}
+          </div>
         </div>
         {techList.length > 0 && (
           <div className="flex flex-wrap gap-1.5">

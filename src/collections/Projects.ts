@@ -70,6 +70,14 @@ export const Projects: CollectionConfig = {
       required: true,
     },
     {
+      name: 'icon',
+      label: 'Project Icon (SVG)',
+      type: 'textarea',
+      admin: {
+        description: 'Paste your SVG code here. It should be a valid <svg> tag.',
+      },
+    },
+    {
       name: 'slug',
       label: 'Slug',
       type: 'text',

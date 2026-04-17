@@ -302,6 +302,10 @@ export interface Project {
   videoUrl?: string | null;
   title: string;
   subtitle: string;
+  /**
+   * Paste your SVG code here. It should be a valid <svg> tag.
+   */
+  icon?: string | null;
   slug: string;
   description: string;
   body: {
@@ -606,6 +610,7 @@ export interface ProjectsSelect<T extends boolean = true> {
   videoUrl?: T;
   title?: T;
   subtitle?: T;
+  icon?: T;
   slug?: T;
   description?: T;
   body?: T;
