@@ -2,11 +2,11 @@
 
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { Link } from '@/i18n/navigation';
-import { BotMessageSquare } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { AssistantAvatar } from './assistant-avatar';
 
 export function ChatFloatingLink() {
   const t = useTranslations('components.chat.messages');
@@ -53,7 +53,7 @@ export function ChatFloatingLink() {
                   whileTap={{ scale: 0.95 }}
                   className="relative group p-4 rounded-full shadow-lg bg-foreground text-background"
                 >
-                  <BotMessageSquare className="w-6 h-6" />
+                  <AssistantAvatar size="24" />
                 </motion.button>
               </Link>
             </TooltipTrigger>
