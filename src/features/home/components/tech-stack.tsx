@@ -1,28 +1,26 @@
 import {
-  AstroIcon,
   CSSIcon,
-  ClaudeAiIcon,
+  ClaudeCodeIcon,
+  FastAPIIcon,
   GeminiIcon,
   GitHubIcon,
   GitIcon,
+  GoogleAntigravityIcon,
   GroqAiIcon,
   HTMLIcon,
   NestJsIcon,
   NextJSIcon,
   NodeJSIcon,
-  OpenAiIcon,
+  OpenCodeIcon,
   PGIcon,
-  PayloadIcon,
   PnpmIcon,
-  PrismaIcon,
+  PythonIcon,
   ReactIcon,
-  ReactRouterIcon,
-  SanityIcon,
   TailwindIcon,
   TurborepoIcon,
-  TypeOrmIcon,
   TypescriptIcon,
-  VeliteIcon,
+  UVIcon,
+  VercelIcon,
   ViteIcon,
 } from '@/components/tech-icons';
 import { useTranslations } from 'next-intl';
@@ -36,9 +34,7 @@ export function TechStack() {
       items: [
         { name: 'Vite', icon: ViteIcon },
         { name: 'React', icon: ReactIcon },
-        { name: 'React Router', icon: ReactRouterIcon },
         { name: 'NextJS', icon: NextJSIcon },
-        { name: 'Astro', icon: AstroIcon },
         { name: 'TypeScript', icon: TypescriptIcon },
         { name: 'TailwindCSS', icon: TailwindIcon },
         { name: 'CSS', icon: CSSIcon },
@@ -50,27 +46,20 @@ export function TechStack() {
       items: [
         { name: 'NodeJS', icon: NodeJSIcon },
         { name: 'Nest.js', icon: NestJsIcon },
+        { name: 'Python', icon: PythonIcon },
+        { name: 'FastAPI', icon: FastAPIIcon },
         { name: 'PostgreSQL', icon: PGIcon },
-        { name: 'Prisma', icon: PrismaIcon },
-        { name: 'TypeORM', icon: TypeOrmIcon },
       ],
     },
     {
       category: t('stack.categories.ai'),
       items: [
-        { name: 'OpenAI', icon: OpenAiIcon },
-        { name: 'Claude / Anthropic', icon: ClaudeAiIcon },
-        { name: 'Gemini', icon: GeminiIcon },
-        { name: 'Gen AI SDK', icon: GeminiIcon },
+        { name: 'Claude Code', icon: ClaudeCodeIcon },
+        { name: 'Open Code', icon: OpenCodeIcon },
+        { name: 'Google Antigravity', icon: GoogleAntigravityIcon },
+        { name: 'Vercel AI SDK', icon: VercelIcon },
+        { name: 'GenAI SDK', icon: GeminiIcon },
         { name: 'Groq SDK', icon: GroqAiIcon },
-      ],
-    },
-    {
-      category: t('stack.categories.cms'),
-      items: [
-        { name: 'Sanity', icon: SanityIcon },
-        { name: 'Payload', icon: PayloadIcon },
-        { name: 'Velite', icon: VeliteIcon },
       ],
     },
     {
@@ -78,8 +67,9 @@ export function TechStack() {
       items: [
         { name: 'Git', icon: GitIcon },
         { name: 'GitHub', icon: GitHubIcon },
-        { name: 'PNPM', icon: PnpmIcon },
+        { name: 'pnpm', icon: PnpmIcon },
         { name: 'Turborepo', icon: TurborepoIcon },
+        { name: 'UV', icon: UVIcon },
       ],
     },
   ];
@@ -87,7 +77,9 @@ export function TechStack() {
   return (
     <section className="space-y-3" aria-labelledby="tech-stack-title">
       <div className="space-y-2">
-        <h2 id="tech-stack-title" className="text-lg font-medium">{t('stack.title')}</h2>
+        <h2 id="tech-stack-title" className="text-lg font-medium">
+          {t('stack.title')}
+        </h2>
         <p className="text-sm text-muted-foreground mt-1">{t('stack.description')}</p>
       </div>
       {techStack.map((section) => (

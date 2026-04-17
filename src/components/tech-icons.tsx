@@ -893,15 +893,436 @@ function GeminiIcon() {
   );
 }
 
+function FastAPIIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width={20} height={20}>
+      <path
+        d="M56.813 127.586c-1.903-.227-3.899-.52-4.434-.652a48.078 48.078 0 00-2.375-.5 36.042 36.042 0 01-2.703-.633c-4.145-1.188-4.442-1.285-7.567-2.563-2.875-1.172-8.172-3.91-9.984-5.156-.496-.344-.96-.621-1.031-.621-.07 0-1.23-.816-2.578-1.813-8.57-6.343-15.004-14.043-19.653-23.527-.8-1.629-1.453-3.074-1.453-3.21 0-.134-.144-.505-.32-.817-.363-.649-.88-2.047-1.297-3.492a20.047 20.047 0 00-.625-1.813c-.195-.46-.352-1.02-.352-1.246 0-.227-.195-.965-.433-1.645-.238-.675-.43-1.472-.43-1.77 0-.296-.187-1.32-.418-2.276C.598 73.492 0 67.379 0 63.953c0-3.422.598-9.535 1.16-11.894.23-.957.418-2 .418-2.32 0-.321.145-.95.32-1.4.18-.448.41-1.253.516-1.788.11-.535.36-1.457.563-2.055l.59-1.726c.433-1.293.835-2.387 1.027-2.813.11-.238.539-1.21.957-2.16.676-1.535 2.125-4.43 2.972-5.945.309-.555.426-.739 2.098-3.352 2.649-4.148 7.176-9.309 11.39-12.988 1.485-1.297 6.446-5.063 6.669-5.063.062 0 .53-.281 1.043-.625 1.347-.902 2.668-1.668 4.39-2.531a53.06 53.06 0 001.836-.953c.285-.164.82-.41 3.567-1.64.605-.27 1.257-.516 3.136-1.173.414-.144 1.246-.449 1.84-.672.598-.222 1.301-.406 1.563-.406.258 0 .937-.18 1.508-.402.57-.223 1.605-.477 2.304-.563.696-.082 1.621-.277 2.055-.43.43-.148 1.61-.34 2.621-.425a72.572 72.572 0 003.941-.465c2.688-.394 8.532-.394 11.192 0a75.02 75.02 0 003.781.445c.953.079 2.168.278 2.703.442.535.16 1.461.36 2.055.433.594.079 1.594.325 2.222.551.63.23 1.344.414 1.59.414s.754.137 1.125.309c.375.168 1.168.449 1.766.625.594.18 1.613.535 2.27.797.652.261 1.527.605 1.945.761.77.29 6.46 3.137 7.234 3.622 6.281 3.917 9.512 6.476 13.856 10.964 5.238 5.414 8.715 10.57 12.254 18.16.25.536.632 1.329.851 1.758.215.434.395.942.395 1.13 0 .19.18.76.402 1.269.602 1.383 1.117 2.957 1.36 4.16.12.59.343 1.32.495 1.621.153.3.332 1.063.403 1.688.07.624.277 1.648.453 2.269 1.02 3.531 1.527 13.934.91 18.535-.183 1.367-.39 3.02-.46 3.672-.118 1.117-.708 4.004-1.212 5.945l-.52 2.055c-.98 3.957-3.402 9.594-6.359 14.809-1.172 2.07-5.101 7.668-5.843 8.324-.067.058-.399.45-.735.863-.336.418-1.414 1.586-2.39 2.594-4.301 4.441-7.77 7.187-13.86 10.969-.722.449-6.847 3.441-7.992 3.906-.594.238-1.586.64-2.203.89-.613.247-1.297.454-1.512.458-.215.003-.781.195-1.258.425-.476.23-1.082.422-1.351.426-.266.004-1.043.192-1.727.418-.683.23-1.633.477-2.11.55-.476.075-1.495.278-2.269.45-.773.172-3.11.508-5.187.746a59.06 59.06 0 01-13.945-.031zm4.703-12.5c.3-.234.609-.7.691-1.027.18-.723 29.234-58.97 29.781-59.7.461-.617.504-1.605.082-1.953-.222-.187-3.004-.246-10.43-.234-5.57.012-10.253.016-10.406.012-.226-.008-.273-3.73-.25-19.672.016-10.817-.035-19.766-.113-19.89-.078-.126-.383-.227-.68-.227-.418 0-.613.18-.87.808-.485 1.168-1.825 3.82-8.348 16.485a3554.569 3554.569 0 00-4.055 7.89c-1.156 2.262-2.98 5.813-4.047 7.89a8751.248 8751.248 0 00-8.598 16.759c-4.933 9.636-5.53 10.785-5.742 11.039-.41.496-.633 1.64-.402 2.07.21.394.629.41 11.043.394 5.953-.007 10.863.024 10.914.07.137.141.086 37.31-.055 38.196-.093.582-.031.89.235 1.156.46.461.586.457 1.25-.066zm0 0"
+        fill="#049688"
+      />
+    </svg>
+  );
+}
+
+function PythonIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width={20} height={20}>
+      <linearGradient
+        id="python-original-a"
+        gradientUnits="userSpaceOnUse"
+        x1="70.252"
+        y1="1237.476"
+        x2="170.659"
+        y2="1151.089"
+        gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"
+      >
+        <stop offset="0" stop-color="#5A9FD4" />
+        <stop offset="1" stop-color="#306998" />
+      </linearGradient>
+      <linearGradient
+        id="python-original-b"
+        gradientUnits="userSpaceOnUse"
+        x1="209.474"
+        y1="1098.811"
+        x2="173.62"
+        y2="1149.537"
+        gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"
+      >
+        <stop offset="0" stop-color="#FFD43B" />
+        <stop offset="1" stop-color="#FFE873" />
+      </linearGradient>
+      <path
+        fill="url(#python-original-a)"
+        d="M63.391 1.988c-4.222.02-8.252.379-11.8 1.007-10.45 1.846-12.346 5.71-12.346 12.837v9.411h24.693v3.137H29.977c-7.176 0-13.46 4.313-15.426 12.521-2.268 9.405-2.368 15.275 0 25.096 1.755 7.311 5.947 12.519 13.124 12.519h8.491V67.234c0-8.151 7.051-15.34 15.426-15.34h24.665c6.866 0 12.346-5.654 12.346-12.548V15.833c0-6.693-5.646-11.72-12.346-12.837-4.244-.706-8.645-1.027-12.866-1.008zM50.037 9.557c2.55 0 4.634 2.117 4.634 4.721 0 2.593-2.083 4.69-4.634 4.69-2.56 0-4.633-2.097-4.633-4.69-.001-2.604 2.073-4.721 4.633-4.721z"
+        transform="translate(0 10.26)"
+      />
+      <path
+        fill="url(#python-original-b)"
+        d="M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655H51.591c-6.756 0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547 7.816 2.297 15.312 2.713 24.665 0 6.216-1.801 12.346-5.423 12.346-12.547v-9.412H63.938v-3.138h37.012c7.176 0 9.852-5.005 12.348-12.519 2.578-7.735 2.467-15.174 0-25.096-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zM77.809 87.927c2.561 0 4.634 2.097 4.634 4.692 0 2.602-2.074 4.719-4.634 4.719-2.55 0-4.633-2.117-4.633-4.719 0-2.595 2.083-4.692 4.633-4.692z"
+        transform="translate(0 10.26)"
+      />
+      <radialGradient
+        id="python-original-c"
+        cx="1825.678"
+        cy="444.45"
+        r="26.743"
+        gradientTransform="matrix(0 -.24 -1.055 0 532.979 557.576)"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0" stopColor="#B8B8B8" stopOpacity=".498" />
+        <stop offset="1" stopColor="#7F7F7F" stopOpacity="0" />
+      </radialGradient>
+      <path
+        opacity=".444"
+        fill="url(#python-original-c)"
+        d="M97.309 119.597c0 3.543-14.816 6.416-33.091 6.416-18.276 0-33.092-2.873-33.092-6.416 0-3.544 14.815-6.417 33.092-6.417 18.275 0 33.091 2.872 33.091 6.417z"
+      />
+    </svg>
+  );
+}
+
+export function VercelIcon() {
+  return (
+    <svg
+      aria-label="AI SDK logomark"
+      role="img"
+      xmlns="http://www.w3.org/2000/svg"
+      height={20}
+      width={20}
+      fill="none"
+      viewBox="0 0 311 90"
+    >
+      <path
+        fill="currentColor"
+        d="m2.97 86 29.7-82.36H51.1L80.81 86H65.03L58.2 66.51h-32.6L18.75 86H2.97ZM30 53.64h23.78l-11.83-34.8L30 53.64Zm100.9-50v13.1h-13.23V72.9h13.92V86H88.55V72.9h14.04V16.74H89.25V3.64h41.64Z"
+      ></path>
+      <rect
+        width="154"
+        height="75"
+        x="153"
+        y="7.5"
+        stroke="currentColor"
+        strokeWidth="8"
+        rx="37.5"
+      ></rect>
+      <path
+        fill="currentColor"
+        d="M183.6 51.85c.8 4.62 4.08 7.66 9.49 7.66 4.13 0 6.93-1.64 6.87-4.8-.06-3.17-2.74-5-9.49-6.63-9.36-2.25-15.38-6.02-15.38-12.95 0-7.85 6.57-12.77 16.42-12.77 9.6 0 16.17 5.9 17.2 14.6l-9.24.48c-.48-4.56-3.65-7.42-8.2-7.42-4.02 0-6.88 2.07-6.7 5.23.13 3.65 4.38 4.86 9 6.02 9.67 2.13 15.81 6.26 15.81 13.13 0 8.2-7.23 12.83-16.53 12.83-10.52 0-17.94-5.84-18.55-14.96l9.3-.42Zm43.17-28.52c13.99 0 21.83 7.78 21.83 21.65 0 13.8-7.72 21.52-21.46 21.52h-15.26V23.33h14.9Zm-5.65 35.39h5.65c8.4 0 12.4-4.44 12.4-13.8 0-9.37-4-13.8-12.4-13.8h-5.65v27.6Zm29.31-35.39h9.24v18.85l15.69-18.85h10.76l-15.87 19.03L287.1 66.5h-10.51l-12.4-17.94-4.5 5.23V66.5h-9.25V23.33Z"
+      ></path>
+    </svg>
+  );
+}
+
+function OpenCodeIcon() {
+  return (
+    <svg
+      width={20}
+      height={20}
+      viewBox="0 0 240 300"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_1401_86274)">
+        <mask id="mask0_1401_86274" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="300">
+          <path d="M240 0H0V300H240V0Z" fill="white" />
+        </mask>
+        <g mask="url(#mask0_1401_86274)">
+          <path d="M180 240H60V120H180V240Z" fill="#CFCECD" />
+          <path d="M180 60H60V240H180V60ZM240 300H0V0H240V300Z" fill="#211E1E" />
+        </g>
+      </g>
+      <defs>
+        <clipPath id="clip0_1401_86274">
+          <rect width="240" height="300" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+}
+
+function ClaudeCodeIcon() {
+  return (
+    <svg height={20} viewBox="0 0 24 24" width={20} xmlns="http://www.w3.org/2000/svg">
+      <path
+        clip-rule="evenodd"
+        d="M20.998 10.949H24v3.102h-3v3.028h-1.487V20H18v-2.921h-1.487V20H15v-2.921H9V20H7.488v-2.921H6V20H4.487v-2.921H3V14.05H0V10.95h3V5h17.998v5.949zM6 10.949h1.488V8.102H6v2.847zm10.51 0H18V8.102h-1.49v2.847z"
+        fill="#D97757"
+        fill-rule="evenodd"
+      ></path>
+    </svg>
+  );
+}
+
+function GoogleAntigravityIcon() {
+  return (
+    <svg height={20} viewBox="0 0 24 24" width={20} xmlns="http://www.w3.org/2000/svg">
+      <title>Antigravity</title>
+      <mask
+        height="23"
+        id="lobe-icons-antigravity-0-_R_0_"
+        maskUnits="userSpaceOnUse"
+        width="24"
+        x="0"
+        y="1"
+      >
+        <path
+          d="M21.751 22.607c1.34 1.005 3.35.335 1.508-1.508C17.73 15.74 18.904 1 12.037 1 5.17 1 6.342 15.74.815 21.1c-2.01 2.009.167 2.511 1.507 1.506 5.192-3.517 4.857-9.714 9.715-9.714 4.857 0 4.522 6.197 9.714 9.715z"
+          fill="#fff"
+        ></path>
+      </mask>
+      <g mask="url(#lobe-icons-antigravity-0-_R_0_)">
+        <g filter="url(#lobe-icons-antigravity-1-_R_0_)">
+          <path
+            d="M-1.018-3.992c-.408 3.591 2.686 6.89 6.91 7.37 4.225.48 7.98-2.043 8.387-5.633.408-3.59-2.686-6.89-6.91-7.37-4.225-.479-7.98 2.043-8.387 5.633z"
+            fill="#FFE432"
+          ></path>
+        </g>
+        <g filter="url(#lobe-icons-antigravity-2-_R_0_)">
+          <path
+            d="M15.269 7.747c1.058 4.557 5.691 7.374 10.348 6.293 4.657-1.082 7.575-5.653 6.516-10.21-1.058-4.556-5.691-7.374-10.348-6.292-4.657 1.082-7.575 5.653-6.516 10.21z"
+            fill="#FC413D"
+          ></path>
+        </g>
+        <g filter="url(#lobe-icons-antigravity-3-_R_0_)">
+          <path
+            d="M-12.443 10.804c1.338 4.703 7.36 7.11 13.453 5.378 6.092-1.733 9.947-6.95 8.61-11.652C8.282-.173 2.26-2.58-3.833-.848-9.925.884-13.78 6.1-12.443 10.804z"
+            fill="#00B95C"
+          ></path>
+        </g>
+        <g filter="url(#lobe-icons-antigravity-4-_R_0_)">
+          <path
+            d="M-12.443 10.804c1.338 4.703 7.36 7.11 13.453 5.378 6.092-1.733 9.947-6.95 8.61-11.652C8.282-.173 2.26-2.58-3.833-.848-9.925.884-13.78 6.1-12.443 10.804z"
+            fill="#00B95C"
+          ></path>
+        </g>
+        <g filter="url(#lobe-icons-antigravity-5-_R_0_)">
+          <path
+            d="M-7.608 14.703c3.352 3.424 9.126 3.208 12.896-.483 3.77-3.69 4.108-9.459.756-12.883C2.69-2.087-3.083-1.871-6.853 1.82c-3.77 3.69-4.108 9.458-.755 12.883z"
+            fill="#00B95C"
+          ></path>
+        </g>
+        <g filter="url(#lobe-icons-antigravity-6-_R_0_)">
+          <path
+            d="M9.932 27.617c1.04 4.482 5.384 7.303 9.7 6.3 4.316-1.002 6.971-5.448 5.93-9.93-1.04-4.483-5.384-7.304-9.7-6.301-4.316 1.002-6.971 5.448-5.93 9.93z"
+            fill="#3186FF"
+          ></path>
+        </g>
+        <g filter="url(#lobe-icons-antigravity-7-_R_0_)">
+          <path
+            d="M2.572-8.185C.392-3.329 2.778 2.472 7.9 4.771c5.122 2.3 11.042.227 13.222-4.63 2.18-4.855-.205-10.656-5.327-12.955-5.122-2.3-11.042-.227-13.222 4.63z"
+            fill="#FBBC04"
+          ></path>
+        </g>
+        <g filter="url(#lobe-icons-antigravity-8-_R_0_)">
+          <path
+            d="M-3.267 38.686c-5.277-2.072 3.742-19.117 5.984-24.83 2.243-5.712 8.34-8.664 13.616-6.592 5.278 2.071 11.533 13.482 9.29 19.195-2.242 5.713-23.613 14.298-28.89 12.227z"
+            fill="#3186FF"
+          ></path>
+        </g>
+        <g filter="url(#lobe-icons-antigravity-9-_R_0_)">
+          <path
+            d="M28.71 17.471c-1.413 1.649-5.1.808-8.236-1.878-3.135-2.687-4.531-6.201-3.118-7.85 1.412-1.649 5.1-.808 8.235 1.878s4.532 6.2 3.119 7.85z"
+            fill="#749BFF"
+          ></path>
+        </g>
+        <g filter="url(#lobe-icons-antigravity-10-_R_0_)">
+          <path
+            d="M18.163 9.077c5.81 3.93 12.502 4.19 14.946.577 2.443-3.612-.287-9.727-6.098-13.658-5.81-3.931-12.502-4.19-14.946-.577-2.443 3.612.287 9.727 6.098 13.658z"
+            fill="#FC413D"
+          ></path>
+        </g>
+        <g filter="url(#lobe-icons-antigravity-11-_R_0_)">
+          <path
+            d="M-.915 2.684c-1.44 3.473-.97 6.967 1.05 7.804 2.02.837 4.824-1.3 6.264-4.772 1.44-3.473.97-6.967-1.05-7.804-2.02-.837-4.824 1.3-6.264 4.772z"
+            fill="#FFEE48"
+          ></path>
+        </g>
+      </g>
+      <defs>
+        <filter
+          colorInterpolationFilters="sRGB"
+          filterUnits="userSpaceOnUse"
+          height="17.587"
+          id="lobe-icons-antigravity-1-_R_0_"
+          width="19.838"
+          x="-3.288"
+          y="-11.917"
+        >
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feGaussianBlur
+            result="effect1_foregroundBlur_977_115"
+            stdDeviation="1.117"
+          ></feGaussianBlur>
+        </filter>
+        <filter
+          colorInterpolationFilters="sRGB"
+          filterUnits="userSpaceOnUse"
+          height="38.565"
+          id="lobe-icons-antigravity-2-_R_0_"
+          width="38.9"
+          x="4.251"
+          y="-13.493"
+        >
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feGaussianBlur
+            result="effect1_foregroundBlur_977_115"
+            stdDeviation="5.4"
+          ></feGaussianBlur>
+        </filter>
+        <filter
+          colorInterpolationFilters="sRGB"
+          filterUnits="userSpaceOnUse"
+          height="36.517"
+          id="lobe-icons-antigravity-3-_R_0_"
+          width="40.955"
+          x="-21.889"
+          y="-10.592"
+        >
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feGaussianBlur
+            result="effect1_foregroundBlur_977_115"
+            stdDeviation="4.591"
+          ></feGaussianBlur>
+        </filter>
+        <filter
+          colorInterpolationFilters="sRGB"
+          filterUnits="userSpaceOnUse"
+          height="36.517"
+          id="lobe-icons-antigravity-4-_R_0_"
+          width="40.955"
+          x="-21.889"
+          y="-10.592"
+        >
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feGaussianBlur
+            result="effect1_foregroundBlur_977_115"
+            stdDeviation="4.591"
+          ></feGaussianBlur>
+        </filter>
+        <filter
+          colorInterpolationFilters="sRGB"
+          filterUnits="userSpaceOnUse"
+          height="36.595"
+          id="lobe-icons-antigravity-5-_R_0_"
+          width="36.632"
+          x="-19.099"
+          y="-10.278"
+        >
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feGaussianBlur
+            result="effect1_foregroundBlur_977_115"
+            stdDeviation="4.591"
+          ></feGaussianBlur>
+        </filter>
+        <filter
+          colorInterpolationFilters="sRGB"
+          filterUnits="userSpaceOnUse"
+          height="34.087"
+          id="lobe-icons-antigravity-6-_R_0_"
+          width="33.533"
+          x=".981"
+          y="8.758"
+        >
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feGaussianBlur
+            result="effect1_foregroundBlur_977_115"
+            stdDeviation="4.363"
+          ></feGaussianBlur>
+        </filter>
+        <filter
+          colorInterpolationFilters="sRGB"
+          filterUnits="userSpaceOnUse"
+          height="35.276"
+          id="lobe-icons-antigravity-7-_R_0_"
+          width="35.978"
+          x="-6.143"
+          y="-21.659"
+        >
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feGaussianBlur
+            result="effect1_foregroundBlur_977_115"
+            stdDeviation="3.954"
+          ></feGaussianBlur>
+        </filter>
+        <filter
+          colorInterpolationFilters="sRGB"
+          filterUnits="userSpaceOnUse"
+          height="46.523"
+          id="lobe-icons-antigravity-8-_R_0_"
+          width="45.114"
+          x="-11.96"
+          y="-.46"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feGaussianBlur
+            result="effect1_foregroundBlur_977_115"
+            stdDeviation="3.531"
+          ></feGaussianBlur>
+        </filter>
+        <filter
+          color-interpolation-filters="sRGB"
+          filterUnits="userSpaceOnUse"
+          height="24.054"
+          id="lobe-icons-antigravity-9-_R_0_"
+          width="25.094"
+          x="10.485"
+          y=".58"
+        >
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feGaussianBlur
+            result="effect1_foregroundBlur_977_115"
+            stdDeviation="3.159"
+          ></feGaussianBlur>
+        </filter>
+        <filter
+          colorInterpolationFilters="sRGB"
+          filterUnits="userSpaceOnUse"
+          height="30.007"
+          id="lobe-icons-antigravity-10-_R_0_"
+          width="33.508"
+          x="5.833"
+          y="-12.467"
+        >
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feGaussianBlur
+            result="effect1_foregroundBlur_977_115"
+            stdDeviation="2.669"
+          ></feGaussianBlur>
+        </filter>
+        <filter
+          colorInterpolationFilters="sRGB"
+          filterUnits="userSpaceOnUse"
+          height="26.151"
+          id="lobe-icons-antigravity-11-_R_0_"
+          width="22.194"
+          x="-8.355"
+          y="-8.876"
+        >
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feGaussianBlur
+            result="effect1_foregroundBlur_977_115"
+            stdDeviation="3.303"
+          ></feGaussianBlur>
+        </filter>
+      </defs>
+    </svg>
+  );
+}
+
+function UVIcon() {
+  return (
+    <svg width={20} height={20} viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M-5.28619e-06 0.168629L0.0843098 20.1685L0.151762 36.1683C0.161075 38.3774 1.95947 40.1607 4.16859 40.1514L20.1684 40.084L30.1684 40.0418L31.1852 40.0375C33.3877 40.0282 35.1683 38.2026 35.1683 36V36L37.0003 36L37.0003 39.9992L40.1683 39.9996L39.9996 -9.94653e-07L21.5998 0.0775689L21.6774 16.0185L21.6774 25.9998L20.0774 25.9998L18.3998 25.9998L18.4774 16.032L18.3998 0.0910593L-5.28619e-06 0.168629Z"
+        fill="#DE5FE9"
+      />
+    </svg>
+  );
+}
+
 export {
   AstroIcon,
   ClaudeAiIcon,
+  ClaudeCodeIcon,
   CSSIcon,
   CVAIcon,
   ExpressIcon,
+  FastAPIIcon,
   GeminiIcon,
   GitHubIcon,
   GitIcon,
+  GoogleAntigravityIcon,
   GroqAiIcon,
   HTMLIcon,
   JavascriptIcon,
@@ -913,10 +1334,12 @@ export {
   NextJSIcon,
   NodeJSIcon,
   OpenAiIcon,
+  OpenCodeIcon,
   PayloadIcon,
   PGIcon,
   PnpmIcon,
   PrismaIcon,
+  PythonIcon,
   RadixIcon,
   ReactHookFormIcon,
   ReactIcon,
@@ -926,6 +1349,7 @@ export {
   TurborepoIcon,
   TypeOrmIcon,
   TypescriptIcon,
+  UVIcon,
   VeliteIcon,
   ViteIcon,
   ZodIcon,
