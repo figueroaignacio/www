@@ -135,10 +135,6 @@
         "href": "/"
       },
       {
-        "label": "Blog",
-        "href": "/blog"
-      },
-      {
         "label": "Assistant",
         "href": "/assistant"
       }
