@@ -1,5 +1,5 @@
 import { BackButton } from '@/components/back-button';
-import { GitHubIcon } from '@/components/tech-icons';
+import { GitHubIcon } from '@/components/tech-icons/github-icon';
 import { Button } from '@/components/ui/button';
 import type { Project } from '@/payload-types';
 import { ExternalLink } from 'lucide-react';

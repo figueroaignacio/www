@@ -1,29 +1,28 @@
-import {
-  CSSIcon,
-  ClaudeCodeIcon,
-  FastAPIIcon,
-  GeminiIcon,
-  GitHubIcon,
-  GitIcon,
-  GoogleAntigravityIcon,
-  GroqAiIcon,
-  HTMLIcon,
-  NestJsIcon,
-  NextJSIcon,
-  NodeJSIcon,
-  OpenCodeIcon,
-  PGIcon,
-  PnpmIcon,
-  PythonIcon,
-  ReactIcon,
-  TailwindIcon,
-  TurborepoIcon,
-  TypescriptIcon,
-  UVIcon,
-  VercelIcon,
-  ViteIcon,
-} from '@/components/tech-icons';
 import { useTranslations } from 'next-intl';
+
+import { CSSIcon } from '@/components/tech-icons/css-icon';
+import { ClaudeCodeIcon } from '@/components/tech-icons/claude-code-icon';
+import { FastAPIIcon } from '@/components/tech-icons/fastapi-icon';
+import { GeminiIcon } from '@/components/tech-icons/gemini-icon';
+import { GitHubIcon } from '@/components/tech-icons/github-icon';
+import { GitIcon } from '@/components/tech-icons/git-icon';
+import { GoogleAntigravityIcon } from '@/components/tech-icons/google-antigravity-icon';
+import { GroqAiIcon } from '@/components/tech-icons/groq-ai-icon';
+import { HTMLIcon } from '@/components/tech-icons/html-icon';
+import { NestJsIcon } from '@/components/tech-icons/nestjs-icon';
+import { NextJSIcon } from '@/components/tech-icons/nextjs-icon';
+import { NodeJSIcon } from '@/components/tech-icons/nodejs-icon';
+import { OpenCodeIcon } from '@/components/tech-icons/open-code-icon';
+import { PGIcon } from '@/components/tech-icons/pg-icon';
+import { PnpmIcon } from '@/components/tech-icons/pnpm-icon';
+import { PythonIcon } from '@/components/tech-icons/python-icon';
+import { ReactIcon } from '@/components/tech-icons/react-icon';
+import { TailwindIcon } from '@/components/tech-icons/tailwind-icon';
+import { TurborepoIcon } from '@/components/tech-icons/turborepo-icon';
+import { TypescriptIcon } from '@/components/tech-icons/typescript-icon';
+import { UVIcon } from '@/components/tech-icons/uv-icon';
+import { VercelIcon } from '@/components/tech-icons/vercel-icon';
+import { ViteIcon } from '@/components/tech-icons/vite-icon';
 
 export function TechStack() {
   const t = useTranslations('sections');

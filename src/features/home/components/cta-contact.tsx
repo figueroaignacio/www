@@ -1,4 +1,4 @@
-import { GitHubIcon } from '@/components/tech-icons';
+import { GitHubIcon } from '@/components/tech-icons/github-icon';
 import { LinkedInLogoIcon } from '@radix-ui/react-icons';
 import { Mail } from 'lucide-react';
 import { useTranslations } from 'next-intl';

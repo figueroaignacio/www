@@ -1,4 +1,4 @@
-import { GitHubIcon } from '@/components/tech-icons';
+import { GitHubIcon } from '@/components/tech-icons/github-icon';
 import {
   Dialog,
   DialogContent,
