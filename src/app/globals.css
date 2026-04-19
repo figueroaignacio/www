@@ -128,7 +128,7 @@
   }
 
   .btn-ghost {
-    @apply hover:border-muted-foreground/50 transition-colors hover:bg-card hover:text-foreground border-0;
+    @apply hover:border-muted-foreground transition-colors hover:bg-card hover:text-foreground border-0;
   }
 
   .card {

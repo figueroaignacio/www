@@ -22,7 +22,7 @@ export function ChatHeader({ onResetChat }: ChatHeaderProps) {
           <ThemeToggle />
           <Dialog>
             <Dialog.Trigger>
-              <button className="btn btn-ghost text-xs" title={t('reset')}>
+              <button className="btn btn-ghost border-0 text-xs" title={t('reset')}>
                 <MessageCircle size={16} />
                 <span className="text-sm">{t('newChat')}</span>
               </button>
