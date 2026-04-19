@@ -1,11 +1,5 @@
 import { GitHubIcon } from '@/components/tech-icons/github-icon';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
+import { Dialog } from '@/components/ui/dialog';
 import { MessageSquare } from 'lucide-react';
 
 interface LoginModalProps {
@@ -19,16 +13,16 @@ interface LoginModalProps {
 export function LoginModal({ isOpen, isRedirecting, onOpenChange, onLogin, t }: LoginModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md bg-card border-border shadow-2xl rounded-2xl">
-        <DialogHeader className="pt-4 text-center items-center">
+      <Dialog.Content className="sm:max-w-md bg-card border-border shadow-2xl rounded-2xl">
+        <Dialog.Header className="pt-4 text-center items-center">
           <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4 mx-auto">
             <MessageSquare className="w-6 h-6" />
           </div>
-          <DialogTitle className="text-2xl font-bold">{t('modal.title')}</DialogTitle>
-          <DialogDescription className="mt-2 text-center text-muted-foreground">
+          <Dialog.Title className="text-2xl font-bold">{t('modal.title')}</Dialog.Title>
+          <Dialog.Description className="mt-2 text-center text-muted-foreground">
             {t('modal.description')}
-          </DialogDescription>
-        </DialogHeader>
+          </Dialog.Description>
+        </Dialog.Header>
         <div className="flex flex-col gap-3 py-6">
           <button
             onClick={onLogin}
@@ -46,7 +40,7 @@ export function LoginModal({ isOpen, isRedirecting, onOpenChange, onLogin, t }: 
             {t('modal.footer')}
           </p>
         </div>
-      </DialogContent>
+      </Dialog.Content>
     </Dialog>
   );
 }
