@@ -1,21 +1,24 @@
 import { motion } from 'motion/react';
-import React from 'react';
+import { memo } from 'react';
 import type { Message } from '../types';
+import { ChatContactCards } from './chat-contact-cards';
+import { ChatExperienceCards } from './chat-experience-cards';
 import { ChatMarkdownContent } from './chat-markdown-content';
 import { ChatProjectCards } from './chat-project-cards';
-import { ChatExperienceCards } from './chat-experience-cards';
 
 interface ChatMessageProps {
   message: Message;
 }
 
-export const ChatMessage = React.memo(function ChatMessage({ message }: ChatMessageProps) {
+export const ChatMessage = memo(function ChatMessage({ message }: ChatMessageProps) {
   const isUser = message.role === 'user';
   const showProjects = message.content.includes('[SHOW_PROJECTS]');
   const showExperience = message.content.includes('[SHOW_EXPERIENCE]');
+  const showContact = message.content.includes('[SHOW_CONTACT]');
   const cleanContent = message.content
     .replace('[SHOW_PROJECTS]', '')
     .replace('[SHOW_EXPERIENCE]', '')
+    .replace('[SHOW_CONTACT]', '')
     .trim();
 
   return (
@@ -34,6 +37,7 @@ export const ChatMessage = React.memo(function ChatMessage({ message }: ChatMess
             {cleanContent && <ChatMarkdownContent content={cleanContent} />}
             {showProjects && <ChatProjectCards />}
             {showExperience && <ChatExperienceCards />}
+            {showContact && <ChatContactCards />}
           </div>
         )}
       </div>

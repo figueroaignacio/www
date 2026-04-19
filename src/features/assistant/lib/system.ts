@@ -1,6 +1,6 @@
+import type { Locale } from 'next-intl';
 import { getPayloadContext, type PayloadContextData } from './payload-context';
 import { getSystemPromptTemplate } from './prompts';
-import type { Locale } from 'next-intl';
 
 function formatProjects(projects: PayloadContextData['projects']): string {
   if (projects.length === 0) return '';
@@ -51,7 +51,7 @@ function formatExperience(experience: PayloadContextData['experience']): string 
 export async function getSystemPrompt(locale: Locale): Promise<string> {
   try {
     const context = await getPayloadContext();
-    const systemPromptTemplate = getSystemPromptTemplate(locale);
+    const systemPromptTemplate = getSystemPromptTemplate();
 
     return [
       systemPromptTemplate,
@@ -64,6 +64,6 @@ export async function getSystemPrompt(locale: Locale): Promise<string> {
   } catch (error) {
     console.warn('⚠️ Using base prompt (Payload unavailable):', error);
 
-    return getSystemPromptTemplate(locale);
+    return getSystemPromptTemplate();
   }
 }
