@@ -1,9 +1,9 @@
 'use client';
 
-import { ProjectCard } from '@/features/projects/components/project-card';
 import type { Project } from '@/payload-types';
 import { useEffect, useState } from 'react';
 import { getChatProjects } from '../actions/get-chat-projects';
+import { ChatProjectCard } from './chat-project-card';
 
 export function ChatProjectCards() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -25,12 +25,9 @@ export function ChatProjectCards() {
 
   if (loading) {
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+      <div className="flex flex-col gap-3 mt-4">
         {[1, 2].map((i) => (
-          <div
-            key={i}
-            className="h-[180px] rounded-xl bg-card border border-border animate-pulse"
-          />
+          <div key={i} className="h-[76px] rounded-lg bg-card border border-border animate-pulse" />
         ))}
       </div>
     );
@@ -39,9 +36,9 @@ export function ChatProjectCards() {
   if (projects.length === 0) return null;
 
   return (
-    <div className="grid grid-cols-1 gap-4 mt-4">
+    <div className="flex flex-col gap-3 mt-4">
       {projects.map((project) => (
-        <ProjectCard key={project.id} {...project} />
+        <ChatProjectCard key={project.id} {...project} />
       ))}
     </div>
   );

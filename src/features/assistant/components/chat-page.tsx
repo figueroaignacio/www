@@ -44,10 +44,10 @@ export function ChatPage() {
   const showHero = !hasInteracted && messages.length === 0;
 
   return (
-    <div className="flex h-screen w-full overflow-hidden bg-background">
+    <div className="flex h-lvh w-full overflow-hidden">
       <div className="flex-1 flex flex-col min-w-0 h-full relative">
         <ChatHeader onResetChat={messages.length > 0 ? handleReset : undefined} />
-        <div className="flex-1 flex flex-col w-full max-w-4xl mx-auto ">
+        <div className="flex-1 flex flex-col w-full max-w-3xl mx-auto">
           {showHero ? (
             <div className="flex-1 flex flex-col justify-center py-20">
               <ChatHero onQuickAction={handleQuickAction} />
@@ -57,14 +57,13 @@ export function ChatPage() {
                   isLoading={isLoading}
                   onMessageChange={setMessage}
                   onSubmit={handleHeroSubmit}
-                  onKeyPress={() => {}}
                   isHero={true}
                 />
               </div>
             </div>
           ) : (
-            <div className="flex flex-col h-full py-4">
-              <div className="flex-1 overflow-hidden relative mb-4">
+            <div className="flex flex-col h-full ">
+              <div className="flex-1 overflow-hidden relative">
                 <div className="absolute inset-0 overflow-y-auto">
                   <ChatMessages
                     messages={messages}
@@ -78,7 +77,6 @@ export function ChatPage() {
                 isLoading={isLoading}
                 onMessageChange={setMessage}
                 onSubmit={handleSubmit}
-                onKeyPress={() => {}}
                 isHero={false}
               />
             </div>

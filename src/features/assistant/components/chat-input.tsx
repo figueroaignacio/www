@@ -11,7 +11,6 @@ interface ChatInputProps {
   isLoading: boolean;
   onMessageChange: (value: string) => void;
   onSubmit: (e?: React.FormEvent) => void;
-  onKeyPress: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
   isHero?: boolean;
 }
 
@@ -20,7 +19,6 @@ export function ChatInput({
   isLoading,
   onMessageChange,
   onSubmit,
-  onKeyPress,
   isHero = false,
 }: ChatInputProps) {
   const t = useTranslations('components.chat.page');
@@ -31,7 +29,9 @@ export function ChatInput({
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
+
     setDisclaimerIndex(Math.floor(Math.random() * disclaimers.length));
   }, [disclaimers.length]);
 
@@ -78,7 +78,7 @@ export function ChatInput({
           placeholder={t('inputPlaceholder')}
           rows={1}
           disabled={isLoading}
-          className={`w-full bg-transparent resize-none  rounded-lg  focus:ring-0 focus:outline-none px-6 py-4 max-h-[200px] overflow-y-auto placeholder:text-muted-foreground/70 ${
+          className={`w-full resize-none rounded-l  focus:ring-0 focus:outline-none px-6 py-4 max-h-[200px] overflow-y-auto placeholder:text-muted-foreground/70 ${
             isHero ? 'text-lg' : 'text-base'
           }`}
           style={{ minHeight: isHero ? '64px' : '56px' }}

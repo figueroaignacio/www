@@ -37,7 +37,7 @@ export function ChatContactCards() {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
       {contacts.map((contact) => {
         const Icon = contact.icon;
         return (
