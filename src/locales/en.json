@@ -197,7 +197,13 @@
       ],
       "header": {
         "title": "N-bot",
-        "subtitle": "Ignacio's virtual assistant."
+        "subtitle": "Ignacio's virtual assistant.",
+        "reset": "Reset chat",
+        "newChat": "New Chat",
+        "resetConfirmTitle": "Are you sure you want to reset the chat?",
+        "resetConfirmDescription": "This will delete all your messages in this chat.",
+        "resetConfirmCancel": "Cancel",
+        "resetConfirmAction": "Reset Chat"
       },
       "input": {
         "placeholder": "Type a message..."

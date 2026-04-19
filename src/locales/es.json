@@ -196,7 +196,13 @@
         " Deployeado un viernes a la tarde. ¿Qué es lo peor que podría pasar?"
       ],
       "header": {
-        "title": "Asistente virtual de Ignacio"
+        "title": "Asistente virtual de Ignacio",
+        "reset": "Reiniciar chat",
+        "newChat": "Nuevo Chat",
+        "resetConfirmTitle": "¿Estás seguro de que quieres reiniciar el chat?",
+        "resetConfirmDescription": "Esto eliminará todos tus mensajes en este chat.",
+        "resetConfirmCancel": "Cancelar",
+        "resetConfirmAction": "Reiniciar chat"
       },
       "input": {
         "placeholder": "Escribe un mensaje..."

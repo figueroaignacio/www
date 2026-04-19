@@ -3,11 +3,12 @@
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import type { Message } from '../types';
+import { useLocalStorage } from '@/hooks/use-local-storage';
 
 export function useChat() {
   const t = useTranslations('components.chat.messages');
 
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages, removeMessages, isMounted] = useLocalStorage<Message[]>('chat-messages', []);
   const [isLoading, setIsLoading] = useState(false);
 
   const sendMessage = async (content: string) => {
@@ -70,7 +71,7 @@ export function useChat() {
   };
 
   const resetChat = () => {
-    setMessages([]);
+    removeMessages();
   };
 
   return {
@@ -79,5 +80,6 @@ export function useChat() {
     sendMessage,
     handleSuggestionClick,
     resetChat,
+    isMounted,
   };
 }

@@ -9,7 +9,8 @@ import { ChatInput } from './chat-input';
 import { ChatMessages } from './chat-messages';
 
 export function ChatPage() {
-  const { messages, isLoading, sendMessage, handleSuggestionClick, resetChat } = useChat();
+  const { messages, isLoading, sendMessage, handleSuggestionClick, resetChat, isMounted } =
+    useChat();
   const { message, setMessage, handleSubmit } = useChatInput(sendMessage);
   const [hasInteracted, setHasInteracted] = useState(false);
 
@@ -25,12 +26,27 @@ export function ChatPage() {
     handleSuggestionClick(text);
   };
 
-  const showHero = !hasInteracted && messages.length <= 1;
+  const handleReset = () => {
+    resetChat();
+    setHasInteracted(false);
+  };
+
+  if (!isMounted) {
+    return (
+      <div className="flex h-screen w-full overflow-hidden bg-background">
+        <div className="flex-1 flex flex-col min-w-0 h-full relative">
+          <ChatHeader />
+        </div>
+      </div>
+    );
+  }
+
+  const showHero = !hasInteracted && messages.length === 0;
 
   return (
     <div className="flex h-screen w-full overflow-hidden bg-background">
       <div className="flex-1 flex flex-col min-w-0 h-full relative">
-        <ChatHeader />
+        <ChatHeader onResetChat={messages.length > 0 ? handleReset : undefined} />
         <div className="flex-1 flex flex-col w-full max-w-4xl mx-auto ">
           {showHero ? (
             <div className="flex-1 flex flex-col justify-center py-20">
