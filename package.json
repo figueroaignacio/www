@@ -13,7 +13,8 @@
     "lint": "cross-env NODE_OPTIONS=--no-deprecation eslint .",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky"
   },
   "dependencies": {
     "@ai-sdk/groq": "^3.0.35",
@@ -51,6 +52,9 @@
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
+    "@commitlint/types": "^20.5.0",
     "@playwright/test": "1.59.1",
     "@types/node": "^25.6.0",
     "@types/pg": "^8.20.0",
@@ -58,7 +62,9 @@
     "@types/react-dom": "^19.2.3",
     "eslint": "^10.2.0",
     "eslint-config-next": "16.2.3",
+    "husky": "^9.1.7",
     "jsdom": "29.0.2",
+    "lint-staged": "^16.4.0",
     "prettier": "^3.8.2",
     "typescript": "6.0.2",
     "vitest": "4.1.4"
@@ -72,6 +78,15 @@
       "sharp",
       "esbuild",
       "unrs-resolver"
+    ]
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,mjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
     ]
   }
 }
