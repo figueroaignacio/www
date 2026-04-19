@@ -1,14 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
+import { Dialog } from '@/components/ui/dialog';
 import { AlertTriangle, Loader2 } from 'lucide-react';
 
 interface DeleteConfirmModalProps {
@@ -28,17 +21,17 @@ export function DeleteConfirmModal({
 }: DeleteConfirmModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="smorder-destructive/20 border-border border shadow-destructive/10">
-        <DialogHeader>
+      <Dialog.Content className="smorder-destructive/20 border-border border shadow-destructive/10">
+        <Dialog.Header>
           <div className="flex items-center gap-3 mb-2">
             <div className="p-2 rounded-full bg-destructive/10 text-destructive">
               <AlertTriangle className="w-5 h-5" />
             </div>
-            <DialogTitle>{t('status.confirmDeleteTitle') || '¿Eliminar comentario?'}</DialogTitle>
+            <Dialog.Title>{t('status.confirmDeleteTitle') || '¿Eliminar comentario?'}</Dialog.Title>
           </div>
-          <DialogDescription>{t('status.confirmDelete')}</DialogDescription>
-        </DialogHeader>
-        <DialogFooter className="mt-4 gap-2 sm:gap-0">
+          <Dialog.Description>{t('status.confirmDelete')}</Dialog.Description>
+        </Dialog.Header>
+        <Dialog.Footer className="mt-4 gap-2 sm:gap-0">
           <Button variant="ghost" onClick={() => onOpenChange(false)} disabled={isDeleting}>
             {t('modal.cancel') || 'Cancelar'}
           </Button>
@@ -49,8 +42,8 @@ export function DeleteConfirmModal({
               t('button.delete') || 'Eliminar'
             )}
           </Button>
-        </DialogFooter>
-      </DialogContent>
+        </Dialog.Footer>
+      </Dialog.Content>
     </Dialog>
   );
 }
