@@ -23,17 +23,20 @@ export const ChatMessage = memo(function ChatMessage({ message }: ChatMessagePro
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
+      initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
       className={`flex w-full ${isUser ? 'justify-end' : 'justify-start'}`}
     >
       <div
-        className={`max-w-full py-2  ${isUser ? 'bg-secondary-foreground text-background rounded-3xl rounded-tr-xs' : ''}`}
+        className={`max-w-full ${
+          isUser ? 'bg-foreground text-background rounded-2xl rounded-br-sm px-4 py-2.5' : ''
+        }`}
       >
         {isUser ? (
-          <p className="text-base whitespace-pre-wrap leading-relaxed px-5">{cleanContent}</p>
+          <p className="text-sm whitespace-pre-wrap leading-relaxed">{cleanContent}</p>
         ) : (
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3">
             {cleanContent && <ChatMarkdownContent content={cleanContent} />}
             {showProjects && <ChatProjectCards />}
             {showExperience && <ChatExperienceCards />}

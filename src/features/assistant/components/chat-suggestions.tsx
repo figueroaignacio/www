@@ -1,4 +1,5 @@
 import { Code2, FolderGit2, Lightbulb, MessageSquare, Sparkles } from 'lucide-react';
+import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 
 interface ChatSuggestionsProps {
@@ -12,44 +13,48 @@ export function ChatSuggestions({ onSuggestionClick }: ChatSuggestionsProps) {
     {
       icon: MessageSquare,
       text: t('who'),
-      color: 'text-blue-500 dark:text-blue-400',
     },
     {
       icon: FolderGit2,
       text: t('projects'),
-      color: 'text-cyan-500 dark:text-cyan-400',
     },
     {
       icon: Code2,
       text: t('technologies'),
-      color: 'text-green-500 dark:text-green-400',
     },
     {
       icon: Sparkles,
       text: t('education'),
-      color: 'text-purple-500 dark:text-purple-400',
     },
     {
       icon: Lightbulb,
       text: t('recruiterMode'),
-      color: 'text-yellow-500 dark:text-yellow-400',
     },
   ];
 
   return (
-    <div className="flex flex-wrap max-w-xl justify-center  gap-3">
+    <div className="flex flex-wrap max-w-lg justify-center gap-2">
       {suggestions.map((suggestion, index) => {
         const Icon = suggestion.icon;
         return (
-          <button
+          <motion.button
             type="button"
             key={index}
             onClick={() => onSuggestionClick(suggestion.text)}
-            className="flex items-center gap-3 px-3 py-2 rounded-full border border-border bg-card hover:bg-secondary transition-transform duration-100 cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.3,
+              delay: index * 0.05,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="flex items-center gap-2 px-3.5 py-2 rounded-lg border border-border/60 bg-card/60 hover:bg-card hover:border-border text-muted-foreground hover:text-foreground transition-colors duration-150 cursor-pointer"
           >
-            <Icon className={`size-3 ${suggestion.color}`} />
-            <span className="text-xs font-medium text-foreground">{suggestion.text}</span>
-          </button>
+            <Icon className="size-3.5 shrink-0" />
+            <span className="text-xs">{suggestion.text}</span>
+          </motion.button>
         );
       })}
     </div>

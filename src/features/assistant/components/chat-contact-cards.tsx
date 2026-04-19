@@ -37,7 +37,7 @@ export function ChatContactCards() {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-3">
       {contacts.map((contact) => {
         const Icon = contact.icon;
         return (
@@ -46,12 +46,10 @@ export function ChatContactCards() {
             href={contact.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 p-3 rounded-xl border border-border bg-card hover:bg-accent hover:scale-[1.01] active:scale-[0.99] transition-transform duration-75"
+            className="flex items-center gap-3 px-3 py-2.5 rounded-lg border border-border/40 bg-card/40 hover:bg-card hover:border-border text-muted-foreground hover:text-foreground transition-colors duration-150"
           >
-            <div className="size-8 flex items-center justify-center">
-              <Icon className="size-4" />
-            </div>
-            <span className="text-sm font-medium">{contact.label}</span>
+            <Icon className="size-4 shrink-0" />
+            <span className="text-xs font-medium">{contact.label}</span>
           </a>
         );
       })}

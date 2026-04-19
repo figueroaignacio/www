@@ -31,7 +31,6 @@ export function ChatInput({
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
-
     setDisclaimerIndex(Math.floor(Math.random() * disclaimers.length));
   }, [disclaimers.length]);
 
@@ -66,9 +65,9 @@ export function ChatInput({
     >
       <form
         onSubmit={handleSubmit}
-        className={`relative flex items-end gap-2 rounded-lg bg-card hover:bg-secondary ${
-          isHero ? 'min-h-[64px] border border-border' : 'min-h-[56px] border border-border'
-        } ${isLoading ? 'opacity-90' : ''}`}
+        className={`relative flex items-end gap-2 rounded-xl bg-card/80 backdrop-blur-sm border border-border/60 focus-within:border-border focus-within:bg-card transition-all duration-200 ${
+          isHero ? 'min-h-[56px]' : 'min-h-[48px]'
+        } ${isLoading ? 'opacity-80' : ''}`}
       >
         <textarea
           ref={textareaRef}
@@ -78,35 +77,41 @@ export function ChatInput({
           placeholder={t('inputPlaceholder')}
           rows={1}
           disabled={isLoading}
-          className={`w-full resize-none rounded-l  focus:ring-0 focus:outline-none px-6 py-4 max-h-[200px] overflow-y-auto placeholder:text-muted-foreground/70 ${
-            isHero ? 'text-lg' : 'text-base'
+          className={`w-full resize-none bg-transparent focus:ring-0 focus:outline-none px-5 py-3.5 max-h-[200px] overflow-y-auto placeholder:text-muted-foreground/50 ${
+            isHero ? 'text-base' : 'text-sm'
           }`}
-          style={{ minHeight: isHero ? '64px' : '56px' }}
+          style={{ minHeight: isHero ? '56px' : '48px' }}
         />
         <div className="flex pb-2 pr-2">
           <motion.button
             type="submit"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
+            whileTap={{ scale: 0.9 }}
             disabled={!message.trim() && !isLoading}
-            className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${
+            className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-all duration-200 ${
               message.trim() || isLoading
-                ? 'bg-foreground text-background shadow-md cursor-pointer'
-                : 'bg-transparent text-muted-foreground/30 cursor-not-allowed'
+                ? 'bg-foreground text-background cursor-pointer'
+                : 'bg-transparent text-muted-foreground/20 cursor-not-allowed'
             }`}
           >
-            {isLoading ? <Spinner /> : <ArrowUp className="h-5 w-5" />}
+            {isLoading ? <Spinner /> : <ArrowUp className="h-4 w-4" />}
           </motion.button>
         </div>
       </form>
       {isHero && (
-        <div className="absolute -bottom-8 left-0 right-0 flex justify-center text-xs text-muted-foreground/60 transition-opacity duration-300">
+        <motion.div
+          className="mt-4 flex justify-center text-[11px] text-muted-foreground/40"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
           {mounted && (
             <span key={disclaimerIndex} className="text-center px-4">
               {disclaimers[disclaimerIndex]}
             </span>
           )}
-        </div>
+        </motion.div>
       )}
     </motion.div>
   );

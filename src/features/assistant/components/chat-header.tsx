@@ -12,19 +12,26 @@ export function ChatHeader({ onResetChat }: ChatHeaderProps) {
   const t = useTranslations('components.chat.header');
 
   return (
-    <div className="z-40 flex items-center gap-2 justify-between w-full px-4 py-2 border-border backdrop-blur-sm">
-      <Link href="/">
-        <ArrowLeft className="w-5 h-5" />
+    <header className="z-40 flex items-center justify-between w-full px-5 py-3 border-b border-border/40">
+      <Link
+        href="/"
+        className="flex items-center justify-center size-8 rounded-lg text-muted-foreground hover:text-foreground hover:bg-card transition-colors duration-150"
+        aria-label="Back"
+      >
+        <ArrowLeft className="size-4" />
       </Link>
 
       {onResetChat && (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           <ThemeToggle />
           <Dialog>
             <Dialog.Trigger>
-              <button className="btn btn-ghost border-0 text-xs" title={t('reset')}>
-                <MessageCircle size={16} />
-                <span className="text-sm">{t('newChat')}</span>
+              <button
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-card transition-colors duration-150 text-sm"
+                title={t('reset')}
+              >
+                <MessageCircle size={14} />
+                <span className="text-xs">{t('newChat')}</span>
               </button>
             </Dialog.Trigger>
             <Dialog.Content className="bg-card">
@@ -44,6 +51,6 @@ export function ChatHeader({ onResetChat }: ChatHeaderProps) {
           </Dialog>
         </div>
       )}
-    </div>
+    </header>
   );
 }

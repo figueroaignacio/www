@@ -42,13 +42,13 @@ export function ChatMessages({ messages, isLoading, onSuggestionClick }: ChatMes
   const showSuggestions = messages.length === 1 && messages[0].role === 'assistant';
 
   return (
-    <div className="space-y-4 container">
+    <div className="space-y-5 container">
       {messages.map((msg, idx) => {
         const isAssistant = msg.role === 'assistant';
         return (
-          <div key={idx} className={`flex ${isAssistant ? 'flex-col gap-2' : 'justify-end'}`}>
+          <div key={idx} className={`flex ${isAssistant ? 'flex-col gap-3' : 'justify-end'}`}>
             {isAssistant && (
-              <div className="flex items-center gap-2 px-1">
+              <div className="flex items-center gap-2">
                 <AssistantAvatar />
               </div>
             )}
