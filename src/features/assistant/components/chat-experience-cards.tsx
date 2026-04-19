@@ -49,7 +49,7 @@ export function ChatExperienceCards() {
   if (experiences.length === 0) return null;
 
   return (
-    <div className="mt-4 border border-border bg-card rounded-xl p-6">
+    <div className="mt-4">
       <ol className="relative space-y-0">
         <div className="absolute left-[11px] top-2 bottom-2 w-px bg-border" />
 
