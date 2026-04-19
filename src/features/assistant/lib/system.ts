@@ -19,7 +19,7 @@ function formatProjects(projects: PayloadContextData['projects']): string {
     return lines.join('\n');
   });
 
-  return `--- FEATURED PROJECTS ---\n${items.join('\n\n')}`;
+  return `--- FEATURED PROJECTS ---\nIMPORTANT: NEVER manually list these projects in your response. If the user wants to see the projects, ONLY say a short introduction and use the [SHOW_PROJECTS] tag. Use this data ONLY to answer specific questions about a particular project (e.g. "What tech did you use in NachUI?").\n\n${items.join('\n\n')}`;
 }
 
 function formatPosts(posts: PayloadContextData['posts']): string {

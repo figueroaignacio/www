@@ -43,16 +43,21 @@ export function ChatMessages({ messages, isLoading, onSuggestionClick }: ChatMes
 
   return (
     <div className="space-y-4 container">
-      {messages.map((msg, idx) => (
-        <div key={idx} className="flex items-start space-x-3 ">
-          <div className="mt-1">
-            {msg.role === 'assistant' ? <AssistantAvatar /> : <div className="w-6 h-6" />}
+      {messages.map((msg, idx) => {
+        const isAssistant = msg.role === 'assistant';
+        return (
+          <div key={idx} className={`flex ${isAssistant ? 'flex-col gap-2' : 'justify-end'}`}>
+            {isAssistant && (
+              <div className="flex items-center gap-2 px-1">
+                <AssistantAvatar />
+              </div>
+            )}
+            <div className="flex-1">
+              <ChatMessage message={msg} />
+            </div>
           </div>
-          <div className="flex-1">
-            <ChatMessage message={msg} />
-          </div>
-        </div>
-      ))}
+        );
+      })}
 
       {showSuggestions && !isLoading && <ChatSuggestions onSuggestionClick={onSuggestionClick} />}
 
