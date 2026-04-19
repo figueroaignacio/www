@@ -45,7 +45,7 @@ function formatExperience(experience: PayloadContextData['experience']): string 
     ].join('\n');
   });
 
-  return `--- WORK EXPERIENCE ---\n${items.join('\n\n')}`;
+  return `--- WORK EXPERIENCE ---\nIMPORTANT: NEVER manually list this experience in your response. If the user wants to see your experience, ONLY say a short introduction and use the [SHOW_EXPERIENCE] tag. Use this data ONLY to answer specific questions about a particular job (e.g. "What did you do at <Company>?").\n\n${items.join('\n\n')}`;
 }
 
 export async function getSystemPrompt(locale: Locale): Promise<string> {

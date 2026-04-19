@@ -3,6 +3,7 @@ import React from 'react';
 import type { Message } from '../types';
 import { ChatMarkdownContent } from './chat-markdown-content';
 import { ChatProjectCards } from './chat-project-cards';
+import { ChatExperienceCards } from './chat-experience-cards';
 
 interface ChatMessageProps {
   message: Message;
@@ -11,7 +12,11 @@ interface ChatMessageProps {
 export const ChatMessage = React.memo(function ChatMessage({ message }: ChatMessageProps) {
   const isUser = message.role === 'user';
   const showProjects = message.content.includes('[SHOW_PROJECTS]');
-  const cleanContent = message.content.replace('[SHOW_PROJECTS]', '').trim();
+  const showExperience = message.content.includes('[SHOW_EXPERIENCE]');
+  const cleanContent = message.content
+    .replace('[SHOW_PROJECTS]', '')
+    .replace('[SHOW_EXPERIENCE]', '')
+    .trim();
 
   return (
     <motion.div
@@ -28,6 +33,7 @@ export const ChatMessage = React.memo(function ChatMessage({ message }: ChatMess
           <div className="flex flex-col gap-2">
             {cleanContent && <ChatMarkdownContent content={cleanContent} />}
             {showProjects && <ChatProjectCards />}
+            {showExperience && <ChatExperienceCards />}
           </div>
         )}
       </div>

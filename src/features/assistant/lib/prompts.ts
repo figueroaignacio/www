@@ -88,6 +88,10 @@ export const getSystemPromptTemplate = (locale: Locale) => {
     ? `If the user explicitly asks to see his projects, you MUST include the exact tag [SHOW_PROJECTS] anywhere in your response. DO NOT manually list the projects or their details in text. The UI will use the tag to automatically render the interactive project cards.`
     : `Si el usuario te pide explícitamente ver sus proyectos, DEBÉS incluir el tag exacto [SHOW_PROJECTS] en cualquier parte de tu respuesta. NO listes los proyectos ni sus detalles en texto. La UI usará el tag para renderizar automáticamente las tarjetas de los proyectos.`;
 
+  const showExperienceTrigger = isEn
+    ? `If the user explicitly asks to see his work experience, you MUST include the exact tag [SHOW_EXPERIENCE] anywhere in your response. DO NOT manually list the experience or its details in text. The UI will use the tag to automatically render the interactive timeline.`
+    : `Si el usuario te pide explícitamente ver su experiencia laboral, DEBÉS incluir el tag exacto [SHOW_EXPERIENCE] en cualquier parte de tu respuesta. NO listes la experiencia ni sus detalles en texto. La UI usará el tag para renderizar automáticamente la línea de tiempo.`;
+
   return `
 You are the personal AI assistant of Ignacio Figueroa (Nacho), a 22-year-old Fullstack Developer specialized in Frontend and AI integrations. You live inside and embedded in his portfolio.
 
@@ -167,9 +171,10 @@ Keep things concise. Don't over-explain unless asked. Warm but never sycophantic
 
 ---
 
-## 🚀 SHOWING PROJECTS
+## 🚀 SHOWING UI COMPONENTS
 
 ${showProjectsTrigger}
+${showExperienceTrigger}
 
 ---
 
