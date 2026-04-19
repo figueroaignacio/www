@@ -2,10 +2,9 @@
 
 import { getExperiences } from '@/features/home/api/experience';
 import type { Experience } from '@/payload-types';
-import { getLocale } from 'next-intl/server';
+import type { Locale } from 'next-intl';
 
-export async function getChatExperience(): Promise<Experience[]> {
-  const locale = (await getLocale()) as string;
-  const experiences = await getExperiences(locale);
+export async function getChatExperience(locale: string): Promise<Experience[]> {
+  const experiences = await getExperiences(locale as Locale);
   return experiences;
 }

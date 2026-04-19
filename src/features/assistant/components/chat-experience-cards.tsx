@@ -22,7 +22,7 @@ export function ChatExperienceCards() {
   useEffect(() => {
     async function fetchExperience() {
       try {
-        const data = await getChatExperience();
+        const data = await getChatExperience(locale);
         setExperiences(data);
       } catch (error) {
         console.error('Failed to fetch experience for chat', error);
@@ -31,7 +31,7 @@ export function ChatExperienceCards() {
       }
     }
     fetchExperience();
-  }, []);
+  }, [locale]);
 
   if (loading) {
     return (

@@ -4,15 +4,17 @@ import type { Project } from '@/payload-types';
 import { useEffect, useState } from 'react';
 import { getChatProjects } from '../actions/get-chat-projects';
 import { ChatProjectCard } from './chat-project-card';
+import { useLocale } from 'next-intl';
 
 export function ChatProjectCards() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
+  const locale = useLocale();
 
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const data = await getChatProjects();
+        const data = await getChatProjects(locale);
         setProjects(data);
       } catch (error) {
         console.error('Failed to fetch projects for chat', error);
@@ -21,7 +23,7 @@ export function ChatProjectCards() {
       }
     }
     fetchProjects();
-  }, []);
+  }, [locale]);
 
   if (loading) {
     return (
