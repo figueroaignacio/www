@@ -47,9 +47,9 @@ export function ChatPage() {
     <div className="flex h-lvh w-full overflow-hidden">
       <div className="flex-1 flex flex-col min-w-0 h-full relative">
         <ChatHeader onResetChat={messages.length > 0 ? handleReset : undefined} />
-        <div className="flex-1 flex flex-col w-full max-w-3xl mx-auto">
+        <div className="flex-1 flex flex-col w-full">
           {showHero ? (
-            <div className="flex-1 flex flex-col justify-center py-20">
+            <div className="flex-1 flex flex-col justify-center py-20 w-full max-w-3xl mx-auto">
               <ChatHero onQuickAction={handleQuickAction} />
               <div className="mt-8">
                 <ChatInput
@@ -62,23 +62,27 @@ export function ChatPage() {
               </div>
             </div>
           ) : (
-            <div className="flex flex-col h-full ">
+            <div className="flex flex-col h-full">
               <div className="flex-1 overflow-hidden relative">
                 <div className="absolute inset-0 overflow-y-auto">
-                  <ChatMessages
-                    messages={messages}
-                    isLoading={isLoading}
-                    onSuggestionClick={handleQuickAction}
-                  />
+                  <div className="py-4">
+                    <ChatMessages
+                      messages={messages}
+                      isLoading={isLoading}
+                      onSuggestionClick={handleQuickAction}
+                    />
+                  </div>
                 </div>
               </div>
-              <ChatInput
-                message={message}
-                isLoading={isLoading}
-                onMessageChange={setMessage}
-                onSubmit={handleSubmit}
-                isHero={false}
-              />
+              <div className="pb-2">
+                <ChatInput
+                  message={message}
+                  isLoading={isLoading}
+                  onMessageChange={setMessage}
+                  onSubmit={handleSubmit}
+                  isHero={false}
+                />
+              </div>
             </div>
           )}
         </div>
