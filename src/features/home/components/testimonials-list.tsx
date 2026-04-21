@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/cn';
 import { Quote } from 'lucide-react';
-import { motion, AnimatePresence, type Variants } from 'motion/react';
+import { AnimatePresence, motion, type Variants } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
@@ -83,7 +83,7 @@ export function TestimonialsList({ testimonials }: { testimonials: TestimonialDa
 
       {hasMore && !expanded && (
         <div className="relative mt-0">
-          <div className="absolute -top-24 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+          <div className="absolute -top-24 left-0 right-0 h-24 bg-linear-to-t from-background to-transparent pointer-events-none" />
           <div className="flex justify-center pt-4">
             <button
               onClick={() => setExpanded(true)}

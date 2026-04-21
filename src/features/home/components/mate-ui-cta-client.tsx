@@ -65,8 +65,7 @@ export function MateUICtaClient({ t, count }: MateUICtaProps) {
       className="relative overflow-hidden"
     >
       <div className="card-outline text-center relative z-10 overflow-hidden group">
-        {/* Decorative background elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+        <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
         <div className="absolute -right-20 -top-20 size-60 bg-primary/10 blur-[100px] rounded-full" />
         <div className="absolute -left-20 -bottom-20 size-60 bg-primary/5 blur-[100px] rounded-full" />
 

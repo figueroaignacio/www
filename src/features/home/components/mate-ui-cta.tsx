@@ -9,7 +9,7 @@ export async function MateUICta() {
 
   const translations = {
     badge: t('badge'),
-    title: t('title'),
+    title: t('title', { count }),
     description: t('description'),
     actions: {
       viewComponents: t('actions.viewComponents'),
