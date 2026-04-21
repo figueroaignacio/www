@@ -16,6 +16,11 @@
       "sourceType": "github",
       "computedHash": "a4c830509e85557b59339d8d93a4e243e9e59c686e7678854d39230e12c2a6dc"
     },
+    "caveman": {
+      "source": "JuliusBrussee/caveman",
+      "sourceType": "github",
+      "computedHash": "a818cdc41dcfaa50dd891c5cb5e5705968338de02e7e37949ca56e8c30ad4176"
+    },
     "email-and-password-best-practices": {
       "source": "better-auth/skills",
       "sourceType": "github",
