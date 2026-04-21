@@ -1,11 +1,11 @@
 import { ArrowRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { Fragment } from 'react/jsx-runtime';
-import { getNachUiComponents } from '../api/get-nach-ui-components';
+import { getMateUiComponents } from '../api/get-mate-ui-components';
 
-export default async function NachUICTA() {
-  const t = await getTranslations('sections.nachUiCta');
-  const components = await getNachUiComponents();
+export async function MateUICta() {
+  const t = await getTranslations('sections.mateUiCta');
+  const components = await getMateUiComponents();
   const count = components.length;
 
   const actions = [

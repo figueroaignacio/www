@@ -110,9 +110,9 @@
         "opensource": "Open Source"
       }
     },
-    "nachUiCta": {
+    "mateUiCta": {
       "badge": "Componentes de UI",
-      "title": "He construido {count}+ componentes",
+      "title": "He construido {count} componentes",
       "description": "Un kit de componentes listos para usar, diseñados para construir interfaces rápido y con consistencia.",
       "actions": {
         "viewComponents": "Ver componentes",
