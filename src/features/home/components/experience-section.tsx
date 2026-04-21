@@ -3,6 +3,8 @@ import type { Experience } from '@/payload-types';
 import { Briefcase, ExternalLink } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { getExperiences } from '../api/experience';
+import { AnimatedExperienceList } from './animated-experience-list';
+import { AnimatedSectionHeader } from './animated-section-header';
 
 function formatDate(dateString: string, locale: string): string {
   return new Date(dateString).toLocaleDateString(locale, {
@@ -20,36 +22,36 @@ export async function ExperienceSection() {
 
   return (
     <section className="space-y-6" aria-labelledby="experience-title">
-      <div>
-        <h2 id="experience-title" className="text-lg font-medium">{t('title')}</h2>
-        <p className="text-sm text-muted-foreground mt-1">{t('description')}</p>
-      </div>
-      <ol className="relative space-y-0">
-        {/* Timeline line */}
-        <div className="absolute left-[11px] top-2 bottom-2 w-px bg-border" />
+      <AnimatedSectionHeader title={t('title')} description={t('description')} />
 
-        {experiences.map((experience, index) => (
-          <li key={experience.id} className="relative pl-10 pb-8 last:pb-0">
+      <AnimatedExperienceList>
+        {experiences.map((experience) => (
+          <div key={experience.id}>
             {/* Timeline dot */}
             <div
-              className={`absolute left-0 top-1.5 size-[23px] rounded-full border-2 flex items-center justify-center ${
+              className={`absolute left-0 top-1.5 size-[23px] rounded-full border-2 flex items-center justify-center z-10 transition-colors duration-500 ${
                 experience.isCurrent
-                  ? 'border-foreground bg-foreground'
-                  : 'border-border bg-card'
+                  ? 'border-primary bg-primary'
+                  : 'border-border bg-card group-hover:border-primary/50'
               }`}
             >
               <Briefcase
-                className={`size-3 ${experience.isCurrent ? 'text-background' : 'text-muted-foreground'}`}
+                className={`size-3 ${experience.isCurrent ? 'text-primary-foreground' : 'text-muted-foreground'}`}
               />
             </div>
 
-            <article className="space-y-3">
+            <article className="space-y-3 group">
               {/* Header */}
               <div className="space-y-1">
                 <div className="flex items-center gap-2 flex-wrap">
-                  <h3 className="font-semibold text-foreground">{experience.title}</h3>
+                  <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                    {experience.title}
+                  </h3>
                   {experience.isCurrent && (
-                    <Badge variant="default" className="text-[10px] px-1.5 py-0">
+                    <Badge
+                      variant="default"
+                      className="text-[10px] px-1.5 py-0 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors"
+                    >
                       {locale === 'es' ? 'Actual' : 'Current'}
                     </Badge>
                   )}
@@ -93,7 +95,9 @@ export async function ExperienceSection() {
                       key={task.id}
                       className="text-sm text-muted-foreground leading-relaxed flex gap-2"
                     >
-                      <span className="text-muted-foreground/40 mt-0.5 shrink-0">▸</span>
+                      <span className="text-primary/40 mt-0.5 shrink-0 group-hover:text-primary/70 transition-colors duration-300">
+                        ▸
+                      </span>
                       {task.item}
                     </li>
                   ))}
@@ -102,18 +106,22 @@ export async function ExperienceSection() {
 
               {/* Technologies */}
               {experience.technologies && experience.technologies.length > 0 && (
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1.5 pt-1">
                   {experience.technologies.map((tech) => (
-                    <Badge key={tech.id} variant="secondary" className="text-[11px]">
+                    <Badge
+                      key={tech.id}
+                      variant="secondary"
+                      className="text-[10px] bg-secondary/50 border-transparent hover:border-border transition-all"
+                    >
                       {tech.name}
                     </Badge>
                   ))}
                 </div>
               )}
             </article>
-          </li>
+          </div>
         ))}
-      </ol>
+      </AnimatedExperienceList>
     </section>
   );
 }

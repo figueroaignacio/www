@@ -2,6 +2,8 @@ import { getProjects } from '@/features/projects/api/projects';
 import { ProjectCard } from '@/features/projects/components/project-card';
 import type { Project } from '@/payload-types';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { AnimatedProjectList } from './animated-project-list';
+import { AnimatedSectionHeader } from './animated-section-header';
 
 export async function ProjectsSection() {
   const t = await getTranslations('sections.projects');
@@ -10,11 +12,8 @@ export async function ProjectsSection() {
 
   return (
     <section className="space-y-6" aria-labelledby="projects-title">
-      <div>
-        <h2 id="projects-title" className="text-lg font-medium">{t('title')}</h2>
-        <p className="text-sm text-muted-foreground mt-1">{t('description')}</p>
-      </div>
-      <div className="grid gap-4">
+      <AnimatedSectionHeader title={t('title')} description={t('description')} />
+      <AnimatedProjectList>
         {projects.map((project) => (
           <ProjectCard
             key={project.id}
@@ -27,7 +26,7 @@ export async function ProjectsSection() {
             icon={project.icon}
           />
         ))}
-      </div>
+      </AnimatedProjectList>
     </section>
   );
 }

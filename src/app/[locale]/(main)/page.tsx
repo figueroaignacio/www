@@ -26,8 +26,8 @@ export default function HomePage({ params }: HomePageProps) {
       <MateUICta />
       <TechStack />
       <ExperienceSection />
-      <Testimonials />
       <CTACurriculum />
+      <Testimonials />
     </div>
   );
 }

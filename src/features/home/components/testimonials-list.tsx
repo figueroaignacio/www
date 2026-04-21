@@ -2,6 +2,7 @@
 
 import { cn } from '@/lib/cn';
 import { Quote } from 'lucide-react';
+import { motion, AnimatePresence, type Variants } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
@@ -14,6 +15,24 @@ interface TestimonialData {
 
 const INITIAL_COUNT = 2;
 
+const itemVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.95, y: 20 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: [0.21, 0.47, 0.32, 0.98] as const,
+    },
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.95,
+    transition: { duration: 0.2 },
+  },
+};
+
 export function TestimonialsList({ testimonials }: { testimonials: TestimonialData[] }) {
   const [expanded, setExpanded] = useState(false);
   const t = useTranslations('sections.testimonials');
@@ -24,30 +43,51 @@ export function TestimonialsList({ testimonials }: { testimonials: TestimonialDa
   return (
     <div className="relative">
       <div id="testimonials-grid" className="grid gap-4">
-        {visible.map((testimonial) => (
-          <figure key={testimonial.id} className="p-6 bg-card rounded-lg border border-border m-0">
-            <Quote className="h-6 w-6 text-muted-foreground/50 mb-4" aria-hidden="true" />
-            <blockquote className="text-foreground/90 leading-relaxed mb-6">
-              <p>{testimonial.testimonial}</p>
-            </blockquote>
-            <figcaption className="flex items-center gap-3">
-              <div>
-                <p className="text-sm font-medium text-foreground">{testimonial.name}</p>
-                <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+        <AnimatePresence mode="popLayout">
+          {visible.map((testimonial) => (
+            <motion.figure
+              layout
+              key={testimonial.id}
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="p-6 bg-card rounded-lg border border-border m-0 group hover:border-primary/30 transition-colors duration-300 relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                <Quote className="size-12 rotate-12" />
               </div>
-            </figcaption>
-          </figure>
-        ))}
+
+              <Quote
+                className="h-6 w-6 text-muted-foreground/30 mb-4 group-hover:text-primary/50 transition-colors duration-300"
+                aria-hidden="true"
+              />
+              <blockquote className="text-foreground/90 leading-relaxed mb-6 relative z-10">
+                <p>{testimonial.testimonial}</p>
+              </blockquote>
+              <figcaption className="flex items-center gap-3 relative z-10">
+                <div className="size-8 rounded-full bg-secondary flex items-center justify-center text-[10px] font-bold text-muted-foreground uppercase">
+                  {testimonial.name.substring(0, 2)}
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-300">
+                    {testimonial.name}
+                  </p>
+                  <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                </div>
+              </figcaption>
+            </motion.figure>
+          ))}
+        </AnimatePresence>
       </div>
 
       {hasMore && !expanded && (
         <div className="relative mt-0">
-          {/* Fade overlay */}
-          <div className="absolute -top-24 left-0 right-0 h-24 bg-linear-to-t from-background to-transparent pointer-events-none" />
+          <div className="absolute -top-24 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
           <div className="flex justify-center pt-4">
             <button
               onClick={() => setExpanded(true)}
-              className="btn btn-outline"
+              className="btn btn-outline hover:bg-muted/50 transition-all"
               aria-expanded={expanded}
               aria-controls="testimonials-grid"
             >
@@ -61,7 +101,7 @@ export function TestimonialsList({ testimonials }: { testimonials: TestimonialDa
         <div className="flex justify-center pt-4">
           <button
             onClick={() => setExpanded(false)}
-            className={cn('btn btn-outline')}
+            className={cn('btn btn-outline hover:bg-muted/50 transition-all')}
             aria-expanded={expanded}
             aria-controls="testimonials-grid"
           >

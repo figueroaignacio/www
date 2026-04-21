@@ -1,31 +1,84 @@
+'use client';
+
 import { AssistantAvatar } from '@/features/assistant/components/assistant-avatar';
 import { Link } from '@/i18n/navigation';
+import { motion, type Variants } from 'motion/react';
 import { FileText } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.21, 0.47, 0.32, 0.98] as const,
+    },
+  },
+};
 
 export function HomeHero() {
   const t = useTranslations('sections.home');
   const tCv = useTranslations('components.ctaCv');
 
   return (
-    <section className="space-y-6 mt-10">
-      <p className="text-sm text-muted-foreground">{t('greeting')}</p>
-      <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-balance">{t('name')}</h1>
-      <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
+    <motion.section
+      className="space-y-6 mt-10"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.p variants={itemVariants} className="text-sm text-muted-foreground">
+        {t('greeting')}
+      </motion.p>
+      <motion.h1
+        variants={itemVariants}
+        className="text-4xl sm:text-5xl font-bold tracking-tight text-balance leading-[1.1]"
+      >
+        {t('name')}
+      </motion.h1>
+      <motion.p
+        variants={itemVariants}
+        className="text-xl text-muted-foreground leading-relaxed max-w-2xl text-balance"
+      >
         <span className="text-foreground font-medium">{t('title')}</span> {t('titleComplement')}.{' '}
         {t('subtitle')}
-      </p>
-      <p className="text-muted-foreground leading-relaxed max-w-2xl">{t('description')}</p>
-      <div className="flex flex-wrap gap-3 pt-2">
-        <Link href="/assistant" className="btn btn-primary">
+      </motion.p>
+      <motion.p
+        variants={itemVariants}
+        className="text-muted-foreground leading-relaxed max-w-2xl text-balance"
+      >
+        {t('description')}
+      </motion.p>
+      <motion.div variants={itemVariants} className="flex flex-wrap gap-3 pt-2">
+        <Link href="/assistant" className="btn btn-primary group">
           {t('actions.chatAssistant')}
-          <AssistantAvatar size="md" />
+          <div className="transition-transform duration-300 group-hover:scale-110">
+            <AssistantAvatar size="md" />
+          </div>
         </Link>
-        <a href={tCv('url')} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+        <a
+          href={tCv('url')}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-outline hover:bg-muted/50 transition-all duration-300"
+        >
           <FileText className="size-4" />
           {t('actions.viewCv')}
         </a>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }
