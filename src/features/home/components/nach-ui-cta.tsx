@@ -1,10 +1,10 @@
 import { getTranslations } from 'next-intl/server';
-import { getMateUiComponents } from '../api/get-mate-ui-components';
-import { MateUICtaClient } from './mate-ui-cta-client';
+import { getNachUiComponents } from '../api/get-nach-ui-components';
+import { NachUICtaClient } from './nach-ui-cta-client';
 
-export async function MateUICta() {
+export async function NachUICta() {
   const t = await getTranslations('sections.mateUiCta');
-  const components = await getMateUiComponents();
+  const components = await getNachUiComponents();
   const count = components.length;
 
   const translations = {
@@ -25,5 +25,5 @@ export async function MateUICta() {
     },
   };
 
-  return <MateUICtaClient t={translations} count={count} />;
+  return <NachUICtaClient t={translations} count={count} />;
 }

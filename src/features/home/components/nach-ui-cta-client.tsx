@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Fragment } from 'react/jsx-runtime';
 
-interface MateUICtaProps {
+interface NachUICtaProps {
   t: {
     badge: string;
     title: string;
@@ -25,7 +25,7 @@ interface MateUICtaProps {
   count: number;
 }
 
-export function MateUICtaClient({ t, count }: MateUICtaProps) {
+export function NachUICtaClient({ t, count }: NachUICtaProps) {
   const actions = [
     {
       label: t.actions.viewComponents,
