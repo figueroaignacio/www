@@ -29,10 +29,8 @@
     "home": {
       "greeting": "Hola, soy",
       "name": "Ignacio Figueroa",
-      "title": "Fullstack Developer",
-      "titleComplement": "con foco en Frontend",
-      "subtitle": "Estudiante de Programación en la UTN y autodidacta.",
-      "description": "Construyendo NachUI y NachAI. Explorando el potencial de los LLMs en aplicaciones reales y creando productos escalables con arquitectura sólida.",
+      "title": "Desarrollador Fullstack",
+      "description": "Construyendo MateUI y NachAI. Explorando el potencial de la integración de modelos de IA en aplicaciones reales y creando productos escalables con arquitectura sólida.",
       "actions": {
         "viewProjects": "Ver proyectos",
         "viewBlog": "Ver Blog",

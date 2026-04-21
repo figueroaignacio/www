@@ -2,8 +2,8 @@
 
 import { AssistantAvatar } from '@/features/assistant/components/assistant-avatar';
 import { Link } from '@/i18n/navigation';
-import { motion, type Variants } from 'motion/react';
 import { FileText } from 'lucide-react';
+import { motion, type Variants } from 'motion/react';
 import { useTranslations } from 'next-intl';
 
 const containerVariants: Variants = {
@@ -53,8 +53,7 @@ export function HomeHero() {
         variants={itemVariants}
         className="text-xl text-muted-foreground leading-relaxed max-w-2xl text-balance"
       >
-        <span className="text-foreground font-medium">{t('title')}</span> {t('titleComplement')}.{' '}
-        {t('subtitle')}
+        <span className="text-foreground font-medium">{t('title')}</span>
       </motion.p>
       <motion.p
         variants={itemVariants}

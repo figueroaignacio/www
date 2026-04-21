@@ -30,9 +30,7 @@
       "greeting": "Hi, I'm",
       "name": "Ignacio Figueroa",
       "title": "Fullstack Developer",
-      "titleComplement": "focused on Frontend",
-      "subtitle": "Programming student at UTN and self-taught developer.",
-      "description": "Building NachUI and NachAI. Exploring the potential of LLMs in real-world applications and creating scalable products with solid architecture.",
+      "description": "Building MateUI and NachAI. Exploring the potential of AI models in real-world applications and creating scalable products with solid architecture.",
       "actions": {
         "viewProjects": "View projects",
         "viewBlog": "View Blog",
