@@ -22,7 +22,9 @@ export default async function MainLayout({ children, params }: LocaleLayoutProps
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 container">{children}</main>
+      <main id="main-content" className="flex-1 container" tabIndex={-1}>
+        {children}
+      </main>
       <Footer />
       <ChatFloatingLink />
     </div>

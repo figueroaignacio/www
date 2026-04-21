@@ -127,6 +127,7 @@
     }
   },
   "ui": {
+    "skipToContent": "Skip to content",
     "navigation": [
       {
         "label": "Home",

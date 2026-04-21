@@ -127,6 +127,7 @@
     }
   },
   "ui": {
+    "skipToContent": "Saltar al contenido",
     "navigation": [
       {
         "label": "Inicio",

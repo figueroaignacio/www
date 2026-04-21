@@ -76,6 +76,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { SkipLink } from '@/components/ui/skip-link';
+
 export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
@@ -88,7 +90,10 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
     <html lang={locale} suppressHydrationWarning>
       <body className={`${fontSans.variable} ${fontHeading.variable} antialiased`}>
         <NextIntlClientProvider>
-          <Providers>{children}</Providers>
+          <Providers>
+            <SkipLink />
+            {children}
+          </Providers>
         </NextIntlClientProvider>
       </body>
     </html>

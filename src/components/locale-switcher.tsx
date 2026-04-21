@@ -36,7 +36,7 @@ export function LocaleSwitcher() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>
+      <DropdownMenuTrigger aria-label="Change language">
         <span className="text-xs">{getLocaleLabel(locale)}</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-[140px]">
