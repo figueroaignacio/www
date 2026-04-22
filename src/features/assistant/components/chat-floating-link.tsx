@@ -14,14 +14,14 @@ export function ChatFloatingLink() {
   if (pathname?.includes('/blog')) return null;
 
   return (
-    <div className="fixed bottom-8 right-8 z-50">
+    <div className="fixed bottom-2 right-2 z-50">
       <Tooltip>
         <Tooltip.Trigger asChild>
           <Link
             href="/assistant"
             className="hover:scale-[1.05] transition-transform active:scale-[0.95]"
           >
-            <AssistantAvatar size="xl" />
+            <AssistantAvatar size="md" />
           </Link>
         </Tooltip.Trigger>
         <Tooltip.Content side="left" className="text-sm">

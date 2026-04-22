@@ -65,7 +65,7 @@ export function HomeHero() {
         <Link href="/assistant" className="btn btn-primary group">
           {t('actions.chatAssistant')}
           <div className="transition-transform duration-300 group-hover:scale-110">
-            <AssistantAvatar size="md" />
+            <AssistantAvatar size="sm" />
           </div>
         </Link>
         <a

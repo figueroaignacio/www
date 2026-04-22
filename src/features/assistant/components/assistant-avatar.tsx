@@ -2,8 +2,8 @@ import clsx from 'clsx';
 
 const SIZES = {
   sm: 'size-4',
-  md: 'size-6',
-  lg: 'size-8',
+  md: 'size-8',
+  lg: 'size-10',
   xl: 'size-12',
 } as const;
 
