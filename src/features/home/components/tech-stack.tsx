@@ -12,6 +12,8 @@ import { GitIcon } from '@/components/tech-icons/git-icon';
 import { GoogleAntigravityIcon } from '@/components/tech-icons/google-antigravity-icon';
 import { GroqAiIcon } from '@/components/tech-icons/groq-ai-icon';
 import { HTMLIcon } from '@/components/tech-icons/html-icon';
+import { LinuxIcon } from '@/components/tech-icons/linux-icon';
+import { FedoraIcon } from '@/components/tech-icons/fedora-icon';
 import { NestJsIcon } from '@/components/tech-icons/nestjs-icon';
 import { NextJSIcon } from '@/components/tech-icons/nextjs-icon';
 import { NodeJSIcon } from '@/components/tech-icons/nodejs-icon';
@@ -94,6 +96,8 @@ export function TechStack() {
         { name: 'pnpm', icon: PnpmIcon },
         { name: 'Turborepo', icon: TurborepoIcon },
         { name: 'UV', icon: UVIcon },
+        { name: 'Linux', icon: LinuxIcon },
+        { name: 'Fedora', icon: FedoraIcon },
       ],
     },
   ];

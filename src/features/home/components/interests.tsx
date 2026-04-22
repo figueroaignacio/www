@@ -1,6 +1,8 @@
 'use client';
 
+import { LinuxIcon } from '@/components/tech-icons/linux-icon';
 import { Badge } from '@/components/ui/badge';
+import { cn } from '@/lib/cn';
 import {
   Blocks,
   Bot,
@@ -21,22 +23,24 @@ import { useTranslations } from 'next-intl';
 
 type InterestConfig = {
   key: string;
-  icon: LucideIcon;
+  icon: LucideIcon | React.FC<React.SVGAttributes<SVGAElement>>;
+  color: string;
 };
 
 const INTERESTS_CONFIG: InterestConfig[] = [
-  { key: 'frontend', icon: LayoutTemplate },
-  { key: 'backend', icon: Server },
-  { key: 'ai', icon: Bot },
-  { key: 'prompts', icon: Terminal },
-  { key: 'arch', icon: Blocks },
-  { key: 'clean', icon: ShieldCheck },
-  { key: 'ui', icon: Palette },
-  { key: 'a11y', icon: ScanFace },
-  { key: 'perf', icon: Zap },
-  { key: 'qa', icon: FlaskConical },
-  { key: 'devops', icon: Workflow },
-  { key: 'opensource', icon: Globe },
+  { key: 'frontend', icon: LayoutTemplate, color: 'text-cyan-500' },
+  { key: 'backend', icon: Server, color: 'text-emerald-500' },
+  { key: 'ai', icon: Bot, color: 'text-violet-500' },
+  { key: 'prompts', icon: Terminal, color: 'text-amber-500' },
+  { key: 'arch', icon: Blocks, color: 'text-blue-500' },
+  { key: 'clean', icon: ShieldCheck, color: 'text-rose-500' },
+  { key: 'ui', icon: Palette, color: 'text-pink-500' },
+  { key: 'a11y', icon: ScanFace, color: 'text-indigo-500' },
+  { key: 'perf', icon: Zap, color: 'text-orange-500' },
+  { key: 'qa', icon: FlaskConical, color: 'text-lime-500' },
+  { key: 'devops', icon: Workflow, color: 'text-sky-500' },
+  { key: 'opensource', icon: Globe, color: 'text-green-500' },
+  { key: 'linux', icon: LinuxIcon, color: 'text-foreground' },
 ];
 
 const containerVariants: Variants = {
@@ -87,16 +91,13 @@ export function Interests() {
         className="flex flex-wrap gap-2"
         role="list"
       >
-        {INTERESTS_CONFIG.map(({ key, icon: Icon }) => (
+        {INTERESTS_CONFIG.map(({ key, icon: Icon, color }) => (
           <motion.li key={key} variants={itemVariants} role="listitem">
             <Badge
               variant="outline"
               className="space-x-3 py-2 px-4 hover:bg-secondary/50 hover:border-primary/30 transition-all duration-300 cursor-default group"
             >
-              <Icon
-                className="w-3.5 h-3.5 text-muted-foreground group-hover:text-primary transition-colors"
-                aria-hidden="true"
-              />
+              <Icon className={cn('w-3.5 h-3.5 transition-colors', color)} aria-hidden="true" />
               <span className="text-xs">{t(key)}</span>
             </Badge>
           </motion.li>

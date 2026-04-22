@@ -64,7 +64,8 @@ export function AboutContent() {
               Focus
             </p>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              React • Next.js • TypeScript • Node.js • AI Integration • Clean Architecture
+              React • Next.js • TypeScript • Node.js • AI Integration • Clean Architecture • Linux •
+              Fedora
             </p>
           </motion.div>
         </div>
