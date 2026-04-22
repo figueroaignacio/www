@@ -1,7 +1,9 @@
-import type { Metadata, Viewport } from 'next';
 import { Providers } from '@/components/providers';
+import { SkipLink } from '@/components/ui/skip-link';
+import { TerminalPrompt } from '@/components/ui/terminal-prompt';
 import { routing } from '@/i18n/routing';
 import { fontHeading, fontSans } from '@/lib/fonts';
+import type { Metadata, Viewport } from 'next';
 import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -9,6 +11,29 @@ import { notFound } from 'next/navigation';
 interface LocaleLayoutProps {
   children: React.ReactNode;
   params: Promise<{ locale: Locale }>;
+}
+
+export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
+
+  return (
+    <html lang={locale} suppressHydrationWarning>
+      <body className={`${fontSans.variable} ${fontHeading.variable} antialiased`}>
+        <NextIntlClientProvider>
+          <Providers>
+            <SkipLink />
+            {children}
+            <TerminalPrompt />
+          </Providers>
+        </NextIntlClientProvider>
+      </body>
+    </html>
+  );
 }
 
 export const viewport: Viewport = {
@@ -75,27 +100,3 @@ export const metadata: Metadata = {
     },
   },
 };
-
-import { SkipLink } from '@/components/ui/skip-link';
-
-export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
-  const { locale } = await params;
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
-
-  setRequestLocale(locale);
-
-  return (
-    <html lang={locale} suppressHydrationWarning>
-      <body className={`${fontSans.variable} ${fontHeading.variable} antialiased`}>
-        <NextIntlClientProvider>
-          <Providers>
-            <SkipLink />
-            {children}
-          </Providers>
-        </NextIntlClientProvider>
-      </body>
-    </html>
-  );
-}
