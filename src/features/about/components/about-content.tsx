@@ -2,6 +2,8 @@
 
 import { motion, type Variants } from 'motion/react';
 import { useTranslations } from 'next-intl';
+import { Interests } from './interests';
+import { TechStack } from './tech-stack';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -31,7 +33,7 @@ export function AboutContent() {
 
   return (
     <motion.section
-      className="relative min-h-[70vh] flex items-center py-16"
+      className="relative min-h-[70vh] py-16"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -68,6 +70,11 @@ export function AboutContent() {
               Fedora
             </p>
           </motion.div>
+
+          <div className="pt-16 space-y-24">
+            <TechStack />
+            <Interests />
+          </div>
         </div>
       </div>
     </motion.section>

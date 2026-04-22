@@ -78,10 +78,10 @@ export function Interests() {
         variants={itemVariants}
         className="space-y-2"
       >
-        <h2 id="interests-title" className="text-lg font-medium">
+        <h2 id="interests-title" className="text-2xl font-medium tracking-tight">
           {tSection('title')}
         </h2>
-        <p className="text-sm text-muted-foreground mt-1">{tSection('description')}</p>
+        <p className="text-lg text-muted-foreground font-normal mt-1">{tSection('description')}</p>
       </motion.div>
       <motion.ul
         variants={containerVariants}

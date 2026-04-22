@@ -111,10 +111,12 @@ export function TechStack() {
         variants={itemVariants}
         className="space-y-2"
       >
-        <h2 id="tech-stack-title" className="text-lg font-medium">
+        <h2 id="tech-stack-title" className="text-2xl font-medium tracking-tight">
           {t('stack.title')}
         </h2>
-        <p className="text-sm text-muted-foreground mt-1 max-w-xl">{t('stack.description')}</p>
+        <p className="text-lg text-muted-foreground font-normal mt-1 max-w-xl">
+          {t('stack.description')}
+        </p>
       </motion.div>
 
       <div className="space-y-6">
