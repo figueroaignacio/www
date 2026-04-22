@@ -27,30 +27,25 @@ export async function ExperienceSection() {
       <AnimatedExperienceList>
         {experiences.map((experience) => (
           <div key={experience.id}>
-            {/* Timeline dot */}
             <div
               className={`absolute left-0 top-1.5 size-[23px] rounded-full border-2 flex items-center justify-center z-10 transition-colors duration-500 ${
-                experience.isCurrent
-                  ? 'border-primary bg-primary'
-                  : 'border-border bg-card group-hover:border-primary/50'
+                experience.isCurrent ? 'border-primary bg-primary' : 'border-border bg-card'
               }`}
             >
               <Briefcase
                 className={`size-3 ${experience.isCurrent ? 'text-primary-foreground' : 'text-muted-foreground'}`}
               />
             </div>
-
             <article className="space-y-3 group">
-              {/* Header */}
               <div className="space-y-1">
                 <div className="flex items-center gap-2 flex-wrap">
-                  <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                  <h3 className="font-semibold text-foreground transition-colors duration-300">
                     {experience.title}
                   </h3>
                   {experience.isCurrent && (
                     <Badge
                       variant="default"
-                      className="text-[10px] px-1.5 py-0 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors"
+                      className="text-[10px] px-1.5 py-0 bg-primary/10 text-primary border-primary/20 transition-colors"
                     >
                       {locale === 'es' ? 'Actual' : 'Current'}
                     </Badge>
@@ -62,7 +57,7 @@ export async function ExperienceSection() {
                       href={experience.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1"
+                      className="text-muted-foreground transition-colors inline-flex items-center gap-1"
                     >
                       {experience.company}
                       <ExternalLink className="size-3" />
@@ -86,8 +81,6 @@ export async function ExperienceSection() {
                       : 'Present'}
                 </p>
               </div>
-
-              {/* Tasks */}
               {experience.tasks && experience.tasks.length > 0 && (
                 <ul className="space-y-1.5">
                   {experience.tasks.map((task) => (
@@ -95,7 +88,7 @@ export async function ExperienceSection() {
                       key={task.id}
                       className="text-sm text-muted-foreground leading-relaxed flex gap-2"
                     >
-                      <span className="text-primary/40 mt-0.5 shrink-0 group-hover:text-primary/70 transition-colors duration-300">
+                      <span className="text-primary/40 mt-0.5 shrink-0 transition-colors duration-300">
                         ▸
                       </span>
                       {task.item}
@@ -103,15 +96,13 @@ export async function ExperienceSection() {
                   ))}
                 </ul>
               )}
-
-              {/* Technologies */}
               {experience.technologies && experience.technologies.length > 0 && (
                 <div className="flex flex-wrap gap-1.5 pt-1">
                   {experience.technologies.map((tech) => (
                     <Badge
                       key={tech.id}
                       variant="secondary"
-                      className="text-[10px] bg-secondary/50 border-transparent hover:border-border transition-all"
+                      className="text-[10px] bg-secondary/50 border-transparent transition-all"
                     >
                       {tech.name}
                     </Badge>

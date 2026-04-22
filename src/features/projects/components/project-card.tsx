@@ -22,7 +22,7 @@ export function ProjectCard({
 
   return (
     <article
-      className="group relative flex flex-col justify-between gap-4 border-border border p-6 rounded-xl bg-card hover:border-foreground/20 transition-colors duration-200"
+      className="group relative flex flex-col justify-between gap-4 border p-6 rounded-xl bg-card border-foreground/10 transition-colors duration-200"
       aria-labelledby={`project-title-${title}`}
     >
       <div className="space-y-3">

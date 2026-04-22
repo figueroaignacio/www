@@ -52,14 +52,13 @@ export function TestimonialsList({ testimonials }: { testimonials: TestimonialDa
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="p-6 bg-card rounded-lg border border-border m-0 group hover:border-primary/30 transition-colors duration-300 relative overflow-hidden"
+              className="p-6 bg-card rounded-lg border border-foreground/10 m-0 group transition-colors duration-300 relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+              <div className="absolute top-0 right-0 p-4 opacity-5 transition-opacity">
                 <Quote className="size-12 rotate-12" />
               </div>
-
               <Quote
-                className="h-6 w-6 text-muted-foreground/30 mb-4 group-hover:text-primary/50 transition-colors duration-300"
+                className="h-6 w-6 text-muted-foreground/30 mb-4 transition-colors duration-300"
                 aria-hidden="true"
               />
               <blockquote className="text-foreground/90 leading-relaxed mb-6 relative z-10">
@@ -70,7 +69,7 @@ export function TestimonialsList({ testimonials }: { testimonials: TestimonialDa
                   {testimonial.name.substring(0, 2)}
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-300">
+                  <p className="text-sm font-medium text-foreground transition-colors duration-300">
                     {testimonial.name}
                   </p>
                   <p className="text-xs text-muted-foreground">{testimonial.role}</p>
@@ -87,7 +86,7 @@ export function TestimonialsList({ testimonials }: { testimonials: TestimonialDa
           <div className="flex justify-center pt-4">
             <button
               onClick={() => setExpanded(true)}
-              className="btn btn-outline hover:bg-muted/50 transition-all"
+              className="btn btn-outline transition-all"
               aria-expanded={expanded}
               aria-controls="testimonials-grid"
             >
@@ -96,12 +95,11 @@ export function TestimonialsList({ testimonials }: { testimonials: TestimonialDa
           </div>
         </div>
       )}
-
       {hasMore && expanded && (
         <div className="flex justify-center pt-4">
           <button
             onClick={() => setExpanded(false)}
-            className={cn('btn btn-outline hover:bg-muted/50 transition-all')}
+            className={cn('btn btn-outline transition-all')}
             aria-expanded={expanded}
             aria-controls="testimonials-grid"
           >

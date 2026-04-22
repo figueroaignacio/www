@@ -40,21 +40,21 @@ interface EducationItemProps {
 function EducationItem({ item, locale }: EducationItemProps) {
   return (
     <article className="group">
-      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-primary/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-primary/20 to-transparent opacity-0 transition-opacity duration-300" />
       <div className="space-y-3">
         <div className="flex items-start gap-3">
-          <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg border border-border/60 bg-secondary/50 transition-colors duration-300 group-hover:border-primary/30 group-hover:bg-primary/10">
-            <GraduationCap className="size-4 text-muted-foreground transition-colors duration-300 group-hover:text-primary" />
+          <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg border border-border/60 bg-secondary/50 transition-colors duration-300">
+            <GraduationCap className="size-4 text-muted-foreground transition-colors duration-300" />
           </div>
           <div className="min-w-0 space-y-1">
             <div className="flex items-center gap-2 flex-wrap">
-              <h3 className="font-semibold text-foreground leading-tight group-hover:text-primary transition-colors duration-300">
+              <h3 className="font-semibold text-foreground leading-tight transition-colors duration-300">
                 {item.title}
               </h3>
               {item.isCurrent && (
                 <Badge
                   variant="default"
-                  className="text-[10px] px-1.5 py-0 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors"
+                  className="text-[10px] px-1.5 py-0 bg-primary/10 text-primary border-primary/20 transition-colors"
                 >
                   {locale === 'es' ? 'En curso' : 'In progress'}
                 </Badge>
@@ -88,7 +88,7 @@ function EducationItem({ item, locale }: EducationItemProps) {
               href={item.certificateUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
+              className="inline-flex items-center gap-1 text-xs text-muted-foreground transition-colors"
             >
               {locale === 'es' ? 'Ver certificado' : 'View certificate'}
               <ExternalLink className="size-3" />

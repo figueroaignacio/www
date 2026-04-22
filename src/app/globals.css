@@ -132,7 +132,7 @@
   }
 
   .card {
-    @apply block p-6 bg-card rounded-lg border border-border;
+    @apply block p-6 bg-card rounded-lg border  border-foreground;
   }
 
   .card-outline {
