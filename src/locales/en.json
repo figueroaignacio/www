@@ -62,7 +62,13 @@
         {
           "content": "<b>Engineering with AI.</b> I don't just build traditional web apps—I actively integrate LLMs and AI into products to automate complex workflows and deliver smarter features. Always shipping, always learning."
         }
-      ]
+      ],
+      "content": {
+        "title": "About",
+        "subtitle": "Engineering solutions with purpose.",
+        "bio": "I'm a Fullstack Developer and UTN student based in Argentina. I focus on building production-grade web applications that combine clean architecture with exceptional user experiences. Currently exploring the intersection of AI and software engineering.",
+        "details": "When I'm not coding, I'm probably drinking mate, listening to music, having a walk with my dog, learning about software, or thinking about how to simplify complex workflows. I believe in minimalism, both in design and in code. I'm passionate about software and AI."
+      }
     },
     "projects": {
       "title": "Projects",
@@ -136,6 +142,10 @@
       {
         "label": "Assistant",
         "href": "/assistant"
+      },
+      {
+        "label": "About",
+        "href": "/about"
       }
     ]
   },

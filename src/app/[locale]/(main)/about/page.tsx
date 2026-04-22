@@ -1,0 +1,26 @@
+import { AboutContent } from '@/features/about/components/about-content';
+import { type Locale } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { use } from 'react';
+
+interface AboutPageProps {
+  params: Promise<{ locale: Locale }>;
+}
+
+export default function AboutPage({ params }: AboutPageProps) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
+
+  return <AboutContent />;
+}
+
+export async function generateMetadata({ params }: AboutPageProps) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'metadata.aboutMe' });
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    keywords: t('keywords'),
+  };
+}

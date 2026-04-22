@@ -62,7 +62,13 @@
         {
           "content": "<b>Desarrollo con IA.</b> No solo creo aplicaciones web tradicionales: integro activamente LLMs e IA en los productos para automatizar flujos complejos y ofrecer funciones más inteligentes. Siempre iterando, siempre aprendiendo."
         }
-      ]
+      ],
+      "content": {
+        "title": "Sobre Mí",
+        "subtitle": "Desarrollo con propósito.",
+        "bio": "Soy Desarrollador Fullstack y estudiante de la UTN con base en Argentina. Me enfoco en construir aplicaciones web de nivel producción que combinan una arquitectura limpia con experiencias de usuario excepcionales. Actualmente explorando la intersección entre la IA y la ingeniería de software.",
+        "details": "Cuando no estoy programando, probablemente esté tomando mate, escuchando música, paseando a mi caniche o aprendiendo sobre software. Creo en el minimalismo, tanto en el diseño como en el código. Me apasiona el mundo de sistemas, el software, la inteligencia artificial."
+      }
     },
     "projects": {
       "title": "Proyectos",
@@ -136,6 +142,10 @@
       {
         "label": "Asistente",
         "href": "/assistant"
+      },
+      {
+        "label": "Sobre Mí",
+        "href": "/about"
       }
     ]
   },
