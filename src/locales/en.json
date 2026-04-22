@@ -1,8 +1,8 @@
 {
   "metadata": {
     "home": {
-      "title": "Fullstack Developer",
-      "description": "Portfolio of Ignacio Figueroa. Fullstack Developer specializing in Frontend, React, Next.js, and scalable architectures. UTN Student.",
+      "title": "Fullstack Engineer",
+      "description": "Ignacio Figueroa's Portfolio. Fullstack Engineer specializing in React, Next.js, Node.js and AI integration. Building scalable, production-ready web applications.",
       "keywords": "Web Developer, Fullstack, Frontend, React, Next.js, Argentina, UTN, Software Engineer, Portfolio"
     },
     "blog": {
@@ -29,14 +29,14 @@
     "home": {
       "greeting": "Hi, I'm",
       "name": "Ignacio Figueroa",
-      "title": "Fullstack Developer",
-      "description": "Building MateUI and NachAI. Exploring the potential of AI models in real-world applications and creating scalable products with solid architecture.",
+      "title": "Fullstack Developer - AI - Software Architecture",
+      "description": "Building web apps with React, Node.js, Nest.js, and Python. Curious about AI integration, focused on scalable architectures and clean code to solve real-world problems.",
       "actions": {
-        "viewProjects": "View projects",
-        "viewBlog": "View Blog",
+        "viewProjects": "View my work",
+        "viewBlog": "Read the Blog",
         "learnMore": "Learn more about me",
-        "chatAssistant": "Chat with assistant",
-        "viewCv": "View CV"
+        "chatAssistant": "Chat with AI",
+        "viewCv": "Download CV"
       },
       "quickLinks": []
     },
@@ -51,22 +51,22 @@
     },
     "aboutMe": {
       "title": "About Me",
-      "description": "Learning. Building. Coding. Improving. Asking AI. Fixing what AI broke. More coding. Drinking mate. Reading docs. And yes, more coding.",
+      "description": "I engineer solutions for complex problems. Focused on performance, accessibility, and clean architecture.",
       "items": [
         {
-          "content": "<b>Programming student at National Technological University (UTN) and a self-taught developer</b>. I'm passionate about <b>Fullstack Development</b>, building applications from scratch, and working with <b>modern technologies</b>. I enjoy designing solid <b>architectures</b> and applying <b>good practices</b> to keep projects organized and scalable."
+          "content": "<b>Fullstack Engineer & UTN Student.</b> I build production-grade web applications from the ground up. I specialize in modern React ecosystems, focusing on resilient architectures, clean code, and creating intuitive user experiences that drive results."
         },
         {
-          "content": "I often build <b>personal projects</b>, from small components to complete apps. Each project is a chance to experiment and explore new ideas. My strength is the <b>Frontend</b>, but I also enjoy working on the <b>Backend</b> by building APIs and understanding how everything connects."
+          "content": "<b>From Component to Cloud.</b> My core strength is crafting high-performance Frontend interfaces, but I bring the same rigor to Backend API design. I build complete, end-to-end solutions that are scalable, maintainable, and fast."
         },
         {
-          "content": "I'm currently diving into integrating <b>Artificial Intelligence</b> into modern applications to add smarter features and automate tasks. I'm always looking to <b>improve</b>, discover new tools, and grow through every project I build."
+          "content": "<b>Engineering with AI.</b> I don't just build traditional web apps—I actively integrate LLMs and AI into products to automate complex workflows and deliver smarter features. Always shipping, always learning."
         }
       ]
     },
     "projects": {
       "title": "Projects",
-      "description": "Thinking of ideas. Turning them into projects. Writing code. Breaking things. Fixing them. Asking AI. Arguing with AI. More code. Reading documentation. Drinking mate. Repeat.",
+      "description": "Real-world applications, open-source tools, and AI experiments built to solve problems. Explore my case studies in frontend architecture and fullstack development.",
       "personalProjects": "Personal projects",
       "commercialProjects": "Commercial projects"
     },
@@ -110,11 +110,11 @@
     },
     "mateUiCta": {
       "badge": "UI Components",
-      "title": "I have built {count} components",
-      "description": "A kit of ready-to-use components, designed to build interfaces quickly and consistently.",
+      "title": "Speed up your workflow with {count} pre-built components",
+      "description": "Stop reinventing the wheel. Use MateUI's accessible, customizable component library to ship beautiful interfaces faster.",
       "actions": {
-        "viewComponents": "View components",
-        "viewDocumentation": "View documentation"
+        "viewComponents": "Browse Components",
+        "viewDocumentation": "Read the Docs"
       },
       "href": {
         "components": "https://nach-ui.vercel.app/en/docs/components",
@@ -157,20 +157,20 @@
     "error": "An error occurred while loading the data.",
     "loader": "Loading...",
     "postItem": {
-      "readMore": "Read More",
+      "readMore": "Read Article",
       "minRead": "{count} min read"
     },
     "ctaCv": {
       "url": "/pdf/CV_Ignacio_Figueroa_Fullstack_Developer.pdf",
       "cta": {
-        "title": "Want to learn more about my professional profile?",
-        "description": "Check out my experience, projects and technical skills. Available for job opportunities.",
-        "text": "I invite you to see my CV."
+        "title": "Looking for technical details?",
+        "description": "Review my complete work history, technical stack, and education. Currently open to new Fullstack Engineering roles.",
+        "text": "Download My Resume"
       }
     },
     "ctaContact": {
-      "title": "Let's connect",
-      "description": "Always open to new opportunities, collaborations or simply chatting about technology."
+      "title": "Let's build something great",
+      "description": "Looking for a Fullstack Engineer for your next project? Let's talk about how I can help your team ship faster and build better products."
     },
     "chat": {
       "disclaimers": [

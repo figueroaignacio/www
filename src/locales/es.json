@@ -1,8 +1,8 @@
 {
   "metadata": {
     "home": {
-      "title": "Desarrollador Fullstack",
-      "description": "Portafolio de Ignacio Figueroa. Desarrollador Fullstack especializado en Frontend, React, Next.js y arquitecturas escalables. Estudiante UTN.",
+      "title": "Ingeniero Fullstack",
+      "description": "Portfolio de Ignacio Figueroa. Ingeniero Fullstack especializado en React, Next.js, Node.js e integración de IA. Construyendo aplicaciones web escalables y listas para producción.",
       "keywords": "Desarrollador Web, Fullstack, Frontend, React, Next.js, Argentina, UTN, Desarrollador Software, Portfolio"
     },
     "blog": {
@@ -29,14 +29,14 @@
     "home": {
       "greeting": "Hola, soy",
       "name": "Ignacio Figueroa",
-      "title": "Desarrollador Fullstack",
-      "description": "Construyendo MateUI y NachAI. Explorando el potencial de la integración de modelos de IA en aplicaciones reales y creando productos escalables con arquitectura sólida.",
+      "title": "Desarrollador Fullstack - IA - Arquitectura de Software",
+      "description": "Construyendo aplicaciones con React, Node.js, Nest.js y Python. Curioso por la integración de IA, enfocado en arquitecturas sólidas y código limpio para resolver problemas reales.",
       "actions": {
-        "viewProjects": "Ver proyectos",
-        "viewBlog": "Ver Blog",
+        "viewProjects": "Ver mi trabajo",
+        "viewBlog": "Leer el Blog",
         "learnMore": "Conocé más sobre mí",
-        "chatAssistant": "Charlar con asistente",
-        "viewCv": "Ver CV"
+        "chatAssistant": "Charlar con IA",
+        "viewCv": "Descargar CV"
       },
       "quickLinks": []
     },
@@ -51,22 +51,22 @@
     },
     "aboutMe": {
       "title": "Sobre mí",
-      "description": "Aprender. Construir. Programar. Mejorar. Preguntar a la IA. Arreglar lo que la IA rompió. Más código. Tomar mate. Leer documentación. Y sí, más código.",
+      "description": "Diseño soluciones a problemas complejos. Enfocado en la performance, la accesibilidad y la arquitectura limpia.",
       "items": [
         {
-          "content": "<b>Estudiante de Programación en la Universidad Tecnologica Nacional (UTN) y autodidacta</b>. Me interesa el <b>Desarrollo Fullstack</b>, construir aplicaciones desde cero y trabajar con <b>tecnologías modernas</b>. Disfruto pensar buenas <b>arquitecturas</b> y aplicar <b>buenas practicas</b> para mantener proyectos sólidos y escalables."
+          "content": "<b>Ingeniero Fullstack y Estudiante UTN.</b> Construyo aplicaciones web a nivel producción desde cero. Me especializo en el ecosistema moderno de React, priorizando arquitecturas resilientes, código limpio y experiencias de usuario que generan resultados."
         },
         {
-          "content": "Creo <b>proyectos propios</b> para experimentar ideas y mejorar mis habilidades. Mi fuerte es el <b>Frontend</b>, pero también disfruto trabajar el <b>Backend</b> construyendo API's y entendiendo cómo encaja todo."
+          "content": "<b>Del Componente a la Nube.</b> Mi fuerte es desarrollar interfaces Frontend de alto rendimiento, pero aplico el mismo rigor al diseño de APIs en el Backend. Construyo soluciones end-to-end escalables, mantenibles y veloces."
         },
         {
-          "content": "Estoy explorando cómo integrar <b>Inteligencia Artificial</b> en aplicaciones modernas para sumar funciones más inteligentes y automatizar procesos. Busco <b>mejorar</b> constantemente, aprender nuevas herramientas y crecer en cada proyecto."
+          "content": "<b>Desarrollo con IA.</b> No solo creo aplicaciones web tradicionales: integro activamente LLMs e IA en los productos para automatizar flujos complejos y ofrecer funciones más inteligentes. Siempre iterando, siempre aprendiendo."
         }
       ]
     },
     "projects": {
       "title": "Proyectos",
-      "description": "Pensar ideas. Convertirlas en proyectos. Escribir código. Romper cosas. Arreglarlas. Preguntar a la IA. Discutir con la IA. Más código. Leer documentación. Tomar mate. Repetir.",
+      "description": "Aplicaciones del mundo real, herramientas open-source y experimentos de IA creados para resolver problemas. Explorá mis casos de estudio en arquitectura frontend y desarrollo fullstack.",
       "personalProjects": "Proyectos personales",
       "commercialProjects": "Proyectos comerciales"
     },
@@ -110,11 +110,11 @@
     },
     "mateUiCta": {
       "badge": "Componentes de UI",
-      "title": "He construido {count} componentes",
-      "description": "Un kit de componentes listos para usar, diseñados para construir interfaces rápido y con consistencia.",
+      "title": "Acelerá tu desarrollo con {count} componentes preconstruidos",
+      "description": "No reinventes la rueda. Usá la librería de componentes accesible y personalizable de MateUI para crear interfaces hermosas más rápido.",
       "actions": {
-        "viewComponents": "Ver componentes",
-        "viewDocumentation": "Ver documentación"
+        "viewComponents": "Explorar Componentes",
+        "viewDocumentation": "Leer la Documentación"
       },
       "href": {
         "components": "https://nach-ui.vercel.app/es/docs/components",
@@ -157,20 +157,20 @@
     "error": "Ha ocurrido un error al cargar los datos.",
     "loader": "Cargando...",
     "postItem": {
-      "readMore": "Leer Más",
+      "readMore": "Leer Artículo",
       "minRead": "{count} min de lectura"
     },
     "ctaCv": {
       "url": "/pdf/CV_Ignacio_Figueroa_Desarrollador_Fullstack.pdf",
       "cta": {
-        "title": "¿Querés conocer más sobre mi perfil profesional?",
-        "description": "Conocé mi experiencia, proyectos y habilidades técnicas. Disponible para oportunidades laborales.",
-        "text": "Te invito a ver mi CV."
+        "title": "¿Buscás detalles técnicos?",
+        "description": "Revisá mi historial laboral completo, stack tecnológico y educación. Actualmente abierto a nuevos roles como Ingeniero Fullstack.",
+        "text": "Descargar mi CV"
       }
     },
     "ctaContact": {
-      "title": "Conectemos",
-      "description": "Siempre abierto a nuevas oportunidades, colaboraciones o simplemente charlar sobre tecnología."
+      "title": "Construyamos algo increíble",
+      "description": "¿Buscando un Ingeniero Fullstack para tu próximo proyecto? Hablemos de cómo puedo ayudar a tu equipo a crear mejores productos más rápido."
     },
     "chat": {
       "disclaimers": [
