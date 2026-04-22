@@ -18,7 +18,7 @@ export function NavigationBar() {
 
   return (
     <nav
-      className="hidden lg:flex lg:justify-between lg:items-center sticky top-0 py-5 bg-background/60 backdrop-blur-lg z-100 container"
+      className="hidden lg:flex lg:justify-between lg:items-center sticky top-0 py-5 bg-background/30 backdrop-blur-sm z-100 container"
       aria-label="Main Navigation"
     >
       <Logo />
