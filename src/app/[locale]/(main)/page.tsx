@@ -1,4 +1,5 @@
 import { CTACurriculum } from '@/features/home/components/cta-curriculum';
+import { EducationSection } from '@/features/home/components/education-section';
 import { ExperienceSection } from '@/features/home/components/experience-section';
 import { HomeHero } from '@/features/home/components/home-hero';
 import { NachUICta } from '@/features/home/components/nach-ui-cta';
@@ -37,10 +38,11 @@ export default function HomePage({ params }: HomePageProps) {
       <div className="space-y-24 mb-20">
         <HomeHero />
         <ProjectsSection />
-        <NachUICta />
         <ExperienceSection />
-        <CTACurriculum />
+        <NachUICta />
+        <EducationSection />
         <Testimonials />
+        <CTACurriculum />
       </div>
     </>
   );

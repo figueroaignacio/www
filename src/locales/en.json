@@ -90,6 +90,10 @@
       "title": "Experience",
       "description": "A summary of my journey as a developer"
     },
+    "education": {
+      "title": "Education",
+      "description": "Academic background and certifications"
+    },
     "testimonials": {
       "title": "What people say about me.",
       "showMore": "Show more",

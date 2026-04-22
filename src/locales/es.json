@@ -90,6 +90,10 @@
       "title": "Experiencia",
       "description": "Un resumen de mi recorrido como desarrollador"
     },
+    "education": {
+      "title": "Educación",
+      "description": "Formación académica y certificaciones"
+    },
     "testimonials": {
       "title": "Lo que dicen sobre mi.",
       "showMore": "Ver más",
