@@ -154,6 +154,30 @@
     ]
   },
   "components": {
+    "terminalPrompt": {
+      "placeholder": "type command...",
+      "notFound": "zsh: command not found:",
+      "permissionDenied": "Permission denied",
+      "sudoMessage": "Nice try! But you do not have root privileges here. 🛑",
+      "commands": [
+        { "id": "home", "label": "cd ~", "desc": "navigate to home", "path": "/" },
+        {
+          "id": "assistant",
+          "label": "cd ~/assistant",
+          "desc": "chat with ai assistant",
+          "path": "/assistant"
+        },
+        { "id": "about", "label": "cd ~/about", "desc": "navigate to about", "path": "/about" },
+        {
+          "id": "projects",
+          "label": "cd ~/projects",
+          "desc": "navigate to projects",
+          "path": "/projects"
+        },
+        { "id": "email", "label": "mailto:me", "desc": "send an email", "path": "mailto" },
+        { "id": "sudo", "label": "sudo rm -rf /", "desc": "do not press", "path": "sudo" }
+      ]
+    },
     "projectItem": {
       "actions": {
         "details": "Details",
