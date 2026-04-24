@@ -5,7 +5,7 @@ import { usePathname } from '@/i18n/navigation';
 export function TerminalPrompt() {
   const pathname = usePathname();
 
-  const displayPath = pathname === '/' ? '~' : `~${pathname}`;
+  const displayPath = pathname === '/' ? '~/home' : `~${pathname}`;
 
   return (
     <div className="fixed bottom-2 left-2 md:bottom-4 md:left-4 z-50 font-mono text-xs max-w-lg pointer-events-none hidden md:block">
