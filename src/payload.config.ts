@@ -50,9 +50,5 @@ export default buildConfig({
     push: false,
   }),
   sharp,
-
-  plugins: [
-    payloadCloudPlugin(),
-    // storage-adapter-placeholder
-  ],
+  plugins: [payloadCloudPlugin()],
 });
