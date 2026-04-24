@@ -27,15 +27,25 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <div>
+    <div className="max-w-3xl mx-auto py-8 animate-fade-in-up">
       <ProjectHeaderPage
         title={project.title}
         description={project.description}
         demo={project.demo || ''}
         repository={project.repository || ''}
+        icon={project.icon as string}
       />
-      <ProjectVideo videoUrl={project.videoUrl} />
-      <RichText data={project.body} className="prose" />
+
+      <div className="animate-fade-in-up delay-150">
+        <ProjectVideo videoUrl={project.videoUrl} />
+      </div>
+
+      <div className="animate-fade-in-up delay-300 mt-12 mb-20">
+        <RichText
+          data={project.body}
+          className="prose prose-neutral dark:prose-invert max-w-none font-light leading-relaxed"
+        />
+      </div>
     </div>
   );
 }

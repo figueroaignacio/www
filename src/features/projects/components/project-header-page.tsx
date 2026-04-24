@@ -1,6 +1,5 @@
 import { BackButton } from '@/components/back-button';
 import { GitHubIcon } from '@/components/tech-icons/github-icon';
-import { Button } from '@/components/ui/button';
 import type { Project } from '@/payload-types';
 import { ExternalLink } from 'lucide-react';
 
@@ -12,42 +11,54 @@ export function ProjectHeaderPage({
   icon,
 }: Partial<Project>) {
   return (
-    <header className="space-y-6">
-      <div className="flex justify-between items-center mb-5">
-        <BackButton />
+    <header className="mb-12 flex flex-col items-start pt-4 pb-8 border-b border-border/40">
+      <div className="mb-8">
+        <BackButton className="text-muted-foreground hover:text-foreground transition-colors opacity-70 hover:opacity-100" />
       </div>
-      <div className="space-y-6">
-        {icon && (
-          <div
-            className="mt-1 size-8 shrink-0 [&>svg]:size-full [&>svg]:text-foreground"
-            dangerouslySetInnerHTML={{ __html: icon }}
-          />
+      <div className="flex flex-col gap-5 w-full">
+        <div className="flex flex-col gap-4">
+          {icon && (
+            <div
+              className="size-8 shrink-0 [&>svg]:size-full [&>svg]:text-foreground text-muted-foreground"
+              dangerouslySetInnerHTML={{ __html: icon }}
+            />
+          )}
+          <h1 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground">
+            {title}
+          </h1>
+        </div>
+        {description && (
+          <p className="text-lg md:text-xl text-muted-foreground/80 leading-relaxed max-w-[90%] md:max-w-[80%] font-light">
+            {description}
+          </p>
         )}
-        <h1 className="text-3xl font-semibold">{title}</h1>
-        {description && <p className="text-muted-foreground">{description}</p>}
       </div>
-      <div className="mb-5 gap-x-2 flex items-center">
-        {demo && (
-          <a href={demo} target="_blank" rel="noopener noreferrer">
-            <Button
-              variant="link"
-              size="sm"
-              className="px-0"
-              leftIcon={<ExternalLink className="size-4" />}
+      {(demo || repository) && (
+        <div className="mt-8 flex items-center gap-4 text-sm font-medium">
+          {demo && (
+            <a
+              href={demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground text-background hover:opacity-90 transition-opacity"
             >
-              Demo
-            </Button>
-          </a>
-        )}
-        <span>|</span>
-        {repository && (
-          <a href={repository} target="_blank" rel="noopener noreferrer">
-            <Button variant="link" size="sm" className=" px-0" leftIcon={<GitHubIcon />}>
-              Source Code
-            </Button>
-          </a>
-        )}
-      </div>
+              <span>Visit Demo</span>
+              <ExternalLink className="size-4" />
+            </a>
+          )}
+          {repository && (
+            <a
+              href={repository}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-border hover:bg-muted transition-colors text-foreground"
+            >
+              <GitHubIcon />
+              <span>Source</span>
+            </a>
+          )}
+        </div>
+      )}
     </header>
   );
 }

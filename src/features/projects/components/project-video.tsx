@@ -20,14 +20,19 @@ export function ProjectVideo({
   if (!videoUrl) return null;
 
   return (
-    <div className={cn('my-8 rounded-sm overflow-hidden bg-muted shadow-sm', className)}>
+    <div
+      className={cn(
+        'my-12 overflow-hidden rounded-sm bg-muted/20 border border-border/40 shadow-sm ring-1 ring-border/10',
+        className,
+      )}
+    >
       <video
         src={videoUrl}
         controls={controls}
         autoPlay={autoPlay}
         muted={muted}
         loop={loop}
-        className="w-full aspect-video"
+        className="w-full aspect-video object-cover"
         preload="metadata"
         playsInline
       >
