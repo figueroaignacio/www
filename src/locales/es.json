@@ -168,12 +168,6 @@
           "path": "/assistant"
         },
         { "id": "about", "label": "cd ~/about", "desc": "ir a sobre mí", "path": "/about" },
-        {
-          "id": "projects",
-          "label": "cd ~/projects",
-          "desc": "ir a proyectos",
-          "path": "/projects"
-        },
         { "id": "email", "label": "mailto:me", "desc": "enviar un email", "path": "mailto" },
         { "id": "sudo", "label": "sudo rm -rf /", "desc": "no presionar", "path": "sudo" }
       ]

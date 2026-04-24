@@ -11,11 +11,11 @@ type CommandType = { id: string; label: string; desc: string; path: string };
 
 const PromptPrefix = ({ path, className }: { path: string; className?: string }) => (
   <span className={className}>
-    <span className="text-green-500">visitor</span>
+    <span className="text-emerald-600 dark:text-green-500">visitor</span>
     <span className="text-muted-foreground">@</span>
-    <span className="text-cyan-400">ignaciofigueroa</span>
+    <span className="text-indigo-600 dark:text-cyan-400">ignaciofigueroa</span>
     <span className="text-foreground">:</span>
-    <span className="text-yellow-500">{path}</span>
+    <span className="text-amber-600 dark:text-yellow-500">{path}</span>
   </span>
 );
 
@@ -96,12 +96,14 @@ export function TerminalPrompt() {
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <Dialog.Content className="max-w-2xl bg-[#0a0a0a] border border-[#333] p-0 font-mono text-sm sm:rounded-lg shadow-2xl overflow-hidden">
-          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] z-10 opacity-30 mix-blend-overlay" />
+        <Dialog.Content className="max-w-2xl bg-white dark:bg-[#0a0a0a] border border-zinc-200 dark:border-[#333] p-0 font-mono text-sm overflow-hidden rounded-sm">
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_50%,transparent_50%)] dark:bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] z-10 opacity-50 dark:opacity-30 mix-blend-overlay" />
 
-          <div className="flex items-center p-4 border-b border-white/10 relative z-20 bg-black/50">
+          <div className="flex items-center p-4 border-b border-zinc-100 dark:border-white/10 relative z-20 bg-zinc-50/50 dark:bg-black/50">
             <PromptPrefix path={displayPath} className="hidden sm:inline whitespace-nowrap mr-2" />
-            <span className="text-yellow-500 sm:hidden whitespace-nowrap mr-2">{displayPath}</span>
+            <span className="text-amber-600 dark:text-yellow-500 sm:hidden whitespace-nowrap mr-2">
+              {displayPath}
+            </span>
             <span className="text-foreground mr-2">$</span>
 
             <input
@@ -120,7 +122,7 @@ export function TerminalPrompt() {
 
           <div className="p-2 max-h-[60vh] overflow-y-auto relative z-20">
             {filteredCommands.length === 0 ? (
-              <div className="text-red-400/80 p-4 text-center text-xs">
+              <div className="text-red-500 dark:text-red-400/80 p-4 text-center text-xs">
                 {t('notFound')} {search}
               </div>
             ) : (
@@ -128,10 +130,10 @@ export function TerminalPrompt() {
                 {filteredCommands.map((cmd) => (
                   <li
                     key={cmd.id}
-                    className="flex justify-between items-center p-3 hover:bg-white/5 cursor-pointer rounded-md text-foreground transition-colors group"
+                    className="flex justify-between items-center p-3 hover:bg-zinc-100 dark:hover:bg-white/5 cursor-pointer rounded-md text-foreground transition-colors group"
                     onClick={() => executeCommand(cmd)}
                   >
-                    <span className="text-blue-400 font-semibold group-hover:text-blue-300 transition-colors">
+                    <span className="text-indigo-600 dark:text-blue-400 font-semibold group-hover:text-indigo-500 dark:group-hover:text-blue-300 transition-colors">
                       {cmd.label}
                     </span>
                     <span className="text-muted-foreground text-xs opacity-60 group-hover:opacity-100 transition-opacity">
