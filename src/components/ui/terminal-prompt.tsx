@@ -8,7 +8,7 @@ export function TerminalPrompt() {
   const displayPath = pathname === '/' ? '~' : `~${pathname}`;
 
   return (
-    <div className="fixed bottom-2 left-2 md:bottom-4 md:left-4 z-50 font-mono text-xs pointer-events-none hidden md:block">
+    <div className="fixed bottom-2 left-2 md:bottom-4 md:left-4 z-50 font-mono text-xs max-w-lg pointer-events-none hidden md:block">
       <span className="text-green-500">visitor@ignaciofigueroa</span>
       <span className="text-foreground">:</span>
       <span>{displayPath}</span>
