@@ -25,7 +25,7 @@ export function ChatHeader({ onResetChat }: ChatHeaderProps) {
         <div className="flex items-center gap-1">
           <ThemeToggle />
           <Dialog>
-            <Dialog.Trigger>
+            <Dialog.Trigger asChild>
               <button
                 className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-card transition-colors duration-150 text-sm"
                 title={t('reset')}
