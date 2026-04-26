@@ -10,12 +10,12 @@ export const routing = defineRouting({
   },
   domains: [
     {
-      domain: 'en.ignaciofigueroa.me',
+      domain: 'en.ignaciofigueroa.dev',
       locales: ['en'],
       defaultLocale: 'en',
     },
     {
-      domain: 'es.ignaciofigueroa.me',
+      domain: 'es.ignaciofigueroa.dev',
       locales: ['es'],
       defaultLocale: 'es',
     },
