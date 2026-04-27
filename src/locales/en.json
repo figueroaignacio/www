@@ -5,11 +5,6 @@
       "description": "Ignacio Figueroa's Portfolio. Fullstack Engineer specializing in React, Next.js, Node.js and AI integration. Building scalable, production-ready web applications.",
       "keywords": "Web Developer, Fullstack, Frontend, React, Next.js, Argentina, UTN, Software Engineer, Portfolio, Linux, Fedora"
     },
-    "blog": {
-      "title": "Web Development & Tech Blog",
-      "description": "Articles, tutorials, and insights on frontend development, backend, best practices, AI, and career growth in tech.",
-      "keywords": "Web Dev Blog, React Tutorials, Next.js, Software Architecture, Programming, Frontend Tips"
-    },
     "aboutMe": {
       "title": "About Me",
       "description": "Learn about my journey as a developer, my studies at UTN, my tech stack (React, Node, AI), and my professional experience.",
@@ -33,20 +28,10 @@
       "description": "Building web apps with React, Node.js, Nest.js, and Python. Curious about AI integration, focused on scalable architectures and clean code to solve real-world problems.",
       "actions": {
         "viewProjects": "View my work",
-        "viewBlog": "Read the Blog",
         "learnMore": "Learn more about me",
         "chatAssistant": "Chat with AI",
         "viewCv": "Download CV"
       }
-    },
-    "blog": {
-      "title": "Blog",
-      "description": "Articles about web development, software architecture, and the technologies I use daily. I share what I learn while building.",
-      "postedBy": "Posted by Ignacio Figueroa on"
-    },
-    "recentPosts": {
-      "title": "Recent Posts",
-      "viewAll": "View all"
     },
     "aboutMe": {
       "title": "About Me",
@@ -170,10 +155,6 @@
     },
     "error": "An error occurred while loading the data.",
     "loader": "Loading...",
-    "postItem": {
-      "readMore": "Read Article",
-      "minRead": "{count} min read"
-    },
     "ctaCv": {
       "url": "/pdf/CV_Ignacio_Figueroa_Fullstack_Developer.pdf",
       "cta": {
@@ -253,50 +234,6 @@
         }
       }
     },
-    "categoryFilter": {
-      "allCategories": "All categories"
-    },
-    "openToWorkBadge": "Open to work",
-    "comments": {
-      "title": "Community",
-      "count": "({count})",
-      "placeholder": {
-        "authenticated": "Share your thoughts...",
-        "unauthenticated": "Sign in to join the conversation"
-      },
-      "button": {
-        "submit": "Post",
-        "submitting": "Posting...",
-        "delete": "Delete"
-      },
-      "logout": "Log Out",
-      "status": {
-        "postingAs": "{name}",
-        "loading": "Loading comments...",
-        "errorDelete": "The comment could not be deleted",
-        "empty": "There are no reflections here yet...",
-        "error": "Error posting comment",
-        "confirmDeleteTitle": "Delete comment?",
-        "confirmDelete": "This action cannot be undone. The comment will be permanently removed."
-      },
-      "modal": {
-        "title": "Join the conversation",
-        "description": "Sign in with your GitHub account to leave a comment.",
-        "button": "Continue with GitHub",
-        "footer": "No long forms • Just one click",
-        "cancel": "Cancel"
-      },
-      "overlay": "Wait a moment..."
-    },
-    "pagination": {
-      "previous": "Previous",
-      "next": "Next",
-      "info": "Page {current} of {total}"
-    },
-    "commentNotification": {
-      "user": "Ignacio Figueroa",
-      "time": "Now",
-      "message": "What did you think of the article? If it was useful or you want to add something, leave a comment below 👇"
-    }
+    "openToWorkBadge": "Open to work"
   }
 }

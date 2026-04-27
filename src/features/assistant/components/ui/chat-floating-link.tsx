@@ -11,7 +11,6 @@ export function ChatFloatingLink() {
   const pathname = usePathname();
 
   if (pathname?.includes('/assistant')) return null;
-  if (pathname?.includes('/blog')) return null;
 
   return (
     <div className="fixed bottom-2 right-2 z-50">

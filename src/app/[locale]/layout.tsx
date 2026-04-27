@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     template: '%s | Ignacio Figueroa',
   },
   description:
-    'Full Stack Developer specializing in React, Next.js, and TypeScript. Portfolio, blog, and projects.',
+    'Full Stack Developer specializing in React, Next.js, and TypeScript. Portfolio and projects.',
   keywords: [
     'Full Stack Developer',
     'React',

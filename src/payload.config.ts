@@ -5,11 +5,9 @@ import path from 'path';
 import { buildConfig } from 'payload';
 import sharp from 'sharp';
 import { fileURLToPath } from 'url';
-import { PostCategories } from './collections/Categories';
 import { Education } from './collections/Education';
 import { Experience } from './collections/Experience';
 import { Media } from './collections/Media';
-import { Posts } from './collections/Posts';
 import { Projects } from './collections/Projects';
 import { TechStack } from './collections/TechStack';
 import { Testimonials } from './collections/Testimonials';
@@ -25,17 +23,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [
-    Users,
-    Experience,
-    Education,
-    Posts,
-    Projects,
-    Media,
-    TechStack,
-    PostCategories,
-    Testimonials,
-  ],
+  collections: [Users, Experience, Education, Projects, Media, TechStack, Testimonials],
   editor: lexicalEditor({
     features: ({ defaultFeatures }) => [...defaultFeatures],
   }),

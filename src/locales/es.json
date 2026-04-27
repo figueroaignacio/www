@@ -5,11 +5,6 @@
       "description": "Portfolio de Ignacio Figueroa. Ingeniero Fullstack especializado en React, Next.js, Node.js e integración de IA. Construyendo aplicaciones web escalables y listas para producción.",
       "keywords": "Desarrollador Web, Fullstack, Frontend, React, Next.js, Argentina, UTN, Desarrollador Software, Portfolio, Linux, Fedora"
     },
-    "blog": {
-      "title": "Blog de Desarrollo Web y Tecnología",
-      "description": "Artículos, tutoriales y reflexiones sobre desarrollo frontend, backend, buenas prácticas, AI y carrera profesional en tecnología.",
-      "keywords": "Blog Desarrollo Web, Tutoriales React, Next.js, Arquitectura de Software, Programación, Frontend Tips"
-    },
     "aboutMe": {
       "title": "Sobre Mí",
       "description": "Conoce mi trayectoria como desarrollador, mis estudios en la UTN, mi stack tecnológico (React, Node, AI) y mi experiencia profesional.",
@@ -33,20 +28,10 @@
       "description": "Construyendo aplicaciones con React, Node.js, Nest.js y Python. Curioso por la integración de IA, enfocado en arquitecturas sólidas y código limpio para resolver problemas reales.",
       "actions": {
         "viewProjects": "Ver mi trabajo",
-        "viewBlog": "Leer el Blog",
         "learnMore": "Conocé más sobre mí",
         "chatAssistant": "Charlar con IA",
         "viewCv": "Descargar CV"
       }
-    },
-    "blog": {
-      "title": "Blog",
-      "description": "Artículos sobre desarrollo web, arquitectura de software, y las tecnologías que uso día a día. Comparto lo que aprendo mientras construyo.",
-      "postedBy": "Publicado por Ignacio Figueroa el"
-    },
-    "recentPosts": {
-      "title": "Últimos artículos",
-      "viewAll": "Ver todos"
     },
     "aboutMe": {
       "title": "Sobre mí",
@@ -170,10 +155,6 @@
     },
     "error": "Ha ocurrido un error al cargar los datos.",
     "loader": "Cargando...",
-    "postItem": {
-      "readMore": "Leer Artículo",
-      "minRead": "{count} min de lectura"
-    },
     "ctaCv": {
       "url": "/pdf/CV_Ignacio_Figueroa_Desarrollador_Fullstack.pdf",
       "cta": {
@@ -245,50 +226,6 @@
         "inputPlaceholder": "¿Cual es tu duda?"
       }
     },
-    "categoryFilter": {
-      "allCategories": "Todas las categorías"
-    },
-    "openToWorkBadge": "Disponible para trabajar",
-    "comments": {
-      "title": "Comunidad",
-      "count": "({count})",
-      "placeholder": {
-        "authenticated": "Comparte lo que piensas...",
-        "unauthenticated": "Inicia sesión para participar en la conversación"
-      },
-      "button": {
-        "submit": "Publicar",
-        "delete": "Eliminar",
-        "submitting": "Enviando..."
-      },
-      "logout": "Cerrar sesión",
-      "status": {
-        "postingAs": "{name}",
-        "loading": "Cargando comentarios...",
-        "error": "Error al publicar el comentario",
-        "errorDelete": "No se pudo eliminar el comentario",
-        "empty": "Aún no hay reflexiones aquí...",
-        "confirmDeleteTitle": "¿Eliminar comentario?",
-        "confirmDelete": "Esta acción no se puede deshacer. El comentario desaparecerá permanentemente."
-      },
-      "modal": {
-        "title": "Únete a la charla",
-        "description": "Inicia sesión con tu cuenta de GitHub para poder dejar un comentario.",
-        "button": "Continuar con GitHub",
-        "footer": "Sin registros largos • Solo un click",
-        "cancel": "Cancelar"
-      },
-      "overlay": "Espera un momento..."
-    },
-    "pagination": {
-      "previous": "Anterior",
-      "next": "Siguiente",
-      "info": "Página {current} de {total}"
-    },
-    "commentNotification": {
-      "user": "Ignacio Figueroa",
-      "time": "Ahora",
-      "message": "¿Qué te pareció el artículo? Si te sirvió o querés agregar algo, dejame un comentario abajo 👇"
-    }
+    "openToWorkBadge": "Disponible para trabajar"
   }
 }
