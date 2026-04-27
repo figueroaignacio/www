@@ -1,6 +1,6 @@
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
-import { ChatFloatingLink } from '@/features/assistant/components/chat-floating-link';
+import { ChatFloatingLink } from '@/features/assistant/components/ui/chat-floating-link';
 import { routing } from '@/i18n/routing';
 import { hasLocale, type Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';

@@ -1,6 +1,6 @@
 'use client';
 
-import { AssistantAvatar } from '@/features/assistant/components/assistant-avatar';
+import { AssistantAvatar } from '@/features/assistant/components/ui/assistant-avatar';
 import { Link } from '@/i18n/navigation';
 import { FileText } from 'lucide-react';
 import { motion, type Variants } from 'motion/react';

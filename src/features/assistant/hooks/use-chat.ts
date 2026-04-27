@@ -1,85 +1,125 @@
 'use client';
 
+import { ASSISTANT_API_URL } from '@/lib/constants';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import type { Message } from '../types';
-import { useLocalStorage } from '@/hooks/use-local-storage';
+
+const STORAGE_KEY = 'chat-messages';
+
+function loadMessages(): Message[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+}
+
+function persistMessages(messages: Message[]): void {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
+  } catch {}
+}
 
 export function useChat() {
   const t = useTranslations('components.chat.messages');
-
-  const [messages, setMessages, removeMessages, isMounted] = useLocalStorage<Message[]>('chat-messages', []);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const abortRef = useRef<AbortController | null>(null);
 
-  const sendMessage = async (content: string) => {
-    if (!content.trim() || isLoading) return;
+  // Hydrate from localStorage once
+  useEffect(() => {
+    setMessages(loadMessages());
+    setIsMounted(true);
+  }, []);
 
-    const userMessage: Message = { role: 'user', content: content.trim() };
-    setMessages((prev) => [...prev, userMessage]);
-    setIsLoading(true);
+  const sendMessage = useCallback(
+    async (content: string) => {
+      const trimmed = content.trim();
+      if (!trimmed || isLoading) return;
 
-    try {
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          messages: [...messages, userMessage],
-        }),
+      abortRef.current?.abort();
+      const controller = new AbortController();
+      abortRef.current = controller;
+
+      const userMessage: Message = { role: 'user', content: trimmed };
+
+      setMessages((prev) => {
+        const next = [...prev, userMessage];
+        persistMessages(next);
+        return next;
       });
+      setIsLoading(true);
 
-      if (!response.ok) throw new Error('Failed to get response');
-      if (!response.body) throw new Error('No response body');
+      try {
+        const response = await fetch(`${ASSISTANT_API_URL}/chat`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: trimmed }),
+          signal: controller.signal,
+        });
 
-      const reader = response.body.getReader();
-      const decoder = new TextDecoder();
-      let done = false;
-      let streamedText = '';
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        if (!response.body) throw new Error('No response body');
 
-      setMessages((prev) => [...prev, { role: 'assistant', content: '' }]);
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let streamedText = '';
 
-      while (!done) {
-        const { value, done: readerDone } = await reader.read();
-        done = readerDone;
-        if (value) {
+        setMessages((prev) => [...prev, { role: 'assistant', content: '' }]);
+
+        while (true) {
+          const { value, done } = await reader.read();
+          if (done) break;
+
           streamedText += decoder.decode(value, { stream: true });
+          const text = streamedText;
+
           setMessages((prev) => {
             const updated = [...prev];
             updated[updated.length - 1] = {
               ...updated[updated.length - 1],
-              content: streamedText,
+              content: text,
             };
             return updated;
           });
         }
+
+        setMessages((prev) => {
+          persistMessages(prev);
+          return prev;
+        });
+      } catch (error) {
+        if ((error as Error).name === 'AbortError') return;
+
+        console.error('Chat error:', error);
+        setMessages((prev) => {
+          const next = [...prev, { role: 'assistant' as const, content: t('error') }];
+          persistMessages(next);
+          return next;
+        });
+      } finally {
+        setIsLoading(false);
+        abortRef.current = null;
       }
-    } catch (error) {
-      console.error('Chat error:', error);
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: 'assistant',
-          content: t('error'),
-        },
-      ]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+    },
+    [isLoading, t],
+  );
 
-  const handleSuggestionClick = (text: string) => {
-    sendMessage(text);
-  };
-
-  const resetChat = () => {
-    removeMessages();
-  };
+  const resetChat = useCallback(() => {
+    abortRef.current?.abort();
+    setMessages([]);
+    localStorage.removeItem(STORAGE_KEY);
+  }, []);
 
   return {
     messages,
     isLoading,
     sendMessage,
-    handleSuggestionClick,
     resetChat,
     isMounted,
-  };
+  } as const;
 }

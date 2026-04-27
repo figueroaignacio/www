@@ -1,7 +1,6 @@
 'use client';
 
 import { useChat } from '@/features/assistant/hooks/use-chat';
-import { useChatInput } from '@/features/assistant/hooks/use-chat-input';
 import { useState } from 'react';
 import { ChatHeader } from './chat-header';
 import { ChatHero } from './chat-hero';
@@ -9,26 +8,27 @@ import { ChatInput } from './chat-input';
 import { ChatMessages } from './chat-messages';
 
 export function ChatPage() {
-  const { messages, isLoading, sendMessage, handleSuggestionClick, resetChat, isMounted } =
-    useChat();
-  const { message, setMessage, handleSubmit } = useChatInput(sendMessage);
+  const { messages, isLoading, sendMessage, resetChat, isMounted } = useChat();
+  const [message, setMessage] = useState('');
   const [hasInteracted, setHasInteracted] = useState(false);
 
-  const handleHeroSubmit = (e?: React.FormEvent) => {
+  const handleSend = () => {
     if (message.trim()) {
       setHasInteracted(true);
-      handleSubmit(e);
+      sendMessage(message);
+      setMessage('');
     }
   };
 
   const handleQuickAction = (text: string) => {
     setHasInteracted(true);
-    handleSuggestionClick(text);
+    sendMessage(text);
   };
 
   const handleReset = () => {
     resetChat();
     setHasInteracted(false);
+    setMessage('');
   };
 
   if (!isMounted) {
@@ -56,7 +56,7 @@ export function ChatPage() {
                   message={message}
                   isLoading={isLoading}
                   onMessageChange={setMessage}
-                  onSubmit={handleHeroSubmit}
+                  onSubmit={handleSend}
                   isHero={true}
                 />
               </div>
@@ -79,7 +79,7 @@ export function ChatPage() {
                   message={message}
                   isLoading={isLoading}
                   onMessageChange={setMessage}
-                  onSubmit={handleSubmit}
+                  onSubmit={handleSend}
                   isHero={false}
                 />
               </div>

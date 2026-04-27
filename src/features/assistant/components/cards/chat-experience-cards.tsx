@@ -3,9 +3,8 @@
 import { Badge } from '@/components/ui/badge';
 import type { Experience } from '@/payload-types';
 import { Briefcase, ExternalLink } from 'lucide-react';
+import { useChatExperience } from '../../hooks/use-chat-data';
 import { useLocale } from 'next-intl';
-import { useEffect, useState } from 'react';
-import { getChatExperience } from '../actions/get-chat-experience';
 
 function formatDate(dateString: string, locale: string): string {
   return new Date(dateString).toLocaleDateString(locale, {
@@ -15,23 +14,8 @@ function formatDate(dateString: string, locale: string): string {
 }
 
 export function ChatExperienceCards() {
-  const [experiences, setExperiences] = useState<Experience[]>([]);
-  const [loading, setLoading] = useState(true);
   const locale = useLocale();
-
-  useEffect(() => {
-    async function fetchExperience() {
-      try {
-        const data = await getChatExperience(locale);
-        setExperiences(data);
-      } catch (error) {
-        console.error('Failed to fetch experience for chat', error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchExperience();
-  }, [locale]);
+  const { data: experiences, isLoading: loading } = useChatExperience();
 
   if (loading) {
     return (
@@ -46,7 +30,7 @@ export function ChatExperienceCards() {
     );
   }
 
-  if (experiences.length === 0) return null;
+  if (!experiences || experiences.length === 0) return null;
 
   return (
     <div className="mt-4">

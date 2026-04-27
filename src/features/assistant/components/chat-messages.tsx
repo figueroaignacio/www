@@ -2,10 +2,10 @@
 
 import { useEffect, useRef } from 'react';
 import type { Message } from '../types';
-import { AssistantAvatar } from './assistant-avatar';
-import { ChatLoading } from './chat-loading';
+import { AssistantAvatar } from './ui/assistant-avatar';
+import { ChatLoading } from './ui/chat-loading';
 import { ChatMessage } from './chat-message';
-import { ChatSuggestions } from './chat-suggestions';
+import { ChatSuggestions } from './ui/chat-suggestions';
 
 interface ChatMessagesProps {
   messages: Message[];

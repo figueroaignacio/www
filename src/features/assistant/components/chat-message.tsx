@@ -1,16 +1,15 @@
 import { motion } from 'motion/react';
-import { memo } from 'react';
 import type { Message } from '../types';
-import { ChatContactCards } from './chat-contact-cards';
-import { ChatExperienceCards } from './chat-experience-cards';
-import { ChatMarkdownContent } from './chat-markdown-content';
-import { ChatProjectCards } from './chat-project-cards';
+import { ChatContactCards } from './cards/chat-contact-cards';
+import { ChatExperienceCards } from './cards/chat-experience-cards';
+import { ChatMarkdownContent } from './ui/chat-markdown-content';
+import { ChatProjectCards } from './cards/chat-project-cards';
 
 interface ChatMessageProps {
   message: Message;
 }
 
-export const ChatMessage = memo(function ChatMessage({ message }: ChatMessageProps) {
+export function ChatMessage({ message }: ChatMessageProps) {
   const isUser = message.role === 'user';
   const showProjects = message.content.includes('[SHOW_PROJECTS]');
   const showExperience = message.content.includes('[SHOW_EXPERIENCE]');
@@ -46,4 +45,4 @@ export const ChatMessage = memo(function ChatMessage({ message }: ChatMessagePro
       </div>
     </motion.div>
   );
-});
+}
