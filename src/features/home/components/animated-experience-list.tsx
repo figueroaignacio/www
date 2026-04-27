@@ -43,7 +43,7 @@ export function AnimatedExperienceList({ children }: AnimatedExperienceListProps
         whileInView={{ height: '100%' }}
         viewport={{ once: true }}
         transition={{ duration: 1, ease: 'easeInOut', delay: 0.2 }}
-        className="absolute left-[11px] top-2 w-px bg-linear-to-b from-primary via-border to-border/20"
+        className="absolute left-[11px] top-2 w-px bg-linear-to-b from-foreground/50 via-border to-border"
       />
 
       {children.map((child, index) => (
