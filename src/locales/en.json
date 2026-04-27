@@ -1,8 +1,8 @@
 {
   "metadata": {
     "home": {
-      "title": "Fullstack Engineer",
-      "description": "Ignacio Figueroa's Portfolio. Fullstack Engineer specializing in React, Next.js, Node.js and AI integration. Building scalable, production-ready web applications.",
+      "title": "Fullstack Developer - AI Developer - Software Architecture",
+      "description": "Ignacio Figueroa's Portfolio. Fullstack Developer specializing in React, Next.js, Node.js and AI integration. Building scalable, production-ready web applications.",
       "keywords": "Web Developer, Fullstack, Frontend, React, Next.js, Argentina, UTN, Software Engineer, Portfolio, Linux, Fedora"
     },
     "aboutMe": {
@@ -24,7 +24,7 @@
     "home": {
       "greeting": "Hi, I'm",
       "name": "Ignacio Figueroa",
-      "title": "Fullstack Developer - AI - Software Architecture",
+      "title": "Fullstack Developer - AI Developer - Software Architecture",
       "description": "Building web apps with React, Node.js, Nest.js, and Python. Curious about AI integration, focused on scalable architectures and clean code to solve real-world problems.",
       "actions": {
         "viewProjects": "View my work",
