@@ -46,8 +46,7 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
+const baseMetadata: Metadata = {
   title: {
     default: 'Ignacio Figueroa - Full Stack Developer',
     template: '%s | Ignacio Figueroa',
@@ -70,12 +69,6 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    alternateLocale: ['es_ES'],
-    siteName: 'Ignacio Figueroa',
-  },
   twitter: {
     card: 'summary_large_image',
   },
@@ -92,11 +85,35 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
-  alternates: {
-    canonical: '/',
-    languages: {
-      es: '/es',
-      en: '/en',
-    },
-  },
 };
+
+export async function generateMetadata({ params }: Omit<LocaleLayoutProps, 'children'>): Promise<Metadata> {
+  const { locale } = await params;
+  
+  const domains: Record<string, string> = {
+    en: 'https://en.ignaciofigueroa.dev',
+    es: 'https://es.ignaciofigueroa.dev',
+  };
+  
+  const domain = domains[locale] || domains.en;
+
+  return {
+    ...baseMetadata,
+    metadataBase: new URL(domain),
+    openGraph: {
+      type: 'website',
+      locale: locale === 'es' ? 'es_ES' : 'en_US',
+      alternateLocale: locale === 'es' ? ['en_US'] : ['es_ES'],
+      siteName: 'Ignacio Figueroa',
+      url: '/',
+    },
+    alternates: {
+      canonical: '/',
+      languages: {
+        en: domains.en,
+        es: domains.es,
+        'x-default': domains.en,
+      },
+    },
+  };
+}
