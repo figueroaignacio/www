@@ -9,7 +9,9 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="space-y-8 " aria-labelledby="contact-title">
-      <AnimatedSectionHeader title={t('title')} description={t('description')} />
+      <div className="max-w-lg">
+        <AnimatedSectionHeader title={t('title')} description={t('description')} />
+      </div>
       <div className="flex justify-start">
         <ContactForm />
       </div>
