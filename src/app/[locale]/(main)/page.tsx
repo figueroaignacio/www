@@ -6,6 +6,7 @@ import { HomeHero } from '@/features/home/components/home-hero';
 import { NachUICta } from '@/features/home/components/nach-ui-cta';
 import { ProjectsSection } from '@/features/home/components/projects-section';
 import { Testimonials } from '@/features/home/components/testimonials';
+import { DOMAINS } from '@/lib/constants';
 import { type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
@@ -18,13 +19,15 @@ export default function HomePage({ params }: HomePageProps) {
   const { locale } = use(params);
   setRequestLocale(locale);
 
+  const domain = DOMAINS[locale as keyof typeof DOMAINS] || DOMAINS.en;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ProfilePage',
     mainEntity: {
       '@type': 'Person',
       name: 'Ignacio Figueroa',
-      url: `https://${locale}.ignaciofigueroa.dev/`,
+      url: domain,
       jobTitle: 'Full Stack Developer',
       sameAs: ['https://github.com/figueroaignacio', 'https://linkedin.com/in/figueroa-ignacio'],
     },
@@ -54,27 +57,25 @@ export async function generateMetadata({ params }: HomePageProps) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'metadata.home' });
 
-  const url = locale === 'en' ? '/' : `/${locale}`;
-
   return {
     title: t('title'),
     description: t('description'),
     keywords: t('keywords'),
     alternates: {
-      canonical: url,
+      canonical: '/',
       languages: {
-        en: '/en',
-        es: '/es',
-        'x-default': '/en',
+        en: DOMAINS.en,
+        es: DOMAINS.es,
+        'x-default': DOMAINS.en,
       },
     },
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url,
+      url: '/',
       locale: locale === 'en' ? 'en_US' : 'es_ES',
       type: 'website',
-      siteName: 'Ignacio Figueroa Portfolio',
+      siteName: 'Ignacio Figueroa',
     },
   };
 }

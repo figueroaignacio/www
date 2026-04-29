@@ -1,7 +1,7 @@
 import { getProjectBySlug, getProjects } from '@/features/projects/api/projects';
 import { ProjectHeaderPage } from '@/features/projects/components/project-header-page';
 import { ProjectVideo } from '@/features/projects/components/project-video';
-import { SITE_URL } from '@/lib/constants';
+import { DOMAINS } from '@/lib/constants';
 import type { Project } from '@/payload-types';
 import { RichText } from '@payloadcms/richtext-lexical/react';
 import type { Metadata } from 'next';
@@ -60,19 +60,28 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     };
   }
 
+  const domain = DOMAINS[locale as keyof typeof DOMAINS] || DOMAINS.en;
+
   return {
     title: project.title,
     description: project.description,
+    alternates: {
+      canonical: `/projects/${slug}`,
+      languages: {
+        en: `${DOMAINS.en}/projects/${slug}`,
+        es: `${DOMAINS.es}/projects/${slug}`,
+      },
+    },
     openGraph: {
       title: project.title,
       description: project.description,
       type: 'article',
-      locale: locale,
-      url: `${SITE_URL}/${locale}/projects/${slug}`,
-      siteName: '${SITE_URL}',
+      locale: locale === 'es' ? 'es_ES' : 'en_US',
+      url: `/projects/${slug}`,
+      siteName: 'Ignacio Figueroa',
       images: [
         {
-          url: `/${locale}/projects/${slug}/opengraph-image`,
+          url: `/projects/${slug}/opengraph-image`,
           width: 1200,
           height: 630,
           alt: project.title,
@@ -83,14 +92,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       card: 'summary_large_image',
       title: project.title,
       description: project.description,
-      images: [`/${locale}/projects/${slug}/opengraph-image`],
-    },
-    alternates: {
-      canonical: `${SITE_URL}/${locale}/projects/${slug}`,
-      languages: {
-        es: `${SITE_URL}/es/projects/${slug}`,
-        en: `${SITE_URL}/en/projects/${slug}`,
-      },
+      images: [`/projects/${slug}/opengraph-image`],
     },
     robots: {
       index: true,

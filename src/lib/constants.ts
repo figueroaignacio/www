@@ -1,3 +1,8 @@
+export const DOMAINS = {
+  en: 'https://en.ignaciofigueroa.dev',
+  es: 'https://es.ignaciofigueroa.dev',
+} as const;
+
 export const SITE_URL =
   process.env.NEXT_PUBLIC_API_URL_PROD && process.env.NODE_ENV === 'production'
     ? process.env.NEXT_PUBLIC_API_URL_PROD

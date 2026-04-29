@@ -2,6 +2,7 @@ import { Providers } from '@/components/providers';
 import { SkipLink } from '@/components/ui/skip-link';
 import { TerminalPrompt } from '@/components/ui/terminal-prompt';
 import { routing } from '@/i18n/routing';
+import { DOMAINS } from '@/lib/constants';
 import { fontHeading, fontSans } from '@/lib/fonts';
 import type { Metadata, Viewport } from 'next';
 import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
@@ -48,20 +49,22 @@ export const viewport: Viewport = {
 
 const baseMetadata: Metadata = {
   title: {
-    default: 'Ignacio Figueroa - Full Stack Developer',
+    default: 'Ignacio Figueroa | Full Stack Developer',
     template: '%s | Ignacio Figueroa',
   },
   description:
-    'Full Stack Developer specializing in React, Next.js, and TypeScript. Portfolio and projects.',
+    'Full Stack Developer specializing in React, Next.js, and TypeScript. Building scalable and performant web applications.',
+  applicationName: 'Ignacio Figueroa',
   keywords: [
     'Full Stack Developer',
-    'React',
-    'Next.js',
+    'Ignacio Figueroa',
+    'React Developer',
+    'Next.js Developer',
     'TypeScript',
-    'Frontend Developer',
     'Portfolio',
+    'Software Engineer',
   ],
-  authors: [{ name: 'Ignacio Figueroa' }],
+  authors: [{ name: 'Ignacio Figueroa', url: 'https://en.ignaciofigueroa.dev' }],
   creator: 'Ignacio Figueroa',
   publisher: 'Ignacio Figueroa',
   formatDetection: {
@@ -69,8 +72,19 @@ const baseMetadata: Metadata = {
     address: false,
     telephone: false,
   },
+  metadataBase: new URL(DOMAINS.en),
+  alternates: {
+    canonical: '/',
+    languages: {
+      en: DOMAINS.en,
+      es: DOMAINS.es,
+    },
+  },
   twitter: {
     card: 'summary_large_image',
+    title: 'Ignacio Figueroa | Full Stack Developer',
+    description: 'Full Stack Developer specializing in React, Next.js, and TypeScript.',
+    creator: '@nachofiguer_oa',
   },
   robots: {
     index: true,
@@ -90,30 +104,29 @@ const baseMetadata: Metadata = {
 export async function generateMetadata({ params }: Omit<LocaleLayoutProps, 'children'>): Promise<Metadata> {
   const { locale } = await params;
   
-  const domains: Record<string, string> = {
-    en: 'https://en.ignaciofigueroa.dev',
-    es: 'https://es.ignaciofigueroa.dev',
-  };
-  
-  const domain = domains[locale] || domains.en;
+  const domain = DOMAINS[locale as keyof typeof DOMAINS] || DOMAINS.en;
 
   return {
     ...baseMetadata,
     metadataBase: new URL(domain),
+    alternates: {
+      canonical: '/',
+      languages: {
+        en: DOMAINS.en,
+        es: DOMAINS.es,
+        'x-default': DOMAINS.en,
+      },
+    },
     openGraph: {
+      title: locale === 'es' ? 'Ignacio Figueroa | Full Stack Developer' : 'Ignacio Figueroa | Full Stack Developer',
+      description: locale === 'es' 
+        ? 'Desarrollador Full Stack especializado en React, Next.js y TypeScript.' 
+        : 'Full Stack Developer specializing in React, Next.js and TypeScript.',
       type: 'website',
       locale: locale === 'es' ? 'es_ES' : 'en_US',
       alternateLocale: locale === 'es' ? ['en_US'] : ['es_ES'],
       siteName: 'Ignacio Figueroa',
-      url: '/',
-    },
-    alternates: {
-      canonical: '/',
-      languages: {
-        en: domains.en,
-        es: domains.es,
-        'x-default': domains.en,
-      },
+      url: domain,
     },
   };
 }

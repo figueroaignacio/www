@@ -1,8 +1,23 @@
 import { routing } from '@/i18n/routing';
+import { DOMAINS } from '@/lib/constants';
 import createMiddleware from 'next-intl/middleware';
+import { NextResponse, type NextRequest } from 'next/server';
 
-export default createMiddleware(routing);
+const intlMiddleware = createMiddleware(routing);
+
+export default function proxy(request: NextRequest) {
+  const host = request.headers.get('host');
+  const { pathname } = request.nextUrl;
+
+  if (host?.includes('vercel.app')) {
+    const isEs = pathname.startsWith('/es');
+    const targetDomain = isEs ? DOMAINS.es : DOMAINS.en;
+    return NextResponse.redirect(new URL(pathname, targetDomain), 301);
+  }
+
+  return intlMiddleware(request);
+}
 
 export const config = {
-  matcher: ['/', '/(de|en|es)/:path*', '/((?!_next|_vercel|api|admin|.*\\..*).*)'],
+  matcher: ['/((?!_next|api|admin|favicon.ico|.*\\..*).*)'],
 };
