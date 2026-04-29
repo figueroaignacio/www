@@ -1,5 +1,6 @@
 import { Separator } from '@/components/ui/separator';
 import { motion } from 'motion/react';
+import { Fragment } from 'react';
 import { parseMessageContent } from '../lib/parse-message';
 import type { Message } from '../types';
 import { ChatContactCards } from './cards/chat-contact-cards';
@@ -11,17 +12,28 @@ interface ChatMessageProps {
   message: Message;
 }
 
+const MOTION_VARIANTS = {
+  initial: { opacity: 0, y: 8 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] },
+};
+
 export function ChatMessage({ message }: ChatMessageProps) {
   const isUser = message.role === 'user';
   const { showProjects, showExperience, showContact, cleanContent } = parseMessageContent(
     message.content,
   );
 
+  const contentBlocks = [
+    cleanContent ? <ChatMarkdownContent key="text" content={cleanContent} /> : null,
+    showProjects ? <ChatProjectCards key="projects" /> : null,
+    showExperience ? <ChatExperienceCards key="experience" /> : null,
+    showContact ? <ChatContactCards key="contact" /> : null,
+  ].filter(Boolean);
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+      variants={MOTION_VARIANTS}
       className={`flex w-full ${isUser ? 'justify-end' : 'justify-start'}`}
     >
       <div
@@ -33,13 +45,12 @@ export function ChatMessage({ message }: ChatMessageProps) {
           <p className="text-sm whitespace-pre-wrap leading-relaxed">{cleanContent}</p>
         ) : (
           <div className="flex flex-col space-y-12">
-            {cleanContent && <ChatMarkdownContent content={cleanContent} />}
-            <Separator label="o" />
-            {showProjects && <ChatProjectCards />}
-            <Separator label="o" />
-            {showExperience && <ChatExperienceCards />}
-            <Separator label="o" />
-            {showContact && <ChatContactCards />}
+            {contentBlocks.map((block, index) => (
+              <Fragment key={index}>
+                {block}
+                {index < contentBlocks.length - 1 && <Separator label="o" />}
+              </Fragment>
+            ))}
           </div>
         )}
       </div>
