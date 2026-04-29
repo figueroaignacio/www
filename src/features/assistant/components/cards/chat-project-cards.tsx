@@ -1,10 +1,12 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { useChatProjects } from '../../hooks/use-chat-data';
-import { ChatProjectCard } from './chat-project-card';
+import { ChatProjectCard } from '../ui/chat-project-card';
 
 export function ChatProjectCards() {
   const { data: projects, isLoading: loading } = useChatProjects();
+  const t = useTranslations('sections.assistant.projects');
 
   if (loading) {
     return (
@@ -20,6 +22,8 @@ export function ChatProjectCards() {
 
   return (
     <div className="flex flex-col gap-3 mt-4">
+      <h2 className="text-lg font-semibold underline">{t('title')}</h2>
+      <p className="text-sm text-muted-foreground">{t('description')}</p>
       {projects.map((project) => (
         <ChatProjectCard key={project.id} {...project} />
       ))}

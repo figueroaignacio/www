@@ -1,9 +1,10 @@
+import { Separator } from '@/components/ui/separator';
 import { motion } from 'motion/react';
 import type { Message } from '../types';
 import { ChatContactCards } from './cards/chat-contact-cards';
 import { ChatExperienceCards } from './cards/chat-experience-cards';
-import { ChatMarkdownContent } from './ui/chat-markdown-content';
 import { ChatProjectCards } from './cards/chat-project-cards';
+import { ChatMarkdownContent } from './ui/chat-markdown-content';
 
 interface ChatMessageProps {
   message: Message;
@@ -35,10 +36,13 @@ export function ChatMessage({ message }: ChatMessageProps) {
         {isUser ? (
           <p className="text-sm whitespace-pre-wrap leading-relaxed">{cleanContent}</p>
         ) : (
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col space-y-12">
             {cleanContent && <ChatMarkdownContent content={cleanContent} />}
+            <Separator label="o" />
             {showProjects && <ChatProjectCards />}
+            <Separator label="o" />
             {showExperience && <ChatExperienceCards />}
+            <Separator label="o" />
             {showContact && <ChatContactCards />}
           </div>
         )}

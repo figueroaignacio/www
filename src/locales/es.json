@@ -119,6 +119,28 @@
         "components": "componentes",
         "openSource": "open source"
       }
+    },
+    "assistant": {
+      "projects": {
+        "title": "Proyectos",
+        "description": "Aquí están algunos de los proyectos en los que Ignacio trabaja."
+      },
+      "experience": {
+        "title": "Experiencia Laboral",
+        "description": "Aquí están algunas de las experiencias laborales de Ignacio."
+      },
+      "skills": {
+        "title": "Habilidades",
+        "description": "Aquí están algunas de las habilidades de Ignacio."
+      },
+      "education": {
+        "title": "Educación",
+        "description": "Aquí están algunas de las instituciones educativas de Ignacio."
+      },
+      "contact": {
+        "title": "Contacto",
+        "description": "Aquí están algunas de las formas de contacto de Ignacio."
+      }
     }
   },
   "ui": {
