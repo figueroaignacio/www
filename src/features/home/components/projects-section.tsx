@@ -11,7 +11,7 @@ export async function ProjectsSection() {
   const projects: Project[] = await getProjects(locale);
 
   return (
-    <section className="space-y-6" aria-labelledby="projects-title">
+    <section id="projects" className="space-y-6" aria-labelledby="projects-title">
       <AnimatedSectionHeader title={t('title')} description={t('description')} />
       <AnimatedProjectList>
         {projects.map((project) => (

@@ -1,3 +1,4 @@
+import { ContactSection } from '@/features/contact/components/contact-section';
 import { CTACurriculum } from '@/features/home/components/cta-curriculum';
 import { EducationSection } from '@/features/home/components/education-section';
 import { ExperienceSection } from '@/features/home/components/experience-section';
@@ -23,9 +24,9 @@ export default function HomePage({ params }: HomePageProps) {
     mainEntity: {
       '@type': 'Person',
       name: 'Ignacio Figueroa',
-      url: `https://ignaciofigueroa.com/${locale === 'en' ? '' : locale}`,
+      url: `https://${locale}.ignaciofigueroa.dev/`,
       jobTitle: 'Full Stack Developer',
-      sameAs: ['https://github.com/figueroaignacio', 'https://linkedin.com/in/ignaciofigueroa'],
+      sameAs: ['https://github.com/figueroaignacio', 'https://linkedin.com/in/figueroa-ignacio'],
     },
   };
 
@@ -43,6 +44,7 @@ export default function HomePage({ params }: HomePageProps) {
         <EducationSection />
         <Testimonials />
         <CTACurriculum />
+        <ContactSection />
       </div>
     </>
   );

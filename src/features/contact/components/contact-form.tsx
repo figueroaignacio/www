@@ -1,0 +1,122 @@
+'use client';
+
+import { Check, Loader2, Send } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { useActionState, useRef } from 'react';
+import { sendEmail } from '../actions/send-email';
+
+type ContactFormState = {
+  error: string | null;
+  success: boolean;
+};
+
+const initialState: ContactFormState = {
+  error: null,
+  success: false,
+};
+
+export function ContactForm() {
+  const t = useTranslations('components.contactForm');
+  const [state, formAction, isPending] = useActionState(sendEmail, initialState);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const handleInput = () => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = 'auto';
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+    }
+  };
+
+  return (
+    <div className="w-full max-w-2xl">
+      <form action={formAction} className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <label htmlFor="name" className="text-xs font-medium text-muted-foreground">
+              {t('nameLabel')}
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              disabled={isPending || state.success}
+              placeholder={t('namePlaceholder')}
+              className="w-full px-4 py-2.5 bg-secondary/30 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-muted-foreground/50 disabled:opacity-50"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label htmlFor="email" className="text-xs font-medium text-muted-foreground">
+              {t('emailLabel')}
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              disabled={isPending || state.success}
+              placeholder={t('emailPlaceholder')}
+              className="w-full px-4 py-2.5 bg-secondary/30 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-muted-foreground/50 disabled:opacity-50"
+            />
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <label htmlFor="message" className="text-xs font-medium text-muted-foreground">
+            {t('messageLabel')}
+          </label>
+          <textarea
+            ref={textareaRef}
+            id="message"
+            name="message"
+            required
+            disabled={isPending || state.success}
+            placeholder={t('messagePlaceholder')}
+            rows={3}
+            onInput={handleInput}
+            className="w-full px-4 py-3 bg-secondary/30 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-muted-foreground/50 resize-none overflow-hidden disabled:opacity-50"
+          />
+        </div>
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex-1">
+            {state.error && (
+              <p
+                className="text-sm text-destructive font-medium animate-in fade-in slide-in-from-top-1"
+                role="alert"
+              >
+                {state.error === 'Missing fields' || state.error === 'Internal Server Error'
+                  ? t('error')
+                  : state.error}
+              </p>
+            )}
+            {state.success && (
+              <p
+                className="text-sm font-medium animate-in fade-in slide-in-from-top-1"
+                role="alert"
+              >
+                {t('success')}
+              </p>
+            )}
+          </div>
+          <button
+            type="submit"
+            disabled={state.success}
+            className="btn btn-primary gap-2 flex items-center"
+          >
+            {isPending && t('sending')}
+            {!isPending && state.success && <Check className="size-4" />}
+            {!isPending && !state.success && t('submit')}
+
+            {!state.success &&
+              (isPending ? (
+                <Loader2 className="size-4 animate-spin" />
+              ) : (
+                <Send className="size-4" />
+              ))}
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+}

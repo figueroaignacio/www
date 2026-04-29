@@ -25,7 +25,7 @@
       "greeting": "Hi, I'm",
       "name": "Ignacio Figueroa",
       "title": "Fullstack Developer - AI Developer - Software Architecture",
-      "description": "Building web apps with React, Node.js, Nest.js, and Python. Curious about AI integration, focused on scalable architectures and clean code to solve real-world problems.",
+      "description": "Architecting high-performance web applications with React, Node.js, and Python. Specializing in AI integration and scalable systems, I deliver clean, maintainable code designed to solve complex business challenges.",
       "actions": {
         "viewProjects": "View my work",
         "learnMore": "Learn more about me",
@@ -38,20 +38,20 @@
       "description": "I engineer solutions for complex problems. Focused on performance, accessibility, and clean architecture.",
       "items": [
         {
-          "content": "<b>Fullstack Engineer & UTN Student.</b> I build production-grade web applications from the ground up. I specialize in modern React ecosystems, focusing on resilient architectures, clean code, and creating intuitive user experiences that drive results."
+          "content": "<b>Software Engineer & UTN Student.</b> I architect production-grade applications with a focus on technical excellence. Specializing in the modern React ecosystem, I build resilient systems and intuitive interfaces that drive business value."
         },
         {
-          "content": "<b>From Component to Cloud.</b> My core strength is crafting high-performance Frontend interfaces, but I bring the same rigor to Backend API design. I build complete, end-to-end solutions that are scalable, maintainable, and fast."
+          "content": "<b>Fullstack Technical Leadership.</b> From crafting high-performance Frontend architectures to designing robust Backend APIs, I deliver end-to-end solutions that are scalable, maintainable, and optimized for growth."
         },
         {
-          "content": "<b>Engineering with AI.</b> I don't just build traditional web apps—I actively integrate LLMs and AI into products to automate complex workflows and deliver smarter features. Always shipping, always learning."
+          "content": "<b>AI-Powered Innovation.</b> I leverage Large Language Models to automate complex workflows and build intelligent product features. I focus on practical AI implementation that enhances user productivity and business efficiency."
         }
       ],
       "content": {
         "title": "About",
         "subtitle": "Engineering solutions with purpose.",
-        "bio": "I'm a Fullstack Developer and UTN student based in Argentina. I focus on building production-grade web applications that combine clean architecture with exceptional user experiences. Currently exploring the intersection of AI and software engineering.",
-        "details": "When I'm not coding, I'm probably drinking mate, listening to music, having a walk with my dog, learning about software, or thinking about how to simplify complex workflows. I believe in minimalism, both in design and in code. I'm passionate about software and AI."
+        "bio": "I am a Fullstack Software Engineer and UTN student based in Argentina. I specialize in building enterprise-grade web applications that merge robust architecture with exceptional user experiences. My focus is on delivering high-impact solutions through modern engineering practices.",
+        "details": "Beyond the code, I am committed to continuous learning and technical excellence. I apply minimalist principles to design and architecture to reduce complexity and improve maintainability. I am currently open to engineering opportunities where I can contribute to building world-class software products."
       }
     },
     "projects": {
@@ -85,8 +85,8 @@
       "showLess": "Show less"
     },
     "interests": {
-      "title": "Interests & Technologies",
-      "description": "Concepts I constantly explore and apply.",
+      "title": "Technical Expertise",
+      "description": "Core competencies and specialized knowledge applied in every project.",
       "items": {
         "frontend": "Frontend Development",
         "backend": "Backend Architecture",
@@ -164,8 +164,8 @@
       }
     },
     "ctaContact": {
-      "title": "Let's build something great",
-      "description": "Looking for a Fullstack Engineer for your next project? Let's talk about how I can help your team ship faster and build better products."
+      "title": "Available for New Opportunities",
+      "description": "I am currently open to Fullstack Software Engineering roles. If you are looking for someone who combines technical rigor with a product-driven mindset, let's connect."
     },
     "chat": {
       "disclaimers": [
@@ -234,6 +234,20 @@
         }
       }
     },
-    "openToWorkBadge": "Open to work"
+    "openToWorkBadge": "Open to work",
+    "contactForm": {
+      "title": "Let's Connect.",
+      "description": "Currently open to new engineering opportunities and technical collaborations. Send me a message and I'll get back to you shortly.",
+      "nameLabel": "Name",
+      "namePlaceholder": "How should I call you?",
+      "emailLabel": "Email",
+      "emailPlaceholder": "where@to-reply.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "What are we building?",
+      "submit": "Send",
+      "sending": "Sending...",
+      "success": "Got it. Talk soon.",
+      "error": "Error. Try again."
+    }
   }
 }

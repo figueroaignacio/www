@@ -25,7 +25,7 @@
       "greeting": "Hola, soy",
       "name": "Ignacio Figueroa",
       "title": "Desarrollador Fullstack - AI Developer - Arquitectura de Software",
-      "description": "Construyendo aplicaciones con React, Node.js, Nest.js y Python. Curioso por la integración de IA, enfocado en arquitecturas sólidas y código limpio para resolver problemas reales.",
+      "description": "Arquitecto de aplicaciones web de alto rendimiento con React, Node.js y Python. Especializado en integración de IA y sistemas escalables, entrego código limpio y mantenible diseñado para resolver desafíos de negocio complejos.",
       "actions": {
         "viewProjects": "Ver mi trabajo",
         "learnMore": "Conocé más sobre mí",
@@ -38,20 +38,20 @@
       "description": "Diseño soluciones a problemas complejos. Enfocado en la performance, la accesibilidad y la arquitectura limpia.",
       "items": [
         {
-          "content": "<b>Ingeniero Fullstack y Estudiante UTN.</b> Construyo aplicaciones web a nivel producción desde cero. Me especializo en el ecosistema moderno de React, priorizando arquitecturas resilientes, código limpio y experiencias de usuario que generan resultados."
+          "content": "<b>Ingeniero de Software y Estudiante UTN.</b> Diseño aplicaciones de nivel producción con un enfoque en la excelencia técnica. Especializado en el ecosistema moderno de React, construyo sistemas resilientes e interfaces intuitivas que generan valor de negocio."
         },
         {
-          "content": "<b>Del Componente a la Nube.</b> Mi fuerte es desarrollar interfaces Frontend de alto rendimiento, pero aplico el mismo rigor al diseño de APIs en el Backend. Construyo soluciones end-to-end escalables, mantenibles y veloces."
+          "content": "<b>Liderazgo Técnico Fullstack.</b> Desde el desarrollo de arquitecturas Frontend de alto rendimiento hasta el diseño de APIs robustas en el Backend, entrego soluciones end-to-end escalables, mantenibles y optimizadas para el crecimiento."
         },
         {
-          "content": "<b>Desarrollo con IA.</b> No solo creo aplicaciones web tradicionales: integro activamente LLMs e IA en los productos para automatizar flujos complejos y ofrecer funciones más inteligentes. Siempre iterando, siempre aprendiendo."
+          "content": "<b>Innovación con IA.</b> Utilizo modelos de lenguaje para automatizar flujos de trabajo complejos y construir funcionalidades inteligentes. Me enfoco en la implementación práctica de IA para mejorar la productividad y la eficiencia operativa."
         }
       ],
       "content": {
         "title": "Sobre Mí",
         "subtitle": "Desarrollo con propósito.",
-        "bio": "Soy Desarrollador Fullstack y estudiante de la UTN con base en Argentina. Me enfoco en construir aplicaciones web de nivel producción que combinan una arquitectura limpia con experiencias de usuario excepcionales. Actualmente explorando la intersección entre la IA y la ingeniería de software.",
-        "details": "Cuando no estoy programando, probablemente esté tomando mate, escuchando música, paseando a mi caniche o aprendiendo sobre software. Creo en el minimalismo, tanto en el diseño como en el código. Me apasiona el mundo de sistemas, el software, la inteligencia artificial."
+        "bio": "Soy Ingeniero de Software Fullstack y estudiante de la UTN con base en Argentina. Me especializo en la construcción de aplicaciones web de nivel empresarial que combinan arquitecturas sólidas con experiencias de usuario excepcionales. Mi enfoque es entregar soluciones de alto impacto mediante prácticas de ingeniería modernas.",
+        "details": "Más allá del código, estoy comprometido con el aprendizaje continuo y la excelencia técnica. Aplico principios minimalistas al diseño y la arquitectura para reducir la complejidad y mejorar la mantenibilidad. Actualmente estoy abierto a oportunidades de ingeniería donde pueda contribuir al desarrollo de productos de software de clase mundial."
       }
     },
     "projects": {
@@ -85,8 +85,8 @@
       "showLess": "Ver menos"
     },
     "interests": {
-      "title": "Intereses y Tecnologías",
-      "description": "Conceptos que exploro y aplico constantemente.",
+      "title": "Especialización Técnica",
+      "description": "Competencias principales y conocimientos especializados aplicados en cada proyecto.",
       "items": {
         "frontend": "Frontend Development",
         "backend": "Backend Architecture",
@@ -164,8 +164,8 @@
       }
     },
     "ctaContact": {
-      "title": "Construyamos algo increíble",
-      "description": "¿Buscando un Ingeniero Fullstack para tu próximo proyecto? Hablemos de cómo puedo ayudar a tu equipo a crear mejores productos más rápido."
+      "title": "Disponible para nuevas oportunidades",
+      "description": "Actualmente estoy abierto a roles de Ingeniería de Software Fullstack. Si buscás a alguien que combine rigor técnico con una mentalidad orientada a producto, conectemos."
     },
     "chat": {
       "disclaimers": [
@@ -226,6 +226,20 @@
         "inputPlaceholder": "¿Cual es tu duda?"
       }
     },
-    "openToWorkBadge": "Disponible para trabajar"
+    "openToWorkBadge": "Disponible para trabajar",
+    "contactForm": {
+      "title": "Hablemos.",
+      "description": "Actualmente abierto a nuevas oportunidades de ingeniería y colaboraciones técnicas. Enviame un mensaje y te responderé a la brevedad.",
+      "nameLabel": "Nombre",
+      "namePlaceholder": "¿Cómo te digo?",
+      "emailLabel": "Email",
+      "emailPlaceholder": "correo@ejemplo.com",
+      "messageLabel": "Mensaje",
+      "messagePlaceholder": "¿Qué vamos a construir?",
+      "submit": "Enviar",
+      "sending": "Enviando...",
+      "success": "Listo. Hablamos pronto.",
+      "error": "Error. Intentá de nuevo."
+    }
   }
 }
