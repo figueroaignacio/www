@@ -1,12 +1,11 @@
 import { Separator } from '@/components/ui/separator';
 import { motion } from 'motion/react';
+import { parseMessageContent } from '../lib/parse-message';
 import type { Message } from '../types';
 import { ChatContactCards } from './cards/chat-contact-cards';
 import { ChatExperienceCards } from './cards/chat-experience-cards';
 import { ChatProjectCards } from './cards/chat-project-cards';
 import { ChatMarkdownContent } from './ui/chat-markdown-content';
-
-import { parseMessageContent } from '../lib/parse-message';
 
 interface ChatMessageProps {
   message: Message;
