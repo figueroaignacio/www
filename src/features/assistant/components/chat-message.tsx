@@ -6,20 +6,17 @@ import { ChatExperienceCards } from './cards/chat-experience-cards';
 import { ChatProjectCards } from './cards/chat-project-cards';
 import { ChatMarkdownContent } from './ui/chat-markdown-content';
 
+import { parseMessageContent } from '../lib/parse-message';
+
 interface ChatMessageProps {
   message: Message;
 }
 
 export function ChatMessage({ message }: ChatMessageProps) {
   const isUser = message.role === 'user';
-  const showProjects = message.content.includes('[SHOW_PROJECTS]');
-  const showExperience = message.content.includes('[SHOW_EXPERIENCE]');
-  const showContact = message.content.includes('[SHOW_CONTACT]');
-  const cleanContent = message.content
-    .replace('[SHOW_PROJECTS]', '')
-    .replace('[SHOW_EXPERIENCE]', '')
-    .replace('[SHOW_CONTACT]', '')
-    .trim();
+  const { showProjects, showExperience, showContact, cleanContent } = parseMessageContent(
+    message.content,
+  );
 
   return (
     <motion.div
