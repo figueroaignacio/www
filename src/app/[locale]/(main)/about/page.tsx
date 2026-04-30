@@ -1,4 +1,5 @@
 import { AboutContent } from '@/features/about/components/about-content';
+import { DOMAINS } from '@/lib/constants';
 import { type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
@@ -22,5 +23,21 @@ export async function generateMetadata({ params }: AboutPageProps) {
     title: t('title'),
     description: t('description'),
     keywords: t('keywords'),
+    alternates: {
+      canonical: '/about',
+      languages: {
+        en: `${DOMAINS.en}/about`,
+        es: `${DOMAINS.es}/about`,
+        'x-default': `${DOMAINS.en}/about`,
+      },
+    },
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      url: '/about',
+      locale: locale === 'en' ? 'en_US' : 'es_ES',
+      type: 'website',
+      siteName: 'Ignacio Figueroa',
+    },
   };
 }

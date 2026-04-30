@@ -1,7 +1,5 @@
+import { DOMAINS } from '@/lib/constants';
 import type { MetadataRoute } from 'next';
-import { routing } from '@/i18n/routing';
-
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -10,10 +8,9 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/(payload)/', '/admin/'],
     },
-    sitemap: 'https://en.ignaciofigueroa.dev/sitemap.xml',
+    sitemap: [
+      `${DOMAINS.en}/sitemap.xml`,
+      `${DOMAINS.es}/sitemap.xml`,
+    ],
   };
-}
-
-export async function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
 }

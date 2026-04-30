@@ -70,6 +70,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       languages: {
         en: `${DOMAINS.en}/projects/${slug}`,
         es: `${DOMAINS.es}/projects/${slug}`,
+        'x-default': `${DOMAINS.en}/projects/${slug}`,
       },
     },
     openGraph: {

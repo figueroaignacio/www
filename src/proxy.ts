@@ -12,7 +12,9 @@ export default function proxy(request: NextRequest) {
   if (host?.includes('vercel.app')) {
     const isEs = pathname.startsWith('/es');
     const targetDomain = isEs ? DOMAINS.es : DOMAINS.en;
-    return NextResponse.redirect(new URL(pathname, targetDomain), 301);
+    const targetUrl = new URL(pathname, targetDomain);
+    targetUrl.search = request.nextUrl.search;
+    return NextResponse.redirect(targetUrl, 308);
   }
 
   return intlMiddleware(request);
