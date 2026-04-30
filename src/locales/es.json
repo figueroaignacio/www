@@ -18,6 +18,11 @@
     "chat": {
       "title": "Asistente de IA",
       "description": "Charla con mi asistente de IA para conocer más sobre mí, mis habilidades y mis proyectos."
+    },
+    "contact": {
+      "title": "Contacto",
+      "description": "Contactá a Ignacio Figueroa. Desarrollador Fullstack abierto a roles de ingeniería, proyectos freelance y colaboraciones técnicas.",
+      "keywords": "Contacto, Contratar Desarrollador, Ingeniero Fullstack, Freelance, Ignacio Figueroa, Desarrollador React"
     }
   },
   "sections": {
@@ -143,6 +148,16 @@
       }
     }
   },
+  "pages": {
+    "contact": {
+      "label": "Contacto",
+      "title": "Trabajemos juntos.",
+      "description": "Actualmente estoy abierto a nuevas oportunidades de ingeniería, proyectos freelance y colaboraciones técnicas. Elegí el canal que más te sirva.",
+      "linksTitle": "Encontrame en",
+      "formTitle": "Enviame un mensaje",
+      "formDescription": "O escribime directamente. Te respondo a la brevedad."
+    }
+  },
   "ui": {
     "skipToContent": "Saltar al contenido",
     "navigation": [
@@ -157,6 +172,10 @@
       {
         "label": "Sobre Mí",
         "href": "/about"
+      },
+      {
+        "label": "Contacto",
+        "href": "/contact"
       }
     ]
   },

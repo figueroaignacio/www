@@ -18,6 +18,11 @@
     "chat": {
       "title": "AI Assistant",
       "description": "Chat with my AI assistant to learn more about me, my skills, and my projects."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Get in touch with Ignacio Figueroa. Fullstack Developer open to engineering roles, freelance projects, and technical collaborations.",
+      "keywords": "Contact, Hire Developer, Fullstack Engineer, Freelance, Ignacio Figueroa, React Developer"
     }
   },
   "sections": {
@@ -143,6 +148,16 @@
       }
     }
   },
+  "pages": {
+    "contact": {
+      "label": "Contact",
+      "title": "Let's work together.",
+      "description": "I'm currently open to new engineering opportunities, freelance projects, and technical collaborations. Pick the channel that works best for you.",
+      "linksTitle": "Find me on",
+      "formTitle": "Send a message",
+      "formDescription": "Or drop me a line directly. I'll get back to you shortly."
+    }
+  },
   "ui": {
     "skipToContent": "Skip to content",
     "navigation": [
@@ -157,6 +172,10 @@
       {
         "label": "About",
         "href": "/about"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
       }
     ]
   },
