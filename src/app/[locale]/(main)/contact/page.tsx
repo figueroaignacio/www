@@ -1,4 +1,4 @@
-import { GitHubIcon } from '@/components/tech-icons/github-icon';
+import { GitHubIcon } from '@/components/tech-icons';
 import { ContactForm } from '@/features/contact/components/contact-form';
 import { DOMAINS } from '@/lib/constants';
 import { DiscordLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
