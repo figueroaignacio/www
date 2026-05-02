@@ -1,8 +1,14 @@
 ![Ignacio Figueroa Portfolio](https://ignaciofigueroa.vercel.app/en/opengraph-image)
 
+<!-- README-I18N:START -->
+
+**English** | [Español](./README.es.md)
+
+<!-- README-I18N:END -->
+
 ## A modern, fast, and fully custom portfolio built with Next.js, Tailwind CSS, Payload CMS, and PostgreSQL.
 
-It showcases my work, articles, projects, and includes an AI-powered assistant to help visitors explore my content in an interactive way.
+It showcases my work, projects, and includes an AI-powered assistant to help visitors explore my content in an interactive way.
 
 This portfolio reflects my focus on clean UI, high performance, accessibility, and a great developer experience.
 
@@ -22,11 +28,10 @@ This project uses a modern full-stack setup:
 - Payload CMS
 - PostgreSQL
 - Vercel Postgres adapter
-- Better Auth with GitHub OAuth provider
 
 ### AI
 
-- Vercel AI SDK
+- FastAPI backend ([github.com/figueroaignacio/assistant](https://github.com/figueroaignacio/assistant))
 - Groq – ultra-fast inference
 - Custom AI chatbot
 
@@ -64,7 +69,7 @@ The project follows a standard Next.js 16 (App Router) structure, integrated wit
 
 This portfolio includes a fully integrated AI assistant to help visitors explore my content in an interactive way.
 
-### Powered by Vercel AI SDK and Groq, AI Assistant provides:
+### Powered by FastAPI and Groq, AI Assistant provides:
 
 - Answers about me, my background, and my work
 - Help navigating the website
@@ -80,34 +85,6 @@ This portfolio includes a fully integrated AI assistant to help visitors explore
 - Clean, minimal UI with Tailwind
 
 It is part personal assistant, part tech demo, and a fun nod to my name:
-
-## 🧩 Site Content & Pages
-
-### About Me
-
-A personal overview of who I am, my background, my experience, and my philosophy as a web developer.
-
-### Blog
-
-Long-form writing about:
-
-- Programming
-- Web development
-- Technology
-- Opinions on frontend, tooling, and modern stacks
-- Comments system
-
-### Projects
-
-A curated list of the projects I've worked on, with descriptions, tech stacks, and case studies.
-Managed through Payload CMS.
-
-### Stack
-
-A breakdown of the technologies I use daily:
-React • Next.js • Tailwind • Payload • Postgres • Groq SDK • TypeScript • Better Auth + GitHub OAuth Provider.
-
-Almost all content is dynamically loaded from Payload CMS + PostgreSQL.
 
 ## 💬 Contact
 
