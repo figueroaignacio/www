@@ -165,10 +165,7 @@
         "label": "Inicio",
         "href": "/"
       },
-      {
-        "label": "Asistente",
-        "href": "/assistant"
-      },
+
       {
         "label": "Sobre Mí",
         "href": "/about"
@@ -176,6 +173,10 @@
       {
         "label": "Contacto",
         "href": "/contact"
+      },
+      {
+        "label": "Asistente",
+        "href": "/assistant"
       }
     ]
   },

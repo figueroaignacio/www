@@ -2,6 +2,7 @@
 
 import { usePathname } from '@/i18n/navigation';
 import { useEffect, useState } from 'react';
+import { ThemeToggle } from '../theme-toggle';
 
 const PromptPrefix = ({ path, className }: { path: string; className?: string }) => (
   <span className={className}>
@@ -36,8 +37,11 @@ export function TerminalPrompt() {
   }, []);
 
   return (
-    <div className="fixed bottom-2 left-2 md:bottom-4 md:left-4 z-40 hidden flex-col space-y-1 font-mono text-xs md:flex select-none pointer-events-none max-w-sm">
-      <div className="text-muted-foreground min-h-4">{time ? `[${time}]` : ''}</div>
+    <div className="fixed bottom-2 left-2 md:bottom-4 md:left-4 z-40 hidden flex-col space-y-1 font-mono text-xs md:flex select-none max-w-sm">
+      <div className="flex gap-x-4 items-center">
+        <span className="text-muted-foreground min-h-4">{time ? `[${time}]` : ''}</span>
+        <ThemeToggle />
+      </div>
       <div>
         <PromptPrefix path={displayPath} />
         <span className="text-foreground ml-1">$</span>

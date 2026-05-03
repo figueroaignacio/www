@@ -165,10 +165,7 @@
         "label": "Home",
         "href": "/"
       },
-      {
-        "label": "Assistant",
-        "href": "/assistant"
-      },
+
       {
         "label": "About",
         "href": "/about"
@@ -176,6 +173,10 @@
       {
         "label": "Contact",
         "href": "/contact"
+      },
+      {
+        "label": "Assistant",
+        "href": "/assistant"
       }
     ]
   },

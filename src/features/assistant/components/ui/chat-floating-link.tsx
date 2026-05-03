@@ -13,7 +13,7 @@ export function ChatFloatingLink() {
   if (pathname?.includes('/assistant')) return null;
 
   return (
-    <div className="fixed bottom-2 right-2 z-50">
+    <div className="fixed bottom-2 right-2 z-50 hidden lg:block">
       <Tooltip>
         <Tooltip.Trigger asChild>
           <Link

@@ -1,6 +1,5 @@
+import { Dock } from '@/components/dock';
 import { Footer } from '@/components/footer';
-import { Header } from '@/components/header';
-import { ChatFloatingLink } from '@/features/assistant/components/ui/chat-floating-link';
 import { routing } from '@/i18n/routing';
 import { hasLocale, type Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
@@ -21,12 +20,13 @@ export default async function MainLayout({ children, params }: LocaleLayoutProps
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
       <main id="main-content" className="flex-1 container" tabIndex={-1}>
         {children}
       </main>
       <Footer />
-      <ChatFloatingLink />
+      {/* Safe area spacer for fixed dock */}
+      <div className="h-32 w-full shrink-0" aria-hidden="true" />
+      <Dock />
     </div>
   );
 }
