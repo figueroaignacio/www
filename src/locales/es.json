@@ -30,7 +30,7 @@
       "greeting": "Hola, soy",
       "name": "Ignacio Figueroa",
       "title": "Desarrollador Fullstack - AI Developer - Arquitectura de Software",
-      "description": "Arquitecto de aplicaciones web de alto rendimiento con React, Node.js y Python. Especializado en integración de IA y sistemas escalables, entrego código limpio y mantenible diseñado para resolver desafíos de negocio complejos.",
+      "description": "Desarrollador Fullstack especializado en React, Node.js e integración de IA. Construyo aplicaciones web escalables y listas para producción.",
       "actions": {
         "viewProjects": "Ver mi trabajo",
         "learnMore": "Conocé más sobre mí",
@@ -40,13 +40,13 @@
     },
     "aboutMe": {
       "title": "Sobre mí",
-      "description": "Diseño soluciones a problemas complejos. Enfocado en la performance, la accesibilidad y la arquitectura limpia.",
+      "description": "Construyo soluciones a problemas complejos. Enfocado en arquitectura de software, integración de IA y código limpio.",
       "items": [
         {
-          "content": "<b>Ingeniero de Software y Estudiante UTN.</b> Diseño aplicaciones de nivel producción con un enfoque en la excelencia técnica. Especializado en el ecosistema moderno de React, construyo sistemas resilientes e interfaces intuitivas que generan valor de negocio."
+          "content": "<b>Desarrollador Fullstack y Estudiante UTN.</b> Diseño aplicaciones de nivel producción con un enfoque en la excelencia técnica. Especializado en el ecosistema moderno de React y Node, construyo sistemas resilientes e interfaces intuitivas que generan valor de negocio."
         },
         {
-          "content": "<b>Liderazgo Técnico Fullstack.</b> Desde el desarrollo de arquitecturas Frontend de alto rendimiento hasta el diseño de APIs robustas en el Backend, entrego soluciones end-to-end escalables, mantenibles y optimizadas para el crecimiento."
+          "content": "<b>Arquitectura de Software.</b> Desde el desarrollo de arquitecturas Frontend de alto rendimiento hasta el diseño de APIs robustas en el Backend, entrego soluciones end-to-end escalables, mantenibles y optimizadas para el crecimiento."
         },
         {
           "content": "<b>Innovación con IA.</b> Utilizo modelos de lenguaje para automatizar flujos de trabajo complejos y construir funcionalidades inteligentes. Me enfoco en la implementación práctica de IA para mejorar la productividad y la eficiencia operativa."
@@ -54,9 +54,9 @@
       ],
       "content": {
         "title": "Sobre Mí",
-        "subtitle": "Desarrollo con propósito.",
-        "bio": "Soy Ingeniero de Software Fullstack y estudiante de la UTN con base en Argentina. Me especializo en la construcción de aplicaciones web de nivel empresarial que combinan arquitecturas sólidas con experiencias de usuario excepcionales. Mi enfoque es entregar soluciones de alto impacto mediante prácticas de ingeniería modernas.",
-        "details": "Más allá del código, estoy comprometido con el aprendizaje continuo y la excelencia técnica. Aplico principios minimalistas al diseño y la arquitectura para reducir la complejidad y mejorar la mantenibilidad. Actualmente estoy abierto a oportunidades de ingeniería donde pueda contribuir al desarrollo de productos de software de clase mundial."
+        "subtitle": "Sistemas escalables, no solo features.",
+        "bio": "Soy Desarrollador Fullstack y estudiante de la UTN con base en Argentina. Me especializo en arquitectura de software e integración de IA. En lugar de solo escribir código, construyo aplicaciones web resilientes que escalan sin esfuerzo y resultan intuitivas para el usuario.",
+        "details": "Mi enfoque es minimalista: reducir la complejidad, mejorar la mantenibilidad y centrarme en lo que importa. Actualmente busco oportunidades como desarrollador donde pueda resolver desafíos arquitectónicos profundos y crear productos inteligentes preparados para el futuro."
       }
     },
     "projects": {
@@ -201,13 +201,13 @@
       "url": "/pdf/cv_ignacio_figueroa_desarrollador_fullstack.pdf",
       "cta": {
         "title": "¿Buscás detalles técnicos?",
-        "description": "Revisá mi historial laboral completo, stack tecnológico y educación. Actualmente abierto a nuevos roles como Ingeniero Fullstack.",
+        "description": "Revisá mi historial laboral completo, stack tecnológico y educación. Actualmente abierto a nuevos roles como Desarrollador Fullstack.",
         "text": "Descargar mi CV"
       }
     },
     "ctaContact": {
       "title": "Disponible para nuevas oportunidades",
-      "description": "Actualmente estoy abierto a roles de Ingeniería de Software Fullstack. Si buscás a alguien que combine rigor técnico con una mentalidad orientada a producto, conectemos."
+      "description": "Actualmente estoy abierto a roles de Desarrollador Fullstack. Si buscás a alguien que combine rigor arquitectónico con una mentalidad orientada a producto, conectemos."
     },
     "chat": {
       "disclaimers": [

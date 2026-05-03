@@ -30,7 +30,7 @@
       "greeting": "Hi, I'm",
       "name": "Ignacio Figueroa",
       "title": "Fullstack Developer - AI Developer - Software Architecture",
-      "description": "Architecting high-performance web applications with React, Node.js, and Python. Specializing in AI integration and scalable systems, I deliver clean, maintainable code designed to solve complex business challenges.",
+      "description": "Fullstack Developer specializing in React, Node.js and AI integration. Building scalable, production-ready web applications.",
       "actions": {
         "viewProjects": "View my work",
         "learnMore": "Learn more about me",
@@ -40,13 +40,13 @@
     },
     "aboutMe": {
       "title": "About Me",
-      "description": "I engineer solutions for complex problems. Focused on performance, accessibility, and clean architecture.",
+      "description": "I build solutions for complex problems. Focused on software architecture, AI integration, and clean code.",
       "items": [
         {
-          "content": "<b>Software Engineer & UTN Student.</b> I architect production-grade applications with a focus on technical excellence. Specializing in the modern React ecosystem, I build resilient systems and intuitive interfaces that drive business value."
+          "content": "<b>Fullstack Developer & UTN Student.</b> I architect production-grade applications with a focus on technical excellence. Specializing in the modern React and Node ecosystem, I build resilient systems and intuitive interfaces that drive business value."
         },
         {
-          "content": "<b>Fullstack Technical Leadership.</b> From crafting high-performance Frontend architectures to designing robust Backend APIs, I deliver end-to-end solutions that are scalable, maintainable, and optimized for growth."
+          "content": "<b>Software Architecture.</b> From crafting high-performance Frontend architectures to designing robust Backend APIs, I deliver end-to-end solutions that are scalable, maintainable, and optimized for growth."
         },
         {
           "content": "<b>AI-Powered Innovation.</b> I leverage Large Language Models to automate complex workflows and build intelligent product features. I focus on practical AI implementation that enhances user productivity and business efficiency."
@@ -54,9 +54,9 @@
       ],
       "content": {
         "title": "About",
-        "subtitle": "Engineering solutions with purpose.",
-        "bio": "I am a Fullstack Software Engineer and UTN student based in Argentina. I specialize in building enterprise-grade web applications that merge robust architecture with exceptional user experiences. My focus is on delivering high-impact solutions through modern engineering practices.",
-        "details": "Beyond the code, I am committed to continuous learning and technical excellence. I apply minimalist principles to design and architecture to reduce complexity and improve maintainability. I am currently open to engineering opportunities where I can contribute to building world-class software products."
+        "subtitle": "Building systems, not just features.",
+        "bio": "I'm a Fullstack Developer and UTN student based in Argentina. I design software architecture and integrate AI to solve real business problems. Instead of just writing code, I build resilient web applications that scale effortlessly and feel intuitive to use.",
+        "details": "My approach is minimalist: reduce complexity, improve maintainability, and focus on what matters. I'm currently looking for fullstack roles where I can tackle deep architectural challenges and build intelligent, future-proof products."
       }
     },
     "projects": {
@@ -201,13 +201,13 @@
       "url": "/pdf/cv_ignacio_figueroa_fullstack_developer.pdf",
       "cta": {
         "title": "Looking for technical details?",
-        "description": "Review my complete work history, technical stack, and education. Currently open to new Fullstack Engineering roles.",
+        "description": "Review my complete work history, technical stack, and education. Currently open to new Fullstack Developer roles.",
         "text": "Download My Resume"
       }
     },
     "ctaContact": {
       "title": "Available for New Opportunities",
-      "description": "I am currently open to Fullstack Software Engineering roles. If you are looking for someone who combines technical rigor with a product-driven mindset, let's connect."
+      "description": "I am currently open to Fullstack Developer roles. If you are looking for someone who combines architectural rigor with a product-driven mindset, let's connect."
     },
     "chat": {
       "disclaimers": [
