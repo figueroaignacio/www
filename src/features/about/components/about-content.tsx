@@ -38,7 +38,7 @@ export function AboutContent() {
       initial="hidden"
       animate="visible"
     >
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start w-full max-w-4xl mx-auto">
+      <div className="grid  gap-8 md:gap-16 items-start w-full">
         <div className="md:col-span-8 lg:col-span-9 space-y-8">
           <div className="space-y-2">
             <motion.h1

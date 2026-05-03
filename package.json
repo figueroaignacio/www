@@ -58,7 +58,7 @@
     "@types/pg": "^8.20.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "eslint": "^10.2.1",
+    "eslint": "^9.39.4",
     "eslint-config-next": "16.2.4",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
