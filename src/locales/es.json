@@ -276,6 +276,10 @@
       }
     },
     "openToWorkBadge": "Disponible para trabajar",
+    "theme": {
+      "dark": "Oscuro",
+      "light": "Claro"
+    },
     "contactForm": {
       "title": "Hablemos.",
       "description": "Actualmente abierto a nuevas oportunidades de desarrollo y colaboraciones técnicas. Enviame un mensaje y te responderé a la brevedad.",
