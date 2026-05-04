@@ -1,5 +1,5 @@
 import { routing } from '@/i18n/routing';
-import { DOMAINS } from '@/lib/constants';
+import { BASE_URL } from '@/lib/constants';
 import createMiddleware from 'next-intl/middleware';
 import { NextResponse, type NextRequest } from 'next/server';
 
@@ -10,9 +10,7 @@ export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (host?.includes('vercel.app')) {
-    const isEs = pathname.startsWith('/es');
-    const targetDomain = isEs ? DOMAINS.es : DOMAINS.en;
-    const targetUrl = new URL(pathname, targetDomain);
+    const targetUrl = new URL(pathname, BASE_URL);
     targetUrl.search = request.nextUrl.search;
     return NextResponse.redirect(targetUrl, 308);
   }

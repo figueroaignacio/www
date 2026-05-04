@@ -1,7 +1,7 @@
 import { getProjectBySlug, getProjects } from '@/features/projects/api/projects';
 import { ProjectHeaderPage } from '@/features/projects/components/project-header-page';
 import { ProjectVideo } from '@/features/projects/components/project-video';
-import { DOMAINS } from '@/lib/constants';
+import { BASE_URL } from '@/lib/constants';
 import type { Project } from '@/payload-types';
 import { RichText } from '@payloadcms/richtext-lexical/react';
 import type { Metadata } from 'next';
@@ -60,17 +60,15 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     };
   }
 
-  const domain = DOMAINS[locale as keyof typeof DOMAINS] || DOMAINS.en;
-
   return {
     title: project.title,
     description: project.description,
     alternates: {
-      canonical: `/projects/${slug}`,
+      canonical: `/${locale}/projects/${slug}`,
       languages: {
-        en: `${DOMAINS.en}/projects/${slug}`,
-        es: `${DOMAINS.es}/projects/${slug}`,
-        'x-default': `${DOMAINS.en}/projects/${slug}`,
+        en: `${BASE_URL}/en/projects/${slug}`,
+        es: `${BASE_URL}/es/projects/${slug}`,
+        'x-default': `${BASE_URL}/en/projects/${slug}`,
       },
     },
     openGraph: {
@@ -78,7 +76,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       description: project.description,
       type: 'article',
       locale: locale === 'es' ? 'es_ES' : 'en_US',
-      url: `/projects/${slug}`,
+      url: `/${locale}/projects/${slug}`,
       siteName: 'Ignacio Figueroa',
       images: [
         {

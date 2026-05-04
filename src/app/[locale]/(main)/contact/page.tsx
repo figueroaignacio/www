@@ -1,6 +1,6 @@
 import { GitHubIcon } from '@/components/tech-icons';
 import { ContactForm } from '@/features/contact/components/contact-form';
-import { DOMAINS } from '@/lib/constants';
+import { BASE_URL } from '@/lib/constants';
 import { DiscordLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
 import { ArrowUpRight, Mail } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -51,15 +51,13 @@ export default function ContactPage({ params }: ContactPageProps) {
   const { locale } = use(params);
   setRequestLocale(locale);
 
-  const domain = DOMAINS[locale as keyof typeof DOMAINS] || DOMAINS.en;
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
     mainEntity: {
       '@type': 'Person',
       name: 'Ignacio Figueroa',
-      url: domain,
+      url: `${BASE_URL}/${locale}`,
       jobTitle: 'Full Stack Developer',
       email: 'ignaciofigueroadev@gmail.com',
       sameAs: ['https://github.com/figueroaignacio', 'https://linkedin.com/in/figueroa-ignacio'],
@@ -152,17 +150,17 @@ export async function generateMetadata({ params }: ContactPageProps): Promise<Me
     description: t('description'),
     keywords: t('keywords'),
     alternates: {
-      canonical: '/contact',
+      canonical: `/${locale}/contact`,
       languages: {
-        en: `${DOMAINS.en}/contact`,
-        es: `${DOMAINS.es}/contact`,
-        'x-default': `${DOMAINS.en}/contact`,
+        en: `${BASE_URL}/en/contact`,
+        es: `${BASE_URL}/es/contact`,
+        'x-default': `${BASE_URL}/en/contact`,
       },
     },
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: '/contact',
+      url: `/${locale}/contact`,
       locale: locale === 'en' ? 'en_US' : 'es_ES',
       type: 'website',
       siteName: 'Ignacio Figueroa',

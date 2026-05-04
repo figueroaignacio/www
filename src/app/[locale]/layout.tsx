@@ -2,7 +2,7 @@ import { Providers } from '@/components/providers';
 import { SkipLink } from '@/components/ui/skip-link';
 import { TerminalPrompt } from '@/components/ui/terminal-prompt';
 import { routing } from '@/i18n/routing';
-import { DOMAINS } from '@/lib/constants';
+import { BASE_URL } from '@/lib/constants';
 import { fontHeading, fontSans } from '@/lib/fonts';
 import type { Metadata, Viewport } from 'next';
 import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
@@ -64,7 +64,7 @@ const baseMetadata: Metadata = {
     'Portfolio',
     'Software Engineer',
   ],
-  authors: [{ name: 'Ignacio Figueroa', url: 'https://en.ignaciofigueroa.dev' }],
+  authors: [{ name: 'Ignacio Figueroa', url: BASE_URL }],
   creator: 'Ignacio Figueroa',
   publisher: 'Ignacio Figueroa',
   formatDetection: {
@@ -72,12 +72,13 @@ const baseMetadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(DOMAINS.en),
+  metadataBase: new URL(BASE_URL),
   alternates: {
     canonical: '/',
     languages: {
-      en: DOMAINS.en,
-      es: DOMAINS.es,
+      en: `${BASE_URL}/en`,
+      es: `${BASE_URL}/es`,
+      'x-default': `${BASE_URL}/en`,
     },
   },
   twitter: {
@@ -101,32 +102,36 @@ const baseMetadata: Metadata = {
   },
 };
 
-export async function generateMetadata({ params }: Omit<LocaleLayoutProps, 'children'>): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: Omit<LocaleLayoutProps, 'children'>): Promise<Metadata> {
   const { locale } = await params;
-  
-  const domain = DOMAINS[locale as keyof typeof DOMAINS] || DOMAINS.en;
 
   return {
     ...baseMetadata,
-    metadataBase: new URL(domain),
+    metadataBase: new URL(BASE_URL),
     alternates: {
-      canonical: '/',
+      canonical: `/${locale}`,
       languages: {
-        en: DOMAINS.en,
-        es: DOMAINS.es,
-        'x-default': DOMAINS.en,
+        en: `${BASE_URL}/en`,
+        es: `${BASE_URL}/es`,
+        'x-default': `${BASE_URL}/en`,
       },
     },
     openGraph: {
-      title: locale === 'es' ? 'Ignacio Figueroa | Full Stack Developer' : 'Ignacio Figueroa | Full Stack Developer',
-      description: locale === 'es' 
-        ? 'Desarrollador Full Stack especializado en React, Next.js y TypeScript.' 
-        : 'Full Stack Developer specializing in React, Next.js and TypeScript.',
+      title:
+        locale === 'es'
+          ? 'Ignacio Figueroa | Full Stack Developer'
+          : 'Ignacio Figueroa | Full Stack Developer',
+      description:
+        locale === 'es'
+          ? 'Desarrollador Full Stack especializado en React, Next.js y TypeScript.'
+          : 'Full Stack Developer specializing in React, Next.js and TypeScript.',
       type: 'website',
       locale: locale === 'es' ? 'es_ES' : 'en_US',
       alternateLocale: locale === 'es' ? ['en_US'] : ['es_ES'],
       siteName: 'Ignacio Figueroa',
-      url: domain,
+      url: `${BASE_URL}/${locale}`,
     },
   };
 }
