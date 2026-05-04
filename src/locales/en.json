@@ -93,7 +93,8 @@
       "title": "Open Source Contributions",
       "description": "Repos I've contributed to — bug fixes, features, and improvements.",
       "viewRepo": "View repository",
-      "viewFork": "View fork"
+      "viewFork": "View fork",
+      "pr": "Pull Request"
     },
     "interests": {
       "title": "Technical Expertise",

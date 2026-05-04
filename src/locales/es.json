@@ -93,7 +93,8 @@
       "title": "Contribuciones Open Source",
       "description": "Repositorios a los que contribuí — bug fixes, features y mejoras.",
       "viewRepo": "Ver repositorio",
-      "viewFork": "Ver fork"
+      "viewFork": "Ver fork",
+      "pr": "Pull Request"
     },
     "interests": {
       "title": "Especialización Técnica",

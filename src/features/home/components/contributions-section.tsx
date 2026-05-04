@@ -24,6 +24,7 @@ export async function ContributionsSection() {
             technologies={contribution.technologies}
             repository={contribution.repository}
             fork={contribution.fork}
+            pullRequests={contribution.pullRequests}
           />
         ))}
       </AnimatedContributionList>
