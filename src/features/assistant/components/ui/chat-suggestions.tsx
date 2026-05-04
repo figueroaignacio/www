@@ -1,4 +1,11 @@
-import { Code2, FolderGit2, Lightbulb, MessageSquare, Sparkles } from 'lucide-react';
+import {
+  BulbIcon,
+  CodeIcon,
+  Folder01Icon,
+  Message01Icon,
+  SparklesIcon,
+} from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 
@@ -11,23 +18,23 @@ export function ChatSuggestions({ onSuggestionClick }: ChatSuggestionsProps) {
 
   const suggestions = [
     {
-      icon: MessageSquare,
+      icon: Message01Icon,
       text: t('who'),
     },
     {
-      icon: FolderGit2,
+      icon: Folder01Icon,
       text: t('projects'),
     },
     {
-      icon: Code2,
+      icon: CodeIcon,
       text: t('technologies'),
     },
     {
-      icon: Sparkles,
+      icon: SparklesIcon,
       text: t('education'),
     },
     {
-      icon: Lightbulb,
+      icon: BulbIcon,
       text: t('recruiterMode'),
     },
   ];
@@ -52,7 +59,7 @@ export function ChatSuggestions({ onSuggestionClick }: ChatSuggestionsProps) {
             whileTap={{ scale: 0.97 }}
             className="flex items-center gap-2 px-3.5 py-2 rounded-lg border border-border/60 bg-card/60 hover:bg-card hover:border-border text-muted-foreground hover:text-foreground transition-colors duration-150 cursor-pointer"
           >
-            <Icon className="size-3.5 shrink-0" />
+            <HugeiconsIcon icon={Icon} className="size-3.5 shrink-0" />
             <span className="text-xs">{suggestion.text}</span>
           </motion.button>
         );

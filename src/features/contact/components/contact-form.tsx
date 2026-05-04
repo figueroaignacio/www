@@ -1,9 +1,10 @@
 'use client';
 
-import { Check, Loader2, Send } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useActionState, useRef } from 'react';
 import { sendEmail } from '../actions/send-email';
+import { Tick01Icon, Loading02Icon, MailSend02Icon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 
 type ContactFormState = {
   error: string | null;
@@ -105,14 +106,14 @@ export function ContactForm() {
             className="btn btn-primary gap-2 flex items-center"
           >
             {isPending && t('sending')}
-            {!isPending && state.success && <Check className="size-4" />}
+            {!isPending && state.success && <HugeiconsIcon icon={Tick01Icon} className="size-4" />}
             {!isPending && !state.success && t('submit')}
 
             {!state.success &&
               (isPending ? (
-                <Loader2 className="size-4 animate-spin" />
+                <HugeiconsIcon icon={Loading02Icon} className="size-4 animate-spin" />
               ) : (
-                <Send className="size-4" />
+                <HugeiconsIcon icon={MailSend02Icon} className="size-4" />
               ))}
           </button>
         </div>

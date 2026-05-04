@@ -3,7 +3,7 @@
 import { motion, type Variants } from 'motion/react';
 import { useTranslations } from 'next-intl';
 
-import { Icon } from '@/components/tech-icons/index';
+import { Icon, type IconName } from '@/components/tech-icons/index';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -27,7 +27,7 @@ const itemVariants: Variants = {
   },
 };
 
-const iconMap: Record<string, string> = {
+const iconMap: Record<string, IconName> = {
   Vite: 'vite',
   React: 'react',
   NextJS: 'nextjs',
@@ -69,7 +69,14 @@ export function TechStack() {
     },
     {
       category: t('stack.categories.ai'),
-      items: ['Claude Code', 'Open Code', 'Google Antigravity', 'Vercel AI SDK', 'GenAI SDK', 'Groq SDK'],
+      items: [
+        'Claude Code',
+        'Open Code',
+        'Google Antigravity',
+        'Vercel AI SDK',
+        'GenAI SDK',
+        'Groq SDK',
+      ],
     },
     {
       category: t('stack.categories.others'),
@@ -117,7 +124,7 @@ export function TechStack() {
                   role="listitem"
                 >
                   <span aria-hidden="true" className="size-4 flex items-center justify-center">
-                    <Icon name={iconMap[name] as any} />
+                    <Icon name={iconMap[name]} />
                   </span>
                   <span className="text-xs font-medium">{name}</span>
                 </motion.li>

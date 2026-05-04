@@ -1,8 +1,10 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { AlertCircle } from 'lucide-react';
+
 import { useEffect } from 'react';
+import { AlertCircleIcon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 
 export default function ChatError({
   error,
@@ -18,7 +20,7 @@ export default function ChatError({
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center gap-4">
       <div className="flex flex-col items-center gap-2 text-center">
-        <AlertCircle className="size-10 text-destructive" />
+        <HugeiconsIcon icon={AlertCircleIcon} className="size-10 text-destructive" />
         <h2 className="text-xl font-semibold">Chat unavailable</h2>
         <p className="max-w-md text-sm text-muted-foreground">
           There was an error loading the chat. Please try again.

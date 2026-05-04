@@ -8,10 +8,12 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { locales } from '@/i18n/routing';
-import { Check } from 'lucide-react';
+
 import type { Locale } from 'next-intl';
 import { useLocale } from 'next-intl';
 import { useTransition } from 'react';
+import { Tick01Icon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 
 const LOCALE_LABELS: Record<string, string> = {
   es: 'ES',
@@ -50,7 +52,9 @@ export function LocaleSwitcher() {
             <span className={locale === localeOption ? 'font-medium' : ''}>
               {getLocaleLabel(localeOption)}
             </span>
-            {locale === localeOption && <Check className="text-foreground ml-2 h-3.5 w-3.5" />}
+            {locale === localeOption && (
+              <HugeiconsIcon icon={Tick01Icon} className="text-foreground ml-2 h-3.5 w-3.5" />
+            )}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

@@ -1,8 +1,10 @@
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Dialog } from '@/components/ui/dialog';
 import { Link } from '@/i18n/navigation';
-import { ArrowLeft, MessageCircle } from 'lucide-react';
+
 import { useTranslations } from 'next-intl';
+import { ArrowLeft01Icon, Message01Icon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 
 interface ChatHeaderProps {
   onResetChat?: () => void;
@@ -18,7 +20,7 @@ export function ChatHeader({ onResetChat }: ChatHeaderProps) {
         className="flex items-center justify-center size-8 rounded-lg text-muted-foreground hover:text-foreground hover:bg-card transition-colors duration-150"
         aria-label="Back"
       >
-        <ArrowLeft className="size-4" />
+        <HugeiconsIcon icon={ArrowLeft01Icon} className="size-4" />
       </Link>
 
       {onResetChat && (
@@ -30,7 +32,7 @@ export function ChatHeader({ onResetChat }: ChatHeaderProps) {
                 className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-card transition-colors duration-150 text-sm"
                 title={t('reset')}
               >
-                <MessageCircle size={14} />
+                <HugeiconsIcon icon={Message01Icon} size={14} />
                 <span className="text-xs">{t('newChat')}</span>
               </button>
             </Dialog.Trigger>

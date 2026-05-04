@@ -2,7 +2,8 @@
 
 import { AssistantAvatar } from '@/features/assistant/components/ui/assistant-avatar';
 import { Link } from '@/i18n/navigation';
-import { FileText } from 'lucide-react';
+import { DocumentCodeIcon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 import { motion, type Variants } from 'motion/react';
 import { useTranslations } from 'next-intl';
 
@@ -74,7 +75,7 @@ export function HomeHero() {
           rel="noopener noreferrer"
           className="btn btn-outline hover:bg-muted/50 transition-all duration-300"
         >
-          <FileText className="size-4" />
+          <HugeiconsIcon icon={DocumentCodeIcon} className="size-4" />
           {t('actions.viewCv')}
         </a>
       </motion.div>

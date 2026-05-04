@@ -1,7 +1,8 @@
 import { BackButton } from '@/components/back-button';
 import { GitHubIcon } from '@/components/tech-icons/github-icon';
 import type { Project } from '@/payload-types';
-import { ExternalLink } from 'lucide-react';
+import { LinkSquare02Icon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 
 export function ProjectHeaderPage({
   title,
@@ -43,7 +44,7 @@ export function ProjectHeaderPage({
               className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground text-background hover:opacity-90 transition-opacity"
             >
               <span>Visit Demo</span>
-              <ExternalLink className="size-4" />
+              <HugeiconsIcon icon={LinkSquare02Icon} className="size-4" />
             </a>
           )}
           {repository && (

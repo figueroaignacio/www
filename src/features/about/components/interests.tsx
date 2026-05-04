@@ -3,43 +3,43 @@
 import { LinuxIcon } from '@/components/tech-icons/linux-icon';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/cn';
+import type { Icon } from '@/lib/constants';
 import {
-  Blocks,
-  Bot,
-  FlaskConical,
-  Globe,
-  LayoutTemplate,
-  LucideIcon,
-  Palette,
-  ScanFace,
-  Server,
-  ShieldCheck,
-  Terminal,
-  Workflow,
-  Zap,
-} from 'lucide-react';
+  AiBrain01Icon,
+  CloudServerIcon,
+  ComputerTerminal01Icon,
+  FaceIdIcon,
+  FlashIcon,
+  FlowCircleIcon,
+  Globe02Icon,
+  Layout01Icon,
+  PuzzleIcon,
+  SecurityIcon,
+  TestTube01Icon,
+} from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 import { motion, type Variants } from 'motion/react';
 import { useTranslations } from 'next-intl';
 
 type InterestConfig = {
   key: string;
-  icon: LucideIcon | React.FC<React.SVGAttributes<SVGAElement>>;
+  icon: Icon;
   color: string;
 };
 
 const INTERESTS_CONFIG: InterestConfig[] = [
-  { key: 'frontend', icon: LayoutTemplate, color: 'text-cyan-500' },
-  { key: 'backend', icon: Server, color: 'text-emerald-500' },
-  { key: 'ai', icon: Bot, color: 'text-violet-500' },
-  { key: 'prompts', icon: Terminal, color: 'text-amber-500' },
-  { key: 'arch', icon: Blocks, color: 'text-blue-500' },
-  { key: 'clean', icon: ShieldCheck, color: 'text-rose-500' },
-  { key: 'ui', icon: Palette, color: 'text-pink-500' },
-  { key: 'a11y', icon: ScanFace, color: 'text-indigo-500' },
-  { key: 'perf', icon: Zap, color: 'text-orange-500' },
-  { key: 'qa', icon: FlaskConical, color: 'text-lime-500' },
-  { key: 'devops', icon: Workflow, color: 'text-sky-500' },
-  { key: 'opensource', icon: Globe, color: 'text-green-500' },
+  { key: 'frontend', icon: Layout01Icon, color: 'text-cyan-500' },
+  { key: 'backend', icon: CloudServerIcon, color: 'text-emerald-500' },
+  { key: 'ai', icon: AiBrain01Icon, color: 'text-violet-500' },
+  { key: 'prompts', icon: ComputerTerminal01Icon, color: 'text-amber-500' },
+  { key: 'arch', icon: PuzzleIcon, color: 'text-blue-500' },
+  { key: 'clean', icon: SecurityIcon, color: 'text-rose-500' },
+  { key: 'ui', icon: Layout01Icon, color: 'text-pink-500' },
+  { key: 'a11y', icon: FaceIdIcon, color: 'text-indigo-500' },
+  { key: 'perf', icon: FlashIcon, color: 'text-orange-500' },
+  { key: 'qa', icon: TestTube01Icon, color: 'text-lime-500' },
+  { key: 'devops', icon: FlowCircleIcon, color: 'text-sky-500' },
+  { key: 'opensource', icon: Globe02Icon, color: 'text-green-500' },
   { key: 'linux', icon: LinuxIcon, color: 'text-foreground' },
 ];
 
@@ -97,7 +97,15 @@ export function Interests() {
               variant="outline"
               className="space-x-3 py-2 px-4 hover:bg-secondary/50 hover:border-primary/30 transition-all duration-300 cursor-default group"
             >
-              <Icon className={cn('w-3.5 h-3.5 transition-colors', color)} aria-hidden="true" />
+              {typeof Icon === 'function' ? (
+                <Icon className={cn('w-3.5 h-3.5 transition-colors', color)} aria-hidden="true" />
+              ) : (
+                <HugeiconsIcon
+                  icon={Icon}
+                  className={cn('w-3.5 h-3.5 transition-colors', color)}
+                  aria-hidden="true"
+                />
+              )}
               <span className="text-xs">{t(key)}</span>
             </Badge>
           </motion.li>

@@ -1,10 +1,12 @@
 'use client';
 
 import { cn } from '@/lib/cn';
-import { Quote } from 'lucide-react';
+
 import { AnimatePresence, motion, type Variants } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
+import { QuoteUpIcon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 
 interface TestimonialData {
   id: number;
@@ -55,9 +57,10 @@ export function TestimonialsList({ testimonials }: { testimonials: TestimonialDa
               className="p-6 bg-card rounded-lg border border-foreground/10 m-0 group transition-colors duration-300 relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 p-4 opacity-5 transition-opacity">
-                <Quote className="size-12 rotate-12" />
+                <HugeiconsIcon icon={QuoteUpIcon} className="size-12 rotate-12" />
               </div>
-              <Quote
+              <HugeiconsIcon
+                icon={QuoteUpIcon}
                 className="h-6 w-6 text-muted-foreground/30 mb-4 transition-colors duration-300"
                 aria-hidden="true"
               />

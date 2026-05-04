@@ -1,10 +1,12 @@
 import { Badge } from '@/components/ui/badge';
 import type { Education } from '@/payload-types';
-import { ExternalLink, GraduationCap } from 'lucide-react';
+
 import { getLocale, getTranslations } from 'next-intl/server';
 import { getEducation } from '../api/education';
 import { AnimatedEducationList } from './animated-education-list';
 import { AnimatedSectionHeader } from './animated-section-header';
+import { LinkSquare02Icon, GraduationCap } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 
 function formatDate(dateString: string, locale: string): string {
   return new Date(dateString).toLocaleDateString(locale, {
@@ -44,7 +46,10 @@ function EducationItem({ item, locale }: EducationItemProps) {
       <div className="space-y-3">
         <div className="flex items-start gap-3">
           <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg border border-border/60 bg-secondary/50 transition-colors duration-300">
-            <GraduationCap className="size-4 text-muted-foreground transition-colors duration-300" />
+            <HugeiconsIcon
+              icon={GraduationCap}
+              className="size-4 text-muted-foreground transition-colors duration-300"
+            />
           </div>
           <div className="min-w-0 space-y-1">
             <div className="flex items-center gap-2 flex-wrap">
@@ -91,7 +96,7 @@ function EducationItem({ item, locale }: EducationItemProps) {
               className="inline-flex items-center gap-1 text-xs text-muted-foreground transition-colors"
             >
               {locale === 'es' ? 'Ver certificado' : 'View certificate'}
-              <ExternalLink className="size-3" />
+              <HugeiconsIcon icon={LinkSquare02Icon} className="size-3" />
             </a>
           </div>
         )}

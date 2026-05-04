@@ -3,15 +3,17 @@
 import { AssistantAvatar } from '@/features/assistant/components/ui/assistant-avatar';
 import { Link, usePathname } from '@/i18n/navigation';
 import { cn } from '@/lib/cn';
-import { Home, Mail, User } from 'lucide-react';
+
 import { AnimatePresence, motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import { type ReactNode, useCallback, useMemo } from 'react';
+import { Home01Icon, Mail01Icon, UserIcon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 
 const ICON_MAP: Record<string, ReactNode> = {
-  '/': <Home className="size-5" strokeWidth={1.5} />,
-  '/about': <User className="size-5" strokeWidth={1.5} />,
-  '/contact': <Mail className="size-5" strokeWidth={1.5} />,
+  '/': <HugeiconsIcon icon={Home01Icon} className="size-5" strokeWidth={1.5} />,
+  '/about': <HugeiconsIcon icon={UserIcon} className="size-5" strokeWidth={1.5} />,
+  '/contact': <HugeiconsIcon icon={Mail01Icon} className="size-5" strokeWidth={1.5} />,
   '/assistant': <AssistantAvatar size="sm" className="scale-110" />,
 };
 

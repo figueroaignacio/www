@@ -1,19 +1,20 @@
 import { GitHubIcon } from '@/components/tech-icons/github-icon';
-import { LinkedInLogoIcon } from '@radix-ui/react-icons';
-import { Mail } from 'lucide-react';
+
 import { useTranslations } from 'next-intl';
+import { Mail01Icon, Linkedin01Icon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 
 const contact = [
   {
     label: 'Email',
     href: 'mailto:ignaciofigueroadev@gmail.com',
-    icon: <Mail />,
+    icon: <HugeiconsIcon icon={Mail01Icon} />,
     target: '',
   },
   {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/figueroa-ignacio',
-    icon: <LinkedInLogoIcon />,
+    icon: <HugeiconsIcon icon={Linkedin01Icon} />,
     target: '_blank',
   },
   {

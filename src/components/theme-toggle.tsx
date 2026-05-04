@@ -1,6 +1,7 @@
 'use client';
 
-import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
+import { Moon02Icon, Sun01Icon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 import { useTheme } from 'nach-themes';
 import { useEffect, useState } from 'react';
 import { Button } from './ui/button';
@@ -10,6 +11,7 @@ export function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
@@ -25,7 +27,11 @@ export function ThemeToggle() {
 
   return (
     <Button size="icon" variant="ghost" onClick={toggleTheme} aria-label="Toggle theme">
-      {isDark ? <SunIcon className="size-3" /> : <MoonIcon className="size-3" />}
+      {isDark ? (
+        <HugeiconsIcon icon={Sun01Icon} className="size-3" />
+      ) : (
+        <HugeiconsIcon icon={Moon02Icon} className="size-3" />
+      )}
     </Button>
   );
 }

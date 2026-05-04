@@ -1,8 +1,9 @@
 'use client';
 
-import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Fragment } from 'react/jsx-runtime';
+import { ArrowRight01Icon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 
 interface NachUICtaProps {
   t: {
@@ -31,7 +32,10 @@ export function NachUICtaClient({ t, count }: NachUICtaProps) {
       label: t.actions.viewComponents,
       href: t.href.components,
       icon: (
-        <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+        <HugeiconsIcon
+          icon={ArrowRight01Icon}
+          className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+        />
       ),
       className: 'btn btn-primary group',
     },
@@ -39,7 +43,10 @@ export function NachUICtaClient({ t, count }: NachUICtaProps) {
       label: t.actions.viewDocumentation,
       href: t.href.documentation,
       icon: (
-        <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+        <HugeiconsIcon
+          icon={ArrowRight01Icon}
+          className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+        />
       ),
       className: 'btn btn-outline group',
     },

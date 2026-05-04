@@ -1,8 +1,13 @@
 import { GitHubIcon } from '@/components/tech-icons';
 import { ContactForm } from '@/features/contact/components/contact-form';
 import { BASE_URL } from '@/lib/constants';
-import { DiscordLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
-import { ArrowUpRight, Mail } from 'lucide-react';
+import {
+  ArrowUpRight01Icon,
+  DiscordIcon,
+  Linkedin01Icon,
+  Mail01Icon,
+} from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 import type { Metadata } from 'next';
 import { type Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
@@ -17,7 +22,7 @@ const SOCIAL_LINKS = [
     id: 'email',
     label: 'Email',
     href: 'mailto:ignaciofigueroadev@gmail.com',
-    icon: Mail,
+    icon: Mail01Icon,
     handle: 'ignaciofigueroadev@gmail.com',
     external: false,
   },
@@ -25,7 +30,7 @@ const SOCIAL_LINKS = [
     id: 'linkedin',
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/figueroa-ignacio',
-    icon: LinkedInLogoIcon,
+    icon: Linkedin01Icon,
     handle: '/in/figueroa-ignacio',
     external: true,
   },
@@ -41,7 +46,7 @@ const SOCIAL_LINKS = [
     id: 'discord',
     label: 'Discord',
     href: 'https://discord.com/users/ignaciofigueroa',
-    icon: DiscordLogoIcon,
+    icon: DiscordIcon,
     handle: 'ignaciofigueroa',
     external: true,
   },
@@ -122,14 +127,19 @@ async function ContactPageContent() {
                   className="text-muted-foreground group-hover:text-foreground transition-colors"
                   aria-hidden="true"
                 >
-                  <link.icon className="size-5" />
+                  {typeof link.icon === 'function' ? (
+                    <link.icon />
+                  ) : (
+                    <HugeiconsIcon icon={link.icon} className="size-5 shrink-0" />
+                  )}
                 </span>
                 <div className="flex flex-col">
                   <span className="text-sm font-medium">{link.label}</span>
                   <span className="text-xs text-muted-foreground">{link.handle}</span>
                 </div>
               </div>
-              <ArrowUpRight
+              <HugeiconsIcon
+                icon={ArrowUpRight01Icon}
                 className="size-4 text-muted-foreground opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
                 aria-hidden="true"
               />

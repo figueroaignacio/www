@@ -1,10 +1,12 @@
 import { Badge } from '@/components/ui/badge';
 import type { Experience } from '@/payload-types';
-import { Briefcase, ExternalLink } from 'lucide-react';
+
 import { getLocale, getTranslations } from 'next-intl/server';
 import { getExperiences } from '../api/experience';
 import { AnimatedExperienceList } from './animated-experience-list';
 import { AnimatedSectionHeader } from './animated-section-header';
+import { Briefcase01Icon, LinkSquare02Icon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 
 function formatDate(dateString: string, locale: string): string {
   return new Date(dateString).toLocaleDateString(locale, {
@@ -32,7 +34,8 @@ export async function ExperienceSection() {
                 experience.isCurrent ? 'border-primary bg-primary' : 'border-border bg-card'
               }`}
             >
-              <Briefcase
+              <HugeiconsIcon
+                icon={Briefcase01Icon}
                 className={`size-3 ${experience.isCurrent ? 'text-primary-foreground' : 'text-muted-foreground'}`}
               />
             </div>
@@ -60,7 +63,7 @@ export async function ExperienceSection() {
                       className="text-muted-foreground transition-colors inline-flex items-center gap-1"
                     >
                       {experience.company}
-                      <ExternalLink className="size-3" />
+                      <HugeiconsIcon icon={LinkSquare02Icon} className="size-3" />
                     </a>
                   ) : (
                     <span className="text-muted-foreground">{experience.company}</span>

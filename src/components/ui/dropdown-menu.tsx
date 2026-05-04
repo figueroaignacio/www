@@ -1,9 +1,11 @@
 'use client';
 
 import { cn } from '@/lib/cn';
-import { ChevronDown } from 'lucide-react';
+
 import { AnimatePresence, motion } from 'motion/react';
 import * as React from 'react';
+import { ArrowDown01Icon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 
 interface DropdownContextValue {
   isOpen: boolean;
@@ -193,7 +195,7 @@ function DropdownMenuTrigger({
         animate={isOpen ? 'open' : 'closed'}
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       >
-        <ChevronDown className="h-4 w-4 opacity-50" />
+        <HugeiconsIcon icon={ArrowDown01Icon} className="h-4 w-4 opacity-50" />
       </motion.span>
     </motion.button>
   );
@@ -208,7 +210,6 @@ function DropdownMenuContent({
   const { isOpen, closeMenu, contentId, triggerId, triggerRef } = useDropdownContext();
   const contentRef = React.useRef<HTMLDivElement>(null);
   const [position, setPosition] = React.useState<'bottom' | 'top'>('bottom');
-  const [coords, setCoords] = React.useState({ top: 0, left: 0, width: 0 });
 
   useClickOutside(contentRef, triggerRef, closeMenu, isOpen);
 

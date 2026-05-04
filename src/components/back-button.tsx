@@ -1,7 +1,8 @@
 'use client';
 
 import { useRouter } from '@/i18n/navigation';
-import { ArrowLeftIcon } from '@radix-ui/react-icons';
+import { ArrowLeft01Icon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 
 export function BackButton({ className }: { className?: string }) {
   const router = useRouter();
@@ -15,7 +16,7 @@ export function BackButton({ className }: { className?: string }) {
       onClick={onBack}
       className={`hover:scale-[1.1] transition-transform duration-100 ease cursor-pointer ${className}`}
     >
-      <ArrowLeftIcon className="size-6" />
+      <HugeiconsIcon icon={ArrowLeft01Icon} className="size-6" />
     </button>
   );
 }

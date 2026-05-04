@@ -1,6 +1,6 @@
 import { GitHubIcon } from '@/components/tech-icons/github-icon';
-import { LinkedInLogoIcon } from '@radix-ui/react-icons';
-import { File, Mail } from 'lucide-react';
+import { File01Icon, Linkedin01Icon, Mail01Icon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 import { useTranslations } from 'next-intl';
 
 export function ChatContactCards() {
@@ -15,25 +15,25 @@ export function ChatContactCards() {
     {
       id: 'linkedin',
       label: 'LinkedIn',
-      icon: LinkedInLogoIcon,
+      icon: Linkedin01Icon,
       href: 'https://www.linkedin.com/in/figueroa-ignacio',
     },
     {
       id: 'email',
       label: 'Email',
-      icon: Mail,
+      icon: Mail01Icon,
       href: 'mailto:ignaciofigueroadev@gmail.com',
     },
     {
       id: 'cv-en',
       label: 'CV (English)',
-      icon: File,
+      icon: File01Icon,
       href: 'https://ignaciofigueroa.vercel.app/pdf/CV_Ignacio_Figueroa_Fullstack_Developer.pdf',
     },
     {
       id: 'cv-es',
       label: 'CV (Español)',
-      icon: File,
+      icon: File01Icon,
       href: 'https://ignaciofigueroa.vercel.app/pdf/CV_Ignacio_Figueroa_Desarrollador_Fullstack.pdf',
     },
   ];
@@ -54,7 +54,11 @@ export function ChatContactCards() {
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-3 py-2.5 rounded-lg border border-border/40 bg-card/40 hover:bg-card hover:border-border text-muted-foreground hover:text-foreground transition-colors duration-150"
             >
-              <Icon className="size-4 shrink-0" />
+              {typeof Icon === 'function' ? (
+                <Icon />
+              ) : (
+                <HugeiconsIcon icon={Icon} className="size-4 shrink-0" />
+              )}
               <span className="text-xs font-medium">{contact.label}</span>
             </a>
           );

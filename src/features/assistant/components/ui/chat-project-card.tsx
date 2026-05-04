@@ -3,8 +3,10 @@
 import { Badge } from '@/components/ui/badge';
 import { Link } from '@/i18n/navigation';
 import type { Project, TechStack } from '@/payload-types';
-import { CodeIcon, ExternalLinkIcon, InfoCircledIcon } from '@radix-ui/react-icons';
+
 import { useTranslations } from 'next-intl';
+import { CodeIcon, LinkSquare02Icon, InformationCircleIcon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 
 export function ChatProjectCard({ slug, title, demo, repository, technologies }: Partial<Project>) {
   const t = useTranslations('components.projectItem.actions');
@@ -25,7 +27,7 @@ export function ChatProjectCard({ slug, title, demo, repository, technologies }:
               aria-label={t('source')}
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              <CodeIcon className="size-4" />
+              <HugeiconsIcon icon={CodeIcon} className="size-4" />
             </a>
           )}
           {demo && (
@@ -36,7 +38,7 @@ export function ChatProjectCard({ slug, title, demo, repository, technologies }:
               aria-label={t('preview')}
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              <ExternalLinkIcon className="size-4" />
+              <HugeiconsIcon icon={LinkSquare02Icon} className="size-4" />
             </a>
           )}
           {slug && (
@@ -45,7 +47,7 @@ export function ChatProjectCard({ slug, title, demo, repository, technologies }:
               aria-label={t('details')}
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              <InfoCircledIcon className="size-4" />
+              <HugeiconsIcon icon={InformationCircleIcon} className="size-4" />
             </Link>
           )}
         </div>

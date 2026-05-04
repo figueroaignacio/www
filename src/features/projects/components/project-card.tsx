@@ -2,8 +2,10 @@
 
 import { GitHubIcon } from '@/components/tech-icons';
 import { Badge } from '@/components/ui/badge';
+import type { Icon } from '@/lib/constants';
 import type { Project, TechStack } from '@/payload-types';
-import { Globe, Info } from 'lucide-react';
+import { Globe02Icon, InformationCircleIcon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon, type IconSvgElement } from '@hugeicons/react';
 import { useTranslations } from 'next-intl';
 
 export function ProjectCard({
@@ -14,7 +16,7 @@ export function ProjectCard({
   repository,
   technologies,
   icon,
-}: Partial<Project> & { icon?: string | null }) {
+}: Partial<Project> & { icon?: Icon }) {
   const t = useTranslations('components.projectItem.actions');
 
   const techList =
@@ -29,12 +31,12 @@ export function ProjectCard({
     {
       label: t('preview'),
       href: demo,
-      icon: Globe,
+      icon: Globe02Icon,
     },
     {
       label: t('details'),
       href: `/projects/${slug}`,
-      icon: Info,
+      icon: InformationCircleIcon,
     },
   ];
 
@@ -69,19 +71,27 @@ export function ProjectCard({
         )}
       </div>
       <div className="flex items-center gap-3 pt-1  justify-end">
-        {actions.map((action) => (
-          <a
-            key={action.label}
-            href={action.href || ''}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={action.label}
-            className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors hover:underline"
-          >
-            <action.icon className="size-3.5" />
-            {action.label}
-          </a>
-        ))}
+        {actions.map((action) => {
+          const IconComp =
+            typeof action.icon === 'function' ? (action.icon as React.ElementType) : null;
+          return (
+            <a
+              key={action.label}
+              href={action.href || ''}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={action.label}
+              className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors hover:underline"
+            >
+              {IconComp ? (
+                <IconComp className="size-3.5" />
+              ) : (
+                <HugeiconsIcon icon={action.icon as IconSvgElement} className="size-3.5" />
+              )}
+              {action.label}
+            </a>
+          );
+        })}
       </div>
     </article>
   );

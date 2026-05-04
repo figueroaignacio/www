@@ -1,10 +1,12 @@
 'use client';
 
 import { Spinner } from '@/components/ui/spinner';
-import { ArrowUp } from 'lucide-react';
+
 import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import React, { useEffect, useRef, useState } from 'react';
+import { ArrowUp01Icon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 
 interface ChatInputProps {
   message: string;
@@ -95,7 +97,7 @@ export function ChatInput({
                 : 'bg-transparent text-muted-foreground/20 cursor-not-allowed'
             }`}
           >
-            {isLoading ? <Spinner /> : <ArrowUp className="h-4 w-4" />}
+            {isLoading ? <Spinner /> : <HugeiconsIcon icon={ArrowUp01Icon} className="h-4 w-4" />}
           </motion.button>
         </div>
       </form>

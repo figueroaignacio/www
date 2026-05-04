@@ -3,9 +3,11 @@
 import { GitHubIcon } from '@/components/tech-icons';
 import { Badge } from '@/components/ui/badge';
 import type { Contribution, TechStack } from '@/payload-types';
-import { ExternalLink, GitFork, GitPullRequest } from 'lucide-react';
+
 import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
+import { LinkSquare02Icon, GitBranchIcon, GitPullRequestIcon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 
 type ContributionCardProps = Pick<
   Contribution,
@@ -53,7 +55,7 @@ export function ContributionCard({
               className="p-1.5 hover:bg-foreground/5 rounded-md transition-colors"
               title={t('viewFork')}
             >
-              <GitFork className="size-4" />
+              <HugeiconsIcon icon={GitBranchIcon} className="size-4" />
             </a>
           </div>
         </div>
@@ -62,7 +64,7 @@ export function ContributionCard({
       {pullRequests && pullRequests.length > 0 && (
         <div className="space-y-3">
           <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-muted-foreground/70">
-            <GitPullRequest className="size-3" />
+            <HugeiconsIcon icon={GitPullRequestIcon} className="size-3" />
             <span>{t('pr')}s</span>
             <div className="h-px flex-1 bg-foreground/5" />
           </div>
@@ -78,7 +80,10 @@ export function ContributionCard({
                 <span className="text-xs font-medium text-muted-foreground group-hover/pr:text-foreground truncate transition-colors">
                   {pr.label || `Pull Request #${index + 1}`}
                 </span>
-                <ExternalLink className="size-3 text-muted-foreground/30 group-hover/pr:text-primary transition-colors shrink-0" />
+                <HugeiconsIcon
+                  icon={LinkSquare02Icon}
+                  className="size-3 text-muted-foreground/30 group-hover/pr:text-primary transition-colors shrink-0"
+                />
               </a>
             ))}
           </div>
