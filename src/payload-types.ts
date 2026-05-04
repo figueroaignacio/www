@@ -74,6 +74,7 @@ export interface Config {
     media: Media;
     'tech-stack': TechStack;
     testimonials: Testimonial;
+    contributions: Contribution;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -88,8 +89,11 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     'tech-stack': TechStackSelect<false> | TechStackSelect<true>;
     testimonials: TestimonialsSelect<false> | TestimonialsSelect<true>;
+    contributions: ContributionsSelect<false> | ContributionsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
-    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
+    'payload-locked-documents':
+      | PayloadLockedDocumentsSelect<false>
+      | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
@@ -326,6 +330,20 @@ export interface Testimonial {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contributions".
+ */
+export interface Contribution {
+  id: number;
+  locale: 'en' | 'es';
+  title: string;
+  description: string;
+  technologies?: (number | TechStack)[] | null;
+  repository: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -375,6 +393,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'testimonials';
         value: number | Testimonial;
+      } | null)
+    | ({
+        relationTo: 'contributions';
+        value: number | Contribution;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -573,6 +595,19 @@ export interface TestimonialsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contributions_select".
+ */
+export interface ContributionsSelect<T extends boolean = true> {
+  locale?: T;
+  title?: T;
+  description?: T;
+  technologies?: T;
+  repository?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv_select".
  */
 export interface PayloadKvSelect<T extends boolean = true> {
@@ -628,7 +663,6 @@ export interface CollectionsWidget {
 export interface Auth {
   [k: string]: unknown;
 }
-
 
 declare module 'payload' {
   export interface GeneratedTypes extends Config {}

@@ -12,6 +12,7 @@ import { Projects } from './collections/Projects';
 import { TechStack } from './collections/TechStack';
 import { Testimonials } from './collections/Testimonials';
 import { Users } from './collections/Users';
+import { Contributions } from './collections/Contributions';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -23,7 +24,16 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Experience, Education, Projects, Media, TechStack, Testimonials],
+  collections: [
+    Users,
+    Experience,
+    Education,
+    Projects,
+    Media,
+    TechStack,
+    Testimonials,
+    Contributions,
+  ],
   editor: lexicalEditor({
     features: ({ defaultFeatures }) => [...defaultFeatures],
   }),
