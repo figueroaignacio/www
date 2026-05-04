@@ -89,6 +89,11 @@
       "showMore": "Show more",
       "showLess": "Show less"
     },
+    "contributions": {
+      "title": "Open Source Contributions",
+      "description": "Repos I've contributed to — bug fixes, features, and improvements.",
+      "viewRepo": "View repo"
+    },
     "interests": {
       "title": "Technical Expertise",
       "description": "Core competencies and specialized knowledge applied in every project.",

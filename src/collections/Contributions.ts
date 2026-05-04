@@ -9,6 +9,9 @@ export const Contributions: CollectionConfig = {
     singular: 'Contribution',
     plural: 'Contributions',
   },
+  versions: {
+    drafts: true,
+  },
   access: {
     read: () => true,
   },

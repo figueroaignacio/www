@@ -89,6 +89,11 @@
       "showMore": "Ver más",
       "showLess": "Ver menos"
     },
+    "contributions": {
+      "title": "Contribuciones Open Source",
+      "description": "Repositorios a los que contribuí — bug fixes, features y mejoras.",
+      "viewRepo": "Ver repo"
+    },
     "interests": {
       "title": "Especialización Técnica",
       "description": "Competencias principales y conocimientos especializados aplicados en cada proyecto.",

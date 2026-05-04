@@ -1,4 +1,5 @@
 import { ContactSection } from '@/features/contact/components/contact-section';
+import { ContributionsSection } from '@/features/home/components/contributions-section';
 import { CTACurriculum } from '@/features/home/components/cta-curriculum';
 import { EducationSection } from '@/features/home/components/education-section';
 import { ExperienceSection } from '@/features/home/components/experience-section';
@@ -42,6 +43,7 @@ export default function HomePage({ params }: HomePageProps) {
       <div className="space-y-24 mb-20">
         <HomeHero />
         <ProjectsSection />
+        <ContributionsSection />
         <ExperienceSection />
         <NachUICta />
         <EducationSection />

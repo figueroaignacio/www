@@ -341,6 +341,7 @@ export interface Contribution {
   repository: string;
   updatedAt: string;
   createdAt: string;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -605,6 +606,7 @@ export interface ContributionsSelect<T extends boolean = true> {
   repository?: T;
   updatedAt?: T;
   createdAt?: T;
+  _status?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

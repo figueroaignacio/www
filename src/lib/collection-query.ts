@@ -8,13 +8,14 @@ export interface CollectionQueryOptions {
   where?: Record<string, unknown>;
 }
 
-type CollectionSlug = 'experience' | 'education' | 'projects' | 'testimonials';
+type CollectionSlug = 'experience' | 'education' | 'projects' | 'testimonials' | 'contributions';
 
 const defaultSortByCollection: Record<CollectionSlug, string> = {
   experience: 'order',
   education: 'order',
   projects: 'order',
   testimonials: 'order',
+  contributions: 'createdAt',
 };
 
 export async function findCollection<T>(
