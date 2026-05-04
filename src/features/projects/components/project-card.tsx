@@ -1,9 +1,9 @@
 'use client';
 
+import { GitHubIcon } from '@/components/tech-icons';
 import { Badge } from '@/components/ui/badge';
-import { Link } from '@/i18n/navigation';
 import type { Project, TechStack } from '@/payload-types';
-import { CodeIcon, ExternalLinkIcon, InfoCircledIcon } from '@radix-ui/react-icons';
+import { Globe, Info } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 export function ProjectCard({
@@ -19,6 +19,24 @@ export function ProjectCard({
 
   const techList =
     technologies?.filter((tech): tech is TechStack => typeof tech === 'object') ?? [];
+
+  const actions = [
+    {
+      label: t('source'),
+      href: repository,
+      icon: GitHubIcon,
+    },
+    {
+      label: t('preview'),
+      href: demo,
+      icon: Globe,
+    },
+    {
+      label: t('details'),
+      href: `/projects/${slug}`,
+      icon: Info,
+    },
+  ];
 
   return (
     <article
@@ -50,41 +68,20 @@ export function ProjectCard({
           </div>
         )}
       </div>
-      <div className="flex items-center gap-3 pt-1">
-        {repository && (
+      <div className="flex items-center gap-3 pt-1  justify-end">
+        {actions.map((action) => (
           <a
-            href={repository}
+            key={action.label}
+            href={action.href || ''}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`View source code for ${title}`}
-            className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
+            aria-label={action.label}
+            className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors hover:underline"
           >
-            <CodeIcon className="size-3.5" />
-            {t('source')}
+            <action.icon className="size-3.5" />
+            {action.label}
           </a>
-        )}
-        {demo && (
-          <a
-            href={demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`View live demo for ${title}`}
-            className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ExternalLinkIcon className="size-3.5" />
-            {t('preview')}
-          </a>
-        )}
-        {slug && (
-          <Link
-            href={`/projects/${slug}`}
-            aria-label={`View details for ${title}`}
-            className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors ml-auto"
-          >
-            <InfoCircledIcon className="size-3.5" />
-            {t('details')}
-          </Link>
-        )}
+        ))}
       </div>
     </article>
   );

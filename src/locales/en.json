@@ -190,9 +190,9 @@
   "components": {
     "projectItem": {
       "actions": {
-        "details": "Details",
-        "source": "Source",
-        "preview": "Preview"
+        "details": "Learn more",
+        "source": "Repository",
+        "preview": "Website"
       }
     },
     "footer": {
