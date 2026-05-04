@@ -3,6 +3,7 @@ import * as migration_20260417_234024_add_project_icon from './20260417_234024_a
 import * as migration_20260504_002553 from './20260504_002553';
 import * as migration_20260504_003516 from './20260504_003516';
 import * as migration_20260504_004150 from './20260504_004150';
+import * as migration_20260504_213034 from './20260504_213034';
 
 export const migrations = [
   {
@@ -29,5 +30,10 @@ export const migrations = [
     up: migration_20260504_004150.up,
     down: migration_20260504_004150.down,
     name: '20260504_004150',
+  },
+  {
+    up: migration_20260504_213034.up,
+    down: migration_20260504_213034.down,
+    name: '20260504_213034',
   },
 ];

@@ -339,6 +339,7 @@ export interface Contribution {
   description: string;
   technologies?: (number | TechStack)[] | null;
   repository: string;
+  fork: string;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -604,6 +605,7 @@ export interface ContributionsSelect<T extends boolean = true> {
   description?: T;
   technologies?: T;
   repository?: T;
+  fork?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;

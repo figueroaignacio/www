@@ -53,5 +53,11 @@ export const Contributions: CollectionConfig = {
       type: 'text',
       required: true,
     },
+    {
+      name: 'fork',
+      label: 'GitHub Fork',
+      type: 'text',
+      required: true,
+    },
   ],
 };
