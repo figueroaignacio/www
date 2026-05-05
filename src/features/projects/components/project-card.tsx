@@ -2,7 +2,6 @@
 
 import { GitHubIcon } from '@/components/tech-icons';
 import { Badge } from '@/components/ui/badge';
-import type { Icon } from '@/lib/constants';
 import type { Project, TechStack } from '@/payload-types';
 import { Globe02Icon, InformationCircleIcon } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon, type IconSvgElement } from '@hugeicons/react';
@@ -16,7 +15,7 @@ export function ProjectCard({
   repository,
   technologies,
   icon,
-}: Partial<Project> & { icon?: Icon }) {
+}: Partial<Project>) {
   const t = useTranslations('components.projectItem.actions');
 
   const techList =
