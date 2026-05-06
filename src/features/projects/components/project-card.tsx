@@ -2,6 +2,7 @@
 
 import { GitHubIcon } from '@/components/tech-icons';
 import { Badge } from '@/components/ui/badge';
+import { Link } from '@/i18n/navigation';
 import type { Project, TechStack } from '@/payload-types';
 import { Globe02Icon, InformationCircleIcon } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon, type IconSvgElement } from '@hugeicons/react';
@@ -26,16 +27,19 @@ export function ProjectCard({
       label: t('source'),
       href: repository,
       icon: GitHubIcon,
+      internal: false,
     },
     {
       label: t('preview'),
       href: demo,
       icon: Globe02Icon,
+      internal: false,
     },
     {
       label: t('details'),
       href: `/projects/${slug}`,
       icon: InformationCircleIcon,
+      internal: true,
     },
   ];
 
@@ -51,6 +55,7 @@ export function ProjectCard({
             dangerouslySetInnerHTML={{ __html: icon }}
           />
         )}
+
         <div className="flex items-start gap-3">
           <div>
             <h3 id={`project-title-${title}`} className="font-semibold text-foreground">
@@ -59,6 +64,7 @@ export function ProjectCard({
             {subtitle && <p className="text-sm text-muted-foreground mt-0.5">{subtitle}</p>}
           </div>
         </div>
+
         {techList.length > 0 && (
           <div className="flex flex-wrap gap-1.5">
             {techList.map((tech) => (
@@ -69,10 +75,39 @@ export function ProjectCard({
           </div>
         )}
       </div>
-      <div className="flex items-center gap-3 pt-1  justify-end">
+
+      <div className="flex items-center gap-3 pt-1 justify-end">
         {actions.map((action) => {
           const IconComp =
             typeof action.icon === 'function' ? (action.icon as React.ElementType) : null;
+
+          const content = (
+            <>
+              {IconComp ? (
+                <IconComp className="size-3.5" />
+              ) : (
+                <HugeiconsIcon icon={action.icon as IconSvgElement} className="size-3.5" />
+              )}
+              {action.label}
+            </>
+          );
+
+          const className =
+            'inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors hover:underline';
+
+          if (action.internal) {
+            return (
+              <Link
+                key={action.label}
+                href={action.href || '#'}
+                aria-label={action.label}
+                className={className}
+              >
+                {content}
+              </Link>
+            );
+          }
+
           return (
             <a
               key={action.label}
@@ -80,14 +115,9 @@ export function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               aria-label={action.label}
-              className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors hover:underline"
+              className={className}
             >
-              {IconComp ? (
-                <IconComp className="size-3.5" />
-              ) : (
-                <HugeiconsIcon icon={action.icon as IconSvgElement} className="size-3.5" />
-              )}
-              {action.label}
+              {content}
             </a>
           );
         })}
