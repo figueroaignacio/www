@@ -4,10 +4,10 @@ import { GitHubIcon } from '@/components/tech-icons';
 import { Badge } from '@/components/ui/badge';
 import type { Contribution, TechStack } from '@/payload-types';
 
+import { GitBranchIcon, GitPullRequestIcon, LinkSquare02Icon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
 import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
-import { LinkSquare02Icon, GitBranchIcon, GitPullRequestIcon } from '@hugeicons/core-free-icons';
-import { HugeiconsIcon } from '@hugeicons/react';
 
 type ContributionCardProps = Pick<
   Contribution,
@@ -31,7 +31,7 @@ export function ContributionCard({
     <motion.article
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="relative flex flex-col gap-5 border border-border rounded-2xl p-6 bg-card/50 backdrop-blur-sm"
+      className="relative flex flex-col gap-5 border border-border rounded-2xl p-6 bg-card backdrop-blur-sm"
     >
       <div className="space-y-2">
         <div className="flex items-center justify-between gap-4">
@@ -75,14 +75,14 @@ export function ContributionCard({
                 href={pr.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/pr flex items-center justify-between gap-3 p-2.5 rounded-lg bg-background border border-foreground/10 hover:bg-foreground/5 hover:border-foreground/10"
+                className="group/pr flex items-center justify-between gap-3 p-2.5 rounded-lg border border-foreground/10 hover:bg-foreground/5 hover:border-foreground/10"
               >
                 <span className="text-xs font-medium text-muted-foreground group-hover/pr:text-foreground truncate transition-colors">
                   {pr.label || `Pull Request #${index + 1}`}
                 </span>
                 <HugeiconsIcon
                   icon={LinkSquare02Icon}
-                  className="size-3 text-muted-foreground/30 group-hover/pr:text-primary transition-colors shrink-0"
+                  className="size-3 text-muted-foreground/30 group-hover/pr:text-foreground transition-colors shrink-0"
                 />
               </a>
             ))}
