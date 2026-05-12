@@ -5,14 +5,15 @@ import path from 'path';
 import { buildConfig } from 'payload';
 import sharp from 'sharp';
 import { fileURLToPath } from 'url';
+import { Contributions } from './collections/Contributions';
 import { Education } from './collections/Education';
 import { Experience } from './collections/Experience';
 import { Media } from './collections/Media';
+import { ProjectLabels } from './collections/ProjectLabels';
 import { Projects } from './collections/Projects';
 import { TechStack } from './collections/TechStack';
 import { Testimonials } from './collections/Testimonials';
 import { Users } from './collections/Users';
-import { Contributions } from './collections/Contributions';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -33,6 +34,7 @@ export default buildConfig({
     TechStack,
     Testimonials,
     Contributions,
+    ProjectLabels,
   ],
   editor: lexicalEditor({
     features: ({ defaultFeatures }) => [...defaultFeatures],

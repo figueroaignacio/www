@@ -75,6 +75,7 @@ export interface Config {
     'tech-stack': TechStack;
     testimonials: Testimonial;
     contributions: Contribution;
+    'project-labels': ProjectLabel;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -90,10 +91,9 @@ export interface Config {
     'tech-stack': TechStackSelect<false> | TechStackSelect<true>;
     testimonials: TestimonialsSelect<false> | TestimonialsSelect<true>;
     contributions: ContributionsSelect<false> | ContributionsSelect<true>;
+    'project-labels': ProjectLabelsSelect<false> | ProjectLabelsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
-    'payload-locked-documents':
-      | PayloadLockedDocumentsSelect<false>
-      | PayloadLockedDocumentsSelect<true>;
+    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
@@ -353,6 +353,16 @@ export interface Contribution {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "project-labels".
+ */
+export interface ProjectLabel {
+  id: number;
+  label: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -406,6 +416,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'contributions';
         value: number | Contribution;
+      } | null)
+    | ({
+        relationTo: 'project-labels';
+        value: number | ProjectLabel;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -626,6 +640,15 @@ export interface ContributionsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "project-labels_select".
+ */
+export interface ProjectLabelsSelect<T extends boolean = true> {
+  label?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv_select".
  */
 export interface PayloadKvSelect<T extends boolean = true> {
@@ -681,6 +704,7 @@ export interface CollectionsWidget {
 export interface Auth {
   [k: string]: unknown;
 }
+
 
 declare module 'payload' {
   export interface GeneratedTypes extends Config {}
