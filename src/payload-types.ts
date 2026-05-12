@@ -254,6 +254,7 @@ export interface Project {
     [k: string]: unknown;
   };
   technologies?: (number | TechStack)[] | null;
+  labels?: (number | ProjectLabel)[] | null;
   repository?: string | null;
   demo?: string | null;
   featured?: boolean | null;
@@ -306,6 +307,16 @@ export interface TechStack {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "project-labels".
+ */
+export interface ProjectLabel {
+  id: number;
+  label: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "testimonials".
  */
 export interface Testimonial {
@@ -350,16 +361,6 @@ export interface Contribution {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "project-labels".
- */
-export interface ProjectLabel {
-  id: number;
-  label: string;
-  updatedAt: string;
-  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -550,6 +551,7 @@ export interface ProjectsSelect<T extends boolean = true> {
   description?: T;
   body?: T;
   technologies?: T;
+  labels?: T;
   repository?: T;
   demo?: T;
   featured?: T;

@@ -105,6 +105,14 @@ export const Projects: CollectionConfig = {
       required: false,
     },
     {
+      name: 'labels',
+      label: 'Labels',
+      type: 'relationship',
+      relationTo: 'project-labels',
+      hasMany: true,
+      required: false,
+    },
+    {
       name: 'repository',
       label: 'GitHub Repository',
       type: 'text',
