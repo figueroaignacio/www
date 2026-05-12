@@ -24,6 +24,7 @@ export async function ProjectsSection() {
             repository={project.repository}
             demo={project.demo}
             icon={project.icon}
+            labels={project.labels}
           />
         ))}
       </AnimatedProjectList>

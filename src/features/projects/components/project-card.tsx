@@ -3,10 +3,11 @@
 import { GitHubIcon } from '@/components/tech-icons';
 import { Badge } from '@/components/ui/badge';
 import { Link } from '@/i18n/navigation';
-import type { Project, TechStack } from '@/payload-types';
+import type { Project, ProjectLabel, TechStack } from '@/payload-types';
 import { Globe02Icon, InformationCircleIcon } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon, type IconSvgElement } from '@hugeicons/react';
 import { useTranslations } from 'next-intl';
+import { getLabelColor } from '../lib/get-label-color';
 
 export function ProjectCard({
   slug,
@@ -16,11 +17,15 @@ export function ProjectCard({
   repository,
   technologies,
   icon,
+  labels,
 }: Partial<Project>) {
   const t = useTranslations('components.projectItem.actions');
 
   const techList =
     technologies?.filter((tech): tech is TechStack => typeof tech === 'object') ?? [];
+
+  const labelsList =
+    labels?.filter((label): label is ProjectLabel => typeof label === 'object') ?? [];
 
   const actions = [
     {
@@ -49,12 +54,29 @@ export function ProjectCard({
       aria-labelledby={`project-title-${title}`}
     >
       <div className="space-y-3">
-        {icon && (
-          <div
-            className="mt-1 size-8 shrink-0 [&>svg]:size-full [&>svg]:text-foreground"
-            dangerouslySetInnerHTML={{ __html: icon }}
-          />
-        )}
+        <div className="flex items-center justify-between flex-wrap gap-4">
+          {icon && (
+            <div
+              className="mt-1 size-8 shrink-0 [&>svg]:size-full [&>svg]:text-foreground"
+              dangerouslySetInnerHTML={{ __html: icon }}
+            />
+          )}
+
+          {labelsList.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 ml-auto">
+              {labelsList.map((label) => (
+                <Badge
+                  key={label.id}
+                  variant="outline"
+                  className={`text-[11px] border-none`}
+                  style={getLabelColor(label.label)}
+                >
+                  {label.label}
+                </Badge>
+              ))}
+            </div>
+          )}
+        </div>
 
         <div className="flex items-start gap-3">
           <div>
