@@ -257,7 +257,10 @@ export interface Project {
   labels?: (number | ProjectLabel)[] | null;
   repository?: string | null;
   demo?: string | null;
-  featured?: boolean | null;
+  /**
+   * Used to differentiate between personal and commercial projects
+   */
+  isCommercialProject?: boolean | null;
   /**
    * Used for custom sorting
    */
@@ -554,7 +557,7 @@ export interface ProjectsSelect<T extends boolean = true> {
   labels?: T;
   repository?: T;
   demo?: T;
-  featured?: T;
+  isCommercialProject?: T;
   order?: T;
   updatedAt?: T;
   createdAt?: T;

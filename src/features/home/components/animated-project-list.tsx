@@ -4,7 +4,7 @@ import { motion, type Variants } from 'motion/react';
 import { ReactNode } from 'react';
 
 interface AnimatedProjectListProps {
-  children: ReactNode[];
+  children: ReactNode[] | ReactNode;
 }
 
 const containerVariants: Variants = {
@@ -38,11 +38,15 @@ export function AnimatedProjectList({ children }: AnimatedProjectListProps) {
       viewport={{ once: true, margin: '-50px' }}
       className="grid gap-4"
     >
-      {children.map((child, index) => (
-        <motion.div key={index} variants={itemVariants}>
-          {child}
-        </motion.div>
-      ))}
+      {Array.isArray(children) ? (
+        children.map((child, index) => (
+          <motion.div key={index} variants={itemVariants}>
+            {child}
+          </motion.div>
+        ))
+      ) : (
+        <motion.div variants={itemVariants}>{children}</motion.div>
+      )}
     </motion.div>
   );
 }

@@ -123,10 +123,13 @@ export const Projects: CollectionConfig = {
       type: 'text',
     },
     {
-      name: 'featured',
-      label: 'Featured Project',
+      name: 'isCommercialProject',
+      label: 'Is a Commercial Project',
       type: 'checkbox',
       defaultValue: false,
+      admin: {
+        description: 'Used to differentiate between personal and commercial projects',
+      },
     },
     {
       name: 'order',

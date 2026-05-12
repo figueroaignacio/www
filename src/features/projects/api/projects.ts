@@ -1,6 +1,6 @@
+import { findCollection, findOneBySlug } from '@/lib/collection-query';
 import type { Project } from '@/payload-types';
 import { Locale } from 'next-intl';
-import { findCollection, findOneBySlug } from '@/lib/collection-query';
 
 export async function getProjects(locale: Locale): Promise<Project[]> {
   return findCollection<Project>('projects', locale);
@@ -8,13 +8,13 @@ export async function getProjects(locale: Locale): Promise<Project[]> {
 
 export async function getCommercialProjects(locale: Locale): Promise<Project[]> {
   return findCollection<Project>('projects', locale, {
-    where: { featured: { equals: false } },
+    where: { isCommercialProject: { equals: true } },
   });
 }
 
 export async function getPersonalProjects(locale: Locale): Promise<Project[]> {
   return findCollection<Project>('projects', locale, {
-    where: { featured: { equals: true } },
+    where: { isCommercialProject: { equals: false } },
   });
 }
 

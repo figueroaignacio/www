@@ -62,8 +62,16 @@
     "projects": {
       "title": "Proyectos",
       "description": "Cosas que construí.",
-      "personalProjects": "Proyectos personales",
-      "commercialProjects": "Proyectos comerciales"
+      "work": {
+        "tab": "Comerciales",
+        "title": "Proyectos comerciales",
+        "description": "Proyectos comerciales"
+      },
+      "personal": {
+        "tab": "Personales",
+        "title": "Proyectos personales",
+        "description": "Proyectos personales"
+      }
     },
     "stack": {
       "title": "Stack",
